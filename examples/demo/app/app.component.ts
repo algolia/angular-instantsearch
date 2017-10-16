@@ -1,9 +1,18 @@
 import { Component } from "@angular/core";
+import { NgISInstance } from "angular-instantsearch";
 
 @Component({
   selector: "ngis-app",
   template: `
-    <h1>YOLO</h1>
+    <ngis-instantsearch [config]="config">
+      <h1>Angular InstantSearch demo</h1>
+    </ngis-instantsearch>
   `
 })
-export class AppComponent {}
+export class AppComponent {
+  public config = {
+    apiKey: "6be0576ff61c053d5f9a3225e2a90f76",
+    appId: "latency",
+    indexName: "instant_search"
+  };
+}

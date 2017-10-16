@@ -8,6 +8,7 @@ import { AppComponent } from "./app.component";
 @NgModule({
   bootstrap: [AppComponent],
   declarations: [AppComponent],
-  imports: [BrowserModule, NgISModule.forRoot()]
+  imports: [BrowserModule, NgISModule.forRoot()],
+  providers: []
 })
 export class NgApp {}

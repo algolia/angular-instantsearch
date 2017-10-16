@@ -2,7 +2,6 @@ var path = require('path');
 var webpack = require('webpack');
 
 var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
-var autoprefixer = require('autoprefixer');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var ENV = process.env.MODE;
@@ -97,7 +96,7 @@ module.exports = {
     // Workaround to remove Webpack warning in system_js_ng_module_factory_loader.js
     // See https://github.com/angular/angular/issues/11580
     new webpack.ContextReplacementPlugin(
-      /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+      /angular(\\|\/)core(\\|\/)@angular/,
       root('examples', 'demo', 'app')
     )
   ],
