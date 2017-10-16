@@ -1,0 +1,22 @@
+{
+  "name": "angular-instantsearch",
+  "version": "0.01",
+  "description": "Lightning-fast search for Angular apps, by Algolia. ",
+  "main": "index.js",
+  "author": "iam4x",
+  "license": "MIT",
+  "scripts": {
+    "dev": "yarn build -w",
+    "build": "babel -x .ts -d dist src"
+  },
+  "dependencies": {
+    "@angular/core": "^4.4.5"
+  },
+  "devDependencies": {
+    "babel-cli": "^7.0.0-beta.3",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-env": "^7.0.0-beta.3",
+    "babel-preset-stage-0": "^7.0.0-beta.3",
+    "babel-preset-typescript": "^7.0.0-alpha.19"
+  }
+}
