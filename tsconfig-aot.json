@@ -2,7 +2,9 @@
   "compilerOptions": {
     "target": "ES5",
     "lib": ["es2015", "dom"],
-    "module": "commonjs",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "declaration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "noEmitOnError": true,
@@ -14,7 +16,9 @@
     }
   },
   "include": [
-    "src/**/*.ts"
+    "./examples/demo/main.ts"
   ],
-  "compileOnSave": false
+  "angularCompilerOptions": {
+    "strictMetadataEmit": true
+  }
 }
