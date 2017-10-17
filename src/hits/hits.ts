@@ -1,4 +1,11 @@
-import { Component, ContentChild, OnInit, TemplateRef } from "@angular/core";
+import {
+  Component,
+  ContentChild,
+  OnDestroy,
+  OnInit,
+  TemplateRef
+} from "@angular/core";
+
 import { connectHits } from "instantsearch.js/es/connectors";
 
 import { NgISInstance } from "../instantsearch/instantsearch-instance";
@@ -18,16 +25,22 @@ import { NgISInstance } from "../instantsearch/instantsearch-instance";
     </div>
   `
 })
-export class NgISHits implements OnInit {
+export class NgISHits implements OnInit, OnDestroy {
   @ContentChild(TemplateRef) public template;
 
   public state: { hits: Array<{}> } = { hits: [] };
 
+  private widget?: Widget;
+
   constructor(private searchInstance: NgISInstance) {}
 
   public ngOnInit() {
-    const widget = connectHits(this.updateState);
-    this.searchInstance.addWidget(widget());
+    this.widget = connectHits(this.updateState)();
+    this.searchInstance.addWidget(this.widget);
+  }
+
+  public ngOnDestroy() {
+    this.searchInstance.removeWidget(this.widget);
   }
 
   private updateState = (state, isFirstRendering) => {
