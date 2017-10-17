@@ -7,6 +7,7 @@ import {
 } from "@angular/core";
 
 import { connectHits } from "instantsearch.js/es/connectors";
+import { noop } from "lodash";
 
 import { NgISInstance } from "../instantsearch/instantsearch-instance";
 import { bem } from "../utils";
@@ -45,7 +46,7 @@ export class NgISHits implements OnInit, OnDestroy {
   constructor(private searchInstance: NgISInstance) {}
 
   public ngOnInit() {
-    this.widget = connectHits(this.updateState)();
+    this.widget = connectHits(this.updateState, noop)();
     this.searchInstance.addWidget(this.widget);
   }
 
