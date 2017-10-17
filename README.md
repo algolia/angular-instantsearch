@@ -84,7 +84,7 @@ export class AppComponent {
 > The SearchBox component displays a search box that lets the user search for a specific query.
 
 | Props             | Type      | Description
-| -                 | -         |
+| -                 | -         | -
 | `placeholder?`    | `string`  | The label of the input placeholder.
 | `submitTitle`     | `string`  | The submit button title.
 | `resetTitle`      | `string`  | The reset button title.
