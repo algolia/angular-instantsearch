@@ -23,6 +23,7 @@ export class NgISInstance {
 
   private instance?: {
     start: () => void;
+    addWidget: (widget: object) => void;
   };
 
   public init(config: object) {
@@ -31,5 +32,9 @@ export class NgISInstance {
 
   public start() {
     this.instance.start();
+  }
+
+  public addWidget(widget) {
+    this.instance.addWidget(widget);
   }
 }
