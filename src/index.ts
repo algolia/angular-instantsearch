@@ -5,6 +5,7 @@ import { ModuleWithProviders, NgModule } from "@angular/core";
 // Modules
 import { NgISHitsModule } from "./hits/hits.module";
 import { NgISInstantSearchModule } from "./instantsearch/instantsearch.module";
+import { NgISSearchBoxModule } from "./search-box/search-box.module";
 
 // Re-Export
 export {
@@ -13,8 +14,13 @@ export {
   NgISInstantSearch
 } from "./instantsearch/instantsearch.module";
 export { NgISHits } from "./hits/hits.module";
+export { NgISSearchBoxModule } from "./search-box/search-box.module";
 
-const NGIS_MODULES = [NgISInstantSearchModule, NgISHitsModule];
+const NGIS_MODULES = [
+  NgISInstantSearchModule,
+  NgISHitsModule,
+  NgISSearchBoxModule
+];
 
 @NgModule({
   exports: NGIS_MODULES,
