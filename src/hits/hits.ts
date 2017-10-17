@@ -1,14 +1,9 @@
-import {
-  Component,
-  ContentChild,
-  OnDestroy,
-  OnInit,
-  TemplateRef
-} from "@angular/core";
+import { Component, ContentChild, TemplateRef } from "@angular/core";
 
 import { connectHits } from "instantsearch.js/es/connectors";
 import { noop } from "lodash";
 
+import BaseWidget from "../base-widget";
 import { NgISInstance } from "../instantsearch/instantsearch-instance";
 import { bem } from "../utils";
 
@@ -18,6 +13,12 @@ const cx = bem("hits");
   selector: "ngis-hits",
   template: `
     <div class="${cx()}">
+      <ngis-header
+        [header]="header"
+        className="${cx("header")}"
+      >
+      </ngis-header>
+
       <div class="${cx("body")}">
         <ng-container *ngTemplateOutlet="template; context: state"></ng-container>
 
@@ -33,34 +34,18 @@ const cx = bem("hits");
           </ul>
         </div>
       </div>
+
+      <ngis-footer [footer]="footer" className=${cx("footer")}></ngis-footer>
     </div>
   `
 })
-export class NgISHits implements OnInit, OnDestroy {
+export class NgISHits extends BaseWidget {
   @ContentChild(TemplateRef) public template;
 
-  public state: { hits: Array<{}> } = { hits: [] };
+  // inner widget state returned from connector
+  public state = { hits: [] };
 
-  private widget?: Widget;
-
-  constructor(private searchInstance: NgISInstance) {}
-
-  public ngOnInit() {
-    this.widget = connectHits(this.updateState, noop)();
-    this.searchInstance.addWidget(this.widget);
+  constructor(searchInstance: NgISInstance) {
+    super(searchInstance, connectHits);
   }
-
-  public ngOnDestroy() {
-    this.searchInstance.removeWidget(this.widget);
-  }
-
-  private updateState = (state, isFirstRendering) => {
-    if (isFirstRendering) {
-      return Promise.resolve().then(() => {
-        this.state = state;
-      });
-    }
-
-    this.state = state;
-  };
 }
