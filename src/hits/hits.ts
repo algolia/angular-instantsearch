@@ -9,17 +9,27 @@ import {
 import { connectHits } from "instantsearch.js/es/connectors";
 
 import { NgISInstance } from "../instantsearch/instantsearch-instance";
+import { bem } from "../utils";
+
+const cx = bem("hits");
 
 @Component({
   selector: "ngis-hits",
   template: `
-    <div class="hits">
-      <ng-container *ngTemplateOutlet="template; context: state"></ng-container>
+    <div class="${cx()}">
+      <div class="${cx("body")}">
+        <ng-container *ngTemplateOutlet="template; context: state"></ng-container>
 
-      <!-- default rendering if no template specified -->
-      <div *ngIf="!template">
-        <div *ngFor="let hit of state.hits">
-          {{hit.name}}
+        <!-- default rendering if no template specified -->
+        <div *ngIf="!template">
+          <ul class="${cx("list")}">
+            <li
+              class="${cx("item")}"
+              *ngFor="let hit of state.hits"
+            >
+              {{hit.name}}
+            </li>
+          </ul>
         </div>
       </div>
     </div>
