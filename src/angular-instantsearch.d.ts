@@ -50,3 +50,8 @@ declare class InstantSearchInstance {
   public removeWidget: (widget: Widget) => void;
   public removeWidgets: (widgets: Widget[]) => void;
 }
+
+type Connector = (
+  renderFn: (state: object, isFirstRendering: boolean) => void,
+  unmountFn: () => void
+) => (widgetOptions?: object) => Widget;
