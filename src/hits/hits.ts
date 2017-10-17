@@ -1,7 +1,6 @@
 import { Component, ContentChild, TemplateRef } from "@angular/core";
 
 import { connectHits } from "instantsearch.js/es/connectors";
-import { noop } from "lodash";
 
 import BaseWidget from "../base-widget";
 import { NgISInstance } from "../instantsearch/instantsearch-instance";
