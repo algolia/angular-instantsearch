@@ -7,13 +7,8 @@ import { NgISInstance } from "angular-instantsearch";
     <ngis-instantsearch [config]="config">
       <h1>Angular InstantSearch demo</h1>
 
-      <ngis-hits>
-        <ng-template let-hits="hits">
-          <li *ngFor="let hit of hits">
-            {{hit.name}}
-          </li>
-        </ng-template>
-      </ngis-hits>
+      <ngis-search-box></ngis-search-box>
+      <ngis-hits></ngis-hits>
     </ngis-instantsearch>
   `
 })
