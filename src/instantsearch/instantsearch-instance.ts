@@ -3,30 +3,9 @@ import instantsearch from "instantsearch.js/es";
 
 @Injectable()
 export class NgISInstance {
-  public appId: string;
-  public apiKey: string;
-  public indexName: string;
+  private instance?: InstantSearchInstance;
 
-  public numberLocale?: string;
-  public searchFunction?: () => void;
-  public createAlgoliaClient?: () => object;
-  public searchParameters?: object | void;
-  public urlSync?:
-    | boolean
-    | {
-        mapping?: object;
-        threshold?: number;
-        trackedParameters?: string[];
-        useHash?: boolean;
-        getHistoryState?: () => object;
-      };
-
-  private instance?: {
-    start: () => void;
-    addWidget: (widget: object) => void;
-  };
-
-  public init(config: object) {
+  public init(config: InstantSearchConfig) {
     this.instance = instantsearch(config);
   }
 
@@ -34,7 +13,19 @@ export class NgISInstance {
     this.instance.start();
   }
 
-  public addWidget(widget) {
+  public addWidget(widget: Widget) {
     this.instance.addWidget(widget);
+  }
+
+  public addWidgets(widgets: Widget[]) {
+    this.instance.addWidgets(widgets);
+  }
+
+  public removeWidget(widget: Widget) {
+    this.instance.removeWidget(widget);
+  }
+
+  public removeWidgets(widgets: Widget[]) {
+    this.instance.removeWidgets(widgets);
   }
 }

@@ -7,9 +7,7 @@ import { NgISInstance } from "./instantsearch-instance";
   template: `<ng-content></ng-content>`
 })
 export class NgISInstantSearch implements AfterViewInit, OnInit {
-  @Input() public config: object;
-
-  private search?: object;
+  @Input() public config: InstantSearchConfig;
 
   constructor(private searchInstance: NgISInstance) {}
 
