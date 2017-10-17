@@ -14,7 +14,8 @@
   "dependencies": {
     "@angular/common": "^4.4.5",
     "@angular/core": "^4.4.5",
-    "instantsearch.js": "^2.3.0-beta.1"
+    "instantsearch.js": "^2.3.0-beta.1",
+    "lodash": "^4.17.4"
   },
   "devDependencies": {
     "@angular/compiler": "^4.4.5",
