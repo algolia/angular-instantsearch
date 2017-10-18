@@ -122,3 +122,14 @@ export class AppComponent {}
 ```
 
 ---
+
+##### `<ngis-clear-all></ngis-clear-all>`
+
+> The ClearAll widget displays a button that lets the user clean every refinement applied to the search.
+
+| Props                | Type            | Description
+| -                    | -               | -
+| `clearsQuery?`       | `boolean`       | Pass true to also clear the search query
+| `excludeAttributes?` | `Array<string>` | Every attributes that should not be removed on clear
+| `header?`            | `string`        | Displays text before widget
+| `footer?`            | `string`        | Displays text after widget
