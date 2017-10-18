@@ -133,3 +133,21 @@ export class AppComponent {}
 | `excludeAttributes?` | `Array<string>` | Every attributes that should not be removed on clear
 | `header?`            | `string`        | Displays text before widget
 | `footer?`            | `string`        | Displays text after widget
+
+---
+
+##### `<ngis-menu></ngis-menu>`
+
+> The Menu component displays a menu that lets the user choose a single value for a specific attribute.
+
+
+| Props            | Type                     | Description
+| -                | -                        | -
+| `attributeName`  | `string`                 | Name of the attribute for faceting (eg. "free_shipping")
+| `limit?`         | `number`                 | How many facets values to retrieve
+| `showMoreLimit?` | `number`                 | Bigger than `limit` if the component should display a button that will expand the number of items
+| `showMoreLabel?` | `string`                 | Label of the show more button
+| `showLessLabel?` | `string`                 | Label of the show less button
+| `sortBy?`        | `Array<string>/function` | How to sort facet values
+| `header?`        | `string`                 | Displays text before widget
+| `footer?`        | `string`                 | Displays text after widget

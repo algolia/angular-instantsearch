@@ -6,6 +6,7 @@ import { ModuleWithProviders, NgModule } from "@angular/core";
 import { NgISClearAllModule } from "./clear-all/clear-all.module";
 import { NgISHitsModule } from "./hits/hits.module";
 import { NgISInstantSearchModule } from "./instantsearch/instantsearch.module";
+import { NgISMenuModule } from "./menu/menu.module";
 import { NgISSearchBoxModule } from "./search-box/search-box.module";
 
 // Re-Export
@@ -17,12 +18,14 @@ export {
 export { NgISHits } from "./hits/hits.module";
 export { NgISSearchBoxModule } from "./search-box/search-box.module";
 export { NgISClearAllModule } from "./clear-all/clear-all.module";
+export { NgISMenuModule } from "./menu/menu.module";
 
 const NGIS_MODULES = [
   NgISInstantSearchModule,
   NgISHitsModule,
   NgISSearchBoxModule,
-  NgISClearAllModule
+  NgISClearAllModule,
+  NgISMenuModule
 ];
 
 @NgModule({
