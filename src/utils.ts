@@ -2,7 +2,7 @@ import { capitalize } from "lodash";
 
 export function bem(widgetName: string) {
   const capitalizedWidgetName = capitalize(widgetName);
-  return (element?: string) => {
+  return (element?: string, subElement?: string) => {
     if (element) {
       const scoppedWidgetName = `ais-${capitalizedWidgetName}-${element}`;
 
@@ -10,6 +10,11 @@ export function bem(widgetName: string) {
       if (element === "header" || element === "body" || element === "footer") {
         const nonScoppedWidgetName = `ais-${element}`;
         return `${scoppedWidgetName} ${nonScoppedWidgetName}`;
+      }
+
+      // output `ais-Widget-Xyz--abc`
+      if (subElement) {
+        return `${scoppedWidgetName}--${subElement}`;
       }
 
       // output `ais-Widget-Xyz`
