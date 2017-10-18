@@ -85,7 +85,8 @@ export class NgISSearchBox extends BaseWidget {
   };
 
   constructor(searchInstance: NgISInstance) {
-    super(searchInstance, connectSearchBox);
+    super(searchInstance);
+    this.createWidget(connectSearchBox);
   }
 
   public handleChange(query: string) {

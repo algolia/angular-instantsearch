@@ -11,12 +11,10 @@ export default class BaseWidget implements OnInit, OnDestroy {
   public widget?: Widget;
   public state?: object;
 
-  constructor(
-    private searchInstance: NgISInstance,
-    widgetConnector: Connector,
-    widgetOptions: object = {}
-  ) {
-    this.widget = widgetConnector(this.updateState, noop)(widgetOptions);
+  constructor(private searchInstance: NgISInstance) {}
+
+  public createWidget(connector: Connector, options: object = {}) {
+    this.widget = connector(this.updateState, noop)(options);
   }
 
   public ngOnInit() {

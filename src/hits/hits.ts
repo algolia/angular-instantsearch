@@ -45,6 +45,7 @@ export class NgISHits extends BaseWidget {
   public state = { hits: [] };
 
   constructor(searchInstance: NgISInstance) {
-    super(searchInstance, connectHits);
+    super(searchInstance);
+    this.createWidget(connectHits);
   }
 }
