@@ -12,11 +12,7 @@ const cx = bem("hits");
   selector: "ngis-hits",
   template: `
     <div class="${cx()}">
-      <ngis-header
-        [header]="header"
-        className="${cx("header")}"
-      >
-      </ngis-header>
+      <ngis-header [header]="header" className="${cx("header")}"></ngis-header>
 
       <div class="${cx("body")}">
         <ng-container *ngTemplateOutlet="template; context: state"></ng-container>
