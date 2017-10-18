@@ -6,8 +6,8 @@ import { NgISInstance } from "angular-instantsearch";
   template: `
     <ngis-instantsearch [config]="config">
       <h1>Angular InstantSearch demo</h1>
-
       <ngis-search-box></ngis-search-box>
+      <ngis-clear-all></ngis-clear-all>
       <ngis-hits></ngis-hits>
     </ngis-instantsearch>
   `
