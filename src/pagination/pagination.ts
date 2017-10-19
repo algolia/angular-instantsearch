@@ -19,6 +19,7 @@ const cx = bem("pagination");
           <li
             *ngIf="showFirst"
             (click)="refine($event, 0)"
+            class="${cx("item", "firstPage")}"
           >
             <a
               href="{{state.createURL(0)}}"
@@ -31,6 +32,7 @@ const cx = bem("pagination");
           <li
             *ngIf="showPrevious"
             (click)="refine($event, state.currentRefinement - 1)"
+            class="${cx("item", "previousPage")}"
           >
             <a
               href="{{state.createURL(state.currentRefinement - 1)}}"
@@ -53,6 +55,7 @@ const cx = bem("pagination");
           <li
             *ngIf="showNext"
             (click)="refine($event, state.currentRefinement + 1)"
+            class="${cx("item", "previousPage")}"
           >
             <a
               href="{{state.createURL(state.currentRefinement + 1)}}"
@@ -65,6 +68,7 @@ const cx = bem("pagination");
           <li
             *ngIf="showLast"
             (click)="refine($event, state.nbPages)"
+            class="${cx("item", "lastPage")}"
           >
             <a
               href="{{state.createURL(state.nbPages)}}"
