@@ -6,7 +6,10 @@
       <li
         *ngIf="showFirst"
         (click)="refine($event, 0)"
-        class="{{cx('item', 'firstPage')}}"
+        class="{{
+          cx('item', 'firstPage') +
+          (state.currentRefinement === 0 ? ' ' + cx('item', 'disabled') : '')
+        }}"
       >
         <a
           href="{{state.createURL(0)}}"
@@ -19,7 +22,10 @@
       <li
         *ngIf="showPrevious"
         (click)="refine($event, state.currentRefinement - 1)"
-        class="{{cx('item', 'previousPage')}}"
+        class="{{
+          cx('item', 'previousPage') +
+          (state.currentRefinement === 0 ? ' ' + cx('item', 'disabled') : '')
+        }}"
       >
         <a
           href="{{state.createURL(state.currentRefinement - 1)}}"
@@ -48,7 +54,10 @@
       <li
         *ngIf="showNext"
         (click)="refine($event, state.currentRefinement + 1)"
-        class="{{cx('item', 'previousPage')}}"
+        class="{{
+          cx('item', 'nextPage') +
+          (state.currentRefinement + 1 === state.nbPages ? ' ' + cx('item', 'disabled') : '')
+        }}"
       >
         <a
           href="{{state.createURL(state.currentRefinement + 1)}}"
@@ -61,7 +70,10 @@
       <li
         *ngIf="showLast"
         (click)="refine($event, state.nbPages)"
-        class="{{cx('item', 'lastPage')}}"
+        class="{{
+          cx('item', 'lastPage') +
+          (state.currentRefinement + 1 === state.nbPages ? ' ' + cx('item', 'disabled') : '')
+        }}"
       >
         <a
           href="{{state.createURL(state.nbPages)}}"
