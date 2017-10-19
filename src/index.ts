@@ -7,6 +7,7 @@ import { NgISClearAllModule } from "./clear-all/clear-all.module";
 import { NgISHitsModule } from "./hits/hits.module";
 import { NgISInstantSearchModule } from "./instantsearch/instantsearch.module";
 import { NgISMenuModule } from "./menu/menu.module";
+import { NgISPaginationModule } from "./pagination/pagination.module";
 import { NgISSearchBoxModule } from "./search-box/search-box.module";
 
 // Re-Export
@@ -25,7 +26,8 @@ const NGIS_MODULES = [
   NgISHitsModule,
   NgISSearchBoxModule,
   NgISClearAllModule,
-  NgISMenuModule
+  NgISMenuModule,
+  NgISPaginationModule
 ];
 
 @NgModule({
