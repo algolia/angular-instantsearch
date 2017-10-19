@@ -30,7 +30,10 @@
       </li>
 
       <li
-        class="{{cx('item', 'page')}}"
+        class="{{
+          cx('item', 'page') +
+          (state.currentRefinement === page ? ' ' + cx('item', 'selected') : '')
+        }}"
         *ngFor="let page of pages"
         (click)="refine($event, page)"
       >
