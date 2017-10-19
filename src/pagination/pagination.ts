@@ -1,6 +1,6 @@
 import { Component, Input } from "@angular/core";
 import { connectPagination } from "instantsearch.js/es/connectors";
-import { noop } from "lodash";
+import { noop, range } from "lodash";
 
 import BaseWidget from "../base-widget";
 import { NgISInstance } from "../instantsearch/instantsearch-instance";
@@ -100,10 +100,41 @@ export class NgISPagination extends BaseWidget {
   };
 
   get pages() {
-    return Array.apply(null, { length: this.state.nbPages }).map(
+    const { nbPages, currentRefinement } = this.state;
+
+    const pagesArray = Array.apply(null, { length: nbPages }).map(
       Number.call,
       Number
     );
+
+    const pagesPadding =
+      typeof this.pagesPadding === "string"
+        ? parseInt(this.pagesPadding, 10)
+        : this.pagesPadding;
+
+    if (pagesPadding && pagesPadding > 0) {
+      const minDelta = currentRefinement - pagesPadding;
+      const maxDelta = currentRefinement + pagesPadding;
+
+      if (minDelta < 0) {
+        return range(
+          0,
+          currentRefinement + pagesPadding + Math.abs(minDelta) + 1
+        );
+      } else if (maxDelta > nbPages) {
+        return range(
+          currentRefinement - pagesPadding - (maxDelta - nbPages) - 1,
+          nbPages
+        );
+      } else {
+        return range(
+          currentRefinement - pagesPadding,
+          currentRefinement + pagesPadding + 1
+        );
+      }
+    }
+
+    return pagesArray;
   }
 
   constructor(searchInstance: NgISInstance) {
