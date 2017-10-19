@@ -9,6 +9,7 @@ import { NgISInstance } from "angular-instantsearch";
       <ngis-search-box></ngis-search-box>
       <ngis-clear-all></ngis-clear-all>
       <ngis-hits></ngis-hits>
+      <ngis-pagination></ngis-pagination>
       <ngis-menu
         attributeName="categories"
         limit="{{5}}"
