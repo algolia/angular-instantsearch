@@ -10,79 +10,7 @@ const cx = bem("pagination");
 
 @Component({
   selector: "ngis-pagination",
-  template: `
-    <div class="${cx()}">
-      <ngis-header [header]="header" className="${cx("header")}"></ngis-header>
-
-      <div class="${cx("body")}">
-        <ul class="${cx("list")}">
-          <li
-            *ngIf="showFirst"
-            (click)="refine($event, 0)"
-            class="${cx("item", "firstPage")}"
-          >
-            <a
-              href="{{state.createURL(0)}}"
-              class="${cx("link")}"
-            >
-              «
-            </a>
-          </li>
-
-          <li
-            *ngIf="showPrevious"
-            (click)="refine($event, state.currentRefinement - 1)"
-            class="${cx("item", "previousPage")}"
-          >
-            <a
-              href="{{state.createURL(state.currentRefinement - 1)}}"
-              class="${cx("link")}"
-            >
-              ‹
-            </a>
-          </li>
-
-          <li
-            class="${cx("item", "page")}"
-            *ngFor="let page of pages"
-            (click)="refine($event, page)"
-          >
-            <a class="${cx("link")}" href="{{state.createURL(page)}}">
-              {{page + 1}}
-            </a>
-          </li>
-
-          <li
-            *ngIf="showNext"
-            (click)="refine($event, state.currentRefinement + 1)"
-            class="${cx("item", "previousPage")}"
-          >
-            <a
-              href="{{state.createURL(state.currentRefinement + 1)}}"
-              class="${cx("link")}"
-            >
-              ›
-            </a>
-          </li>
-
-          <li
-            *ngIf="showLast"
-            (click)="refine($event, state.nbPages)"
-            class="${cx("item", "lastPage")}"
-          >
-            <a
-              href="{{state.createURL(state.nbPages)}}"
-              class="${cx("link")}"
-            >
-              »
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <ngis-footer [footer]="footer" className="${cx("footer")}"></ngis-footer>
-    </div>
-  `
+  templateUrl: "./pagination.html"
 })
 export class NgISPagination extends BaseWidget {
   // render options
@@ -102,6 +30,10 @@ export class NgISPagination extends BaseWidget {
     nbPages: 0,
     refine: noop
   };
+
+  // we use external template, we need the reference
+  // of the cx() util on the Pagination class
+  public cx = cx;
 
   get pages() {
     const { nbPages, currentRefinement } = this.state;
