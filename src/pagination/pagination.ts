@@ -155,6 +155,8 @@ export class NgISPagination extends BaseWidget {
     event.stopPropagation();
     event.preventDefault();
 
-    this.state.refine(page);
+    if (page < this.state.nbPages && page >= 0) {
+      this.state.refine(page);
+    }
   }
 }
