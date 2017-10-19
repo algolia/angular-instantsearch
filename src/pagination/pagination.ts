@@ -117,17 +117,14 @@ export class NgISPagination extends BaseWidget {
         : this.pagesPadding;
 
     if (pagesPadding && pagesPadding > 0) {
-      const minDelta = currentRefinement - pagesPadding;
-      const maxDelta = currentRefinement + pagesPadding;
+      const minDelta = currentRefinement - pagesPadding - 1;
+      const maxDelta = currentRefinement + pagesPadding + 1;
 
       if (minDelta < 0) {
-        return range(
-          0,
-          currentRefinement + pagesPadding + Math.abs(minDelta) + 1
-        );
+        return range(0, currentRefinement + pagesPadding + Math.abs(minDelta));
       } else if (maxDelta > nbPages) {
         return range(
-          currentRefinement - pagesPadding - (maxDelta - nbPages) - 1,
+          currentRefinement - pagesPadding - (maxDelta - nbPages),
           nbPages
         );
       } else {
