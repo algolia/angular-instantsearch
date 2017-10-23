@@ -210,3 +210,17 @@ export class AppComponent {}
 | `indices`   | `{name: string, label: string}[]` | The list of indexes to search in
 | `header?`   | `string`                          | Displays text before widget
 | `footer?`   | `string`                          | Displays text after widget
+
+---
+
+##### `<ngis-numeric-selector></ngis-numeric-selector>`
+
+> The NumericSelector component lets the user choose between numerical refinements from a dropdown menu.
+
+| Props           | Type                                   | Description
+| -               | -                                      | -
+| `attributeName` | `string`                               | Name of the numeric attribute to use
+| `options`       | `{value: number, label: string}[]`     | The list of indexes to search in
+| `operator?`     | `"<" / "<=" / "=" / ">=" / ">" / "!="` | The operator to use to refine
+| `header?`       | `string`                               | Displays text before widget
+| `footer?`       | `string`                               | Displays text after widget

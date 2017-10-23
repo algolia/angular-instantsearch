@@ -8,6 +8,7 @@ import { NgISHitsPerPageSelectorModule } from "./hits-per-page-selector/hits-per
 import { NgISHitsModule } from "./hits/hits.module";
 import { NgISInstantSearchModule } from "./instantsearch/instantsearch.module";
 import { NgISMenuModule } from "./menu/menu.module";
+import { NgISNumericSelectorModule } from "./numeric-selector/numeric-selector.module";
 import { NgISPaginationModule } from "./pagination/pagination.module";
 import { NgISRefinementListModule } from "./refinement-list/refinement-list.module";
 import { NgISSearchBoxModule } from "./search-box/search-box.module";
@@ -22,7 +23,8 @@ const NGIS_MODULES = [
   NgISPaginationModule,
   NgISRefinementListModule,
   NgISHitsPerPageSelectorModule,
-  NgISSortBySelectorModule
+  NgISSortBySelectorModule,
+  NgISNumericSelectorModule
 ];
 
 @NgModule({
