@@ -14,6 +14,7 @@ import { NgISPaginationModule } from "./pagination/pagination.module";
 import { NgISRefinementListModule } from "./refinement-list/refinement-list.module";
 import { NgISSearchBoxModule } from "./search-box/search-box.module";
 import { NgISSortBySelectorModule } from "./sort-by-selector/sort-by-selector.module";
+import { NgISStatsModule } from "./stats/stats.module";
 
 const NGIS_MODULES = [
   NgISInstantSearchModule,
@@ -26,7 +27,8 @@ const NGIS_MODULES = [
   NgISHitsPerPageSelectorModule,
   NgISSortBySelectorModule,
   NgISNumericSelectorModule,
-  NgISNumericRefinementListModule
+  NgISNumericRefinementListModule,
+  NgISStatsModule
 ];
 
 @NgModule({
