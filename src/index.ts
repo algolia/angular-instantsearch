@@ -15,6 +15,7 @@ import { NgISRefinementListModule } from "./refinement-list/refinement-list.modu
 import { NgISSearchBoxModule } from "./search-box/search-box.module";
 import { NgISSortBySelectorModule } from "./sort-by-selector/sort-by-selector.module";
 import { NgISStatsModule } from "./stats/stats.module";
+import { NgISToggleModule } from "./toggle/toggle.module";
 
 const NGIS_MODULES = [
   NgISInstantSearchModule,
@@ -28,7 +29,8 @@ const NGIS_MODULES = [
   NgISSortBySelectorModule,
   NgISNumericSelectorModule,
   NgISNumericRefinementListModule,
-  NgISStatsModule
+  NgISStatsModule,
+  NgISToggleModule
 ];
 
 @NgModule({
