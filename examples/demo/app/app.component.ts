@@ -33,6 +33,7 @@ import { Component } from "@angular/core";
         label="Free Shipping (toggle single value)"
       >
       </ngis-toggle>
+      <ngis-current-refined-values></ngis-current-refined-values>
       <ngis-stats></ngis-stats>
     </ngis-instantsearch>
   `
