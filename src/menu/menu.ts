@@ -6,7 +6,7 @@ import BaseWidget from "../base-widget";
 import { NgISInstance } from "../instantsearch/instantsearch-instance";
 import { bem } from "../utils";
 
-const cx = bem("menu");
+const cx = bem("Menu");
 
 @Component({
   selector: "ngis-menu",

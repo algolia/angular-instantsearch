@@ -6,7 +6,7 @@ import BaseWidget from "../base-widget";
 import { NgISInstance } from "../instantsearch/instantsearch-instance";
 import { bem } from "../utils";
 
-const cx = bem("pagination");
+const cx = bem("Pagination");
 
 @Component({
   selector: "ngis-pagination",

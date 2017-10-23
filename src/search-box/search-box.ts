@@ -6,7 +6,7 @@ import BaseWidget from "../base-widget";
 import { NgISInstance } from "../instantsearch/instantsearch-instance";
 import { bem } from "../utils";
 
-const cx = bem("searchBox");
+const cx = bem("SearchBox");
 
 @Component({
   selector: "ngis-search-box",
