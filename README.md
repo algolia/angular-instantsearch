@@ -294,3 +294,35 @@ The `state` object contains:
 | `values`        | `{on?: boolean, off?: boolean}` | Value to filter on when unchecked. element (when using the default template). By default when switching to off, no refinement will be asked. So you will get both true and false results. If you set the off value to false then you will get only objects having false has a value for the selected attribute
 | `header?` | `string`                              | Displays text before widget
 | `footer?` | `string`                              | Displays text after widget
+
+---
+
+##### `<ngis-infinite-hits></ngis-infinite-hits>`
+
+> Displays a list of hits.
+
+| Props            | Type     | Description
+| -                | -        | -
+| `showMoreLabel?` | `string` | Label used on the show more button.
+| `header?`        | `string` | Displays text before widget
+| `footer?`        | `string` | Displays text after widget
+
+You can use the directive `<ng-template></ng-template>` to customize the output:
+
+```ts
+@Component({
+  selector: 'my-app',
+  template: `
+    <ngis-infinite-hits>
+      <ng-template let-hits="state.hits">
+        <ul>
+          <li *ngFor="let hit of hits">
+            {{hit.name}}
+          </li>
+        </ul>
+      </ng-template>
+    </ngis-infinite-hits>
+  `
+})
+export class AppComponent {}
+```

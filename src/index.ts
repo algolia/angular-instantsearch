@@ -6,6 +6,7 @@ import { ModuleWithProviders, NgModule } from "@angular/core";
 import { NgISClearAllModule } from "./clear-all/clear-all.module";
 import { NgISHitsPerPageSelectorModule } from "./hits-per-page-selector/hits-per-page-selector.module";
 import { NgISHitsModule } from "./hits/hits.module";
+import { NgISInfiniteHitsModule } from "./infinite-hits/infinite-hits.module";
 import { NgISInstantSearchModule } from "./instantsearch/instantsearch.module";
 import { NgISMenuModule } from "./menu/menu.module";
 import { NgISNumericRefinementListModule } from "./numeric-refinement-list/numeric-refinement-list.module";
@@ -30,7 +31,8 @@ const NGIS_MODULES = [
   NgISNumericSelectorModule,
   NgISNumericRefinementListModule,
   NgISStatsModule,
-  NgISToggleModule
+  NgISToggleModule,
+  NgISInfiniteHitsModule
 ];
 
 @NgModule({
