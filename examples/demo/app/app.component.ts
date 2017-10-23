@@ -28,6 +28,7 @@ import { Component } from "@angular/core";
         [options]="numericSelectorOptions"
       >
       </ngis-numeric-selector>
+      <ngis-stats></ngis-stats>
     </ngis-instantsearch>
   `
 })
