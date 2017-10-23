@@ -33,6 +33,7 @@ import { Component } from "@angular/core";
         label="Free Shipping (toggle single value)"
       >
       </ngis-toggle>
+      <ngis-price-ranges attributeName="price"></ngis-price-ranges>
       <ngis-current-refined-values></ngis-current-refined-values>
       <ngis-stats></ngis-stats>
     </ngis-instantsearch>
