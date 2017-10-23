@@ -338,8 +338,8 @@ export class AppComponent {}
 >
 > This widget is usually in the top part of the search UI.
 
-| Props            | Type     | Description
-| -                | -        | -
+| Props            | Type                            | Description
+| -                | -                               | -
 | `attributes?`    | `{name: string, label: string}` | Label definitions for the different filters
 | `onlyListedAttributes?` | `boolean` | Only use the declared attributes. By default, the widget displays the refinements for the whole search state. If true, the list of `attributes` in attributes is used
 | `clearAll?`      | `"before" / "after" / boolean`  | Defines the clear all button position. By default, it is placed before the set of current filters. If the value is false, the button won’t be added in the widget
@@ -347,3 +347,17 @@ export class AppComponent {}
 | `clearAllLabel?` | `string`                        | Label used on the clear all button.
 | `header?`        | `string`                        | Displays text before widget
 | `footer?`        | `string`                        | Displays text after widget
+
+---
+
+##### `<ngis-price-ranges></ngis-price-ranges>`
+
+> Price ranges widget lets the user choose from of a set of predefined ranges. The ranges are displayed in a list.
+
+| Props            | Type       | Description
+| -                | -          | -
+| `attributeName`  | `string`   | Name of the attribute for faceting
+| `currency`       | `string`   | The currency to display
+| `formatLabel`    | `function` | Function that takes an item as argument and return a string to display
+| `header?`        | `string`   | Displays text before widget
+| `footer?`        | `string`   | Displays text after widget
