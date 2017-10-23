@@ -3,10 +3,7 @@ import { NgModule } from "@angular/core";
 
 import { NgISFooterModule } from "../footer/footer.module";
 import { NgISHeaderModule } from "../header/header.module";
-
 import { NgISHitsPerPageSelector } from "./hits-per-page-selector";
-
-export { NgISHitsPerPageSelector } from "./hits-per-page-selector";
 
 @NgModule({
   declarations: [NgISHitsPerPageSelector],

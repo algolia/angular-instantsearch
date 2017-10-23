@@ -4,9 +4,6 @@ import { ModuleWithProviders, NgModule } from "@angular/core";
 import { NgISInstantSearch } from "./instantsearch";
 import { NgISInstance } from "./instantsearch-instance";
 
-export { NgISInstantSearch } from "./instantsearch";
-export { NgISInstance } from "./instantsearch-instance";
-
 @NgModule({
   declarations: [NgISInstantSearch],
   entryComponents: [NgISInstantSearch],

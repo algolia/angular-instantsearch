@@ -3,10 +3,7 @@ import { NgModule } from "@angular/core";
 
 import { NgISFooterModule } from "../footer/footer.module";
 import { NgISHeaderModule } from "../header/header.module";
-
 import { NgISNumericSelector } from "./numeric-selector";
-
-export { NgISNumericSelector } from "./numeric-selector";
 
 @NgModule({
   declarations: [NgISNumericSelector],

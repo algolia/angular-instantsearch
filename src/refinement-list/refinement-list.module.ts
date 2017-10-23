@@ -3,10 +3,7 @@ import { NgModule } from "@angular/core";
 
 import { NgISFooterModule } from "../footer/footer.module";
 import { NgISHeaderModule } from "../header/header.module";
-
 import { NgISRefinementList } from "./refinement-list";
-
-export { NgISRefinementList } from "./refinement-list";
 
 @NgModule({
   declarations: [NgISRefinementList],
