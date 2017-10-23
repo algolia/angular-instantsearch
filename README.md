@@ -186,3 +186,15 @@ export class AppComponent {}
 | `sortBy?`        | `Array<string>/function` | How to sort facet values
 | `header?`        | `string`                 | Displays text before widget
 | `footer?`        | `string`                 | Displays text after widget
+
+---
+
+##### `<ngis-hits-per-page-selector></ngis-hits-per-page-selector>`
+
+> The HitsPerPageSelector widget displays a dropdown menu to let the user change the number of displayed hits.
+
+| Props     | Type                                                  | Description
+| -         | -                                                     | -
+| `items`   | `{value: number, label: string, default?: boolean}[]` | List of available options
+| `header?` | `string`                                              | Displays text before widget
+| `footer?` | `string`                                              | Displays text after widget
