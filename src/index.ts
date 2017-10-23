@@ -11,23 +11,7 @@ import { NgISMenuModule } from "./menu/menu.module";
 import { NgISPaginationModule } from "./pagination/pagination.module";
 import { NgISRefinementListModule } from "./refinement-list/refinement-list.module";
 import { NgISSearchBoxModule } from "./search-box/search-box.module";
-
-// Re-Export
-export {
-  NgISInstantSearchModule,
-  NgISInstance,
-  NgISInstantSearch
-} from "./instantsearch/instantsearch.module";
-export { NgISHits } from "./hits/hits.module";
-export {
-  NgISHitsPerPageSelector
-} from "./hits-per-page-selector/hits-per-page-selector.module";
-export { NgISSearchBoxModule } from "./search-box/search-box.module";
-export { NgISClearAllModule } from "./clear-all/clear-all.module";
-export { NgISMenuModule } from "./menu/menu.module";
-export {
-  NgISRefinementListModule
-} from "./refinement-list/refinement-list.module";
+import { NgISSortBySelectorModule } from "./sort-by-selector/sort-by-selector.module";
 
 const NGIS_MODULES = [
   NgISInstantSearchModule,
@@ -37,7 +21,8 @@ const NGIS_MODULES = [
   NgISMenuModule,
   NgISPaginationModule,
   NgISRefinementListModule,
-  NgISHitsPerPageSelectorModule
+  NgISHitsPerPageSelectorModule,
+  NgISSortBySelectorModule
 ];
 
 @NgModule({
