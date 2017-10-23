@@ -11,6 +11,11 @@ import { Component } from "@angular/core";
       <ngis-clear-all></ngis-clear-all>
       <ngis-hits></ngis-hits>
       <ngis-pagination></ngis-pagination>
+      <ngis-numeric-refinement-list
+        attributeName="price"
+        [options]="numericRefinementListOptions"
+      >
+      </ngis-numeric-refinement-list>
       <ngis-menu
         attributeName="categories"
         limit="{{5}}"
@@ -51,5 +56,13 @@ export class AppComponent {
     { label: "Top 10", value: 9991 },
     { label: "Top 100", value: 9901 },
     { label: "Top 500", value: 9501 }
+  ];
+
+  public numericRefinementListOptions = [
+    { name: "All" },
+    { end: 4, name: "less than 4" },
+    { start: 4, end: 4, name: "4" },
+    { start: 5, end: 10, name: "between 5 and 10" },
+    { start: 10, name: "more than 10" }
   ];
 }
