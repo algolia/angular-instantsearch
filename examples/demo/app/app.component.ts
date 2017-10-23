@@ -1,5 +1,4 @@
 import { Component } from "@angular/core";
-import { NgISInstance } from "angular-instantsearch";
 
 @Component({
   selector: "ngis-app",
@@ -7,6 +6,7 @@ import { NgISInstance } from "angular-instantsearch";
     <ngis-instantsearch [config]="config">
       <h1>Angular InstantSearch demo</h1>
       <ngis-hits-per-page-selector [items]="items"></ngis-hits-per-page-selector>
+      <ngis-sort-by-selector [indices]="indices"></ngis-sort-by-selector>
       <ngis-search-box></ngis-search-box>
       <ngis-clear-all></ngis-clear-all>
       <ngis-hits></ngis-hits>
@@ -32,5 +32,11 @@ export class AppComponent {
     { value: 10, label: "10 hits per page", default: true },
     { value: 20, label: "20 hits per page" },
     { value: 30, label: "30 hits per page" }
+  ];
+
+  public indices = [
+    { name: "instant_search", label: "Most relevant" },
+    { name: "instant_search_price_asc", label: "Lowest price" },
+    { name: "instant_search_price_desc", label: "Highest price" }
   ];
 }
