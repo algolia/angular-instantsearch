@@ -28,6 +28,11 @@ import { Component } from "@angular/core";
         [options]="numericSelectorOptions"
       >
       </ngis-numeric-selector>
+      <ngis-toggle
+        attributeName="free_shipping"
+        label="Free Shipping (toggle single value)"
+      >
+      </ngis-toggle>
       <ngis-stats></ngis-stats>
     </ngis-instantsearch>
   `
