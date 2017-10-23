@@ -15,6 +15,7 @@ import { NgISInstance } from "angular-instantsearch";
         limit="{{5}}"
         showMoreLimit="{{10}}"
       ></ngis-menu>
+      <ngis-refinement-list attributeName="brand" limit="10"></ngis-refinement-list>
     </ngis-instantsearch>
   `
 })
