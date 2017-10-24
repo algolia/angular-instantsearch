@@ -40,6 +40,7 @@ import { Component } from "@angular/core";
         rootPath="Cameras & Camcorders"
         [attributes]="hierarchicalMenuAttributes">
       </ngis-hierarchical-menu>
+      <ngis-star-rating attributeName="rating"></ngis-star-rating>
     </ngis-instantsearch>
   `
 })
