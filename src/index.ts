@@ -18,6 +18,7 @@ import { NgISPriceRangesModule } from "./price-ranges/price-ranges.module";
 import { NgISRefinementListModule } from "./refinement-list/refinement-list.module";
 import { NgISSearchBoxModule } from "./search-box/search-box.module";
 import { NgISSortBySelectorModule } from "./sort-by-selector/sort-by-selector.module";
+import { NgISStarRatingModule } from "./star-rating/star-rating.module";
 import { NgISStatsModule } from "./stats/stats.module";
 import { NgISToggleModule } from "./toggle/toggle.module";
 
@@ -38,7 +39,8 @@ const NGIS_MODULES = [
   NgISInfiniteHitsModule,
   NgISCurrentRefinedValuesModule,
   NgISPriceRangesModule,
-  NgISHierarchicalMenuModule
+  NgISHierarchicalMenuModule,
+  NgISStarRatingModule
 ];
 
 @NgModule({

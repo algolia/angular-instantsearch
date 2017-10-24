@@ -380,3 +380,17 @@ export class AppComponent {}
 | `sortBy?`          | `Array<string>/function` | How to sort facet values
 | `header?`          | `string`                 | Displays text before widget
 | `footer?`          | `string`                 | Displays text after widget
+
+---
+
+##### `<ngis-star-rating></ngis-star-rating>`
+
+> Star rating is used for displaying grade like filters. The values are normalized within boundaries.
+
+| Props            | Type       | Description
+| -                | -          | -
+| `attributeName`  | `string`   | Name of the attribute for faceting
+| `andUpLabel?`    | `string`   | Label to display after the stars
+| `max?`           | `number`   | The maximum rating value
+| `header?`        | `string`   | Displays text before widget
+| `footer?`        | `string`   | Displays text after widget
