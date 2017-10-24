@@ -5,6 +5,7 @@ import { ModuleWithProviders, NgModule } from "@angular/core";
 // Modules
 import { NgISClearAllModule } from "./clear-all/clear-all.module";
 import { NgISCurrentRefinedValuesModule } from "./current-refined-values/current-refined-values.module";
+import { NgISHierarchicalMenuModule } from "./hierarchical-menu/hierarchical-menu.module";
 import { NgISHitsPerPageSelectorModule } from "./hits-per-page-selector/hits-per-page-selector.module";
 import { NgISHitsModule } from "./hits/hits.module";
 import { NgISInfiniteHitsModule } from "./infinite-hits/infinite-hits.module";
@@ -36,7 +37,8 @@ const NGIS_MODULES = [
   NgISToggleModule,
   NgISInfiniteHitsModule,
   NgISCurrentRefinedValuesModule,
-  NgISPriceRangesModule
+  NgISPriceRangesModule,
+  NgISHierarchicalMenuModule
 ];
 
 @NgModule({
