@@ -36,6 +36,10 @@ import { Component } from "@angular/core";
       <ngis-price-ranges attributeName="price"></ngis-price-ranges>
       <ngis-current-refined-values></ngis-current-refined-values>
       <ngis-stats></ngis-stats>
+      <ngis-hierarchical-menu
+        rootPath="Cameras & Camcorders"
+        [attributes]="hierarchicalMenuAttributes">
+      </ngis-hierarchical-menu>
     </ngis-instantsearch>
   `
 })
@@ -72,5 +76,11 @@ export class AppComponent {
     { start: 4, end: 4, name: "4" },
     { start: 5, end: 10, name: "between 5 and 10" },
     { start: 10, name: "more than 10" }
+  ];
+
+  public hierarchicalMenuAttributes = [
+    "hierarchicalCategories.lvl0",
+    "hierarchicalCategories.lvl1",
+    "hierarchicalCategories.lvl2"
   ];
 }
