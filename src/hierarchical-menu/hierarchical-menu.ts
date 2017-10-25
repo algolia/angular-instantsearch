@@ -33,7 +33,7 @@ const cx = bem("HierarchicalMenu");
 export class NgISHierarchicalMenu extends BaseWidget {
   // connector options
   @Input() public attributes: string[];
-  @Input() public separator?: string = ">";
+  @Input() public separator?: string = " > ";
   @Input() public rootPath?: string;
   @Input() public showParentLevel?: boolean;
   @Input() public limit?: number | string = 10;
