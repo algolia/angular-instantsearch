@@ -12,7 +12,7 @@ const cx = bem("RangeSlider");
 @Component({
   selector: "ngis-range-slider",
   template: `
-    <div class='${cx()}' style="padding: 50px;">
+    <div class='${cx()}'>
       <ngis-header [header]="header" className="${cx("header")}"></ngis-header>
 
       <div class="${cx("body")}">
@@ -28,12 +28,13 @@ export class NgISRangeSlider extends BaseWidget {
 
   // render options
   @Input() public step: number | string = 1;
+  @Input() public pips: boolean = true;
 
   // connector options
   @Input() public attributeName: string;
   @Input() public min?: number | string;
   @Input() public max?: number | string;
-  @Input() public precision?: number | string;
+  @Input() public precision?: number | string = 2;
 
   public state = {
     range: { min: 0, max: 1 },
@@ -60,11 +61,25 @@ export class NgISRangeSlider extends BaseWidget {
 
   public updateState = (state, isFirstRendering) => {
     if (isFirstRendering) {
+      const pips =
+        this.pips === true || typeof this.pips === "undefined"
+          ? {
+              density: 3,
+              mode: "positions",
+              stepped: true,
+              values: [0, 50, 100]
+            }
+          : this.pips;
+
       // create slider
       const config = {
+        animate: false,
+        behaviour: "snap",
         connect: true,
+        pips,
         range: { min: 0, max: 1 },
         start: [0, 1],
+        step: this.step,
         tooltips: true
       };
 
@@ -87,14 +102,23 @@ export class NgISRangeSlider extends BaseWidget {
 
     // update the slider state
     const nextConfig = {
-      range: state.range,
-      start: state.start
+      range: {
+        max: Math.ceil(state.range.max),
+        min: Math.floor(state.range.min)
+      },
+      start: [
+        isFinite(state.start[0]) ? state.start[0] : Math.floor(state.range.min),
+        isFinite(state.start[1]) ? state.start[1] : Math.floor(state.range.max)
+      ]
     };
 
     this.slider.updateOptions(nextConfig);
   };
 
-  public handleChange = (values: string[] | number[]) => {
+  public handleChange = ([start, end]: string[] | number[]) => {
+    const { range: { min, max } } = this.state;
+    const values = [start < min ? min : start, end > max ? max : end];
+
     this.state.refine(values);
   };
 }
