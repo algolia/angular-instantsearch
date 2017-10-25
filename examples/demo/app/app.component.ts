@@ -16,6 +16,7 @@ import { Component } from "@angular/core";
         [options]="numericRefinementListOptions"
       >
       </ngis-numeric-refinement-list>
+      <ngis-range-slider attributeName="price"></ngis-range-slider>
       <ngis-menu
         attributeName="categories"
         limit="{{5}}"
