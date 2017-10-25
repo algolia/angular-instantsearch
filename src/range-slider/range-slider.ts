@@ -93,19 +93,25 @@ export class NgISRangeSlider extends BaseWidget {
         "change",
         this.handleChange
       );
-
-      return;
     }
 
-    // update state
+    // update component inner state
     this.state = state;
 
     // update the slider state
+    const { range: { min, max } } = state;
+    const isDisabled = min === max;
+
+    const range = isDisabled
+      ? { min, max: max + 0.0001 }
+      : {
+          max: Math.ceil(state.range.max),
+          min: Math.floor(state.range.min)
+        };
+
     const nextConfig = {
-      range: {
-        max: Math.ceil(state.range.max),
-        min: Math.floor(state.range.min)
-      },
+      disabled: isDisabled,
+      range,
       start: [
         isFinite(state.start[0]) ? state.start[0] : Math.floor(state.range.min),
         isFinite(state.start[1]) ? state.start[1] : Math.floor(state.range.max)
