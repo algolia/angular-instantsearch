@@ -1,5 +1,5 @@
 import { Component, Input, ViewChild } from "@angular/core";
-import { connectRangeSlider } from "instantsearch.js/es/connectors";
+import { connectRange } from "instantsearch.js/es/connectors";
 import { noop, omit } from "lodash";
 import * as noUiSlider from "nouislider";
 
@@ -27,8 +27,8 @@ export class NgISRangeSlider extends BaseWidget {
   @ViewChild("sliderContainer") public sliderContainer;
 
   // render options
-  @Input() public step: number | string = 1;
   @Input() public pips: boolean = true;
+  @Input() public tooltips: boolean = true;
 
   // connector options
   @Input() public attributeName: string;
@@ -44,12 +44,17 @@ export class NgISRangeSlider extends BaseWidget {
 
   private slider;
 
+  get step() {
+    // compute step from the precision value
+    return 1 / Math.pow(10, parseNumberInput(this.precision));
+  }
+
   constructor(searchInstance: NgISInstance) {
     super(searchInstance);
   }
 
   public ngOnInit() {
-    this.createWidget(connectRangeSlider, {
+    this.createWidget(connectRange, {
       attributeName: this.attributeName,
       max: parseNumberInput(this.max),
       min: parseNumberInput(this.min),
@@ -80,7 +85,10 @@ export class NgISRangeSlider extends BaseWidget {
         range: { min: 0, max: 1 },
         start: [0, 1],
         step: this.step,
-        tooltips: true
+        tooltips: this.tooltips && [
+          { to: this.formatTooltip },
+          { to: this.formatTooltip }
+        ]
       };
 
       this.slider = noUiSlider.create(
@@ -99,32 +107,19 @@ export class NgISRangeSlider extends BaseWidget {
     this.state = state;
 
     // update the slider state
-    const { range: { min, max } } = state;
-    const isDisabled = min === max;
+    const { range: { min, max }, start } = state;
 
-    const range = isDisabled
-      ? { min, max: max + 0.0001 }
-      : {
-          max: Math.ceil(state.range.max),
-          min: Math.floor(state.range.min)
-        };
+    const disabled = min === max;
+    const range = disabled ? { min, max: max + 0.0001 } : { min, max };
 
-    const nextConfig = {
-      disabled: isDisabled,
-      range,
-      start: [
-        isFinite(state.start[0]) ? state.start[0] : Math.floor(state.range.min),
-        isFinite(state.start[1]) ? state.start[1] : Math.floor(state.range.max)
-      ]
-    };
-
-    this.slider.updateOptions(nextConfig);
+    this.slider.updateOptions({ disabled, range, start });
   };
 
-  public handleChange = ([start, end]: string[] | number[]) => {
-    const { range: { min, max } } = this.state;
-    const values = [start < min ? min : start, end > max ? max : end];
-
+  public handleChange = (values: string[] | number[]) => {
     this.state.refine(values);
+  };
+
+  public formatTooltip = value => {
+    return value.toFixed(parseNumberInput(this.precision));
   };
 }
