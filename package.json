@@ -14,11 +14,9 @@
   "dependencies": {
     "@angular/common": "^4.4.5",
     "@angular/core": "^4.4.5",
-    "@angular/forms": "^4.4.6",
     "instantsearch.js": "^2.3.0-beta.2",
     "lodash": "^4.17.4",
-    "ng2-nouislider": "^1.7.3",
-    "nouislider": "^10.1.0"
+    "nouislider": "^10.0.0"
   },
   "devDependencies": {
     "@angular/compiler": "^4.4.5",

@@ -1,6 +1,7 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, ViewChild } from "@angular/core";
 import { connectRangeSlider } from "instantsearch.js/es/connectors";
-import { noop } from "lodash";
+import { noop, omit } from "lodash";
+import * as noUiSlider from "nouislider";
 
 import BaseWidget from "../base-widget";
 import { NgISInstance } from "../instantsearch/instantsearch-instance";
@@ -11,18 +12,11 @@ const cx = bem("RangeSlider");
 @Component({
   selector: "ngis-range-slider",
   template: `
-    <div class='${cx()}'>
+    <div class='${cx()}' style="padding: 50px;">
       <ngis-header [header]="header" className="${cx("header")}"></ngis-header>
 
       <div class="${cx("body")}">
-        <nouislider
-          [connect]="true"
-          [step]="step"
-          [min]="state.range.min"
-          [max]="state.range.max"
-          [(ngModel)]="currentValue"
-        >
-        </nouislider>
+        <div #sliderContainer></div>
       </div>
 
       <ngis-footer [footer]="footer" className="${cx("footer")}"></ngis-footer>
@@ -30,6 +24,8 @@ const cx = bem("RangeSlider");
   `
 })
 export class NgISRangeSlider extends BaseWidget {
+  @ViewChild("sliderContainer") public sliderContainer;
+
   // render options
   @Input() public step: number | string = 1;
 
@@ -40,12 +36,12 @@ export class NgISRangeSlider extends BaseWidget {
   @Input() public precision?: number | string;
 
   public state = {
-    range: { min: 0, max: 100 },
+    range: { min: 0, max: 1 },
     refine: noop,
-    start: [0, 100]
+    start: [0, 1]
   };
 
-  public currentValue = [0, 1];
+  private slider;
 
   constructor(searchInstance: NgISInstance) {
     super(searchInstance);
@@ -63,19 +59,42 @@ export class NgISRangeSlider extends BaseWidget {
   }
 
   public updateState = (state, isFirstRendering) => {
-    if (!isFirstRendering) {
-      this.state = state;
+    if (isFirstRendering) {
+      // create slider
+      const config = {
+        connect: true,
+        range: { min: 0, max: 1 },
+        start: [0, 1],
+        tooltips: true
+      };
 
-      const [start, end] = this.state.start;
-      const { min, max } = this.state.range;
+      this.slider = noUiSlider.create(
+        this.sliderContainer.nativeElement,
+        config
+      );
 
-      if (isFinite(start) && isFinite(end)) {
-        this.currentValue = [start, end];
-      }
+      // register listen events
+      this.sliderContainer.nativeElement.noUiSlider.on(
+        "change",
+        this.handleChange
+      );
 
-      if (!isFinite(start) || !isFinite(end)) {
-        this.currentValue = [min, max];
-      }
+      return;
     }
+
+    // update state
+    this.state = state;
+
+    // update the slider state
+    const nextConfig = {
+      range: state.range,
+      start: state.start
+    };
+
+    this.slider.updateOptions(nextConfig);
+  };
+
+  public handleChange = (values: string[] | number[]) => {
+    this.state.refine(values);
   };
 }
