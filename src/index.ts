@@ -15,6 +15,7 @@ import { NgISNumericRefinementListModule } from "./numeric-refinement-list/numer
 import { NgISNumericSelectorModule } from "./numeric-selector/numeric-selector.module";
 import { NgISPaginationModule } from "./pagination/pagination.module";
 import { NgISPriceRangesModule } from "./price-ranges/price-ranges.module";
+import { NgISRangeSliderModule } from "./range-slider/range-slider.module";
 import { NgISRefinementListModule } from "./refinement-list/refinement-list.module";
 import { NgISSearchBoxModule } from "./search-box/search-box.module";
 import { NgISSortBySelectorModule } from "./sort-by-selector/sort-by-selector.module";
@@ -40,7 +41,8 @@ const NGIS_MODULES = [
   NgISCurrentRefinedValuesModule,
   NgISPriceRangesModule,
   NgISHierarchicalMenuModule,
-  NgISStarRatingModule
+  NgISStarRatingModule,
+  NgISRangeSliderModule
 ];
 
 @NgModule({
