@@ -25,7 +25,7 @@ export default class BaseWidget implements OnInit, OnDestroy {
     this.searchInstance.removeWidget(this.widget);
   }
 
-  public updateState = (state, isFirstRendering) => {
+  public updateState = (state, isFirstRendering): Promise<void> | void => {
     if (isFirstRendering) {
       return Promise.resolve().then(() => {
         this.state = state;
