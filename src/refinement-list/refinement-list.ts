@@ -4,7 +4,7 @@ import { noop } from "lodash";
 
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
-import { bem } from "../utils";
+import { bem, parseNumberInput } from "../utils";
 
 const cx = bem("RefinementList");
 
@@ -82,19 +82,9 @@ export class NgAisRefinementList extends BaseWidget {
   }
 
   public ngOnInit() {
-    // limit & showMoreLimit can be interferred as string from props
-    // so we need to transform them back to number
-    const limit =
-      typeof this.limit === "string" ? parseInt(this.limit, 10) : this.limit;
-
-    const showMoreLimit =
-      typeof this.showMoreLimit === "string"
-        ? parseInt(this.showMoreLimit, 10)
-        : this.showMoreLimit;
-
     this.createWidget(connectRefinementList, {
-      limit,
-      showMoreLimit,
+      limit: parseNumberInput(this.limit),
+      showMoreLimit: parseNumberInput(this.showMoreLimit),
       attributeName: this.attributeName,
       sortBy: this.sortBy
     });

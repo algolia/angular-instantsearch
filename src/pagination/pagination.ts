@@ -4,7 +4,7 @@ import { noop, range } from "lodash";
 
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
-import { bem } from "../utils";
+import { bem, parseNumberInput } from "../utils";
 
 const cx = bem("Pagination");
 
@@ -76,10 +76,7 @@ export class NgAisPagination extends BaseWidget {
 
   public ngOnInit() {
     this.createWidget(connectPagination, {
-      maxPages:
-        typeof this.maxPages === "string"
-          ? parseInt(this.maxPages, 10)
-          : this.maxPages
+      maxPages: parseNumberInput(this.maxPages)
     });
     super.ngOnInit();
   }

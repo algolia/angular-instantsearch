@@ -4,7 +4,7 @@ import { noop } from "lodash";
 
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
-import { bem } from "../utils";
+import { bem, parseNumberInput } from "../utils";
 
 const cx = bem("HierarchicalMenu");
 
@@ -54,12 +54,8 @@ export class NgAisHierarchicalMenu extends BaseWidget {
   }
 
   public ngOnInit() {
-    // limit can be interferred as string from props
-    const limit =
-      typeof this.limit === "string" ? parseInt(this.limit, 10) : this.limit;
-
     this.createWidget(connectHierarchicalMenu, {
-      limit,
+      limit: parseNumberInput(this.limit),
       attributes: this.attributes,
       rootPath: this.rootPath,
       separator: this.separator,
