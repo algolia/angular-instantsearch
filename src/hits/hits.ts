@@ -2,7 +2,7 @@ import { Component, ContentChild, TemplateRef } from "@angular/core";
 
 import { connectHits } from "instantsearch.js/es/connectors";
 
-import BaseWidget from "../base-widget";
+import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 import { bem } from "../utils";
 
@@ -12,7 +12,9 @@ const cx = bem("Hits");
   selector: "ng-ais-hits",
   template: `
     <div class="${cx()}">
-      <ng-ais-header [header]="header" className="${cx("header")}"></ng-ais-header>
+      <ng-ais-header [header]="header" className="${cx(
+        "header"
+      )}"></ng-ais-header>
 
       <div class="${cx("body")}">
         <ng-container *ngTemplateOutlet="template; context: state"></ng-container>
@@ -30,7 +32,9 @@ const cx = bem("Hits");
         </div>
       </div>
 
-      <ng-ais-footer [footer]="footer" className=${cx("footer")}></ng-ais-footer>
+      <ng-ais-footer [footer]="footer" className=${cx(
+        "footer"
+      )}></ng-ais-footer>
     </div>
   `
 })

@@ -2,7 +2,7 @@ import { Component, ContentChild, Input, TemplateRef } from "@angular/core";
 import { connectInfiniteHits } from "instantsearch.js/es/connectors";
 import { noop } from "lodash";
 
-import BaseWidget from "../base-widget";
+import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 import { bem } from "../utils";
 
@@ -12,7 +12,9 @@ const cx = bem("InfiniteHits");
   selector: "ng-ais-infinite-hits",
   template: `
     <div class="${cx()}">
-      <ng-ais-header [header]="header" className="${cx("header")}"></ng-ais-header>
+      <ng-ais-header [header]="header" className="${cx(
+        "header"
+      )}"></ng-ais-header>
 
       <div class="${cx("body")}">
         <ng-container *ngTemplateOutlet="template; context: state"></ng-container>
@@ -37,7 +39,9 @@ const cx = bem("InfiniteHits");
         </button>
       </div>
 
-      <ng-ais-footer [footer]="footer" className=${cx("footer")}></ng-ais-footer>
+      <ng-ais-footer [footer]="footer" className=${cx(
+        "footer"
+      )}></ng-ais-footer>
     </div>
   `
 })

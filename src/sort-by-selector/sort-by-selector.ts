@@ -2,7 +2,7 @@ import { Component, Input } from "@angular/core";
 import { connectSortBySelector } from "instantsearch.js/es/connectors";
 import { noop } from "lodash";
 
-import BaseWidget from "../base-widget";
+import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 import { bem } from "../utils";
 
@@ -12,7 +12,9 @@ const cx = bem("SortBySelector");
   selector: "ng-ais-sort-by-selector",
   template: `
     <div class="${cx()}">
-      <ng-ais-header [header]="header" className="${cx("header")}"></ng-ais-header>
+      <ng-ais-header [header]="header" className="${cx(
+        "header"
+      )}"></ng-ais-header>
 
       <div class="${cx("body")}">
         <select
@@ -30,16 +32,18 @@ const cx = bem("SortBySelector");
         </select>
       </div>
 
-      <ng-ais-footer [footer]="footer" className="${cx("footer")}"></ng-ais-footer>
+      <ng-ais-footer [footer]="footer" className="${cx(
+        "footer"
+      )}"></ng-ais-footer>
     </div>
   `
 })
 export class NgAisSortBySelector extends BaseWidget {
   @Input()
-  public indices: Array<{
+  public indices: {
     name: string;
     label: string;
-  }>;
+  }[];
 
   public state = {
     currentRefinement: null,

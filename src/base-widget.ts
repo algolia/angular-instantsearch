@@ -3,7 +3,7 @@ import { noop } from "lodash";
 
 import { NgAisInstance } from "./instantsearch/instantsearch-instance";
 
-export default class BaseWidget implements OnInit, OnDestroy {
+export class BaseWidget implements OnInit, OnDestroy {
   // header footer
   @Input() public header?: string;
   @Input() public footer?: string;

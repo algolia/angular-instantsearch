@@ -2,7 +2,7 @@ import { Component, Input } from "@angular/core";
 import { connectPagination } from "instantsearch.js/es/connectors";
 import { noop, range } from "lodash";
 
-import BaseWidget from "../base-widget";
+import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 import { bem } from "../utils";
 

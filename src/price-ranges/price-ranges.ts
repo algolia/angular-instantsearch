@@ -2,7 +2,7 @@ import { Component, Input } from "@angular/core";
 import { connectPriceRanges } from "instantsearch.js/es/connectors";
 import { noop } from "lodash";
 
-import BaseWidget from "../base-widget";
+import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 import { bem } from "../utils";
 
@@ -12,7 +12,9 @@ const cx = bem("PriceRanges");
   selector: "ng-ais-price-ranges",
   template: `
     <div class="${cx()}">
-      <ng-ais-header [header]="header" className="${cx("header")}"></ng-ais-header>
+      <ng-ais-header [header]="header" className="${cx(
+        "header"
+      )}"></ng-ais-header>
 
       <div class="${cx("body")}">
         <ul class="${cx("list")}">
@@ -26,7 +28,9 @@ const cx = bem("PriceRanges");
         </ul>
       </div>
 
-      <ng-ais-footer [footer]="footer" className="${cx("footer")}"></ng-ais-footer>
+      <ng-ais-footer [footer]="footer" className="${cx(
+        "footer"
+      )}"></ng-ais-footer>
     </div>
   `
 })

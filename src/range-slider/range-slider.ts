@@ -3,7 +3,7 @@ import { connectRange } from "instantsearch.js/es/connectors";
 import { noop, omit } from "lodash";
 import * as noUiSlider from "nouislider";
 
-import BaseWidget from "../base-widget";
+import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 import { bem, parseNumberInput } from "../utils";
 
@@ -13,13 +13,17 @@ const cx = bem("RangeSlider");
   selector: "ng-ais-range-slider",
   template: `
     <div class='${cx()}'>
-      <ng-ais-header [header]="header" className="${cx("header")}"></ng-ais-header>
+      <ng-ais-header [header]="header" className="${cx(
+        "header"
+      )}"></ng-ais-header>
 
       <div class="${cx("body")}">
         <div #sliderContainer></div>
       </div>
 
-      <ng-ais-footer [footer]="footer" className="${cx("footer")}"></ng-ais-footer>
+      <ng-ais-footer [footer]="footer" className="${cx(
+        "footer"
+      )}"></ng-ais-footer>
     </div>
   `
 })
@@ -78,10 +82,10 @@ export class NgAisRangeSlider extends BaseWidget {
 
       // create slider
       const config = {
+        pips,
         animate: false,
         behaviour: "snap",
         connect: true,
-        pips,
         range: { min: 0, max: 1 },
         start: [0, 1],
         step: this.step,

@@ -1,7 +1,7 @@
 import { Component, ContentChild, TemplateRef } from "@angular/core";
 import { connectStats } from "instantsearch.js/es/connectors";
 
-import BaseWidget from "../base-widget";
+import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 import { bem } from "../utils";
 
@@ -11,7 +11,9 @@ const cx = bem("Stats");
   selector: "ng-ais-stats",
   template: `
     <div class="${cx()}">
-      <ng-ais-header [header]="header" className="${cx("header")}"></ng-ais-header>
+      <ng-ais-header [header]="header" className="${cx(
+        "header"
+      )}"></ng-ais-header>
 
       <ng-container
         class="${cx("body")}"
@@ -25,7 +27,9 @@ const cx = bem("Stats");
         {{state.nbHits}} results found in {{state.processingTimeMS}}ms.
       </div>
 
-      <ng-ais-footer [footer]="footer" className=${cx("footer")}></ng-ais-footer>
+      <ng-ais-footer [footer]="footer" className=${cx(
+        "footer"
+      )}></ng-ais-footer>
     </div>
   `
 })

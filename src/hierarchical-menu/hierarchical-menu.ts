@@ -2,7 +2,7 @@ import { Component, Input } from "@angular/core";
 import { connectHierarchicalMenu } from "instantsearch.js/es/connectors";
 import { noop } from "lodash";
 
-import BaseWidget from "../base-widget";
+import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 import { bem } from "../utils";
 
@@ -12,7 +12,9 @@ const cx = bem("HierarchicalMenu");
   selector: "ng-ais-hierarchical-menu",
   template: `
     <div class='${cx()}'>
-      <ng-ais-header [header]="header" className="${cx("header")}"></ng-ais-header>
+      <ng-ais-header [header]="header" className="${cx(
+        "header"
+      )}"></ng-ais-header>
 
       <div class="${cx("body")}">
         <ul class="${cx("list")} ${cx("list", "lvl0")}">
@@ -26,7 +28,9 @@ const cx = bem("HierarchicalMenu");
         </ul>
       </div>
 
-      <ng-ais-footer [footer]="footer" className="${cx("footer")}"></ng-ais-footer>
+      <ng-ais-footer [footer]="footer" className="${cx(
+        "footer"
+      )}"></ng-ais-footer>
     </div>
   `
 })
@@ -55,8 +59,8 @@ export class NgAisHierarchicalMenu extends BaseWidget {
       typeof this.limit === "string" ? parseInt(this.limit, 10) : this.limit;
 
     this.createWidget(connectHierarchicalMenu, {
-      attributes: this.attributes,
       limit,
+      attributes: this.attributes,
       rootPath: this.rootPath,
       separator: this.separator,
       showParentLevel: this.showParentLevel,

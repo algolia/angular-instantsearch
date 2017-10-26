@@ -2,7 +2,7 @@ import { Component, Input } from "@angular/core";
 import { connectSearchBox } from "instantsearch.js/es/connectors";
 import { noop } from "lodash";
 
-import BaseWidget from "../base-widget";
+import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 import { bem } from "../utils";
 
@@ -12,7 +12,9 @@ const cx = bem("SearchBox");
   selector: "ng-ais-search-box",
   template: `
     <div class="${cx()}">
-      <ng-ais-header [header]="header" className="${cx("header")}"></ng-ais-header>
+      <ng-ais-header [header]="header" className="${cx(
+        "header"
+      )}"></ng-ais-header>
 
       <div class="${cx("body")}">
         <form
@@ -69,7 +71,9 @@ const cx = bem("SearchBox");
         </form>
       </div>
 
-      <ng-ais-footer [footer]="footer" className="${cx("footer")}"></ng-ais-footer>
+      <ng-ais-footer [footer]="footer" className="${cx(
+        "footer"
+      )}"></ng-ais-footer>
     </div>
   `
 })
