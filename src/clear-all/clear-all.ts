@@ -20,7 +20,7 @@ const cx = bem("ClearAll");
         <button
           class="${cx("button")}"
           (click)="handleClick($event)"
-          disable="!state.hasRefinements"
+          [disabled]="!state.hasRefinements"
         >
           {{buttonLabel}}
         </button>
