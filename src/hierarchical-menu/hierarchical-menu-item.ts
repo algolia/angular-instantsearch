@@ -12,7 +12,7 @@ interface Item {
 }
 
 @Component({
-  selector: "ngis-hierarchical-menu-item",
+  selector: "ng-ais-hierarchical-menu-item",
   template: `
     <li
       [ngClass]="{
@@ -36,19 +36,19 @@ interface Item {
         class="{{cx('list')}} {{cx('list', 'lvl' + lvl)}}"
         *ngIf="item.isRefined && isArray(item.data) && item.data.length > 0"
       >
-        <ngis-hierarchical-menu-item
+        <ng-ais-hierarchical-menu-item
           *ngFor="let child of item.data"
           [item]="child"
           [createURL]="createURL"
           [refine]="refine"
           [lvl]="lvl + 1"
         >
-        </ngis-hierarchical-menu-item>
+        </ng-ais-hierarchical-menu-item>
       </ul>
     </li>
   `
 })
-export class NgISHierarchicalMenuItem {
+export class NgAisHierarchicalMenuItem {
   @Input() public lvl: number = 1;
   @Input() public refine: (value: string) => void;
   @Input() public createURL: () => string;

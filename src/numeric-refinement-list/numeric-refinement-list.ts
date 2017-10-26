@@ -3,16 +3,16 @@ import { connectNumericRefinementList } from "instantsearch.js/es/connectors";
 import { noop } from "lodash";
 
 import BaseWidget from "../base-widget";
-import { NgISInstance } from "../instantsearch/instantsearch-instance";
+import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 import { bem } from "../utils";
 
 const cx = bem("NumericRefinementList");
 
 @Component({
-  selector: "ngis-numeric-refinement-list",
+  selector: "ng-ais-numeric-refinement-list",
   template: `
     <div class="${cx()}">
-      <ngis-header [header]="header" className="${cx("header")}"></ngis-header>
+      <ng-ais-header [header]="header" className="${cx("header")}"></ng-ais-header>
 
       <div class="${cx("body")}">
         <ul class="${cx("list")}">
@@ -37,11 +37,11 @@ const cx = bem("NumericRefinementList");
         </ul>
       </div>
 
-      <ngis-footer [footer]="footer" className="${cx("footer")}"></ngis-footer>
+      <ng-ais-footer [footer]="footer" className="${cx("footer")}"></ng-ais-footer>
     </div>
   `
 })
-export class NgISNumericRefinementList extends BaseWidget {
+export class NgAisNumericRefinementList extends BaseWidget {
   @Input() public attributeName: string;
   @Input()
   public options: Array<{
@@ -56,7 +56,7 @@ export class NgISNumericRefinementList extends BaseWidget {
     refine: noop
   };
 
-  constructor(searchInstance: NgISInstance) {
+  constructor(searchInstance: NgAisInstance) {
     super(searchInstance);
   }
 

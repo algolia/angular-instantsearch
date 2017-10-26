@@ -1,14 +1,14 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 
-import { NgISFooterModule } from "../footer/footer.module";
-import { NgISHeaderModule } from "../header/header.module";
-import { NgISToggle } from "./toggle";
+import { NgAisFooterModule } from "../footer/footer.module";
+import { NgAisHeaderModule } from "../header/header.module";
+import { NgAisToggle } from "./toggle";
 
 @NgModule({
-  declarations: [NgISToggle],
-  entryComponents: [NgISToggle],
-  exports: [NgISToggle],
-  imports: [CommonModule, NgISHeaderModule, NgISFooterModule]
+  declarations: [NgAisToggle],
+  entryComponents: [NgAisToggle],
+  exports: [NgAisToggle],
+  imports: [CommonModule, NgAisHeaderModule, NgAisFooterModule]
 })
-export class NgISToggleModule {}
+export class NgAisToggleModule {}

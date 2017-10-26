@@ -3,16 +3,16 @@ import { connectSearchBox } from "instantsearch.js/es/connectors";
 import { noop } from "lodash";
 
 import BaseWidget from "../base-widget";
-import { NgISInstance } from "../instantsearch/instantsearch-instance";
+import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 import { bem } from "../utils";
 
 const cx = bem("SearchBox");
 
 @Component({
-  selector: "ngis-search-box",
+  selector: "ng-ais-search-box",
   template: `
     <div class="${cx()}">
-      <ngis-header [header]="header" className="${cx("header")}"></ngis-header>
+      <ng-ais-header [header]="header" className="${cx("header")}"></ng-ais-header>
 
       <div class="${cx("body")}">
         <form
@@ -69,11 +69,11 @@ const cx = bem("SearchBox");
         </form>
       </div>
 
-      <ngis-footer [footer]="footer" className="${cx("footer")}"></ngis-footer>
+      <ng-ais-footer [footer]="footer" className="${cx("footer")}"></ng-ais-footer>
     </div>
   `
 })
-export class NgISSearchBox extends BaseWidget {
+export class NgAisSearchBox extends BaseWidget {
   @Input() public placeholder: string = "Search";
   @Input() public submitTitle: string = "Submit";
   @Input() public resetTitle: string = "Reset";
@@ -84,7 +84,7 @@ export class NgISSearchBox extends BaseWidget {
     refine: noop
   };
 
-  constructor(searchInstance: NgISInstance) {
+  constructor(searchInstance: NgAisInstance) {
     super(searchInstance);
     this.createWidget(connectSearchBox);
   }

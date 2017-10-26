@@ -1,14 +1,14 @@
 import { Component, Input } from "@angular/core";
 
 @Component({
-  selector: "ngis-header",
+  selector: "ng-ais-header",
   template: `
     <div *ngIf="header" class="{{className}}">
       {{header}}
     </div>
   `
 })
-export class NgISHeader {
+export class NgAisHeader {
   @Input() public header?: string;
   @Input() public className: string;
 }

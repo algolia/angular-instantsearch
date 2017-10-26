@@ -3,16 +3,16 @@ import { connectToggle } from "instantsearch.js/es/connectors";
 import { noop } from "lodash";
 
 import BaseWidget from "../base-widget";
-import { NgISInstance } from "../instantsearch/instantsearch-instance";
+import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 import { bem } from "../utils";
 
 const cx = bem("Toggle");
 
 @Component({
-  selector: "ngis-toggle",
+  selector: "ng-ais-toggle",
   template: `
     <div class="${cx()}">
-      <ngis-header [header]="header" className="${cx("header")}"></ngis-header>
+      <ng-ais-header [header]="header" className="${cx("header")}"></ng-ais-header>
 
       <div class="${cx("body")}">
         <ul class="${cx("list")}">
@@ -35,11 +35,11 @@ const cx = bem("Toggle");
         </ul>
       </div>
 
-      <ngis-footer [footer]="footer" className=${cx("footer")}></ngis-footer>
+      <ng-ais-footer [footer]="footer" className=${cx("footer")}></ng-ais-footer>
     </div>
   `
 })
-export class NgISToggle extends BaseWidget {
+export class NgAisToggle extends BaseWidget {
   // connector options
   @Input() public attributeName: string;
   @Input() public label: string;
@@ -52,7 +52,7 @@ export class NgISToggle extends BaseWidget {
     value: {}
   };
 
-  constructor(searchInstance: NgISInstance) {
+  constructor(searchInstance: NgAisInstance) {
     super(searchInstance);
   }
 

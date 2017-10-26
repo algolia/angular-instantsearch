@@ -1,14 +1,14 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 
-import { NgISFooterModule } from "../footer/footer.module";
-import { NgISHeaderModule } from "../header/header.module";
-import { NgISCurrentRefinedValues } from "./current-refined-values";
+import { NgAisFooterModule } from "../footer/footer.module";
+import { NgAisHeaderModule } from "../header/header.module";
+import { NgAisCurrentRefinedValues } from "./current-refined-values";
 
 @NgModule({
-  declarations: [NgISCurrentRefinedValues],
-  entryComponents: [NgISCurrentRefinedValues],
-  exports: [NgISCurrentRefinedValues],
-  imports: [CommonModule, NgISHeaderModule, NgISFooterModule]
+  declarations: [NgAisCurrentRefinedValues],
+  entryComponents: [NgAisCurrentRefinedValues],
+  exports: [NgAisCurrentRefinedValues],
+  imports: [CommonModule, NgAisHeaderModule, NgAisFooterModule]
 })
-export class NgISCurrentRefinedValuesModule {}
+export class NgAisCurrentRefinedValuesModule {}

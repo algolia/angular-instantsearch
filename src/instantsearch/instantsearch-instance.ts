@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import instantsearch from "instantsearch.js/es";
 
 @Injectable()
-export class NgISInstance {
+export class NgAisInstance {
   private instance?: InstantSearchInstance;
 
   public init(config: InstantSearchConfig) {

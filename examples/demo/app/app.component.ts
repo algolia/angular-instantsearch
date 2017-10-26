@@ -1,52 +1,52 @@
 import { Component } from "@angular/core";
 
 @Component({
-  selector: "ngis-app",
+  selector: "ng-ais-app",
   template: `
-    <ngis-instantsearch [config]="config">
+    <ng-ais-instantsearch [config]="config">
       <h1>Angular InstantSearch demo</h1>
-      <ngis-hits-per-page-selector [items]="items"></ngis-hits-per-page-selector>
-      <ngis-sort-by-selector [indices]="indices"></ngis-sort-by-selector>
-      <ngis-search-box></ngis-search-box>
-      <ngis-clear-all></ngis-clear-all>
-      <ngis-breadcrumb
+      <ng-ais-hits-per-page-selector [items]="items"></ng-ais-hits-per-page-selector>
+      <ng-ais-sort-by-selector [indices]="indices"></ng-ais-sort-by-selector>
+      <ng-ais-search-box></ng-ais-search-box>
+      <ng-ais-clear-all></ng-ais-clear-all>
+      <ng-ais-breadcrumb
         [attributes]="hierarchicalMenuAttributes"
       >
-      </ngis-breadcrumb>
-      <ngis-hits></ngis-hits>
-      <ngis-pagination></ngis-pagination>
-      <ngis-numeric-refinement-list
+      </ng-ais-breadcrumb>
+      <ng-ais-hits></ng-ais-hits>
+      <ng-ais-pagination></ng-ais-pagination>
+      <ng-ais-numeric-refinement-list
         attributeName="price"
         [options]="numericRefinementListOptions"
       >
-      </ngis-numeric-refinement-list>
-      <ngis-range-slider attributeName="price"></ngis-range-slider>
-      <ngis-menu
+      </ng-ais-numeric-refinement-list>
+      <ng-ais-range-slider attributeName="price"></ng-ais-range-slider>
+      <ng-ais-menu
         attributeName="categories"
         limit="{{5}}"
         showMoreLimit="{{10}}"
-      ></ngis-menu>
-      <ngis-refinement-list attributeName="brand" limit="10"></ngis-refinement-list>
-      <ngis-numeric-selector
+      ></ng-ais-menu>
+      <ng-ais-refinement-list attributeName="brand" limit="10"></ng-ais-refinement-list>
+      <ng-ais-numeric-selector
         attributeName="popularity"
         operator=">="
         [options]="numericSelectorOptions"
       >
-      </ngis-numeric-selector>
-      <ngis-toggle
+      </ng-ais-numeric-selector>
+      <ng-ais-toggle
         attributeName="free_shipping"
         label="Free Shipping (toggle single value)"
       >
-      </ngis-toggle>
-      <ngis-price-ranges attributeName="price"></ngis-price-ranges>
-      <ngis-current-refined-values></ngis-current-refined-values>
-      <ngis-stats></ngis-stats>
-      <ngis-hierarchical-menu
+      </ng-ais-toggle>
+      <ng-ais-price-ranges attributeName="price"></ng-ais-price-ranges>
+      <ng-ais-current-refined-values></ng-ais-current-refined-values>
+      <ng-ais-stats></ng-ais-stats>
+      <ng-ais-hierarchical-menu
         rootPath="Cameras & Camcorders"
         [attributes]="hierarchicalMenuAttributes">
-      </ngis-hierarchical-menu>
-      <ngis-star-rating attributeName="rating"></ngis-star-rating>
-    </ngis-instantsearch>
+      </ng-ais-hierarchical-menu>
+      <ng-ais-star-rating attributeName="rating"></ng-ais-star-rating>
+    </ng-ais-instantsearch>
   `
 })
 export class AppComponent {

@@ -3,16 +3,16 @@ import { Component, ContentChild, TemplateRef } from "@angular/core";
 import { connectHits } from "instantsearch.js/es/connectors";
 
 import BaseWidget from "../base-widget";
-import { NgISInstance } from "../instantsearch/instantsearch-instance";
+import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 import { bem } from "../utils";
 
 const cx = bem("Hits");
 
 @Component({
-  selector: "ngis-hits",
+  selector: "ng-ais-hits",
   template: `
     <div class="${cx()}">
-      <ngis-header [header]="header" className="${cx("header")}"></ngis-header>
+      <ng-ais-header [header]="header" className="${cx("header")}"></ng-ais-header>
 
       <div class="${cx("body")}">
         <ng-container *ngTemplateOutlet="template; context: state"></ng-container>
@@ -30,17 +30,17 @@ const cx = bem("Hits");
         </div>
       </div>
 
-      <ngis-footer [footer]="footer" className=${cx("footer")}></ngis-footer>
+      <ng-ais-footer [footer]="footer" className=${cx("footer")}></ng-ais-footer>
     </div>
   `
 })
-export class NgISHits extends BaseWidget {
+export class NgAisHits extends BaseWidget {
   @ContentChild(TemplateRef) public template;
 
   // inner widget state returned from connector
   public state = { hits: [] };
 
-  constructor(searchInstance: NgISInstance) {
+  constructor(searchInstance: NgAisInstance) {
     super(searchInstance);
     this.createWidget(connectHits);
   }

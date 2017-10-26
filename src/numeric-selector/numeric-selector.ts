@@ -3,16 +3,16 @@ import { connectNumericSelector } from "instantsearch.js/es/connectors";
 import { noop } from "lodash";
 
 import BaseWidget from "../base-widget";
-import { NgISInstance } from "../instantsearch/instantsearch-instance";
+import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 import { bem } from "../utils";
 
 const cx = bem("NumericSelector");
 
 @Component({
-  selector: "ngis-numeric-selector",
+  selector: "ng-ais-numeric-selector",
   template: `
     <div class="${cx()}">
-      <ngis-header [header]="header" className="${cx("header")}"></ngis-header>
+      <ng-ais-header [header]="header" className="${cx("header")}"></ng-ais-header>
 
       <div class="${cx("body")}">
         <select
@@ -30,11 +30,11 @@ const cx = bem("NumericSelector");
         </select>
       </div>
 
-      <ngis-footer [footer]="footer" className="${cx("footer")}"></ngis-footer>
+      <ng-ais-footer [footer]="footer" className="${cx("footer")}"></ng-ais-footer>
     </div>
   `
 })
-export class NgISNumericSelector extends BaseWidget {
+export class NgAisNumericSelector extends BaseWidget {
   // connector options
   @Input() public attributeName: string;
   @Input() public operator: "<" | "<=" | "=" | ">=" | ">" | "!=" = "=";
@@ -50,7 +50,7 @@ export class NgISNumericSelector extends BaseWidget {
     refine: noop
   };
 
-  constructor(searchInstance: NgISInstance) {
+  constructor(searchInstance: NgAisInstance) {
     super(searchInstance);
   }
 

@@ -3,16 +3,16 @@ import { connectCurrentRefinedValues } from "instantsearch.js/es/connectors";
 import { noop } from "lodash";
 
 import BaseWidget from "../base-widget";
-import { NgISInstance } from "../instantsearch/instantsearch-instance";
+import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 import { bem } from "../utils";
 
 const cx = bem("CurrentRefinedValues");
 
 @Component({
-  selector: "ngis-current-refined-values",
+  selector: "ng-ais-current-refined-values",
   template: `
     <div class="${cx()}">
-      <ngis-header [header]="header" className="${cx("header")}"></ngis-header>
+      <ng-ais-header [header]="header" className="${cx("header")}"></ng-ais-header>
 
       <div class="${cx("body")}">
         <button
@@ -43,11 +43,11 @@ const cx = bem("CurrentRefinedValues");
         </button>
       </div>
 
-      <ngis-footer [footer]="footer" className=${cx("footer")}></ngis-footer>
+      <ng-ais-footer [footer]="footer" className=${cx("footer")}></ng-ais-footer>
     </div>
   `
 })
-export class NgISCurrentRefinedValues extends BaseWidget {
+export class NgAisCurrentRefinedValues extends BaseWidget {
   // render options
   @Input() public clearAll: "before" | "after" | boolean = "before";
   @Input() public clearAllLabel: string = "Clear all";
@@ -70,7 +70,7 @@ export class NgISCurrentRefinedValues extends BaseWidget {
     refinements: []
   };
 
-  constructor(searchInstance: NgISInstance) {
+  constructor(searchInstance: NgAisInstance) {
     super(searchInstance);
   }
 

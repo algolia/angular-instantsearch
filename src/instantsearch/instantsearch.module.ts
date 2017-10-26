@@ -1,20 +1,20 @@
 import { CommonModule } from "@angular/common";
 import { ModuleWithProviders, NgModule } from "@angular/core";
 
-import { NgISInstantSearch } from "./instantsearch";
-import { NgISInstance } from "./instantsearch-instance";
+import { NgAisInstantSearch } from "./instantsearch";
+import { NgAisInstance } from "./instantsearch-instance";
 
 @NgModule({
-  declarations: [NgISInstantSearch],
-  entryComponents: [NgISInstantSearch],
-  exports: [NgISInstantSearch],
+  declarations: [NgAisInstantSearch],
+  entryComponents: [NgAisInstantSearch],
+  exports: [NgAisInstantSearch],
   imports: [CommonModule]
 })
-export class NgISInstantSearchModule {
+export class NgAisInstantSearchModule {
   public static forRoot(): ModuleWithProviders {
     return {
-      ngModule: NgISInstantSearchModule,
-      providers: [NgISInstance]
+      ngModule: NgAisInstantSearchModule,
+      providers: [NgAisInstance]
     };
   }
 }

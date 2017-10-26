@@ -3,16 +3,16 @@ import { connectHitsPerPage } from "instantsearch.js/es/connectors";
 import { noop } from "lodash";
 
 import BaseWidget from "../base-widget";
-import { NgISInstance } from "../instantsearch/instantsearch-instance";
+import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 import { bem } from "../utils";
 
 const cx = bem("HitsPerPageSelector");
 
 @Component({
-  selector: "ngis-hits-per-page-selector",
+  selector: "ng-ais-hits-per-page-selector",
   template: `
     <div class="${cx()}">
-      <ngis-header [header]="header" className="${cx("header")}"></ngis-header>
+      <ng-ais-header [header]="header" className="${cx("header")}"></ng-ais-header>
 
       <div class="${cx("body")}">
         <select
@@ -30,11 +30,11 @@ const cx = bem("HitsPerPageSelector");
         </select>
       </div>
 
-      <ngis-footer [footer]="footer" className="${cx("footer")}"></ngis-footer>
+      <ng-ais-footer [footer]="footer" className="${cx("footer")}"></ng-ais-footer>
     </div>
   `
 })
-export class NgISHitsPerPageSelector extends BaseWidget {
+export class NgAisHitsPerPageSelector extends BaseWidget {
   @Input()
   public items: Array<{
     value: number;
@@ -47,7 +47,7 @@ export class NgISHitsPerPageSelector extends BaseWidget {
     refine: noop
   };
 
-  constructor(searchInstance: NgISInstance) {
+  constructor(searchInstance: NgAisInstance) {
     super(searchInstance);
   }
 

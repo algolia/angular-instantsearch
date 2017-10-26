@@ -14,7 +14,7 @@ First install `angular-instantsearch` via npm:
 Once installed you need to import our main module into your Angular application:
 
 ```ts
-import { NgISModule } from 'angular-instantsearch';
+import { NgAisModule } from 'angular-instantsearch';
 ```
 
 The only remaining part is to list the imported module in your root module and in any additional application modules that make use of `angular-instantsearch`.
@@ -24,31 +24,31 @@ The exact method will be slightly different the root (top-level) module because 
 * For your application root module:
 
 ```ts
-import { NgISModule } from 'angular-instantsearch';
+import { NgAisModule } from 'angular-instantsearch';
 
 @NgModule({
   declarations: [AppComponent, ...],
-  imports: [NgISModule.forRoot(), ...],
+  imports: [NgAisModule.forRoot(), ...],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
 ```
 
-* Other modules in your application can simply import `NgISModule`:
+* Other modules in your application can simply import `NgAisModule`:
 
 ```ts
-import { NgISModule } from 'angular-instantsearch';
+import { NgAisModule } from 'angular-instantsearch';
 
 @NgModule({
   declarations: [OtherComponent, ...],
-  imports: [NgISModule, ...]
+  imports: [NgAisModule, ...]
 })
 export class OtherModule {}
 ```
 
 ### Widgets
 
-##### `<ngis-instantsearch></ngis-instantsearch>`
+##### `<ng-ais-instantsearch></ng-ais-instantsearch>`
 
 > Is the root component of all Angular InstantSearch implementations.
 
@@ -62,10 +62,10 @@ Example:
 
 ```ts
 @Component({
-  selector: 'ngis-app',
+  selector: 'ng-ais-app',
   template: `
-    <ngis-instantsearch [config]='config'>
-    </ngis-instantsearch>
+    <ng-ais-instantsearch [config]='config'>
+    </ng-ais-instantsearch>
   `
 })
 export class AppComponent {
@@ -79,7 +79,7 @@ export class AppComponent {
 
 ---
 
-##### `<ngis-search-box></ngis-search-box>`
+##### `<ng-ais-search-box></ng-ais-search-box>`
 
 > The SearchBox component displays a search box that lets the user search for a specific query.
 
@@ -92,7 +92,7 @@ export class AppComponent {
 
 ---
 
-##### `<ngis-hits></ngis-hits>`
+##### `<ng-ais-hits></ng-ais-hits>`
 
 > Displays a list of hits.
 
@@ -107,7 +107,7 @@ You can use the directive `<ng-template></ng-template>` to customize the output:
 @Component({
   selector: 'my-app',
   template: `
-    <ngis-hits>
+    <ng-ais-hits>
       <ng-template let-hits="state.hits">
         <ul>
           <li *ngFor="let hit of hits">
@@ -115,7 +115,7 @@ You can use the directive `<ng-template></ng-template>` to customize the output:
           </li>
         </ul>
       </ng-template>
-    </ngis-hits>
+    </ng-ais-hits>
   `
 })
 export class AppComponent {}
@@ -123,7 +123,7 @@ export class AppComponent {}
 
 ---
 
-##### `<ngis-clear-all></ngis-clear-all>`
+##### `<ng-ais-clear-all></ng-ais-clear-all>`
 
 > The ClearAll widget displays a button that lets the user clean every refinement applied to the search.
 
@@ -136,7 +136,7 @@ export class AppComponent {}
 
 ---
 
-##### `<ngis-menu></ngis-menu>`
+##### `<ng-ais-menu></ng-ais-menu>`
 
 > The Menu component displays a menu that lets the user choose a single value for a specific attribute.
 
@@ -154,7 +154,7 @@ export class AppComponent {}
 
 ---
 
-##### `<ngis-pagination></ngis-pagination>`
+##### `<ng-ais-pagination></ng-ais-pagination>`
 
 > The Pagination widget displays a simple pagination system allowing the user to change the current page.
 
@@ -171,7 +171,7 @@ export class AppComponent {}
 
 ---
 
-##### `<ngis-refinement-list></ngis-refinement-list>`
+##### `<ng-ais-refinement-list></ng-ais-refinement-list>`
 
 > The RefinementList component displays a list that let the end user choose multiple values for a specific facet.
 
@@ -189,7 +189,7 @@ export class AppComponent {}
 
 ---
 
-##### `<ngis-hits-per-page-selector></ngis-hits-per-page-selector>`
+##### `<ng-ais-hits-per-page-selector></ng-ais-hits-per-page-selector>`
 
 > The HitsPerPageSelector widget displays a dropdown menu to let the user change the number of displayed hits.
 
@@ -201,7 +201,7 @@ export class AppComponent {}
 
 ---
 
-##### `<ngis-sort-by-selector></ngis-sort-by-selector>`
+##### `<ng-ais-sort-by-selector></ng-ais-sort-by-selector>`
 
 > The SortBySelector component displays a list of indexes allowing a user to change the hits are sorting.
 
@@ -213,7 +213,7 @@ export class AppComponent {}
 
 ---
 
-##### `<ngis-numeric-selector></ngis-numeric-selector>`
+##### `<ng-ais-numeric-selector></ng-ais-numeric-selector>`
 
 > The NumericSelector component lets the user choose between numerical refinements from a dropdown menu.
 
@@ -227,7 +227,7 @@ export class AppComponent {}
 
 ---
 
-##### `<ngis-numeric-refinement-list></ngis-numeric-refinement-list>`
+##### `<ng-ais-numeric-refinement-list></ng-ais-numeric-refinement-list>`
 
 > The NumericRefinementList is a component that displays a list of numeric filters in a list. Those numeric filters are pre-configured with creating the widget.
 
@@ -241,7 +241,7 @@ export class AppComponent {}
 
 ---
 
-##### `<ngis-stats></ngis-stats>`
+##### `<ng-ais-stats></ng-ais-stats>`
 
 > The Stats component displays the total number of matching hits and the time it took to get them (time spent in the Algolia server).
 
@@ -256,11 +256,11 @@ You can use the directive `<ng-template></ng-template>` to customize the output:
 @Component({
   selector: 'my-app',
   template: `
-    <ngis-stats>
+    <ng-ais-stats>
       <ng-template let-state="state">
         {{stats.nbHits}} results found in {{stats.processingTimeMS}}ms.
       </ng-template>
-    </ngis-stats>
+    </ng-ais-stats>
   `
 })
 export class AppComponent {}
@@ -278,7 +278,7 @@ The `state` object contains:
 
 ---
 
-##### `<ngis-toggle></ngis-toggle>`
+##### `<ng-ais-toggle></ng-ais-toggle>`
 
 > The toggle widget lets the user either:
 >
@@ -297,7 +297,7 @@ The `state` object contains:
 
 ---
 
-##### `<ngis-infinite-hits></ngis-infinite-hits>`
+##### `<ng-ais-infinite-hits></ng-ais-infinite-hits>`
 
 > Displays a list of hits.
 
@@ -313,7 +313,7 @@ You can use the directive `<ng-template></ng-template>` to customize the output:
 @Component({
   selector: 'my-app',
   template: `
-    <ngis-infinite-hits>
+    <ng-ais-infinite-hits>
       <ng-template let-hits="state.hits">
         <ul>
           <li *ngFor="let hit of hits">
@@ -321,7 +321,7 @@ You can use the directive `<ng-template></ng-template>` to customize the output:
           </li>
         </ul>
       </ng-template>
-    </ngis-infinite-hits>
+    </ng-ais-infinite-hits>
   `
 })
 export class AppComponent {}
@@ -329,7 +329,7 @@ export class AppComponent {}
 
 ---
 
-##### `<ngis-current-refined-values></ngis-current-refined-values>`
+##### `<ng-ais-current-refined-values></ng-ais-current-refined-values>`
 
 > The current refined values widget has two purposes:
 >
@@ -350,7 +350,7 @@ export class AppComponent {}
 
 ---
 
-##### `<ngis-price-ranges></ngis-price-ranges>`
+##### `<ng-ais-price-ranges></ng-ais-price-ranges>`
 
 > Price ranges widget lets the user choose from of a set of predefined ranges. The ranges are displayed in a list.
 
@@ -364,7 +364,7 @@ export class AppComponent {}
 
 ---
 
-##### `<ngis-hierarchical-menu></ngis-hierarchical-menu>`
+##### `<ng-ais-hierarchical-menu></ng-ais-hierarchical-menu>`
 
 > The hierarchical menu widget is used to create a navigation based on a hierarchy of facet attributes.
 >
@@ -383,7 +383,7 @@ export class AppComponent {}
 
 ---
 
-##### `<ngis-star-rating></ngis-star-rating>`
+##### `<ng-ais-star-rating></ng-ais-star-rating>`
 
 > Star rating is used for displaying grade like filters. The values are normalized within boundaries.
 
@@ -397,7 +397,7 @@ export class AppComponent {}
 
 ---
 
-##### `<ngis-range-slider></ngis-range-slider>`
+##### `<ng-ais-range-slider></ng-ais-range-slider>`
 
 | Props            | Type       | Description
 | -                | -          | -
@@ -411,7 +411,7 @@ export class AppComponent {}
 
 ---
 
-##### `<ngis-breadcrumb></ngis-breadcrumb>`
+##### `<ng-ais-breadcrumb></ng-ais-breadcrumb>`
 
 | Props              | Type       | Description
 | -                  | -          | -

@@ -3,16 +3,16 @@ import { connectClearAll } from "instantsearch.js/es/connectors";
 import { noop } from "lodash";
 
 import BaseWidget from "../base-widget";
-import { NgISInstance } from "../instantsearch/instantsearch-instance";
+import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 import { bem } from "../utils";
 
 const cx = bem("ClearAll");
 
 @Component({
-  selector: "ngis-clear-all",
+  selector: "ng-ais-clear-all",
   template: `
     <div class="${cx()}">
-      <ngis-header [header]="header" className="${cx("header")}"></ngis-header>
+      <ng-ais-header [header]="header" className="${cx("header")}"></ng-ais-header>
 
       <div class="${cx("body")}">
         <button
@@ -24,18 +24,18 @@ const cx = bem("ClearAll");
         </button>
       </div>
 
-      <ngis-footer [footer]="footer" className="${cx("footer")}"></ngis-footer>
+      <ng-ais-footer [footer]="footer" className="${cx("footer")}"></ng-ais-footer>
     </div>
   `
 })
-export class NgISClearAll extends BaseWidget {
+export class NgAisClearAll extends BaseWidget {
   @Input() public buttonLabel: string = "Clear all";
   @Input() public clearsQuery: boolean = false;
   @Input() public excludeAttributes: string[] = [];
 
   public state = { hasRefinements: false, refine: noop };
 
-  constructor(searchInstance: NgISInstance) {
+  constructor(searchInstance: NgAisInstance) {
     super(searchInstance);
   }
 

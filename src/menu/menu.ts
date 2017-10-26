@@ -3,16 +3,16 @@ import { connectMenu } from "instantsearch.js/es/connectors";
 import { noop } from "lodash";
 
 import BaseWidget from "../base-widget";
-import { NgISInstance } from "../instantsearch/instantsearch-instance";
+import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 import { bem } from "../utils";
 
 const cx = bem("Menu");
 
 @Component({
-  selector: "ngis-menu",
+  selector: "ng-ais-menu",
   template: `
     <div class='${cx()}'>
-      <ngis-header [header]="header" className="${cx("header")}"></ngis-header>
+      <ng-ais-header [header]="header" className="${cx("header")}"></ng-ais-header>
 
       <div class="${cx("body")}">
         <ul class="${cx("list")}">
@@ -36,11 +36,11 @@ const cx = bem("Menu");
         </button>
       </div>
 
-      <ngis-footer [footer]="footer" className="${cx("footer")}"></ngis-footer>
+      <ng-ais-footer [footer]="footer" className="${cx("footer")}"></ng-ais-footer>
     </div>
   `
 })
-export class NgISMenu extends BaseWidget {
+export class NgAisMenu extends BaseWidget {
   // render options
   @Input() public showMoreLabel: string = "Show more";
   @Input() public showLessLabel: string = "Show less";
@@ -61,7 +61,7 @@ export class NgISMenu extends BaseWidget {
     toggleShowMore: noop
   };
 
-  constructor(searchInstance: NgISInstance) {
+  constructor(searchInstance: NgAisInstance) {
     super(searchInstance);
   }
 

@@ -1,14 +1,14 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 
-import { NgISFooterModule } from "../footer/footer.module";
-import { NgISHeaderModule } from "../header/header.module";
-import { NgISInfiniteHits } from "./infinite-hits";
+import { NgAisFooterModule } from "../footer/footer.module";
+import { NgAisHeaderModule } from "../header/header.module";
+import { NgAisInfiniteHits } from "./infinite-hits";
 
 @NgModule({
-  declarations: [NgISInfiniteHits],
-  entryComponents: [NgISInfiniteHits],
-  exports: [NgISInfiniteHits],
-  imports: [CommonModule, NgISHeaderModule, NgISFooterModule]
+  declarations: [NgAisInfiniteHits],
+  entryComponents: [NgAisInfiniteHits],
+  exports: [NgAisInfiniteHits],
+  imports: [CommonModule, NgAisHeaderModule, NgAisFooterModule]
 })
-export class NgISInfiniteHitsModule {}
+export class NgAisInfiniteHitsModule {}

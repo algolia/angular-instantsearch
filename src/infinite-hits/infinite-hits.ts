@@ -3,16 +3,16 @@ import { connectInfiniteHits } from "instantsearch.js/es/connectors";
 import { noop } from "lodash";
 
 import BaseWidget from "../base-widget";
-import { NgISInstance } from "../instantsearch/instantsearch-instance";
+import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 import { bem } from "../utils";
 
 const cx = bem("InfiniteHits");
 
 @Component({
-  selector: "ngis-infinite-hits",
+  selector: "ng-ais-infinite-hits",
   template: `
     <div class="${cx()}">
-      <ngis-header [header]="header" className="${cx("header")}"></ngis-header>
+      <ng-ais-header [header]="header" className="${cx("header")}"></ng-ais-header>
 
       <div class="${cx("body")}">
         <ng-container *ngTemplateOutlet="template; context: state"></ng-container>
@@ -37,11 +37,11 @@ const cx = bem("InfiniteHits");
         </button>
       </div>
 
-      <ngis-footer [footer]="footer" className=${cx("footer")}></ngis-footer>
+      <ng-ais-footer [footer]="footer" className=${cx("footer")}></ng-ais-footer>
     </div>
   `
 })
-export class NgISInfiniteHits extends BaseWidget {
+export class NgAisInfiniteHits extends BaseWidget {
   @ContentChild(TemplateRef) public template;
   @Input() public showMoreLabel: string = "Show more results";
 
@@ -52,7 +52,7 @@ export class NgISInfiniteHits extends BaseWidget {
     showMore: noop
   };
 
-  constructor(searchInstance: NgISInstance) {
+  constructor(searchInstance: NgAisInstance) {
     super(searchInstance);
     this.createWidget(connectInfiniteHits);
   }

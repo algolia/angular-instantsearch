@@ -1,14 +1,14 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 
-import { NgISFooterModule } from "../footer/footer.module";
-import { NgISHeaderModule } from "../header/header.module";
-import { NgISStats } from "./stats";
+import { NgAisFooterModule } from "../footer/footer.module";
+import { NgAisHeaderModule } from "../header/header.module";
+import { NgAisStats } from "./stats";
 
 @NgModule({
-  declarations: [NgISStats],
-  entryComponents: [NgISStats],
-  exports: [NgISStats],
-  imports: [CommonModule, NgISHeaderModule, NgISFooterModule]
+  declarations: [NgAisStats],
+  entryComponents: [NgAisStats],
+  exports: [NgAisStats],
+  imports: [CommonModule, NgAisHeaderModule, NgAisFooterModule]
 })
-export class NgISStatsModule {}
+export class NgAisStatsModule {}

@@ -1,13 +1,13 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 
-import { NgISFooter } from "./footer";
-export { NgISFooter } from "./footer";
+import { NgAisFooter } from "./footer";
+export { NgAisFooter } from "./footer";
 
 @NgModule({
-  declarations: [NgISFooter],
-  entryComponents: [NgISFooter],
-  exports: [NgISFooter],
+  declarations: [NgAisFooter],
+  entryComponents: [NgAisFooter],
+  exports: [NgAisFooter],
   imports: [CommonModule]
 })
-export class NgISFooterModule {}
+export class NgAisFooterModule {}

@@ -3,16 +3,16 @@ import { connectBreadcrumb } from "instantsearch.js/es/connectors";
 import { noop } from "lodash";
 
 import BaseWidget from "../base-widget";
-import { NgISInstance } from "../instantsearch/instantsearch-instance";
+import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 import { bem } from "../utils";
 
 const cx = bem("Breadcrumb");
 
 @Component({
-  selector: "ngis-breadcrumb",
+  selector: "ng-ais-breadcrumb",
   template: `
     <div class='${cx()}'>
-      <ngis-header [header]="header" className="${cx("header")}"></ngis-header>
+      <ng-ais-header [header]="header" className="${cx("header")}"></ng-ais-header>
 
       <div class="${cx("body")}">
         <ul class="${cx("list")}">
@@ -35,11 +35,11 @@ const cx = bem("Breadcrumb");
         </ul>
       </div>
 
-      <ngis-footer [footer]="footer" className="${cx("footer")}"></ngis-footer>
+      <ng-ais-footer [footer]="footer" className="${cx("footer")}"></ng-ais-footer>
     </div>
   `
 })
-export class NgISBreadcrumb extends BaseWidget {
+export class NgAisBreadcrumb extends BaseWidget {
   // connector options
   @Input() public attributes: string[];
   @Input() public rootPath?: string;
@@ -60,7 +60,7 @@ export class NgISBreadcrumb extends BaseWidget {
     refine: noop
   };
 
-  constructor(searchInstance: NgISInstance) {
+  constructor(searchInstance: NgAisInstance) {
     super(searchInstance);
   }
 

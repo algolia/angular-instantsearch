@@ -3,16 +3,16 @@ import { connectPagination } from "instantsearch.js/es/connectors";
 import { noop, range } from "lodash";
 
 import BaseWidget from "../base-widget";
-import { NgISInstance } from "../instantsearch/instantsearch-instance";
+import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 import { bem } from "../utils";
 
 const cx = bem("Pagination");
 
 @Component({
-  selector: "ngis-pagination",
+  selector: "ng-ais-pagination",
   templateUrl: "./pagination.html"
 })
-export class NgISPagination extends BaseWidget {
+export class NgAisPagination extends BaseWidget {
   // render options
   @Input() public showFirst: boolean = true;
   @Input() public showLast: boolean = false;
@@ -70,7 +70,7 @@ export class NgISPagination extends BaseWidget {
     return pagesArray;
   }
 
-  constructor(searchInstance: NgISInstance) {
+  constructor(searchInstance: NgAisInstance) {
     super(searchInstance);
   }
 

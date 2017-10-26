@@ -1,14 +1,14 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 
-import { NgISFooterModule } from "../footer/footer.module";
-import { NgISHeaderModule } from "../header/header.module";
-import { NgISHitsPerPageSelector } from "./hits-per-page-selector";
+import { NgAisFooterModule } from "../footer/footer.module";
+import { NgAisHeaderModule } from "../header/header.module";
+import { NgAisHitsPerPageSelector } from "./hits-per-page-selector";
 
 @NgModule({
-  declarations: [NgISHitsPerPageSelector],
-  entryComponents: [NgISHitsPerPageSelector],
-  exports: [NgISHitsPerPageSelector],
-  imports: [CommonModule, NgISHeaderModule, NgISFooterModule]
+  declarations: [NgAisHitsPerPageSelector],
+  entryComponents: [NgAisHitsPerPageSelector],
+  exports: [NgAisHitsPerPageSelector],
+  imports: [CommonModule, NgAisHeaderModule, NgAisFooterModule]
 })
-export class NgISHitsPerPageSelectorModule {}
+export class NgAisHitsPerPageSelectorModule {}

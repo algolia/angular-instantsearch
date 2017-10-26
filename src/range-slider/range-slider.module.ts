@@ -1,14 +1,14 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 
-import { NgISFooterModule } from "../footer/footer.module";
-import { NgISHeaderModule } from "../header/header.module";
-import { NgISRangeSlider } from "./range-slider";
+import { NgAisFooterModule } from "../footer/footer.module";
+import { NgAisHeaderModule } from "../header/header.module";
+import { NgAisRangeSlider } from "./range-slider";
 
 @NgModule({
-  declarations: [NgISRangeSlider],
-  entryComponents: [NgISRangeSlider],
-  exports: [NgISRangeSlider],
-  imports: [CommonModule, NgISHeaderModule, NgISFooterModule]
+  declarations: [NgAisRangeSlider],
+  entryComponents: [NgAisRangeSlider],
+  exports: [NgAisRangeSlider],
+  imports: [CommonModule, NgAisHeaderModule, NgAisFooterModule]
 })
-export class NgISRangeSliderModule {}
+export class NgAisRangeSliderModule {}

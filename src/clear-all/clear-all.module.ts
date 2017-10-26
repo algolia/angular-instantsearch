@@ -1,14 +1,14 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 
-import { NgISFooterModule } from "../footer/footer.module";
-import { NgISHeaderModule } from "../header/header.module";
-import { NgISClearAll } from "./clear-all";
+import { NgAisFooterModule } from "../footer/footer.module";
+import { NgAisHeaderModule } from "../header/header.module";
+import { NgAisClearAll } from "./clear-all";
 
 @NgModule({
-  declarations: [NgISClearAll],
-  entryComponents: [NgISClearAll],
-  exports: [NgISClearAll],
-  imports: [CommonModule, NgISHeaderModule, NgISFooterModule]
+  declarations: [NgAisClearAll],
+  entryComponents: [NgAisClearAll],
+  exports: [NgAisClearAll],
+  imports: [CommonModule, NgAisHeaderModule, NgAisFooterModule]
 })
-export class NgISClearAllModule {}
+export class NgAisClearAllModule {}

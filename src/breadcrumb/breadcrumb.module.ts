@@ -1,14 +1,14 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 
-import { NgISFooterModule } from "../footer/footer.module";
-import { NgISHeaderModule } from "../header/header.module";
-import { NgISBreadcrumb } from "./breadcrumb";
+import { NgAisFooterModule } from "../footer/footer.module";
+import { NgAisHeaderModule } from "../header/header.module";
+import { NgAisBreadcrumb } from "./breadcrumb";
 
 @NgModule({
-  declarations: [NgISBreadcrumb],
-  entryComponents: [NgISBreadcrumb],
-  exports: [NgISBreadcrumb],
-  imports: [CommonModule, NgISHeaderModule, NgISFooterModule]
+  declarations: [NgAisBreadcrumb],
+  entryComponents: [NgAisBreadcrumb],
+  exports: [NgAisBreadcrumb],
+  imports: [CommonModule, NgAisHeaderModule, NgAisFooterModule]
 })
-export class NgISBreadcrumbModule {}
+export class NgAisBreadcrumbModule {}

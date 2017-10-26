@@ -3,59 +3,59 @@
 import { ModuleWithProviders, NgModule } from "@angular/core";
 
 // Modules
-import { NgISBreadcrumbModule } from "./breadcrumb/breadcrumb.module";
-import { NgISClearAllModule } from "./clear-all/clear-all.module";
-import { NgISCurrentRefinedValuesModule } from "./current-refined-values/current-refined-values.module";
-import { NgISHierarchicalMenuModule } from "./hierarchical-menu/hierarchical-menu.module";
-import { NgISHitsPerPageSelectorModule } from "./hits-per-page-selector/hits-per-page-selector.module";
-import { NgISHitsModule } from "./hits/hits.module";
-import { NgISInfiniteHitsModule } from "./infinite-hits/infinite-hits.module";
-import { NgISInstantSearchModule } from "./instantsearch/instantsearch.module";
-import { NgISMenuModule } from "./menu/menu.module";
-import { NgISNumericRefinementListModule } from "./numeric-refinement-list/numeric-refinement-list.module";
-import { NgISNumericSelectorModule } from "./numeric-selector/numeric-selector.module";
-import { NgISPaginationModule } from "./pagination/pagination.module";
-import { NgISPriceRangesModule } from "./price-ranges/price-ranges.module";
-import { NgISRangeSliderModule } from "./range-slider/range-slider.module";
-import { NgISRefinementListModule } from "./refinement-list/refinement-list.module";
-import { NgISSearchBoxModule } from "./search-box/search-box.module";
-import { NgISSortBySelectorModule } from "./sort-by-selector/sort-by-selector.module";
-import { NgISStarRatingModule } from "./star-rating/star-rating.module";
-import { NgISStatsModule } from "./stats/stats.module";
-import { NgISToggleModule } from "./toggle/toggle.module";
+import { NgAisBreadcrumbModule } from "./breadcrumb/breadcrumb.module";
+import { NgAisClearAllModule } from "./clear-all/clear-all.module";
+import { NgAisCurrentRefinedValuesModule } from "./current-refined-values/current-refined-values.module";
+import { NgAisHierarchicalMenuModule } from "./hierarchical-menu/hierarchical-menu.module";
+import { NgAisHitsPerPageSelectorModule } from "./hits-per-page-selector/hits-per-page-selector.module";
+import { NgAisHitsModule } from "./hits/hits.module";
+import { NgAisInfiniteHitsModule } from "./infinite-hits/infinite-hits.module";
+import { NgAisInstantSearchModule } from "./instantsearch/instantsearch.module";
+import { NgAisMenuModule } from "./menu/menu.module";
+import { NgAisNumericRefinementListModule } from "./numeric-refinement-list/numeric-refinement-list.module";
+import { NgAisNumericSelectorModule } from "./numeric-selector/numeric-selector.module";
+import { NgAisPaginationModule } from "./pagination/pagination.module";
+import { NgAisPriceRangesModule } from "./price-ranges/price-ranges.module";
+import { NgAisRangeSliderModule } from "./range-slider/range-slider.module";
+import { NgAisRefinementListModule } from "./refinement-list/refinement-list.module";
+import { NgAisSearchBoxModule } from "./search-box/search-box.module";
+import { NgAisSortBySelectorModule } from "./sort-by-selector/sort-by-selector.module";
+import { NgAisStarRatingModule } from "./star-rating/star-rating.module";
+import { NgAisStatsModule } from "./stats/stats.module";
+import { NgAisToggleModule } from "./toggle/toggle.module";
 
 const NGIS_MODULES = [
-  NgISInstantSearchModule,
-  NgISHitsModule,
-  NgISSearchBoxModule,
-  NgISClearAllModule,
-  NgISMenuModule,
-  NgISPaginationModule,
-  NgISRefinementListModule,
-  NgISHitsPerPageSelectorModule,
-  NgISSortBySelectorModule,
-  NgISNumericSelectorModule,
-  NgISNumericRefinementListModule,
-  NgISStatsModule,
-  NgISToggleModule,
-  NgISInfiniteHitsModule,
-  NgISCurrentRefinedValuesModule,
-  NgISPriceRangesModule,
-  NgISHierarchicalMenuModule,
-  NgISStarRatingModule,
-  NgISRangeSliderModule,
-  NgISBreadcrumbModule
+  NgAisInstantSearchModule,
+  NgAisHitsModule,
+  NgAisSearchBoxModule,
+  NgAisClearAllModule,
+  NgAisMenuModule,
+  NgAisPaginationModule,
+  NgAisRefinementListModule,
+  NgAisHitsPerPageSelectorModule,
+  NgAisSortBySelectorModule,
+  NgAisNumericSelectorModule,
+  NgAisNumericRefinementListModule,
+  NgAisStatsModule,
+  NgAisToggleModule,
+  NgAisInfiniteHitsModule,
+  NgAisCurrentRefinedValuesModule,
+  NgAisPriceRangesModule,
+  NgAisHierarchicalMenuModule,
+  NgAisStarRatingModule,
+  NgAisRangeSliderModule,
+  NgAisBreadcrumbModule
 ];
 
 @NgModule({
   exports: NGIS_MODULES,
-  imports: [NgISInstantSearchModule.forRoot()]
+  imports: [NgAisInstantSearchModule.forRoot()]
 })
-export class NgISRootModule {}
+export class NgAisRootModule {}
 
 @NgModule({ imports: NGIS_MODULES, exports: NGIS_MODULES })
-export class NgISModule {
+export class NgAisModule {
   public static forRoot(): ModuleWithProviders {
-    return { ngModule: NgISRootModule };
+    return { ngModule: NgAisRootModule };
   }
 }

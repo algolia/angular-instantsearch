@@ -3,16 +3,16 @@ import { connectStarRating } from "instantsearch.js/es/connectors";
 import { noop } from "lodash";
 
 import BaseWidget from "../base-widget";
-import { NgISInstance } from "../instantsearch/instantsearch-instance";
+import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 import { bem } from "../utils";
 
 const cx = bem("StarRating");
 
 @Component({
-  selector: "ngis-star-rating",
+  selector: "ng-ais-star-rating",
   template: `
     <div class="${cx()}">
-      <ngis-header [header]="header" className="${cx("header")}"></ngis-header>
+      <ng-ais-header [header]="header" className="${cx("header")}"></ng-ais-header>
 
       <div class="${cx("body")}">
         <svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
@@ -76,11 +76,11 @@ const cx = bem("StarRating");
         </ul>
       </div>
 
-      <ngis-footer [footer]="footer" className="${cx("footer")}"></ngis-footer>
+      <ng-ais-footer [footer]="footer" className="${cx("footer")}"></ng-ais-footer>
     </div>
   `
 })
-export class NgISStarRating extends BaseWidget {
+export class NgAisStarRating extends BaseWidget {
   // render options
   @Input() public andUpLabel: string = "& Up";
 
@@ -95,7 +95,7 @@ export class NgISStarRating extends BaseWidget {
     refine: noop
   };
 
-  constructor(searchInstance: NgISInstance) {
+  constructor(searchInstance: NgAisInstance) {
     super(searchInstance);
   }
 

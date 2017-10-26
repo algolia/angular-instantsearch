@@ -4,26 +4,26 @@ import { noop, omit } from "lodash";
 import * as noUiSlider from "nouislider";
 
 import BaseWidget from "../base-widget";
-import { NgISInstance } from "../instantsearch/instantsearch-instance";
+import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 import { bem, parseNumberInput } from "../utils";
 
 const cx = bem("RangeSlider");
 
 @Component({
-  selector: "ngis-range-slider",
+  selector: "ng-ais-range-slider",
   template: `
     <div class='${cx()}'>
-      <ngis-header [header]="header" className="${cx("header")}"></ngis-header>
+      <ng-ais-header [header]="header" className="${cx("header")}"></ng-ais-header>
 
       <div class="${cx("body")}">
         <div #sliderContainer></div>
       </div>
 
-      <ngis-footer [footer]="footer" className="${cx("footer")}"></ngis-footer>
+      <ng-ais-footer [footer]="footer" className="${cx("footer")}"></ng-ais-footer>
     </div>
   `
 })
-export class NgISRangeSlider extends BaseWidget {
+export class NgAisRangeSlider extends BaseWidget {
   @ViewChild("sliderContainer") public sliderContainer;
 
   // render options
@@ -49,7 +49,7 @@ export class NgISRangeSlider extends BaseWidget {
     return 1 / Math.pow(10, parseNumberInput(this.precision));
   }
 
-  constructor(searchInstance: NgISInstance) {
+  constructor(searchInstance: NgAisInstance) {
     super(searchInstance);
   }
 

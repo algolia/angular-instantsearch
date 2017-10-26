@@ -3,34 +3,34 @@ import { connectHierarchicalMenu } from "instantsearch.js/es/connectors";
 import { noop } from "lodash";
 
 import BaseWidget from "../base-widget";
-import { NgISInstance } from "../instantsearch/instantsearch-instance";
+import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 import { bem } from "../utils";
 
 const cx = bem("HierarchicalMenu");
 
 @Component({
-  selector: "ngis-hierarchical-menu",
+  selector: "ng-ais-hierarchical-menu",
   template: `
     <div class='${cx()}'>
-      <ngis-header [header]="header" className="${cx("header")}"></ngis-header>
+      <ng-ais-header [header]="header" className="${cx("header")}"></ng-ais-header>
 
       <div class="${cx("body")}">
         <ul class="${cx("list")} ${cx("list", "lvl0")}">
-          <ngis-hierarchical-menu-item
+          <ng-ais-hierarchical-menu-item
             *ngFor="let item of state.items"
             [item]="item"
             [createURL]="state.createURL"
             [refine]="state.refine"
           >
-          </ngis-hierarchical-menu-item>
+          </ng-ais-hierarchical-menu-item>
         </ul>
       </div>
 
-      <ngis-footer [footer]="footer" className="${cx("footer")}"></ngis-footer>
+      <ng-ais-footer [footer]="footer" className="${cx("footer")}"></ng-ais-footer>
     </div>
   `
 })
-export class NgISHierarchicalMenu extends BaseWidget {
+export class NgAisHierarchicalMenu extends BaseWidget {
   // connector options
   @Input() public attributes: string[];
   @Input() public separator?: string = " > ";
@@ -45,7 +45,7 @@ export class NgISHierarchicalMenu extends BaseWidget {
     refine: noop
   };
 
-  constructor(searchInstance: NgISInstance) {
+  constructor(searchInstance: NgAisInstance) {
     super(searchInstance);
   }
 

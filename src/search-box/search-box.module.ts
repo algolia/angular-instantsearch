@@ -1,14 +1,14 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 
-import { NgISFooterModule } from "../footer/footer.module";
-import { NgISHeaderModule } from "../header/header.module";
-import { NgISSearchBox } from "./search-box";
+import { NgAisFooterModule } from "../footer/footer.module";
+import { NgAisHeaderModule } from "../header/header.module";
+import { NgAisSearchBox } from "./search-box";
 
 @NgModule({
-  declarations: [NgISSearchBox],
-  entryComponents: [NgISSearchBox],
-  exports: [NgISSearchBox],
-  imports: [CommonModule, NgISHeaderModule, NgISFooterModule]
+  declarations: [NgAisSearchBox],
+  entryComponents: [NgAisSearchBox],
+  exports: [NgAisSearchBox],
+  imports: [CommonModule, NgAisHeaderModule, NgAisFooterModule]
 })
-export class NgISSearchBoxModule {}
+export class NgAisSearchBoxModule {}

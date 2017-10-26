@@ -1,7 +1,7 @@
 import { Input, OnDestroy, OnInit } from "@angular/core";
 import { noop } from "lodash";
 
-import { NgISInstance } from "./instantsearch/instantsearch-instance";
+import { NgAisInstance } from "./instantsearch/instantsearch-instance";
 
 export default class BaseWidget implements OnInit, OnDestroy {
   // header footer
@@ -11,7 +11,7 @@ export default class BaseWidget implements OnInit, OnDestroy {
   public widget?: Widget;
   public state?: object;
 
-  constructor(private searchInstance: NgISInstance) {}
+  constructor(private searchInstance: NgAisInstance) {}
 
   public createWidget(connector: Connector, options: object = {}) {
     this.widget = connector(this.updateState, noop)(options);

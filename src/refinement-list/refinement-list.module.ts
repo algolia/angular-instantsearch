@@ -1,14 +1,14 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 
-import { NgISFooterModule } from "../footer/footer.module";
-import { NgISHeaderModule } from "../header/header.module";
-import { NgISRefinementList } from "./refinement-list";
+import { NgAisFooterModule } from "../footer/footer.module";
+import { NgAisHeaderModule } from "../header/header.module";
+import { NgAisRefinementList } from "./refinement-list";
 
 @NgModule({
-  declarations: [NgISRefinementList],
-  entryComponents: [NgISRefinementList],
-  exports: [NgISRefinementList],
-  imports: [CommonModule, NgISHeaderModule, NgISFooterModule]
+  declarations: [NgAisRefinementList],
+  entryComponents: [NgAisRefinementList],
+  exports: [NgAisRefinementList],
+  imports: [CommonModule, NgAisHeaderModule, NgAisFooterModule]
 })
-export class NgISRefinementListModule {}
+export class NgAisRefinementListModule {}

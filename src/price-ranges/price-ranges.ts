@@ -3,16 +3,16 @@ import { connectPriceRanges } from "instantsearch.js/es/connectors";
 import { noop } from "lodash";
 
 import BaseWidget from "../base-widget";
-import { NgISInstance } from "../instantsearch/instantsearch-instance";
+import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 import { bem } from "../utils";
 
 const cx = bem("PriceRanges");
 
 @Component({
-  selector: "ngis-price-ranges",
+  selector: "ng-ais-price-ranges",
   template: `
     <div class="${cx()}">
-      <ngis-header [header]="header" className="${cx("header")}"></ngis-header>
+      <ng-ais-header [header]="header" className="${cx("header")}"></ng-ais-header>
 
       <div class="${cx("body")}">
         <ul class="${cx("list")}">
@@ -26,11 +26,11 @@ const cx = bem("PriceRanges");
         </ul>
       </div>
 
-      <ngis-footer [footer]="footer" className="${cx("footer")}"></ngis-footer>
+      <ng-ais-footer [footer]="footer" className="${cx("footer")}"></ng-ais-footer>
     </div>
   `
 })
-export class NgISPriceRanges extends BaseWidget {
+export class NgAisPriceRanges extends BaseWidget {
   // render options
   @Input() public currency: string = "$";
   @Input() public formatLabel = this.defaultFormatLabel;
@@ -43,7 +43,7 @@ export class NgISPriceRanges extends BaseWidget {
     refine: noop
   };
 
-  constructor(searchInstance: NgISInstance) {
+  constructor(searchInstance: NgAisInstance) {
     super(searchInstance);
   }
 
