@@ -9,6 +9,10 @@ import { Component } from "@angular/core";
       <ngis-sort-by-selector [indices]="indices"></ngis-sort-by-selector>
       <ngis-search-box></ngis-search-box>
       <ngis-clear-all></ngis-clear-all>
+      <ngis-breadcrumb
+        [attributes]="hierarchicalMenuAttributes"
+      >
+      </ngis-breadcrumb>
       <ngis-hits></ngis-hits>
       <ngis-pagination></ngis-pagination>
       <ngis-numeric-refinement-list
