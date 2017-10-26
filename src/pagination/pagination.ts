@@ -90,7 +90,7 @@ export class NgAisPagination extends BaseWidget {
     event.stopPropagation();
     event.preventDefault();
 
-    if (page < this.state.nbPages && page >= 0) {
+    if (page <= this.state.nbPages && page >= 0) {
       this.state.refine(page);
     }
   }
