@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+  },
+  "includes": [
+    "**/*.spec.ts",
+    "**/*.d.ts"
+  ]
+}

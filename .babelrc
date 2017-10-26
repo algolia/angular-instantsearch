@@ -1,8 +1,7 @@
 {
   "presets": [
-    ["env", { "modules": false }],
+    "env",
     "stage-0",
-    "typescript"
   ],
   "plugins": [
     "transform-decorators-legacy"
