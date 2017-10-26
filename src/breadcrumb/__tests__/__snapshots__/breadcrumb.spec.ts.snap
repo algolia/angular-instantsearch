@@ -1,0 +1,170 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Breadcrumb renders markup with two items 1`] = `
+<ng-ais-breadcrumb
+  searchInstance={[Function NgAisInstance]}
+  state={[Function Object]}
+  updateState={[Function Function]}
+>
+  
+      <div
+    class="ais-Breadcrumb"
+  >
+    
+        
+    <ng-ais-header
+      classname="ais-Breadcrumb-header ais-header"
+      ng-reflect-class-name="ais-Breadcrumb-header ais-head"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-header>
+    
+  
+        
+    <div
+      class="ais-Breadcrumb-body ais-body"
+    >
+      
+          
+      <ul
+        class="ais-Breadcrumb-list"
+      >
+        
+            
+        
+        <li
+          class="ais-Breadcrumb-item"
+        >
+          
+              
+              
+          
+          <a
+            class="ais-Breadcrumb-link"
+            href=""
+          >
+            
+                foo
+              
+          </a>
+          
+            
+        </li>
+        <li
+          aria-hidden="true"
+          class="ais-Breadcrumb-item"
+        >
+          
+              &gt;
+              
+          
+          
+            
+        </li>
+        <li
+          class="ais-Breadcrumb-item"
+        >
+          
+              
+              
+          
+          <a
+            class="ais-Breadcrumb-link"
+            href=""
+          >
+            
+                bar
+              
+          </a>
+          
+            
+        </li>
+        
+          
+      </ul>
+      
+        
+    </div>
+    
+  
+        
+    <ng-ais-footer
+      classname="ais-Breadcrumb-footer ais-footer"
+      ng-reflect-class-name="ais-Breadcrumb-footer ais-foot"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-footer>
+    
+      
+  </div>
+    
+</ng-ais-breadcrumb>
+`;
+
+exports[`Breadcrumb renders markup without state 1`] = `
+<ng-ais-breadcrumb
+  searchInstance={[Function NgAisInstance]}
+  state={[Function Object]}
+  updateState={[Function Function]}
+>
+  
+      <div
+    class="ais-Breadcrumb"
+  >
+    
+        
+    <ng-ais-header
+      classname="ais-Breadcrumb-header ais-header"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-header>
+    
+  
+        
+    <div
+      class="ais-Breadcrumb-body ais-body"
+    >
+      
+          
+      <ul
+        class="ais-Breadcrumb-list"
+      >
+        
+            
+        
+        
+          
+      </ul>
+      
+        
+    </div>
+    
+  
+        
+    <ng-ais-footer
+      classname="ais-Breadcrumb-footer ais-footer"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-footer>
+    
+      
+  </div>
+    
+</ng-ais-breadcrumb>
+`;
