@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ClearAll renders markup without state 1`] = `
+<ng-ais-clear-all
+  buttonLabel={[Function String]}
+  clearsQuery="false"
+  excludeAttributes={[Function Array]}
+  searchInstance={[Function NgAisInstance]}
+  state={[Function Object]}
+  updateState={[Function Function]}
+>
+  
+      <div
+    class="ais-ClearAll"
+  >
+    
+        
+    <ng-ais-header
+      classname="ais-ClearAll-header ais-header"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-header>
+    
+  
+        
+    <div
+      class="ais-ClearAll-body ais-body"
+    >
+      
+          
+      <button
+        class="ais-ClearAll-button"
+      >
+        
+            
+      </button>
+      
+        
+    </div>
+    
+  
+        
+    <ng-ais-footer
+      classname="ais-ClearAll-footer ais-footer"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-footer>
+    
+      
+  </div>
+    
+</ng-ais-clear-all>
+`;
