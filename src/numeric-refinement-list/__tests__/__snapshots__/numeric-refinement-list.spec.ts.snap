@@ -1,0 +1,171 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NumericRefinementList renders markup with state 1`] = `
+<ng-ais-numeric-refinement-list
+  searchInstance={[Function NgAisInstance]}
+  state={[Function Object]}
+  updateState={[Function Function]}
+>
+  
+      <div
+    class="ais-NumericRefinementList"
+  >
+    
+        
+    <ng-ais-header
+      classname="ais-NumericRefinementList-header ais-header"
+      ng-reflect-class-name="ais-NumericRefinementList-head"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-header>
+    
+  
+        
+    <div
+      class="ais-NumericRefinementList-body ais-body"
+    >
+      
+          
+      <ul
+        class="ais-NumericRefinementList-list"
+      >
+        
+            
+        
+        <li
+          class="ais-NumericRefinementList-item ais-NumericRefinementList-item--selected"
+          ng-reflect-ng-class="[object Object]"
+        >
+          
+              
+          <label
+            class="ais-NumericRefinementList-label"
+          >
+            
+                
+            <input
+              class="ais-NumericRefinementList-radio"
+              name="NumericRefinementList"
+              type="radio"
+            />
+            
+                10
+              
+          </label>
+          
+            
+        </li>
+        <li
+          class="ais-NumericRefinementList-item"
+          ng-reflect-ng-class="[object Object]"
+        >
+          
+              
+          <label
+            class="ais-NumericRefinementList-label"
+          >
+            
+                
+            <input
+              class="ais-NumericRefinementList-radio"
+              name="NumericRefinementList"
+              type="radio"
+            />
+            
+                20
+              
+          </label>
+          
+            
+        </li>
+        
+          
+      </ul>
+      
+        
+    </div>
+    
+  
+        
+    <ng-ais-footer
+      classname="ais-NumericRefinementList-footer ais-footer"
+      ng-reflect-class-name="ais-NumericRefinementList-foot"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-footer>
+    
+      
+  </div>
+    
+</ng-ais-numeric-refinement-list>
+`;
+
+exports[`NumericRefinementList renders markup without state 1`] = `
+<ng-ais-numeric-refinement-list
+  searchInstance={[Function NgAisInstance]}
+  state={[Function Object]}
+  updateState={[Function Function]}
+>
+  
+      <div
+    class="ais-NumericRefinementList"
+  >
+    
+        
+    <ng-ais-header
+      classname="ais-NumericRefinementList-header ais-header"
+      ng-reflect-class-name="ais-NumericRefinementList-head"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-header>
+    
+  
+        
+    <div
+      class="ais-NumericRefinementList-body ais-body"
+    >
+      
+          
+      <ul
+        class="ais-NumericRefinementList-list"
+      >
+        
+            
+        
+        
+          
+      </ul>
+      
+        
+    </div>
+    
+  
+        
+    <ng-ais-footer
+      classname="ais-NumericRefinementList-footer ais-footer"
+      ng-reflect-class-name="ais-NumericRefinementList-foot"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-footer>
+    
+      
+  </div>
+    
+</ng-ais-numeric-refinement-list>
+`;
