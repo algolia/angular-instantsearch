@@ -1,4 +1,3 @@
-import { Component } from "@angular/core";
 import { TestBed } from "@angular/core/testing";
 
 import { NgAisInstantSearchModule } from "../../instantsearch/instantsearch.module";
@@ -57,5 +56,14 @@ describe("Breadcrumb", () => {
 
     expect(spy).toHaveBeenCalled();
     expect(spy).toHaveBeenCalledWith("foo");
+  });
+
+  it("should display an header and a footer", () => {
+    const fixture = TestBed.createComponent(NgAisBreadcrumb);
+    fixture.componentInstance.header = "Header title";
+    fixture.componentInstance.footer = "Footer title";
+    fixture.detectChanges();
+
+    expect(fixture).toMatchSnapshot();
   });
 });
