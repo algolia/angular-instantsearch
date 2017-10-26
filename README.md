@@ -408,3 +408,14 @@ export class AppComponent {}
 | `max?`           | `number`   | Minimal slider value, default to automatically computed
 | `header?`        | `string`   | Displays text before widget
 | `footer?`        | `string`   | Displays text after widget
+
+---
+
+##### `<ngis-breadcrumb></ngis-breadcrumb>`
+
+| Props              | Type       | Description
+| -                  | -          | -
+| `attributes`       | `string[]` | Array of attributes to use to craft the Breadcrumb
+| `rootPath?`        | `string`   | Prefix path to use if the first level is not the root level
+| `header?`          | `string`   | Displays text before widget
+| `footer?`          | `string`   | Displays text after widget

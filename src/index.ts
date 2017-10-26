@@ -3,6 +3,7 @@
 import { ModuleWithProviders, NgModule } from "@angular/core";
 
 // Modules
+import { NgISBreadcrumbModule } from "./breadcrumb/breadcrumb.module";
 import { NgISClearAllModule } from "./clear-all/clear-all.module";
 import { NgISCurrentRefinedValuesModule } from "./current-refined-values/current-refined-values.module";
 import { NgISHierarchicalMenuModule } from "./hierarchical-menu/hierarchical-menu.module";
@@ -42,7 +43,8 @@ const NGIS_MODULES = [
   NgISPriceRangesModule,
   NgISHierarchicalMenuModule,
   NgISStarRatingModule,
-  NgISRangeSliderModule
+  NgISRangeSliderModule,
+  NgISBreadcrumbModule
 ];
 
 @NgModule({
