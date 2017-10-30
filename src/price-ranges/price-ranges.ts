@@ -19,7 +19,10 @@ const cx = bem("PriceRanges");
       <div class="${cx("body")}">
         <ul class="${cx("list")}">
           <li
-            class="${cx("item")}"
+            [ngClass]="{
+              '${cx("item")}': true,
+              '${cx("item", "selected")}': item.isRefined
+            }"
             *ngFor="let item of state.items"
             (click)="handleClick($event, item)"
           >
