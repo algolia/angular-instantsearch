@@ -32,8 +32,6 @@ const render = (state?: {}) => {
   return fixture;
 };
 
-// FIXME: find way to render SVG
-
 describe("RefinementList", () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
