@@ -1,0 +1,205 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InfiniteHits renders markup with state 1`] = `
+<ng-ais-infinite-hits
+  searchInstance={[Function NgAisInstance]}
+  showMoreLabel={[Function String]}
+  state={[Function Object]}
+  template="undefined"
+  updateState={[Function Function]}
+>
+  
+      <div
+    class="ais-InfiniteHits"
+  >
+    
+        
+    <ng-ais-header
+      classname="ais-InfiniteHits-header ais-header"
+      ng-reflect-class-name="ais-InfiniteHits-header ais-he"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-header>
+    
+  
+        
+    <div
+      class="ais-InfiniteHits-body ais-body"
+    >
+      
+          
+      
+      
+  
+          
+      
+          
+      
+      <div>
+        
+            
+        <ul
+          class="ais-InfiniteHits-list"
+        >
+          
+              
+          
+          <li
+            class="ais-InfiniteHits-item"
+          >
+            
+                foo
+              
+          </li>
+          <li
+            class="ais-InfiniteHits-item"
+          >
+            
+                bar
+              
+          </li>
+          <li
+            class="ais-InfiniteHits-item"
+          >
+            
+                foobar
+              
+          </li>
+          <li
+            class="ais-InfiniteHits-item"
+          >
+            
+                barfoo
+              
+          </li>
+          
+            
+        </ul>
+        
+          
+      </div>
+      
+  
+          
+      <button
+        class="ais-InfiniteHits-showMore"
+      >
+        
+            Show more results
+          
+      </button>
+      
+        
+    </div>
+    
+  
+        
+    <ng-ais-footer
+      ais-footer=""
+      classname="ais-InfiniteHits-footer"
+      ng-reflect-class-name="ais-InfiniteHits-footer"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-footer>
+    
+      
+  </div>
+    
+</ng-ais-infinite-hits>
+`;
+
+exports[`InfiniteHits renders markup without state 1`] = `
+<ng-ais-infinite-hits
+  searchInstance={[Function NgAisInstance]}
+  showMoreLabel={[Function String]}
+  state={[Function Object]}
+  template="undefined"
+  updateState={[Function Function]}
+>
+  
+      <div
+    class="ais-InfiniteHits"
+  >
+    
+        
+    <ng-ais-header
+      classname="ais-InfiniteHits-header ais-header"
+      ng-reflect-class-name="ais-InfiniteHits-header ais-he"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-header>
+    
+  
+        
+    <div
+      class="ais-InfiniteHits-body ais-body"
+    >
+      
+          
+      
+      
+  
+          
+      
+          
+      
+      <div>
+        
+            
+        <ul
+          class="ais-InfiniteHits-list"
+        >
+          
+              
+          
+          
+            
+        </ul>
+        
+          
+      </div>
+      
+  
+          
+      <button
+        class="ais-InfiniteHits-showMore"
+      >
+        
+            Show more results
+          
+      </button>
+      
+        
+    </div>
+    
+  
+        
+    <ng-ais-footer
+      ais-footer=""
+      classname="ais-InfiniteHits-footer"
+      ng-reflect-class-name="ais-InfiniteHits-footer"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-footer>
+    
+      
+  </div>
+    
+</ng-ais-infinite-hits>
+`;

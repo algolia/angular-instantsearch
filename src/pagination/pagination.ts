@@ -49,6 +49,11 @@ export class NgAisPagination extends BaseWidget {
         : this.pagesPadding;
 
     if (pagesPadding && pagesPadding > 0) {
+      // should not display pages that does not exists
+      if (nbPages < pagesPadding * 2 + 1) {
+        return pagesArray;
+      }
+
       const minDelta = currentRefinement - pagesPadding - 1;
       const maxDelta = currentRefinement + pagesPadding + 1;
 
@@ -85,7 +90,7 @@ export class NgAisPagination extends BaseWidget {
     event.stopPropagation();
     event.preventDefault();
 
-    if (page < this.state.nbPages && page >= 0) {
+    if (page <= this.state.nbPages && page >= 0) {
       this.state.refine(page);
     }
   }

@@ -1,0 +1,183 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hits renders markup with state 1`] = `
+<ng-ais-hits
+  searchInstance={[Function NgAisInstance]}
+  state={[Function Object]}
+  template="undefined"
+  updateState={[Function Function]}
+>
+  
+      <div
+    class="ais-Hits"
+  >
+    
+        
+    <ng-ais-header
+      classname="ais-Hits-header ais-header"
+      ng-reflect-class-name="ais-Hits-header ais-header"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-header>
+    
+  
+        
+    <div
+      class="ais-Hits-body ais-body"
+    >
+      
+          
+      
+      
+  
+          
+      
+          
+      
+      <div>
+        
+            
+        <ul
+          class="ais-Hits-list"
+        >
+          
+              
+          
+          <li
+            class="ais-Hits-item"
+          >
+            
+                foo
+              
+          </li>
+          <li
+            class="ais-Hits-item"
+          >
+            
+                bar
+              
+          </li>
+          <li
+            class="ais-Hits-item"
+          >
+            
+                foobar
+              
+          </li>
+          <li
+            class="ais-Hits-item"
+          >
+            
+                barfoo
+              
+          </li>
+          
+            
+        </ul>
+        
+          
+      </div>
+      
+        
+    </div>
+    
+  
+        
+    <ng-ais-footer
+      ais-footer=""
+      classname="ais-Hits-footer"
+      ng-reflect-class-name="ais-Hits-footer"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-footer>
+    
+      
+  </div>
+    
+</ng-ais-hits>
+`;
+
+exports[`Hits renders markup without state 1`] = `
+<ng-ais-hits
+  searchInstance={[Function NgAisInstance]}
+  state={[Function Object]}
+  template="undefined"
+  updateState={[Function Function]}
+>
+  
+      <div
+    class="ais-Hits"
+  >
+    
+        
+    <ng-ais-header
+      classname="ais-Hits-header ais-header"
+      ng-reflect-class-name="ais-Hits-header ais-header"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-header>
+    
+  
+        
+    <div
+      class="ais-Hits-body ais-body"
+    >
+      
+          
+      
+      
+  
+          
+      
+          
+      
+      <div>
+        
+            
+        <ul
+          class="ais-Hits-list"
+        >
+          
+              
+          
+          
+            
+        </ul>
+        
+          
+      </div>
+      
+        
+    </div>
+    
+  
+        
+    <ng-ais-footer
+      ais-footer=""
+      classname="ais-Hits-footer"
+      ng-reflect-class-name="ais-Hits-footer"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-footer>
+    
+      
+  </div>
+    
+</ng-ais-hits>
+`;

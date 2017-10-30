@@ -34,6 +34,7 @@ const cx = bem("InfiniteHits");
         <button
           class="${cx("showMore")}"
           (click)="showMore($event)"
+          [disabled]="state.isLastPage"
         >
           {{showMoreLabel}}
         </button>
