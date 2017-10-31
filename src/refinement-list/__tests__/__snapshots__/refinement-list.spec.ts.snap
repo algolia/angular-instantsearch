@@ -263,3 +263,198 @@ exports[`RefinementList renders markup without state 1`] = `
     
 </ng-ais-refinement-list>
 `;
+
+exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
+<ng-ais-refinement-list
+  limit={[Function Number]}
+  operator={[Function String]}
+  searchInstance={[Function NgAisInstance]}
+  showLessLabel={[Function String]}
+  showMoreLabel={[Function String]}
+  state={[Function Object]}
+  transformItems={[Function Function]}
+  updateState={[Function Function]}
+>
+  
+      <div
+    class="ais-RefinementList"
+  >
+    
+        
+    <ng-ais-header
+      classname="ais-RefinementList-header ais-header"
+      ng-reflect-class-name="ais-RefinementList-header ais-"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-header>
+    
+  
+        
+    <div
+      class="ais-RefinementList-body ais-body"
+    >
+      
+          
+      <ul
+        class="ais-RefinementList-list"
+      >
+        
+            
+        
+        <li
+          class="ais-RefinementList-item"
+          ng-reflect-ng-class="[object Object]"
+        >
+          
+              
+          <label
+            class="ais-RefinementList-label"
+          >
+            
+                
+            <input
+              class="ais-RefinementList-checkbox"
+              type="checkbox"
+            />
+            
+                transformed - foo
+                
+            <span
+              class="ais-RefinementList-count"
+            >
+              
+                  100
+                
+            </span>
+            
+              
+          </label>
+          
+            
+        </li>
+        <li
+          class="ais-RefinementList-item ais-RefinementList-item--selected"
+          ng-reflect-ng-class="[object Object]"
+        >
+          
+              
+          <label
+            class="ais-RefinementList-label"
+          >
+            
+                
+            <input
+              class="ais-RefinementList-checkbox"
+              type="checkbox"
+            />
+            
+                transformed - bar
+                
+            <span
+              class="ais-RefinementList-count"
+            >
+              
+                  100
+                
+            </span>
+            
+              
+          </label>
+          
+            
+        </li>
+        <li
+          class="ais-RefinementList-item"
+          ng-reflect-ng-class="[object Object]"
+        >
+          
+              
+          <label
+            class="ais-RefinementList-label"
+          >
+            
+                
+            <input
+              class="ais-RefinementList-checkbox"
+              type="checkbox"
+            />
+            
+                transformed - foobar
+                
+            <span
+              class="ais-RefinementList-count"
+            >
+              
+                  100
+                
+            </span>
+            
+              
+          </label>
+          
+            
+        </li>
+        <li
+          class="ais-RefinementList-item"
+          ng-reflect-ng-class="[object Object]"
+        >
+          
+              
+          <label
+            class="ais-RefinementList-label"
+          >
+            
+                
+            <input
+              class="ais-RefinementList-checkbox"
+              type="checkbox"
+            />
+            
+                transformed - barfoo
+                
+            <span
+              class="ais-RefinementList-count"
+            >
+              
+                  100
+                
+            </span>
+            
+              
+          </label>
+          
+            
+        </li>
+        
+          
+      </ul>
+      
+  
+          
+      
+      
+        
+    </div>
+    
+  
+        
+    <ng-ais-footer
+      classname="ais-RefinementList-footer ais-footer"
+      ng-reflect-class-name="ais-RefinementList-footer ais-"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-footer>
+    
+      
+  </div>
+    
+</ng-ais-refinement-list>
+`;

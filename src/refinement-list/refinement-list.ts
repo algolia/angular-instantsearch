@@ -1,6 +1,6 @@
 import { Component, Input } from "@angular/core";
 import { connectRefinementList } from "instantsearch.js/es/connectors";
-import { noop } from "lodash";
+import { noop, isFunction } from "lodash";
 
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
@@ -23,7 +23,7 @@ const cx = bem("RefinementList");
               '${cx("item")}': true,
               '${cx("item", "selected")}': item.isRefined
             }"
-            *ngFor="let item of state.items"
+            *ngFor="let item of items"
             (click)="refine($event, item)"
           >
             <label class="${cx("label")}">
@@ -59,6 +59,7 @@ export class NgAisRefinementList extends BaseWidget {
   // render options
   @Input() public showMoreLabel: string = "Show more";
   @Input() public showLessLabel: string = "Show less";
+  @Input() public transformItems?: Function;
 
   // connectors options
   @Input() public attributeName: string;
@@ -79,6 +80,12 @@ export class NgAisRefinementList extends BaseWidget {
 
   constructor(searchInstance: NgAisInstance) {
     super(searchInstance);
+  }
+
+  get items() {
+    return isFunction(this.transformItems)
+      ? this.transformItems(this.state.items)
+      : this.state.items;
   }
 
   public ngOnInit() {
