@@ -20,7 +20,7 @@ const cx = bem("CurrentRefinedValues");
         <button
           class="${cx("reset")}"
           (click)="handleClearAllClick($event)"
-          *ngIf="clearAll === 'before'">
+          *ngIf="clearAll === 'before' || clearAll === true">
           {{clearAllLabel}}
         </button>
 
