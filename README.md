@@ -179,8 +179,8 @@ export class AppComponent {}
 | -                | -                        | -
 | `attributeName`  | `string`                 | Name of the attribute for faceting (eg. "categories")
 | `operator?`      | `"and" | "or"`           | How to apply the refinements.
-| `limit?`         | `number`                 | How much facet values to get.
-| `showMoreLimit?` | `number`                 | Bigger than `limit` if the component should display a button that will expand the number of items
+| `limitMin?`      | `number`                 | How much facet values to get.
+| `limitMax?`      | `number`                 | Bigger than `limit` if the component should display a button that will expand the number of items
 | `showMoreLabel?` | `string`                 | Label of the show more button
 | `showLessLabel?` | `string`                 | Label of the show less button
 | `sortBy?`        | `Array<string>/function` | How to sort facet values

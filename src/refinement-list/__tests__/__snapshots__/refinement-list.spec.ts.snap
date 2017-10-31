@@ -2,7 +2,7 @@
 
 exports[`RefinementList renders markup with state 1`] = `
 <ng-ais-refinement-list
-  limit={[Function Number]}
+  limitMin={[Function Number]}
   operator={[Function String]}
   searchInstance={[Function NgAisInstance]}
   showLessLabel={[Function String]}
@@ -196,7 +196,7 @@ exports[`RefinementList renders markup with state 1`] = `
 
 exports[`RefinementList renders markup without state 1`] = `
 <ng-ais-refinement-list
-  limit={[Function Number]}
+  limitMin={[Function Number]}
   operator={[Function String]}
   searchInstance={[Function NgAisInstance]}
   showLessLabel={[Function String]}
@@ -266,7 +266,7 @@ exports[`RefinementList renders markup without state 1`] = `
 
 exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
 <ng-ais-refinement-list
-  limit={[Function Number]}
+  limitMin={[Function Number]}
   operator={[Function String]}
   searchInstance={[Function NgAisInstance]}
   showLessLabel={[Function String]}

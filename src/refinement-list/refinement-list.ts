@@ -64,8 +64,8 @@ export class NgAisRefinementList extends BaseWidget {
   // connectors options
   @Input() public attributeName: string;
   @Input() public operator: "or" | "and" = "or";
-  @Input() public limit: number | string = 10;
-  @Input() public showMoreLimit: number | string;
+  @Input() public limitMin: number | string = 10;
+  @Input() public limitMax: number | string;
   @Input() public sortBy: string[] | ((item: object) => number);
 
   public state = {
@@ -90,8 +90,8 @@ export class NgAisRefinementList extends BaseWidget {
 
   public ngOnInit() {
     this.createWidget(connectRefinementList, {
-      limit: parseNumberInput(this.limit),
-      showMoreLimit: parseNumberInput(this.showMoreLimit),
+      limit: parseNumberInput(this.limitMin),
+      showMoreLimit: parseNumberInput(this.limitMax),
       attributeName: this.attributeName,
       sortBy: this.sortBy
     });
