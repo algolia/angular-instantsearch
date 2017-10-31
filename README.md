@@ -144,8 +144,8 @@ export class AppComponent {}
 | Props            | Type                     | Description
 | -                | -                        | -
 | `attributeName`  | `string`                 | Name of the attribute for faceting (eg. "free_shipping")
-| `limit?`         | `number`                 | How many facets values to retrieve
-| `showMoreLimit?` | `number`                 | Bigger than `limit` if the component should display a button that will expand the number of items
+| `limitMin?`      | `number`                 | How many facets values to retrieve
+| `limitMax?`      | `number`                 | Bigger than `limit` if the component should display a button that will expand the number of items
 | `showMoreLabel?` | `string`                 | Label of the show more button
 | `showLessLabel?` | `string`                 | Label of the show less button
 | `sortBy?`        | `Array<string>/function` | How to sort facet values

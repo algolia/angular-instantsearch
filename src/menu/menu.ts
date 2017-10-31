@@ -52,8 +52,8 @@ export class NgAisMenu extends BaseWidget {
 
   // connector options
   @Input() public attributeName: string;
-  @Input() public limit?: number | string = 10;
-  @Input() public showMoreLimit?: number | string;
+  @Input() public limitMin?: number | string = 10;
+  @Input() public limitMax?: number | string;
   @Input() public sortBy?: string[] | ((item: object) => number);
 
   public state = {
@@ -78,8 +78,8 @@ export class NgAisMenu extends BaseWidget {
 
   public ngOnInit() {
     this.createWidget(connectMenu, {
-      limit: parseNumberInput(this.limit),
-      showMoreLimit: parseNumberInput(this.limit),
+      limit: parseNumberInput(this.limitMin),
+      showMoreLimit: parseNumberInput(this.limitMax),
       attributeName: this.attributeName,
       sortBy: this.sortBy
     });
