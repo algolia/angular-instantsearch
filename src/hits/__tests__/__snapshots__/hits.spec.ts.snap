@@ -181,3 +181,109 @@ exports[`Hits renders markup without state 1`] = `
     
 </ng-ais-hits>
 `;
+
+exports[`Hits should apply \`transformItems\` if specified 1`] = `
+<ng-ais-hits
+  searchInstance={[Function NgAisInstance]}
+  state={[Function Object]}
+  template="undefined"
+  transformItems={[Function Function]}
+  updateState={[Function Function]}
+>
+  
+      <div
+    class="ais-Hits"
+  >
+    
+        
+    <ng-ais-header
+      classname="ais-Hits-header ais-header"
+      ng-reflect-class-name="ais-Hits-header ais-header"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-header>
+    
+  
+        
+    <div
+      class="ais-Hits-body ais-body"
+    >
+      
+          
+      
+      
+  
+          
+      
+          
+      
+      <div>
+        
+            
+        <ul
+          class="ais-Hits-list"
+        >
+          
+              
+          
+          <li
+            class="ais-Hits-item"
+          >
+            
+                transformed - foo
+              
+          </li>
+          <li
+            class="ais-Hits-item"
+          >
+            
+                transformed - bar
+              
+          </li>
+          <li
+            class="ais-Hits-item"
+          >
+            
+                transformed - foobar
+              
+          </li>
+          <li
+            class="ais-Hits-item"
+          >
+            
+                transformed - barfoo
+              
+          </li>
+          
+            
+        </ul>
+        
+          
+      </div>
+      
+        
+    </div>
+    
+  
+        
+    <ng-ais-footer
+      ais-footer=""
+      classname="ais-Hits-footer"
+      ng-reflect-class-name="ais-Hits-footer"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-footer>
+    
+      
+  </div>
+    
+</ng-ais-hits>
+`;

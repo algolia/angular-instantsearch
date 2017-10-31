@@ -43,4 +43,12 @@ describe("Hits", () => {
     const fixture = render({});
     expect(fixture).toMatchSnapshot();
   });
+
+  it("should apply `transformItems` if specified", () => {
+    const fixture = render({});
+    fixture.componentInstance.transformItems = items =>
+      items.map(item => ({ ...item, name: `transformed - ${item.name}` }));
+    fixture.detectChanges();
+    expect(fixture).toMatchSnapshot();
+  });
 });
