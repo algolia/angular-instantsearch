@@ -1,6 +1,6 @@
 import { Component, Input } from "@angular/core";
 import { connectMenu } from "instantsearch.js/es/connectors";
-import { noop } from "lodash";
+import { noop, isFunction } from "lodash";
 
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
@@ -20,7 +20,7 @@ const cx = bem("Menu");
         <ul class="${cx("list")}">
           <li
             class="${cx("item")}"
-            *ngFor="let item of state.items"
+            *ngFor="let item of items"
             (click)="state.refine(item.value)"
           >
             <a href="{{state.createURL(item.value)}}">
@@ -48,6 +48,7 @@ export class NgAisMenu extends BaseWidget {
   // render options
   @Input() public showMoreLabel: string = "Show more";
   @Input() public showLessLabel: string = "Show less";
+  @Input() public transformItems?: Function;
 
   // connector options
   @Input() public attributeName: string;
@@ -64,6 +65,12 @@ export class NgAisMenu extends BaseWidget {
     refine: noop,
     toggleShowMore: noop
   };
+
+  get items() {
+    return isFunction(this.transformItems)
+      ? this.transformItems(this.state.items)
+      : this.state.items;
+  }
 
   constructor(searchInstance: NgAisInstance) {
     super(searchInstance);
