@@ -8,22 +8,22 @@ jest.mock("../../base-widget");
 
 const defaultState = {
   items: [
-    { name: "one", count: 100, value: "one" },
+    { label: "one", count: 100, value: "one" },
     {
-      name: "two",
+      label: "two",
       count: 100,
       value: "two",
       isRefined: true,
       data: [
-        { name: "six", count: 100, value: "six" },
-        { name: "seven", count: 100, value: "seven" },
-        { name: "eight", count: 100, value: "eight" },
-        { name: "nine", count: 100, value: "nine" }
+        { label: "six", count: 100, value: "six" },
+        { label: "seven", count: 100, value: "seven" },
+        { label: "eight", count: 100, value: "eight" },
+        { label: "nine", count: 100, value: "nine" }
       ]
     },
-    { name: "three", count: 100, value: "three" },
-    { name: "four", count: 100, value: "four" },
-    { name: "five", count: 100, value: "five" }
+    { label: "three", count: 100, value: "three" },
+    { label: "four", count: 100, value: "four" },
+    { label: "five", count: 100, value: "five" }
   ],
   refine: jest.fn(),
   createURL: jest.fn()
@@ -69,5 +69,21 @@ describe("HierarchicalMenu", () => {
 
     expect(refine).toHaveBeenCalled();
     expect(refine).toHaveBeenCalledWith(defaultState.items[0].value);
+  });
+
+  it("should apply `transformItems` if specified", () => {
+    const fixture = render({});
+
+    const mapItems = items =>
+      items.map(item => ({
+        ...item,
+        label: `foo - ${item.label}`,
+        data: item.data ? mapItems(item.data) : null
+      }));
+
+    fixture.componentInstance.transformItems = mapItems;
+    fixture.detectChanges();
+
+    expect(fixture).toMatchSnapshot();
   });
 });
