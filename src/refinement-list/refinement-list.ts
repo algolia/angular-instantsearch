@@ -17,6 +17,25 @@ const cx = bem("RefinementList");
       )}"></ng-ais-header>
 
       <div class="${cx("body")}">
+        <form
+          class="${cx("form")}"
+          *ngIf="withSearchBox"
+          (submit)="handleSubmit($event)"
+          novalidate
+        >
+          <input
+            class="${cx("input")}"
+            autocapitalize="off"
+            autocorrect="off"
+            placeholder="{{searchPlaceholder}}"
+            role="textbox"
+            spellcheck="false"
+            type="text"
+            [value]="searchQuery"
+            (input)="handleChange($event.target.value)"
+          />
+        </form>
+
         <ul class="${cx("list")}">
           <li
             [ngClass]="{
@@ -60,6 +79,8 @@ export class NgAisRefinementList extends BaseWidget {
   @Input() public showMoreLabel: string = "Show more";
   @Input() public showLessLabel: string = "Show less";
   @Input() public transformItems?: Function;
+  @Input() public withSearchBox?: boolean;
+  @Input() public searchPlaceholder: string = "Search here...";
 
   // connectors options
   @Input() public attributeName: string;
@@ -68,6 +89,9 @@ export class NgAisRefinementList extends BaseWidget {
   @Input() public limitMax: number | string;
   @Input() public sortBy: string[] | ((item: object) => number);
 
+  // inner state
+  searchQuery = "";
+
   public state = {
     canRefine: false,
     canToggleShowMore: false,
@@ -75,7 +99,9 @@ export class NgAisRefinementList extends BaseWidget {
     isShowingMore: false,
     items: [],
     refine: noop,
-    toggleShowMore: noop
+    toggleShowMore: noop,
+    searchForItems: noop,
+    isFormSearch: false
   };
 
   constructor(searchInstance: NgAisInstance) {
@@ -110,5 +136,15 @@ export class NgAisRefinementList extends BaseWidget {
       // refine through Algolia API
       this.state.refine(item.value);
     }
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    this.state.searchForItems(this.searchQuery);
+  }
+
+  handleChange(value) {
+    this.searchQuery = value;
+    this.state.searchForItems(value);
   }
 }
