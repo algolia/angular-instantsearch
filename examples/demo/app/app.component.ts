@@ -23,10 +23,15 @@ import { Component } from "@angular/core";
       <ng-ais-range-slider attributeName="price"></ng-ais-range-slider>
       <ng-ais-menu
         attributeName="categories"
-        limit="{{5}}"
-        showMoreLimit="{{10}}"
+        limitMin="{{5}}"
+        limitMax="{{10}}"
       ></ng-ais-menu>
-      <ng-ais-refinement-list attributeName="brand" limit="10"></ng-ais-refinement-list>
+      <ng-ais-refinement-list
+        attributeName="brand"
+        limitMin="{{10}}"
+        withSearchBox="true"
+      >
+      </ng-ais-refinement-list>
       <ng-ais-numeric-selector
         attributeName="popularity"
         operator=">="
