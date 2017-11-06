@@ -5,6 +5,8 @@ exports[`RefinementList renders markup with state 1`] = `
   limitMin={[Function Number]}
   operator={[Function String]}
   searchInstance={[Function NgAisInstance]}
+  searchPlaceholder={[Function String]}
+  searchQuery=""
   showLessLabel={[Function String]}
   showMoreLabel={[Function String]}
   state={[Function Object]}
@@ -33,6 +35,10 @@ exports[`RefinementList renders markup with state 1`] = `
       class="ais-RefinementList-body ais-body"
     >
       
+          
+      
+      
+  
           
       <ul
         class="ais-RefinementList-list"
@@ -199,6 +205,8 @@ exports[`RefinementList renders markup without state 1`] = `
   limitMin={[Function Number]}
   operator={[Function String]}
   searchInstance={[Function NgAisInstance]}
+  searchPlaceholder={[Function String]}
+  searchQuery=""
   showLessLabel={[Function String]}
   showMoreLabel={[Function String]}
   state={[Function Object]}
@@ -227,6 +235,10 @@ exports[`RefinementList renders markup without state 1`] = `
       class="ais-RefinementList-body ais-body"
     >
       
+          
+      
+      
+  
           
       <ul
         class="ais-RefinementList-list"
@@ -269,6 +281,8 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
   limitMin={[Function Number]}
   operator={[Function String]}
   searchInstance={[Function NgAisInstance]}
+  searchPlaceholder={[Function String]}
+  searchQuery=""
   showLessLabel={[Function String]}
   showMoreLabel={[Function String]}
   state={[Function Object]}
@@ -298,6 +312,10 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
       class="ais-RefinementList-body ais-body"
     >
       
+          
+      
+      
+  
           
       <ul
         class="ais-RefinementList-list"
