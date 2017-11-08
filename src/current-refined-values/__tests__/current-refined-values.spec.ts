@@ -102,4 +102,17 @@ describe("CurrentRefinedValues", () => {
 
     expect(clearAllClick).toHaveBeenCalled();
   });
+
+  it("should apply `transformItems` if specified", () => {
+    const fixture = render({});
+
+    fixture.componentInstance.transformItems = items =>
+      items.map(item => ({
+        ...item,
+        computedLabel: `foo - ${item.computedLabel}`
+      }));
+    fixture.detectChanges();
+
+    expect(fixture).toMatchSnapshot();
+  });
 });

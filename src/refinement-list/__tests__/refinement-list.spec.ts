@@ -74,4 +74,28 @@ describe("RefinementList", () => {
     expect(refine).toHaveBeenCalled();
     expect(refine).toHaveBeenCalledWith(defaultState.items[1].value);
   });
+
+  it("should apply `transformItems` if specified", () => {
+    const fixture = render({});
+    fixture.componentInstance.transformItems = items =>
+      items.map(item => ({ ...item, label: `transformed - ${item.label}` }));
+    fixture.detectChanges();
+    expect(fixture).toMatchSnapshot();
+  });
+
+  it("should call `searchForItems` when searching", () => {
+    const searchForItems = jest.fn();
+    const fixture = render({ searchForItems });
+
+    // display search box
+    fixture.componentInstance.withSearchBox = true;
+    fixture.detectChanges();
+
+    const input = fixture.debugElement.nativeElement.querySelector("input");
+    input.value = "foobar";
+    input.dispatchEvent(new Event("input"));
+
+    expect(searchForItems).toHaveBeenCalled();
+    expect(searchForItems).toHaveBeenCalledWith("foobar");
+  });
 });

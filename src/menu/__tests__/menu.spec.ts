@@ -70,4 +70,12 @@ describe("Menu", () => {
 
     expect(toggleShowMore).toHaveBeenCalled();
   });
+
+  it("should apply `transformItems` if specified", () => {
+    const fixture = render({});
+    fixture.componentInstance.transformItems = items =>
+      items.map(item => ({ ...item, label: `transformed - ${item.label}` }));
+    fixture.detectChanges();
+    expect(fixture).toMatchSnapshot();
+  });
 });

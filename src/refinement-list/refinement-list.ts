@@ -1,6 +1,6 @@
 import { Component, Input } from "@angular/core";
 import { connectRefinementList } from "instantsearch.js/es/connectors";
-import { noop } from "lodash";
+import { noop, isFunction } from "lodash";
 
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
@@ -17,13 +17,32 @@ const cx = bem("RefinementList");
       )}"></ng-ais-header>
 
       <div class="${cx("body")}">
+        <form
+          class="${cx("form")}"
+          *ngIf="withSearchBox"
+          (submit)="handleSubmit($event)"
+          novalidate
+        >
+          <input
+            class="${cx("input")}"
+            autocapitalize="off"
+            autocorrect="off"
+            placeholder="{{searchPlaceholder}}"
+            role="textbox"
+            spellcheck="false"
+            type="text"
+            [value]="searchQuery"
+            (input)="handleChange($event.target.value)"
+          />
+        </form>
+
         <ul class="${cx("list")}">
           <li
             [ngClass]="{
               '${cx("item")}': true,
               '${cx("item", "selected")}': item.isRefined
             }"
-            *ngFor="let item of state.items"
+            *ngFor="let item of items"
             (click)="refine($event, item)"
           >
             <label class="${cx("label")}">
@@ -59,13 +78,19 @@ export class NgAisRefinementList extends BaseWidget {
   // render options
   @Input() public showMoreLabel: string = "Show more";
   @Input() public showLessLabel: string = "Show less";
+  @Input() public transformItems?: Function;
+  @Input() public withSearchBox?: boolean;
+  @Input() public searchPlaceholder: string = "Search here...";
 
   // connectors options
   @Input() public attributeName: string;
   @Input() public operator: "or" | "and" = "or";
-  @Input() public limit: number | string = 10;
-  @Input() public showMoreLimit: number | string;
+  @Input() public limitMin: number | string = 10;
+  @Input() public limitMax: number | string;
   @Input() public sortBy: string[] | ((item: object) => number);
+
+  // inner state
+  searchQuery = "";
 
   public state = {
     canRefine: false,
@@ -74,17 +99,25 @@ export class NgAisRefinementList extends BaseWidget {
     isShowingMore: false,
     items: [],
     refine: noop,
-    toggleShowMore: noop
+    toggleShowMore: noop,
+    searchForItems: noop,
+    isFormSearch: false
   };
 
   constructor(searchInstance: NgAisInstance) {
     super(searchInstance);
   }
 
+  get items() {
+    return isFunction(this.transformItems)
+      ? this.transformItems(this.state.items)
+      : this.state.items;
+  }
+
   public ngOnInit() {
     this.createWidget(connectRefinementList, {
-      limit: parseNumberInput(this.limit),
-      showMoreLimit: parseNumberInput(this.showMoreLimit),
+      limit: parseNumberInput(this.limitMin),
+      showMoreLimit: parseNumberInput(this.limitMax),
       attributeName: this.attributeName,
       sortBy: this.sortBy
     });
@@ -103,5 +136,15 @@ export class NgAisRefinementList extends BaseWidget {
       // refine through Algolia API
       this.state.refine(item.value);
     }
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    this.state.searchForItems(this.searchQuery);
+  }
+
+  handleChange(value) {
+    this.searchQuery = value;
+    this.state.searchForItems(value);
   }
 }

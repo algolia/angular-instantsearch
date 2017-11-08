@@ -1,6 +1,6 @@
 import { Component, Input } from "@angular/core";
 import { connectHierarchicalMenu } from "instantsearch.js/es/connectors";
-import { noop } from "lodash";
+import { noop, isFunction } from "lodash";
 
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
@@ -19,7 +19,7 @@ const cx = bem("HierarchicalMenu");
       <div class="${cx("body")}">
         <ul class="${cx("list")} ${cx("list", "lvl0")}">
           <ng-ais-hierarchical-menu-item
-            *ngFor="let item of state.items"
+            *ngFor="let item of items"
             [item]="item"
             [createURL]="state.createURL"
             [refine]="state.refine"
@@ -35,6 +35,9 @@ const cx = bem("HierarchicalMenu");
   `
 })
 export class NgAisHierarchicalMenu extends BaseWidget {
+  // render option
+  @Input() public transformItems?: Function;
+
   // connector options
   @Input() public attributes: string[];
   @Input() public separator?: string = " > ";
@@ -48,6 +51,12 @@ export class NgAisHierarchicalMenu extends BaseWidget {
     items: [],
     refine: noop
   };
+
+  get items() {
+    return isFunction(this.transformItems)
+      ? this.transformItems(this.state.items)
+      : this.state.items;
+  }
 
   constructor(searchInstance: NgAisInstance) {
     super(searchInstance);

@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, Output, EventEmitter } from "@angular/core";
 import { connectSearchBox } from "instantsearch.js/es/connectors";
 import { noop } from "lodash";
 
@@ -32,6 +32,8 @@ const cx = bem("SearchBox");
             type="text"
             [value]="state.query"
             (input)="handleChange($event.target.value)"
+            (focus)="focus.emit($event)"
+            (blur)="blur.emit($event)"
           />
 
           <button
@@ -83,6 +85,16 @@ export class NgAisSearchBox extends BaseWidget {
   @Input() public resetTitle: string = "Reset";
   @Input() public searchAsYouType: boolean = true;
 
+  // Output events
+  // form
+  @Output() submit = new EventEmitter();
+  @Output() reset = new EventEmitter();
+
+  // input
+  @Output() change = new EventEmitter();
+  @Output() focus = new EventEmitter();
+  @Output() blur = new EventEmitter();
+
   public state = {
     query: "",
     refine: noop
@@ -94,12 +106,17 @@ export class NgAisSearchBox extends BaseWidget {
   }
 
   public handleChange(query: string) {
+    this.change.emit(query);
+
     if (this.searchAsYouType) {
       this.state.refine(query);
     }
   }
 
   public handleSubmit(event: { preventDefault: () => void }) {
+    // send submit event to parent component
+    this.submit.emit(event);
+
     event.preventDefault();
 
     if (!this.searchAsYouType) {
@@ -107,7 +124,11 @@ export class NgAisSearchBox extends BaseWidget {
     }
   }
 
-  public handleReset() {
+  public handleReset(event) {
+    // send reset event to parent component
+    this.reset.emit(event);
+
+    // reset search
     this.state.refine("");
   }
 }

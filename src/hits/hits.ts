@@ -1,6 +1,6 @@
-import { Component, ContentChild, TemplateRef } from "@angular/core";
-
+import { Input, Component, ContentChild, TemplateRef } from "@angular/core";
 import { connectHits } from "instantsearch.js/es/connectors";
+import { isFunction } from "lodash";
 
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
@@ -24,7 +24,7 @@ const cx = bem("Hits");
           <ul class="${cx("list")}">
             <li
               class="${cx("item")}"
-              *ngFor="let hit of state.hits"
+              *ngFor="let hit of hits"
             >
               {{hit.name}}
             </li>
@@ -41,8 +41,17 @@ const cx = bem("Hits");
 export class NgAisHits extends BaseWidget {
   @ContentChild(TemplateRef) public template;
 
+  // render options
+  @Input() transformItems?: Function;
+
   // inner widget state returned from connector
   public state = { hits: [] };
+
+  get hits() {
+    return isFunction(this.transformItems)
+      ? this.transformItems(this.state.hits)
+      : this.state.hits;
+  }
 
   constructor(searchInstance: NgAisInstance) {
     super(searchInstance);
