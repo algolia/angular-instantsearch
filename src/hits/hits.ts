@@ -26,7 +26,8 @@ const cx = bem("Hits");
               class="${cx("item")}"
               *ngFor="let hit of hits"
             >
-              {{hit.name}}
+              <ng-ais-highlight attributeName="name" [hit]="hit">
+              </ng-ais-highlight>
             </li>
           </ul>
         </div>
