@@ -50,7 +50,13 @@ export class NgAisHighlight {
 
   replaceWithEmAndEscape(value: string) {
     return escape(value)
-      .replace(new RegExp(tagConfig.highlightPreTag, "g"), `<em class="${cx}">`)
-      .replace(new RegExp(tagConfig.highlightPostTag, "g"), "</em>");
+      .replace(
+        new RegExp(tagConfig.highlightPreTag, "g"),
+        `<${this.tagName} class="${cx}">`
+      )
+      .replace(
+        new RegExp(tagConfig.highlightPostTag, "g"),
+        `</${this.tagName}>`
+      );
   }
 }
