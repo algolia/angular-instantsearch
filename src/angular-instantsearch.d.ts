@@ -1,6 +1,3 @@
-/* tslint:disable:max-classes-per-file */
-/* tslint:disable:interface-name */
-
 interface InstantSearchConfig {
   appId: string;
   apiKey: string;
@@ -28,7 +25,7 @@ declare class Widget {
     params: {
       templatesConfig: object;
       state: object;
-      results: Array<{}>;
+      results: {}[];
       createURL: (value: any) => string;
       instantSearchInstance: object;
     }
