@@ -26,7 +26,8 @@ const cx = bem("InfiniteHits");
               class="${cx("item")}"
               *ngFor="let hit of state.hits"
             >
-              {{hit.name}}
+              <ng-ais-highlight attributeName="name" [hit]="hit">
+              </ng-ais-highlight>
             </li>
           </ul>
         </div>
