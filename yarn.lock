@@ -62,7 +62,7 @@
   version "21.1.5"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-21.1.5.tgz#3db93d069d12602ca115d3604550e15131d8eb7a"
 
-"@types/node@*", "@types/node@^8.0.36":
+"@types/node@*", "@types/node@^8.0.50":
   version "8.0.50"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.50.tgz#dc545448e128c88c4eec7cd64025fcc3b7604541"
 
@@ -5061,7 +5061,7 @@ tslint-plugin-prettier@^1.3.0:
     eslint-plugin-prettier "^2.2.0"
     tslib "^1.7.1"
 
-tslint@^5.7.0, tslint@~5.8.0:
+tslint@^5.8.0, tslint@~5.8.0:
   version "5.8.0"
   resolved "https://registry.yarnpkg.com/tslint/-/tslint-5.8.0.tgz#1f49ad5b2e77c76c3af4ddcae552ae4e3612eb13"
   dependencies:
