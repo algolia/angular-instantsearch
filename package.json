@@ -10,7 +10,9 @@
     "build": "babel --keep-file-extension -x .ts -d dist src",
     "lint": "tslint src/**/*.ts",
     "demo": "webpack-dev-server --config webpack.demo.js --inline --progress",
-    "test": "jest"
+    "test": "jest",
+    "test:ci": "yarn lint && jest --runInBand",
+    "test:watch": "jest --watch"
   },
   "jest": {
     "preset": "jest-preset-angular",
