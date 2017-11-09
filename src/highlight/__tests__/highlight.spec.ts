@@ -97,4 +97,12 @@ describe("highlight", () => {
     });
     expect(fixture).toMatchSnapshot();
   });
+
+  it("should use `hit.highlighted` if it exists", () => {
+    const fixture = render({
+      attributeName: "highlighted",
+      hit: { highlighted: "<em>foo</em> bar" }
+    });
+    expect(fixture).toMatchSnapshot();
+  });
 });

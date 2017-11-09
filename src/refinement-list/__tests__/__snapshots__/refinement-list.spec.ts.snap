@@ -62,7 +62,17 @@ exports[`RefinementList renders markup with state 1`] = `
               type="checkbox"
             />
             
+                
+            <ng-ais-highlight
+              attributename="highlighted"
+              ng-reflect-attribute-name="highlighted"
+              ng-reflect-hit="[object Object]"
+            >
+              <span>
                 foo
+              </span>
+            </ng-ais-highlight>
+            
                 
             <span
               class="ais-RefinementList-count"
@@ -93,7 +103,17 @@ exports[`RefinementList renders markup with state 1`] = `
               type="checkbox"
             />
             
+                
+            <ng-ais-highlight
+              attributename="highlighted"
+              ng-reflect-attribute-name="highlighted"
+              ng-reflect-hit="[object Object]"
+            >
+              <span>
                 bar
+              </span>
+            </ng-ais-highlight>
+            
                 
             <span
               class="ais-RefinementList-count"
@@ -124,7 +144,17 @@ exports[`RefinementList renders markup with state 1`] = `
               type="checkbox"
             />
             
+                
+            <ng-ais-highlight
+              attributename="highlighted"
+              ng-reflect-attribute-name="highlighted"
+              ng-reflect-hit="[object Object]"
+            >
+              <span>
                 foobar
+              </span>
+            </ng-ais-highlight>
+            
                 
             <span
               class="ais-RefinementList-count"
@@ -155,7 +185,17 @@ exports[`RefinementList renders markup with state 1`] = `
               type="checkbox"
             />
             
+                
+            <ng-ais-highlight
+              attributename="highlighted"
+              ng-reflect-attribute-name="highlighted"
+              ng-reflect-hit="[object Object]"
+            >
+              <span>
                 barfoo
+              </span>
+            </ng-ais-highlight>
+            
                 
             <span
               class="ais-RefinementList-count"
@@ -339,7 +379,17 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
               type="checkbox"
             />
             
+                
+            <ng-ais-highlight
+              attributename="highlighted"
+              ng-reflect-attribute-name="highlighted"
+              ng-reflect-hit="[object Object]"
+            >
+              <span>
                 transformed - foo
+              </span>
+            </ng-ais-highlight>
+            
                 
             <span
               class="ais-RefinementList-count"
@@ -370,7 +420,17 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
               type="checkbox"
             />
             
+                
+            <ng-ais-highlight
+              attributename="highlighted"
+              ng-reflect-attribute-name="highlighted"
+              ng-reflect-hit="[object Object]"
+            >
+              <span>
                 transformed - bar
+              </span>
+            </ng-ais-highlight>
+            
                 
             <span
               class="ais-RefinementList-count"
@@ -401,7 +461,17 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
               type="checkbox"
             />
             
+                
+            <ng-ais-highlight
+              attributename="highlighted"
+              ng-reflect-attribute-name="highlighted"
+              ng-reflect-hit="[object Object]"
+            >
+              <span>
                 transformed - foobar
+              </span>
+            </ng-ais-highlight>
+            
                 
             <span
               class="ais-RefinementList-count"
@@ -432,7 +502,17 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
               type="checkbox"
             />
             
+                
+            <ng-ais-highlight
+              attributename="highlighted"
+              ng-reflect-attribute-name="highlighted"
+              ng-reflect-hit="[object Object]"
+            >
+              <span>
                 transformed - barfoo
+              </span>
+            </ng-ais-highlight>
+            
                 
             <span
               class="ais-RefinementList-count"

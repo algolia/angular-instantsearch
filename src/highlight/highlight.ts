@@ -10,10 +10,16 @@ const cx = bem("Highlight")();
 })
 export class NgAisHighlight {
   @Input() attributeName: string;
-  @Input() hit: { _highlightResult?: {} };
+  @Input() hit: { _highlightResult?: {}; label?: string; highlighted?: string };
   @Input() tagName: string = "em";
 
   get content() {
+    if (this.attributeName === "highlighted") {
+      return this.hit.highlighted
+        ? this.replaceWithTagName(this.hit.highlighted)
+        : this.hit.label;
+    }
+
     if (this.hit.hasOwnProperty("_highlightResult")) {
       const attributeHighlighted = get(
         this.hit._highlightResult,
