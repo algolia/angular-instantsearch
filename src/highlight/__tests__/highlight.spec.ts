@@ -34,7 +34,7 @@ describe("highlight", () => {
       attributeName: "name",
       hit: {
         _highlightResult: {
-          name: { value: "__ais-highlight__foo__/ais-highlight__ bar" }
+          name: { value: "<em>foo</em> bar" }
         }
       }
     });
@@ -47,7 +47,7 @@ describe("highlight", () => {
       hit: {
         _highlightResult: {
           parent: {
-            name: { value: "__ais-highlight__foo__/ais-highlight__ bar" }
+            name: { value: "<em>foo</em> bar" }
           }
         }
       }
@@ -62,7 +62,7 @@ describe("highlight", () => {
         _highlightResult: {
           children: [
             {
-              name: { value: "__ais-highlight__foo__/ais-highlight__ bar" }
+              name: { value: "<em>foo</em> bar" }
             }
           ]
         }
@@ -79,7 +79,7 @@ describe("highlight", () => {
       attributeName: "invalid",
       hit: {
         _highlightResult: {
-          name: { value: "__ais-highlight__foo__/ais-highlight__ bar" }
+          name: { value: "<em>foo</em> bar" }
         }
       }
     });

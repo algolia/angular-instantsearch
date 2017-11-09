@@ -60,7 +60,7 @@ export class NgAisInfiniteHits extends BaseWidget {
 
   constructor(searchInstance: NgAisInstance) {
     super(searchInstance);
-    this.createWidget(connectInfiniteHits);
+    this.createWidget(connectInfiniteHits, { escapeHits: true });
   }
 
   public showMore(event) {

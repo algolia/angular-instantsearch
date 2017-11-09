@@ -4,11 +4,6 @@ import { bem } from "../utils";
 
 const cx = bem("Highlight")();
 
-const tagConfig = {
-  highlightPreTag: "__ais-highlight__",
-  highlightPostTag: "__/ais-highlight__"
-};
-
 @Component({
   selector: "ng-ais-highlight",
   template: `<span [innerHtml]="content"></span>`
@@ -30,7 +25,7 @@ export class NgAisHighlight {
         isPlainObject(attributeHighlighted) &&
         typeof attributeHighlighted.value === "string"
       ) {
-        return this.replaceWithEmAndEscape(attributeHighlighted.value);
+        return this.replaceWithTagName(attributeHighlighted.value);
       }
     }
 
@@ -48,15 +43,9 @@ export class NgAisHighlight {
     return fallback;
   }
 
-  replaceWithEmAndEscape(value: string) {
-    return escape(value)
-      .replace(
-        new RegExp(tagConfig.highlightPreTag, "g"),
-        `<${this.tagName} class="${cx}">`
-      )
-      .replace(
-        new RegExp(tagConfig.highlightPostTag, "g"),
-        `</${this.tagName}>`
-      );
+  replaceWithTagName(value: string) {
+    return value
+      .replace(new RegExp("<em>", "g"), `<${this.tagName} class="${cx}">`)
+      .replace(new RegExp("</em>", "g"), `</${this.tagName}>`);
   }
 }

@@ -56,6 +56,6 @@ export class NgAisHits extends BaseWidget {
 
   constructor(searchInstance: NgAisInstance) {
     super(searchInstance);
-    this.createWidget(connectHits);
+    this.createWidget(connectHits, { escapeHits: true });
   }
 }
