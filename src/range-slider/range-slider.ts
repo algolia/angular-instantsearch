@@ -1,34 +1,34 @@
 import { Component, Input, ViewChild } from "@angular/core";
 import { connectRange } from "instantsearch.js/es/connectors";
-import { noop, omit } from "lodash";
+import { isPlainObject, noop, omit } from "lodash-es";
 import * as noUiSlider from "nouislider";
 
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
-import { bem, parseNumberInput } from "../utils";
+import { parseNumberInput } from "../utils";
 
-const cx = bem("RangeSlider");
+interface State {
+  range: { min: number; max: number };
+  refine: Function;
+  start: number[];
+}
 
 @Component({
   selector: "ng-ais-range-slider",
   template: `
-    <div class='${cx()}'>
-      <ng-ais-header [header]="header" className="${cx(
-        "header"
-      )}"></ng-ais-header>
+    <div [class]="cx()">
+      <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
 
-      <div class="${cx("body")}">
+      <div [class]="cx('body')">
         <div #sliderContainer></div>
       </div>
 
-      <ng-ais-footer [footer]="footer" className="${cx(
-        "footer"
-      )}"></ng-ais-footer>
+      <ng-ais-footer [footer]="footer" [className]="cx('footer')"></ng-ais-footer>
     </div>
   `
 })
 export class NgAisRangeSlider extends BaseWidget {
-  @ViewChild("sliderContainer") public sliderContainer;
+  @ViewChild("sliderContainer") public sliderContainer: any;
 
   // render options
   @Input() public pips: boolean = true;
@@ -40,13 +40,13 @@ export class NgAisRangeSlider extends BaseWidget {
   @Input() public max?: number | string;
   @Input() public precision?: number | string = 2;
 
-  public state = {
+  public state: State = {
     range: { min: 0, max: 1 },
     refine: noop,
     start: [0, 1]
   };
 
-  private slider;
+  private slider: any;
 
   get step() {
     // compute step from the precision value
@@ -54,7 +54,7 @@ export class NgAisRangeSlider extends BaseWidget {
   }
 
   constructor(searchInstance: NgAisInstance) {
-    super(searchInstance);
+    super(searchInstance, "RangeSlider");
   }
 
   public ngOnInit() {
@@ -68,21 +68,10 @@ export class NgAisRangeSlider extends BaseWidget {
     super.ngOnInit();
   }
 
-  public updateState = (state, isFirstRendering) => {
+  public updateState = (state: State, isFirstRendering: boolean) => {
     if (isFirstRendering) {
-      const pips =
-        this.pips === true || typeof this.pips === "undefined"
-          ? {
-              density: 3,
-              mode: "positions",
-              stepped: true,
-              values: [0, 50, 100]
-            }
-          : this.pips;
-
       // create slider
       const config = {
-        pips,
         animate: false,
         behaviour: "snap",
         connect: true,
@@ -94,6 +83,19 @@ export class NgAisRangeSlider extends BaseWidget {
           { to: this.formatTooltip }
         ]
       };
+
+      if (this.pips === true || typeof this.pips === "undefined") {
+        Object.assign(config, {
+          pips: {
+            density: 3,
+            mode: "positions",
+            stepped: true,
+            values: [0, 50, 100]
+          }
+        });
+      } else if (isPlainObject(this.pips)) {
+        Object.assign(config, { pips: this.pips });
+      }
 
       this.slider = noUiSlider.create(
         this.sliderContainer.nativeElement,
@@ -123,7 +125,7 @@ export class NgAisRangeSlider extends BaseWidget {
     this.state.refine(values);
   };
 
-  public formatTooltip = value => {
+  public formatTooltip = (value: number) => {
     return value.toFixed(parseNumberInput(this.precision));
   };
 }

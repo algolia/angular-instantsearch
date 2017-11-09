@@ -1,35 +1,30 @@
 import { Component, Input } from "@angular/core";
 import { connectToggle } from "instantsearch.js/es/connectors";
-import { noop } from "lodash";
+import { noop } from "lodash-es";
 
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
-import { bem } from "../utils";
-
-const cx = bem("Toggle");
 
 @Component({
   selector: "ng-ais-toggle",
   template: `
-    <div class="${cx()}">
-      <ng-ais-header [header]="header" className="${cx(
-        "header"
-      )}"></ng-ais-header>
+    <div [class]="cx()">
+      <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
 
-      <div class="${cx("body")}">
-        <ul class="${cx("list")}">
+      <div [class]="cx('body')">
+        <ul [class]="cx('list')">
           <li
-            class="${cx("item")}"
+            [class]="cx('item')"
             (click)="handleClick($event)">
-            <label class="${cx("label")}">
+            <label [class]="cx('label')">
               <input
-                class="${cx("checkbox")}"
+                [class]="cx('checkbox')"
                 type="checkbox"
                 value="{{state.value.name}}"
                 [checked]="state.value.isRefined"
               />
               {{label || state.value.name}}
-              <span class="${cx("count")}">
+              <span [class]="cx('count')">
                 {{state.value.count}}
               </span>
             </label>
@@ -37,9 +32,7 @@ const cx = bem("Toggle");
         </ul>
       </div>
 
-      <ng-ais-footer [footer]="footer" className=${cx(
-        "footer"
-      )}></ng-ais-footer>
+      <ng-ais-footer [footer]="footer" [className]="cx('footer')"></ng-ais-footer>
     </div>
   `
 })
@@ -57,7 +50,7 @@ export class NgAisToggle extends BaseWidget {
   };
 
   constructor(searchInstance: NgAisInstance) {
-    super(searchInstance);
+    super(searchInstance, "Toggle");
   }
 
   public ngOnInit() {
@@ -69,7 +62,7 @@ export class NgAisToggle extends BaseWidget {
     super.ngOnInit();
   }
 
-  public handleClick(event) {
+  public handleClick(event: MouseEvent) {
     event.preventDefault();
     event.stopPropagation();
     this.state.refine(this.state.value);

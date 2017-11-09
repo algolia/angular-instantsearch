@@ -1,22 +1,24 @@
 import { Component, Input } from "@angular/core";
 import { connectStarRating } from "instantsearch.js/es/connectors";
-import { noop } from "lodash";
+import { noop } from "lodash-es";
 
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
-import { bem } from "../utils";
 
-const cx = bem("StarRating");
+interface State {
+  createURL: Function;
+  hasNoResults: boolean;
+  items: {}[];
+  refine: Function;
+}
 
 @Component({
   selector: "ng-ais-star-rating",
   template: `
-    <div class="${cx()}">
-      <ng-ais-header [header]="header" className="${cx(
-        "header"
-      )}"></ng-ais-header>
+    <div [class]="cx()">
+      <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
 
-      <div class="${cx("body")}">
+      <div [class]="cx('body')">
         <svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
           <symbol
             id="ais-StarRating-starSymbol"
@@ -36,21 +38,18 @@ const cx = bem("StarRating");
           </symbol>
         </svg>
 
-        <ul class="${cx("list")}">
+        <ul [class]="cx('list')">
           <li
             *ngFor="let item of state.items"
-            [ngClass]="{
-              '${cx("item")}': true,
-              '${cx("item", "selected")}': item.isRefined
-            }"
+            [class]="cx('item') + (item.isRefined ? cx('item', 'selected') : '')"
           >
             <button
-              class="${cx("button")}"
+              [class]="cx('button')"
               [attr.aria-label]="item.name + ' stars & up'"
             >
               <svg
                 *ngFor="let star of item.stars"
-                class="${cx("starIcon")}"
+                [class]="cx('starIcon')"
                 aria-hidden="true"
               >
                 <use
@@ -66,11 +65,11 @@ const cx = bem("StarRating");
                 </use>
               </svg>
 
-              <span class="${cx("label")}" aria-hidden="true">
+              <span [class]="cx('label')" aria-hidden="true">
                 {{andUpLabel}}
               </span>
 
-              <span class="${cx("count")}">
+              <span [class]="cx('count')">
                 {{item.count}}
               </span>
             </button>
@@ -78,9 +77,7 @@ const cx = bem("StarRating");
         </ul>
       </div>
 
-      <ng-ais-footer [footer]="footer" className="${cx(
-        "footer"
-      )}"></ng-ais-footer>
+      <ng-ais-footer [footer]="footer" [className]="cx('footer')"></ng-ais-footer>
     </div>
   `
 })
@@ -92,7 +89,7 @@ export class NgAisStarRating extends BaseWidget {
   @Input() public attributeName: string;
   @Input() public max?: number = 5;
 
-  public state = {
+  public state: State = {
     createURL: noop,
     hasNoResults: false,
     items: [],
@@ -100,7 +97,7 @@ export class NgAisStarRating extends BaseWidget {
   };
 
   constructor(searchInstance: NgAisInstance) {
-    super(searchInstance);
+    super(searchInstance, "StarRating");
   }
 
   public ngOnInit() {

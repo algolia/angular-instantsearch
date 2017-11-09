@@ -1,3 +1,8 @@
+// instantsearch.js
+declare module "instantsearch.js/es";
+declare module "instantsearch.js/es/connectors";
+
+// angular-instantsearch
 interface InstantSearchConfig {
   appId: string;
   apiKey: string;

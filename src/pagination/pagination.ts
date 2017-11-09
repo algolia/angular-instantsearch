@@ -1,12 +1,10 @@
 import { Component, Input } from "@angular/core";
 import { connectPagination } from "instantsearch.js/es/connectors";
-import { noop, range } from "lodash";
+import { noop, range } from "lodash-es";
 
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
-import { bem, parseNumberInput } from "../utils";
-
-const cx = bem("Pagination");
+import { parseNumberInput } from "../utils";
 
 @Component({
   selector: "ng-ais-pagination",
@@ -30,10 +28,6 @@ export class NgAisPagination extends BaseWidget {
     nbPages: 0,
     refine: noop
   };
-
-  // we use external template, we need the reference
-  // of the cx() util on the Pagination class
-  public cx = cx;
 
   get pages() {
     const { nbPages, currentRefinement } = this.state;
@@ -76,7 +70,7 @@ export class NgAisPagination extends BaseWidget {
   }
 
   constructor(searchInstance: NgAisInstance) {
-    super(searchInstance);
+    super(searchInstance, "Pagination");
   }
 
   public ngOnInit() {
@@ -86,7 +80,7 @@ export class NgAisPagination extends BaseWidget {
     super.ngOnInit();
   }
 
-  public refine(event, page: number) {
+  public refine(event: MouseEvent, page: number) {
     event.stopPropagation();
     event.preventDefault();
 

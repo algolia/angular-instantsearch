@@ -1,53 +1,55 @@
 import { Component, Input } from "@angular/core";
 import { connectCurrentRefinedValues } from "instantsearch.js/es/connectors";
-import { noop, isFunction } from "lodash";
+import { noop, isFunction } from "lodash-es";
 
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
-import { bem } from "../utils";
 
-const cx = bem("CurrentRefinedValues");
+interface State {
+  attributes: {};
+  clearAllClick: Function;
+  clearAllURL: Function;
+  createURL: Function;
+  refine: Function;
+  refinements: {}[];
+}
 
 @Component({
   selector: "ng-ais-current-refined-values",
   template: `
-    <div class="${cx()}">
-      <ng-ais-header [header]="header" className="${cx(
-        "header"
-      )}"></ng-ais-header>
+    <div [class]="cx()">
+      <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
 
-      <div class="${cx("body")}">
+      <div [class]="cx('body')">
         <button
-          class="${cx("reset")}"
+          [class]="cx('reset')"
           (click)="handleClearAllClick($event)"
           *ngIf="clearAll === 'before' || clearAll === true">
           {{clearAllLabel}}
         </button>
 
-        <ul class="${cx("list")}">
+        <ul [class]="cx('list')">
           <li
-            class="${cx("item")}"
+            [class]="cx('item')"
             *ngFor="let refinement of refinements"
             (click)="handleClick($event, refinement)"
           >
-            <button class="${cx("button")}">
+            <button [class]="cx('button')">
               {{refinement.computedLabel}}
-              <span class="${cx("count")}">{{refinement.count}}</span>
+              <span [class]="cx('count')">{{refinement.count}}</span>
             </button>
           </li>
         </ul>
 
         <button
-          class="${cx("reset")}"
+          [class]="cx('reset')"
           (click)="handleClearAllClick($event)"
           *ngIf="clearAll === 'after'">
           {{clearAllLabel}}
         </button>
       </div>
 
-      <ng-ais-footer [footer]="footer" className=${cx(
-        "footer"
-      )}></ng-ais-footer>
+      <ng-ais-footer [footer]="footer" [className]="cx('footer')"></ng-ais-footer>
     </div>
   `
 })
@@ -66,7 +68,7 @@ export class NgAisCurrentRefinedValues extends BaseWidget {
     label: string;
   }[] = [];
 
-  public state = {
+  public state: State = {
     attributes: {},
     clearAllClick: noop,
     clearAllURL: noop,
@@ -82,7 +84,7 @@ export class NgAisCurrentRefinedValues extends BaseWidget {
   }
 
   constructor(searchInstance: NgAisInstance) {
-    super(searchInstance);
+    super(searchInstance, "CurrentRefinedValues");
   }
 
   public ngOnInit() {
@@ -94,12 +96,12 @@ export class NgAisCurrentRefinedValues extends BaseWidget {
     super.ngOnInit();
   }
 
-  public handleClick(event, refinement) {
+  public handleClick(event: MouseEvent, refinement: {}) {
     event.preventDefault();
     this.state.refine(refinement);
   }
 
-  public handleClearAllClick(event) {
+  public handleClearAllClick(event: MouseEvent) {
     event.preventDefault();
     this.state.clearAllClick();
   }

@@ -1,5 +1,5 @@
 import { Input, OnDestroy, OnInit } from "@angular/core";
-import { noop } from "lodash";
+import { noop } from "lodash-es";
 
 import { NgAisInstance } from "./instantsearch/instantsearch-instance";
 

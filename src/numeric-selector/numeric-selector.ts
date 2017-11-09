@@ -1,28 +1,29 @@
 import { Component, Input } from "@angular/core";
 import { connectNumericSelector } from "instantsearch.js/es/connectors";
-import { noop } from "lodash";
+import { noop } from "lodash-es";
 
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
-import { bem } from "../utils";
 
-const cx = bem("NumericSelector");
+interface State {
+  currentRefinement?: string;
+  options: {}[];
+  refine: Function;
+}
 
 @Component({
   selector: "ng-ais-numeric-selector",
   template: `
-    <div class="${cx()}">
-      <ng-ais-header [header]="header" className="${cx(
-        "header"
-      )}"></ng-ais-header>
+    <div [class]="cx('')">
+      <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
 
-      <div class="${cx("body")}">
+      <div [class]="cx('body')">
         <select
-          class="${cx("select")}"
+          [class]="cx('select')"
           (change)="state.refine($event.target.value)"
         >
           <option
-            class="${cx("option")}"
+            [class]="cx('option')"
             *ngFor="let item of state.options"
             [value]="item.value"
             [selected]="item.value === state.currentRefinement"
@@ -32,9 +33,7 @@ const cx = bem("NumericSelector");
         </select>
       </div>
 
-      <ng-ais-footer [footer]="footer" className="${cx(
-        "footer"
-      )}"></ng-ais-footer>
+      <ng-ais-footer [footer]="footer" [className]="cx('footer')"></ng-ais-footer>
     </div>
   `
 })
@@ -48,14 +47,14 @@ export class NgAisNumericSelector extends BaseWidget {
     label: string;
   }[];
 
-  public state = {
+  public state: State = {
     currentRefinement: null,
     options: [],
     refine: noop
   };
 
   constructor(searchInstance: NgAisInstance) {
-    super(searchInstance);
+    super(searchInstance, "NumericSelector");
   }
 
   public ngOnInit() {

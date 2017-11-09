@@ -1,23 +1,25 @@
 import { Component, Input } from "@angular/core";
 import { connectHierarchicalMenu } from "instantsearch.js/es/connectors";
-import { noop, isFunction } from "lodash";
+import { noop, isFunction } from "lodash-es";
 
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 import { bem, parseNumberInput } from "../utils";
 
-const cx = bem("HierarchicalMenu");
+interface State {
+  createURL: Function;
+  items: {}[];
+  refine: Function;
+}
 
 @Component({
   selector: "ng-ais-hierarchical-menu",
   template: `
-    <div class='${cx()}'>
-      <ng-ais-header [header]="header" className="${cx(
-        "header"
-      )}"></ng-ais-header>
+    <div [class]="cx()">
+      <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
 
-      <div class="${cx("body")}">
-        <ul class="${cx("list")} ${cx("list", "lvl0")}">
+      <div [class]="cx('body')">
+        <ul [class]="cx('list') + ' ' + cx('list', 'lvl0')">
           <ng-ais-hierarchical-menu-item
             *ngFor="let item of items"
             [item]="item"
@@ -28,9 +30,7 @@ const cx = bem("HierarchicalMenu");
         </ul>
       </div>
 
-      <ng-ais-footer [footer]="footer" className="${cx(
-        "footer"
-      )}"></ng-ais-footer>
+      <ng-ais-footer [footer]="footer" [className]="cx('footer')"></ng-ais-footer>
     </div>
   `
 })
@@ -46,7 +46,7 @@ export class NgAisHierarchicalMenu extends BaseWidget {
   @Input() public limit?: number | string = 10;
   @Input() public sortBy?: string[] | ((item: object) => number);
 
-  public state = {
+  public state: State = {
     createURL: noop,
     items: [],
     refine: noop
@@ -59,7 +59,7 @@ export class NgAisHierarchicalMenu extends BaseWidget {
   }
 
   constructor(searchInstance: NgAisInstance) {
-    super(searchInstance);
+    super(searchInstance, "HierarchicalMenu");
   }
 
   public ngOnInit() {

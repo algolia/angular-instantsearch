@@ -1,30 +1,38 @@
 import { Component, Input } from "@angular/core";
 import { connectRefinementList } from "instantsearch.js/es/connectors";
-import { noop, isFunction } from "lodash";
+import { noop, isFunction } from "lodash-es";
 
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
-import { bem, parseNumberInput } from "../utils";
+import { parseNumberInput } from "../utils";
 
-const cx = bem("RefinementList");
+interface State {
+  canRefine: boolean;
+  canToggleShowMore: boolean;
+  createURL: Function;
+  isShowingMore: boolean;
+  items: {}[];
+  refine: Function;
+  toggleShowMore: Function;
+  searchForItems: Function;
+  isFormSearch: boolean;
+}
 
 @Component({
   selector: "ng-ais-refinement-list",
   template: `
-    <div class="${cx()}">
-      <ng-ais-header [header]="header" className="${cx(
-        "header"
-      )}"></ng-ais-header>
+    <div [class]="cx()">
+      <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
 
-      <div class="${cx("body")}">
+      <div [class]="cx('body')">
         <form
-          class="${cx("form")}"
+          [class]="cx('form')"
           *ngIf="withSearchBox"
           (submit)="handleSubmit($event)"
           novalidate
         >
           <input
-            class="${cx("input")}"
+            [class]="cx('input')"
             autocapitalize="off"
             autocorrect="off"
             placeholder="{{searchPlaceholder}}"
@@ -36,18 +44,15 @@ const cx = bem("RefinementList");
           />
         </form>
 
-        <ul class="${cx("list")}">
+        <ul [class]="cx('list')">
           <li
-            [ngClass]="{
-              '${cx("item")}': true,
-              '${cx("item", "selected")}': item.isRefined
-            }"
+            [class]="cx('item') + (item.isRefined ? cx('item', 'selected') : '')"
             *ngFor="let item of items"
             (click)="refine($event, item)"
           >
-            <label class="${cx("label")}">
+            <label [class]="cx('label')">
               <input
-                class="${cx("checkbox")}"
+                [class]="cx('checkbox')"
                 type="checkbox"
                 value="{{item.value}}"
                 [checked]="item.isRefined"
@@ -57,7 +62,7 @@ const cx = bem("RefinementList");
                 [hit]="item"
               >
               </ng-ais-highlight>
-              <span class="${cx("count")}">
+              <span [class]="cx('count')">
                 {{item.count}}
               </span>
             </label>
@@ -72,9 +77,7 @@ const cx = bem("RefinementList");
         </button>
       </div>
 
-      <ng-ais-footer [footer]="footer" className="${cx(
-        "footer"
-      )}"></ng-ais-footer>
+      <ng-ais-footer [footer]="footer" [className]="cx('footer')"></ng-ais-footer>
     </div>
   `
 })
@@ -96,7 +99,7 @@ export class NgAisRefinementList extends BaseWidget {
   // inner state
   searchQuery = "";
 
-  public state = {
+  public state: State = {
     canRefine: false,
     canToggleShowMore: false,
     createURL: noop,
@@ -109,7 +112,7 @@ export class NgAisRefinementList extends BaseWidget {
   };
 
   constructor(searchInstance: NgAisInstance) {
-    super(searchInstance);
+    super(searchInstance, "RefinementList");
   }
 
   get items() {
@@ -130,7 +133,10 @@ export class NgAisRefinementList extends BaseWidget {
     super.ngOnInit();
   }
 
-  public refine(event, item) {
+  public refine(
+    event: MouseEvent,
+    item: { isRefined: boolean; value: string }
+  ) {
     event.preventDefault();
     event.stopPropagation();
 
@@ -143,12 +149,12 @@ export class NgAisRefinementList extends BaseWidget {
     }
   }
 
-  handleSubmit(event) {
+  handleSubmit(event: MouseEvent) {
     event.preventDefault();
     this.state.searchForItems(this.searchQuery);
   }
 
-  handleChange(value) {
+  handleChange(value: string) {
     this.searchQuery = value;
     this.state.searchForItems(value);
   }

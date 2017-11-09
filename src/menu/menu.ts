@@ -1,31 +1,37 @@
 import { Component, Input } from "@angular/core";
 import { connectMenu } from "instantsearch.js/es/connectors";
-import { noop, isFunction } from "lodash";
+import { noop, isFunction } from "lodash-es";
 
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
-import { bem, parseNumberInput } from "../utils";
+import { parseNumberInput } from "../utils";
 
-const cx = bem("Menu");
+interface State {
+  canRefine: boolean;
+  canToggleShowMore: boolean;
+  createURL: Function;
+  isShowingMore: boolean;
+  items: {}[];
+  refine: Function;
+  toggleShowMore: Function;
+}
 
 @Component({
   selector: "ng-ais-menu",
   template: `
-    <div class='${cx()}'>
-      <ng-ais-header [header]="header" className="${cx(
-        "header"
-      )}"></ng-ais-header>
+    <div [class]="cx()">
+      <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
 
-      <div class="${cx("body")}">
-        <ul class="${cx("list")}">
+      <div [class]="cx('body')">
+        <ul [class]="cx('list')">
           <li
-            class="${cx("item")}"
+            [class]="cx('item')"
             *ngFor="let item of items"
             (click)="state.refine(item.value)"
           >
             <a href="{{state.createURL(item.value)}}">
               {{item.label}}
-              <span class="${cx("count")}">{{item.count}}</span>
+              <span [class]="cx('count')">{{item.count}}</span>
             </a>
           </li>
         </ul>
@@ -38,9 +44,7 @@ const cx = bem("Menu");
         </button>
       </div>
 
-      <ng-ais-footer [footer]="footer" className="${cx(
-        "footer"
-      )}"></ng-ais-footer>
+      <ng-ais-footer [footer]="footer" [className]="cx('footer')"></ng-ais-footer>
     </div>
   `
 })
@@ -56,7 +60,7 @@ export class NgAisMenu extends BaseWidget {
   @Input() public limitMax?: number | string;
   @Input() public sortBy?: string[] | ((item: object) => number);
 
-  public state = {
+  public state: State = {
     canRefine: false,
     canToggleShowMore: false,
     createURL: noop,
@@ -73,7 +77,7 @@ export class NgAisMenu extends BaseWidget {
   }
 
   constructor(searchInstance: NgAisInstance) {
-    super(searchInstance);
+    super(searchInstance, "Menu");
   }
 
   public ngOnInit() {
