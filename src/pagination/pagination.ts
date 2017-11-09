@@ -8,7 +8,97 @@ import { parseNumberInput } from "../utils";
 
 @Component({
   selector: "ng-ais-pagination",
-  templateUrl: "./pagination.html"
+  template: `
+    <div [class]="cx()">
+      <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
+
+      <div [class]="cx('body')">
+        <ul [class]="cx('list')">
+          <li
+            *ngIf="showFirst"
+            (click)="refine($event, 0)"
+            [class]="
+              cx('item', 'firstPage') +
+              (state.currentRefinement === 0 ? ' ' + cx('item', 'disabled') : '')
+            "
+          >
+            <a
+              [href]="state.createURL(0)"
+              [class]="cx('link')"
+            >
+              «
+            </a>
+          </li>
+
+          <li
+            *ngIf="showPrevious"
+            (click)="refine($event, state.currentRefinement - 1)"
+            [class]="
+              cx('item', 'previousPage') +
+              (state.currentRefinement === 0 ? ' ' + cx('item', 'disabled') : '')
+            "
+          >
+            <a
+              [href]="state.createURL(state.currentRefinement - 1)"
+              [class]="cx('link')"
+            >
+              ‹
+            </a>
+          </li>
+
+          <li
+            [class]="
+              cx('item', 'page') +
+              (state.currentRefinement === page ? ' ' + cx('item', 'selected') : '')
+            "
+            *ngFor="let page of pages"
+            (click)="refine($event, page)"
+          >
+            <a
+              [class]="cx('link')"
+              [href]="state.createURL(page)"
+            >
+              {{page + 1}}
+            </a>
+          </li>
+
+          <li
+            *ngIf="showNext"
+            (click)="refine($event, state.currentRefinement + 1)"
+            [class]="
+              cx('item', 'nextPage') +
+              (state.currentRefinement + 1 === state.nbPages ? ' ' + cx('item', 'disabled') : '')
+            "
+          >
+            <a
+              [href]="state.createURL(state.currentRefinement + 1)"
+              [class]="cx('link')"
+            >
+              ›
+            </a>
+          </li>
+
+          <li
+            *ngIf="showLast"
+            (click)="refine($event, state.nbPages)"
+            [class]="
+              cx('item', 'lastPage') +
+              (state.currentRefinement + 1 === state.nbPages ? ' ' + cx('item', 'disabled') : '')
+            "
+          >
+            <a
+              [href]="state.createURL(state.nbPages)"
+              [class]="cx('link')"
+            >
+              »
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <ng-ais-footer [footer]="footer" [className]="cx('footer')"></ng-ais-footer>
+    </div>
+  `
 })
 export class NgAisPagination extends BaseWidget {
   // render options
@@ -18,7 +108,7 @@ export class NgAisPagination extends BaseWidget {
   @Input() public showNext: boolean = true;
   @Input() public pagesPadding: number | string = 3;
 
-  // connector options
+  // connector optionsw
   @Input() public maxPages?: number | string;
 
   public state = {
