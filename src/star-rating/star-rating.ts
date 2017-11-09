@@ -49,7 +49,7 @@ interface State {
             >
               <svg
                 *ngFor="let star of item.stars"
-                [class]="cx('starIcon')"
+                [ngClass]="cx('starIcon')"
                 aria-hidden="true"
               >
                 <use

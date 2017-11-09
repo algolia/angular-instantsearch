@@ -38,7 +38,7 @@ import { NgAisInstance } from "../instantsearch/instantsearch-instance";
             (click)="handleSubmit($event)"
           >
             <svg
-              [class]="cx('magnifierIcon')"
+              [ngClass]="cx('magnifierIcon')"
               xmlns="http://www.w3.org/2000/svg"
               id="sbx-icon-search-13"
               viewBox="0 0 40 40"
@@ -56,7 +56,7 @@ import { NgAisInstance } from "../instantsearch/instantsearch-instance";
             (click)="handleReset($event)"
           >
             <svg
-              [class]="cx('resetIcon')"
+              [ngClass]="cx('resetIcon')"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
               width="20"
