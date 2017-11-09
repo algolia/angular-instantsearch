@@ -10,5 +10,11 @@
     "prettier": true,
     "no-submodule-imports": false,
     "import-name": false
+  },
+  "cliOptions": {
+    "exclude": [
+      "node_modules",
+      "dist"
+    ]
   }
 }
