@@ -2,6 +2,7 @@
 
 exports[`RangeSlider renders markup with state 1`] = `
 <ng-ais-range-slider
+  cx={[Function Function]}
   formatTooltip={[Function Function]}
   handleChange={[Function Function]}
   pips={[Function Boolean]}
@@ -20,7 +21,6 @@ exports[`RangeSlider renders markup with state 1`] = `
     
         
     <ng-ais-header
-      classname="ais-RangeSlider-header ais-header"
       ng-reflect-class-name="ais-RangeSlider-header ais-hea"
     >
       
@@ -258,7 +258,6 @@ exports[`RangeSlider renders markup with state 1`] = `
   
         
     <ng-ais-footer
-      classname="ais-RangeSlider-footer ais-footer"
       ng-reflect-class-name="ais-RangeSlider-footer ais-foo"
     >
       
@@ -276,6 +275,7 @@ exports[`RangeSlider renders markup with state 1`] = `
 
 exports[`RangeSlider renders markup without state 1`] = `
 <ng-ais-range-slider
+  cx={[Function Function]}
   formatTooltip={[Function Function]}
   handleChange={[Function Function]}
   pips={[Function Boolean]}
@@ -293,7 +293,6 @@ exports[`RangeSlider renders markup without state 1`] = `
     
         
     <ng-ais-header
-      classname="ais-RangeSlider-header ais-header"
       ng-reflect-class-name="ais-RangeSlider-header ais-hea"
     >
       
@@ -318,7 +317,6 @@ exports[`RangeSlider renders markup without state 1`] = `
   
         
     <ng-ais-footer
-      classname="ais-RangeSlider-footer ais-footer"
       ng-reflect-class-name="ais-RangeSlider-footer ais-foo"
     >
       

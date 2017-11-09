@@ -2,6 +2,7 @@
 
 exports[`HierarchicalMenu renders markup with state 1`] = `
 <ng-ais-hierarchical-menu
+  cx={[Function Function]}
   limit={[Function Number]}
   searchInstance={[Function NgAisInstance]}
   separator={[Function String]}
@@ -15,7 +16,6 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
     
         
     <ng-ais-header
-      classname="ais-HierarchicalMenu-header ais-header"
       ng-reflect-class-name="ais-HierarchicalMenu-header ai"
     >
       
@@ -49,7 +49,6 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
       
           <li
             class="ais-HierarchicalMenu-item"
-            ng-reflect-ng-class="[object Object]"
           >
             
         
@@ -91,7 +90,6 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
       
           <li
             class="ais-HierarchicalMenu-item ais-HierarchicalMenu-item--selected"
-            ng-reflect-ng-class="[object Object]"
           >
             
         
@@ -134,7 +132,6 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
       
                 <li
                   class="ais-HierarchicalMenu-item"
-                  ng-reflect-ng-class="[object Object]"
                 >
                   
         
@@ -177,7 +174,6 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
       
                 <li
                   class="ais-HierarchicalMenu-item"
-                  ng-reflect-ng-class="[object Object]"
                 >
                   
         
@@ -220,7 +216,6 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
       
                 <li
                   class="ais-HierarchicalMenu-item"
-                  ng-reflect-ng-class="[object Object]"
                 >
                   
         
@@ -263,7 +258,6 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
       
                 <li
                   class="ais-HierarchicalMenu-item"
-                  ng-reflect-ng-class="[object Object]"
                 >
                   
         
@@ -314,7 +308,6 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
       
           <li
             class="ais-HierarchicalMenu-item"
-            ng-reflect-ng-class="[object Object]"
           >
             
         
@@ -356,7 +349,6 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
       
           <li
             class="ais-HierarchicalMenu-item"
-            ng-reflect-ng-class="[object Object]"
           >
             
         
@@ -398,7 +390,6 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
       
           <li
             class="ais-HierarchicalMenu-item"
-            ng-reflect-ng-class="[object Object]"
           >
             
         
@@ -439,7 +430,6 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
   
         
     <ng-ais-footer
-      classname="ais-HierarchicalMenu-footer ais-footer"
       ng-reflect-class-name="ais-HierarchicalMenu-footer ai"
     >
       
@@ -457,6 +447,7 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
 
 exports[`HierarchicalMenu renders markup without state 1`] = `
 <ng-ais-hierarchical-menu
+  cx={[Function Function]}
   limit={[Function Number]}
   searchInstance={[Function NgAisInstance]}
   separator={[Function String]}
@@ -470,7 +461,6 @@ exports[`HierarchicalMenu renders markup without state 1`] = `
     
         
     <ng-ais-header
-      classname="ais-HierarchicalMenu-header ais-header"
       ng-reflect-class-name="ais-HierarchicalMenu-header ai"
     >
       
@@ -503,7 +493,6 @@ exports[`HierarchicalMenu renders markup without state 1`] = `
   
         
     <ng-ais-footer
-      classname="ais-HierarchicalMenu-footer ais-footer"
       ng-reflect-class-name="ais-HierarchicalMenu-footer ai"
     >
       
@@ -521,6 +510,7 @@ exports[`HierarchicalMenu renders markup without state 1`] = `
 
 exports[`HierarchicalMenu should apply \`transformItems\` if specified 1`] = `
 <ng-ais-hierarchical-menu
+  cx={[Function Function]}
   limit={[Function Number]}
   searchInstance={[Function NgAisInstance]}
   separator={[Function String]}
@@ -535,7 +525,6 @@ exports[`HierarchicalMenu should apply \`transformItems\` if specified 1`] = `
     
         
     <ng-ais-header
-      classname="ais-HierarchicalMenu-header ais-header"
       ng-reflect-class-name="ais-HierarchicalMenu-header ai"
     >
       
@@ -569,7 +558,6 @@ exports[`HierarchicalMenu should apply \`transformItems\` if specified 1`] = `
       
           <li
             class="ais-HierarchicalMenu-item"
-            ng-reflect-ng-class="[object Object]"
           >
             
         
@@ -611,7 +599,6 @@ exports[`HierarchicalMenu should apply \`transformItems\` if specified 1`] = `
       
           <li
             class="ais-HierarchicalMenu-item ais-HierarchicalMenu-item--selected"
-            ng-reflect-ng-class="[object Object]"
           >
             
         
@@ -654,7 +641,6 @@ exports[`HierarchicalMenu should apply \`transformItems\` if specified 1`] = `
       
                 <li
                   class="ais-HierarchicalMenu-item"
-                  ng-reflect-ng-class="[object Object]"
                 >
                   
         
@@ -697,7 +683,6 @@ exports[`HierarchicalMenu should apply \`transformItems\` if specified 1`] = `
       
                 <li
                   class="ais-HierarchicalMenu-item"
-                  ng-reflect-ng-class="[object Object]"
                 >
                   
         
@@ -740,7 +725,6 @@ exports[`HierarchicalMenu should apply \`transformItems\` if specified 1`] = `
       
                 <li
                   class="ais-HierarchicalMenu-item"
-                  ng-reflect-ng-class="[object Object]"
                 >
                   
         
@@ -783,7 +767,6 @@ exports[`HierarchicalMenu should apply \`transformItems\` if specified 1`] = `
       
                 <li
                   class="ais-HierarchicalMenu-item"
-                  ng-reflect-ng-class="[object Object]"
                 >
                   
         
@@ -834,7 +817,6 @@ exports[`HierarchicalMenu should apply \`transformItems\` if specified 1`] = `
       
           <li
             class="ais-HierarchicalMenu-item"
-            ng-reflect-ng-class="[object Object]"
           >
             
         
@@ -876,7 +858,6 @@ exports[`HierarchicalMenu should apply \`transformItems\` if specified 1`] = `
       
           <li
             class="ais-HierarchicalMenu-item"
-            ng-reflect-ng-class="[object Object]"
           >
             
         
@@ -918,7 +899,6 @@ exports[`HierarchicalMenu should apply \`transformItems\` if specified 1`] = `
       
           <li
             class="ais-HierarchicalMenu-item"
-            ng-reflect-ng-class="[object Object]"
           >
             
         
@@ -959,7 +939,6 @@ exports[`HierarchicalMenu should apply \`transformItems\` if specified 1`] = `
   
         
     <ng-ais-footer
-      classname="ais-HierarchicalMenu-footer ais-footer"
       ng-reflect-class-name="ais-HierarchicalMenu-footer ai"
     >
       

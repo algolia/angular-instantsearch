@@ -2,6 +2,7 @@ import { Input, OnDestroy, OnInit } from "@angular/core";
 import { noop } from "lodash-es";
 
 import { NgAisInstance } from "./instantsearch/instantsearch-instance";
+import { bem } from "../utils";
 
 export class BaseWidget implements OnInit, OnDestroy {
   // header footer
@@ -10,8 +11,11 @@ export class BaseWidget implements OnInit, OnDestroy {
 
   public widget?: Widget;
   public state?: object;
+  public cx?: Function;
 
-  constructor(private searchInstance: NgAisInstance) {}
+  constructor(private searchInstance: NgAisInstance, widgetName: string) {
+    this.cx = bem(widgetName);
+  }
 
   public createWidget(connector: Connector, options: object = {}) {
     // nothind to do, test env

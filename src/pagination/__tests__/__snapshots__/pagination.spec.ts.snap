@@ -13,13 +13,12 @@ exports[`Pagination renders does not uses pagesPadding when nbPages < pagesPaddi
   updateState={[Function Function]}
 >
   <div
-    class="cx()}"
+    class="ais-Pagination"
   >
     
     
     <ng-ais-header
-      classname="cx('header')"
-      ng-reflect-class-name="cx('header')"
+      ng-reflect-class-name="ais-Pagination-header ais-head"
     >
       
       
@@ -48,7 +47,7 @@ exports[`Pagination renders does not uses pagesPadding when nbPages < pagesPaddi
           
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
             «
@@ -68,7 +67,7 @@ exports[`Pagination renders does not uses pagesPadding when nbPages < pagesPaddi
           
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
             ‹
@@ -88,7 +87,7 @@ exports[`Pagination renders does not uses pagesPadding when nbPages < pagesPaddi
           
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
             1
@@ -104,7 +103,7 @@ exports[`Pagination renders does not uses pagesPadding when nbPages < pagesPaddi
           
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
             2
@@ -120,7 +119,7 @@ exports[`Pagination renders does not uses pagesPadding when nbPages < pagesPaddi
           
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
             3
@@ -136,7 +135,7 @@ exports[`Pagination renders does not uses pagesPadding when nbPages < pagesPaddi
           
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
             4
@@ -152,7 +151,7 @@ exports[`Pagination renders does not uses pagesPadding when nbPages < pagesPaddi
           
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
             5
@@ -172,7 +171,7 @@ exports[`Pagination renders does not uses pagesPadding when nbPages < pagesPaddi
           
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
             ›
@@ -222,14 +221,10 @@ exports[`Pagination renders markup without state 1`] = `
   state={[Function Object]}
   updateState={[Function Function]}
 >
-  <div
-    class="cx()}"
-  >
+  <div>
     
     
-    <ng-ais-header
-      classname="cx('header')"
-    >
+    <ng-ais-header>
       
       
       
@@ -298,13 +293,12 @@ exports[`Pagination renders with pages in state 1`] = `
   updateState={[Function Function]}
 >
   <div
-    class="cx()}"
+    class="ais-Pagination"
   >
     
     
     <ng-ais-header
-      classname="cx('header')"
-      ng-reflect-class-name="cx('header')"
+      ng-reflect-class-name="ais-Pagination-header ais-head"
     >
       
       
@@ -333,7 +327,7 @@ exports[`Pagination renders with pages in state 1`] = `
           
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
             «
@@ -353,7 +347,7 @@ exports[`Pagination renders with pages in state 1`] = `
           
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
             ‹
@@ -373,7 +367,7 @@ exports[`Pagination renders with pages in state 1`] = `
           
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
             1
@@ -389,7 +383,7 @@ exports[`Pagination renders with pages in state 1`] = `
           
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
             2
@@ -405,7 +399,7 @@ exports[`Pagination renders with pages in state 1`] = `
           
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
             3
@@ -421,7 +415,7 @@ exports[`Pagination renders with pages in state 1`] = `
           
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
             4
@@ -437,7 +431,7 @@ exports[`Pagination renders with pages in state 1`] = `
           
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
             5
@@ -453,7 +447,7 @@ exports[`Pagination renders with pages in state 1`] = `
           
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
             6
@@ -469,7 +463,7 @@ exports[`Pagination renders with pages in state 1`] = `
           
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
             7
@@ -489,7 +483,7 @@ exports[`Pagination renders with pages in state 1`] = `
           
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
             ›
@@ -542,20 +536,19 @@ exports[`Pagination should display an header and a footer 1`] = `
   updateState={[Function Function]}
 >
   <div
-    class="cx()}"
+    class="ais-Pagination"
   >
     
     
     <ng-ais-header
-      classname="cx('header')"
-      ng-reflect-class-name="cx('header')"
+      ng-reflect-class-name="ais-Pagination-header ais-head"
       ng-reflect-header="Header title"
     >
       
       
       
       <div
-        class="cx('header')"
+        class="ais-Pagination-header ais-header"
       >
         
         Header title
@@ -585,7 +578,7 @@ exports[`Pagination should display an header and a footer 1`] = `
           
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
             «
@@ -605,7 +598,7 @@ exports[`Pagination should display an header and a footer 1`] = `
           
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
             ‹
@@ -625,7 +618,7 @@ exports[`Pagination should display an header and a footer 1`] = `
           
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
             1
@@ -641,7 +634,7 @@ exports[`Pagination should display an header and a footer 1`] = `
           
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
             2
@@ -657,7 +650,7 @@ exports[`Pagination should display an header and a footer 1`] = `
           
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
             3
@@ -673,7 +666,7 @@ exports[`Pagination should display an header and a footer 1`] = `
           
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
             4
@@ -689,7 +682,7 @@ exports[`Pagination should display an header and a footer 1`] = `
           
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
             5
@@ -705,7 +698,7 @@ exports[`Pagination should display an header and a footer 1`] = `
           
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
             6
@@ -721,7 +714,7 @@ exports[`Pagination should display an header and a footer 1`] = `
           
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
             7
@@ -741,7 +734,7 @@ exports[`Pagination should display an header and a footer 1`] = `
           
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
             ›

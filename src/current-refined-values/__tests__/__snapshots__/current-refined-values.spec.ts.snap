@@ -6,6 +6,7 @@ exports[`CurrentRefinedValues renders markup with state 1`] = `
   clearAll={[Function String]}
   clearAllLabel={[Function String]}
   clearsQuery="false"
+  cx={[Function Function]}
   onlyListedAttributes="false"
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
@@ -18,7 +19,6 @@ exports[`CurrentRefinedValues renders markup with state 1`] = `
     
         
     <ng-ais-header
-      classname="ais-CurrentRefinedValues-header ais-header"
       ng-reflect-class-name="ais-CurrentRefinedValues-heade"
     >
       
@@ -154,8 +154,6 @@ exports[`CurrentRefinedValues renders markup with state 1`] = `
   
         
     <ng-ais-footer
-      ais-footer=""
-      classname="ais-CurrentRefinedValues-footer"
       ng-reflect-class-name="ais-CurrentRefinedValues-foote"
     >
       
@@ -177,6 +175,7 @@ exports[`CurrentRefinedValues renders markup without state 1`] = `
   clearAll={[Function String]}
   clearAllLabel={[Function String]}
   clearsQuery="false"
+  cx={[Function Function]}
   onlyListedAttributes="false"
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
@@ -189,7 +188,6 @@ exports[`CurrentRefinedValues renders markup without state 1`] = `
     
         
     <ng-ais-header
-      classname="ais-CurrentRefinedValues-header ais-header"
       ng-reflect-class-name="ais-CurrentRefinedValues-heade"
     >
       
@@ -237,8 +235,6 @@ exports[`CurrentRefinedValues renders markup without state 1`] = `
   
         
     <ng-ais-footer
-      ais-footer=""
-      classname="ais-CurrentRefinedValues-footer"
       ng-reflect-class-name="ais-CurrentRefinedValues-foote"
     >
       
@@ -260,6 +256,7 @@ exports[`CurrentRefinedValues should apply \`transformItems\` if specified 1`] =
   clearAll={[Function String]}
   clearAllLabel={[Function String]}
   clearsQuery="false"
+  cx={[Function Function]}
   onlyListedAttributes="false"
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
@@ -273,7 +270,6 @@ exports[`CurrentRefinedValues should apply \`transformItems\` if specified 1`] =
     
         
     <ng-ais-header
-      classname="ais-CurrentRefinedValues-header ais-header"
       ng-reflect-class-name="ais-CurrentRefinedValues-heade"
     >
       
@@ -409,8 +405,6 @@ exports[`CurrentRefinedValues should apply \`transformItems\` if specified 1`] =
   
         
     <ng-ais-footer
-      ais-footer=""
-      classname="ais-CurrentRefinedValues-footer"
       ng-reflect-class-name="ais-CurrentRefinedValues-foote"
     >
       

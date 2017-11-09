@@ -2,6 +2,7 @@
 
 exports[`HitsPerPageSelector renders markup with state 1`] = `
 <ng-ais-hits-per-page-selector
+  cx={[Function Function]}
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
   updateState={[Function Function]}
@@ -13,7 +14,6 @@ exports[`HitsPerPageSelector renders markup with state 1`] = `
     
         
     <ng-ais-header
-      classname="ais-HitsPerPageSelector-header ais-header"
       ng-reflect-class-name="ais-HitsPerPageSelector-header"
     >
       
@@ -70,7 +70,6 @@ exports[`HitsPerPageSelector renders markup with state 1`] = `
   
         
     <ng-ais-footer
-      classname="ais-HitsPerPageSelector-footer ais-footer"
       ng-reflect-class-name="ais-HitsPerPageSelector-footer"
     >
       
@@ -88,19 +87,16 @@ exports[`HitsPerPageSelector renders markup with state 1`] = `
 
 exports[`HitsPerPageSelector renders markup without state 1`] = `
 <ng-ais-hits-per-page-selector
+  cx={[Function Function]}
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
   updateState={[Function Function]}
 >
   
-      <div
-    class="ais-HitsPerPageSelector"
-  >
+      <div>
     
         
-    <ng-ais-header
-      classname="ais-HitsPerPageSelector-header ais-header"
-    >
+    <ng-ais-header>
       
       
       
@@ -110,14 +106,10 @@ exports[`HitsPerPageSelector renders markup without state 1`] = `
     
   
         
-    <div
-      class="ais-HitsPerPageSelector-body ais-body"
-    >
+    <div>
       
           
-      <select
-        class="ais-HitsPerPageSelector-select"
-      >
+      <select>
         
             
         
@@ -130,9 +122,7 @@ exports[`HitsPerPageSelector renders markup without state 1`] = `
     
   
         
-    <ng-ais-footer
-      classname="ais-HitsPerPageSelector-footer ais-footer"
-    >
+    <ng-ais-footer>
       
       
       

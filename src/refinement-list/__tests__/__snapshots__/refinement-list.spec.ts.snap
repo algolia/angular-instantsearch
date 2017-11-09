@@ -2,6 +2,7 @@
 
 exports[`RefinementList renders markup with state 1`] = `
 <ng-ais-refinement-list
+  cx={[Function Function]}
   limitMin={[Function Number]}
   operator={[Function String]}
   searchInstance={[Function NgAisInstance]}
@@ -19,7 +20,6 @@ exports[`RefinementList renders markup with state 1`] = `
     
         
     <ng-ais-header
-      classname="ais-RefinementList-header ais-header"
       ng-reflect-class-name="ais-RefinementList-header ais-"
     >
       
@@ -48,7 +48,6 @@ exports[`RefinementList renders markup with state 1`] = `
         
         <li
           class="ais-RefinementList-item"
-          ng-reflect-ng-class="[object Object]"
         >
           
               
@@ -89,7 +88,6 @@ exports[`RefinementList renders markup with state 1`] = `
         </li>
         <li
           class="ais-RefinementList-item"
-          ng-reflect-ng-class="[object Object]"
         >
           
               
@@ -130,7 +128,6 @@ exports[`RefinementList renders markup with state 1`] = `
         </li>
         <li
           class="ais-RefinementList-item"
-          ng-reflect-ng-class="[object Object]"
         >
           
               
@@ -171,7 +168,6 @@ exports[`RefinementList renders markup with state 1`] = `
         </li>
         <li
           class="ais-RefinementList-item"
-          ng-reflect-ng-class="[object Object]"
         >
           
               
@@ -224,7 +220,6 @@ exports[`RefinementList renders markup with state 1`] = `
   
         
     <ng-ais-footer
-      classname="ais-RefinementList-footer ais-footer"
       ng-reflect-class-name="ais-RefinementList-footer ais-"
     >
       
@@ -242,6 +237,7 @@ exports[`RefinementList renders markup with state 1`] = `
 
 exports[`RefinementList renders markup without state 1`] = `
 <ng-ais-refinement-list
+  cx={[Function Function]}
   limitMin={[Function Number]}
   operator={[Function String]}
   searchInstance={[Function NgAisInstance]}
@@ -259,7 +255,6 @@ exports[`RefinementList renders markup without state 1`] = `
     
         
     <ng-ais-header
-      classname="ais-RefinementList-header ais-header"
       ng-reflect-class-name="ais-RefinementList-header ais-"
     >
       
@@ -300,7 +295,6 @@ exports[`RefinementList renders markup without state 1`] = `
   
         
     <ng-ais-footer
-      classname="ais-RefinementList-footer ais-footer"
       ng-reflect-class-name="ais-RefinementList-footer ais-"
     >
       
@@ -318,6 +312,7 @@ exports[`RefinementList renders markup without state 1`] = `
 
 exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
 <ng-ais-refinement-list
+  cx={[Function Function]}
   limitMin={[Function Number]}
   operator={[Function String]}
   searchInstance={[Function NgAisInstance]}
@@ -336,7 +331,6 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
     
         
     <ng-ais-header
-      classname="ais-RefinementList-header ais-header"
       ng-reflect-class-name="ais-RefinementList-header ais-"
     >
       
@@ -365,7 +359,6 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
         
         <li
           class="ais-RefinementList-item"
-          ng-reflect-ng-class="[object Object]"
         >
           
               
@@ -405,8 +398,7 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
             
         </li>
         <li
-          class="ais-RefinementList-item ais-RefinementList-item--selected"
-          ng-reflect-ng-class="[object Object]"
+          class="ais-RefinementList-itemais-RefinementList-item--selected"
         >
           
               
@@ -447,7 +439,6 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
         </li>
         <li
           class="ais-RefinementList-item"
-          ng-reflect-ng-class="[object Object]"
         >
           
               
@@ -488,7 +479,6 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
         </li>
         <li
           class="ais-RefinementList-item"
-          ng-reflect-ng-class="[object Object]"
         >
           
               
@@ -541,7 +531,6 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
   
         
     <ng-ais-footer
-      classname="ais-RefinementList-footer ais-footer"
       ng-reflect-class-name="ais-RefinementList-footer ais-"
     >
       

@@ -2,6 +2,7 @@
 
 exports[`Hits renders markup with state 1`] = `
 <ng-ais-hits
+  cx={[Function Function]}
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
   template="undefined"
@@ -14,7 +15,6 @@ exports[`Hits renders markup with state 1`] = `
     
         
     <ng-ais-header
-      classname="ais-Hits-header ais-header"
       ng-reflect-class-name="ais-Hits-header ais-header"
     >
       
@@ -128,9 +128,7 @@ exports[`Hits renders markup with state 1`] = `
   
         
     <ng-ais-footer
-      ais-footer=""
-      classname="ais-Hits-footer"
-      ng-reflect-class-name="ais-Hits-footer"
+      ng-reflect-class-name="ais-Hits-footer ais-footer"
     >
       
       
@@ -147,6 +145,7 @@ exports[`Hits renders markup with state 1`] = `
 
 exports[`Hits renders markup without state 1`] = `
 <ng-ais-hits
+  cx={[Function Function]}
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
   template="undefined"
@@ -159,7 +158,6 @@ exports[`Hits renders markup without state 1`] = `
     
         
     <ng-ais-header
-      classname="ais-Hits-header ais-header"
       ng-reflect-class-name="ais-Hits-header ais-header"
     >
       
@@ -205,9 +203,7 @@ exports[`Hits renders markup without state 1`] = `
   
         
     <ng-ais-footer
-      ais-footer=""
-      classname="ais-Hits-footer"
-      ng-reflect-class-name="ais-Hits-footer"
+      ng-reflect-class-name="ais-Hits-footer ais-footer"
     >
       
       
@@ -224,6 +220,7 @@ exports[`Hits renders markup without state 1`] = `
 
 exports[`Hits should apply \`transformItems\` if specified 1`] = `
 <ng-ais-hits
+  cx={[Function Function]}
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
   template="undefined"
@@ -237,7 +234,6 @@ exports[`Hits should apply \`transformItems\` if specified 1`] = `
     
         
     <ng-ais-header
-      classname="ais-Hits-header ais-header"
       ng-reflect-class-name="ais-Hits-header ais-header"
     >
       
@@ -351,9 +347,7 @@ exports[`Hits should apply \`transformItems\` if specified 1`] = `
   
         
     <ng-ais-footer
-      ais-footer=""
-      classname="ais-Hits-footer"
-      ng-reflect-class-name="ais-Hits-footer"
+      ng-reflect-class-name="ais-Hits-footer ais-footer"
     >
       
       
