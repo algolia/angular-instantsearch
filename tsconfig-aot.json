@@ -28,6 +28,7 @@
     "src/__mocks__"
   ],
   "angularCompilerOptions": {
+    "strictMetadataEmit": true,
     "genDir": "dist"
   }
 }
