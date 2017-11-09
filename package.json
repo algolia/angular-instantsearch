@@ -1,11 +1,7 @@
 {
   "name": "angular-instantsearch",
-  "version": "0.01",
-  "description": "Lightning-fast search for Angular apps, by Algolia. ",
-  "main": "dist/angular-instantsearch.umd.js",
-  "jsnext:main": "dist/angular-instantsearch.esm.js",
-  "module": "dist/angular-instantsearch.esm.js",
-  "types": "src/angular-instantsearch.d.ts",
+  "version": "0.0.1",
+  "description": "Lightning-fast search for Angular apps, by Algolia.",
   "author": "iam4x",
   "license": "MIT",
   "scripts": {

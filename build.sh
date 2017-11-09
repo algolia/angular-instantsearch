@@ -3,7 +3,10 @@
 set -e # exit when error
 
 # clean dist folder
-rm -rf dist
+(
+  cd dist && \
+  find . \! -name 'package.json' -delete
+)
 
 # compile through AOT
 ngc -p tsconfig-aot.json
@@ -22,5 +25,6 @@ rollup -c rollup.config.esm.js
     \! -name '*.esm.js.map' \
     \! -name '*.d.ts' \
     \! -name '*.metadata.json' \
+    \! -name 'package.json' \
     -delete
 )
