@@ -26,7 +26,8 @@ const cx = bem("InfiniteHits");
               class="${cx("item")}"
               *ngFor="let hit of state.hits"
             >
-              {{hit.name}}
+              <ng-ais-highlight attributeName="name" [hit]="hit">
+              </ng-ais-highlight>
             </li>
           </ul>
         </div>
@@ -59,7 +60,7 @@ export class NgAisInfiniteHits extends BaseWidget {
 
   constructor(searchInstance: NgAisInstance) {
     super(searchInstance);
-    this.createWidget(connectInfiniteHits);
+    this.createWidget(connectInfiniteHits, { escapeHits: true });
   }
 
   public showMore(event) {

@@ -52,7 +52,11 @@ const cx = bem("RefinementList");
                 value="{{item.value}}"
                 [checked]="item.isRefined"
               />
-              {{item.label}}
+              <ng-ais-highlight
+                attributeName="highlighted"
+                [hit]="item"
+              >
+              </ng-ais-highlight>
               <span class="${cx("count")}">
                 {{item.count}}
               </span>
@@ -119,7 +123,8 @@ export class NgAisRefinementList extends BaseWidget {
       limit: parseNumberInput(this.limitMin),
       showMoreLimit: parseNumberInput(this.limitMax),
       attributeName: this.attributeName,
-      sortBy: this.sortBy
+      sortBy: this.sortBy,
+      escapeFacetValues: true
     });
 
     super.ngOnInit();

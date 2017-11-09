@@ -26,7 +26,8 @@ const cx = bem("Hits");
               class="${cx("item")}"
               *ngFor="let hit of hits"
             >
-              {{hit.name}}
+              <ng-ais-highlight attributeName="name" [hit]="hit">
+              </ng-ais-highlight>
             </li>
           </ul>
         </div>
@@ -55,6 +56,6 @@ export class NgAisHits extends BaseWidget {
 
   constructor(searchInstance: NgAisInstance) {
     super(searchInstance);
-    this.createWidget(connectHits);
+    this.createWidget(connectHits, { escapeHits: true });
   }
 }

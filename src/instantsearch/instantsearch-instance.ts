@@ -6,6 +6,13 @@ export class NgAisInstance {
   private instance?: InstantSearchInstance;
 
   public init(config: InstantSearchConfig) {
+    // add default searchParameters with highlighting config
+    if (!config.searchParameters) config.searchParameters = {};
+    Object.assign(config.searchParameters, {
+      highlightPreTag: "__ais-highlight__",
+      highlightPostTag: "__/ais-highlight__"
+    });
+
     this.instance = instantsearch(config);
   }
 
