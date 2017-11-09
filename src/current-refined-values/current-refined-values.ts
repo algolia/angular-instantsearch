@@ -5,15 +5,6 @@ import { noop, isFunction } from "lodash-es";
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 
-interface State {
-  attributes: {};
-  clearAllClick: Function;
-  clearAllURL: Function;
-  createURL: Function;
-  refine: Function;
-  refinements: {}[];
-}
-
 @Component({
   selector: "ng-ais-current-refined-values",
   template: `
@@ -68,7 +59,7 @@ export class NgAisCurrentRefinedValues extends BaseWidget {
     label: string;
   }[] = [];
 
-  public state: State = {
+  public state: CurrentRefinedValuesState = {
     attributes: {},
     clearAllClick: noop,
     clearAllURL: noop,

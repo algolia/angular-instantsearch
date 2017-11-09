@@ -5,13 +5,6 @@ import { noop } from "lodash-es";
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 
-interface State {
-  createURL: Function;
-  hasNoResults: boolean;
-  items: {}[];
-  refine: Function;
-}
-
 @Component({
   selector: "ng-ais-star-rating",
   template: `
@@ -89,7 +82,7 @@ export class NgAisStarRating extends BaseWidget {
   @Input() public attributeName: string;
   @Input() public max?: number = 5;
 
-  public state: State = {
+  public state: StarRatingState = {
     createURL: noop,
     hasNoResults: false,
     items: [],

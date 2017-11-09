@@ -5,12 +5,6 @@ import { noop } from "lodash-es";
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 
-interface State {
-  hits: {}[];
-  isLastPage: boolean;
-  showMore: Function;
-}
-
 @Component({
   selector: "ng-ais-infinite-hits",
   template: `
@@ -51,7 +45,11 @@ export class NgAisInfiniteHits extends BaseWidget {
   @Input() public showMoreLabel: string = "Show more results";
 
   // inner widget state returned from connector
-  public state: State = {
+  public state: {
+    hits: {}[];
+    isLastPage: boolean;
+    showMore: Function;
+  } = {
     hits: [],
     isLastPage: false,
     showMore: noop

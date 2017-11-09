@@ -5,12 +5,6 @@ import { noop } from "lodash-es";
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 
-interface State {
-  createURL: Function;
-  items: {}[];
-  refine: Function;
-}
-
 @Component({
   selector: "ng-ais-numeric-refinement-list",
   template: `
@@ -50,7 +44,7 @@ export class NgAisNumericRefinementList extends BaseWidget {
     end?: number;
   }[];
 
-  public state: State = {
+  public state: NumericRefinementListState = {
     createURL: noop,
     items: [],
     refine: noop

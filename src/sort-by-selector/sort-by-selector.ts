@@ -5,12 +5,6 @@ import { noop } from "lodash-es";
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 
-interface State {
-  currentRefinement?: string;
-  options: {}[];
-  refine: Function;
-}
-
 @Component({
   selector: "ng-ais-sort-by-selector",
   template: `
@@ -44,7 +38,11 @@ export class NgAisSortBySelector extends BaseWidget {
     label: string;
   }[];
 
-  public state: State = {
+  public state: {
+    currentRefinement?: string;
+    options: {}[];
+    refine: Function;
+  } = {
     currentRefinement: null,
     options: [],
     refine: noop

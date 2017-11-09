@@ -6,16 +6,6 @@ import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 import { parseNumberInput } from "../utils";
 
-interface State {
-  canRefine: boolean;
-  canToggleShowMore: boolean;
-  createURL: Function;
-  isShowingMore: boolean;
-  items: {}[];
-  refine: Function;
-  toggleShowMore: Function;
-}
-
 @Component({
   selector: "ng-ais-menu",
   template: `
@@ -60,7 +50,7 @@ export class NgAisMenu extends BaseWidget {
   @Input() public limitMax?: number | string;
   @Input() public sortBy?: string[] | ((item: object) => number);
 
-  public state: State = {
+  public state: MenuState = {
     canRefine: false,
     canToggleShowMore: false,
     createURL: noop,

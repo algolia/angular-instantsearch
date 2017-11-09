@@ -5,17 +5,6 @@ import { noop } from "lodash-es";
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 
-interface State {
-  createURL: Function;
-  items: Item[];
-  refine: Function;
-}
-
-interface Item {
-  name: string;
-  value: string;
-}
-
 @Component({
   selector: "ng-ais-breadcrumb",
   template: `
@@ -62,7 +51,7 @@ export class NgAisBreadcrumb extends BaseWidget {
     );
   }
 
-  public state: State = {
+  public state: BreadcrumbState = {
     createURL: noop,
     items: [],
     refine: noop
@@ -81,7 +70,7 @@ export class NgAisBreadcrumb extends BaseWidget {
     super.ngOnInit();
   }
 
-  public handleClick(event: MouseEvent, item: Item) {
+  public handleClick(event: MouseEvent, item: BreadcrumbItem) {
     event.preventDefault();
     event.stopPropagation();
 

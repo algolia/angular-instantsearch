@@ -6,18 +6,6 @@ import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 import { parseNumberInput } from "../utils";
 
-interface State {
-  canRefine: boolean;
-  canToggleShowMore: boolean;
-  createURL: Function;
-  isShowingMore: boolean;
-  items: {}[];
-  refine: Function;
-  toggleShowMore: Function;
-  searchForItems: Function;
-  isFormSearch: boolean;
-}
-
 @Component({
   selector: "ng-ais-refinement-list",
   template: `
@@ -99,7 +87,7 @@ export class NgAisRefinementList extends BaseWidget {
   // inner state
   searchQuery = "";
 
-  public state: State = {
+  public state: RefinementListState = {
     canRefine: false,
     canToggleShowMore: false,
     createURL: noop,

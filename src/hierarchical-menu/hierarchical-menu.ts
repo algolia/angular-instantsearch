@@ -6,12 +6,6 @@ import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 import { bem, parseNumberInput } from "../utils";
 
-interface State {
-  createURL: Function;
-  items: {}[];
-  refine: Function;
-}
-
 @Component({
   selector: "ng-ais-hierarchical-menu",
   template: `
@@ -46,7 +40,7 @@ export class NgAisHierarchicalMenu extends BaseWidget {
   @Input() public limit?: number | string = 10;
   @Input() public sortBy?: string[] | ((item: object) => number);
 
-  public state: State = {
+  public state: HierarchicalMenuState = {
     createURL: noop,
     items: [],
     refine: noop

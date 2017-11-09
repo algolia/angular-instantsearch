@@ -5,11 +5,6 @@ import { noop } from "lodash-es";
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 
-interface State {
-  items: {}[];
-  refine: Function;
-}
-
 @Component({
   selector: "ng-ais-price-ranges",
   template: `
@@ -40,7 +35,10 @@ export class NgAisPriceRanges extends BaseWidget {
   // connector options
   @Input() public attributeName: string;
 
-  public state: State = {
+  public state: {
+    items: {}[];
+    refine: Function;
+  } = {
     items: [],
     refine: noop
   };

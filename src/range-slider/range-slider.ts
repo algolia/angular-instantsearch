@@ -7,12 +7,6 @@ import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 import { parseNumberInput } from "../utils";
 
-interface State {
-  range: { min: number; max: number };
-  refine: Function;
-  start: number[];
-}
-
 @Component({
   selector: "ng-ais-range-slider",
   template: `
@@ -40,7 +34,7 @@ export class NgAisRangeSlider extends BaseWidget {
   @Input() public max?: number | string;
   @Input() public precision?: number | string = 2;
 
-  public state: State = {
+  public state: RangeSliderState = {
     range: { min: 0, max: 1 },
     refine: noop,
     start: [0, 1]
@@ -68,7 +62,7 @@ export class NgAisRangeSlider extends BaseWidget {
     super.ngOnInit();
   }
 
-  public updateState = (state: State, isFirstRendering: boolean) => {
+  public updateState = (state: RangeSliderState, isFirstRendering: boolean) => {
     if (isFirstRendering) {
       // create slider
       const config = {

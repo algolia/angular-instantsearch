@@ -5,11 +5,6 @@ import { noop } from "lodash-es";
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 
-interface State {
-  items: {}[];
-  refine: Function;
-}
-
 @Component({
   selector: "ng-ais-hits-per-page-selector",
   template: `
@@ -44,7 +39,7 @@ export class NgAisHitsPerPageSelector extends BaseWidget {
     default?: boolean;
   }[];
 
-  public state: State = {
+  public state: HitsPerPageSelectorState = {
     items: [],
     refine: noop
   };
