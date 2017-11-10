@@ -11,7 +11,7 @@ set -e # exit when error
 # compile through AOT
 ngc -p tsconfig-aot.json
 
-# bundle through webpack
+# bundle through rollup
 rollup -c rollup.config.umd.js
 rollup -c rollup.config.esm.js
 
