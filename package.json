@@ -9,7 +9,7 @@
     "lint": "tslint src/**/*.ts",
     "demo": "webpack-dev-server --config webpack.demo.js --inline --progress",
     "test": "jest",
-    "test:ci": "yarn lint && jest --runInBand",
+    "test:ci": "yarn lint && jest --runInBand && yarn build",
     "test:watch": "jest --watch"
   },
   "jest": {
