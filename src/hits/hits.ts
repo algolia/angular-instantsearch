@@ -12,7 +12,7 @@ import { NgAisInstance } from "../instantsearch/instantsearch-instance";
       <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
 
       <div [class]="cx('body')">
-        <ng-container *ngTemplateOutlet="template; context: state"></ng-container>
+        <ng-container *ngTemplateOutlet="template; context: context"></ng-container>
 
         <!-- default rendering if no template specified -->
         <div *ngIf="!template">
@@ -33,18 +33,25 @@ import { NgAisInstance } from "../instantsearch/instantsearch-instance";
   `
 })
 export class NgAisHits extends BaseWidget {
-  @ContentChild(TemplateRef) public template?: any;
+  @ContentChild(TemplateRef) public template?: TemplateRef<any>;
 
   // render options
   @Input() transformItems?: Function;
 
   // inner widget state returned from connector
-  public state: { hits: {}[] } = { hits: [] };
+  public state: { hits: {}[]; results: {} } = { hits: [], results: {} };
 
   get hits() {
     return isFunction(this.transformItems)
       ? this.transformItems(this.state.hits)
       : this.state.hits;
+  }
+
+  get context() {
+    return {
+      hits: this.hits,
+      results: this.state.results || {}
+    };
   }
 
   constructor(searchInstance: NgAisInstance) {
