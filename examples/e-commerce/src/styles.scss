@@ -13,6 +13,8 @@ $header-height: 60px;
 $sidebar-width: 230px;
 
 @mixin clearfix {
+  clear: both;
+
   &:after {
     content: "";
     display: table;
@@ -402,19 +404,23 @@ aside {
   }
 }
 
-#pagination {
+.ais-Pagination {
   @include clearfix;
+
   margin-top: 10px;
   background-color: $gray-light;
   font-size: 1.2em;
   line-height: 3em;
   text-align: center;
-  .ais-pagination--item__active a {
+
+  &-item--active a {
     color: #000000;
     font-weight: bold;
   }
-  .ais-pagination--item__disabled {
+
+  &-item--disabled {
     visibility: visible;
+
     a {
       color: darken($gray-light, 20%);
       &:hover {
@@ -423,16 +429,16 @@ aside {
       }
     }
   }
+
   ul {
     margin: 0;
     padding: 0;
+    list-style-type: none;
   }
+
   li {
     padding: 0 8px;
-  }
-  .fa {
-    position: relative;
-    top: 5px;
+    display: inline-block;
   }
 }
 
