@@ -21,6 +21,7 @@ import { NgAisSortBySelectorModule } from "./sort-by-selector/sort-by-selector.m
 import { NgAisStarRatingModule } from "./star-rating/star-rating.module";
 import { NgAisStatsModule } from "./stats/stats.module";
 import { NgAisToggleModule } from "./toggle/toggle.module";
+import { NgAisHighlightModule } from "./highlight/highlight.module";
 
 const NGIS_MODULES = [
   NgAisInstantSearchModule,
@@ -42,7 +43,8 @@ const NGIS_MODULES = [
   NgAisHierarchicalMenuModule,
   NgAisStarRatingModule,
   NgAisRangeSliderModule,
-  NgAisBreadcrumbModule
+  NgAisBreadcrumbModule,
+  NgAisHighlightModule
 ];
 
 @NgModule({
