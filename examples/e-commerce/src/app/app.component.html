@@ -117,8 +117,18 @@
                   </ng-ais-highlight>
                 </div>
 
-                <div class="product-price">{{hit.price}}</div>
-                <div class="product-rating">{{hit.rating}}</div>
+                <div class="product-price">${{hit.price}}</div>
+                <div class="product-rating">
+                  <i
+                    *ngFor="let star of hit.stars"
+                    [ngClass]="{
+                      'fa': true,
+                      'fa-star': star,
+                      'fa-star-o': !star
+                    }"
+                  >
+                  </i>
+                </div>
               </div>
             </article>
           </ng-template>
