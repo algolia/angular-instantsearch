@@ -1,0 +1,146 @@
+<div class="container-fluid">
+  <ng-ais-instantsearch [config]="instantSearchConfig">
+    <header class="content-wrapper">
+      <a
+        href="https://community.algolia.com/instantsearch.js/"
+        class="is-logo">
+          <img src="logo-is.png" width=40 >
+      </a>
+
+      <a href="./" class="logo">amazing</a>
+
+      <div class="input-group">
+        <ng-ais-search-box></ng-ais-search-box>
+        <span class="input-group-btn">
+          <button class="btn btn-default">
+            <i class="fa fa-search"></i>
+          </button>
+        </span>
+      </div>
+    </header>
+
+    <div class="content-wrapper">
+      <aside>
+        <ng-ais-clear-all
+          buttonLabel="Clear all filters"
+        >
+        </ng-ais-clear-all>
+
+        <section class="facet-wrapper">
+          <div class="facet-category-title">Show results for</div>
+          <ng-ais-hierarchical-menu
+            [attributes]="['category', 'sub_category', 'sub_sub_category']"
+            [sortBy]="['name:asc']"
+          >
+          </ng-ais-hierarchical-menu>
+        </section>
+
+        <section class="facet-wrapper">
+          <div class="facet-category-title">Refine by</div>
+          <ng-ais-refinement-list
+            header="Materials"
+            attributeName="materials"
+            operator="or"
+            limit="10"
+          >
+          </ng-ais-refinement-list>
+
+          <ng-ais-refinement-list
+            header="Colors"
+            attributeName="colors"
+            operator="or"
+            limit="10"
+          >
+          </ng-ais-refinement-list>
+
+          <ng-ais-star-rating
+            header="Ratings"
+            attributeName="rating"
+          >
+          </ng-ais-star-rating>
+
+          <ng-ais-price-ranges
+            header="Prices"
+            attributeName="price"
+          >
+          </ng-ais-price-ranges>
+        </section>
+
+        <div class="thank-you">
+          Data courtesy of <a href="http://www.ikea.com/">ikea.com</a>
+        </div>
+      </aside>
+
+      <div class="results-wrapper">
+      <section id="results-topbar">
+        <div class="sort-by">
+          <label>Sort by</label>
+          <ng-ais-sort-by-selector
+            [indices]="
+              [
+                {name: 'ikea', label: 'Featured'},
+                {name: 'ikea_price_asc', label: 'Price asc.'},
+                {name: 'ikea_price_desc', label: 'Price desc.'}
+              ]
+            "
+          >
+          </ng-ais-sort-by-selector>
+        </div>
+        <ng-ais-stats></ng-ais-stats>
+      </section>
+
+      <main>
+        <ng-ais-hits
+          [transformItems]="transformHits"
+        >
+          <ng-template
+            let-hits="hits"
+            let-results="results"
+          >
+            <div
+              *ngIf="hits.length === 0"
+              class="text-center"
+            >
+              No results found matching <strong>{{results.query}}</strong>.
+            </div>
+
+            <article
+              *ngFor="let hit of hits"
+              class="hit"
+            >
+              <div class="product-picture-wrapper">
+                <div class="product-picture">
+                  <img [src]="hit.image" />
+                </div>
+              </div>
+
+              <div class="product-desc-wrapper">
+                <div class="product-name">
+                  <ng-ais-highlight
+                    attributeName="name"
+                    [hit]="hit"
+                  >
+                  </ng-ais-highlight>
+                </div>
+
+                <div class="product-type">
+                  <ng-ais-highlight
+                    attributeName="type"
+                    [hit]="hit"
+                  >
+                  </ng-ais-highlight>
+                </div>
+
+                <div class="product-price">{{hit.price}}</div>
+                <div class="product-rating">{{hit.rating}}</div>
+              </div>
+            </article>
+          </ng-template>
+        </ng-ais-hits>
+      </main>
+
+      <ng-ais-pagination></ng-ais-pagination>
+    </div>
+    </div>
+  </ng-ais-instantsearch>
+</div>
