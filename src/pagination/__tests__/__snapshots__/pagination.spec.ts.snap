@@ -12,14 +12,14 @@ exports[`Pagination renders does not uses pagesPadding when nbPages < pagesPaddi
   state={[Function Object]}
   updateState={[Function Function]}
 >
-  <div
-    class="cx()}"
+  
+      <div
+    class="ais-Pagination"
   >
     
-    
+        
     <ng-ais-header
-      classname="cx('header')"
-      ng-reflect-class-name="cx('header')"
+      ng-reflect-class-name="ais-Pagination-header ais-head"
     >
       
       
@@ -29,171 +29,171 @@ exports[`Pagination renders does not uses pagesPadding when nbPages < pagesPaddi
     </ng-ais-header>
     
   
-    
+        
     <div
       class="ais-Pagination-body ais-body"
     >
       
-      
+          
       <ul
         class="ais-Pagination-list"
       >
         
-        
+            
         
         <li
           class="ais-Pagination-item--firstPage ais-Pagination-item--disabled"
         >
           
-          
+              
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
-            «
-          
+                «
+              
           </a>
           
-        
+            
         </li>
         
   
-        
+            
         
         <li
           class="ais-Pagination-item--previousPage ais-Pagination-item--disabled"
         >
           
-          
+              
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
-            ‹
-          
+                ‹
+              
           </a>
           
-        
+            
         </li>
         
   
-        
+            
         
         <li
           class="ais-Pagination-item--page ais-Pagination-item--selected"
         >
           
-          
+              
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
-            1
-          
+                1
+              
           </a>
           
-        
+            
         </li>
         <li
           class="ais-Pagination-item--page"
         >
           
-          
+              
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
-            2
-          
+                2
+              
           </a>
           
-        
+            
         </li>
         <li
           class="ais-Pagination-item--page"
         >
           
-          
+              
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
-            3
-          
+                3
+              
           </a>
           
-        
+            
         </li>
         <li
           class="ais-Pagination-item--page"
         >
           
-          
+              
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
-            4
-          
+                4
+              
           </a>
           
-        
+            
         </li>
         <li
           class="ais-Pagination-item--page"
         >
           
-          
+              
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
-            5
-          
+                5
+              
           </a>
           
-        
+            
         </li>
         
   
-        
+            
         
         <li
           class="ais-Pagination-item--nextPage"
         >
           
-          
+              
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
-            ›
-          
+                ›
+              
           </a>
           
-        
+            
         </li>
         
   
+            
         
         
-        
-      
+          
       </ul>
       
-    
+        
     </div>
     
   
-    
+        
     <ng-ais-footer
       ng-reflect-class-name="ais-Pagination-footer ais-foot"
     >
@@ -204,9 +204,9 @@ exports[`Pagination renders does not uses pagesPadding when nbPages < pagesPaddi
     
     </ng-ais-footer>
     
-  
+      
   </div>
-  
+    
 </ng-ais-pagination>
 `;
 
@@ -222,14 +222,11 @@ exports[`Pagination renders markup without state 1`] = `
   state={[Function Object]}
   updateState={[Function Function]}
 >
-  <div
-    class="cx()}"
-  >
+  
+      <div>
     
-    
-    <ng-ais-header
-      classname="cx('header')"
-    >
+        
+    <ng-ais-header>
       
       
       
@@ -238,39 +235,39 @@ exports[`Pagination renders markup without state 1`] = `
     </ng-ais-header>
     
   
-    
+        
     <div>
       
-      
+          
       <ul>
         
-        
-        
-        
-  
-        
+            
         
         
   
-        
-        
-        
-  
-        
+            
         
         
   
+            
         
         
+  
+            
         
-      
+        
+  
+            
+        
+        
+          
       </ul>
       
-    
+        
     </div>
     
   
-    
+        
     <ng-ais-footer>
       
       
@@ -279,9 +276,9 @@ exports[`Pagination renders markup without state 1`] = `
     
     </ng-ais-footer>
     
-  
+      
   </div>
-  
+    
 </ng-ais-pagination>
 `;
 
@@ -297,14 +294,14 @@ exports[`Pagination renders with pages in state 1`] = `
   state={[Function Object]}
   updateState={[Function Function]}
 >
-  <div
-    class="cx()}"
+  
+      <div
+    class="ais-Pagination"
   >
     
-    
+        
     <ng-ais-header
-      classname="cx('header')"
-      ng-reflect-class-name="cx('header')"
+      ng-reflect-class-name="ais-Pagination-header ais-head"
     >
       
       
@@ -314,203 +311,203 @@ exports[`Pagination renders with pages in state 1`] = `
     </ng-ais-header>
     
   
-    
+        
     <div
       class="ais-Pagination-body ais-body"
     >
       
-      
+          
       <ul
         class="ais-Pagination-list"
       >
         
-        
+            
         
         <li
           class="ais-Pagination-item--firstPage ais-Pagination-item--disabled"
         >
           
-          
+              
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
-            «
-          
+                «
+              
           </a>
           
-        
+            
         </li>
         
   
-        
+            
         
         <li
           class="ais-Pagination-item--previousPage ais-Pagination-item--disabled"
         >
           
-          
+              
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
-            ‹
-          
+                ‹
+              
           </a>
           
-        
+            
         </li>
         
   
-        
+            
         
         <li
           class="ais-Pagination-item--page ais-Pagination-item--selected"
         >
           
-          
+              
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
-            1
-          
+                1
+              
           </a>
           
-        
+            
         </li>
         <li
           class="ais-Pagination-item--page"
         >
           
-          
+              
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
-            2
-          
+                2
+              
           </a>
           
-        
+            
         </li>
         <li
           class="ais-Pagination-item--page"
         >
           
-          
+              
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
-            3
-          
+                3
+              
           </a>
           
-        
+            
         </li>
         <li
           class="ais-Pagination-item--page"
         >
           
-          
+              
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
-            4
-          
+                4
+              
           </a>
           
-        
+            
         </li>
         <li
           class="ais-Pagination-item--page"
         >
           
-          
+              
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
-            5
-          
+                5
+              
           </a>
           
-        
+            
         </li>
         <li
           class="ais-Pagination-item--page"
         >
           
-          
+              
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
-            6
-          
+                6
+              
           </a>
           
-        
+            
         </li>
         <li
           class="ais-Pagination-item--page"
         >
           
-          
+              
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
-            7
-          
+                7
+              
           </a>
           
-        
+            
         </li>
         
   
-        
+            
         
         <li
           class="ais-Pagination-item--nextPage"
         >
           
-          
+              
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
-            ›
-          
+                ›
+              
           </a>
           
-        
+            
         </li>
         
   
+            
         
         
-        
-      
+          
       </ul>
       
-    
+        
     </div>
     
   
-    
+        
     <ng-ais-footer
       ng-reflect-class-name="ais-Pagination-footer ais-foot"
     >
@@ -521,9 +518,9 @@ exports[`Pagination renders with pages in state 1`] = `
     
     </ng-ais-footer>
     
-  
+      
   </div>
-  
+    
 </ng-ais-pagination>
 `;
 
@@ -541,21 +538,21 @@ exports[`Pagination should display an header and a footer 1`] = `
   state={[Function Object]}
   updateState={[Function Function]}
 >
-  <div
-    class="cx()}"
+  
+      <div
+    class="ais-Pagination"
   >
     
-    
+        
     <ng-ais-header
-      classname="cx('header')"
-      ng-reflect-class-name="cx('header')"
+      ng-reflect-class-name="ais-Pagination-header ais-head"
       ng-reflect-header="Header title"
     >
       
       
       
       <div
-        class="cx('header')"
+        class="ais-Pagination-header ais-header"
       >
         
         Header title
@@ -566,203 +563,203 @@ exports[`Pagination should display an header and a footer 1`] = `
     </ng-ais-header>
     
   
-    
+        
     <div
       class="ais-Pagination-body ais-body"
     >
       
-      
+          
       <ul
         class="ais-Pagination-list"
       >
         
-        
+            
         
         <li
           class="ais-Pagination-item--firstPage ais-Pagination-item--disabled"
         >
           
-          
+              
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
-            «
-          
+                «
+              
           </a>
           
-        
+            
         </li>
         
   
-        
+            
         
         <li
           class="ais-Pagination-item--previousPage ais-Pagination-item--disabled"
         >
           
-          
+              
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
-            ‹
-          
+                ‹
+              
           </a>
           
-        
+            
         </li>
         
   
-        
+            
         
         <li
           class="ais-Pagination-item--page ais-Pagination-item--selected"
         >
           
-          
+              
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
-            1
-          
+                1
+              
           </a>
           
-        
+            
         </li>
         <li
           class="ais-Pagination-item--page"
         >
           
-          
+              
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
-            2
-          
+                2
+              
           </a>
           
-        
+            
         </li>
         <li
           class="ais-Pagination-item--page"
         >
           
-          
+              
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
-            3
-          
+                3
+              
           </a>
           
-        
+            
         </li>
         <li
           class="ais-Pagination-item--page"
         >
           
-          
+              
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
-            4
-          
+                4
+              
           </a>
           
-        
+            
         </li>
         <li
           class="ais-Pagination-item--page"
         >
           
-          
+              
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
-            5
-          
+                5
+              
           </a>
           
-        
+            
         </li>
         <li
           class="ais-Pagination-item--page"
         >
           
-          
+              
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
-            6
-          
+                6
+              
           </a>
           
-        
+            
         </li>
         <li
           class="ais-Pagination-item--page"
         >
           
-          
+              
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
-            7
-          
+                7
+              
           </a>
           
-        
+            
         </li>
         
   
-        
+            
         
         <li
           class="ais-Pagination-item--nextPage"
         >
           
-          
+              
           <a
             class="ais-Pagination-link"
-            href=""
+            href="null"
           >
             
-            ›
-          
+                ›
+              
           </a>
           
-        
+            
         </li>
         
   
+            
         
         
-        
-      
+          
       </ul>
       
-    
+        
     </div>
     
   
-    
+        
     <ng-ais-footer
       ng-reflect-class-name="ais-Pagination-footer ais-foot"
       ng-reflect-footer="Footer title"
@@ -781,8 +778,8 @@ exports[`Pagination should display an header and a footer 1`] = `
     
     </ng-ais-footer>
     
-  
+      
   </div>
-  
+    
 </ng-ais-pagination>
 `;

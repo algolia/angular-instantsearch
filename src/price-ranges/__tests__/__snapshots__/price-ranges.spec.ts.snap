@@ -3,6 +3,7 @@
 exports[`PriceRanges renders markup with state 1`] = `
 <ng-ais-price-ranges
   currency={[Function String]}
+  cx={[Function Function]}
   formatLabel={[Function Function]}
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
@@ -15,7 +16,6 @@ exports[`PriceRanges renders markup with state 1`] = `
     
         
     <ng-ais-header
-      classname="ais-PriceRanges-header ais-header"
       ng-reflect-class-name="ais-PriceRanges-header ais-hea"
     >
       
@@ -40,7 +40,6 @@ exports[`PriceRanges renders markup with state 1`] = `
         
         <li
           class="ais-PriceRanges-item"
-          ng-reflect-ng-class="[object Object]"
         >
           
               &gt;= $ 1
@@ -48,7 +47,6 @@ exports[`PriceRanges renders markup with state 1`] = `
         </li>
         <li
           class="ais-PriceRanges-item"
-          ng-reflect-ng-class="[object Object]"
         >
           
               $ 10 - $ 20
@@ -56,7 +54,6 @@ exports[`PriceRanges renders markup with state 1`] = `
         </li>
         <li
           class="ais-PriceRanges-item"
-          ng-reflect-ng-class="[object Object]"
         >
           
               &lt;= $ 50
@@ -72,7 +69,6 @@ exports[`PriceRanges renders markup with state 1`] = `
   
         
     <ng-ais-footer
-      classname="ais-PriceRanges-footer ais-footer"
       ng-reflect-class-name="ais-PriceRanges-footer ais-foo"
     >
       
@@ -91,6 +87,7 @@ exports[`PriceRanges renders markup with state 1`] = `
 exports[`PriceRanges renders markup without state 1`] = `
 <ng-ais-price-ranges
   currency={[Function String]}
+  cx={[Function Function]}
   formatLabel={[Function Function]}
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
@@ -103,7 +100,6 @@ exports[`PriceRanges renders markup without state 1`] = `
     
         
     <ng-ais-header
-      classname="ais-PriceRanges-header ais-header"
       ng-reflect-class-name="ais-PriceRanges-header ais-hea"
     >
       
@@ -136,7 +132,6 @@ exports[`PriceRanges renders markup without state 1`] = `
   
         
     <ng-ais-footer
-      classname="ais-PriceRanges-footer ais-footer"
       ng-reflect-class-name="ais-PriceRanges-footer ais-foo"
     >
       
@@ -155,6 +150,7 @@ exports[`PriceRanges renders markup without state 1`] = `
 exports[`PriceRanges renders refined values 1`] = `
 <ng-ais-price-ranges
   currency={[Function String]}
+  cx={[Function Function]}
   formatLabel={[Function Function]}
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
@@ -167,7 +163,6 @@ exports[`PriceRanges renders refined values 1`] = `
     
         
     <ng-ais-header
-      classname="ais-PriceRanges-header ais-header"
       ng-reflect-class-name="ais-PriceRanges-header ais-hea"
     >
       
@@ -192,7 +187,6 @@ exports[`PriceRanges renders refined values 1`] = `
         
         <li
           class="ais-PriceRanges-item ais-PriceRanges-item--selected"
-          ng-reflect-ng-class="[object Object]"
         >
           
               &lt;= $ 20
@@ -208,7 +202,6 @@ exports[`PriceRanges renders refined values 1`] = `
   
         
     <ng-ais-footer
-      classname="ais-PriceRanges-footer ais-footer"
       ng-reflect-class-name="ais-PriceRanges-footer ais-foo"
     >
       

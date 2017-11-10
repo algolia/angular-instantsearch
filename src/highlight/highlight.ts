@@ -1,8 +1,6 @@
 import { Component, Input } from "@angular/core";
-import { isPlainObject, escape, get } from "lodash";
+import { isPlainObject, escape, get } from "lodash-es";
 import { bem } from "../utils";
-
-const cx = bem("Highlight")();
 
 @Component({
   selector: "ng-ais-highlight",
@@ -12,6 +10,8 @@ export class NgAisHighlight {
   @Input() attributeName: string;
   @Input() hit: { _highlightResult?: {}; label?: string; highlighted?: string };
   @Input() tagName: string = "em";
+
+  cx = bem("Highlight")();
 
   get content() {
     if (this.attributeName === "highlighted") {
@@ -51,7 +51,7 @@ export class NgAisHighlight {
 
   replaceWithTagName(value: string) {
     return value
-      .replace(new RegExp("<em>", "g"), `<${this.tagName} class="${cx}">`)
+      .replace(new RegExp("<em>", "g"), `<${this.tagName} class="${this.cx}">`)
       .replace(new RegExp("</em>", "g"), `</${this.tagName}>`);
   }
 }

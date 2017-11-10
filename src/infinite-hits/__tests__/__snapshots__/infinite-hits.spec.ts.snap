@@ -2,6 +2,7 @@
 
 exports[`InfiniteHits renders markup with state 1`] = `
 <ng-ais-infinite-hits
+  cx={[Function Function]}
   searchInstance={[Function NgAisInstance]}
   showMoreLabel={[Function String]}
   state={[Function Object]}
@@ -15,7 +16,6 @@ exports[`InfiniteHits renders markup with state 1`] = `
     
         
     <ng-ais-header
-      classname="ais-InfiniteHits-header ais-header"
       ng-reflect-class-name="ais-InfiniteHits-header ais-he"
     >
       
@@ -139,9 +139,7 @@ exports[`InfiniteHits renders markup with state 1`] = `
   
         
     <ng-ais-footer
-      ais-footer=""
-      classname="ais-InfiniteHits-footer"
-      ng-reflect-class-name="ais-InfiniteHits-footer"
+      ng-reflect-class-name="ais-InfiniteHits-footer ais-fo"
     >
       
       
@@ -158,6 +156,7 @@ exports[`InfiniteHits renders markup with state 1`] = `
 
 exports[`InfiniteHits renders markup without state 1`] = `
 <ng-ais-infinite-hits
+  cx={[Function Function]}
   searchInstance={[Function NgAisInstance]}
   showMoreLabel={[Function String]}
   state={[Function Object]}
@@ -171,7 +170,6 @@ exports[`InfiniteHits renders markup without state 1`] = `
     
         
     <ng-ais-header
-      classname="ais-InfiniteHits-header ais-header"
       ng-reflect-class-name="ais-InfiniteHits-header ais-he"
     >
       
@@ -227,9 +225,7 @@ exports[`InfiniteHits renders markup without state 1`] = `
   
         
     <ng-ais-footer
-      ais-footer=""
-      classname="ais-InfiniteHits-footer"
-      ng-reflect-class-name="ais-InfiniteHits-footer"
+      ng-reflect-class-name="ais-InfiniteHits-footer ais-fo"
     >
       
       

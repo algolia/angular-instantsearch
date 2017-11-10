@@ -1,32 +1,27 @@
 import { Component, Input } from "@angular/core";
 import { connectBreadcrumb } from "instantsearch.js/es/connectors";
-import { noop } from "lodash";
+import { noop } from "lodash-es";
 
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
-import { bem } from "../utils";
-
-const cx = bem("Breadcrumb");
 
 @Component({
   selector: "ng-ais-breadcrumb",
   template: `
-    <div class='${cx()}'>
-      <ng-ais-header [header]="header" className="${cx(
-        "header"
-      )}"></ng-ais-header>
+    <div [class]="cx()">
+      <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
 
-      <div class="${cx("body")}">
-        <ul class="${cx("list")}">
+      <div [class]="cx('body')">
+        <ul [class]="cx('list')">
           <li
             *ngFor="let item of itemsWithSeparator"
-            class="${cx("item")}"
+            [class]="cx('item')"
             [attr.aria-hidden]="item.separator"
             (click)="handleClick($event, item)"
           >
             {{item.separator ? '>' : ''}}
             <a
-              class="${cx("link")}"
+              [class]="cx('link')"
               href="{{state.createURL(item.value)}}"
               *ngIf="!item.separator"
               (click)="handleClick($event, item)"
@@ -37,9 +32,7 @@ const cx = bem("Breadcrumb");
         </ul>
       </div>
 
-      <ng-ais-footer [footer]="footer" className="${cx(
-        "footer"
-      )}"></ng-ais-footer>
+      <ng-ais-footer [footer]="footer" [className]="cx('footer')"></ng-ais-footer>
     </div>
   `
 })
@@ -50,7 +43,7 @@ export class NgAisBreadcrumb extends BaseWidget {
 
   get itemsWithSeparator() {
     return this.state.items.reduce(
-      (result, curr, idx) =>
+      (result: {}[], curr, idx) =>
         idx === this.state.items.length - 1
           ? [...result, curr]
           : [...result, curr, { separator: true }],
@@ -58,14 +51,14 @@ export class NgAisBreadcrumb extends BaseWidget {
     );
   }
 
-  public state = {
+  public state: BreadcrumbState = {
     createURL: noop,
     items: [],
     refine: noop
   };
 
   constructor(searchInstance: NgAisInstance) {
-    super(searchInstance);
+    super(searchInstance, "Breadcrumb");
   }
 
   public ngOnInit() {
@@ -77,7 +70,7 @@ export class NgAisBreadcrumb extends BaseWidget {
     super.ngOnInit();
   }
 
-  public handleClick(event, item) {
+  public handleClick(event: MouseEvent, item: BreadcrumbItem) {
     event.preventDefault();
     event.stopPropagation();
 

@@ -2,6 +2,7 @@
 
 exports[`NumericSelector renders markup with state 1`] = `
 <ng-ais-numeric-selector
+  cx={[Function Function]}
   operator={[Function String]}
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
@@ -14,7 +15,6 @@ exports[`NumericSelector renders markup with state 1`] = `
     
         
     <ng-ais-header
-      classname="ais-NumericSelector-header ais-header"
       ng-reflect-class-name="ais-NumericSelector-header ais"
     >
       
@@ -79,7 +79,6 @@ exports[`NumericSelector renders markup with state 1`] = `
   
         
     <ng-ais-footer
-      classname="ais-NumericSelector-footer ais-footer"
       ng-reflect-class-name="ais-NumericSelector-footer ais"
     >
       
@@ -97,6 +96,7 @@ exports[`NumericSelector renders markup with state 1`] = `
 
 exports[`NumericSelector renders markup without state 1`] = `
 <ng-ais-numeric-selector
+  cx={[Function Function]}
   operator={[Function String]}
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
@@ -109,7 +109,6 @@ exports[`NumericSelector renders markup without state 1`] = `
     
         
     <ng-ais-header
-      classname="ais-NumericSelector-header ais-header"
       ng-reflect-class-name="ais-NumericSelector-header ais"
     >
       
@@ -142,7 +141,6 @@ exports[`NumericSelector renders markup without state 1`] = `
   
         
     <ng-ais-footer
-      classname="ais-NumericSelector-footer ais-footer"
       ng-reflect-class-name="ais-NumericSelector-footer ais"
     >
       

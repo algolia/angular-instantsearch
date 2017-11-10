@@ -1,5 +1,5 @@
 export function bem(widgetName: string) {
-  return (element?: string, subElement?: string) => {
+  const cx = function(element?: string, subElement?: string) {
     if (element) {
       const scoppedWidgetName = `ais-${widgetName}-${element}`;
 
@@ -21,6 +21,7 @@ export function bem(widgetName: string) {
       return `ais-${widgetName}`;
     }
   };
+  return cx;
 }
 
 export function parseNumberInput(input?: number | string) {

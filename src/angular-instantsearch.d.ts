@@ -1,3 +1,8 @@
+// instantsearch.js
+declare module "instantsearch.js/es";
+declare module "instantsearch.js/es/connectors";
+
+// angular-instantsearch
 interface InstantSearchConfig {
   appId: string;
   apiKey: string;
@@ -52,3 +57,89 @@ type Connector = (
   renderFn: (state: object, isFirstRendering: boolean) => void,
   unmountFn: () => void
 ) => (widgetOptions?: object) => Widget;
+
+interface BreadcrumbState {
+  createURL: Function;
+  items: BreadcrumbItem[];
+  refine: Function;
+}
+
+interface BreadcrumbItem {
+  name: string;
+  value: string;
+}
+
+interface CurrentRefinedValuesState {
+  attributes: {};
+  clearAllClick: Function;
+  clearAllURL: Function;
+  createURL: Function;
+  refine: Function;
+  refinements: {}[];
+}
+
+interface HierarchicalMenuState {
+  createURL: Function;
+  items: {}[];
+  refine: Function;
+}
+
+interface HierarchicalMenuItem {
+  value: string;
+  label: string;
+  count: number;
+  isRefined: boolean;
+  data: HierarchicalMenuItem[];
+}
+
+interface HitsPerPageSelectorState {
+  items: {}[];
+  refine: Function;
+}
+
+interface MenuState {
+  canRefine: boolean;
+  canToggleShowMore: boolean;
+  createURL: Function;
+  isShowingMore: boolean;
+  items: {}[];
+  refine: Function;
+  toggleShowMore: Function;
+}
+
+interface NumericRefinementListState {
+  createURL: Function;
+  items: {}[];
+  refine: Function;
+}
+
+interface NumericSelectorState {
+  currentRefinement?: string;
+  options: {}[];
+  refine: Function;
+}
+
+interface RangeSliderState {
+  range: { min: number; max: number };
+  refine: Function;
+  start: number[];
+}
+
+interface RefinementListState {
+  canRefine: boolean;
+  canToggleShowMore: boolean;
+  createURL: Function;
+  isShowingMore: boolean;
+  items: {}[];
+  refine: Function;
+  toggleShowMore: Function;
+  searchForItems: Function;
+  isFormSearch: boolean;
+}
+
+interface StarRatingState {
+  createURL: Function;
+  hasNoResults: boolean;
+  items: {}[];
+  refine: Function;
+}

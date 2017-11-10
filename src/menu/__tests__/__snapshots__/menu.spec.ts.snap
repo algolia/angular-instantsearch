@@ -2,6 +2,7 @@
 
 exports[`Menu renders markup with state 1`] = `
 <ng-ais-menu
+  cx={[Function Function]}
   limitMin={[Function Number]}
   searchInstance={[Function NgAisInstance]}
   showLessLabel={[Function String]}
@@ -16,7 +17,6 @@ exports[`Menu renders markup with state 1`] = `
     
         
     <ng-ais-header
-      classname="ais-Menu-header ais-header"
       ng-reflect-class-name="ais-Menu-header ais-header"
     >
       
@@ -119,7 +119,6 @@ exports[`Menu renders markup with state 1`] = `
   
         
     <ng-ais-footer
-      classname="ais-Menu-footer ais-footer"
       ng-reflect-class-name="ais-Menu-footer ais-footer"
     >
       
@@ -137,6 +136,7 @@ exports[`Menu renders markup with state 1`] = `
 
 exports[`Menu renders markup without state 1`] = `
 <ng-ais-menu
+  cx={[Function Function]}
   limitMin={[Function Number]}
   searchInstance={[Function NgAisInstance]}
   showLessLabel={[Function String]}
@@ -151,7 +151,6 @@ exports[`Menu renders markup without state 1`] = `
     
         
     <ng-ais-header
-      classname="ais-Menu-header ais-header"
       ng-reflect-class-name="ais-Menu-header ais-header"
     >
       
@@ -188,7 +187,6 @@ exports[`Menu renders markup without state 1`] = `
   
         
     <ng-ais-footer
-      classname="ais-Menu-footer ais-footer"
       ng-reflect-class-name="ais-Menu-footer ais-footer"
     >
       
@@ -206,6 +204,7 @@ exports[`Menu renders markup without state 1`] = `
 
 exports[`Menu should apply \`transformItems\` if specified 1`] = `
 <ng-ais-menu
+  cx={[Function Function]}
   limitMin={[Function Number]}
   searchInstance={[Function NgAisInstance]}
   showLessLabel={[Function String]}
@@ -221,7 +220,6 @@ exports[`Menu should apply \`transformItems\` if specified 1`] = `
     
         
     <ng-ais-header
-      classname="ais-Menu-header ais-header"
       ng-reflect-class-name="ais-Menu-header ais-header"
     >
       
@@ -324,7 +322,6 @@ exports[`Menu should apply \`transformItems\` if specified 1`] = `
   
         
     <ng-ais-footer
-      classname="ais-Menu-footer ais-footer"
       ng-reflect-class-name="ais-Menu-footer ais-footer"
     >
       

@@ -2,6 +2,7 @@
 
 exports[`SortBySelector renders markup with state 1`] = `
 <ng-ais-sort-by-selector
+  cx={[Function Function]}
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
   updateState={[Function Function]}
@@ -13,7 +14,6 @@ exports[`SortBySelector renders markup with state 1`] = `
     
         
     <ng-ais-header
-      classname="ais-SortBySelector-header ais-header"
       ng-reflect-class-name="ais-SortBySelector-header ais-"
     >
       
@@ -62,7 +62,6 @@ exports[`SortBySelector renders markup with state 1`] = `
   
         
     <ng-ais-footer
-      classname="ais-SortBySelector-footer ais-footer"
       ng-reflect-class-name="ais-SortBySelector-footer ais-"
     >
       
@@ -80,6 +79,7 @@ exports[`SortBySelector renders markup with state 1`] = `
 
 exports[`SortBySelector renders markup without state 1`] = `
 <ng-ais-sort-by-selector
+  cx={[Function Function]}
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
   updateState={[Function Function]}
@@ -91,7 +91,6 @@ exports[`SortBySelector renders markup without state 1`] = `
     
         
     <ng-ais-header
-      classname="ais-SortBySelector-header ais-header"
       ng-reflect-class-name="ais-SortBySelector-header ais-"
     >
       
@@ -124,7 +123,6 @@ exports[`SortBySelector renders markup without state 1`] = `
   
         
     <ng-ais-footer
-      classname="ais-SortBySelector-footer ais-footer"
       ng-reflect-class-name="ais-SortBySelector-footer ais-"
     >
       

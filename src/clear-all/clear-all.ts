@@ -1,24 +1,19 @@
 import { Component, Input } from "@angular/core";
 import { connectClearAll } from "instantsearch.js/es/connectors";
-import { noop } from "lodash";
+import { noop } from "lodash-es";
 
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
-import { bem } from "../utils";
-
-const cx = bem("ClearAll");
 
 @Component({
   selector: "ng-ais-clear-all",
   template: `
-    <div class="${cx()}">
-      <ng-ais-header [header]="header" className="${cx(
-        "header"
-      )}"></ng-ais-header>
+    <div [class]="cx()">
+      <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
 
-      <div class="${cx("body")}">
+      <div [class]="cx('body')">
         <button
-          class="${cx("button")}"
+          [class]="cx('button')"
           (click)="handleClick($event)"
           [disabled]="!state.hasRefinements"
         >
@@ -26,9 +21,7 @@ const cx = bem("ClearAll");
         </button>
       </div>
 
-      <ng-ais-footer [footer]="footer" className="${cx(
-        "footer"
-      )}"></ng-ais-footer>
+      <ng-ais-footer [footer]="footer" [className]="cx('footer')"></ng-ais-footer>
     </div>
   `
 })
@@ -40,7 +33,7 @@ export class NgAisClearAll extends BaseWidget {
   public state = { hasRefinements: false, refine: noop };
 
   constructor(searchInstance: NgAisInstance) {
-    super(searchInstance);
+    super(searchInstance, "ClearAll");
   }
 
   public ngOnInit() {
@@ -53,7 +46,7 @@ export class NgAisClearAll extends BaseWidget {
     super.ngOnInit();
   }
 
-  public handleClick(event) {
+  public handleClick(event: MouseEvent) {
     event.preventDefault();
 
     if (this.state.hasRefinements) {

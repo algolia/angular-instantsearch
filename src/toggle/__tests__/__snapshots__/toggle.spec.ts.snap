@@ -2,6 +2,7 @@
 
 exports[`Toggle should render with a label 1`] = `
 <ng-ais-toggle
+  cx={[Function Function]}
   label={[Function String]}
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
@@ -15,7 +16,6 @@ exports[`Toggle should render with a label 1`] = `
     
         
     <ng-ais-header
-      classname="ais-Toggle-header ais-header"
       ng-reflect-class-name="ais-Toggle-header ais-header"
     >
       
@@ -77,9 +77,7 @@ exports[`Toggle should render with a label 1`] = `
   
         
     <ng-ais-footer
-      ais-footer=""
-      classname="ais-Toggle-footer"
-      ng-reflect-class-name="ais-Toggle-footer"
+      ng-reflect-class-name="ais-Toggle-footer ais-footer"
     >
       
       
@@ -96,6 +94,7 @@ exports[`Toggle should render with a label 1`] = `
 
 exports[`Toggle should render with state 1`] = `
 <ng-ais-toggle
+  cx={[Function Function]}
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
   updateState={[Function Function]}
@@ -108,7 +107,6 @@ exports[`Toggle should render with state 1`] = `
     
         
     <ng-ais-header
-      classname="ais-Toggle-header ais-header"
       ng-reflect-class-name="ais-Toggle-header ais-header"
     >
       
@@ -170,9 +168,7 @@ exports[`Toggle should render with state 1`] = `
   
         
     <ng-ais-footer
-      ais-footer=""
-      classname="ais-Toggle-footer"
-      ng-reflect-class-name="ais-Toggle-footer"
+      ng-reflect-class-name="ais-Toggle-footer ais-footer"
     >
       
       
@@ -189,6 +185,7 @@ exports[`Toggle should render with state 1`] = `
 
 exports[`Toggle should render without state 1`] = `
 <ng-ais-toggle
+  cx={[Function Function]}
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
   updateState={[Function Function]}
@@ -201,7 +198,6 @@ exports[`Toggle should render without state 1`] = `
     
         
     <ng-ais-header
-      classname="ais-Toggle-header ais-header"
       ng-reflect-class-name="ais-Toggle-header ais-header"
     >
       
@@ -263,9 +259,7 @@ exports[`Toggle should render without state 1`] = `
   
         
     <ng-ais-footer
-      ais-footer=""
-      classname="ais-Toggle-footer"
-      ng-reflect-class-name="ais-Toggle-footer"
+      ng-reflect-class-name="ais-Toggle-footer ais-footer"
     >
       
       

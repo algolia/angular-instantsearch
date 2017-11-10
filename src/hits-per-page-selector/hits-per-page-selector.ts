@@ -1,28 +1,23 @@
 import { Component, Input } from "@angular/core";
 import { connectHitsPerPage } from "instantsearch.js/es/connectors";
-import { noop } from "lodash";
+import { noop } from "lodash-es";
 
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
-import { bem } from "../utils";
-
-const cx = bem("HitsPerPageSelector");
 
 @Component({
   selector: "ng-ais-hits-per-page-selector",
   template: `
-    <div class="${cx()}">
-      <ng-ais-header [header]="header" className="${cx(
-        "header"
-      )}"></ng-ais-header>
+    <div [class]="cx()">
+      <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
 
-      <div class="${cx("body")}">
+      <div [class]="cx('body')">
         <select
-          class="${cx("select")}"
+          [class]="cx('select')"
           (change)="state.refine($event.target.value)"
         >
           <option
-            class="${cx("option")}"
+            [class]="cx('option')"
             *ngFor="let item of state.items"
             [value]="item.value"
             [selected]="item.isRefined"
@@ -32,9 +27,7 @@ const cx = bem("HitsPerPageSelector");
         </select>
       </div>
 
-      <ng-ais-footer [footer]="footer" className="${cx(
-        "footer"
-      )}"></ng-ais-footer>
+      <ng-ais-footer [footer]="footer" [className]="cx('footer')"></ng-ais-footer>
     </div>
   `
 })
@@ -46,13 +39,13 @@ export class NgAisHitsPerPageSelector extends BaseWidget {
     default?: boolean;
   }[];
 
-  public state = {
+  public state: HitsPerPageSelectorState = {
     items: [],
     refine: noop
   };
 
   constructor(searchInstance: NgAisInstance) {
-    super(searchInstance);
+    super(searchInstance, "HitsPerPageSelector");
   }
 
   public ngOnInit() {

@@ -4,20 +4,17 @@ exports[`ClearAll renders markup without state 1`] = `
 <ng-ais-clear-all
   buttonLabel={[Function String]}
   clearsQuery="false"
+  cx={[Function Function]}
   excludeAttributes={[Function Array]}
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
   updateState={[Function Function]}
 >
   
-      <div
-    class="ais-ClearAll"
-  >
+      <div>
     
         
-    <ng-ais-header
-      classname="ais-ClearAll-header ais-header"
-    >
+    <ng-ais-header>
       
       
       
@@ -27,14 +24,10 @@ exports[`ClearAll renders markup without state 1`] = `
     
   
         
-    <div
-      class="ais-ClearAll-body ais-body"
-    >
+    <div>
       
           
-      <button
-        class="ais-ClearAll-button"
-      >
+      <button>
         
             
       </button>
@@ -44,9 +37,7 @@ exports[`ClearAll renders markup without state 1`] = `
     
   
         
-    <ng-ais-footer
-      classname="ais-ClearAll-footer ais-footer"
-    >
+    <ng-ais-footer>
       
       
       

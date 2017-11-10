@@ -1,39 +1,26 @@
 import { Component, Input } from "@angular/core";
 import { bem } from "../utils";
 
-const cx = bem("HierarchicalMenu");
-
-interface Item {
-  value: string;
-  label: string;
-  count: number;
-  isRefined: boolean;
-  data: Item[];
-}
-
 @Component({
   selector: "ng-ais-hierarchical-menu-item",
   template: `
     <li
-      [ngClass]="{
-        '${cx("item")}': true,
-        '${cx("item", "selected")}': item.isRefined
-      }"
+      [class]="cx('item') + (item.isRefined ? (' ' + cx('item', 'selected')) : '')"
       (click)="handleClick($event, item)"
     >
       <a
-        class="${cx("link")}"
+        [class]="cx('link')"
         href="{{createURL(item.value)}}"
         (click)="handleClick($event, item)"
       >
         {{item.label}}
-        <span class="${cx("count")}">
+        <span [class]="cx('count')">
           {{item.count}}
         </span>
       </a>
 
       <ul
-        class="{{cx('list')}} {{cx('list', 'lvl' + lvl)}}"
+        [class]="cx('list') + ' ' + cx('list', 'lvl' + lvl)"
         *ngIf="item.isRefined && isArray(item.data) && item.data.length > 0"
       >
         <ng-ais-hierarchical-menu-item
@@ -52,15 +39,15 @@ export class NgAisHierarchicalMenuItem {
   @Input() public lvl: number = 1;
   @Input() public refine: (value: string) => void;
   @Input() public createURL: () => string;
-  @Input() public item: Item;
+  @Input() public item: HierarchicalMenuItem;
 
-  public cx = cx;
+  public cx = bem("HierarchicalMenu");
 
-  public isArray(potentialArray) {
+  public isArray(potentialArray: any) {
     return Array.isArray(potentialArray);
   }
 
-  public handleClick(event, item) {
+  public handleClick(event: MouseEvent, item: HierarchicalMenuItem) {
     event.preventDefault();
     event.stopPropagation();
 

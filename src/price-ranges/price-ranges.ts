@@ -1,28 +1,20 @@
 import { Component, Input } from "@angular/core";
 import { connectPriceRanges } from "instantsearch.js/es/connectors";
-import { noop } from "lodash";
+import { noop } from "lodash-es";
 
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
-import { bem } from "../utils";
-
-const cx = bem("PriceRanges");
 
 @Component({
   selector: "ng-ais-price-ranges",
   template: `
-    <div class="${cx()}">
-      <ng-ais-header [header]="header" className="${cx(
-        "header"
-      )}"></ng-ais-header>
+    <div [class]="cx()">
+      <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
 
-      <div class="${cx("body")}">
-        <ul class="${cx("list")}">
+      <div [class]="cx('body')">
+        <ul [class]="cx('list')">
           <li
-            [ngClass]="{
-              '${cx("item")}': true,
-              '${cx("item", "selected")}': item.isRefined
-            }"
+            [class]="cx('item') + (item.isRefined ? ' ' + cx('item', 'selected') : '')"
             *ngFor="let item of state.items"
             (click)="handleClick($event, item)"
           >
@@ -31,9 +23,7 @@ const cx = bem("PriceRanges");
         </ul>
       </div>
 
-      <ng-ais-footer [footer]="footer" className="${cx(
-        "footer"
-      )}"></ng-ais-footer>
+      <ng-ais-footer [footer]="footer" [className]="cx('footer')"></ng-ais-footer>
     </div>
   `
 })
@@ -45,13 +35,16 @@ export class NgAisPriceRanges extends BaseWidget {
   // connector options
   @Input() public attributeName: string;
 
-  public state = {
+  public state: {
+    items: {}[];
+    refine: Function;
+  } = {
     items: [],
     refine: noop
   };
 
   constructor(searchInstance: NgAisInstance) {
-    super(searchInstance);
+    super(searchInstance, "PriceRanges");
   }
 
   public ngOnInit() {
@@ -61,7 +54,13 @@ export class NgAisPriceRanges extends BaseWidget {
     super.ngOnInit();
   }
 
-  public defaultFormatLabel({ from, to }) {
+  public defaultFormatLabel({
+    from,
+    to
+  }: {
+    from?: number | string;
+    to?: number | string;
+  }) {
     if (to === undefined) {
       return `>= ${this.currency} ${from}`;
     }
@@ -71,7 +70,7 @@ export class NgAisPriceRanges extends BaseWidget {
     return `${this.currency} ${from} - ${this.currency} ${to}`;
   }
 
-  public handleClick(event, item) {
+  public handleClick(event: MouseEvent, item: {}) {
     event.preventDefault();
     this.state.refine(item);
   }

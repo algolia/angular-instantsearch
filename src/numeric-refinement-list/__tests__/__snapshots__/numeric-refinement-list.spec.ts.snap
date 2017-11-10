@@ -2,6 +2,7 @@
 
 exports[`NumericRefinementList renders markup with state 1`] = `
 <ng-ais-numeric-refinement-list
+  cx={[Function Function]}
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
   updateState={[Function Function]}
@@ -13,7 +14,6 @@ exports[`NumericRefinementList renders markup with state 1`] = `
     
         
     <ng-ais-header
-      classname="ais-NumericRefinementList-header ais-header"
       ng-reflect-class-name="ais-NumericRefinementList-head"
     >
       
@@ -38,7 +38,6 @@ exports[`NumericRefinementList renders markup with state 1`] = `
         
         <li
           class="ais-NumericRefinementList-item ais-NumericRefinementList-item--selected"
-          ng-reflect-ng-class="[object Object]"
         >
           
               
@@ -61,7 +60,6 @@ exports[`NumericRefinementList renders markup with state 1`] = `
         </li>
         <li
           class="ais-NumericRefinementList-item"
-          ng-reflect-ng-class="[object Object]"
         >
           
               
@@ -92,7 +90,6 @@ exports[`NumericRefinementList renders markup with state 1`] = `
   
         
     <ng-ais-footer
-      classname="ais-NumericRefinementList-footer ais-footer"
       ng-reflect-class-name="ais-NumericRefinementList-foot"
     >
       
@@ -110,6 +107,7 @@ exports[`NumericRefinementList renders markup with state 1`] = `
 
 exports[`NumericRefinementList renders markup without state 1`] = `
 <ng-ais-numeric-refinement-list
+  cx={[Function Function]}
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
   updateState={[Function Function]}
@@ -121,7 +119,6 @@ exports[`NumericRefinementList renders markup without state 1`] = `
     
         
     <ng-ais-header
-      classname="ais-NumericRefinementList-header ais-header"
       ng-reflect-class-name="ais-NumericRefinementList-head"
     >
       
@@ -154,7 +151,6 @@ exports[`NumericRefinementList renders markup without state 1`] = `
   
         
     <ng-ais-footer
-      classname="ais-NumericRefinementList-footer ais-footer"
       ng-reflect-class-name="ais-NumericRefinementList-foot"
     >
       

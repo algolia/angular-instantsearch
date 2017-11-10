@@ -2,6 +2,7 @@
 
 exports[`Breadcrumb renders markup with two items 1`] = `
 <ng-ais-breadcrumb
+  cx={[Function Function]}
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
   updateState={[Function Function]}
@@ -13,7 +14,6 @@ exports[`Breadcrumb renders markup with two items 1`] = `
     
         
     <ng-ais-header
-      classname="ais-Breadcrumb-header ais-header"
       ng-reflect-class-name="ais-Breadcrumb-header ais-head"
     >
       
@@ -93,7 +93,6 @@ exports[`Breadcrumb renders markup with two items 1`] = `
   
         
     <ng-ais-footer
-      classname="ais-Breadcrumb-footer ais-footer"
       ng-reflect-class-name="ais-Breadcrumb-footer ais-foot"
     >
       
@@ -111,6 +110,7 @@ exports[`Breadcrumb renders markup with two items 1`] = `
 
 exports[`Breadcrumb renders markup without state 1`] = `
 <ng-ais-breadcrumb
+  cx={[Function Function]}
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
   updateState={[Function Function]}
@@ -122,7 +122,7 @@ exports[`Breadcrumb renders markup without state 1`] = `
     
         
     <ng-ais-header
-      classname="ais-Breadcrumb-header ais-header"
+      ng-reflect-class-name="ais-Breadcrumb-header ais-head"
     >
       
       
@@ -154,7 +154,7 @@ exports[`Breadcrumb renders markup without state 1`] = `
   
         
     <ng-ais-footer
-      classname="ais-Breadcrumb-footer ais-footer"
+      ng-reflect-class-name="ais-Breadcrumb-footer ais-foot"
     >
       
       
@@ -171,6 +171,7 @@ exports[`Breadcrumb renders markup without state 1`] = `
 
 exports[`Breadcrumb should display an header and a footer 1`] = `
 <ng-ais-breadcrumb
+  cx={[Function Function]}
   footer={[Function String]}
   header={[Function String]}
   searchInstance={[Function NgAisInstance]}
@@ -184,7 +185,6 @@ exports[`Breadcrumb should display an header and a footer 1`] = `
     
         
     <ng-ais-header
-      classname="ais-Breadcrumb-header ais-header"
       ng-reflect-class-name="ais-Breadcrumb-header ais-head"
       ng-reflect-header="Header title"
     >
@@ -225,7 +225,6 @@ exports[`Breadcrumb should display an header and a footer 1`] = `
   
         
     <ng-ais-footer
-      classname="ais-Breadcrumb-footer ais-footer"
       ng-reflect-class-name="ais-Breadcrumb-footer ais-foot"
       ng-reflect-footer="Footer title"
     >

@@ -2,6 +2,7 @@
 
 exports[`Stats should render with state 1`] = `
 <ng-ais-stats
+  cx={[Function Function]}
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
   template="undefined"
@@ -14,7 +15,6 @@ exports[`Stats should render with state 1`] = `
     
         
     <ng-ais-header
-      classname="ais-Stats-header ais-header"
       ng-reflect-class-name="ais-Stats-header ais-header"
     >
       
@@ -42,9 +42,7 @@ exports[`Stats should render with state 1`] = `
   
         
     <ng-ais-footer
-      ais-footer=""
-      classname="ais-Stats-footer"
-      ng-reflect-class-name="ais-Stats-footer"
+      ng-reflect-class-name="ais-Stats-footer ais-footer"
     >
       
       
@@ -61,20 +59,17 @@ exports[`Stats should render with state 1`] = `
 
 exports[`Stats should render without state 1`] = `
 <ng-ais-stats
+  cx={[Function Function]}
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
   template="undefined"
   updateState={[Function Function]}
 >
   
-      <div
-    class="ais-Stats"
-  >
+      <div>
     
         
-    <ng-ais-header
-      classname="ais-Stats-header ais-header"
-    >
+    <ng-ais-header>
       
       
       
@@ -92,10 +87,7 @@ exports[`Stats should render without state 1`] = `
     
   
         
-    <ng-ais-footer
-      ais-footer=""
-      classname="ais-Stats-footer"
-    >
+    <ng-ais-footer>
       
       
       

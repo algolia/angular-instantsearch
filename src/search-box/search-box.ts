@@ -1,29 +1,24 @@
 import { Component, Input, Output, EventEmitter } from "@angular/core";
 import { connectSearchBox } from "instantsearch.js/es/connectors";
-import { noop } from "lodash";
+import { noop } from "lodash-es";
 
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
-import { bem } from "../utils";
-
-const cx = bem("SearchBox");
 
 @Component({
   selector: "ng-ais-search-box",
   template: `
-    <div class="${cx()}">
-      <ng-ais-header [header]="header" className="${cx(
-        "header"
-      )}"></ng-ais-header>
+    <div [class]="cx()">
+      <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
 
-      <div class="${cx("body")}">
+      <div [class]="cx('body')">
         <form
-          class="${cx("form")}"
+          [class]="cx('form')"
           novalidate
           (submit)="handleSubmit($event)"
         >
           <input
-            class="${cx("input")}"
+            [class]="cx('input')"
             autocapitalize="off"
             autocorrect="off"
             placeholder="{{placeholder}}"
@@ -37,13 +32,13 @@ const cx = bem("SearchBox");
           />
 
           <button
-            class="${cx("submit")}"
+            [class]="cx('submit')"
             type="submit"
             title="{{submitTitle}}"
             (click)="handleSubmit($event)"
           >
             <svg
-              class="${cx("magnifierIcon")}"
+              [ngClass]="cx('magnifierIcon')"
               xmlns="http://www.w3.org/2000/svg"
               id="sbx-icon-search-13"
               viewBox="0 0 40 40"
@@ -55,13 +50,13 @@ const cx = bem("SearchBox");
           </button>
 
           <button
-            class="${cx("reset")}"
+            [class]="cx('reset')"
             type="reset"
             title="{{resetTitle}}"
             (click)="handleReset($event)"
           >
             <svg
-              class="${cx("resetIcon")}"
+              [ngClass]="cx('resetIcon')"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
               width="20"
@@ -73,9 +68,7 @@ const cx = bem("SearchBox");
         </form>
       </div>
 
-      <ng-ais-footer [footer]="footer" className="${cx(
-        "footer"
-      )}"></ng-ais-footer>
+      <ng-ais-footer [footer]="footer" [class]="cx('footer')"></ng-ais-footer>
     </div>
   `
 })
@@ -101,7 +94,7 @@ export class NgAisSearchBox extends BaseWidget {
   };
 
   constructor(searchInstance: NgAisInstance) {
-    super(searchInstance);
+    super(searchInstance, "SearchBox");
     this.createWidget(connectSearchBox);
   }
 
@@ -113,7 +106,7 @@ export class NgAisSearchBox extends BaseWidget {
     }
   }
 
-  public handleSubmit(event: { preventDefault: () => void }) {
+  public handleSubmit(event: MouseEvent) {
     // send submit event to parent component
     this.submit.emit(event);
 
@@ -124,7 +117,7 @@ export class NgAisSearchBox extends BaseWidget {
     }
   }
 
-  public handleReset(event) {
+  public handleReset(event: MouseEvent) {
     // send reset event to parent component
     this.reset.emit(event);
 
