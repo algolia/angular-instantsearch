@@ -17,7 +17,8 @@ rollup -c rollup.config.esm.js
 
 # remove useless files from dist
 (
-  cd dist && \
+  cd dist
+  rm -rf node_modules src
   find . \
     \! -name '*.umd.js' \
     \! -name '*.esm.js' \
@@ -26,5 +27,6 @@ rollup -c rollup.config.esm.js
     \! -name '*.d.ts' \
     \! -name '*.metadata.json' \
     \! -name 'package.json' \
+    -type f \
     -delete
 )
