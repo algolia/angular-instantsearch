@@ -5,12 +5,6 @@ import { Component } from "@angular/core";
   templateUrl: "./app.component.html"
 })
 export class AppComponent {
-  instantSearchConfig = {
-    appId: "latency",
-    apiKey: "6be0576ff61c053d5f9a3225e2a90f76",
-    indexName: "ikea"
-  };
-
   transformHits(hits) {
     return hits.map(hit => {
       hit.stars = [];

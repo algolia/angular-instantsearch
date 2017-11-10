@@ -1,5 +1,11 @@
 <div class="container-fluid">
-  <ng-ais-instantsearch [config]="instantSearchConfig">
+  <ng-ais-instantsearch
+    [config]="{
+      appId: 'latency',
+      apiKey: '6be0576ff61c053d5f9a3225e2a90f76',
+      indexName: 'ikea'
+    }"
+  >
     <header class="content-wrapper">
       <a href="./" class="logo">amazing</a>
       <ng-ais-search-box placeholder="Search a product"></ng-ais-search-box>
