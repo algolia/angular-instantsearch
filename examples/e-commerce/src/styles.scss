@@ -457,22 +457,53 @@ aside {
   padding: 10px;
 }
 
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .ais-HierarchicalMenu {
   &-item--selected > a {
     font-weight: bold;
   }
 
   &-link::before {
+    @extend .fa;
     content: "\f105";
-    display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
 
   &-count {
     display: none;
+  }
+}
+
+.ais-ClearAll-button {
+  color: #333;
+  font-size: 13px;
+  padding: 6px 12px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  background-color: #fff;
+  border-color: #ccc;
+  display: block;
+  width: 100%;
+
+  &[disabled] {
+    display: none;
+  }
+
+  &::before {
+    @extend .fa;
+    content: "\f12d";
   }
 }
