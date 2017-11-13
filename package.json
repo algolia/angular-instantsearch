@@ -1,6 +1,6 @@
 {
   "name": "angular-instantsearch",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Lightning-fast search for Angular apps, by Algolia.",
   "author": "iam4x",
   "license": "MIT",
@@ -12,7 +12,8 @@
     "test:ci": "yarn lint && jest --runInBand && yarn build",
     "test:watch": "jest --watch",
     "examples:ecommerce": "./scripts/run-ecommerce.sh",
-    "examples:ecommerce:build": "./scripts/build-ecommerce.sh"
+    "examples:ecommerce:build": "./scripts/build-ecommerce.sh",
+    "release": "./scripts/release.sh"
   },
   "jest": {
     "preset": "jest-preset-angular",
@@ -58,6 +59,7 @@
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-0": "^6.0.0",
+    "conventional-changelog-cli": "^1.3.5",
     "core-js": "^2.5.1",
     "eslint": "^4.10.0",
     "eslint-config-algolia": "^12.0.0",
