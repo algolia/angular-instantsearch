@@ -3,11 +3,12 @@
 set -e # exit when error
 
 yarn build
-yarn link
 
 (
   cd examples/e-commerce
+  rm -rf node_modules
   yarn
-  yarn link angular-instantsearch
+  mkdir ./node_modules/angular-instantsearch
+  cp -R ../../dist/* ./node_modules/angular-instantsearch
   yarn build
 )
