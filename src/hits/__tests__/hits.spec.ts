@@ -48,6 +48,7 @@ describe("Hits", () => {
     const fixture = render({});
     fixture.componentInstance.transformItems = items =>
       items.map(item => ({ ...item, name: `transformed - ${item.name}` }));
+    fixture.componentInstance.updateState(defaultState, false);
     fixture.detectChanges();
     expect(fixture).toMatchSnapshot();
   });

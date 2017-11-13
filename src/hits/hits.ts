@@ -12,14 +12,14 @@ import { NgAisInstance } from "../instantsearch/instantsearch-instance";
       <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
 
       <div [class]="cx('body')">
-        <ng-container *ngTemplateOutlet="template; context: context"></ng-container>
+        <ng-container *ngTemplateOutlet="template; context: state"></ng-container>
 
         <!-- default rendering if no template specified -->
         <div *ngIf="!template">
           <ul [class]="cx('list')">
             <li
               [class]="cx('item')"
-              *ngFor="let hit of hits"
+              *ngFor="let hit of state.hits"
             >
               <ng-ais-highlight attributeName="name" [hit]="hit">
               </ng-ais-highlight>
@@ -41,21 +41,23 @@ export class NgAisHits extends BaseWidget {
   // inner widget state returned from connector
   public state: { hits: {}[]; results: {} } = { hits: [], results: {} };
 
-  get hits() {
-    return isFunction(this.transformItems)
-      ? this.transformItems(this.state.hits)
-      : this.state.hits;
-  }
-
-  get context() {
-    return {
-      hits: this.hits,
-      results: this.state.results || {}
-    };
-  }
-
   constructor(searchInstance: NgAisInstance) {
     super(searchInstance, "Hits");
     this.createWidget(connectHits, { escapeHits: true });
   }
+
+  updateState = (
+    state: { hits: {}[]; results: {} },
+    isFirstRendering: boolean
+  ) => {
+    if (isFirstRendering) return;
+
+    this.state = {
+      ...state,
+      results: state.results,
+      hits: isFunction(this.transformItems)
+        ? this.transformItems(state.hits)
+        : state.hits
+    };
+  };
 }
