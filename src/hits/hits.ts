@@ -53,6 +53,7 @@ export class NgAisHits extends BaseWidget {
     if (isFirstRendering) return;
 
     this.state = {
+      ...state,
       results: state.results,
       hits: isFunction(this.transformItems)
         ? this.transformItems(state.hits)
