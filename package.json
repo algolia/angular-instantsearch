@@ -11,7 +11,8 @@
     "test": "jest",
     "test:ci": "yarn lint && jest --runInBand && yarn build",
     "test:watch": "jest --watch",
-    "examples:ecommerce": "./scripts/run-ecommerce.sh"
+    "examples:ecommerce": "./scripts/run-ecommerce.sh",
+    "examples:ecommerce:build": "./scripts/build-ecommerce.sh"
   },
   "jest": {
     "preset": "jest-preset-angular",
