@@ -97,12 +97,12 @@
             </div>
 
             <article
-              *ngFor="let hit of hits"
+              *ngFor="let hit of hits; trackBy: trackByObjectID"
               class="hit"
             >
               <div class="product-picture-wrapper">
                 <div class="product-picture">
-                  <img [src]="hit.image" />
+                  <app-product-image [src]="hit.image"></app-product-image>
                 </div>
               </div>
 
