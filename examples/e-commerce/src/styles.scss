@@ -549,3 +549,19 @@ aside {
     }
   }
 }
+
+.ais-PriceRanges {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    cursor: pointer;
+
+    &:hover {
+      color: #B32500;
+    }
+  }
+}
