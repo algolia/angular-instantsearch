@@ -153,6 +153,7 @@ aside {
   #colors {
     @include clearfix;
   }
+
   .facet-color {
     width: 28px;
     height: 28px;
@@ -310,22 +311,30 @@ aside {
   width: 100%;
   line-height: 22px;
   @include clearfix;
-  .sort-by {
+
+  .ais-SortBySelector {
     float: right;
-  }
-  label {
-    font-weight: normal;
-    font-size: .8em;
-  }
-  #sort-by-selector {
-    display: inline-block;
+
+    &-header {
+      font-weight: normal;
+      font-size: .8em;
+    }
+
+    &-header,
+    &-body {
+      display: inline-block;
+    }
   }
 }
 
-.ais-Stats-body {
-  padding-right: 10px;
-  font-size: .8em;
-  color: #777;
+.ais-Stats {
+  float: left;
+
+  &-body {
+    padding-right: 10px;
+    font-size: .8em;
+    color: #777;
+  }
 }
 
 .ais-Hits {
