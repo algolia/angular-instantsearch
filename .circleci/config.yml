@@ -5,6 +5,10 @@
 version: 2
 jobs:
   build:
+    filters:
+      branches:
+        only: /^(?!gitbook).*$/
+
     docker:
       # specify the version you desire here
       - image: circleci/node:8.6.0
