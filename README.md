@@ -15,4 +15,4 @@ Angular-InstantSearch is part of the InstantSearch family:
 
 This library is build and maintained by the contributors and the peeps at [Algolia](https://www.algolia.com/).
 
-The documentation is available at [iam4x.gitbooks.io/angular-instantsearch](https://iam4x.gitbooks.io/angular-instantsearch/).
+The documentation is available at [algolia.gitbooks.io/angular-instantsearch](https://algolia.gitbooks.io/angular-instantsearch/).
