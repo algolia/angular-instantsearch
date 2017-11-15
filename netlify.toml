@@ -1,3 +1,0 @@
-[build]
-  command="yarn examples:ecommerce:build"
-  publish="examples/e-commerce/dist"
