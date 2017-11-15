@@ -29,6 +29,7 @@ import { parseNumberInput } from "../utils";
         <button
           *ngIf="state.canToggleShowMore"
           (click)="state.toggleShowMore()"
+          [class]="cx('showMore') + (!state.canToggleShowMore ? (' ' + cx('showMore', 'disabled')) : '')"
         >
           {{state.isShowingMore ? showLessLabel : showMoreLabel}}
         </button>
