@@ -1,8 +1,11 @@
 {
   "name": "angular-instantsearch",
-  "version": "1.0.0",
+  "version": "1.0.0-beta.1",
   "description": "Lightning-fast search for Angular apps, by Algolia.",
-  "author": "iam4x",
+  "author": {
+    "name": "Algolia, Inc.",
+    "url": "https://www.algolia.com"
+  },
   "license": "MIT",
   "scripts": {
     "build": "./scripts/build.sh",
