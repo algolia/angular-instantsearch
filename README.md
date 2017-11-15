@@ -6,9 +6,13 @@
 
 InstantSearch projects: **Angular InstantSearch** | [React InstantSearch][react-instantsearch-github] | [InstantSearch.js][instantsearch.js-github] | [InstantSearch Android][instantsearch-android-github] | [InstantSearch iOS][instantsearch-ios-github].
 
-## Beta
+## Beta feedback
 
-This project is currently in **beta**, we welcome any feedback via GitHub issues and there's also a dedicated chat available at [gitter.im/angular-instantsearch](https://gitter.im/angular-instantsearch).
+This project is currently in **beta**, we welcome any feedback via [GitHub issues](https://github.com/algolia/react-instantsearch/issues/new) and there's also a dedicated chat available at [gitter.im/angular-instantsearch](https://gitter.im/angular-instantsearch).
+
+## Angular compatibility
+
+Angular InstantSearch is compatible with Angular 4. If you need a different version of Angular, please [open an issue](https://github.com/algolia/react-instantsearch/issues/new) or come [chat with us]().
 
 ## Documentation
 
