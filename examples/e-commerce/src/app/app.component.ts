@@ -2,7 +2,10 @@ import { Component } from "@angular/core";
 
 @Component({
   selector: "app-root",
-  templateUrl: "./app.component.html"
+  templateUrl: "./app.component.html",
+  styleUrls: [
+    "../../node_modules/angular-instantsearch/bundles/instantsearch.min.css"
+  ]
 })
 export class AppComponent {
   trackByObjectID(index, hit) {
