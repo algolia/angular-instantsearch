@@ -152,7 +152,7 @@ replace `<ng-ais-hits></ng-ais-hits>` with:
 <!-- <ng-ais-instantsearch [config]="{...}"> -->
   <ng-ais-hits>
     <ng-template let-hits="hits">
-      <div *ngFor="let hits of hits">
+      <div *ngFor="let hit of hits">
         Hit {{hit.objectID}}: {{hit.name}}
       </div>
     </ng-template>
@@ -166,7 +166,7 @@ One very important aspect of the search is highlightning the matching parts of t
 <!-- <ng-ais-instantsearch [config]="{...}"> -->
   <ng-ais-hits>
     <ng-template let-hits="hits">
-      <div *ngFor="let hits of hits">
+      <div *ngFor="let hit of hits">
         Hit {{hit.objectID}}:
         <ng-ais-highlight attributeName="name" [hit]="hit">
         </ng-ais-highlight>
