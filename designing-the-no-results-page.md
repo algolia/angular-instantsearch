@@ -4,14 +4,14 @@ When a query returns no results, it is important to let the user know that their
 
 By doing so, we’re acknowledging that not all queries lead to some result and with some additional hints we can let them continue to use the search. This way, there is less chance that the user will leave the website to do a search to an external search engine.
 
-There are various strategies that can be implemented for the no-result. This guide will walk you through one that can be easily implemented with Angular-InstantSearch:
+There are various strategies that can be implemented for the no-result. This guide will walk you through one that can be easily implemented with Angular InstantSearch:
 
 * First we’ll improve the message that we provide to the user
 * Then we’ll add a button to let the user clear the filters
 
 ### Display a message
 
-By default, Angular-InstantSearch will display nothing when there are no results. The bare minimum to handle the no-result case is to provide the user with a message that indicates that no results were found in a friendly fashion.
+By default, Angular InstantSearch will display nothing when there are no results. The bare minimum to handle the no-result case is to provide the user with a message that indicates that no results were found in a friendly fashion.
 
 In order to do that, we define a custom `<ng-ais-hits>` template with the `<ng-template>` directive:
 
