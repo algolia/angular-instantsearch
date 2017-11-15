@@ -134,7 +134,8 @@ To display results, let's add the Hits widget. This widget will display all the 
   [config]="{
     apiKey: '6be0576ff61c053d5f9a3225e2a90f76',
     appId: 'latency',
-    indexName: 'instant_search'
+    indexName: 'instant_search',
+    urlSync: true
   }"
 >
   <ng-ais-hits></ng-ais-hits>
@@ -243,11 +244,11 @@ Those two features are implemented respectively with the [Pagination](/widgets/p
 <ng-ais-instantsearch [config]="{...}">
   <!-- SearchBox -->
   <ng-ais-searchbox></ng-ais-searchbox>
-  
+
   <!-- RefinementList -->
   <ng-ais-refinement-list attributeName="category">
   </ng-ais-refinement-list>
-  
+
   <!-- CurrentRefinedValues -->
   <ng-ais-current-refined-values [clearAll]="false">
     <!--
@@ -255,14 +256,14 @@ Those two features are implemented respectively with the [Pagination](/widgets/p
       we disable it in this example since we use `clearAll` widget on its own.
     -->
   </ng-ais-current-refined-values>
-  
+
   <!-- ClearAll -->
   <ng-ais-clear-all clearAllLabel="Reset everything">
   </ng-ais-clear-all>
-  
+
   <!-- Hits -->
   <ng-ais-hits></ng-ais-hits>
-  
+
   <!-- Pagination -->
   <ng-ais-pagination [maxPages]="20">
   </ng-ais-pagination>
@@ -276,6 +277,6 @@ In this part, we’ve seen:
 * How to clear the filters
 * How to paginate the results
 
-## Wrapping up 
+## Wrapping up
 
 Congratulations, you now have a fully featured InstantSearch result page. But this is only the beginning! If you want to dig further into Angular InstantSearch, we suggest reading the other guides and the widgets API.
