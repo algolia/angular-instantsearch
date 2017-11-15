@@ -1,6 +1,6 @@
-# Welcome to Angular-InstantSearch
+# Welcome to Angular InstantSearch
 
-Angular-InstantSearch is an Angular 4 TypeScript library that lets you create an instant search results experience using Algolia's REST API.
+Angular InstantSearch is an **Angular 4 and 5** TypeScript library that lets you create an instant search results experience using Algolia's REST API.
 
 In this tutorial you'll learn how to:
 
@@ -8,9 +8,16 @@ In this tutorial you'll learn how to:
 * Display results from Algolia
 * Add widgets / components to filter the results
 
+## Beta feedback
+
+This project is currently in **beta**, we welcome any feedback via [GitHub issues](https://github.com/algolia/react-instantsearch/issues/new) and there's also a dedicated chat available at [gitter.im/angular-instantsearch](https://gitter.im/angular-instantsearch).
+
+During the beta, we will do substantial changes based on your feedback. For all of those changes, we will warn
+every users via our chat, discourse and GitHub releases.
+
 ## Before we start
 
-Angular-InstantSearch is meant to be used with Algolia.
+Angular InstantSearch is meant to be used with Algolia.
 
 Therefore, you'll need the credentials to an Algolia index. To ease this getting started, here are credentials to an already configured index:
 
@@ -20,16 +27,18 @@ Therefore, you'll need the credentials to an Algolia index. To ease this getting
 
 It contains sample data for an e-commerce website.
 
-This guide also expects you to have a working angular application. You can also use the official [angular CLI](http://cli.angular.io) to bootstrap a new application this way:
+This guide also expects you to have a working angular application. You can use the official [angular CLI](http://cli.angular.io) to bootstrap a new application this way:
 
-```
-> npm install -g @angular/cli
-> ng new example-angular-instantsearch
-> cd example-angular-instantsearch
-> ng serve
+```sh
+npm install -g @angular/cli
+ng new example-angular-instantsearch
+cd example-angular-instantsearch
+ng serve
 ```
 
-## Install Angular-InstantSearch
+Then go on <http://localhost:4200/> to see your live example.
+
+## Install Angular InstantSearch
 
 First install `angular-instantsearch` via npm:
 
@@ -38,30 +47,32 @@ First install `angular-instantsearch` via npm:
 
 ## Import module
 
-Once installed you need to import our main module into your Angular application:
+Once installed you need to import our main module into your Angular application,
+so for example if you generated an app with the Angular cli, it would be in `src/app/app.module.ts`:
 
 ```ts
 import { NgAisModule } from 'angular-instantsearch';
 ```
 
-The only remaining part is to list the imported module in your root module and in any additional application modules that make use of `angular-instantsearch`.
+We then need to inject the Algolia InstantSearch module into the imports of our app.
 
-The exact method will be slightly different the root (top-level) module because you need to call `.forRoot()` static method from the `angular-instantsearch` main module.
+This can be done either at the root level ( `src/app/app.module.ts`) or in any search module you might have.
+When done at the root level of your app, the syntax is a bit different.
 
-* For your application root module:
+* At the root module:
 
 ```ts
 import { NgAisModule } from 'angular-instantsearch';
 
 @NgModule({
   declarations: [AppComponent, ...],
-  imports: [NgAisModule.forRoot(), ...],
+  imports: [NgAisModule.forRoot(), ...], // use .forRoot()
   bootstrap: [AppComponent]
 })
 export class AppModule {}
 ```
 
-* Other modules in your application can simply import `NgAisModule`:
+* In another module, like a search module:
 
 ```ts
 import { NgAisModule } from 'angular-instantsearch';
@@ -73,75 +84,50 @@ import { NgAisModule } from 'angular-instantsearch';
 export class OtherModule {}
 ```
 
-You also need load the companion CSS file. You can load it by adding an entry into your `styleUrls` on the correspondent component:
+You also need load the companion CSS files. To do so, you need to add the relevant CSS files to
+your `.angular-cli.json` file, in the `apps > styles` array:
 
-```ts
-@Component({
-  selector: "app-root",
-  templateUrl: "./app.component.html",
-  styleUrls: [
-    "../../node_modules/angular-instantsearch/bundles/instantsearch.min.css"
+```json
+{
+  "styles": [
+    "../node_modules/angular-instantsearch/bundles/instantsearch.min.css",
+    "../node_modules/angular-instantsearch/bundles/instantsearch-theme-algolia.min.css",
+    "styles.css"
   ]
-})
+}
 ```
 
-We also provide a default theme to have widgets effectively styled, you can import it this way:
-
-```ts
-@Component({
-  selector: "app-root",
-  templateUrl: "./app.component.html",
-  styleUrls: [
-    "../../node_modules/angular-instantsearch/bundles/instantsearch.min.css",
-    "../../node_modules/angular-instantsearch/bundles/instantsearch-theme-algolia.min.css"
-  ]
-})
-```
+And then kill and reload (`ng serve`) your server.
 
 ## Initialization
 
-Now that you have imported Angular-InstantSearch module into your application, you can use any widgets with their respective directive.
+Now that you have imported Angular InstantSearch module into your application, you can use any widgets with their respective directive.
 
 `<ng-ais-instantsearch>` is the component that will connect to Algolia and will synchronize all the widgets togethers. It has to be the root component of every other widgets you will import.
 
-```ts
-@Component({
-  selector: 'my-app',
-  template: `
-    <ng-ais-instantsearch
-      [config]="{
-        apiKey: '6be0576ff61c053d5f9a3225e2a90f76',
-        appId: 'latency',
-        indexName: 'instant_search'
-        urlSync: true
-      }"
-    >
-      <!-- Search Widgets will go there -->
-    </ng-ais-instantsearch>
-  `
-})
-export class AppComponent {}
+If you used Angular cli, then you can change the content of `src/app/app.component.html` to:
+
+```html
+<h1>My first search app</h1>
+<ng-ais-instantsearch
+  [config]="{
+    apiKey: '6be0576ff61c053d5f9a3225e2a90f76',
+    appId: 'latency',
+    indexName: 'instant_search'
+  }"
+>
+  <!-- Search Widgets will go there -->
+</ng-ais-instantsearch>
 ```
 
-`appId`, `apiKey` and `indexName` are mandatory keys of the config. Those are the credentials of your application in Algolia. They can be found in your [Algolia dashboard](https://www.algolia.com/api-keys).
-
-You can synchronise the current search with the browser url. It provides two benefits:
-
-* Working back/next browser buttons
-* Copy and share the current search url
-
-To configure this feature, pass `urlSync: true` option. 
-The `urlSync` option has more parameters (see [`<ng-ais-instantsearch />`](/widgets/instantsearch.md)).
-
-Congrats! Your application is now connected to Algolia 🚀
+Congrats! Your application is now connected to Algolia 🚀... But it does not display anything for now,
+let's add more widgets!
 
 ## Display results
 
-The core of a search experience is to display results. By default, Angular-InstantSearch will do a query at the start of the page and will retrieve the most relevant hits.
+The core of a search experience is to display results. By default, Angular InstantSearch will do a query at the start of the page and will retrieve the most relevant hits.
 
-To display results, the hits widget will be used. This widget will display all the results returned by Algolia, and it will update when there are new results.
-
-Let's add into our main application template the Hits widget:
+To display results, let's add the Hits widget. This widget will display all the results returned by Algolia, and it will update when there are new results:
 
 ```html
 <ng-ais-instantsearch
@@ -155,32 +141,38 @@ Let's add into our main application template the Hits widget:
 </ng-ais-instantsearch>
 ```
 
-You should now be able to see the results without any styling. This view lets you inspect the values that are retrieved from Algolia, in order to build your custom view.
+Here's the result:
+![First hits](./first-hits.png)
 
-In order to customize the view for each product we can use the `<ng-template>` directive as a child of `<ng-ais-hits>` block.
+You should now be able to see the results, now let's try to use a custom template for hits,
+replace `<ng-ais-hits></ng-ais-hits>` with:
 
 ```html
-<ng-ais-hits>
-  <ng-template let-hits="hits">
-    <div *ngFor="let hits of hits">
-      Hit {{hit.objectID}}: {{hit.name}}
-    </div>
-  </ng-template>
-</ng-ais-hits>
+<!-- <ng-ais-instantsearch [config]="{...}"> -->
+  <ng-ais-hits>
+    <ng-template let-hits="hits">
+      <div *ngFor="let hits of hits">
+        Hit {{hit.objectID}}: {{hit.name}}
+      </div>
+    </ng-template>
+  </ng-ais-hits>
+<!-- </ng-ais-instantsearch> -->
 ```
 
 One very important aspect of the search is highlightning the matching parts of the results. We can use the `<ng-ais-highlight>` widget to do that for you:
 
 ```html
-<ng-ais-hits>
-  <ng-template let-hits="hits">
-    <div *ngFor="let hits of hits">
-      Hit {{hit.objectID}}:
-      <ng-ais-highlight attributeName="name" [hit]="hit">
-      </ng-ais-highlight>
-    </div>
-  </ng-template>
-</ng-ais-hits>
+<!-- <ng-ais-instantsearch [config]="{...}"> -->
+  <ng-ais-hits>
+    <ng-template let-hits="hits">
+      <div *ngFor="let hits of hits">
+        Hit {{hit.objectID}}:
+        <ng-ais-highlight attributeName="name" [hit]="hit">
+        </ng-ais-highlight>
+      </div>
+    </ng-template>
+  </ng-ais-hits>
+<!-- </ng-ais-instantsearch> -->
 ```
 
 In this section we’ve seen:
@@ -195,13 +187,10 @@ In this section we’ve seen:
 Now that we’ve added the results, we can start querying our index. To do this, we are going to use the Searchbox widget. Let’s add it in the application template:
 
 ```html
-<ng-ais-instantsearch [config]="{...}">
-  <!-- SearchBox -->
-  <ng-ais-searchbox></ng-ais-searchbox>
-  
-  <!-- Hits -->
-  <ng-ais-hits></ng-ais-hits>
-</ng-ais-instantsearch>
+<!-- <ng-ais-instantsearch [config]="{...}"> -->
+  <ng-ais-search-box></ng-ais-search-box>
+  <!-- <ng-ais-hits></ng-ais-hits> -->
+<!-- </ng-ais-instantsearch> -->
 ```
 
 The search is now interactive and we see what matched in each of the products. Good thing for us, Algolia computes the matching part. For better control over what kind of data is returned, you should configure the [attributeToRetrieve](https://www.algolia.com/doc/rest#param-attributesToRetrieve) and [attributeToHighlight](https://www.algolia.com/doc/rest#param-attributesToHighlight) of your index
@@ -214,20 +203,17 @@ In this part, we’ve seen:
 
 While the SearchBox is the way to go when it comes to textual search, you may also want to provide filters based on the structure of the records.
 
-Algolia provides a set of parameters for filtering by facets, numbers or geo location. Angular-InstantSearch packages those into a set of widgets.
+Algolia provides a set of parameters for filtering by facets, numbers or geo location. Angular InstantSearch packages those into a set of widgets.
 
 Since the dataset used here is an e-commerce one, let’s add a [RefinementList](/widgets/refinement-list.md) to filter the products by categories:
 
 ```html
 <ng-ais-instantsearch [config]="{...}">
-  <!-- SearchBox -->
-  <ng-ais-searchbox></ng-ais-searchbox>
-  
-  <!-- RefinementList -->
-  <ng-ais-refinement-list attributeName="category"></ng-ais-refinement-list>
-  
-  <!-- Hits -->
-  <ng-ais-hits></ng-ais-hits>
+  <!-- <ng-ais-search-box></ng-ais-search-box> -->
+
+  <ng-ais-refinement-list attributeName="brand"></ng-ais-refinement-list>
+
+  <!-- <ng-ais-hits></ng-ais-hits> -->
 </ng-ais-instantsearch>
 ```
 
@@ -240,6 +226,9 @@ In this part, we’ve seen that:
 * There are components for different types of filters
 * The RefinementList works with facets
 * Facets are computed from the results
+
+Here's the result:
+![RefinementList](./refinement-list.png)
 
 ## Going further
 
@@ -289,4 +278,4 @@ In this part, we’ve seen:
 
 ## Wrapping up 
 
-Congratulations, you now have a fully featured InstantSearch result page. But this is only the beginning! If you want to dig further into Angular-InstantSearch, we suggest reading the other guides and the widgets API.
+Congratulations, you now have a fully featured InstantSearch result page. But this is only the beginning! If you want to dig further into Angular InstantSearch, we suggest reading the other guides and the widgets API.
