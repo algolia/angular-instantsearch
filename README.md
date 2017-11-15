@@ -15,7 +15,7 @@ every users via our chat, discourse and GitHub releases.
 
 ## Angular compatibility
 
-Angular InstantSearch is compatible with Angular 4. If you need a different version of Angular, please [open an issue](https://github.com/algolia/react-instantsearch/issues/new) or come [chat with us]().
+Angular InstantSearch is **compatible with Angular 4 and 5**. If you need a different version of Angular, please [open an issue](https://github.com/algolia/react-instantsearch/issues/new) or come [chat with us](https://gitter.im/angular-instantsearch).
 
 ## Documentation
 
