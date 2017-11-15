@@ -14,6 +14,10 @@ This project is currently in **beta**, we welcome any feedback via GitHub issues
 
 There's a dedicated documentation available at <https://algolia.gitbooks.io/angular-instantsearch/>.
 
+## Contributing
+
+To contribute to the library (code and documentation), [read our contribution guide](./CONTRIBUTING.md).
+
 [website]: https://algolia.gitbooks.io/angular-instantsearch/
 [algolia-website]: https://www.algolia.com/
 [instantsearch.js-github]: https://github.com/algolia/instantsearch.js

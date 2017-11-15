@@ -1,4 +1,12 @@
-## Contributing
+# Contributing
+
+You can do code and documentation contributions.
+
+## Documentation
+
+To modify the documentation, clone this repo, switch to the `gitbook` branch then update the markdown files.
+
+## Code
 
 ### Setup
 
