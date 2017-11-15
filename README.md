@@ -112,7 +112,7 @@ Now that you have imported Angular-InstantSearch module into your application, y
       [config]="{
         apiKey: '6be0576ff61c053d5f9a3225e2a90f76',
         appId: 'latency',
-        indexName: 'instant_search'
+        indexName: 'instant_search',
         urlSync: true
       }"
     >
@@ -130,7 +130,7 @@ You can synchronise the current search with the browser url. It provides two ben
 * Working back/next browser buttons
 * Copy and share the current search url
 
-To configure this feature, pass `urlSync: true` option. 
+To configure this feature, pass `urlSync: true` option.
 The `urlSync` option has more parameters (see [`<ng-ais-instantsearch />`](/widgets/instantsearch.md)).
 
 Congrats! Your application is now connected to Algolia 🚀
@@ -148,7 +148,8 @@ Let's add into our main application template the Hits widget:
   [config]="{
     apiKey: '6be0576ff61c053d5f9a3225e2a90f76',
     appId: 'latency',
-    indexName: 'instant_search'
+    indexName: 'instant_search',
+    urlSync: true
   }"
 >
   <ng-ais-hits></ng-ais-hits>
@@ -162,7 +163,7 @@ In order to customize the view for each product we can use the `<ng-template>` d
 ```html
 <ng-ais-hits>
   <ng-template let-hits="hits">
-    <div *ngFor="let hits of hits">
+    <div *ngFor="let hit of hits">
       Hit {{hit.objectID}}: {{hit.name}}
     </div>
   </ng-template>
@@ -174,7 +175,7 @@ One very important aspect of the search is highlightning the matching parts of t
 ```html
 <ng-ais-hits>
   <ng-template let-hits="hits">
-    <div *ngFor="let hits of hits">
+    <div *ngFor="let hit of hits">
       Hit {{hit.objectID}}:
       <ng-ais-highlight attributeName="name" [hit]="hit">
       </ng-ais-highlight>
@@ -198,7 +199,7 @@ Now that we’ve added the results, we can start querying our index. To do this,
 <ng-ais-instantsearch [config]="{...}">
   <!-- SearchBox -->
   <ng-ais-searchbox></ng-ais-searchbox>
-  
+
   <!-- Hits -->
   <ng-ais-hits></ng-ais-hits>
 </ng-ais-instantsearch>
@@ -222,10 +223,10 @@ Since the dataset used here is an e-commerce one, let’s add a [RefinementList]
 <ng-ais-instantsearch [config]="{...}">
   <!-- SearchBox -->
   <ng-ais-searchbox></ng-ais-searchbox>
-  
+
   <!-- RefinementList -->
   <ng-ais-refinement-list attributeName="category"></ng-ais-refinement-list>
-  
+
   <!-- Hits -->
   <ng-ais-hits></ng-ais-hits>
 </ng-ais-instantsearch>
@@ -254,11 +255,11 @@ Those two features are implemented respectively with the [Pagination](/widgets/p
 <ng-ais-instantsearch [config]="{...}">
   <!-- SearchBox -->
   <ng-ais-searchbox></ng-ais-searchbox>
-  
+
   <!-- RefinementList -->
   <ng-ais-refinement-list attributeName="category">
   </ng-ais-refinement-list>
-  
+
   <!-- CurrentRefinedValues -->
   <ng-ais-current-refined-values [clearAll]="false">
     <!--
@@ -266,14 +267,14 @@ Those two features are implemented respectively with the [Pagination](/widgets/p
       we disable it in this example since we use `clearAll` widget on its own.
     -->
   </ng-ais-current-refined-values>
-  
+
   <!-- ClearAll -->
   <ng-ais-clear-all clearAllLabel="Reset everything">
   </ng-ais-clear-all>
-  
+
   <!-- Hits -->
   <ng-ais-hits></ng-ais-hits>
-  
+
   <!-- Pagination -->
   <ng-ais-pagination [maxPages]="20">
   </ng-ais-pagination>
@@ -287,6 +288,6 @@ In this part, we’ve seen:
 * How to clear the filters
 * How to paginate the results
 
-## Wrapping up 
+## Wrapping up
 
 Congratulations, you now have a fully featured InstantSearch result page. But this is only the beginning! If you want to dig further into Angular-InstantSearch, we suggest reading the other guides and the widgets API.
