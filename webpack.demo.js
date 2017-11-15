@@ -24,6 +24,10 @@ module.exports = {
   entry: {
     polyfills: './examples/demo/polyfill.ts',
     main: './examples/demo/main.ts',
+    styles: [
+      './node_modules/instantsearch.css/themes/reset.css',
+      './node_modules/instantsearch.css/themes/algolia.css',
+    ],
   },
 
   output: {
@@ -58,6 +62,10 @@ module.exports = {
       {
         test: /\.html$/,
         use: 'raw-loader',
+      },
+      {
+        test: /\.css$/,
+        use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
       },
     ],
   },
