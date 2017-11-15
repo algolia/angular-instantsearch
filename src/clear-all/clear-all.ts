@@ -13,7 +13,7 @@ import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 
       <div [class]="cx('body')">
         <button
-          [class]="cx('button')"
+          [class]="cx('button') + (!state.hasRefinements ? (' ' + cx('button', 'disabled')) : '')"
           (click)="handleClick($event)"
           [disabled]="!state.hasRefinements"
         >
