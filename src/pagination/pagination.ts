@@ -143,17 +143,19 @@ export class NgAisPagination extends BaseWidget {
 
       if (minDelta < 0) {
         return range(0, currentRefinement + pagesPadding + Math.abs(minDelta));
-      } else if (maxDelta > nbPages) {
+      }
+
+      if (maxDelta > nbPages) {
         return range(
           currentRefinement - pagesPadding - (maxDelta - nbPages),
           nbPages
         );
-      } else {
-        return range(
-          currentRefinement - pagesPadding,
-          currentRefinement + pagesPadding + 1
-        );
       }
+
+      return range(
+        currentRefinement - pagesPadding,
+        currentRefinement + pagesPadding + 1
+      );
     }
 
     return pagesArray;
