@@ -5,6 +5,13 @@ import { noop } from "lodash-es";
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 
+export type StarRatingState = {
+  createURL: Function;
+  hasNoResults: boolean;
+  items: {}[];
+  refine: Function;
+};
+
 @Component({
   selector: "ng-ais-star-rating",
   template: `

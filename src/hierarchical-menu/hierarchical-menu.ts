@@ -6,6 +6,12 @@ import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 import { bem, parseNumberInput } from "../utils";
 
+export type HierarchicalMenuState = {
+  createURL: Function;
+  items: {}[];
+  refine: Function;
+};
+
 @Component({
   selector: "ng-ais-hierarchical-menu",
   template: `

@@ -6,6 +6,16 @@ import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 import { parseNumberInput } from "../utils";
 
+export type MenuState = {
+  canRefine: boolean;
+  canToggleShowMore: boolean;
+  createURL: Function;
+  isShowingMore: boolean;
+  items: {}[];
+  refine: Function;
+  toggleShowMore: Function;
+};
+
 @Component({
   selector: "ng-ais-menu",
   template: `

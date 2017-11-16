@@ -5,6 +5,12 @@ import { noop } from "lodash-es";
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 
+export type NumericSelectorState = {
+  currentRefinement?: string;
+  options: {}[];
+  refine: Function;
+};
+
 @Component({
   selector: "ng-ais-numeric-selector",
   template: `

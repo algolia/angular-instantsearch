@@ -5,6 +5,17 @@ import { noop } from "lodash-es";
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 
+export type BreadcrumbState = {
+  createURL: Function;
+  items: BreadcrumbItem[];
+  refine: Function;
+};
+
+export type BreadcrumbItem = {
+  name: string;
+  value: string;
+};
+
 @Component({
   selector: "ng-ais-breadcrumb",
   template: `

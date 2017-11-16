@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, Input, OnInit } from "@angular/core";
 
-import { NgAisInstance } from "./instantsearch-instance";
+import { NgAisInstance, InstantSearchConfig } from "./instantsearch-instance";
 
 @Component({
   selector: "ng-ais-instantsearch",

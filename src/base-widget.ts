@@ -4,6 +4,31 @@ import { noop } from "lodash-es";
 import { NgAisInstance } from "./instantsearch/instantsearch-instance";
 import { bem } from "./utils";
 
+export class Widget {
+  public init: () => void;
+  public getConfiguration: () => object;
+  public render: (
+    params: {
+      templatesConfig: object;
+      state: object;
+      results: {}[];
+      createURL: (value: any) => string;
+      instantSearchInstance: object;
+    }
+  ) => void;
+  public dispose: (
+    params: {
+      helper: object;
+      state: object;
+    }
+  ) => object | void;
+}
+
+export type Connector = (
+  renderFn: (state: object, isFirstRendering: boolean) => void,
+  unmountFn: () => void
+) => (widgetOptions?: object) => Widget;
+
 export class BaseWidget implements OnInit, OnDestroy {
   // header footer
   @Input() public header?: string;
