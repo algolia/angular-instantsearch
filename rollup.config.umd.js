@@ -5,10 +5,11 @@ export default {
   input: 'dist/index.js',
   name: 'ng.instantsearch',
   sourcemap: true,
-  externals: [
+  external: [
     '@angular/core',
     '@angular/common',
-    'instantsearch.js',
+    'instantsearch.js/es',
+    'instantsearch.js/es/connectors',
     'lodash-es',
     'nouislider',
   ],
@@ -25,5 +26,14 @@ export default {
   output: {
     format: 'umd',
     file: 'dist/bundles/angular-instantsearch.umd.js',
+  },
+  onwarn(warning) {
+    // Skip certain warnings
+    if (
+      warning.code !== 'THIS_IS_UNDEFINED' &&
+      warning.code !== 'MISSING_GLOBAL_NAME'
+    ) {
+      console.warn(warning.message);
+    }
   },
 };
