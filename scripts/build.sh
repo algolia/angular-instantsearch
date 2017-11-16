@@ -25,18 +25,4 @@ mv dist/bundles/algolia.css dist/bundles/instantsearch-theme-algolia.css
 mv dist/bundles/algolia-min.css dist/bundles/instantsearch-theme-algolia.min.css
 
 # remove useless files from dist
-(
-  cd dist
-  rm -rf node_modules src
-  find . \
-    \! -name '*.css' \
-    \! -name '*.umd.js' \
-    \! -name '*.esm.js' \
-    \! -name '*.umd.js.map' \
-    \! -name '*.esm.js.map' \
-    \! -name '*.d.ts' \
-    \! -name '*.metadata.json' \
-    \! -name 'package.json' \
-    -type f \
-    -delete
-)
+rm -rf dist/waste
