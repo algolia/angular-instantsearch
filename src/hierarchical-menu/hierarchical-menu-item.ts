@@ -1,6 +1,14 @@
 import { Component, Input } from "@angular/core";
 import { bem } from "../utils";
 
+export type HierarchicalMenuItem = {
+  value: string;
+  label: string;
+  count: number;
+  isRefined: boolean;
+  data: HierarchicalMenuItem[];
+};
+
 @Component({
   selector: "ng-ais-hierarchical-menu-item",
   template: `
@@ -37,8 +45,8 @@ import { bem } from "../utils";
 })
 export class NgAisHierarchicalMenuItem {
   @Input() public lvl: number = 1;
-  @Input() public refine: (value: string) => void;
-  @Input() public createURL: () => string;
+  @Input() public refine: (string) => void;
+  @Input() public createURL: (string) => string;
   @Input() public item: HierarchicalMenuItem;
 
   public cx = bem("HierarchicalMenu");

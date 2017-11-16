@@ -5,6 +5,11 @@ import { noop } from "lodash-es";
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 
+export type HitsPerPageSelectorState = {
+  items: {}[];
+  refine: Function;
+};
+
 @Component({
   selector: "ng-ais-hits-per-page-selector",
   template: `

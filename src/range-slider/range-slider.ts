@@ -7,6 +7,12 @@ import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 import { parseNumberInput } from "../utils";
 
+export type RangeSliderState = {
+  range: { min: number; max: number };
+  refine: Function;
+  start: number[];
+};
+
 @Component({
   selector: "ng-ais-range-slider",
   template: `

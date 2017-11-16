@@ -5,6 +5,15 @@ import { noop, isFunction } from "lodash-es";
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 
+export type CurrentRefinedValuesState = {
+  attributes: {};
+  clearAllClick: Function;
+  clearAllURL: Function;
+  createURL: Function;
+  refine: Function;
+  refinements: {}[];
+};
+
 @Component({
   selector: "ng-ais-current-refined-values",
   template: `

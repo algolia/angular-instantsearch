@@ -1,6 +1,38 @@
 import { Injectable } from "@angular/core";
 import instantsearch from "instantsearch.js/es";
 
+import { Widget } from "../base-widget";
+
+export type InstantSearchConfig = {
+  appId: string;
+  apiKey: string;
+  indexName: string;
+
+  numberLocale?: string;
+  searchFunction?: () => void;
+  createAlgoliaClient?: () => object;
+  searchParameters?: object | void;
+  urlSync?:
+    | boolean
+    | {
+        mapping?: object;
+        threshold?: number;
+        trackedParameters?: string[];
+        useHash?: boolean;
+        getHistoryState?: () => object;
+      };
+};
+
+export class InstantSearchInstance {
+  public start: () => void;
+
+  public addWidget: (widget: Widget) => void;
+  public addWidgets: (widgets: Widget[]) => void;
+
+  public removeWidget: (widget: Widget) => void;
+  public removeWidgets: (widgets: Widget[]) => void;
+}
+
 @Injectable()
 export class NgAisInstance {
   private instance?: InstantSearchInstance;
