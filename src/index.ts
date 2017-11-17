@@ -6,7 +6,7 @@ import { NgAisClearRefinementsModule } from "./clear-refinements/clear-refinemen
 import { NgAisCurrentRefinementsModule } from "./current-refinements/current-refinements.module";
 import { NgAisHierarchicalMenuModule } from "./hierarchical-menu/hierarchical-menu.module";
 import { NgAisResultsPerPageModule } from "./results-per-page/results-per-page.module";
-import { NgAisResultsModule } from "./hits/hits.module";
+import { NgAisResultsModule } from "./results/results.module";
 import { NgAisInfiniteResultsModule } from "./infinite-results/infinite-results.module";
 import { NgAisInstantSearchModule } from "./instantsearch/instantsearch.module";
 import { NgAisMenuModule } from "./menu/menu.module";
