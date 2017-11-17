@@ -5,21 +5,21 @@ import { Component } from "@angular/core";
   template: `
     <ng-ais-instantsearch [config]="config">
       <h1>Angular InstantSearch demo</h1>
-      <ng-ais-hits-per-page-selector [items]="items"></ng-ais-hits-per-page-selector>
-      <ng-ais-sort-by-selector [indices]="indices"></ng-ais-sort-by-selector>
+      <ng-ais-results-per-page [items]="items"></ng-ais-results-per-page>
+      <ng-ais-sort-by [indices]="indices"></ng-ais-sort-by>
       <ng-ais-search-box></ng-ais-search-box>
-      <ng-ais-clear-all></ng-ais-clear-all>
+      <ng-ais-clear-refinements></ng-ais-clear-refinements>
       <ng-ais-breadcrumb
         [attributes]="hierarchicalMenuAttributes"
       >
       </ng-ais-breadcrumb>
-      <ng-ais-hits></ng-ais-hits>
+      <ng-ais-results></ng-ais-results>
       <ng-ais-pagination></ng-ais-pagination>
-      <ng-ais-numeric-refinement-list
+      <ng-ais-numeric-menu
         attributeName="price"
         [options]="numericRefinementListOptions"
       >
-      </ng-ais-numeric-refinement-list>
+      </ng-ais-numeric-menu>
       <ng-ais-range-slider attributeName="price"></ng-ais-range-slider>
       <ng-ais-menu
         attributeName="categories"
@@ -44,13 +44,13 @@ import { Component } from "@angular/core";
       >
       </ng-ais-toggle>
       <ng-ais-price-ranges attributeName="price"></ng-ais-price-ranges>
-      <ng-ais-current-refined-values></ng-ais-current-refined-values>
+      <ng-ais-current-refinements></ng-ais-current-refinements>
       <ng-ais-stats></ng-ais-stats>
       <ng-ais-hierarchical-menu
         rootPath="Cameras & Camcorders"
         [attributes]="hierarchicalMenuAttributes">
       </ng-ais-hierarchical-menu>
-      <ng-ais-star-rating attributeName="rating"></ng-ais-star-rating>
+      <ng-ais-rating-menu attributeName="rating"></ng-ais-rating-menu>
     </ng-ais-instantsearch>
   `
 })

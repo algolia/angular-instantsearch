@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ClearRefinements renders markup without state 1`] = `
+<ng-ais-clear-refinements
+  buttonLabel={[Function String]}
+  clearsQuery="false"
+  cx={[Function Function]}
+  excludeAttributes={[Function Array]}
+  searchInstance={[Function NgAisInstance]}
+  state={[Function Object]}
+  updateState={[Function Function]}
+>
+  
+      <div>
+    
+        
+    <ng-ais-header>
+      
+      
+      
+      
+    
+    </ng-ais-header>
+    
+  
+        
+    <div>
+      
+          
+      <button>
+        
+            
+      </button>
+      
+        
+    </div>
+    
+  
+        
+    <ng-ais-footer>
+      
+      
+      
+      
+    
+    </ng-ais-footer>
+    
+      
+  </div>
+    
+</ng-ais-clear-refinements>
+`;

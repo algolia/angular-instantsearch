@@ -1,0 +1,363 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hits renders markup with state 1`] = `
+<ng-ais-results
+  cx={[Function Function]}
+  searchInstance={[Function NgAisInstance]}
+  state={[Function Object]}
+  template="undefined"
+  updateState={[Function Function]}
+>
+  
+      <div
+    class="ais-Results"
+  >
+    
+        
+    <ng-ais-header
+      ng-reflect-class-name="ais-Results-header ais-header"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-header>
+    
+  
+        
+    <div
+      class="ais-Results-body ais-body"
+    >
+      
+          
+      
+      
+  
+          
+      
+          
+      
+      <div>
+        
+            
+        <ul
+          class="ais-Results-list"
+        >
+          
+              
+          
+          <li
+            class="ais-Results-item"
+          >
+            
+                
+            <ng-ais-highlight
+              attributename="name"
+              ng-reflect-attribute-name="name"
+              ng-reflect-hit="[object Object]"
+            >
+              <span>
+                foo
+              </span>
+            </ng-ais-highlight>
+            
+              
+          </li>
+          <li
+            class="ais-Results-item"
+          >
+            
+                
+            <ng-ais-highlight
+              attributename="name"
+              ng-reflect-attribute-name="name"
+              ng-reflect-hit="[object Object]"
+            >
+              <span>
+                bar
+              </span>
+            </ng-ais-highlight>
+            
+              
+          </li>
+          <li
+            class="ais-Results-item"
+          >
+            
+                
+            <ng-ais-highlight
+              attributename="name"
+              ng-reflect-attribute-name="name"
+              ng-reflect-hit="[object Object]"
+            >
+              <span>
+                foobar
+              </span>
+            </ng-ais-highlight>
+            
+              
+          </li>
+          <li
+            class="ais-Results-item"
+          >
+            
+                
+            <ng-ais-highlight
+              attributename="name"
+              ng-reflect-attribute-name="name"
+              ng-reflect-hit="[object Object]"
+            >
+              <span>
+                barfoo
+              </span>
+            </ng-ais-highlight>
+            
+              
+          </li>
+          
+            
+        </ul>
+        
+          
+      </div>
+      
+        
+    </div>
+    
+  
+        
+    <ng-ais-footer
+      ng-reflect-class-name="ais-Results-footer ais-footer"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-footer>
+    
+      
+  </div>
+    
+</ng-ais-results>
+`;
+
+exports[`Hits renders markup without state 1`] = `
+<ng-ais-results
+  cx={[Function Function]}
+  searchInstance={[Function NgAisInstance]}
+  state={[Function Object]}
+  template="undefined"
+  updateState={[Function Function]}
+>
+  
+      <div
+    class="ais-Results"
+  >
+    
+        
+    <ng-ais-header
+      ng-reflect-class-name="ais-Results-header ais-header"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-header>
+    
+  
+        
+    <div
+      class="ais-Results-body ais-body"
+    >
+      
+          
+      
+      
+  
+          
+      
+          
+      
+      <div>
+        
+            
+        <ul
+          class="ais-Results-list"
+        >
+          
+              
+          
+          
+            
+        </ul>
+        
+          
+      </div>
+      
+        
+    </div>
+    
+  
+        
+    <ng-ais-footer
+      ng-reflect-class-name="ais-Results-footer ais-footer"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-footer>
+    
+      
+  </div>
+    
+</ng-ais-results>
+`;
+
+exports[`Hits should apply \`transformItems\` if specified 1`] = `
+<ng-ais-results
+  cx={[Function Function]}
+  searchInstance={[Function NgAisInstance]}
+  state={[Function Object]}
+  template="undefined"
+  transformItems={[Function Function]}
+  updateState={[Function Function]}
+>
+  
+      <div
+    class="ais-Results"
+  >
+    
+        
+    <ng-ais-header
+      ng-reflect-class-name="ais-Results-header ais-header"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-header>
+    
+  
+        
+    <div
+      class="ais-Results-body ais-body"
+    >
+      
+          
+      
+      
+  
+          
+      
+          
+      
+      <div>
+        
+            
+        <ul
+          class="ais-Results-list"
+        >
+          
+              
+          
+          <li
+            class="ais-Results-item"
+          >
+            
+                
+            <ng-ais-highlight
+              attributename="name"
+              ng-reflect-attribute-name="name"
+              ng-reflect-hit="[object Object]"
+            >
+              <span>
+                transformed - foo
+              </span>
+            </ng-ais-highlight>
+            
+              
+          </li>
+          <li
+            class="ais-Results-item"
+          >
+            
+                
+            <ng-ais-highlight
+              attributename="name"
+              ng-reflect-attribute-name="name"
+              ng-reflect-hit="[object Object]"
+            >
+              <span>
+                transformed - bar
+              </span>
+            </ng-ais-highlight>
+            
+              
+          </li>
+          <li
+            class="ais-Results-item"
+          >
+            
+                
+            <ng-ais-highlight
+              attributename="name"
+              ng-reflect-attribute-name="name"
+              ng-reflect-hit="[object Object]"
+            >
+              <span>
+                transformed - foobar
+              </span>
+            </ng-ais-highlight>
+            
+              
+          </li>
+          <li
+            class="ais-Results-item"
+          >
+            
+                
+            <ng-ais-highlight
+              attributename="name"
+              ng-reflect-attribute-name="name"
+              ng-reflect-hit="[object Object]"
+            >
+              <span>
+                transformed - barfoo
+              </span>
+            </ng-ais-highlight>
+            
+              
+          </li>
+          
+            
+        </ul>
+        
+          
+      </div>
+      
+        
+    </div>
+    
+  
+        
+    <ng-ais-footer
+      ng-reflect-class-name="ais-Results-footer ais-footer"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-footer>
+    
+      
+  </div>
+    
+</ng-ais-results>
+`;

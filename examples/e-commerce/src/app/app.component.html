@@ -13,10 +13,10 @@
 
     <div class="content-wrapper">
       <aside>
-        <ng-ais-clear-all
+        <ng-ais-clear-refinements
           buttonLabel="Clear all filters"
         >
-        </ng-ais-clear-all>
+        </ng-ais-clear-refinements>
 
         <section class="facet-wrapper">
           <div class="facet-category-title">Show results for</div>
@@ -45,11 +45,11 @@
           >
           </ng-ais-refinement-list>
 
-          <ng-ais-star-rating
+          <ng-ais-rating-menu
             header="Ratings"
             attributeName="rating"
           >
-          </ng-ais-star-rating>
+          </ng-ais-rating-menu>
 
           <ng-ais-price-ranges
             header="Prices"
@@ -65,7 +65,7 @@
 
       <div class="results-wrapper">
       <section id="results-topbar">
-        <ng-ais-sort-by-selector
+        <ng-ais-sort-by
           header="Sort by"
           [indices]="
             [
@@ -75,12 +75,12 @@
             ]
           "
         >
-        </ng-ais-sort-by-selector>
+        </ng-ais-sort-by>
         <ng-ais-stats></ng-ais-stats>
       </section>
 
       <main>
-        <ng-ais-hits
+        <ng-ais-results
           [transformItems]="transformHits"
         >
           <ng-template
@@ -136,7 +136,7 @@
               </div>
             </article>
           </ng-template>
-        </ng-ais-hits>
+        </ng-ais-results>
       </main>
 
       <ng-ais-pagination></ng-ais-pagination>

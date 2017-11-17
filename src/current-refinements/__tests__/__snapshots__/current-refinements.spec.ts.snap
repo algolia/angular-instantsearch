@@ -1,0 +1,421 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CurrentRefinedValues renders markup with state 1`] = `
+<ng-ais-current-refinements
+  attributes={[Function Array]}
+  clearRefinements={[Function String]}
+  clearRefinementsLabel={[Function String]}
+  clearsQuery="false"
+  cx={[Function Function]}
+  onlyListedAttributes="false"
+  searchInstance={[Function NgAisInstance]}
+  state={[Function Object]}
+  updateState={[Function Function]}
+>
+  
+      <div
+    class="ais-CurrentRefinements"
+  >
+    
+        
+    <ng-ais-header
+      ng-reflect-class-name="ais-CurrentRefinements-header "
+    >
+      
+      
+      
+      
+    
+    </ng-ais-header>
+    
+  
+        
+    <div
+      class="ais-CurrentRefinements-body ais-body"
+    >
+      
+          
+      
+      <button
+        class="ais-CurrentRefinements-reset"
+      >
+        
+            Clear refinements
+          
+      </button>
+      
+  
+          
+      <ul
+        class="ais-CurrentRefinements-list"
+      >
+        
+            
+        
+        <li
+          class="ais-CurrentRefinements-item"
+        >
+          
+              
+          <button
+            class="ais-CurrentRefinements-button"
+          >
+            
+                Canon
+                
+            <span
+              class="ais-CurrentRefinements-count"
+            >
+              27
+            </span>
+            
+              
+          </button>
+          
+            
+        </li>
+        <li
+          class="ais-CurrentRefinements-item"
+        >
+          
+              
+          <button
+            class="ais-CurrentRefinements-button"
+          >
+            
+                Sony
+                
+            <span
+              class="ais-CurrentRefinements-count"
+            >
+              28
+            </span>
+            
+              
+          </button>
+          
+            
+        </li>
+        <li
+          class="ais-CurrentRefinements-item"
+        >
+          
+              
+          <button
+            class="ais-CurrentRefinements-button"
+          >
+            
+                Cameras & Camcorders
+                
+            <span
+              class="ais-CurrentRefinements-count"
+            >
+              55
+            </span>
+            
+              
+          </button>
+          
+            
+        </li>
+        <li
+          class="ais-CurrentRefinements-item"
+        >
+          
+              
+          <button
+            class="ais-CurrentRefinements-button"
+          >
+            
+                ≥ 0
+                
+            <span
+              class="ais-CurrentRefinements-count"
+            >
+              
+            </span>
+            
+              
+          </button>
+          
+            
+        </li>
+        
+          
+      </ul>
+      
+  
+          
+      
+      
+        
+    </div>
+    
+  
+        
+    <ng-ais-footer
+      ng-reflect-class-name="ais-CurrentRefinements-footer "
+    >
+      
+      
+      
+      
+    
+    </ng-ais-footer>
+    
+      
+  </div>
+    
+</ng-ais-current-refinements>
+`;
+
+exports[`CurrentRefinedValues renders markup without state 1`] = `
+<ng-ais-current-refinements
+  attributes={[Function Array]}
+  clearRefinements={[Function String]}
+  clearRefinementsLabel={[Function String]}
+  clearsQuery="false"
+  cx={[Function Function]}
+  onlyListedAttributes="false"
+  searchInstance={[Function NgAisInstance]}
+  state={[Function Object]}
+  updateState={[Function Function]}
+>
+  
+      <div
+    class="ais-CurrentRefinements"
+  >
+    
+        
+    <ng-ais-header
+      ng-reflect-class-name="ais-CurrentRefinements-header "
+    >
+      
+      
+      
+      
+    
+    </ng-ais-header>
+    
+  
+        
+    <div
+      class="ais-CurrentRefinements-body ais-body"
+    >
+      
+          
+      
+      <button
+        class="ais-CurrentRefinements-reset"
+      >
+        
+            Clear refinements
+          
+      </button>
+      
+  
+          
+      <ul
+        class="ais-CurrentRefinements-list"
+      >
+        
+            
+        
+        
+          
+      </ul>
+      
+  
+          
+      
+      
+        
+    </div>
+    
+  
+        
+    <ng-ais-footer
+      ng-reflect-class-name="ais-CurrentRefinements-footer "
+    >
+      
+      
+      
+      
+    
+    </ng-ais-footer>
+    
+      
+  </div>
+    
+</ng-ais-current-refinements>
+`;
+
+exports[`CurrentRefinedValues should apply \`transformItems\` if specified 1`] = `
+<ng-ais-current-refinements
+  attributes={[Function Array]}
+  clearRefinements={[Function String]}
+  clearRefinementsLabel={[Function String]}
+  clearsQuery="false"
+  cx={[Function Function]}
+  onlyListedAttributes="false"
+  searchInstance={[Function NgAisInstance]}
+  state={[Function Object]}
+  transformItems={[Function Function]}
+  updateState={[Function Function]}
+>
+  
+      <div
+    class="ais-CurrentRefinements"
+  >
+    
+        
+    <ng-ais-header
+      ng-reflect-class-name="ais-CurrentRefinements-header "
+    >
+      
+      
+      
+      
+    
+    </ng-ais-header>
+    
+  
+        
+    <div
+      class="ais-CurrentRefinements-body ais-body"
+    >
+      
+          
+      
+      <button
+        class="ais-CurrentRefinements-reset"
+      >
+        
+            Clear refinements
+          
+      </button>
+      
+  
+          
+      <ul
+        class="ais-CurrentRefinements-list"
+      >
+        
+            
+        
+        <li
+          class="ais-CurrentRefinements-item"
+        >
+          
+              
+          <button
+            class="ais-CurrentRefinements-button"
+          >
+            
+                foo - Canon
+                
+            <span
+              class="ais-CurrentRefinements-count"
+            >
+              27
+            </span>
+            
+              
+          </button>
+          
+            
+        </li>
+        <li
+          class="ais-CurrentRefinements-item"
+        >
+          
+              
+          <button
+            class="ais-CurrentRefinements-button"
+          >
+            
+                foo - Sony
+                
+            <span
+              class="ais-CurrentRefinements-count"
+            >
+              28
+            </span>
+            
+              
+          </button>
+          
+            
+        </li>
+        <li
+          class="ais-CurrentRefinements-item"
+        >
+          
+              
+          <button
+            class="ais-CurrentRefinements-button"
+          >
+            
+                foo - Cameras & Camcorders
+                
+            <span
+              class="ais-CurrentRefinements-count"
+            >
+              55
+            </span>
+            
+              
+          </button>
+          
+            
+        </li>
+        <li
+          class="ais-CurrentRefinements-item"
+        >
+          
+              
+          <button
+            class="ais-CurrentRefinements-button"
+          >
+            
+                foo - ≥ 0
+                
+            <span
+              class="ais-CurrentRefinements-count"
+            >
+              
+            </span>
+            
+              
+          </button>
+          
+            
+        </li>
+        
+          
+      </ul>
+      
+  
+          
+      
+      
+        
+    </div>
+    
+  
+        
+    <ng-ais-footer
+      ng-reflect-class-name="ais-CurrentRefinements-footer "
+    >
+      
+      
+      
+      
+    
+    </ng-ais-footer>
+    
+      
+  </div>
+    
+</ng-ais-current-refinements>
+`;

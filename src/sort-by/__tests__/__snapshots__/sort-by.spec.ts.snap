@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SortBy renders markup with state 1`] = `
+<ng-ais-sort-by
+  cx={[Function Function]}
+  searchInstance={[Function NgAisInstance]}
+  state={[Function Object]}
+  updateState={[Function Function]}
+>
+  
+      <div
+    class="ais-SortBy"
+  >
+    
+        
+    <ng-ais-header
+      ng-reflect-class-name="ais-SortBy-header ais-header"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-header>
+    
+  
+        
+    <div
+      class="ais-SortBy-body ais-body"
+    >
+      
+          
+      <select
+        class="ais-SortBy-select"
+      >
+        
+            
+        
+        <option
+          class="ais-SortBy-option"
+          value="foo"
+        >
+          
+              foo
+            
+        </option>
+        <option
+          class="ais-SortBy-option"
+          value="bar"
+        >
+          
+              bar
+            
+        </option>
+        
+          
+      </select>
+      
+        
+    </div>
+    
+  
+        
+    <ng-ais-footer
+      ng-reflect-class-name="ais-SortBy-footer ais-footer"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-footer>
+    
+      
+  </div>
+    
+</ng-ais-sort-by>
+`;
+
+exports[`SortBy renders markup without state 1`] = `
+<ng-ais-sort-by
+  cx={[Function Function]}
+  searchInstance={[Function NgAisInstance]}
+  state={[Function Object]}
+  updateState={[Function Function]}
+>
+  
+      <div
+    class="ais-SortBy"
+  >
+    
+        
+    <ng-ais-header
+      ng-reflect-class-name="ais-SortBy-header ais-header"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-header>
+    
+  
+        
+    <div
+      class="ais-SortBy-body ais-body"
+    >
+      
+          
+      <select
+        class="ais-SortBy-select"
+      >
+        
+            
+        
+        
+          
+      </select>
+      
+        
+    </div>
+    
+  
+        
+    <ng-ais-footer
+      ng-reflect-class-name="ais-SortBy-footer ais-footer"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-footer>
+    
+      
+  </div>
+    
+</ng-ais-sort-by>
+`;

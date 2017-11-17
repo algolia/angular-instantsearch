@@ -2,46 +2,46 @@ import { ModuleWithProviders, NgModule } from "@angular/core";
 
 // Modules
 import { NgAisBreadcrumbModule } from "./breadcrumb/breadcrumb.module";
-import { NgAisClearAllModule } from "./clear-all/clear-all.module";
-import { NgAisCurrentRefinedValuesModule } from "./current-refined-values/current-refined-values.module";
+import { NgAisClearRefinementsModule } from "./clear-refinements/clear-refinements.module";
+import { NgAisCurrentRefinementsModule } from "./current-refinements/current-refinements.module";
 import { NgAisHierarchicalMenuModule } from "./hierarchical-menu/hierarchical-menu.module";
-import { NgAisHitsPerPageSelectorModule } from "./hits-per-page-selector/hits-per-page-selector.module";
-import { NgAisHitsModule } from "./hits/hits.module";
-import { NgAisInfiniteHitsModule } from "./infinite-hits/infinite-hits.module";
+import { NgAisResultsPerPageModule } from "./results-per-page/results-per-page.module";
+import { NgAisResultsModule } from "./results/results.module";
+import { NgAisInfiniteResultsModule } from "./infinite-results/infinite-results.module";
 import { NgAisInstantSearchModule } from "./instantsearch/instantsearch.module";
 import { NgAisMenuModule } from "./menu/menu.module";
-import { NgAisNumericRefinementListModule } from "./numeric-refinement-list/numeric-refinement-list.module";
+import { NgAisNumericMenuModule } from "./numeric-menu/numeric-menu.module";
 import { NgAisNumericSelectorModule } from "./numeric-selector/numeric-selector.module";
 import { NgAisPaginationModule } from "./pagination/pagination.module";
 import { NgAisPriceRangesModule } from "./price-ranges/price-ranges.module";
 import { NgAisRangeSliderModule } from "./range-slider/range-slider.module";
 import { NgAisRefinementListModule } from "./refinement-list/refinement-list.module";
 import { NgAisSearchBoxModule } from "./search-box/search-box.module";
-import { NgAisSortBySelectorModule } from "./sort-by-selector/sort-by-selector.module";
-import { NgAisStarRatingModule } from "./star-rating/star-rating.module";
+import { NgAisSortByModule } from "./sort-by/sort-by.module";
+import { NgAisRatingMenuModule } from "./rating-menu/rating-menu.module";
 import { NgAisStatsModule } from "./stats/stats.module";
 import { NgAisToggleModule } from "./toggle/toggle.module";
 import { NgAisHighlightModule } from "./highlight/highlight.module";
 
 const NGIS_MODULES = [
   NgAisInstantSearchModule,
-  NgAisHitsModule,
+  NgAisResultsModule,
   NgAisSearchBoxModule,
-  NgAisClearAllModule,
+  NgAisClearRefinementsModule,
   NgAisMenuModule,
   NgAisPaginationModule,
   NgAisRefinementListModule,
-  NgAisHitsPerPageSelectorModule,
-  NgAisSortBySelectorModule,
+  NgAisResultsPerPageModule,
+  NgAisSortByModule,
   NgAisNumericSelectorModule,
-  NgAisNumericRefinementListModule,
+  NgAisNumericMenuModule,
   NgAisStatsModule,
   NgAisToggleModule,
-  NgAisInfiniteHitsModule,
-  NgAisCurrentRefinedValuesModule,
+  NgAisInfiniteResultsModule,
+  NgAisCurrentRefinementsModule,
   NgAisPriceRangesModule,
   NgAisHierarchicalMenuModule,
-  NgAisStarRatingModule,
+  NgAisRatingMenuModule,
   NgAisRangeSliderModule,
   NgAisBreadcrumbModule,
   NgAisHighlightModule
