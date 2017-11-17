@@ -3,12 +3,12 @@ import { NgModule } from "@angular/core";
 
 import { NgAisFooterModule } from "../footer/footer.module";
 import { NgAisHeaderModule } from "../header/header.module";
-import { NgAisCurrentRefinedValues } from "./current-refined-values";
+import { NgAisCurrentRefinements } from "./current-refinements";
 
 @NgModule({
-  declarations: [NgAisCurrentRefinedValues],
-  entryComponents: [NgAisCurrentRefinedValues],
-  exports: [NgAisCurrentRefinedValues],
+  declarations: [NgAisCurrentRefinements],
+  entryComponents: [NgAisCurrentRefinements],
+  exports: [NgAisCurrentRefinements],
   imports: [CommonModule, NgAisHeaderModule, NgAisFooterModule]
 })
-export class NgAisCurrentRefinedValuesModule {}
+export class NgAisCurrentRefinementsModule {}

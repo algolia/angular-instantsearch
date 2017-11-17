@@ -1,8 +1,8 @@
 import { TestBed } from "@angular/core/testing";
 
 import { NgAisInstantSearchModule } from "../../instantsearch/instantsearch.module";
-import { NgAisCurrentRefinedValuesModule } from "../current-refined-values.module";
-import { NgAisCurrentRefinedValues } from "../current-refined-values";
+import { NgAisCurrentRefinementsModule } from "../current-refinements.module";
+import { NgAisCurrentRefinements } from "../current-refinements";
 
 import { bem } from "../../utils";
 
@@ -52,7 +52,7 @@ const defaultState = {
 };
 
 const render = (state?: {}) => {
-  const fixture = TestBed.createComponent(NgAisCurrentRefinedValues);
+  const fixture = TestBed.createComponent(NgAisCurrentRefinements);
 
   if (state) {
     fixture.componentInstance.updateState({ ...defaultState, ...state }, false);
@@ -68,7 +68,7 @@ describe("CurrentRefinedValues", () => {
       declarations: [],
       imports: [
         NgAisInstantSearchModule.forRoot(),
-        NgAisCurrentRefinedValuesModule
+        NgAisCurrentRefinementsModule
       ]
     })
   );

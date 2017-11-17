@@ -15,7 +15,7 @@ export type CurrentRefinedValuesState = {
 };
 
 @Component({
-  selector: "ng-ais-current-refined-values",
+  selector: "ng-ais-current-refinements",
   template: `
     <div [class]="cx()">
       <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
@@ -53,7 +53,7 @@ export type CurrentRefinedValuesState = {
     </div>
   `
 })
-export class NgAisCurrentRefinedValues extends BaseWidget {
+export class NgAisCurrentRefinements extends BaseWidget {
   // render options
   @Input() public clearAll: "before" | "after" | boolean = "before";
   @Input() public clearAllLabel: string = "Clear all";

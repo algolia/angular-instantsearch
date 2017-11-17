@@ -3,7 +3,7 @@ import { ModuleWithProviders, NgModule } from "@angular/core";
 // Modules
 import { NgAisBreadcrumbModule } from "./breadcrumb/breadcrumb.module";
 import { NgAisClearRefinementsModule } from "./clear-refinements/clear-refinements.module";
-import { NgAisCurrentRefinedValuesModule } from "./current-refined-values/current-refined-values.module";
+import { NgAisCurrentRefinementsModule } from "./current-refinements/current-refinements.module";
 import { NgAisHierarchicalMenuModule } from "./hierarchical-menu/hierarchical-menu.module";
 import { NgAisHitsPerPageSelectorModule } from "./hits-per-page-selector/hits-per-page-selector.module";
 import { NgAisHitsModule } from "./hits/hits.module";
@@ -38,7 +38,7 @@ const NGIS_MODULES = [
   NgAisStatsModule,
   NgAisToggleModule,
   NgAisInfiniteHitsModule,
-  NgAisCurrentRefinedValuesModule,
+  NgAisCurrentRefinementsModule,
   NgAisPriceRangesModule,
   NgAisHierarchicalMenuModule,
   NgAisStarRatingModule,

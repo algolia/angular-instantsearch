@@ -44,7 +44,7 @@ import { Component } from "@angular/core";
       >
       </ng-ais-toggle>
       <ng-ais-price-ranges attributeName="price"></ng-ais-price-ranges>
-      <ng-ais-current-refined-values></ng-ais-current-refined-values>
+      <ng-ais-current-refinements></ng-ais-current-refinements>
       <ng-ais-stats></ng-ais-stats>
       <ng-ais-hierarchical-menu
         rootPath="Cameras & Camcorders"
