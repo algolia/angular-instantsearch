@@ -3379,9 +3379,9 @@ inquirer@^3.0.6:
     strip-ansi "^4.0.0"
     through "^2.3.6"
 
-instantsearch.css@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/instantsearch.css/-/instantsearch.css-1.0.2.tgz#73857f409b747a7f300474a62730c5818cc7f4d0"
+instantsearch.css@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/instantsearch.css/-/instantsearch.css-2.0.0.tgz#2895da4d8d8ec466e6143dd8983e1f3c31a71768"
 
 instantsearch.js@2.3.0-beta.6:
   version "2.3.0-beta.6"
