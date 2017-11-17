@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`HitsPerPageSelector renders markup with state 1`] = `
-<ng-ais-hits-per-page-selector
+exports[`ResultsPerPage renders markup with state 1`] = `
+<ng-ais-results-per-page
   cx={[Function Function]}
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
@@ -82,11 +82,11 @@ exports[`HitsPerPageSelector renders markup with state 1`] = `
       
   </div>
     
-</ng-ais-hits-per-page-selector>
+</ng-ais-results-per-page>
 `;
 
-exports[`HitsPerPageSelector renders markup without state 1`] = `
-<ng-ais-hits-per-page-selector
+exports[`ResultsPerPage renders markup without state 1`] = `
+<ng-ais-results-per-page
   cx={[Function Function]}
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
@@ -133,5 +133,5 @@ exports[`HitsPerPageSelector renders markup without state 1`] = `
       
   </div>
     
-</ng-ais-hits-per-page-selector>
+</ng-ais-results-per-page>
 `;

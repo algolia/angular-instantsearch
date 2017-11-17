@@ -5,7 +5,7 @@ import { Component } from "@angular/core";
   template: `
     <ng-ais-instantsearch [config]="config">
       <h1>Angular InstantSearch demo</h1>
-      <ng-ais-hits-per-page-selector [items]="items"></ng-ais-hits-per-page-selector>
+      <ng-ais-results-per-page [items]="items"></ng-ais-results-per-page>
       <ng-ais-sort-by-selector [indices]="indices"></ng-ais-sort-by-selector>
       <ng-ais-search-box></ng-ais-search-box>
       <ng-ais-clear-refinements></ng-ais-clear-refinements>

@@ -1,29 +1,29 @@
 import { TestBed } from "@angular/core/testing";
 
 import { NgAisInstantSearchModule } from "../../instantsearch/instantsearch.module";
-import { NgAisHitsPerPageSelectorModule } from "../hits-per-page-selector.module";
-import { NgAisHitsPerPageSelector } from "../hits-per-page-selector";
+import { NgAisResultsPerPageModule } from "../results-per-page.module";
+import { NgAisResultsPerPage } from "../results-per-page";
 
 jest.mock("../../base-widget");
 
-describe("HitsPerPageSelector", () => {
+describe("ResultsPerPage", () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
       declarations: [],
       imports: [
         NgAisInstantSearchModule.forRoot(),
-        NgAisHitsPerPageSelectorModule
+        NgAisResultsPerPageModule
       ]
     })
   );
 
   it("renders markup without state", () => {
-    const fixture = TestBed.createComponent(NgAisHitsPerPageSelector);
+    const fixture = TestBed.createComponent(NgAisResultsPerPage);
     expect(fixture).toMatchSnapshot();
   });
 
   it("renders markup with state", () => {
-    const fixture = TestBed.createComponent(NgAisHitsPerPageSelector);
+    const fixture = TestBed.createComponent(NgAisResultsPerPage);
 
     fixture.componentInstance.updateState(
       {
@@ -43,7 +43,7 @@ describe("HitsPerPageSelector", () => {
 
   it("should refine() when selecting another option", () => {
     const refine = jest.fn();
-    const fixture = TestBed.createComponent(NgAisHitsPerPageSelector);
+    const fixture = TestBed.createComponent(NgAisResultsPerPage);
 
     fixture.componentInstance.updateState(
       {

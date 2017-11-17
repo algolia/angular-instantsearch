@@ -11,7 +11,7 @@ export type HitsPerPageSelectorState = {
 };
 
 @Component({
-  selector: "ng-ais-hits-per-page-selector",
+  selector: "ng-ais-results-per-page",
   template: `
     <div [class]="cx()">
       <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
@@ -36,7 +36,7 @@ export type HitsPerPageSelectorState = {
     </div>
   `
 })
-export class NgAisHitsPerPageSelector extends BaseWidget {
+export class NgAisResultsPerPage extends BaseWidget {
   @Input()
   public items: {
     value: number;

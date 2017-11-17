@@ -3,12 +3,12 @@ import { NgModule } from "@angular/core";
 
 import { NgAisFooterModule } from "../footer/footer.module";
 import { NgAisHeaderModule } from "../header/header.module";
-import { NgAisHitsPerPageSelector } from "./hits-per-page-selector";
+import { NgAisResultsPerPage } from "./results-per-page";
 
 @NgModule({
-  declarations: [NgAisHitsPerPageSelector],
-  entryComponents: [NgAisHitsPerPageSelector],
-  exports: [NgAisHitsPerPageSelector],
+  declarations: [NgAisResultsPerPage],
+  entryComponents: [NgAisResultsPerPage],
+  exports: [NgAisResultsPerPage],
   imports: [CommonModule, NgAisHeaderModule, NgAisFooterModule]
 })
-export class NgAisHitsPerPageSelectorModule {}
+export class NgAisResultsPerPageModule {}
