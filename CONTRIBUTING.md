@@ -18,7 +18,7 @@ You need latest LTS NodeJS (^8.6.0) use [nvm](https://github.com/creationix/nvm)
 
 ### Run
 
-You can watch & reload library using `> yarn dev` and then open http://localhost:8080 to access a development web site which is using JIT (compiles app in the browser at runtime).
+You can watch & reload library using `> yarn dev` and then open http://localhost:8080 to access stories of Angular InstantSearch components rendered into [dev-novel](https://github.com/algolia/dev-novel).
 
 There is also an e-commerce example consuming the builded library and compliant to [AOT (compiles your app at build time)](https://angular.io/guide/aot-compiler) compiler. It must be run to test the library in production before any PRs.
 
