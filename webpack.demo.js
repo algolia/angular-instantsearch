@@ -22,8 +22,8 @@ module.exports = {
   devtool: 'eval-source-map',
 
   entry: {
-    polyfills: './examples/demo/polyfill.ts',
-    main: './examples/demo/main.ts',
+    polyfills: './examples/dev-novel/polyfill.ts',
+    main: './examples/dev-novel/main.ts',
     styles: [
       './node_modules/instantsearch.css/themes/reset.css',
       './node_modules/instantsearch.css/themes/algolia.css',
@@ -31,14 +31,14 @@ module.exports = {
   },
 
   output: {
-    path: root('demo', 'dist'),
+    path: root('dev-novel', 'dist'),
     publicPath: '/',
     filename: isProd ? 'js/[name].[hash].js' : 'js/[name].js',
     chunkFilename: isProd ? '[id].[hash].chunk.js' : '[id].chunk.js',
   },
 
   resolve: {
-    modules: [root('demo'), 'node_modules'],
+    modules: [root('dev-novel'), 'node_modules'],
     extensions: ['.ts', '.js', '.html'],
     alias: {
       'angular-instantsearch': root('src/index.ts'),
@@ -93,7 +93,7 @@ module.exports = {
     // Inject script and link tags into html files
     // Reference: https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
-      template: './examples/demo/public/index.html',
+      template: './examples/dev-novel/public/index.html',
       chunksSortMode: 'dependency',
     }),
 
@@ -107,12 +107,12 @@ module.exports = {
     // See https://github.com/angular/angular/issues/11580
     new webpack.ContextReplacementPlugin(
       /angular(\\|\/)core(\\|\/)@angular/,
-      root('examples', 'demo', 'app')
+      root('examples', 'dev-novel', 'app')
     ),
   ],
 
   devServer: {
-    contentBase: 'demo/src/public',
+    contentBase: 'dev-novel/src/public',
     historyApiFallback: true,
     stats: 'minimal', // none (or false), errors-only, minimal, normal (or true) and verbose
   },
