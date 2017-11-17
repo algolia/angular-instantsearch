@@ -1,6 +1,6 @@
-## `<ng-ais-hits-per-page-selector />`
+## `<ng-ais-results-per-page />`
 
-The HitsPerPageSelector widget displays a dropdown menu to let the user change the number of displayed hits.
+The ResultsPerPage widget displays a dropdown menu to let the user change the number of displayed hits.
 
 | Attributes     | Type                                                  | Description
 | -              | -                                                     | -

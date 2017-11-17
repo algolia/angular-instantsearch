@@ -1,4 +1,4 @@
-## `<ng-ais-hits />`
+## `<ng-ais-results />`
 
 Displays a list of hits.
 
@@ -10,7 +10,7 @@ Displays a list of hits.
 You can use the directive `<ng-template></ng-template>` to customize the output:
 
 ```html
-<ng-ais-hits>
+<ng-ais-results>
   <ng-template
     let-hits="hits"
     let-results="results"
@@ -19,7 +19,7 @@ You can use the directive `<ng-template></ng-template>` to customize the output:
     <div *ngIf="hits.length === 0">
       No results found matching <strong>{{results.query}}</strong>.
     </div>
-    
+
     <!-- Hit template -->
     <div *ngFor="let hit of hits">
       <h1>
@@ -29,9 +29,9 @@ You can use the directive `<ng-template></ng-template>` to customize the output:
         >
         </ng-ais-highlight>
       </h1>
-      
+
       <p>{{hit.description}}</p>
     </div>
   </ng-template>
-</ng-ais-hits>
+</ng-ais-results>
 ```
