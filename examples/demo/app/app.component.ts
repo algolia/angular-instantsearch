@@ -50,7 +50,7 @@ import { Component } from "@angular/core";
         rootPath="Cameras & Camcorders"
         [attributes]="hierarchicalMenuAttributes">
       </ng-ais-hierarchical-menu>
-      <ng-ais-star-rating attributeName="rating"></ng-ais-star-rating>
+      <ng-ais-rating-menu attributeName="rating"></ng-ais-rating-menu>
     </ng-ais-instantsearch>
   `
 })

@@ -1,8 +1,8 @@
 import { TestBed } from "@angular/core/testing";
 
 import { NgAisInstantSearchModule } from "../../instantsearch/instantsearch.module";
-import { NgAisStarRatingModule } from "../star-rating.module";
-import { NgAisStarRating } from "../star-rating";
+import { NgAisRatingMenuModule } from "../rating-menu.module";
+import { NgAisRatingMenu } from "../rating-menu";
 
 import { bem } from "../../utils";
 
@@ -28,7 +28,7 @@ const defaultState = {
 };
 
 const render = (state?: {}) => {
-  const fixture = TestBed.createComponent(NgAisStarRating);
+  const fixture = TestBed.createComponent(NgAisRatingMenu);
 
   if (state) {
     fixture.componentInstance.updateState({ ...defaultState, ...state }, false);
@@ -44,13 +44,12 @@ describe("StarRating", () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
       declarations: [],
-      imports: [NgAisInstantSearchModule.forRoot(), NgAisStarRatingModule]
+      imports: [NgAisInstantSearchModule.forRoot(), NgAisRatingMenuModule]
     })
   );
 
   it.skip("should render without state", () => {
     const fixture = render();
-    console.log(fixture);
     expect(fixture).toMatchSnapshot();
   });
 

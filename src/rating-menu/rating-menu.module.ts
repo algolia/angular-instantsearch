@@ -3,12 +3,12 @@ import { NgModule } from "@angular/core";
 
 import { NgAisFooterModule } from "../footer/footer.module";
 import { NgAisHeaderModule } from "../header/header.module";
-import { NgAisStarRating } from "./star-rating";
+import { NgAisRatingMenu } from "./rating-menu";
 
 @NgModule({
-  declarations: [NgAisStarRating],
-  entryComponents: [NgAisStarRating],
-  exports: [NgAisStarRating],
+  declarations: [NgAisRatingMenu],
+  entryComponents: [NgAisRatingMenu],
+  exports: [NgAisRatingMenu],
   imports: [CommonModule, NgAisHeaderModule, NgAisFooterModule]
 })
-export class NgAisStarRatingModule {}
+export class NgAisRatingMenuModule {}

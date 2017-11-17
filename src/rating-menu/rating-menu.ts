@@ -13,7 +13,7 @@ export type StarRatingState = {
 };
 
 @Component({
-  selector: "ng-ais-star-rating",
+  selector: "ng-ais-rating-menu",
   template: `
     <div [class]="cx()">
       <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
@@ -81,7 +81,7 @@ export type StarRatingState = {
     </div>
   `
 })
-export class NgAisStarRating extends BaseWidget {
+export class NgAisRatingMenu extends BaseWidget {
   // render options
   @Input() public andUpLabel: string = "& Up";
 

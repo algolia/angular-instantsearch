@@ -18,7 +18,7 @@ import { NgAisRangeSliderModule } from "./range-slider/range-slider.module";
 import { NgAisRefinementListModule } from "./refinement-list/refinement-list.module";
 import { NgAisSearchBoxModule } from "./search-box/search-box.module";
 import { NgAisSortByModule } from "./sort-by/sort-by.module";
-import { NgAisStarRatingModule } from "./star-rating/star-rating.module";
+import { NgAisRatingMenuModule } from "./rating-menu/rating-menu.module";
 import { NgAisStatsModule } from "./stats/stats.module";
 import { NgAisToggleModule } from "./toggle/toggle.module";
 import { NgAisHighlightModule } from "./highlight/highlight.module";
@@ -41,7 +41,7 @@ const NGIS_MODULES = [
   NgAisCurrentRefinementsModule,
   NgAisPriceRangesModule,
   NgAisHierarchicalMenuModule,
-  NgAisStarRatingModule,
+  NgAisRatingMenuModule,
   NgAisRangeSliderModule,
   NgAisBreadcrumbModule,
   NgAisHighlightModule
