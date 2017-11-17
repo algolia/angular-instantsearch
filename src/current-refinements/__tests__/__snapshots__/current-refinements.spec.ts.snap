@@ -3,8 +3,8 @@
 exports[`CurrentRefinedValues renders markup with state 1`] = `
 <ng-ais-current-refinements
   attributes={[Function Array]}
-  clearAll={[Function String]}
-  clearAllLabel={[Function String]}
+  clearRefinements={[Function String]}
+  clearRefinementsLabel={[Function String]}
   clearsQuery="false"
   cx={[Function Function]}
   onlyListedAttributes="false"
@@ -14,12 +14,12 @@ exports[`CurrentRefinedValues renders markup with state 1`] = `
 >
   
       <div
-    class="ais-CurrentRefinedValues"
+    class="ais-CurrentRefinements"
   >
     
         
     <ng-ais-header
-      ng-reflect-class-name="ais-CurrentRefinedValues-heade"
+      ng-reflect-class-name="ais-CurrentRefinements-header "
     >
       
       
@@ -31,40 +31,40 @@ exports[`CurrentRefinedValues renders markup with state 1`] = `
   
         
     <div
-      class="ais-CurrentRefinedValues-body ais-body"
+      class="ais-CurrentRefinements-body ais-body"
     >
       
           
       
       <button
-        class="ais-CurrentRefinedValues-reset"
+        class="ais-CurrentRefinements-reset"
       >
         
-            Clear all
+            Clear refinements
           
       </button>
       
   
           
       <ul
-        class="ais-CurrentRefinedValues-list"
+        class="ais-CurrentRefinements-list"
       >
         
             
         
         <li
-          class="ais-CurrentRefinedValues-item"
+          class="ais-CurrentRefinements-item"
         >
           
               
           <button
-            class="ais-CurrentRefinedValues-button"
+            class="ais-CurrentRefinements-button"
           >
             
                 Canon
                 
             <span
-              class="ais-CurrentRefinedValues-count"
+              class="ais-CurrentRefinements-count"
             >
               27
             </span>
@@ -75,18 +75,18 @@ exports[`CurrentRefinedValues renders markup with state 1`] = `
             
         </li>
         <li
-          class="ais-CurrentRefinedValues-item"
+          class="ais-CurrentRefinements-item"
         >
           
               
           <button
-            class="ais-CurrentRefinedValues-button"
+            class="ais-CurrentRefinements-button"
           >
             
                 Sony
                 
             <span
-              class="ais-CurrentRefinedValues-count"
+              class="ais-CurrentRefinements-count"
             >
               28
             </span>
@@ -97,18 +97,18 @@ exports[`CurrentRefinedValues renders markup with state 1`] = `
             
         </li>
         <li
-          class="ais-CurrentRefinedValues-item"
+          class="ais-CurrentRefinements-item"
         >
           
               
           <button
-            class="ais-CurrentRefinedValues-button"
+            class="ais-CurrentRefinements-button"
           >
             
                 Cameras & Camcorders
                 
             <span
-              class="ais-CurrentRefinedValues-count"
+              class="ais-CurrentRefinements-count"
             >
               55
             </span>
@@ -119,18 +119,18 @@ exports[`CurrentRefinedValues renders markup with state 1`] = `
             
         </li>
         <li
-          class="ais-CurrentRefinedValues-item"
+          class="ais-CurrentRefinements-item"
         >
           
               
           <button
-            class="ais-CurrentRefinedValues-button"
+            class="ais-CurrentRefinements-button"
           >
             
                 ≥ 0
                 
             <span
-              class="ais-CurrentRefinedValues-count"
+              class="ais-CurrentRefinements-count"
             >
               
             </span>
@@ -154,7 +154,7 @@ exports[`CurrentRefinedValues renders markup with state 1`] = `
   
         
     <ng-ais-footer
-      ng-reflect-class-name="ais-CurrentRefinedValues-foote"
+      ng-reflect-class-name="ais-CurrentRefinements-footer "
     >
       
       
@@ -172,8 +172,8 @@ exports[`CurrentRefinedValues renders markup with state 1`] = `
 exports[`CurrentRefinedValues renders markup without state 1`] = `
 <ng-ais-current-refinements
   attributes={[Function Array]}
-  clearAll={[Function String]}
-  clearAllLabel={[Function String]}
+  clearRefinements={[Function String]}
+  clearRefinementsLabel={[Function String]}
   clearsQuery="false"
   cx={[Function Function]}
   onlyListedAttributes="false"
@@ -183,12 +183,12 @@ exports[`CurrentRefinedValues renders markup without state 1`] = `
 >
   
       <div
-    class="ais-CurrentRefinedValues"
+    class="ais-CurrentRefinements"
   >
     
         
     <ng-ais-header
-      ng-reflect-class-name="ais-CurrentRefinedValues-heade"
+      ng-reflect-class-name="ais-CurrentRefinements-header "
     >
       
       
@@ -200,23 +200,23 @@ exports[`CurrentRefinedValues renders markup without state 1`] = `
   
         
     <div
-      class="ais-CurrentRefinedValues-body ais-body"
+      class="ais-CurrentRefinements-body ais-body"
     >
       
           
       
       <button
-        class="ais-CurrentRefinedValues-reset"
+        class="ais-CurrentRefinements-reset"
       >
         
-            Clear all
+            Clear refinements
           
       </button>
       
   
           
       <ul
-        class="ais-CurrentRefinedValues-list"
+        class="ais-CurrentRefinements-list"
       >
         
             
@@ -235,7 +235,7 @@ exports[`CurrentRefinedValues renders markup without state 1`] = `
   
         
     <ng-ais-footer
-      ng-reflect-class-name="ais-CurrentRefinedValues-foote"
+      ng-reflect-class-name="ais-CurrentRefinements-footer "
     >
       
       
@@ -253,8 +253,8 @@ exports[`CurrentRefinedValues renders markup without state 1`] = `
 exports[`CurrentRefinedValues should apply \`transformItems\` if specified 1`] = `
 <ng-ais-current-refinements
   attributes={[Function Array]}
-  clearAll={[Function String]}
-  clearAllLabel={[Function String]}
+  clearRefinements={[Function String]}
+  clearRefinementsLabel={[Function String]}
   clearsQuery="false"
   cx={[Function Function]}
   onlyListedAttributes="false"
@@ -265,12 +265,12 @@ exports[`CurrentRefinedValues should apply \`transformItems\` if specified 1`] =
 >
   
       <div
-    class="ais-CurrentRefinedValues"
+    class="ais-CurrentRefinements"
   >
     
         
     <ng-ais-header
-      ng-reflect-class-name="ais-CurrentRefinedValues-heade"
+      ng-reflect-class-name="ais-CurrentRefinements-header "
     >
       
       
@@ -282,40 +282,40 @@ exports[`CurrentRefinedValues should apply \`transformItems\` if specified 1`] =
   
         
     <div
-      class="ais-CurrentRefinedValues-body ais-body"
+      class="ais-CurrentRefinements-body ais-body"
     >
       
           
       
       <button
-        class="ais-CurrentRefinedValues-reset"
+        class="ais-CurrentRefinements-reset"
       >
         
-            Clear all
+            Clear refinements
           
       </button>
       
   
           
       <ul
-        class="ais-CurrentRefinedValues-list"
+        class="ais-CurrentRefinements-list"
       >
         
             
         
         <li
-          class="ais-CurrentRefinedValues-item"
+          class="ais-CurrentRefinements-item"
         >
           
               
           <button
-            class="ais-CurrentRefinedValues-button"
+            class="ais-CurrentRefinements-button"
           >
             
                 foo - Canon
                 
             <span
-              class="ais-CurrentRefinedValues-count"
+              class="ais-CurrentRefinements-count"
             >
               27
             </span>
@@ -326,18 +326,18 @@ exports[`CurrentRefinedValues should apply \`transformItems\` if specified 1`] =
             
         </li>
         <li
-          class="ais-CurrentRefinedValues-item"
+          class="ais-CurrentRefinements-item"
         >
           
               
           <button
-            class="ais-CurrentRefinedValues-button"
+            class="ais-CurrentRefinements-button"
           >
             
                 foo - Sony
                 
             <span
-              class="ais-CurrentRefinedValues-count"
+              class="ais-CurrentRefinements-count"
             >
               28
             </span>
@@ -348,18 +348,18 @@ exports[`CurrentRefinedValues should apply \`transformItems\` if specified 1`] =
             
         </li>
         <li
-          class="ais-CurrentRefinedValues-item"
+          class="ais-CurrentRefinements-item"
         >
           
               
           <button
-            class="ais-CurrentRefinedValues-button"
+            class="ais-CurrentRefinements-button"
           >
             
                 foo - Cameras & Camcorders
                 
             <span
-              class="ais-CurrentRefinedValues-count"
+              class="ais-CurrentRefinements-count"
             >
               55
             </span>
@@ -370,18 +370,18 @@ exports[`CurrentRefinedValues should apply \`transformItems\` if specified 1`] =
             
         </li>
         <li
-          class="ais-CurrentRefinedValues-item"
+          class="ais-CurrentRefinements-item"
         >
           
               
           <button
-            class="ais-CurrentRefinedValues-button"
+            class="ais-CurrentRefinements-button"
           >
             
                 foo - ≥ 0
                 
             <span
-              class="ais-CurrentRefinedValues-count"
+              class="ais-CurrentRefinements-count"
             >
               
             </span>
@@ -405,7 +405,7 @@ exports[`CurrentRefinedValues should apply \`transformItems\` if specified 1`] =
   
         
     <ng-ais-footer
-      ng-reflect-class-name="ais-CurrentRefinedValues-foote"
+      ng-reflect-class-name="ais-CurrentRefinements-footer "
     >
       
       

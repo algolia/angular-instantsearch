@@ -9,12 +9,12 @@ exports[`SortBy renders markup with state 1`] = `
 >
   
       <div
-    class="ais-SortBySelector"
+    class="ais-SortBy"
   >
     
         
     <ng-ais-header
-      ng-reflect-class-name="ais-SortBySelector-header ais-"
+      ng-reflect-class-name="ais-SortBy-header ais-header"
     >
       
       
@@ -26,18 +26,18 @@ exports[`SortBy renders markup with state 1`] = `
   
         
     <div
-      class="ais-SortBySelector-body ais-body"
+      class="ais-SortBy-body ais-body"
     >
       
           
       <select
-        class="ais-SortBySelector-select"
+        class="ais-SortBy-select"
       >
         
             
         
         <option
-          class="ais-SortBySelector-option"
+          class="ais-SortBy-option"
           value="foo"
         >
           
@@ -45,7 +45,7 @@ exports[`SortBy renders markup with state 1`] = `
             
         </option>
         <option
-          class="ais-SortBySelector-option"
+          class="ais-SortBy-option"
           value="bar"
         >
           
@@ -62,7 +62,7 @@ exports[`SortBy renders markup with state 1`] = `
   
         
     <ng-ais-footer
-      ng-reflect-class-name="ais-SortBySelector-footer ais-"
+      ng-reflect-class-name="ais-SortBy-footer ais-footer"
     >
       
       
@@ -86,12 +86,12 @@ exports[`SortBy renders markup without state 1`] = `
 >
   
       <div
-    class="ais-SortBySelector"
+    class="ais-SortBy"
   >
     
         
     <ng-ais-header
-      ng-reflect-class-name="ais-SortBySelector-header ais-"
+      ng-reflect-class-name="ais-SortBy-header ais-header"
     >
       
       
@@ -103,12 +103,12 @@ exports[`SortBy renders markup without state 1`] = `
   
         
     <div
-      class="ais-SortBySelector-body ais-body"
+      class="ais-SortBy-body ais-body"
     >
       
           
       <select
-        class="ais-SortBySelector-select"
+        class="ais-SortBy-select"
       >
         
             
@@ -123,7 +123,7 @@ exports[`SortBy renders markup without state 1`] = `
   
         
     <ng-ais-footer
-      ng-reflect-class-name="ais-SortBySelector-footer ais-"
+      ng-reflect-class-name="ais-SortBy-footer ais-footer"
     >
       
       

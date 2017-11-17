@@ -8,7 +8,7 @@ import { bem } from "../../utils";
 
 jest.mock("../../base-widget");
 
-const cx = bem("CurrentRefinedValues");
+const cx = bem("CurrentRefinements");
 
 const defaultState = {
   attributes: {},

@@ -9,12 +9,12 @@ exports[`NumericRefinementList renders markup with state 1`] = `
 >
   
       <div
-    class="ais-NumericRefinementList"
+    class="ais-NumericMenu"
   >
     
         
     <ng-ais-header
-      ng-reflect-class-name="ais-NumericRefinementList-head"
+      ng-reflect-class-name="ais-NumericMenu-header ais-hea"
     >
       
       
@@ -26,28 +26,28 @@ exports[`NumericRefinementList renders markup with state 1`] = `
   
         
     <div
-      class="ais-NumericRefinementList-body ais-body"
+      class="ais-NumericMenu-body ais-body"
     >
       
           
       <ul
-        class="ais-NumericRefinementList-list"
+        class="ais-NumericMenu-list"
       >
         
             
         
         <li
-          class="ais-NumericRefinementList-item ais-NumericRefinementList-item--selected"
+          class="ais-NumericMenu-item ais-NumericMenu-item--selected"
         >
           
               
           <label
-            class="ais-NumericRefinementList-label"
+            class="ais-NumericMenu-label"
           >
             
                 
             <input
-              class="ais-NumericRefinementList-radio"
+              class="ais-NumericMenu-radio"
               name="NumericRefinementList"
               type="radio"
             />
@@ -59,17 +59,17 @@ exports[`NumericRefinementList renders markup with state 1`] = `
             
         </li>
         <li
-          class="ais-NumericRefinementList-item"
+          class="ais-NumericMenu-item"
         >
           
               
           <label
-            class="ais-NumericRefinementList-label"
+            class="ais-NumericMenu-label"
           >
             
                 
             <input
-              class="ais-NumericRefinementList-radio"
+              class="ais-NumericMenu-radio"
               name="NumericRefinementList"
               type="radio"
             />
@@ -90,7 +90,7 @@ exports[`NumericRefinementList renders markup with state 1`] = `
   
         
     <ng-ais-footer
-      ng-reflect-class-name="ais-NumericRefinementList-foot"
+      ng-reflect-class-name="ais-NumericMenu-footer ais-foo"
     >
       
       
@@ -114,12 +114,12 @@ exports[`NumericRefinementList renders markup without state 1`] = `
 >
   
       <div
-    class="ais-NumericRefinementList"
+    class="ais-NumericMenu"
   >
     
         
     <ng-ais-header
-      ng-reflect-class-name="ais-NumericRefinementList-head"
+      ng-reflect-class-name="ais-NumericMenu-header ais-hea"
     >
       
       
@@ -131,12 +131,12 @@ exports[`NumericRefinementList renders markup without state 1`] = `
   
         
     <div
-      class="ais-NumericRefinementList-body ais-body"
+      class="ais-NumericMenu-body ais-body"
     >
       
           
       <ul
-        class="ais-NumericRefinementList-list"
+        class="ais-NumericMenu-list"
       >
         
             
@@ -151,7 +151,7 @@ exports[`NumericRefinementList renders markup without state 1`] = `
   
         
     <ng-ais-footer
-      ng-reflect-class-name="ais-NumericRefinementList-foot"
+      ng-reflect-class-name="ais-NumericMenu-footer ais-foo"
     >
       
       

@@ -61,7 +61,7 @@ export class NgAisInfiniteResults extends BaseWidget {
   };
 
   constructor(searchInstance: NgAisInstance) {
-    super(searchInstance, "InfiniteHits");
+    super(searchInstance, "InfiniteResults");
     this.createWidget(connectInfiniteHits, { escapeHits: true });
   }
 

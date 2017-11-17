@@ -9,12 +9,12 @@ exports[`ResultsPerPage renders markup with state 1`] = `
 >
   
       <div
-    class="ais-HitsPerPageSelector"
+    class="ais-ResultsPerPage"
   >
     
         
     <ng-ais-header
-      ng-reflect-class-name="ais-HitsPerPageSelector-header"
+      ng-reflect-class-name="ais-ResultsPerPage-header ais-"
     >
       
       
@@ -26,18 +26,18 @@ exports[`ResultsPerPage renders markup with state 1`] = `
   
         
     <div
-      class="ais-HitsPerPageSelector-body ais-body"
+      class="ais-ResultsPerPage-body ais-body"
     >
       
           
       <select
-        class="ais-HitsPerPageSelector-select"
+        class="ais-ResultsPerPage-select"
       >
         
             
         
         <option
-          class="ais-HitsPerPageSelector-option"
+          class="ais-ResultsPerPage-option"
           value="10"
         >
           
@@ -45,7 +45,7 @@ exports[`ResultsPerPage renders markup with state 1`] = `
             
         </option>
         <option
-          class="ais-HitsPerPageSelector-option"
+          class="ais-ResultsPerPage-option"
           value="20"
         >
           
@@ -53,7 +53,7 @@ exports[`ResultsPerPage renders markup with state 1`] = `
             
         </option>
         <option
-          class="ais-HitsPerPageSelector-option"
+          class="ais-ResultsPerPage-option"
           value="30"
         >
           
@@ -70,7 +70,7 @@ exports[`ResultsPerPage renders markup with state 1`] = `
   
         
     <ng-ais-footer
-      ng-reflect-class-name="ais-HitsPerPageSelector-footer"
+      ng-reflect-class-name="ais-ResultsPerPage-footer ais-"
     >
       
       

@@ -5,7 +5,7 @@ import { noop } from "lodash-es";
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 
-export type HitsPerPageSelectorState = {
+export type ResultsPerPageState = {
   items: {}[];
   refine: Function;
 };
@@ -44,13 +44,13 @@ export class NgAisResultsPerPage extends BaseWidget {
     default?: boolean;
   }[];
 
-  public state: HitsPerPageSelectorState = {
+  public state: ResultsPerPageState = {
     items: [],
     refine: noop
   };
 
   constructor(searchInstance: NgAisInstance) {
-    super(searchInstance, "HitsPerPageSelector");
+    super(searchInstance, "ResultsPerPage");
   }
 
   public ngOnInit() {

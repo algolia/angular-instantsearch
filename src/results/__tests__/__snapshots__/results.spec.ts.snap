@@ -10,12 +10,12 @@ exports[`Hits renders markup with state 1`] = `
 >
   
       <div
-    class="ais-Hits"
+    class="ais-Results"
   >
     
         
     <ng-ais-header
-      ng-reflect-class-name="ais-Hits-header ais-header"
+      ng-reflect-class-name="ais-Results-header ais-header"
     >
       
       
@@ -27,7 +27,7 @@ exports[`Hits renders markup with state 1`] = `
   
         
     <div
-      class="ais-Hits-body ais-body"
+      class="ais-Results-body ais-body"
     >
       
           
@@ -42,13 +42,13 @@ exports[`Hits renders markup with state 1`] = `
         
             
         <ul
-          class="ais-Hits-list"
+          class="ais-Results-list"
         >
           
               
           
           <li
-            class="ais-Hits-item"
+            class="ais-Results-item"
           >
             
                 
@@ -65,7 +65,7 @@ exports[`Hits renders markup with state 1`] = `
               
           </li>
           <li
-            class="ais-Hits-item"
+            class="ais-Results-item"
           >
             
                 
@@ -82,7 +82,7 @@ exports[`Hits renders markup with state 1`] = `
               
           </li>
           <li
-            class="ais-Hits-item"
+            class="ais-Results-item"
           >
             
                 
@@ -99,7 +99,7 @@ exports[`Hits renders markup with state 1`] = `
               
           </li>
           <li
-            class="ais-Hits-item"
+            class="ais-Results-item"
           >
             
                 
@@ -128,7 +128,7 @@ exports[`Hits renders markup with state 1`] = `
   
         
     <ng-ais-footer
-      ng-reflect-class-name="ais-Hits-footer ais-footer"
+      ng-reflect-class-name="ais-Results-footer ais-footer"
     >
       
       
@@ -153,12 +153,12 @@ exports[`Hits renders markup without state 1`] = `
 >
   
       <div
-    class="ais-Hits"
+    class="ais-Results"
   >
     
         
     <ng-ais-header
-      ng-reflect-class-name="ais-Hits-header ais-header"
+      ng-reflect-class-name="ais-Results-header ais-header"
     >
       
       
@@ -170,7 +170,7 @@ exports[`Hits renders markup without state 1`] = `
   
         
     <div
-      class="ais-Hits-body ais-body"
+      class="ais-Results-body ais-body"
     >
       
           
@@ -185,7 +185,7 @@ exports[`Hits renders markup without state 1`] = `
         
             
         <ul
-          class="ais-Hits-list"
+          class="ais-Results-list"
         >
           
               
@@ -203,7 +203,7 @@ exports[`Hits renders markup without state 1`] = `
   
         
     <ng-ais-footer
-      ng-reflect-class-name="ais-Hits-footer ais-footer"
+      ng-reflect-class-name="ais-Results-footer ais-footer"
     >
       
       
@@ -229,12 +229,12 @@ exports[`Hits should apply \`transformItems\` if specified 1`] = `
 >
   
       <div
-    class="ais-Hits"
+    class="ais-Results"
   >
     
         
     <ng-ais-header
-      ng-reflect-class-name="ais-Hits-header ais-header"
+      ng-reflect-class-name="ais-Results-header ais-header"
     >
       
       
@@ -246,7 +246,7 @@ exports[`Hits should apply \`transformItems\` if specified 1`] = `
   
         
     <div
-      class="ais-Hits-body ais-body"
+      class="ais-Results-body ais-body"
     >
       
           
@@ -261,13 +261,13 @@ exports[`Hits should apply \`transformItems\` if specified 1`] = `
         
             
         <ul
-          class="ais-Hits-list"
+          class="ais-Results-list"
         >
           
               
           
           <li
-            class="ais-Hits-item"
+            class="ais-Results-item"
           >
             
                 
@@ -284,7 +284,7 @@ exports[`Hits should apply \`transformItems\` if specified 1`] = `
               
           </li>
           <li
-            class="ais-Hits-item"
+            class="ais-Results-item"
           >
             
                 
@@ -301,7 +301,7 @@ exports[`Hits should apply \`transformItems\` if specified 1`] = `
               
           </li>
           <li
-            class="ais-Hits-item"
+            class="ais-Results-item"
           >
             
                 
@@ -318,7 +318,7 @@ exports[`Hits should apply \`transformItems\` if specified 1`] = `
               
           </li>
           <li
-            class="ais-Hits-item"
+            class="ais-Results-item"
           >
             
                 
@@ -347,7 +347,7 @@ exports[`Hits should apply \`transformItems\` if specified 1`] = `
   
         
     <ng-ais-footer
-      ng-reflect-class-name="ais-Hits-footer ais-footer"
+      ng-reflect-class-name="ais-Results-footer ais-footer"
     >
       
       

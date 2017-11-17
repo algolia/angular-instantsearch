@@ -57,7 +57,7 @@ export class NgAisNumericMenu extends BaseWidget {
   };
 
   constructor(searchInstance: NgAisInstance) {
-    super(searchInstance, "NumericRefinementList");
+    super(searchInstance, "NumericMenu");
   }
 
   public ngOnInit() {

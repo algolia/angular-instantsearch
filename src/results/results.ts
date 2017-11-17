@@ -42,7 +42,7 @@ export class NgAisResults extends BaseWidget {
   public state: { hits: {}[]; results: {} } = { hits: [], results: {} };
 
   constructor(searchInstance: NgAisInstance) {
-    super(searchInstance, "Hits");
+    super(searchInstance, "Results");
     this.createWidget(connectHits, { escapeHits: true });
   }
 

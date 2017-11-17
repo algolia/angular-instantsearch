@@ -49,7 +49,7 @@ export class NgAisSortBy extends BaseWidget {
   };
 
   constructor(searchInstance: NgAisInstance) {
-    super(searchInstance, "SortBySelector");
+    super(searchInstance, "SortBy");
   }
 
   public ngOnInit() {

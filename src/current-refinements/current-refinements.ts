@@ -5,7 +5,7 @@ import { noop, isFunction } from "lodash-es";
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 
-export type CurrentRefinedValuesState = {
+export type CurrentRefinementsState = {
   attributes: {};
   clearAllClick: Function;
   clearAllURL: Function;
@@ -24,8 +24,8 @@ export type CurrentRefinedValuesState = {
         <button
           [class]="cx('reset')"
           (click)="handleClearAllClick($event)"
-          *ngIf="clearAll === 'before' || clearAll === true">
-          {{clearAllLabel}}
+          *ngIf="clearRefinements === 'before' || clearRefinements === true">
+          {{clearRefinementsLabel}}
         </button>
 
         <ul [class]="cx('list')">
@@ -44,8 +44,8 @@ export type CurrentRefinedValuesState = {
         <button
           [class]="cx('reset')"
           (click)="handleClearAllClick($event)"
-          *ngIf="clearAll === 'after'">
-          {{clearAllLabel}}
+          *ngIf="clearRefinements === 'after'">
+          {{clearRefinementsLabel}}
         </button>
       </div>
 
@@ -55,8 +55,8 @@ export type CurrentRefinedValuesState = {
 })
 export class NgAisCurrentRefinements extends BaseWidget {
   // render options
-  @Input() public clearAll: "before" | "after" | boolean = "before";
-  @Input() public clearAllLabel: string = "Clear all";
+  @Input() public clearRefinements: "before" | "after" | boolean = "before";
+  @Input() public clearRefinementsLabel: string = "Clear refinements";
   @Input() public transformItems?: Function;
 
   // connector options
@@ -68,7 +68,7 @@ export class NgAisCurrentRefinements extends BaseWidget {
     label: string;
   }[] = [];
 
-  public state: CurrentRefinedValuesState = {
+  public state: CurrentRefinementsState = {
     attributes: {},
     clearAllClick: noop,
     clearAllURL: noop,
@@ -84,7 +84,7 @@ export class NgAisCurrentRefinements extends BaseWidget {
   }
 
   constructor(searchInstance: NgAisInstance) {
-    super(searchInstance, "CurrentRefinedValues");
+    super(searchInstance, "CurrentRefinements");
   }
 
   public ngOnInit() {

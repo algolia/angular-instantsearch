@@ -5,7 +5,7 @@ import { noop } from "lodash-es";
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 
-export type StarRatingState = {
+export type RatingMenuState = {
   createURL: Function;
   hasNoResults: boolean;
   items: {}[];
@@ -89,7 +89,7 @@ export class NgAisRatingMenu extends BaseWidget {
   @Input() public attributeName: string;
   @Input() public max?: number = 5;
 
-  public state: StarRatingState = {
+  public state: RatingMenuState = {
     createURL: noop,
     hasNoResults: false,
     items: [],
@@ -97,7 +97,7 @@ export class NgAisRatingMenu extends BaseWidget {
   };
 
   constructor(searchInstance: NgAisInstance) {
-    super(searchInstance, "StarRating");
+    super(searchInstance, "RatingMenu");
   }
 
   public ngOnInit() {

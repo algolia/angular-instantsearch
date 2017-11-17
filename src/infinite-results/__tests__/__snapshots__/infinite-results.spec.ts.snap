@@ -11,12 +11,12 @@ exports[`InfiniteHits renders markup with state 1`] = `
 >
   
       <div
-    class="ais-InfiniteHits"
+    class="ais-InfiniteResults"
   >
     
         
     <ng-ais-header
-      ng-reflect-class-name="ais-InfiniteHits-header ais-he"
+      ng-reflect-class-name="ais-InfiniteResults-header ais"
     >
       
       
@@ -28,7 +28,7 @@ exports[`InfiniteHits renders markup with state 1`] = `
   
         
     <div
-      class="ais-InfiniteHits-body ais-body"
+      class="ais-InfiniteResults-body ais-body"
     >
       
           
@@ -43,13 +43,13 @@ exports[`InfiniteHits renders markup with state 1`] = `
         
             
         <ul
-          class="ais-InfiniteHits-list"
+          class="ais-InfiniteResults-list"
         >
           
               
           
           <li
-            class="ais-InfiniteHits-item"
+            class="ais-InfiniteResults-item"
           >
             
                 
@@ -66,7 +66,7 @@ exports[`InfiniteHits renders markup with state 1`] = `
               
           </li>
           <li
-            class="ais-InfiniteHits-item"
+            class="ais-InfiniteResults-item"
           >
             
                 
@@ -83,7 +83,7 @@ exports[`InfiniteHits renders markup with state 1`] = `
               
           </li>
           <li
-            class="ais-InfiniteHits-item"
+            class="ais-InfiniteResults-item"
           >
             
                 
@@ -100,7 +100,7 @@ exports[`InfiniteHits renders markup with state 1`] = `
               
           </li>
           <li
-            class="ais-InfiniteHits-item"
+            class="ais-InfiniteResults-item"
           >
             
                 
@@ -126,7 +126,7 @@ exports[`InfiniteHits renders markup with state 1`] = `
   
           
       <button
-        class="ais-InfiniteHits-showMore"
+        class="ais-InfiniteResults-showMore"
       >
         
             Show more results
@@ -139,7 +139,7 @@ exports[`InfiniteHits renders markup with state 1`] = `
   
         
     <ng-ais-footer
-      ng-reflect-class-name="ais-InfiniteHits-footer ais-fo"
+      ng-reflect-class-name="ais-InfiniteResults-footer ais"
     >
       
       
@@ -165,12 +165,12 @@ exports[`InfiniteHits renders markup without state 1`] = `
 >
   
       <div
-    class="ais-InfiniteHits"
+    class="ais-InfiniteResults"
   >
     
         
     <ng-ais-header
-      ng-reflect-class-name="ais-InfiniteHits-header ais-he"
+      ng-reflect-class-name="ais-InfiniteResults-header ais"
     >
       
       
@@ -182,7 +182,7 @@ exports[`InfiniteHits renders markup without state 1`] = `
   
         
     <div
-      class="ais-InfiniteHits-body ais-body"
+      class="ais-InfiniteResults-body ais-body"
     >
       
           
@@ -197,7 +197,7 @@ exports[`InfiniteHits renders markup without state 1`] = `
         
             
         <ul
-          class="ais-InfiniteHits-list"
+          class="ais-InfiniteResults-list"
         >
           
               
@@ -212,7 +212,7 @@ exports[`InfiniteHits renders markup without state 1`] = `
   
           
       <button
-        class="ais-InfiniteHits-showMore"
+        class="ais-InfiniteResults-showMore"
       >
         
             Show more results
@@ -225,7 +225,7 @@ exports[`InfiniteHits renders markup without state 1`] = `
   
         
     <ng-ais-footer
-      ng-reflect-class-name="ais-InfiniteHits-footer ais-fo"
+      ng-reflect-class-name="ais-InfiniteResults-footer ais"
     >
       
       

@@ -26,14 +26,14 @@ import { NgAisInstance } from "../instantsearch/instantsearch-instance";
   `
 })
 export class NgAisClearRefinements extends BaseWidget {
-  @Input() public buttonLabel: string = "Clear all";
+  @Input() public buttonLabel: string = "Clear refinements";
   @Input() public clearsQuery: boolean = false;
   @Input() public excludeAttributes: string[] = [];
 
   public state = { hasRefinements: false, refine: noop };
 
   constructor(searchInstance: NgAisInstance) {
-    super(searchInstance, "ClearAll");
+    super(searchInstance, "ClearRefinements");
   }
 
   public ngOnInit() {
