@@ -12,7 +12,7 @@ export type NumericRefinementListState = {
 };
 
 @Component({
-  selector: "ng-ais-numeric-refinement-list",
+  selector: "ng-ais-numeric-menu",
   template: `
     <div [class]="cx()">
       <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
@@ -41,7 +41,7 @@ export type NumericRefinementListState = {
     </div>
   `
 })
-export class NgAisNumericRefinementList extends BaseWidget {
+export class NgAisNumericMenu extends BaseWidget {
   @Input() public attributeName: string;
   @Input()
   public options: {

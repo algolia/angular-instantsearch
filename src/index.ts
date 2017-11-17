@@ -10,7 +10,7 @@ import { NgAisHitsModule } from "./hits/hits.module";
 import { NgAisInfiniteHitsModule } from "./infinite-hits/infinite-hits.module";
 import { NgAisInstantSearchModule } from "./instantsearch/instantsearch.module";
 import { NgAisMenuModule } from "./menu/menu.module";
-import { NgAisNumericRefinementListModule } from "./numeric-refinement-list/numeric-refinement-list.module";
+import { NgAisNumericMenuModule } from "./numeric-menu/numeric-menu.module";
 import { NgAisNumericSelectorModule } from "./numeric-selector/numeric-selector.module";
 import { NgAisPaginationModule } from "./pagination/pagination.module";
 import { NgAisPriceRangesModule } from "./price-ranges/price-ranges.module";
@@ -34,7 +34,7 @@ const NGIS_MODULES = [
   NgAisHitsPerPageSelectorModule,
   NgAisSortBySelectorModule,
   NgAisNumericSelectorModule,
-  NgAisNumericRefinementListModule,
+  NgAisNumericMenuModule,
   NgAisStatsModule,
   NgAisToggleModule,
   NgAisInfiniteHitsModule,

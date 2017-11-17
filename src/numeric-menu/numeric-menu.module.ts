@@ -3,12 +3,12 @@ import { NgModule } from "@angular/core";
 
 import { NgAisFooterModule } from "../footer/footer.module";
 import { NgAisHeaderModule } from "../header/header.module";
-import { NgAisNumericRefinementList } from "./numeric-refinement-list";
+import { NgAisNumericMenu } from "./numeric-menu";
 
 @NgModule({
-  declarations: [NgAisNumericRefinementList],
-  entryComponents: [NgAisNumericRefinementList],
-  exports: [NgAisNumericRefinementList],
+  declarations: [NgAisNumericMenu],
+  entryComponents: [NgAisNumericMenu],
+  exports: [NgAisNumericMenu],
   imports: [CommonModule, NgAisHeaderModule, NgAisFooterModule]
 })
-export class NgAisNumericRefinementListModule {}
+export class NgAisNumericMenuModule {}

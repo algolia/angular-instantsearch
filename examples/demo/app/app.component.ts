@@ -15,11 +15,11 @@ import { Component } from "@angular/core";
       </ng-ais-breadcrumb>
       <ng-ais-hits></ng-ais-hits>
       <ng-ais-pagination></ng-ais-pagination>
-      <ng-ais-numeric-refinement-list
+      <ng-ais-numeric-menu
         attributeName="price"
         [options]="numericRefinementListOptions"
       >
-      </ng-ais-numeric-refinement-list>
+      </ng-ais-numeric-menu>
       <ng-ais-range-slider attributeName="price"></ng-ais-range-slider>
       <ng-ais-menu
         attributeName="categories"

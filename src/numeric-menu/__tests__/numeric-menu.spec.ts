@@ -1,8 +1,8 @@
 import { TestBed } from "@angular/core/testing";
 
 import { NgAisInstantSearchModule } from "../../instantsearch/instantsearch.module";
-import { NgAisNumericRefinementListModule } from "../numeric-refinement-list.module";
-import { NgAisNumericRefinementList } from "../numeric-refinement-list";
+import { NgAisNumericMenuModule } from "../numeric-menu.module";
+import { NgAisNumericMenu } from "../numeric-menu";
 
 jest.mock("../../base-widget");
 
@@ -16,7 +16,7 @@ const defaultState = {
 };
 
 const render = (state?: {}) => {
-  const fixture = TestBed.createComponent(NgAisNumericRefinementList);
+  const fixture = TestBed.createComponent(NgAisNumericMenu);
 
   if (state) {
     fixture.componentInstance.updateState({ ...defaultState, ...state });
@@ -30,10 +30,7 @@ describe("NumericRefinementList", () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
       declarations: [],
-      imports: [
-        NgAisInstantSearchModule.forRoot(),
-        NgAisNumericRefinementListModule
-      ]
+      imports: [NgAisInstantSearchModule.forRoot(), NgAisNumericMenuModule]
     })
   );
 
