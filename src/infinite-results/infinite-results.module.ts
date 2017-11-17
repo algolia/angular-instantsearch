@@ -4,12 +4,12 @@ import { NgModule } from "@angular/core";
 import { NgAisFooterModule } from "../footer/footer.module";
 import { NgAisHeaderModule } from "../header/header.module";
 import { NgAisHighlightModule } from "../highlight/highlight.module";
-import { NgAisInfiniteHits } from "./infinite-hits";
+import { NgAisInfiniteResults } from "./infinite-results";
 
 @NgModule({
-  declarations: [NgAisInfiniteHits],
-  entryComponents: [NgAisInfiniteHits],
-  exports: [NgAisInfiniteHits],
+  declarations: [NgAisInfiniteResults],
+  entryComponents: [NgAisInfiniteResults],
+  exports: [NgAisInfiniteResults],
   imports: [
     CommonModule,
     NgAisHeaderModule,
@@ -17,4 +17,4 @@ import { NgAisInfiniteHits } from "./infinite-hits";
     NgAisHighlightModule
   ]
 })
-export class NgAisInfiniteHitsModule {}
+export class NgAisInfiniteResultsModule {}

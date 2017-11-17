@@ -1,8 +1,8 @@
 import { TestBed } from "@angular/core/testing";
 
 import { NgAisInstantSearchModule } from "../../instantsearch/instantsearch.module";
-import { NgAisInfiniteHitsModule } from "../infinite-hits.module";
-import { NgAisInfiniteHits } from "../infinite-hits";
+import { NgAisInfiniteResultsModule } from "../infinite-results.module";
+import { NgAisInfiniteResults } from "../infinite-results";
 
 jest.mock("../../base-widget");
 
@@ -18,7 +18,7 @@ const defaultState = {
 };
 
 const render = (state?: {}) => {
-  const fixture = TestBed.createComponent(NgAisInfiniteHits);
+  const fixture = TestBed.createComponent(NgAisInfiniteResults);
 
   if (state) {
     fixture.componentInstance.updateState({ ...defaultState, ...state }, false);
@@ -32,7 +32,7 @@ describe("InfiniteHits", () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
       declarations: [],
-      imports: [NgAisInstantSearchModule.forRoot(), NgAisInfiniteHitsModule]
+      imports: [NgAisInstantSearchModule.forRoot(), NgAisInfiniteResultsModule]
     })
   );
 
