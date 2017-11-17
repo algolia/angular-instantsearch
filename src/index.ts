@@ -2,7 +2,7 @@ import { ModuleWithProviders, NgModule } from "@angular/core";
 
 // Modules
 import { NgAisBreadcrumbModule } from "./breadcrumb/breadcrumb.module";
-import { NgAisClearAllModule } from "./clear-all/clear-all.module";
+import { NgAisClearRefinementsModule } from "./clear-refinements/clear-refinements.module";
 import { NgAisCurrentRefinedValuesModule } from "./current-refined-values/current-refined-values.module";
 import { NgAisHierarchicalMenuModule } from "./hierarchical-menu/hierarchical-menu.module";
 import { NgAisHitsPerPageSelectorModule } from "./hits-per-page-selector/hits-per-page-selector.module";
@@ -27,7 +27,7 @@ const NGIS_MODULES = [
   NgAisInstantSearchModule,
   NgAisHitsModule,
   NgAisSearchBoxModule,
-  NgAisClearAllModule,
+  NgAisClearRefinementsModule,
   NgAisMenuModule,
   NgAisPaginationModule,
   NgAisRefinementListModule,

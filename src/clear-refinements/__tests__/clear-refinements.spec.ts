@@ -1,26 +1,26 @@
 import { TestBed } from "@angular/core/testing";
 
 import { NgAisInstantSearchModule } from "../../instantsearch/instantsearch.module";
-import { NgAisClearAllModule } from "../clear-all.module";
-import { NgAisClearAll } from "../clear-all";
+import { NgAisClearRefinementsModule } from "../clear-refinements.module";
+import { NgAisClearRefinements } from "../clear-refinements";
 
 jest.mock("../../base-widget");
 
-describe("ClearAll", () => {
+describe("ClearRefinements", () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
       declarations: [],
-      imports: [NgAisInstantSearchModule.forRoot(), NgAisClearAllModule]
+      imports: [NgAisInstantSearchModule.forRoot(), NgAisClearRefinementsModule]
     })
   );
 
   it("renders markup without state", () => {
-    const fixture = TestBed.createComponent(NgAisClearAll);
+    const fixture = TestBed.createComponent(NgAisClearRefinements);
     expect(fixture).toMatchSnapshot();
   });
 
   it("should render disabled button when no refinements", () => {
-    const fixture = TestBed.createComponent(NgAisClearAll);
+    const fixture = TestBed.createComponent(NgAisClearRefinements);
     fixture.detectChanges();
 
     const btn = fixture.debugElement.nativeElement.querySelector("button");
@@ -28,7 +28,7 @@ describe("ClearAll", () => {
   });
 
   it("should render enabled button when refinements", () => {
-    const fixture = TestBed.createComponent(NgAisClearAll);
+    const fixture = TestBed.createComponent(NgAisClearRefinements);
 
     fixture.componentInstance.updateState(
       {
@@ -45,7 +45,7 @@ describe("ClearAll", () => {
 
   it("should call refine() when clicked on button", () => {
     const spy = jest.fn();
-    const fixture = TestBed.createComponent(NgAisClearAll);
+    const fixture = TestBed.createComponent(NgAisClearRefinements);
 
     fixture.componentInstance.updateState(
       {

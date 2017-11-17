@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ClearAll renders markup without state 1`] = `
-<ng-ais-clear-all
+exports[`ClearRefinements renders markup without state 1`] = `
+<ng-ais-clear-refinements
   buttonLabel={[Function String]}
   clearsQuery="false"
   cx={[Function Function]}
@@ -48,5 +48,5 @@ exports[`ClearAll renders markup without state 1`] = `
       
   </div>
     
-</ng-ais-clear-all>
+</ng-ais-clear-refinements>
 `;

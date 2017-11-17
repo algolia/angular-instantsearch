@@ -8,7 +8,7 @@ import { Component } from "@angular/core";
       <ng-ais-hits-per-page-selector [items]="items"></ng-ais-hits-per-page-selector>
       <ng-ais-sort-by-selector [indices]="indices"></ng-ais-sort-by-selector>
       <ng-ais-search-box></ng-ais-search-box>
-      <ng-ais-clear-all></ng-ais-clear-all>
+      <ng-ais-clear-refinements></ng-ais-clear-refinements>
       <ng-ais-breadcrumb
         [attributes]="hierarchicalMenuAttributes"
       >

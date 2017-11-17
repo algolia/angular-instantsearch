@@ -6,7 +6,7 @@ import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 
 @Component({
-  selector: "ng-ais-clear-all",
+  selector: "ng-ais-clear-refinements",
   template: `
     <div [class]="cx()">
       <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
@@ -25,7 +25,7 @@ import { NgAisInstance } from "../instantsearch/instantsearch-instance";
     </div>
   `
 })
-export class NgAisClearAll extends BaseWidget {
+export class NgAisClearRefinements extends BaseWidget {
   @Input() public buttonLabel: string = "Clear all";
   @Input() public clearsQuery: boolean = false;
   @Input() public excludeAttributes: string[] = [];
