@@ -13,7 +13,7 @@ import { Component } from "@angular/core";
         [attributes]="hierarchicalMenuAttributes"
       >
       </ng-ais-breadcrumb>
-      <ng-ais-hits></ng-ais-hits>
+      <ng-ais-results></ng-ais-results>
       <ng-ais-pagination></ng-ais-pagination>
       <ng-ais-numeric-menu
         attributeName="price"

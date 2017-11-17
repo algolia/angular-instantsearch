@@ -6,7 +6,7 @@ import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 
 @Component({
-  selector: "ng-ais-hits",
+  selector: "ng-ais-results",
   template: `
     <div [class]="cx()">
       <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
@@ -32,7 +32,7 @@ import { NgAisInstance } from "../instantsearch/instantsearch-instance";
     </div>
   `
 })
-export class NgAisHits extends BaseWidget {
+export class NgAisResults extends BaseWidget {
   @ContentChild(TemplateRef) public template?: TemplateRef<any>;
 
   // render options

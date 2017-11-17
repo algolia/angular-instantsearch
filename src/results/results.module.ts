@@ -4,12 +4,12 @@ import { NgModule } from "@angular/core";
 import { NgAisFooterModule } from "../footer/footer.module";
 import { NgAisHeaderModule } from "../header/header.module";
 import { NgAisHighlightModule } from "../highlight/highlight.module";
-import { NgAisHits } from "./hits";
+import { NgAisResults } from "./results";
 
 @NgModule({
-  declarations: [NgAisHits],
-  entryComponents: [NgAisHits],
-  exports: [NgAisHits],
+  declarations: [NgAisResults],
+  entryComponents: [NgAisResults],
+  exports: [NgAisResults],
   imports: [
     CommonModule,
     NgAisHeaderModule,
@@ -17,4 +17,4 @@ import { NgAisHits } from "./hits";
     NgAisHighlightModule
   ]
 })
-export class NgAisHitsModule {}
+export class NgAisResultsModule {}

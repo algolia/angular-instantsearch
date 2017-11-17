@@ -1,8 +1,8 @@
 import { TestBed } from "@angular/core/testing";
 
 import { NgAisInstantSearchModule } from "../../instantsearch/instantsearch.module";
-import { NgAisHitsModule } from "../hits.module";
-import { NgAisHits } from "../hits";
+import { NgAisResultsModule } from "../results.module";
+import { NgAisResults } from "../results";
 
 jest.mock("../../base-widget");
 
@@ -12,11 +12,12 @@ const defaultState = {
     { name: "bar", description: "bar" },
     { name: "foobar", description: "foobar" },
     { name: "barfoo", description: "barfoo" }
-  ]
+  ],
+  results: {}
 };
 
 const render = (state?: {}) => {
-  const fixture = TestBed.createComponent(NgAisHits);
+  const fixture = TestBed.createComponent(NgAisResults);
 
   if (state) {
     fixture.componentInstance.updateState({ ...defaultState, ...state }, false);
@@ -30,7 +31,7 @@ describe("Hits", () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
       declarations: [],
-      imports: [NgAisInstantSearchModule.forRoot(), NgAisHitsModule]
+      imports: [NgAisInstantSearchModule.forRoot(), NgAisResultsModule]
     })
   );
 

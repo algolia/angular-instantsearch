@@ -6,7 +6,7 @@ import { NgAisClearRefinementsModule } from "./clear-refinements/clear-refinemen
 import { NgAisCurrentRefinementsModule } from "./current-refinements/current-refinements.module";
 import { NgAisHierarchicalMenuModule } from "./hierarchical-menu/hierarchical-menu.module";
 import { NgAisHitsPerPageSelectorModule } from "./hits-per-page-selector/hits-per-page-selector.module";
-import { NgAisHitsModule } from "./hits/hits.module";
+import { NgAisResultsModule } from "./hits/hits.module";
 import { NgAisInfiniteHitsModule } from "./infinite-hits/infinite-hits.module";
 import { NgAisInstantSearchModule } from "./instantsearch/instantsearch.module";
 import { NgAisMenuModule } from "./menu/menu.module";
@@ -25,7 +25,7 @@ import { NgAisHighlightModule } from "./highlight/highlight.module";
 
 const NGIS_MODULES = [
   NgAisInstantSearchModule,
-  NgAisHitsModule,
+  NgAisResultsModule,
   NgAisSearchBoxModule,
   NgAisClearRefinementsModule,
   NgAisMenuModule,
