@@ -6,7 +6,7 @@ import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 
 @Component({
-  selector: "ng-ais-sort-by-selector",
+  selector: "ng-ais-sort-by",
   template: `
     <div [class]="cx()">
       <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
@@ -31,7 +31,7 @@ import { NgAisInstance } from "../instantsearch/instantsearch-instance";
     </div>
   `
 })
-export class NgAisSortBySelector extends BaseWidget {
+export class NgAisSortBy extends BaseWidget {
   @Input()
   public indices: {
     name: string;

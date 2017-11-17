@@ -1,8 +1,8 @@
 import { TestBed } from "@angular/core/testing";
 
 import { NgAisInstantSearchModule } from "../../instantsearch/instantsearch.module";
-import { NgAisSortBySelectorModule } from "../sort-by-selector.module";
-import { NgAisSortBySelector } from "../sort-by-selector";
+import { NgAisSortByModule } from "../sort-by.module";
+import { NgAisSortBy } from "../sort-by";
 
 jest.mock("../../base-widget");
 
@@ -13,7 +13,7 @@ const defaultState = {
 };
 
 const render = (state?: {}) => {
-  const fixture = TestBed.createComponent(NgAisSortBySelector);
+  const fixture = TestBed.createComponent(NgAisSortBy);
 
   if (state) {
     fixture.componentInstance.updateState({ ...defaultState, ...state }, false);
@@ -23,11 +23,11 @@ const render = (state?: {}) => {
   return fixture;
 };
 
-describe("SortBySelector", () => {
+describe("SortBy", () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
       declarations: [],
-      imports: [NgAisInstantSearchModule.forRoot(), NgAisSortBySelectorModule]
+      imports: [NgAisInstantSearchModule.forRoot(), NgAisSortByModule]
     })
   );
 

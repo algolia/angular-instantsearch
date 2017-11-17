@@ -6,7 +6,7 @@ import { Component } from "@angular/core";
     <ng-ais-instantsearch [config]="config">
       <h1>Angular InstantSearch demo</h1>
       <ng-ais-results-per-page [items]="items"></ng-ais-results-per-page>
-      <ng-ais-sort-by-selector [indices]="indices"></ng-ais-sort-by-selector>
+      <ng-ais-sort-by [indices]="indices"></ng-ais-sort-by>
       <ng-ais-search-box></ng-ais-search-box>
       <ng-ais-clear-refinements></ng-ais-clear-refinements>
       <ng-ais-breadcrumb
