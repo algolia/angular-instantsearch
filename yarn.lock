@@ -3535,9 +3535,9 @@ instantsearch.css@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/instantsearch.css/-/instantsearch.css-2.0.0.tgz#2895da4d8d8ec466e6143dd8983e1f3c31a71768"
 
-instantsearch.js@2.3.0-beta.6:
-  version "2.3.0-beta.6"
-  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-2.3.0-beta.6.tgz#eb1f4cd9c7cbff51611e6fdbb18119e8a303036d"
+instantsearch.js@^2.3.0-beta.7:
+  version "2.3.0-beta.7"
+  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-2.3.0-beta.7.tgz#0018a343e34dc1fe8163e1876a867592a3c33cf3"
   dependencies:
     algoliasearch "^3.24.0"
     algoliasearch-helper "^2.23.0"
