@@ -19,7 +19,7 @@ function root(args) {
 }
 
 module.exports = {
-  devtool: 'eval-source-map',
+  devtool: isProd ? 'cheap-module-source-map' : 'eval-source-map',
 
   entry: {
     polyfills: './examples/dev-novel/polyfill.ts',
@@ -31,7 +31,7 @@ module.exports = {
   },
 
   output: {
-    path: root('dev-novel', 'dist'),
+    path: root('examples', 'e-commerce', 'dist', 'dev-novel'),
     publicPath: '/dev-novel/',
     filename: isProd ? 'js/[name].[hash].js' : 'js/[name].js',
     chunkFilename: isProd ? '[id].[hash].chunk.js' : '[id].chunk.js',
@@ -49,7 +49,7 @@ module.exports = {
     rules: [
       {
         test: /\.ts$/,
-        use: isProd ? '@ngtools/webpack' : 'ts-loader',
+        use: 'ts-loader',
       },
       {
         test: /\.ts$/,
