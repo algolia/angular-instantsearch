@@ -16,7 +16,8 @@
     "test:watch": "jest --watch",
     "examples:ecommerce": "./scripts/run-ecommerce.sh",
     "examples:ecommerce:build": "./scripts/build-ecommerce.sh",
-    "release": "./scripts/release.sh"
+    "release": "./scripts/release.sh",
+    "netlify": "./scripts/netlify.sh"
   },
   "jest": {
     "preset": "jest-preset-angular",
