@@ -43,6 +43,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then
   conventional-changelog -p angular
 else
+  git reset origin master --hard
   exit 1
 fi
 
@@ -64,5 +65,6 @@ then
   git push --tags
   (cd dist && npm publish)
 else
+  git reset origin master --hard
   exit 1
 fi
