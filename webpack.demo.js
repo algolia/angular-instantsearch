@@ -32,7 +32,7 @@ module.exports = {
 
   output: {
     path: root('dev-novel', 'dist'),
-    publicPath: '/',
+    publicPath: '/dev-novel/',
     filename: isProd ? 'js/[name].[hash].js' : 'js/[name].js',
     chunkFilename: isProd ? '[id].[hash].chunk.js' : '[id].chunk.js',
   },
