@@ -1,3 +1,37 @@
+<a name="1.0.0-beta.3"></a>
+# [1.0.0-beta.3](https://github.com/algolia/angular-instantsearch/compare/1.0.0-beta.2...1.0.0-beta.3) (2017-11-20)
+
+### Breaking Changes
+
+Several widgets changed name, these will be the next naming for every InstantSearch library:
+
+| Before | Now |
+| ------ | --- |
+| `<ng-ais-clear-all>` | `<ng-ais-clear-refinements>` |
+| `<ng-ais-current-refined-values>` | `<ng-ais-current-refinements>` |
+| `<ng-ais-numeric-refinement-list>` | `<ng-ais-numeric-menu>` |
+| `<ng-ais-hits>` | `<ng-ais-results>` |
+| `<ng-ais-infinite-hits>` | `<ng-ais-infinite-results>` |
+| `<ng-ais-hits-per-page-selector>` | `<ng-ais-results-per-page>` |
+| `<ng-ais-sort-by-selector>` | `<ng-ais-sort-by>` |
+| `<ng-ais-star-rating>` | `<ng-ais-rating-menu>` |
+
+
+### Bug Fixes
+
+* **lib:** wrong import path for results module ([6f94e79](https://github.com/algolia/angular-instantsearch/commit/6f94e79))
+* **search-box:** update markup to match instantsearch.css ([2afddf1](https://github.com/algolia/angular-instantsearch/commit/2afddf1))
+* **webpack:** rootPath should be `/dev-novel` ([d037d7c](https://github.com/algolia/angular-instantsearch/commit/d037d7c))
+* **widges:** update className as well ([2f1d0a8](https://github.com/algolia/angular-instantsearch/commit/2f1d0a8))
+
+
+### Features
+
+* **dev-novel:** write component stories ([0e77ab2](https://github.com/algolia/angular-instantsearch/commit/0e77ab2))
+* **netlify:** add script to run ([902a9be](https://github.com/algolia/angular-instantsearch/commit/902a9be))
+
+
+
 <a name="1.0.0-beta.2"></a>
 # [1.0.0-beta.2](https://github.com/algolia/angular-instantsearch/compare/1.0.0-beta.1...1.0.0-beta.2) (2017-11-16)
 
