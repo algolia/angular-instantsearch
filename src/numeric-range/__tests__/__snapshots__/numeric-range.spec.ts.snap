@@ -1,0 +1,269 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NumericRange renders markup with state 1`] = `
+<ng-ais-numeric-range
+  currency={[Function String]}
+  cx={[Function Function]}
+  maxInputValue=""
+  minInputValue=""
+  precision={[Function Number]}
+  searchInstance={[Function NgAisInstance]}
+  separator={[Function String]}
+  state={[Function Object]}
+  submitLabel={[Function String]}
+  updateState={[Function Function]}
+>
+  
+      <div
+    class="ais-RangeSlider"
+  >
+    
+        
+    <ng-ais-header
+      ng-reflect-class-name="ais-RangeSlider-header ais-hea"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-header>
+    
+  
+        
+    <div
+      class="ais-RangeSlider-body ais-body"
+    >
+      
+          
+      <form
+        class="ais-RangeSlider-form"
+        novalidate=""
+      >
+        
+            
+        <label
+          class="ais-RangeSlider-label"
+        >
+          
+              
+          <span
+            class="ais-RangeSlider-currency"
+          >
+            $ 
+          </span>
+          
+              
+          <input
+            class="ais-RangeSlider-input"
+            max="100"
+            min="0"
+            placeholder="0"
+            step="0.01"
+            type="number"
+          />
+          
+            
+        </label>
+        
+  
+            
+        <span
+          class="ais-RangeSlider-separator"
+        >
+           to 
+        </span>
+        
+  
+            
+        <label
+          class="ais-RangeSlider-label"
+        >
+          
+              
+          <span
+            class="ais-RangeSlider-currency"
+          >
+            $ 
+          </span>
+          
+              
+          <input
+            class="ais-RangeSlider-input"
+            max="100"
+            min="0"
+            placeholder="100"
+            step="0.01"
+            type="number"
+          />
+          
+            
+        </label>
+        
+  
+            
+        <button
+          class="ais-RangeSlider-submit"
+        >
+          
+              Go
+            
+        </button>
+        
+          
+      </form>
+      
+        
+    </div>
+    
+  
+        
+    <ng-ais-footer
+      ng-reflect-class-name="ais-RangeSlider-footer ais-foo"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-footer>
+    
+      
+  </div>
+    
+</ng-ais-numeric-range>
+`;
+
+exports[`NumericRange renders markup without state 1`] = `
+<ng-ais-numeric-range
+  currency={[Function String]}
+  cx={[Function Function]}
+  maxInputValue=""
+  minInputValue=""
+  precision={[Function Number]}
+  searchInstance={[Function NgAisInstance]}
+  separator={[Function String]}
+  state={[Function Object]}
+  submitLabel={[Function String]}
+  updateState={[Function Function]}
+>
+  
+      <div
+    class="ais-RangeSlider"
+  >
+    
+        
+    <ng-ais-header
+      ng-reflect-class-name="ais-RangeSlider-header ais-hea"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-header>
+    
+  
+        
+    <div
+      class="ais-RangeSlider-body ais-body"
+    >
+      
+          
+      <form
+        class="ais-RangeSlider-form"
+        novalidate=""
+      >
+        
+            
+        <label
+          class="ais-RangeSlider-label"
+        >
+          
+              
+          <span
+            class="ais-RangeSlider-currency"
+          >
+            $ 
+          </span>
+          
+              
+          <input
+            class="ais-RangeSlider-input"
+            max="undefined"
+            min="undefined"
+            placeholder="undefined"
+            step="0.01"
+            type="number"
+          />
+          
+            
+        </label>
+        
+  
+            
+        <span
+          class="ais-RangeSlider-separator"
+        >
+           to 
+        </span>
+        
+  
+            
+        <label
+          class="ais-RangeSlider-label"
+        >
+          
+              
+          <span
+            class="ais-RangeSlider-currency"
+          >
+            $ 
+          </span>
+          
+              
+          <input
+            class="ais-RangeSlider-input"
+            max="undefined"
+            min="undefined"
+            placeholder="undefined"
+            step="0.01"
+            type="number"
+          />
+          
+            
+        </label>
+        
+  
+            
+        <button
+          class="ais-RangeSlider-submit"
+        >
+          
+              Go
+            
+        </button>
+        
+          
+      </form>
+      
+        
+    </div>
+    
+  
+        
+    <ng-ais-footer
+      ng-reflect-class-name="ais-RangeSlider-footer ais-foo"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-footer>
+    
+      
+  </div>
+    
+</ng-ais-numeric-range>
+`;
