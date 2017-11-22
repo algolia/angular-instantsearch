@@ -4,16 +4,23 @@ import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
 
 import { NgAisModule } from "angular-instantsearch";
 
+type Helper = {
+  search: Function;
+  addDisjunctiveFacetRefinement: Function;
+};
+
 export function wrapWithHits({
   template,
   styles = "",
   searchParameters = {},
-  methods = {}
+  methods = {},
+  searchFunction
 }: {
   template: string;
   styles?: string;
   searchParameters?: {};
   methods?: {};
+  searchFunction?: (helper: Helper) => void;
 }) {
   return (container: Element) => {
     @Component({
@@ -108,6 +115,7 @@ export function wrapWithHits({
     })
     class AppComponent {
       config = {
+        searchFunction,
         apiKey: "6be0576ff61c053d5f9a3225e2a90f76",
         appId: "latency",
         indexName: "instant_search",

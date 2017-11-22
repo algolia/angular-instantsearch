@@ -8,6 +8,29 @@ if (process.env.ENV === "build") {
   enableProdMode();
 }
 
+storiesOf("InstantSearch").add(
+  "with forced refinement",
+  wrapWithHits({
+    template: `
+      <ng-ais-refinement-list
+        header="Brand"
+        attributeName="brand"
+        operator="or"
+        [limitMin]="10"
+      >
+      </ng-ais-refinement-list>
+    `,
+    searchParameters: {
+      disjunctiveFacetsRefinements: { brand: ["Apple"] },
+      disjunctiveFacets: ["brand"]
+    },
+    searchFunction: helper => {
+      helper.addDisjunctiveFacetRefinement("brand", "Apple");
+      helper.search();
+    }
+  })
+);
+
 storiesOf("ClearRefinements")
   .add(
     "default",
@@ -209,14 +232,6 @@ storiesOf("Menu")
       `
     })
   );
-
-storiesOf("MenuSelect").add(
-  "default",
-  wrapWithHits({
-    template:
-      '<ng-ais-menu-select attributeName="categories"></ng-ais-menu-select>'
-  })
-);
 
 storiesOf("NumericMenu").add(
   "default",
