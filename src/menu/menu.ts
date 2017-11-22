@@ -27,9 +27,12 @@ export type MenuState = {
           <li
             [class]="cx('item')"
             *ngFor="let item of items"
-            (click)="state.refine(item.value)"
+            (click)="handleClick($event, item.value)"
           >
-            <a href="{{state.createURL(item.value)}}">
+            <a
+              href="{{state.createURL(item.value)}}"
+              (click)="handleClick($event, item.value)"
+            >
               {{item.label}}
               <span [class]="cx('count')">{{item.count}}</span>
             </a>
@@ -90,5 +93,12 @@ export class NgAisMenu extends BaseWidget {
     });
 
     super.ngOnInit();
+  }
+
+  handleClick(event: MouseEvent, value: string) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    this.state.refine(value);
   }
 }
