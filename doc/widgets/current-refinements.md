@@ -1,6 +1,6 @@
-## `<ng-ais-current-refined-values />`
+## `<ng-ais-current-refinements />`
 
-The current refined values widget has two purposes:
+The current refinements widget has two purposes:
 
 * give the user a synthetic view of the current filters.
 * give the user the ability to remove a filter.

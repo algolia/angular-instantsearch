@@ -1,6 +1,6 @@
-## `<ng-ais-clear-all />`
+## `<ng-ais-clear-refinements />`
 
-The ClearAll widget displays a button that lets the user clean every refinement applied to the search.
+The ClearRefinements widget displays a button that lets the user clean every refinement applied to the search.
 
 | Attributes           | Type       | Description
 | -                    | -          | -

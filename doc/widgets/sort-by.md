@@ -1,6 +1,6 @@
-##### `<ng-ais-sort-by-selector />`
+##### `<ng-ais-sort-by />`
 
-The SortBySelector component displays a list of indexes allowing a user to change the hits are sorting.
+The SortBy component displays a list of indexes allowing a user to change the hits are sorting.
 
 | Attributes  | Type                              | Description
 | -           | -                                 | -

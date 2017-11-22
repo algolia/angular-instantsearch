@@ -1,6 +1,6 @@
-## `<ng-ais-star-rating />`
+## `<ng-ais-rating-menu />`
 
-Star rating is used for displaying grade like filters. The values are normalized within boundaries.
+RatingMenu is used for displaying grade like filters. The values are normalized within boundaries.
 
 | Attributes       | Type       | Description
 | -                | -          | -
