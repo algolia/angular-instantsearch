@@ -13,26 +13,26 @@ There are various strategies that can be implemented for the no-result. This gui
 
 By default, Angular InstantSearch will display nothing when there are no results. The bare minimum to handle the no-result case is to provide the user with a message that indicates that no results were found in a friendly fashion.
 
-In order to do that, we define a custom `<ng-ais-hits>` template with the `<ng-template>` directive:
+In order to do that, we define a custom `<ng-ais-results>` template with the `<ng-template>` directive:
 
 ```html
-<ng-ais-hits>
+<ng-ais-results>
     <ng-template let-hits="hits" let-results="results">
         <!-- no results message -->
-        <p 
+        <p
             class="info"
             *ngIf="hits.length === 0"
         >
-            No results were found for the query: {{results.query}}. 
+            No results were found for the query: {{results.query}}.
             Try to remove some filters or change the search query.
         </p>
-        
+
         <!-- hit template -->
         <div *ngFor="let hit of hits">
             Hit: {{hit.objectID}}
         </div>
     </ng-template>
-</ng-ais-hits>
+</ng-ais-results>
 ```
 
 When there are no results, the user will see a paragraph that says: “No results were found for the query: xxx. Try to remove some filters or change the search query.”.
@@ -48,28 +48,28 @@ URL sync makes your InstantSearch app aware of changes in the URL. With this, we
 We do this by customizing again the no-result template and adding it a clear all link:
 
 ```html
-<ng-ais-hits>
+<ng-ais-results>
     <ng-template let-hits="hits" let-results="results">
         <!-- no results message -->
-        <p 
+        <p
             class="info"
             *ngIf="hits.length === 0"
         >
             No results were found for the query: {{results.query}}.<br />
             <a class="button" href=".">Clear all the filters</a>
         </p>
-        
+
         <!-- hit template -->
         <div *ngFor="let hit of hits">
             Hit: {{hit.objectID}}
         </div>
     </ng-template>
-</ng-ais-hits>
+</ng-ais-results>
 ```
 
 The secret of this last part is to use . as the href of the “clear all the filters” link. You can go further and make this link look like a button.
 
-### Conclusion 
+### Conclusion
 
 In this guide, you’ve learned:
 
