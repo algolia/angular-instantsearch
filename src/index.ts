@@ -13,7 +13,6 @@ import { NgAisMenuModule } from "./menu/menu.module";
 import { NgAisNumericMenuModule } from "./numeric-menu/numeric-menu.module";
 import { NgAisNumericSelectorModule } from "./numeric-selector/numeric-selector.module";
 import { NgAisPaginationModule } from "./pagination/pagination.module";
-import { NgAisPriceRangesModule } from "./price-ranges/price-ranges.module";
 import { NgAisRangeSliderModule } from "./range-slider/range-slider.module";
 import { NgAisRefinementListModule } from "./refinement-list/refinement-list.module";
 import { NgAisSearchBoxModule } from "./search-box/search-box.module";
@@ -22,6 +21,7 @@ import { NgAisRatingMenuModule } from "./rating-menu/rating-menu.module";
 import { NgAisStatsModule } from "./stats/stats.module";
 import { NgAisToggleModule } from "./toggle/toggle.module";
 import { NgAisHighlightModule } from "./highlight/highlight.module";
+import { NgAisNumericRangeModule } from "./numeric-range/numeric-range.module";
 
 const NGIS_MODULES = [
   NgAisInstantSearchModule,
@@ -39,12 +39,12 @@ const NGIS_MODULES = [
   NgAisToggleModule,
   NgAisInfiniteResultsModule,
   NgAisCurrentRefinementsModule,
-  NgAisPriceRangesModule,
   NgAisHierarchicalMenuModule,
   NgAisRatingMenuModule,
   NgAisRangeSliderModule,
   NgAisBreadcrumbModule,
-  NgAisHighlightModule
+  NgAisHighlightModule,
+  NgAisNumericRangeModule
 ];
 
 @NgModule({
