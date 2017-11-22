@@ -460,6 +460,16 @@ storiesOf("Toggle")
     })
   );
 
+storiesOf("NumericRange").add(
+  "default",
+  wrapWithHits({
+    template: `
+      <ng-ais-numeric-range attributeName="price">
+      </ng-ais-numeric-range>
+    `
+  })
+);
+
 start({
   projectName: "Angular InstantSearch",
   projectLink: "https://github.com/algolia/angular-instantsearch"
