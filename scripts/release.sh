@@ -63,6 +63,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then
   git push origin master
   git push --tags
+  yarn doc:publish
   (cd dist && npm publish)
 else
   git reset origin master --hard
