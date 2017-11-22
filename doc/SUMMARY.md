@@ -21,8 +21,8 @@
 * [Menu](widgets/menu.md)
 * [RefinementList](widgets/numeric-refinement-list.md)
 * [NumericSelector](widgets/numeric-selector.md)
+* [NumericRange](widgets/price-ranges.md)
 * [Pagination](widgets/pagination.md)
-* [PriceRanges](widgets/price-ranges.md)
 * [RangeSlider](widgets/range-slider.md)
 * [RefinementList](widgets/refinement-list.md)
 * [SearchBox](widgets/search-box.md)
@@ -30,4 +30,3 @@
 * [StarRating](widgets/star-rating.md)
 * [Stats](widgets/stats.md)
 * [Toggle](widgets/toggle.md)
-
