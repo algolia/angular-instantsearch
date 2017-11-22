@@ -20,7 +20,7 @@ Example:
 @Component({
   selector: 'ng-ais-app',
   template: `
-    <ng-ais-instantsearch 
+    <ng-ais-instantsearch
       [config]="{
         apiKey: '6be0576ff61c053d5f9a3225e2a90f76',
         appId: 'latency',
@@ -51,7 +51,7 @@ export class AppComponent {}
 > A hook that will be called each time a search needs to be done, with the helper as a parameter. It’s your responsibility to call `helper.search()`. This option allows you to avoid doing searches at page load for example.
 
 `createAlgoliaClient?: (algoliasearch: Function, appId: string, apiKey: string) => CustomClient`
-> Allows you to provide your own algolia client instead of the one instantiated internally. 
+> Allows you to provide your own algolia client instead of the one instantiated internally.
 > Useful in situations where you need to setup complex mechanism on the client or if you need to share it easily.
 > We forward `algoliasearch` which is the original algoliasearch module imported inside angular-instantsearch.
 
@@ -70,7 +70,7 @@ export class AppComponent {}
 > Idle time in ms after which a new state is created in the browser history. The default value is 700. The url is always updated at each keystroke but we only create a “previous search state” (activated when click on back button) every 700ms of idle time.
 
 `trackedParameters?: string[]`
-> Parameters that will be synchronized in the URL. 
+> Parameters that will be synchronized in the URL.
 > Default value is `['query', 'attribute:\*', 'index', 'page', 'hitsPerPage']`. attribute:* means all the faceting attributes will be tracked. You can track only some of them by using `[…, 'attribute:color', 'attribute:categories']`. All other possible values are all the attributes of the Helper SearchParameters.
 
 `useHash?: boolean`
@@ -79,5 +79,20 @@ export class AppComponent {}
 `getHistoryState?: Function`
 > Pass this function to override the default history API state we set to null. For example this could be used to force passing `{turbolinks: true}` to the history API every time we update it.
 
+#### Events
 
+You can register to the `(change)` event on the `<ng-ais-instantsearch>` which will be fired after every new search. This event is useful for instance to push data to Google Analytics to know more about your users search:
 
+```html
+<ng-ais-instantsearch
+  [config]="{...}"
+  (change)="onSearchChange($event)"
+>
+</ng-ais-instantsearch>
+```
+
+```ts
+onSearchChange({ results, state }: { results: {}, state: {} }) {
+  // Do what ever you need with the results or the state of search
+}
+```
