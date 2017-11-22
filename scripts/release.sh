@@ -41,7 +41,7 @@ echo
 
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-  conventional-changelog -p angular
+  conventional-changelog -p angular -i CHANGELOG.md -s
 else
   git reset origin master --hard
   exit 1
