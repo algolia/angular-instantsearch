@@ -1,3 +1,26 @@
+<a name="1.0.0-beta.4"></a>
+# [1.0.0-beta.4](https://github.com/algolia/angular-instantsearch/compare/1.0.0-beta.3...1.0.0-beta.4) (2017-11-22)
+
+
+### Bug Fixes
+
+* **dev:** wrong webpack rootPath on dev ([969a840](https://github.com/algolia/angular-instantsearch/commit/969a840))
+* **examples/ecommerce:** replace price-ranges widget ([c11fec8](https://github.com/algolia/angular-instantsearch/commit/c11fec8))
+* **menu:** apply `selected` class when item isRefined ([794d12f](https://github.com/algolia/angular-instantsearch/commit/794d12f))
+* **menu:** intercept <a> click event ([2991f93](https://github.com/algolia/angular-instantsearch/commit/2991f93))
+* **scripts/release:** reset command on fail ([4a8ada9](https://github.com/algolia/angular-instantsearch/commit/4a8ada9))
+* **scripts/release:** update correctly CHANGELOG.md ([58f2d11](https://github.com/algolia/angular-instantsearch/commit/58f2d11))
+
+
+### Features
+
+* **docs:** add doc folder ([cabc8cd](https://github.com/algolia/angular-instantsearch/commit/cabc8cd))
+* **instantsearch:** allow `(change)` event binding ([d4159df](https://github.com/algolia/angular-instantsearch/commit/d4159df))
+* **numeric-range:** add widget ([6efd241](https://github.com/algolia/angular-instantsearch/commit/6efd241))
+* **numeric-range:** remove `price-ranges` widget ([83a0bf8](https://github.com/algolia/angular-instantsearch/commit/83a0bf8))
+
+
+
 <a name="1.0.0-beta.3"></a>
 # [1.0.0-beta.3](https://github.com/algolia/angular-instantsearch/compare/1.0.0-beta.2...1.0.0-beta.3) (2017-11-20)
 
