@@ -31,6 +31,15 @@ export class InstantSearchInstance {
 
   public removeWidget: (widget: Widget) => void;
   public removeWidgets: (widgets: Widget[]) => void;
+
+  // EventEmmiter
+  public on: (eventName: string, callback: Function) => void;
+  public removeListener: (eventName: string, callback: Function) => void;
+
+  public helper: {
+    lastResults: Object;
+    state: Object;
+  };
 }
 
 @Injectable()
@@ -66,5 +75,21 @@ export class NgAisInstance {
 
   public removeWidgets(widgets: Widget[]) {
     this.instance.removeWidgets(widgets);
+  }
+
+  public on(eventName: string, callback: Function) {
+    this.instance.on(eventName, callback);
+  }
+
+  public off(eventName: string, callback: Function) {
+    this.instance.removeListener(eventName, callback);
+  }
+
+  getResults() {
+    return this.instance.helper.lastResults;
+  }
+
+  getState() {
+    return this.instance.helper.state;
   }
 }
