@@ -12,7 +12,7 @@ const defaultState = {
   createURL: jest.fn(),
   isShowingMore: false,
   items: [
-    { value: "foo", label: "foo", count: 2 },
+    { value: "foo", label: "foo", count: 2, isRefined: true },
     { value: "bar", label: "bar", count: 3 },
     { value: "foobar", label: "foobar", count: 4 }
   ],

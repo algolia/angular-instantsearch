@@ -25,7 +25,7 @@ export type MenuState = {
       <div [class]="cx('body')">
         <ul [class]="cx('list')">
           <li
-            [class]="cx('item')"
+            [class]="cx('item') + (item.isRefined ? (' ' + cx('item', 'selected')) : '')"
             *ngFor="let item of items"
             (click)="handleClick($event, item.value)"
           >
