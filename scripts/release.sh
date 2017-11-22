@@ -66,6 +66,6 @@ then
   yarn doc:publish
   (cd dist && npm publish)
 else
-  git reset origin master --hard
+  git reset origin/master --hard
   exit 1
 fi
