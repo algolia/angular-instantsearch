@@ -31,7 +31,7 @@ module.exports = {
   },
 
   output: {
-    path: root('examples', 'e-commerce', 'dist', 'dev-novel'),
+    path: root('netlify-dist', 'dev-novel'),
     publicPath: isProd ? '/dev-novel/' : '/',
     filename: isProd ? 'js/[name].[hash].js' : 'js/[name].js',
     chunkFilename: isProd ? '[id].[hash].chunk.js' : '[id].chunk.js',
