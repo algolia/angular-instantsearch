@@ -6,7 +6,7 @@ yarn build
 yarn link
 
 (
-  cd examples/e-commerce
+  cd examples/$1
   yarn
   yarn link angular-instantsearch
   yarn start
