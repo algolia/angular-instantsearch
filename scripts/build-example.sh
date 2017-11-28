@@ -10,5 +10,5 @@ yarn build
   yarn
   mkdir ./node_modules/angular-instantsearch
   cp -R ../../dist/* ./node_modules/angular-instantsearch
-  ng build --prod --base-href /$1 -d /$1
+  ./node_modules/.bin/ng build --prod --base-href /$1 -d /$1
 )
