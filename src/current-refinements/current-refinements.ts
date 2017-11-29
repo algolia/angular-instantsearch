@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, Inject, PLATFORM_ID } from "@angular/core";
 import { connectCurrentRefinedValues } from "instantsearch.js/es/connectors";
 import { noop, isFunction } from "lodash-es";
 
@@ -83,7 +83,10 @@ export class NgAisCurrentRefinements extends BaseWidget {
       : this.state.refinements;
   }
 
-  constructor(searchInstance: NgAisInstance) {
+  constructor(
+    @Inject(PLATFORM_ID) public platformId: Object,
+    searchInstance: NgAisInstance
+  ) {
     super(searchInstance, "CurrentRefinements");
   }
 

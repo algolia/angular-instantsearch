@@ -1,4 +1,5 @@
 import { Input, OnDestroy, OnInit } from "@angular/core";
+import { isPlatformBrowser } from "@angular/common";
 import { noop } from "lodash-es";
 
 import { NgAisInstance } from "./instantsearch/instantsearch-instance";
@@ -30,6 +31,9 @@ export type Connector = (
 ) => (widgetOptions?: object) => Widget;
 
 export class BaseWidget implements OnInit, OnDestroy {
+  // ssr platformId
+  public plateformId: Object;
+
   // header footer
   @Input() public header?: string;
   @Input() public footer?: string;
@@ -51,7 +55,9 @@ export class BaseWidget implements OnInit, OnDestroy {
   }
 
   public ngOnDestroy() {
-    this.searchInstance.removeWidget(this.widget);
+    if (isPlatformBrowser(this.plateformId)) {
+      this.searchInstance.removeWidget(this.widget);
+    }
   }
 
   public updateState = (

@@ -1,4 +1,11 @@
-import { Component, Input, Output, EventEmitter } from "@angular/core";
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  Inject,
+  PLATFORM_ID
+} from "@angular/core";
 import { connectSearchBox } from "instantsearch.js/es/connectors";
 import { noop } from "lodash-es";
 
@@ -93,7 +100,10 @@ export class NgAisSearchBox extends BaseWidget {
     refine: noop
   };
 
-  constructor(searchInstance: NgAisInstance) {
+  constructor(
+    @Inject(PLATFORM_ID) public platformId: Object,
+    searchInstance: NgAisInstance
+  ) {
     super(searchInstance, "SearchBox");
     this.createWidget(connectSearchBox);
   }

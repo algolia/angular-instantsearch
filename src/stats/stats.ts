@@ -1,4 +1,10 @@
-import { Component, ContentChild, TemplateRef } from "@angular/core";
+import {
+  Component,
+  ContentChild,
+  TemplateRef,
+  Inject,
+  PLATFORM_ID
+} from "@angular/core";
 import { connectStats } from "instantsearch.js/es/connectors";
 
 import { BaseWidget } from "../base-widget";
@@ -42,7 +48,10 @@ export class NgAisStats extends BaseWidget {
     return { state: this.state };
   }
 
-  constructor(searchInstance: NgAisInstance) {
+  constructor(
+    @Inject(PLATFORM_ID) public platformId: Object,
+    searchInstance: NgAisInstance
+  ) {
     super(searchInstance, "Stats");
     this.createWidget(connectStats);
   }
