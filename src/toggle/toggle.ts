@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, Inject, PLATFORM_ID } from "@angular/core";
 import { connectToggle } from "instantsearch.js/es/connectors";
 import { noop } from "lodash-es";
 
@@ -59,7 +59,10 @@ export class NgAisToggle extends BaseWidget {
     value: {}
   };
 
-  constructor(searchInstance: NgAisInstance) {
+  constructor(
+    @Inject(PLATFORM_ID) public platformId: Object,
+    searchInstance: NgAisInstance
+  ) {
     super(searchInstance, "Toggle");
   }
 

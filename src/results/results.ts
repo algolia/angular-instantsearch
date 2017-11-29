@@ -1,4 +1,12 @@
-import { Input, Component, ContentChild, TemplateRef } from "@angular/core";
+import {
+  Inject,
+  Input,
+  Component,
+  ContentChild,
+  TemplateRef,
+  PLATFORM_ID
+} from "@angular/core";
+
 import { connectHits } from "instantsearch.js/es/connectors";
 import { isFunction } from "lodash-es";
 
@@ -41,7 +49,10 @@ export class NgAisResults extends BaseWidget {
   // inner widget state returned from connector
   public state: { hits: {}[]; results: {} } = { hits: [], results: {} };
 
-  constructor(searchInstance: NgAisInstance) {
+  constructor(
+    @Inject(PLATFORM_ID) public plateformId: Object,
+    searchInstance: NgAisInstance
+  ) {
     super(searchInstance, "Results");
     this.createWidget(connectHits, { escapeHits: true });
   }

@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, Inject, PLATFORM_ID } from "@angular/core";
 import { connectBreadcrumb } from "instantsearch.js/es/connectors";
 import { noop } from "lodash-es";
 
@@ -68,7 +68,10 @@ export class NgAisBreadcrumb extends BaseWidget {
     refine: noop
   };
 
-  constructor(searchInstance: NgAisInstance) {
+  constructor(
+    @Inject(PLATFORM_ID) public platformId: Object,
+    searchInstance: NgAisInstance
+  ) {
     super(searchInstance, "Breadcrumb");
   }
 

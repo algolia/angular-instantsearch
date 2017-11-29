@@ -1,4 +1,11 @@
-import { Component, ContentChild, Input, TemplateRef } from "@angular/core";
+import {
+  Component,
+  ContentChild,
+  Input,
+  TemplateRef,
+  Inject,
+  PLATFORM_ID
+} from "@angular/core";
 import { connectInfiniteHits } from "instantsearch.js/es/connectors";
 import { noop, isFunction } from "lodash-es";
 
@@ -60,7 +67,10 @@ export class NgAisInfiniteResults extends BaseWidget {
     results: {}
   };
 
-  constructor(searchInstance: NgAisInstance) {
+  constructor(
+    @Inject(PLATFORM_ID) public platformId: Object,
+    searchInstance: NgAisInstance
+  ) {
     super(searchInstance, "InfiniteResults");
     this.createWidget(connectInfiniteHits, { escapeHits: true });
   }
