@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
+import { Component } from "@angular/core";
+import { Meta, Title } from "@angular/platform-browser";
 
 @Component({
-  selector: 'app-root',
+  selector: "app-root",
   template: `
   <h1>Universal Demo using Angular and Angular CLI</h1>
   <a routerLink="/">Home</a>
@@ -12,6 +12,4 @@ import { Meta, Title } from '@angular/platform-browser';
   `,
   styles: []
 })
-export class AppComponent {
-
-}
+export class AppComponent {}

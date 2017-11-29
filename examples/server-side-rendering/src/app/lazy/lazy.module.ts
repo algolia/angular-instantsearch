@@ -1,8 +1,8 @@
-import {NgModule, Component} from '@angular/core'
-import {RouterModule} from '@angular/router'
+import { NgModule, Component } from "@angular/core";
+import { RouterModule } from "@angular/router";
 
 @Component({
-  selector: 'lazy-view',
+  selector: "lazy-view",
   template: `<h3>i'm lazy</h3>`
 })
 export class LazyComponent {}
@@ -11,10 +11,8 @@ export class LazyComponent {}
   declarations: [LazyComponent],
   imports: [
     RouterModule.forChild([
-      { path: '', component: LazyComponent, pathMatch: 'full'}
+      { path: "", component: LazyComponent, pathMatch: "full" }
     ])
   ]
 })
-export class LazyModule {
-
-}
+export class LazyModule {}
