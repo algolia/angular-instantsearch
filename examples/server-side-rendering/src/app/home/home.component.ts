@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Component, OnInit } from "@angular/core";
+import { Observable } from "rxjs/Observable";
 
 @Component({
-  selector: 'home',
+  selector: "home",
   template: `<h3>{{ message }}</h3>`
 })
 export class HomeComponent implements OnInit {
@@ -11,6 +11,6 @@ export class HomeComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.message = 'Hello';
+    this.message = "Hello";
   }
 }
