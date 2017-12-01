@@ -3,12 +3,18 @@ import { isPlatformBrowser } from "@angular/common";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 import instantsearch from "instantsearch.js/es";
-import algoliasearch from "algoliasearch/index";
-import encode from "querystring-es3/encode";
+import * as algoliasearchProxy from "algoliasearch/index";
+import * as encodeProxy from "querystring-es3/encode";
 
 import { each, reduce } from "lodash-es";
 
 import { Widget } from "../base-widget";
+
+// AOT + Rollup workaround
+// https://github.com/rollup/rollup/issues/1267#issuecomment-296395734
+
+const algoliasearch = algoliasearchProxy.default || algoliasearchProxy;
+const encode = encodeProxy.default || encodeProxy;
 
 export type InstantSearchConfig = {
   appId: string;
@@ -26,7 +32,6 @@ export type InstantSearchConfig = {
   urlSync?:
     | boolean
     | {
-        s;
         mapping?: object;
         threshold?: number;
         trackedParameters?: string[];
