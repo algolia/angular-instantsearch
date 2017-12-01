@@ -1,14 +1,62 @@
 import { Component } from "@angular/core";
-import { Meta, Title } from "@angular/platform-browser";
 
 @Component({
   selector: "app-root",
   template: `
-  <h1>Universal Demo using Angular and Angular CLI</h1>
-  <a routerLink="/">Home</a>
-  <a routerLink="/lazy">Lazy</a>
-  <a routerLink="/lazy/nested">Lazy_Nested</a>
-  <router-outlet></router-outlet>
+    <div class="container">
+      <ng-ais-instantsearch
+        [config]="{
+          appId: 'latency',
+          apiKey: '6be0576ff61c053d5f9a3225e2a90f76',
+          indexName: 'ikea',
+          urlSync: true
+        }"
+      >
+        <div class="jumbotron">
+          <p class="text-center">
+            <ng-ais-search-box placeholder="Search a product"></ng-ais-search-box>
+          </p>
+
+          <div class="row">
+            <div class="col-4">
+              <ng-ais-hierarchical-menu
+                header="Show results for"
+                [attributes]="['category', 'sub_category', 'sub_sub_category']"
+                [sortBy]="['name:asc']"
+              >
+              </ng-ais-hierarchical-menu>
+            </div>
+
+            <div class="col-4">
+              <ng-ais-refinement-list
+                header="Colors"
+                attributeName="colors"
+                operator="or"
+                limit="10"
+              >
+              </ng-ais-refinement-list>
+            </div>
+
+            <div class="col-4">
+              <ng-ais-sort-by
+                header="Sort by"
+                [indices]="
+                  [
+                    {name: 'ikea', label: 'Featured'},
+                    {name: 'ikea_price_asc', label: 'Price asc.'},
+                    {name: 'ikea_price_desc', label: 'Price desc.'}
+                  ]
+                "
+              >
+              </ng-ais-sort-by>
+            </div>
+          </div>
+        </div>
+        <ng-ais-results></ng-ais-results>
+        <hr>
+        <ng-ais-pagination></ng-ais-pagination>
+      </ng-ais-instantsearch>
+    </div>
   `,
   styles: []
 })
