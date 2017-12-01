@@ -19,7 +19,7 @@ export type RatingMenuState = {
       <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
 
       <div [class]="cx('body')">
-        <svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
+        <svg style="display:none;">
           <symbol
             id="ais-StarRating-starSymbol"
             viewBox="0 0 24 24"

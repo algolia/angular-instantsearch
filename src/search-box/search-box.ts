@@ -46,7 +46,6 @@ import { NgAisInstance } from "../instantsearch/instantsearch-instance";
           >
             <svg
               [ngClass]="cx('submitIcon')"
-              xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 40 40"
               width="40"
               height="40"
@@ -64,7 +63,6 @@ import { NgAisInstance } from "../instantsearch/instantsearch-instance";
           >
             <svg
               [ngClass]="cx('resetIcon')"
-              xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
               width="20"
               height="20"
