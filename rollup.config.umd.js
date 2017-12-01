@@ -8,8 +8,11 @@ export default {
   external: [
     '@angular/core',
     '@angular/common',
+    '@angular/common/http',
     'instantsearch.js/es',
     'instantsearch.js/es/connectors',
+    'algoliasearch/index',
+    'querystring-es3/encode',
     'lodash-es',
     'nouislider',
   ],
