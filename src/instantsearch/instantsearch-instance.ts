@@ -6,7 +6,7 @@ import instantsearch from "instantsearch.js/es";
 import * as algoliasearchProxy from "algoliasearch/index";
 import * as encodeProxy from "querystring-es3/encode";
 
-import { each, reduce } from "lodash-es";
+import { each } from "lodash-es";
 
 import { Widget } from "../base-widget";
 
