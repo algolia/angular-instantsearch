@@ -1,5 +1,12 @@
-import { Injectable } from "@angular/core";
+import { Injectable, Inject, PLATFORM_ID } from "@angular/core";
+import { isPlatformBrowser } from "@angular/common";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+
 import instantsearch from "instantsearch.js/es";
+import algoliasearch from "algoliasearch/index";
+import encode from "querystring-es3/encode";
+
+import { each, reduce } from "lodash-es";
 
 import { Widget } from "../base-widget";
 
@@ -10,11 +17,16 @@ export type InstantSearchConfig = {
 
   numberLocale?: string;
   searchFunction?: () => void;
-  createAlgoliaClient?: () => object;
+  createAlgoliaClient?: (
+    algoliasearch: Function,
+    appId: string,
+    apiKey: string
+  ) => object;
   searchParameters?: object | void;
   urlSync?:
     | boolean
     | {
+        s;
         mapping?: object;
         threshold?: number;
         trackedParameters?: string[];
@@ -46,6 +58,11 @@ export class InstantSearchInstance {
 export class NgAisInstance {
   private instance?: InstantSearchInstance;
 
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private http: HttpClient
+  ) {}
+
   public init(config: InstantSearchConfig) {
     // add default searchParameters with highlighting config
     if (!config.searchParameters) config.searchParameters = {};
@@ -53,6 +70,51 @@ export class NgAisInstance {
       highlightPreTag: "__ais-highlight__",
       highlightPostTag: "__/ais-highlight__"
     });
+
+    const createAlgoliaClient = (_, appId, apiKey) => {
+      const client = algoliasearch(appId, apiKey, {});
+
+      client._request = (rawUrl, opts) => {
+        let headers = new HttpHeaders();
+
+        headers = headers.set(
+          "content-type",
+          opts.method === "POST"
+            ? "application/x-www-form-urlencoded"
+            : "application/json"
+        );
+
+        headers = headers.set("accept", "application/json");
+
+        const url =
+          rawUrl + (rawUrl.includes("?") ? "&" : "?") + encode(opts.headers);
+
+        return new Promise((resolve, reject) => {
+          this.http
+            .request(opts.method, url, {
+              headers,
+              body: opts.body,
+              observe: "response"
+            })
+            .subscribe(resp =>
+              resolve({
+                statusCode: resp.status,
+                body: resp.body,
+                headers: resp.headers
+              })
+            );
+        });
+      };
+
+      return client;
+    };
+
+    Object.assign(config, { createAlgoliaClient });
+
+    // remove URLSync widget if on SSR
+    if (!isPlatformBrowser(this.platformId)) {
+      config.urlSync = false;
+    }
 
     this.instance = instantsearch(config);
   }
