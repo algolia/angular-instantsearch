@@ -96,12 +96,19 @@ export class NgAisInstance {
               body: opts.body,
               observe: "response"
             })
-            .subscribe(resp =>
-              resolve({
-                statusCode: resp.status,
-                body: resp.body,
-                headers: resp.headers
-              })
+            .subscribe(
+              resp =>
+                resolve({
+                  statusCode: resp.status,
+                  body: resp.body,
+                  headers: resp.headers
+                }),
+              resp =>
+                reject({
+                  statusCode: resp.status,
+                  body: resp.body,
+                  headers: resp.headers
+                })
             );
         });
       };
