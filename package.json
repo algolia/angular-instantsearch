@@ -47,10 +47,12 @@
   "dependencies": {
     "@angular/common": "^4.4.5",
     "@angular/core": "^4.4.5",
+    "algoliasearch": "^3.24.7",
     "instantsearch.css": "^2.0.0",
     "instantsearch.js": "^2.3.1",
     "lodash-es": "^4.17.4",
-    "nouislider": "^10.0.0"
+    "nouislider": "^10.0.0",
+    "querystring-es3": "^0.2.1"
   },
   "devDependencies": {
     "@angular/compiler": "^4.4.5",
