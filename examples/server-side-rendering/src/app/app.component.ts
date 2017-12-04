@@ -1,17 +1,14 @@
 import { Component } from "@angular/core";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { TransferState, makeStateKey } from "@angular/platform-browser";
+
+import { createSSRAlgoliaClient } from "angular-instantsearch";
 
 @Component({
   selector: "app-root",
   template: `
     <div class="container">
-      <ng-ais-instantsearch
-        [config]="{
-          appId: 'latency',
-          apiKey: '6be0576ff61c053d5f9a3225e2a90f76',
-          indexName: 'ikea',
-          urlSync: true
-        }"
-      >
+      <ng-ais-instantsearch [config]="instantsearchConfig">
         <div class="jumbotron">
           <p class="text-center">
             <ng-ais-search-box placeholder="Search a product"></ng-ais-search-box>
@@ -60,4 +57,24 @@ import { Component } from "@angular/core";
   `,
   styles: []
 })
-export class AppComponent {}
+export class AppComponent {
+  public instantsearchConfig: {};
+
+  constructor(
+    private httpClient: HttpClient,
+    private transferState: TransferState
+  ) {
+    this.instantsearchConfig = {
+      appId: "latency",
+      apiKey: "6be0576ff61c053d5f9a3225e2a90f76",
+      indexName: "ikea",
+      urlSync: true,
+      createAlgoliaClient: createSSRAlgoliaClient({
+        makeStateKey,
+        HttpHeaders,
+        transferState: this.transferState,
+        httpClient: this.httpClient
+      })
+    };
+  }
+}
