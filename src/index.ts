@@ -23,6 +23,10 @@ import { NgAisToggleModule } from "./toggle/toggle.module";
 import { NgAisHighlightModule } from "./highlight/highlight.module";
 import { NgAisNumericRangeModule } from "./numeric-range/numeric-range.module";
 
+// Custom SSR algoliasearchClient
+import { createSSRAlgoliaClient } from "./create-ssr-algolia-client";
+export { createSSRAlgoliaClient };
+
 const NGIS_MODULES = [
   NgAisInstantSearchModule,
   NgAisResultsModule,
