@@ -1,20 +1,9 @@
 import { Injectable, Inject, PLATFORM_ID } from "@angular/core";
 import { isPlatformBrowser } from "@angular/common";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 import instantsearch from "instantsearch.js/es";
-import * as algoliasearchProxy from "algoliasearch/index";
-import * as encodeProxy from "querystring-es3/encode";
-
-import { each } from "lodash-es";
 
 import { Widget } from "../base-widget";
-
-// AOT + Rollup workaround
-// https://github.com/rollup/rollup/issues/1267#issuecomment-296395734
-
-const algoliasearch = algoliasearchProxy.default || algoliasearchProxy;
-const encode = encodeProxy.default || encodeProxy;
 
 export type InstantSearchConfig = {
   appId: string;
@@ -62,11 +51,9 @@ export class InstantSearchInstance {
 @Injectable()
 export class NgAisInstance {
   private instance?: InstantSearchInstance;
+  private didSSR: boolean;
 
-  constructor(
-    @Inject(PLATFORM_ID) private platformId: Object,
-    private http: HttpClient
-  ) {}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   public init(config: InstantSearchConfig) {
     // add default searchParameters with highlighting config
@@ -75,53 +62,6 @@ export class NgAisInstance {
       highlightPreTag: "__ais-highlight__",
       highlightPostTag: "__/ais-highlight__"
     });
-
-    const createAlgoliaClient = (_, appId, apiKey) => {
-      const client = algoliasearch(appId, apiKey, {});
-
-      client._request = (rawUrl, opts) => {
-        let headers = new HttpHeaders();
-
-        headers = headers.set(
-          "content-type",
-          opts.method === "POST"
-            ? "application/x-www-form-urlencoded"
-            : "application/json"
-        );
-
-        headers = headers.set("accept", "application/json");
-
-        const url =
-          rawUrl + (rawUrl.includes("?") ? "&" : "?") + encode(opts.headers);
-
-        return new Promise((resolve, reject) => {
-          this.http
-            .request(opts.method, url, {
-              headers,
-              body: opts.body,
-              observe: "response"
-            })
-            .subscribe(
-              resp =>
-                resolve({
-                  statusCode: resp.status,
-                  body: resp.body,
-                  headers: resp.headers
-                }),
-              resp =>
-                reject({
-                  statusCode: resp.status,
-                  body: resp.body,
-                  headers: resp.headers
-                })
-            );
-        });
-      };
-
-      return client;
-    };
-
-    Object.assign(config, { createAlgoliaClient });
 
     // remove URLSync widget if on SSR
     if (!isPlatformBrowser(this.platformId)) {
