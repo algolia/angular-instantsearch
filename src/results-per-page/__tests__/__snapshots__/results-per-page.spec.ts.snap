@@ -3,6 +3,7 @@
 exports[`ResultsPerPage renders markup with state 1`] = `
 <ng-ais-results-per-page
   cx={[Function Function]}
+  platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
   updateState={[Function Function]}
@@ -88,6 +89,7 @@ exports[`ResultsPerPage renders markup with state 1`] = `
 exports[`ResultsPerPage renders markup without state 1`] = `
 <ng-ais-results-per-page
   cx={[Function Function]}
+  platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
   updateState={[Function Function]}

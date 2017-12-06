@@ -3,6 +3,7 @@
 exports[`Hits renders markup with state 1`] = `
 <ng-ais-results
   cx={[Function Function]}
+  plateformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
   template="undefined"
@@ -146,6 +147,7 @@ exports[`Hits renders markup with state 1`] = `
 exports[`Hits renders markup without state 1`] = `
 <ng-ais-results
   cx={[Function Function]}
+  plateformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
   template="undefined"
@@ -221,6 +223,7 @@ exports[`Hits renders markup without state 1`] = `
 exports[`Hits should apply \`transformItems\` if specified 1`] = `
 <ng-ais-results
   cx={[Function Function]}
+  plateformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
   template="undefined"

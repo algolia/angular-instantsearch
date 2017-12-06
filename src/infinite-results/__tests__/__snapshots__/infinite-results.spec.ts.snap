@@ -3,6 +3,7 @@
 exports[`InfiniteHits renders markup with state 1`] = `
 <ng-ais-infinite-results
   cx={[Function Function]}
+  platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
   showMoreLabel={[Function String]}
   state={[Function Object]}
@@ -157,6 +158,7 @@ exports[`InfiniteHits renders markup with state 1`] = `
 exports[`InfiniteHits renders markup without state 1`] = `
 <ng-ais-infinite-results
   cx={[Function Function]}
+  platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
   showMoreLabel={[Function String]}
   state={[Function Object]}

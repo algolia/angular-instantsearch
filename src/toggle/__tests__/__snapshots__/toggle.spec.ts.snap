@@ -4,6 +4,7 @@ exports[`Toggle should render with a label 1`] = `
 <ng-ais-toggle
   cx={[Function Function]}
   label={[Function String]}
+  platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
   updateState={[Function Function]}
@@ -95,6 +96,7 @@ exports[`Toggle should render with a label 1`] = `
 exports[`Toggle should render with state 1`] = `
 <ng-ais-toggle
   cx={[Function Function]}
+  platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
   updateState={[Function Function]}
@@ -186,6 +188,7 @@ exports[`Toggle should render with state 1`] = `
 exports[`Toggle should render without state 1`] = `
 <ng-ais-toggle
   cx={[Function Function]}
+  platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
   updateState={[Function Function]}

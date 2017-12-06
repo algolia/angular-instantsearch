@@ -6,6 +6,7 @@ exports[`ClearRefinements renders markup without state 1`] = `
   clearsQuery="false"
   cx={[Function Function]}
   excludeAttributes={[Function Array]}
+  platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
   updateState={[Function Function]}
