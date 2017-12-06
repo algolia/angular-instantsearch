@@ -5,6 +5,7 @@ import {
 
 import { NgModule } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
+import { PrebootModule } from "preboot";
 
 import { NgAisModule } from "angular-instantsearch";
 
@@ -14,6 +15,7 @@ import { AppComponent } from "./app.component";
   declarations: [AppComponent],
   imports: [
     BrowserModule.withServerTransition({ appId: "my-app" }),
+    PrebootModule.withConfig({ appRoot: "app-root" }),
     HttpClientModule,
     BrowserTransferStateModule,
     NgAisModule.forRoot()
