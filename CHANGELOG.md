@@ -1,3 +1,20 @@
+<a name="1.0.0-beta.5"></a>
+# [1.0.0-beta.5](https://github.com/algolia/angular-instantsearch/compare/1.0.0-beta.4...1.0.0-beta.5) (2017-12-06)
+
+
+### Bug Fixes
+
+* **scripts:** use full path to `ng` binary ([4a8dcf0](https://github.com/algolia/angular-instantsearch/commit/4a8dcf0))
+
+
+### Features
+
+* **examples:** add two page SPA ([32cbe35](https://github.com/algolia/angular-instantsearch/commit/32cbe35))
+* **examples:** angular router bootstrap ([2a26a6e](https://github.com/algolia/angular-instantsearch/commit/2a26a6e))
+* **scripts:** add `run-example` script ([1d292d2](https://github.com/algolia/angular-instantsearch/commit/1d292d2))
+
+
+
 <a name="1.0.0-beta.4"></a>
 # [1.0.0-beta.4](https://github.com/algolia/angular-instantsearch/compare/1.0.0-beta.3...1.0.0-beta.4) (2017-11-22)
 
