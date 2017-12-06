@@ -3,6 +3,7 @@
 exports[`Breadcrumb renders markup with two items 1`] = `
 <ng-ais-breadcrumb
   cx={[Function Function]}
+  platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
   updateState={[Function Function]}
@@ -111,6 +112,7 @@ exports[`Breadcrumb renders markup with two items 1`] = `
 exports[`Breadcrumb renders markup without state 1`] = `
 <ng-ais-breadcrumb
   cx={[Function Function]}
+  platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
   updateState={[Function Function]}
@@ -174,6 +176,7 @@ exports[`Breadcrumb should display an header and a footer 1`] = `
   cx={[Function Function]}
   footer={[Function String]}
   header={[Function String]}
+  platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
   updateState={[Function Function]}

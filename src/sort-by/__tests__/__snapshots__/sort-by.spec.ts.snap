@@ -3,6 +3,7 @@
 exports[`SortBy renders markup with state 1`] = `
 <ng-ais-sort-by
   cx={[Function Function]}
+  platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
   updateState={[Function Function]}
@@ -80,6 +81,7 @@ exports[`SortBy renders markup with state 1`] = `
 exports[`SortBy renders markup without state 1`] = `
 <ng-ais-sort-by
   cx={[Function Function]}
+  platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
   updateState={[Function Function]}

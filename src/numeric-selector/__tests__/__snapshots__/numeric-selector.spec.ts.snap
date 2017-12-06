@@ -4,6 +4,7 @@ exports[`NumericSelector renders markup with state 1`] = `
 <ng-ais-numeric-selector
   cx={[Function Function]}
   operator={[Function String]}
+  platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
   updateState={[Function Function]}
@@ -98,6 +99,7 @@ exports[`NumericSelector renders markup without state 1`] = `
 <ng-ais-numeric-selector
   cx={[Function Function]}
   operator={[Function String]}
+  platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
   state={[Function Object]}
   updateState={[Function Function]}

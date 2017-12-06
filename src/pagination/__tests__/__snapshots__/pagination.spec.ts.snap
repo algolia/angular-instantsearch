@@ -4,6 +4,7 @@ exports[`Pagination renders does not uses pagesPadding when nbPages < pagesPaddi
 <ng-ais-pagination
   cx={[Function Function]}
   pagesPadding={[Function Number]}
+  platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
   showFirst={[Function Boolean]}
   showLast="false"
@@ -214,6 +215,7 @@ exports[`Pagination renders markup without state 1`] = `
 <ng-ais-pagination
   cx={[Function Function]}
   pagesPadding={[Function Number]}
+  platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
   showFirst={[Function Boolean]}
   showLast="false"
@@ -286,6 +288,7 @@ exports[`Pagination renders with pages in state 1`] = `
 <ng-ais-pagination
   cx={[Function Function]}
   pagesPadding={[Function Number]}
+  platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
   showFirst={[Function Boolean]}
   showLast="false"
@@ -530,6 +533,7 @@ exports[`Pagination should display an header and a footer 1`] = `
   footer={[Function String]}
   header={[Function String]}
   pagesPadding={[Function Number]}
+  platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
   showFirst={[Function Boolean]}
   showLast="false"

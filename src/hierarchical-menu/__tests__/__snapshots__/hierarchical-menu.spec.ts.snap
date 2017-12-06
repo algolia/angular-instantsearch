@@ -4,6 +4,7 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
 <ng-ais-hierarchical-menu
   cx={[Function Function]}
   limit={[Function Number]}
+  platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
   separator={[Function String]}
   state={[Function Object]}
@@ -449,6 +450,7 @@ exports[`HierarchicalMenu renders markup without state 1`] = `
 <ng-ais-hierarchical-menu
   cx={[Function Function]}
   limit={[Function Number]}
+  platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
   separator={[Function String]}
   state={[Function Object]}
@@ -512,6 +514,7 @@ exports[`HierarchicalMenu should apply \`transformItems\` if specified 1`] = `
 <ng-ais-hierarchical-menu
   cx={[Function Function]}
   limit={[Function Number]}
+  platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
   separator={[Function String]}
   state={[Function Object]}

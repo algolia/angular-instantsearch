@@ -4,6 +4,7 @@ exports[`Menu renders markup with state 1`] = `
 <ng-ais-menu
   cx={[Function Function]}
   limitMin={[Function Number]}
+  platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
   showLessLabel={[Function String]}
   showMoreLabel={[Function String]}
@@ -138,6 +139,7 @@ exports[`Menu renders markup without state 1`] = `
 <ng-ais-menu
   cx={[Function Function]}
   limitMin={[Function Number]}
+  platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
   showLessLabel={[Function String]}
   showMoreLabel={[Function String]}
@@ -206,6 +208,7 @@ exports[`Menu should apply \`transformItems\` if specified 1`] = `
 <ng-ais-menu
   cx={[Function Function]}
   limitMin={[Function Number]}
+  platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
   showLessLabel={[Function String]}
   showMoreLabel={[Function String]}
