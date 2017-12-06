@@ -48,6 +48,7 @@
     "@angular/common": "^4.4.5",
     "@angular/core": "^4.4.5",
     "algoliasearch": "^3.24.7",
+    "algoliasearch-helper": "^2.23.0",
     "instantsearch.css": "^2.0.0",
     "instantsearch.js": "^2.3.1",
     "lodash-es": "^4.17.4",
