@@ -1,8 +1,12 @@
-import { Component } from "@angular/core";
+import { Component, Injector, Inject, PLATFORM_ID } from "@angular/core";
+import { isPlatformServer } from "@angular/common";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { TransferState, makeStateKey } from "@angular/platform-browser";
 
-import { createSSRAlgoliaClient } from "angular-instantsearch";
+import {
+  createSSRAlgoliaClient,
+  parseServerRequest
+} from "angular-instantsearch";
 
 @Component({
   selector: "app-root",
@@ -62,9 +66,18 @@ export class AppComponent {
 
   constructor(
     private httpClient: HttpClient,
-    private transferState: TransferState
+    private transferState: TransferState,
+    private injector: Injector,
+    @Inject(PLATFORM_ID) private platformId: Object
   ) {
+    const req = isPlatformServer(this.platformId)
+      ? this.injector.get("request")
+      : undefined;
+
+    const searchParameters = parseServerRequest(req);
+
     this.instantsearchConfig = {
+      searchParameters,
       appId: "latency",
       apiKey: "6be0576ff61c053d5f9a3225e2a90f76",
       indexName: "ikea",
