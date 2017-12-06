@@ -27,6 +27,9 @@ import { NgAisNumericRangeModule } from "./numeric-range/numeric-range.module";
 import { createSSRAlgoliaClient } from "./create-ssr-algolia-client";
 export { createSSRAlgoliaClient };
 
+import { parseServerRequest } from "./parse-server-request";
+export { parseServerRequest };
+
 const NGIS_MODULES = [
   NgAisInstantSearchModule,
   NgAisResultsModule,
