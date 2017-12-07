@@ -20,14 +20,12 @@ First, clone the [@angular/universal-starter](https://github.com/angular/univers
 ```sh
 > git clone git@github.com:angular/universal-starter.git [your-app-name]
 > cd [your-app-name]
-> yarn # OR
 > npm install
 ```
 
 The next step is to install [preboot](https://github.com/angular/preboot) and [angular-instantsearch](https://github.com/algolia/angular-instantsearch) packages as well:
 
 ```sh
-> yarn add preboot angular-instantsearch # OR
 > npm install preboot angular-instantsearch --save
 ```
 
