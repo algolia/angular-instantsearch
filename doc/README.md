@@ -54,7 +54,7 @@ so for example if you generated an app with the Angular cli, it would be in `src
 import { NgAisModule } from 'angular-instantsearch';
 ```
 
-We then need to inject the Algolia InstantSearch module into the imports of our app.
+We then need to inject the Angular InstantSearch module into the imports of our app.
 
 This can be done either at the root level ( `src/app/app.module.ts`) or in any search module you might have.
 When done at the root level of your app, the syntax is a bit different.
