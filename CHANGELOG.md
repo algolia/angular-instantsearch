@@ -1,3 +1,26 @@
+<a name="1.0.0-beta.6"></a>
+# [1.0.0-beta.6](https://github.com/algolia/angular-instantsearch/compare/1.0.0-beta.5...1.0.0-beta.6) (2017-12-07)
+
+
+### Bug Fixes
+
+* **algoliasearchclient:** handle request errors ([2654000](https://github.com/algolia/angular-instantsearch/commit/2654000))
+* **dist:** add missing dependencies ([1c41fbc](https://github.com/algolia/angular-instantsearch/commit/1c41fbc))
+* **import:** workaround to make dev + build work ([56a4e25](https://github.com/algolia/angular-instantsearch/commit/56a4e25))
+* **rollup:** remove build warnings ([af094a0](https://github.com/algolia/angular-instantsearch/commit/af094a0))
+* **svg:** remove `xmlns` attribute not support ng5 ssr ([cb03f17](https://github.com/algolia/angular-instantsearch/commit/cb03f17))
+
+
+### Features
+
+* **base-widget:** dont run `ngOnDestroy` on SSR ([457cca8](https://github.com/algolia/angular-instantsearch/commit/457cca8))
+* **examples/ssr:** add `preboot` to avoid blinking ([c44eda9](https://github.com/algolia/angular-instantsearch/commit/c44eda9))
+* **instance:** custom algoliasearch client for SSR ([dc374ba](https://github.com/algolia/angular-instantsearch/commit/dc374ba))
+* **ssr:** provide `createAlgoliaSSRClient()` ([90d30f3](https://github.com/algolia/angular-instantsearch/commit/90d30f3))
+* **ssr:** provide `parseServerRequest()` util ([ad12adb](https://github.com/algolia/angular-instantsearch/commit/ad12adb))
+
+
+
 <a name="1.0.0-beta.5"></a>
 # [1.0.0-beta.5](https://github.com/algolia/angular-instantsearch/compare/1.0.0-beta.4...1.0.0-beta.5) (2017-12-06)
 
