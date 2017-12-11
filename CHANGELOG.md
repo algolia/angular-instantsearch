@@ -1,3 +1,14 @@
+<a name="1.0.0-beta.7"></a>
+# [1.0.0-beta.7](https://github.com/algolia/angular-instantsearch/compare/1.0.0-beta.6...1.0.0-beta.7) (2017-12-11)
+
+
+### Features
+
+* **requests:** send custom agent ([141f974](https://github.com/algolia/angular-instantsearch/commit/141f974))
+* **scripts/release:** build library after update version ([3ec0576](https://github.com/algolia/angular-instantsearch/commit/3ec0576))
+
+
+
 <a name="1.0.0-beta.6"></a>
 # [1.0.0-beta.6](https://github.com/algolia/angular-instantsearch/compare/1.0.0-beta.5...1.0.0-beta.6) (2017-12-07)
 
