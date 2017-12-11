@@ -68,6 +68,15 @@ export class NgAisInstance {
       config.urlSync = false;
     }
 
+    // custom algolia client agent
+    if (!config.createAlgoliaClient) {
+      config.createAlgoliaClient = (algoliasearch, appId, apiKey) => {
+        const client = algoliasearch(appId, apiKey);
+        client.addAlgoliaAgent(`angular-instantsearch ${process.env.VERSION}`);
+        return client;
+      };
+    }
+
     this.instance = instantsearch(config);
   }
 
