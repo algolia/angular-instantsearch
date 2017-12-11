@@ -10,12 +10,6 @@ then
   exit 1
 fi
 
-# clean node_modules and build library
-echo "Build library"
-rm -rf node_modules
-yarn
-yarn build
-
 # read actual dist/package.json version
 actual_version=$(grep version package.json | cut -c 15- | rev | cut -c 3- | rev)
 
@@ -46,6 +40,12 @@ else
   git reset origin master --hard
   exit 1
 fi
+
+# clean node_modules and build library
+echo "Build library"
+rm -rf node_modules
+yarn
+yarn build
 
 # copy README.md and CHANGELOG.md to dist folder
 cp README.md CHANGELOG.md dist
