@@ -75,7 +75,6 @@ module.exports = {
       // Environment helpers
       'process.env': {
         ENV: JSON.stringify(ENV),
-        VERSION: JSON.stringify(require('./package.json').version),
       },
     }),
 

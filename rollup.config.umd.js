@@ -1,8 +1,5 @@
 /* eslint no-console: 0 */
 /* eslint import/no-commonjs: 0 */
-import replace from 'rollup-plugin-replace';
-
-import { version } from './package.json';
 
 export default {
   input: 'dist/index.js',
@@ -33,11 +30,6 @@ export default {
     format: 'umd',
     file: 'dist/bundles/angular-instantsearch.umd.js',
   },
-  plugins: [
-    replace({
-      'process.env.VERSION': JSON.stringify(version),
-    }),
-  ],
   onwarn(warning) {
     // Skip certain warnings
     if (

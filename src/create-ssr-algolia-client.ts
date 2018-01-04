@@ -1,6 +1,8 @@
 import * as algoliasearchProxy from "algoliasearch/index";
 import * as encodeProxy from "querystring-es3/encode";
 
+import { VERSION } from "./version";
+
 // AOT + Rollup workaround
 // https://github.com/rollup/rollup/issues/1267#issuecomment-296395734
 
@@ -15,7 +17,7 @@ export function createSSRAlgoliaClient({
 }) {
   return (_, appId, apiKey) => {
     const client = algoliasearch(appId, apiKey, {});
-    client.addAlgoliaAgent(`angular-instantsearch ${process.env.VERSION}`);
+    client.addAlgoliaAgent(`angular-instantsearch ${VERSION}`);
 
     client._request = (rawUrl, opts) => {
       let headers = new HttpHeaders();

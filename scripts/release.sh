@@ -20,11 +20,12 @@ echo "What is the next version?"
 read next_version
 
 # replace package.json with next version
+sed -i.bak "s/${actual_version}/${next_version}/g" src/version.ts
 sed -i.bak "s/${actual_version}/${next_version}/g" dist/package.json
 sed -i.bak "s/${actual_version}/${next_version}/g" package.json
 
 # remove .bak files from sed
-rm -f package.json.bak dist/package.json.bak
+rm -f package.json.bak dist/package.json.bak src/version.ts.bak
 
 # show and update changelog
 conventional-changelog -p angular -u

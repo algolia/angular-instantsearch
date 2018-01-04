@@ -4,6 +4,7 @@ import { isPlatformBrowser } from "@angular/common";
 import instantsearch from "instantsearch.js/es";
 
 import { Widget } from "../base-widget";
+import { VERSION } from "../version";
 
 export type InstantSearchConfig = {
   appId: string;
@@ -72,7 +73,7 @@ export class NgAisInstance {
     if (!config.createAlgoliaClient) {
       config.createAlgoliaClient = (algoliasearch, appId, apiKey) => {
         const client = algoliasearch(appId, apiKey);
-        client.addAlgoliaAgent(`angular-instantsearch ${process.env.VERSION}`);
+        client.addAlgoliaAgent(`angular-instantsearch ${VERSION}`);
         return client;
       };
     }
