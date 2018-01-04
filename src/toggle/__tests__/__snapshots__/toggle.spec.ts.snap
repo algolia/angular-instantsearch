@@ -51,6 +51,7 @@ exports[`Toggle should render with a label 1`] = `
             <input
               class="ais-Toggle-checkbox"
               type="checkbox"
+              value="foobar"
             />
             
                 Foo Label
@@ -143,6 +144,7 @@ exports[`Toggle should render with state 1`] = `
             <input
               class="ais-Toggle-checkbox"
               type="checkbox"
+              value="foobar"
             />
             
                 foobar
@@ -235,6 +237,7 @@ exports[`Toggle should render without state 1`] = `
             <input
               class="ais-Toggle-checkbox"
               type="checkbox"
+              value=""
             />
             
                 
