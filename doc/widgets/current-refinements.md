@@ -11,8 +11,8 @@ This widget is usually in the top part of the search UI.
 | -                | -                               | -
 | `attributes?`    | `{name: string, label: string}` | Label definitions for the different filters
 | `onlyListedAttributes?` | `boolean` | Only use the declared attributes. By default, the widget displays the refinements for the whole search state. If true, the list of `attributes` in attributes is used
-| `clearAll?`      | `"before" / "after" / boolean`  | Defines the clear all button position. By default, it is placed before the set of current filters. If the value is false, the button won’t be added in the widget
+| `clearRefinements?`      | `"before" / "after" / boolean`  | Defines the clear all button position. By default, it is placed before the set of current filters. If the value is false, the button won’t be added in the widget
 | `clearsQuery?`   | `boolean`                       | If true, the clear all button also clears the active search query.
-| `clearAllLabel?` | `string`                        | Label used on the clear all button.
+| `clearRefinementsLabel?` | `string`                        | Label used on the clear all button.
 | `header?`        | `string`                        | Displays text before widget
 | `footer?`        | `string`                        | Displays text after widget
