@@ -39,7 +39,7 @@ export class BaseWidget implements OnInit, OnDestroy {
   @Input() public footer?: string;
 
   public widget?: Widget;
-  public state?: object;
+  public state?: object = {};
   public cx?: Function;
 
   constructor(private searchInstance: NgAisInstance, widgetName: string) {
