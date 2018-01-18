@@ -7,6 +7,7 @@
 * [Routing and URLs](routing-and-urls.md)
 * [Designing the no results page](designing-the-no-results-page.md)
 * [Server Side Rendering](server-side-rendering.md)
+* [Custom widgets](custom-widgets.md)
 
 ## Widgets
 
