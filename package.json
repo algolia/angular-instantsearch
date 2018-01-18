@@ -10,7 +10,7 @@
   "scripts": {
     "build": "./scripts/build.sh",
     "lint": "tslint src/**/*.ts examples/**/*.ts",
-    "dev": "webpack-dev-server --config webpack.demo.js --inline --progress",
+    "dev": "webpack-dev-server --config webpack.demo.js --inline --progress --host 0.0.0.0 --port 3000",
     "test": "jest",
     "test:ci": "yarn lint && jest --runInBand && yarn build",
     "test:watch": "jest --watch",
