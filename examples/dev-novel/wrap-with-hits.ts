@@ -14,13 +14,15 @@ export function wrapWithHits({
   styles = "",
   searchParameters = {},
   methods = {},
-  searchFunction
+  searchFunction,
+  appDeclarations = []
 }: {
   template: string;
   styles?: string;
   searchParameters?: {};
   methods?: {};
   searchFunction?: (helper: Helper) => void;
+  appDeclarations?: any[];
 }) {
   return (container: Element) => {
     @Component({
@@ -134,7 +136,7 @@ export function wrapWithHits({
 
     @NgModule({
       bootstrap: [AppComponent],
-      declarations: [AppComponent],
+      declarations: [AppComponent, ...appDeclarations],
       imports: [BrowserModule, NgAisModule.forRoot()],
       providers: []
     })
