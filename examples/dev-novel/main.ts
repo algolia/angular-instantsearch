@@ -2,6 +2,7 @@ import { enableProdMode } from "@angular/core";
 import { start, storiesOf } from "dev-novel";
 
 import { wrapWithHits } from "./wrap-with-hits";
+import { MenuSelect } from "./custom-widgets";
 
 // depending on the env mode, enable prod mode or add debugging modules
 if (process.env.ENV === "build") {
@@ -467,6 +468,14 @@ storiesOf("NumericRange").add(
       <ng-ais-numeric-range attributeName="price">
       </ng-ais-numeric-range>
     `
+  })
+);
+
+storiesOf("CustomWidgets").add(
+  "MenuSelect",
+  wrapWithHits({
+    template: `<ng-ais-menu-select></ng-ais-menu-select>`,
+    appDeclarations: [MenuSelect]
   })
 );
 
