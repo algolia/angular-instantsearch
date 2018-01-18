@@ -30,6 +30,13 @@ export { createSSRAlgoliaClient };
 import { parseServerRequest } from "./parse-server-request";
 export { parseServerRequest };
 
+// Custom widget with BaseWidget class
+import { BaseWidget } from "./base-widget";
+export { BaseWidget };
+
+import { NgAisInstance } from "./instantsearch/instantsearch-instance";
+export { NgAisInstance };
+
 const NGIS_MODULES = [
   NgAisInstantSearchModule,
   NgAisResultsModule,
