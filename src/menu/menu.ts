@@ -22,7 +22,10 @@ export type MenuState = {
     <div [class]="cx()">
       <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
 
-      <div [class]="cx('body')">
+      <div
+        [class]="cx('body')"
+        *ngIf="!isHidden"
+      >
         <ul [class]="cx('list')">
           <li
             [class]="cx('item') + (item.isRefined ? (' ' + cx('item', 'selected')) : '')"
@@ -73,6 +76,10 @@ export class NgAisMenu extends BaseWidget {
     refine: noop,
     toggleShowMore: noop
   };
+
+  get isHidden() {
+    return this.state.items.length === 0 && this.autoHideContainer;
+  }
 
   get items() {
     return isFunction(this.transformItems)

@@ -29,6 +29,7 @@ exports[`Menu renders markup with state 1`] = `
     
   
         
+    
     <div
       class="ais-Menu-body ais-body"
     >
@@ -164,6 +165,7 @@ exports[`Menu renders markup without state 1`] = `
     
   
         
+    
     <div
       class="ais-Menu-body ais-body"
     >
@@ -234,6 +236,7 @@ exports[`Menu should apply \`transformItems\` if specified 1`] = `
     
   
         
+    
     <div
       class="ais-Menu-body ais-body"
     >
@@ -321,6 +324,56 @@ exports[`Menu should apply \`transformItems\` if specified 1`] = `
       
         
     </div>
+    
+  
+        
+    <ng-ais-footer
+      ng-reflect-class-name="ais-Menu-footer ais-footer"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-footer>
+    
+      
+  </div>
+    
+</ng-ais-menu>
+`;
+
+exports[`Menu should be hidden with \`autoHideContainer\` 1`] = `
+<ng-ais-menu
+  autoHideContainer={[Function Boolean]}
+  cx={[Function Function]}
+  limitMin={[Function Number]}
+  platformId={[Function String]}
+  searchInstance={[Function NgAisInstance]}
+  showLessLabel={[Function String]}
+  showMoreLabel={[Function String]}
+  state={[Function Object]}
+  updateState={[Function Function]}
+>
+  
+      <div
+    class="ais-Menu"
+  >
+    
+        
+    <ng-ais-header
+      ng-reflect-class-name="ais-Menu-header ais-header"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-header>
+    
+  
+        
+    
     
   
         
