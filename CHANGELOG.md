@@ -1,3 +1,30 @@
+<a name="1.0.0-beta.8"></a>
+# [1.0.0-beta.8](https://github.com/algolia/angular-instantsearch/compare/1.0.0-beta.7...1.0.0-beta.8) (2018-01-19)
+
+
+### Bug Fixes
+
+* **BaseWidget:** default `state` property to an object ([e21a885](https://github.com/algolia/angular-instantsearch/commit/e21a885))
+* **header-version:** use `version.ts` instead of `process.env` ([d76808a](https://github.com/algolia/angular-instantsearch/commit/d76808a))
+* **release:** commit `src/version.ts` ([fa26371](https://github.com/algolia/angular-instantsearch/commit/fa26371))
+* **release:** remove tag on abort ([e76a645](https://github.com/algolia/angular-instantsearch/commit/e76a645))
+
+
+### Features
+
+* **autoHideContainer:** add property to BaseWidget class ([c9043a8](https://github.com/algolia/angular-instantsearch/commit/c9043a8))
+* **breadcrumb:** add autoHideContainer option ([db3ce89](https://github.com/algolia/angular-instantsearch/commit/db3ce89))
+* **clearRefinements:** add autoHideContainer option ([8677875](https://github.com/algolia/angular-instantsearch/commit/8677875))
+* **currentRefinements:** add autoHideContainer option ([497d9bd](https://github.com/algolia/angular-instantsearch/commit/497d9bd))
+* **hiearchicalMenu:** add autoHideContainer option ([3bb4bb5](https://github.com/algolia/angular-instantsearch/commit/3bb4bb5))
+* **menu:** add autoHideContainer option ([3e441ab](https://github.com/algolia/angular-instantsearch/commit/3e441ab))
+* **numeric-menu:** add autoHideContainer option ([6309861](https://github.com/algolia/angular-instantsearch/commit/6309861))
+* **rating-menu:** add autoHideContainer option ([ff5904b](https://github.com/algolia/angular-instantsearch/commit/ff5904b))
+* **refinementList:** add autoHideContainer option ([9fd2d0d](https://github.com/algolia/angular-instantsearch/commit/9fd2d0d))
+* **results-per-page:** add autoHideContainer option ([2e0bfaf](https://github.com/algolia/angular-instantsearch/commit/2e0bfaf))
+
+
+
 <a name="1.0.0-beta.7"></a>
 # [1.0.0-beta.7](https://github.com/algolia/angular-instantsearch/compare/1.0.0-beta.6...1.0.0-beta.7) (2017-12-11)
 
