@@ -115,4 +115,12 @@ describe("CurrentRefinedValues", () => {
 
     expect(fixture).toMatchSnapshot();
   });
+
+  it("should be hidden with `autoHideContainer`", () => {
+    const fixture = render({ refinements: [] });
+    fixture.componentInstance.autoHideContainer = true;
+    fixture.detectChanges();
+
+    expect(fixture).toMatchSnapshot();
+  });
 });
