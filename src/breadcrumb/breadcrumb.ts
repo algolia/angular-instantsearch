@@ -22,7 +22,10 @@ export type BreadcrumbItem = {
     <div [class]="cx()">
       <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
 
-      <div [class]="cx('body')">
+      <div
+        [class]="cx('body')"
+        *ngIf="!isHidden"
+      >
         <ul [class]="cx('list')">
           <li
             *ngFor="let item of itemsWithSeparator"
@@ -51,6 +54,10 @@ export class NgAisBreadcrumb extends BaseWidget {
   // connector options
   @Input() public attributes: string[];
   @Input() public rootPath?: string;
+
+  get isHidden() {
+    return this.state.items.length === 0 && this.autoHideContainer;
+  }
 
   get itemsWithSeparator() {
     return this.state.items.reduce(

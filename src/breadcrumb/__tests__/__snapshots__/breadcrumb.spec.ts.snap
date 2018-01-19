@@ -26,6 +26,7 @@ exports[`Breadcrumb renders markup with two items 1`] = `
     
   
         
+    
     <div
       class="ais-Breadcrumb-body ais-body"
     >
@@ -135,6 +136,7 @@ exports[`Breadcrumb renders markup without state 1`] = `
     
   
         
+    
     <div
       class="ais-Breadcrumb-body ais-body"
     >
@@ -152,6 +154,53 @@ exports[`Breadcrumb renders markup without state 1`] = `
       
         
     </div>
+    
+  
+        
+    <ng-ais-footer
+      ng-reflect-class-name="ais-Breadcrumb-footer ais-foot"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-footer>
+    
+      
+  </div>
+    
+</ng-ais-breadcrumb>
+`;
+
+exports[`Breadcrumb should be hidden with \`autoHideContainer\` 1`] = `
+<ng-ais-breadcrumb
+  autoHideContainer={[Function Boolean]}
+  cx={[Function Function]}
+  platformId={[Function String]}
+  searchInstance={[Function NgAisInstance]}
+  state={[Function Object]}
+  updateState={[Function Function]}
+>
+  
+      <div
+    class="ais-Breadcrumb"
+  >
+    
+        
+    <ng-ais-header
+      ng-reflect-class-name="ais-Breadcrumb-header ais-head"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-header>
+    
+  
+        
+    
     
   
         
@@ -207,6 +256,7 @@ exports[`Breadcrumb should display an header and a footer 1`] = `
     
   
         
+    
     <div
       class="ais-Breadcrumb-body ais-body"
     >

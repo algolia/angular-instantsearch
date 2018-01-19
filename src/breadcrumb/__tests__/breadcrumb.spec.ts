@@ -63,4 +63,12 @@ describe("Breadcrumb", () => {
 
     expect(fixture).toMatchSnapshot();
   });
+
+  it("should be hidden with `autoHideContainer`", () => {
+    const fixture = render({ items: [] });
+    fixture.componentInstance.autoHideContainer = true;
+    fixture.detectChanges();
+
+    expect(fixture).toMatchSnapshot();
+  });
 });
