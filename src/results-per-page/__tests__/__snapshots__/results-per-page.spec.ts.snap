@@ -26,6 +26,7 @@ exports[`ResultsPerPage renders markup with state 1`] = `
     
   
         
+    
     <div
       class="ais-ResultsPerPage-body ais-body"
     >
@@ -108,19 +109,48 @@ exports[`ResultsPerPage renders markup without state 1`] = `
     
   
         
-    <div>
+    
+    
+  
+        
+    <ng-ais-footer>
       
-          
-      <select>
-        
-            
-        
-        
-          
-      </select>
       
+      
+      
+    
+    </ng-ais-footer>
+    
+      
+  </div>
+    
+</ng-ais-results-per-page>
+`;
+
+exports[`ResultsPerPage should be hidden with autoHideContainer 1`] = `
+<ng-ais-results-per-page
+  autoHideContainer={[Function Boolean]}
+  cx={[Function Function]}
+  platformId={[Function String]}
+  searchInstance={[Function NgAisInstance]}
+  state={[Function Object]}
+  updateState={[Function Function]}
+>
+  
+      <div>
+    
         
-    </div>
+    <ng-ais-header>
+      
+      
+      
+      
+    
+    </ng-ais-header>
+    
+  
+        
+    
     
   
         

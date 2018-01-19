@@ -10,10 +10,7 @@ describe("ResultsPerPage", () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
       declarations: [],
-      imports: [
-        NgAisInstantSearchModule.forRoot(),
-        NgAisResultsPerPageModule
-      ]
+      imports: [NgAisInstantSearchModule.forRoot(), NgAisResultsPerPageModule]
     })
   );
 
@@ -64,5 +61,13 @@ describe("ResultsPerPage", () => {
 
     expect(refine).toHaveBeenCalled();
     expect(refine).toHaveBeenCalledWith("20");
+  });
+
+  it("should be hidden with autoHideContainer", () => {
+    const fixture = TestBed.createComponent(NgAisResultsPerPage);
+    fixture.componentInstance.updateState({ items: [] }, false);
+    fixture.componentInstance.autoHideContainer = true;
+
+    expect(fixture).toMatchSnapshot();
   });
 });
