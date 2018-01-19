@@ -25,16 +25,7 @@ exports[`ClearRefinements renders markup without state 1`] = `
     
   
         
-    <div>
-      
-          
-      <button>
-        
-            
-      </button>
-      
-        
-    </div>
+    
     
   
         

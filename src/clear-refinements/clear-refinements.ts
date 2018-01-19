@@ -11,7 +11,10 @@ import { NgAisInstance } from "../instantsearch/instantsearch-instance";
     <div [class]="cx()">
       <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
 
-      <div [class]="cx('body')">
+      <div
+        [class]="cx('body')"
+        *ngIf="!isHidden"
+      >
         <button
           [class]="cx('button') + (!state.hasRefinements ? (' ' + cx('button', 'disabled')) : '')"
           (click)="handleClick($event)"
@@ -31,6 +34,10 @@ export class NgAisClearRefinements extends BaseWidget {
   @Input() public excludeAttributes: string[] = [];
 
   public state = { hasRefinements: false, refine: noop };
+
+  get isHidden() {
+    return !this.state.hasRefinements && this.autoHideContainer;
+  }
 
   constructor(
     @Inject(PLATFORM_ID) public platformId: Object,

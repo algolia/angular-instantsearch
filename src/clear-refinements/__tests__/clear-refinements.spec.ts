@@ -61,4 +61,11 @@ describe("ClearRefinements", () => {
 
     expect(spy).toHaveBeenCalled();
   });
+
+  it("should be hidden with `autoHideContainer`", () => {
+    const fixture = TestBed.createComponent(NgAisClearRefinements);
+    fixture.componentInstance.autoHideContainer = true;
+    fixture.componentInstance.updateState({ hasRefinements: false }, false);
+    fixture.detectChanges();
+  });
 });
