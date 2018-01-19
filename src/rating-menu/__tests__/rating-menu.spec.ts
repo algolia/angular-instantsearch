@@ -57,4 +57,12 @@ describe("StarRating", () => {
     const fixture = render({});
     expect(fixture).toMatchSnapshot();
   });
+
+  it.skip("should be hidden with autoHideContainer", () => {
+    const fixture = render({ items: [] });
+    fixture.componentInstance.autoHideContainer = true;
+    fixture.detectChanges();
+
+    expect(fixture).toMatchSnapshot();
+  });
 });
