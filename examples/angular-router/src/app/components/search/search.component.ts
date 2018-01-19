@@ -48,6 +48,9 @@ import { Component, OnDestroy } from "@angular/core";
               "
             >
             </ng-ais-sort-by>
+            <hr />
+            <ng-ais-menu-select>
+            </ng-ais-menu-select>
           </div>
         </div>
       </div>

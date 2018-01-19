@@ -7,6 +7,7 @@ import { AppComponent } from "./app.component";
 
 import { IndexComponent } from "./components/index/index.component";
 import { SearchComponent } from "./components/search/search.component";
+import { MenuSelect } from "./components/menu-select/menu-select.component";
 
 const appRoutes: Routes = [
   { path: "search", component: SearchComponent },
@@ -14,7 +15,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, IndexComponent, SearchComponent],
+  declarations: [AppComponent, IndexComponent, SearchComponent, MenuSelect],
   imports: [
     RouterModule.forRoot(appRoutes),
     BrowserModule,
