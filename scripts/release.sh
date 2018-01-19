@@ -68,5 +68,6 @@ then
   (cd dist && npm publish)
 else
   git reset origin/master --hard
+  git tag -d $next_version
   exit 1
 fi
