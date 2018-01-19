@@ -95,7 +95,21 @@ From the [connectMenu](https://community.algolia.com/instantsearch.js/v2/connect
 
 For instance if you want to access the items, you will need to use `this.state.items` into your component code.
 
-Let's write together the component template:
+If you compile your Angular application with [AOT](https://angular.io/guide/aot-compiler) you will need to define the typings of the `state` class property. In this example it will look like this:
+
+```ts
+state: {
+  items: { label: string; value: string }[];
+  createURL: () => string;
+  refine: (value: string) => void;
+  canRefine: boolean;
+  isShowingMore: boolean;
+  toggleShowMore: () => void;
+  canToggleShowMore: boolean;
+}
+```
+
+Last step, let's write together the component template:
 
 ```ts
 import { Component, Inject, PLATFORM_ID } from '@angular/core';
@@ -120,6 +134,16 @@ import { connectMenu } from 'instantsearch.js/es/connectors';
   `
 })
 export class MenuSelect extends BaseWidget {
+  state: {
+    items: { label: string; value: string }[];
+    createURL: () => string;
+    refine: (value: string) => void;
+    canRefine: boolean;
+    isShowingMore: boolean;
+    toggleShowMore: () => void;
+    canToggleShowMore: boolean;
+  }
+
   constructor(
     @Inject(PLATFORM_ID) public platformId: Object,
     searchInstance: NgAisInstance
