@@ -52,7 +52,7 @@ yarn build
 cp README.md CHANGELOG.md dist
 
 # commit and tag
-git add package.json dist/package.json CHANGELOG.md
+git add src/version.ts package.json dist/package.json CHANGELOG.md
 git commit -m "chore(release): publish v${next_version}"
 git tag $next_version
 
