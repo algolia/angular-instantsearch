@@ -16,7 +16,10 @@ export type ResultsPerPageState = {
     <div [class]="cx()">
       <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
 
-      <div [class]="cx('body')">
+      <div
+        [class]="cx('body')"
+        *ngIf="!isHidden"
+      >
         <select
           [class]="cx('select')"
           (change)="state.refine($event.target.value)"
@@ -48,6 +51,10 @@ export class NgAisResultsPerPage extends BaseWidget {
     items: [],
     refine: noop
   };
+
+  get isHidden() {
+    return this.state.items.length === 0 && this.autoHideContainer;
+  }
 
   constructor(
     @Inject(PLATFORM_ID) public platformId: Object,
