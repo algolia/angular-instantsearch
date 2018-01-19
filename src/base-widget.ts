@@ -38,6 +38,8 @@ export class BaseWidget implements OnInit, OnDestroy {
   @Input() public header?: string;
   @Input() public footer?: string;
 
+  @Input() public autoHideContainer?: boolean;
+
   public widget?: Widget;
   public state?: object;
   public cx?: Function;
