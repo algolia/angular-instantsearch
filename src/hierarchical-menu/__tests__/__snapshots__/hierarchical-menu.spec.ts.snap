@@ -28,6 +28,7 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
     
   
         
+    
     <div
       class="ais-HierarchicalMenu-body ais-body"
     >
@@ -474,6 +475,7 @@ exports[`HierarchicalMenu renders markup without state 1`] = `
     
   
         
+    
     <div
       class="ais-HierarchicalMenu-body ais-body"
     >
@@ -539,6 +541,7 @@ exports[`HierarchicalMenu should apply \`transformItems\` if specified 1`] = `
     
   
         
+    
     <div
       class="ais-HierarchicalMenu-body ais-body"
     >
@@ -938,6 +941,55 @@ exports[`HierarchicalMenu should apply \`transformItems\` if specified 1`] = `
       
         
     </div>
+    
+  
+        
+    <ng-ais-footer
+      ng-reflect-class-name="ais-HierarchicalMenu-footer ai"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-footer>
+    
+      
+  </div>
+    
+</ng-ais-hierarchical-menu>
+`;
+
+exports[`HierarchicalMenu should be hidden with \`autoHideContainer\` 1`] = `
+<ng-ais-hierarchical-menu
+  autoHideContainer={[Function Boolean]}
+  cx={[Function Function]}
+  limit={[Function Number]}
+  platformId={[Function String]}
+  searchInstance={[Function NgAisInstance]}
+  separator={[Function String]}
+  state={[Function Object]}
+  updateState={[Function Function]}
+>
+  
+      <div
+    class="ais-HierarchicalMenu"
+  >
+    
+        
+    <ng-ais-header
+      ng-reflect-class-name="ais-HierarchicalMenu-header ai"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-header>
+    
+  
+        
+    
     
   
         
