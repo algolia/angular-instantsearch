@@ -18,7 +18,10 @@ export type HierarchicalMenuState = {
     <div [class]="cx()">
       <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
 
-      <div [class]="cx('body')">
+      <div
+        [class]="cx('body')"
+        *ngIf="!isHidden"
+      >
         <ul [class]="cx('list') + ' ' + cx('list', 'lvl0')">
           <ng-ais-hierarchical-menu-item
             *ngFor="let item of items"
@@ -51,6 +54,10 @@ export class NgAisHierarchicalMenu extends BaseWidget {
     items: [],
     refine: noop
   };
+
+  get isHidden() {
+    return this.state.items.length === 0 && this.autoHideContainer;
+  }
 
   get items() {
     return isFunction(this.transformItems)
