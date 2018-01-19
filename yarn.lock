@@ -99,8 +99,8 @@
     to-fast-properties "^2.0.0"
 
 "@ngtools/webpack@^1.7.4":
-  version "1.9.4"
-  resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-1.9.4.tgz#0716e8e5a42f3e255f04e231e131d67aa2f6ab90"
+  version "1.9.5"
+  resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-1.9.5.tgz#10292e9237d1218fe16dee24423155500b2d2324"
   dependencies:
     chalk "~2.2.0"
     enhanced-resolve "^3.1.0"
@@ -126,8 +126,8 @@
     "@types/lodash" "*"
 
 "@types/lodash@*":
-  version "4.14.92"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.92.tgz#6e3cb0b71a1e12180a47a42a744e856c3ae99a57"
+  version "4.14.93"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.93.tgz#a6d2a1e1601a3c29196f38ef1990b68a9afa1e1c"
 
 "@types/node@*":
   version "9.3.0"
@@ -6674,8 +6674,8 @@ source-map-support@^0.4.15, source-map-support@^0.4.2:
     source-map "^0.5.6"
 
 source-map-support@^0.5.0:
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.1.tgz#72291517d1fd0cb9542cee6c27520884b5da1a07"
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.2.tgz#1a6297fd5b2e762b39688c7fc91233b60984f0a5"
   dependencies:
     source-map "^0.6.0"
 
@@ -7169,8 +7169,8 @@ tsickle@^0.21.0:
     source-map-support "^0.4.2"
 
 tslib@^1.0.0, tslib@^1.7.1, tslib@^1.8.0, tslib@^1.8.1:
-  version "1.8.1"
-  resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.8.1.tgz#6946af2d1d651a7b1863b531d6e5afa41aa44eac"
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.0.tgz#e37a86fda8cbbaf23a057f473c9f4dc64e5fc2e8"
 
 tslint-config-airbnb@^5.3.0:
   version "5.4.2"
