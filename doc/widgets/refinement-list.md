@@ -15,3 +15,4 @@ The RefinementList component displays a list that let the end user choose multip
 | `sortBy?`            | `string[] / Function`    | How to sort facet values
 | `header?`            | `string`                 | Displays text before widget
 | `footer?`            | `string`                 | Displays text after widget
+| `autoHideContainer?` | `boolean`                | Hides the refinement list if there's no item to display

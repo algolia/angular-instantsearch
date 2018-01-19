@@ -98,4 +98,12 @@ describe("RefinementList", () => {
     expect(searchForItems).toHaveBeenCalled();
     expect(searchForItems).toHaveBeenCalledWith("foobar");
   });
+
+  it("should be hidden with autoHideContainer", () => {
+    const fixture = render({ items: [] });
+    fixture.componentInstance.autoHideContainer = true;
+    fixture.detectChanges();
+
+    expect(fixture).toMatchSnapshot();
+  });
 });
