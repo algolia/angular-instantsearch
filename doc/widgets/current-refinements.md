@@ -16,3 +16,4 @@ This widget is usually in the top part of the search UI.
 | `clearRefinementsLabel?` | `string`                        | Label used on the clear all button.
 | `header?`        | `string`                        | Displays text before widget
 | `footer?`        | `string`                        | Displays text after widget
+| `autoHideContainer?` | `boolean`  | Hides the widget if there's no refinements to display

@@ -20,7 +20,10 @@ export type CurrentRefinementsState = {
     <div [class]="cx()">
       <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
 
-      <div [class]="cx('body')">
+      <div
+        [class]="cx('body')"
+        *ngIf="!isHidden"
+      >
         <button
           [class]="cx('reset')"
           (click)="handleClearAllClick($event)"
@@ -76,6 +79,10 @@ export class NgAisCurrentRefinements extends BaseWidget {
     refine: noop,
     refinements: []
   };
+
+  get isHidden() {
+    return this.state.refinements.length === 0 && this.autoHideContainer;
+  }
 
   get refinements() {
     return isFunction(this.transformItems)

@@ -31,6 +31,7 @@ exports[`CurrentRefinedValues renders markup with state 1`] = `
     
   
         
+    
     <div
       class="ais-CurrentRefinements-body ais-body"
     >
@@ -201,6 +202,7 @@ exports[`CurrentRefinedValues renders markup without state 1`] = `
     
   
         
+    
     <div
       class="ais-CurrentRefinements-body ais-body"
     >
@@ -284,6 +286,7 @@ exports[`CurrentRefinedValues should apply \`transformItems\` if specified 1`] =
     
   
         
+    
     <div
       class="ais-CurrentRefinements-body ais-body"
     >
@@ -404,6 +407,58 @@ exports[`CurrentRefinedValues should apply \`transformItems\` if specified 1`] =
       
         
     </div>
+    
+  
+        
+    <ng-ais-footer
+      ng-reflect-class-name="ais-CurrentRefinements-footer "
+    >
+      
+      
+      
+      
+    
+    </ng-ais-footer>
+    
+      
+  </div>
+    
+</ng-ais-current-refinements>
+`;
+
+exports[`CurrentRefinedValues should be hidden with \`autoHideContainer\` 1`] = `
+<ng-ais-current-refinements
+  attributes={[Function Array]}
+  autoHideContainer={[Function Boolean]}
+  clearRefinements={[Function String]}
+  clearRefinementsLabel={[Function String]}
+  clearsQuery="false"
+  cx={[Function Function]}
+  onlyListedAttributes="false"
+  platformId={[Function String]}
+  searchInstance={[Function NgAisInstance]}
+  state={[Function Object]}
+  updateState={[Function Function]}
+>
+  
+      <div
+    class="ais-CurrentRefinements"
+  >
+    
+        
+    <ng-ais-header
+      ng-reflect-class-name="ais-CurrentRefinements-header "
+    >
+      
+      
+      
+      
+    
+    </ng-ais-header>
+    
+  
+        
+    
     
   
         
