@@ -8,3 +8,4 @@ The NumericMenu is a component that displays a list of numeric filters in a list
 | `options`       | `{name: string, start?: number, end?: number}[]` | The list of indexes to search in
 | `header?`       | `string`                                         | Displays text before widget
 | `footer?`       | `string`                                         | Displays text after widget
+| `autoHideContainer?` | `boolean`  | Hides the numeric menu if there's no item to display

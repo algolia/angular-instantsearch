@@ -65,4 +65,12 @@ describe("NumericRefinementList", () => {
     expect(firstInput.checked).toBeTruthy();
     expect(secondInput.checked).toBeFalsy();
   });
+
+  it("should be hidden with autoHideContainer", () => {
+    const fixture = render({ items: [] });
+    fixture.componentInstance.autoHideContainer = true;
+    fixture.detectChanges();
+
+    expect(fixture).toMatchSnapshot();
+  });
 });
