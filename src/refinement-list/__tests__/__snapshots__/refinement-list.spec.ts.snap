@@ -32,6 +32,7 @@ exports[`RefinementList renders markup with state 1`] = `
     
   
         
+    
     <div
       class="ais-RefinementList-body ais-body"
     >
@@ -272,6 +273,7 @@ exports[`RefinementList renders markup without state 1`] = `
     
   
         
+    
     <div
       class="ais-RefinementList-body ais-body"
     >
@@ -349,6 +351,7 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
     
   
         
+    
     <div
       class="ais-RefinementList-body ais-body"
     >
@@ -538,6 +541,59 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
       
         
     </div>
+    
+  
+        
+    <ng-ais-footer
+      ng-reflect-class-name="ais-RefinementList-footer ais-"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-footer>
+    
+      
+  </div>
+    
+</ng-ais-refinement-list>
+`;
+
+exports[`RefinementList should be hidden with autoHideContainer 1`] = `
+<ng-ais-refinement-list
+  autoHideContainer={[Function Boolean]}
+  cx={[Function Function]}
+  limitMin={[Function Number]}
+  operator={[Function String]}
+  platformId={[Function String]}
+  searchInstance={[Function NgAisInstance]}
+  searchPlaceholder={[Function String]}
+  searchQuery=""
+  showLessLabel={[Function String]}
+  showMoreLabel={[Function String]}
+  state={[Function Object]}
+  updateState={[Function Function]}
+>
+  
+      <div
+    class="ais-RefinementList"
+  >
+    
+        
+    <ng-ais-header
+      ng-reflect-class-name="ais-RefinementList-header ais-"
+    >
+      
+      
+      
+      
+    
+    </ng-ais-header>
+    
+  
+        
+    
     
   
         
