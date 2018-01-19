@@ -18,7 +18,10 @@ export type RatingMenuState = {
     <div [class]="cx()">
       <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
 
-      <div [class]="cx('body')">
+      <div
+        [class]="cx('body')"
+        *ngIf="!isHidden"
+      >
         <svg style="display:none;">
           <symbol
             id="ais-StarRating-starSymbol"
@@ -95,6 +98,10 @@ export class NgAisRatingMenu extends BaseWidget {
     items: [],
     refine: noop
   };
+
+  get isHidden() {
+    return this.state.items.length === 0 && this.autoHideContainer;
+  }
 
   constructor(
     @Inject(PLATFORM_ID) public platformId: Object,
