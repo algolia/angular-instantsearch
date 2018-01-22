@@ -19,30 +19,37 @@ export type BreadcrumbItem = {
 @Component({
   selector: "ng-ais-breadcrumb",
   template: `
-    <div [class]="cx()">
-      <div
-        [class]="cx('body')"
-        *ngIf="!isHidden"
-      >
-        <ul [class]="cx('list')">
-          <li
-            *ngFor="let item of itemsWithSeparator"
-            [class]="cx('item')"
-            [attr.aria-hidden]="item.separator"
+    <div
+      [class]="cx()"
+      *ngIf="!isHidden"
+    >
+      <ul [class]="cx('list')">
+        <li
+          *ngFor="let item of items"
+          [class]="cx('item', item.isLast ? 'selected' : undefined)"
+          (click)="handleClick($event, item)"
+        >
+          <span
+            *ngIf="item.separator"
+            [class]="cx('separator')"
+            aria-hidden="true"
+          >
+            >
+          </span>
+          <a
+            [class]="cx('link')"
+            href="{{state.createURL(item.value)}}"
+            *ngIf="!item.isLast"
             (click)="handleClick($event, item)"
           >
-            {{item.separator ? '>' : ''}}
-            <a
-              [class]="cx('link')"
-              href="{{state.createURL(item.value)}}"
-              *ngIf="!item.separator"
-              (click)="handleClick($event, item)"
-            >
-              {{item.name}}
-            </a>
-          </li>
-        </ul>
-      </div>
+            {{item.name}}
+          </a>
+
+          <span *ngIf="item.isLast">
+            {{item.name}}
+          </span>
+        </li>
+      </ul>
     </div>
   `
 })
@@ -55,14 +62,12 @@ export class NgAisBreadcrumb extends BaseWidget {
     return this.state.items.length === 0 && this.autoHideContainer;
   }
 
-  get itemsWithSeparator() {
-    return this.state.items.reduce(
-      (result: {}[], curr, idx) =>
-        idx === this.state.items.length - 1
-          ? [...result, curr]
-          : [...result, curr, { separator: true }],
-      []
-    );
+  get items() {
+    return this.state.items.map((item, idx) => ({
+      ...item,
+      separator: idx !== 0,
+      isLast: idx === this.state.items.length - 1
+    }));
   }
 
   public state: BreadcrumbState = {

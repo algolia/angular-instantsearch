@@ -14,71 +14,68 @@ exports[`Breadcrumb renders markup with two items 1`] = `
   >
     
         
-    
-    <div
-      class="ais-Breadcrumb-body ais-body"
+    <ul
+      class="ais-Breadcrumb-list"
     >
       
           
-      <ul
-        class="ais-Breadcrumb-list"
+      
+      <li
+        class="ais-Breadcrumb-item"
       >
         
             
         
-        <li
-          class="ais-Breadcrumb-item"
+        
+            
+        
+        <a
+          class="ais-Breadcrumb-link"
+          href=""
         >
           
-              
-              
-          
-          <a
-            class="ais-Breadcrumb-link"
-            href=""
-          >
+              foo
             
-                foo
-              
-          </a>
-          
+        </a>
+        
+  
             
-        </li>
-        <li
+        
+        
+          
+      </li>
+      <li
+        class="ais-Breadcrumb-item--selected"
+      >
+        
+            
+        
+        <span
           aria-hidden="true"
-          class="ais-Breadcrumb-item"
+          class="ais-Breadcrumb-separator"
         >
           
               &gt;
-              
-          
-          
             
-        </li>
-        <li
-          class="ais-Breadcrumb-item"
-        >
-          
-              
-              
-          
-          <a
-            class="ais-Breadcrumb-link"
-            href=""
-          >
+        </span>
+        
             
-                bar
-              
-          </a>
-          
+        
+        
+  
             
-        </li>
+        
+        <span>
+          
+              bar
+            
+        </span>
         
           
-      </ul>
+      </li>
       
         
-    </div>
+    </ul>
     
       
   </div>
@@ -100,24 +97,15 @@ exports[`Breadcrumb renders markup without state 1`] = `
   >
     
         
-    
-    <div
-      class="ais-Breadcrumb-body ais-body"
+    <ul
+      class="ais-Breadcrumb-list"
     >
       
           
-      <ul
-        class="ais-Breadcrumb-list"
-      >
-        
-            
-        
-        
-          
-      </ul>
+      
       
         
-    </div>
+    </ul>
     
       
   </div>
@@ -135,15 +123,7 @@ exports[`Breadcrumb should be hidden with \`autoHideContainer\` 1`] = `
   updateState={[Function Function]}
 >
   
-      <div
-    class="ais-Breadcrumb"
-  >
-    
-        
-    
-    
       
-  </div>
     
 </ng-ais-breadcrumb>
 `;
@@ -164,24 +144,15 @@ exports[`Breadcrumb should display an header and a footer 1`] = `
   >
     
         
-    
-    <div
-      class="ais-Breadcrumb-body ais-body"
+    <ul
+      class="ais-Breadcrumb-list"
     >
       
           
-      <ul
-        class="ais-Breadcrumb-list"
-      >
-        
-            
-        
-        
-          
-      </ul>
+      
       
         
-    </div>
+    </ul>
     
       
   </div>
