@@ -530,6 +530,23 @@ aside {
   }
 }
 
-.ais-RatingMenu svg {
-  fill: #fbae00;
+.ais-RatingMenu {
+  svg {
+    fill: #fbae00;
+  }
+
+  &-item--selected {
+    font-weight: bold;
+  }
+
+  &-count {
+    &:before {
+      content: '(';
+      margin-left: 5px;
+    }
+
+    &:after {
+      content: ')';
+    }
+  }
 }
