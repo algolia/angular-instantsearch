@@ -41,7 +41,7 @@ export type RatingMenuState = {
       <ul [class]="cx('list')">
         <li
           *ngFor="let item of state.items"
-          [class]="cx('item') + (item.isRefined ? (' ' + cx('item', 'selected')) : '')"
+          [class]="getItemClass(item)"
           (click)="handleClick($event, item.value)"
         >
           <a
@@ -112,8 +112,6 @@ export class NgAisRatingMenu extends BaseWidget {
   public handleClick(event: MouseEvent, value: string) {
     event.preventDefault();
     event.stopPropagation();
-
-    console.log(value);
 
     this.state.refine(value);
   }

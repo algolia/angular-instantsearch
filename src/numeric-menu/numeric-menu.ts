@@ -20,7 +20,7 @@ export type NumericRefinementListState = {
     >
       <ul [class]="cx('list')">
         <li
-          [class]="cx('item') + (item.isRefined ? (' ' + cx('item', 'selected')) : '')"
+          [class]="getItemClass(item)"
           *ngFor="let item of state.items"
           (click)="refine($event, item)"
         >
