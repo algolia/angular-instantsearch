@@ -10,16 +10,17 @@ if (process.env.ENV === "build") {
 }
 
 storiesOf("InstantSearch").add(
-  "with forced refinement",
+  "searchFunction with forced refinement",
   wrapWithHits({
     template: `
-      <ng-ais-refinement-list
-        header="Brand"
-        attributeName="brand"
-        operator="or"
-        [limitMin]="10"
-      >
-      </ng-ais-refinement-list>
+      <ng-ais-panel header="Brand">
+        <ng-ais-refinement-list
+          attributeName="brand"
+          operator="or"
+          [limitMin]="10"
+        >
+        </ng-ais-refinement-list>
+      </ng-ais-panel>
     `,
     searchParameters: {
       disjunctiveFacetsRefinements: { brand: ["Apple"] },
@@ -97,11 +98,12 @@ storiesOf("CurrentRefinements")
     })
   )
   .add(
-    "with header",
+    "with panel header",
     wrapWithHits({
       template: `
-        <ng-ais-current-refinements header='Current refinements'>
-        </ng-ais-current-refinements>
+        <ng-ais-panel header='Current refinements'>
+          <ng-ais-current-refinements></ng-ais-current-refinements>
+        </ng-ais-panel>
       `,
       searchParameters: {
         disjunctiveFacetsRefinements: { brand: ["Apple", "Samsung"] },
@@ -111,11 +113,13 @@ storiesOf("CurrentRefinements")
     })
   )
   .add(
-    "with header but no refinements",
+    "with panel header but no refinements",
     wrapWithHits({
       template: `
-        <ng-ais-current-refinements header='Current refinements'>
-        </ng-ais-current-refinements>
+        <ng-ais-panel header='Current refinements'>
+          <ng-ais-current-refinements header='Current refinements'>
+          </ng-ais-current-refinements>
+        </ng-ais-panel>
       `
     })
   )
@@ -123,8 +127,10 @@ storiesOf("CurrentRefinements")
     "with clearsQuery",
     wrapWithHits({
       template: `
-        <ng-ais-current-refinements header='Current refinements' [clearsQuery]="true">
-        </ng-ais-current-refinements>
+        <ng-ais-panel header='Current refinements'>
+          <ng-ais-current-refinements [clearsQuery]="true">
+          </ng-ais-current-refinements>
+        </ng-ais-panel>
       `,
       searchParameters: {
         disjunctiveFacetsRefinements: { brand: ["Apple", "Samsung"] },
@@ -243,37 +249,39 @@ storiesOf("Menu")
     })
   )
   .add(
-    "with showMore and header",
+    "with showMore and panel header",
     wrapWithHits({
       template: `
-        <ng-ais-menu
-          header="Categories"
-          attributeName="categories"
-          [limitMin]="3"
-          [limitMax]="10"
-        >
-        </ng-ais-menu>
+        <ng-ais-panel header="Categories">
+          <ng-ais-menu
+            attributeName="categories"
+            [limitMin]="3"
+            [limitMax]="10"
+          >
+          </ng-ais-menu>
+        </ng-ais-panel>
       `
     })
   );
 
 storiesOf("NumericMenu").add(
-  "default",
+  "default with panel header",
   wrapWithHits({
     template: `
-      <ng-ais-numeric-menu
-        header="Numeric menu (price)"
-        attributeName="price"
-        operator="or"
-        [options]="[
-          { name: 'All' },
-          { end: 4, name: 'less than 4' },
-          { start: 4, end: 4, name: '4' },
-          { start: 5, end: 10, name: 'between 5 and 10' },
-          { start: 10, name: 'more than 10' }
-        ]"
-      >
-      </ng-ais-numeric-menu>
+      <ng-ais-panel header="Numeric menu (price)">
+        <ng-ais-numeric-menu
+          attributeName="price"
+          operator="or"
+          [options]="[
+            { name: 'All' },
+            { end: 4, name: 'less than 4' },
+            { start: 4, end: 4, name: '4' },
+            { start: 5, end: 10, name: 'between 5 and 10' },
+            { start: 10, name: 'more than 10' }
+          ]"
+        >
+        </ng-ais-numeric-menu>
+      </ng-ais-panel>
     `
   })
 );
@@ -327,62 +335,66 @@ storiesOf("Pagination").add(
 
 storiesOf("RefinementList")
   .add(
-    "default",
+    "default with panel header",
     wrapWithHits({
       template: `
-        <ng-ais-refinement-list
-          header="Brand"
-          attributeName="brand"
-          operator="or"
-          [limitMin]="10"
-        >
-        </ng-ais-refinement-list>
+        <ng-ais-panel header="Brand">
+          <ng-ais-refinement-list
+            attributeName="brand"
+            operator="or"
+            [limitMin]="10"
+          >
+          </ng-ais-refinement-list>
+        </ng-ais-panel>
       `
     })
   )
   .add(
-    "with showMore",
+    "panel header with showMore",
     wrapWithHits({
       template: `
-        <ng-ais-refinement-list
-          header="Brand with show more"
-          attributeName="brand"
-          operator="or"
-          [limitMin]="3"
-          [limitMax]="10"
-        >
-        </ng-ais-refinement-list>
+        <ng-ais-panel header="Brand with show more">
+          <ng-ais-refinement-list
+            attributeName="brand"
+            operator="or"
+            [limitMin]="3"
+            [limitMax]="10"
+          >
+          </ng-ais-refinement-list>
+        </ng-ais-panel>
       `
     })
   )
   .add(
-    "with search inside the items",
+    "panel header with search inside the items",
     wrapWithHits({
       template: `
-        <ng-ais-refinement-list
-          header="Searchable brands"
-          attributeName="brand"
-          operator="or"
-          searchPlaceholder="Find other brands..."
-          [withSearchBox]="true"
-          [limitMin]="10"
-        >
-        </ng-ais-refinement-list>
+        <ng-ais-panel header="Searchable brands">
+          <ng-ais-refinement-list
+            attributeName="brand"
+            operator="or"
+            searchPlaceholder="Find other brands..."
+            [withSearchBox]="true"
+            [limitMin]="10"
+          >
+          </ng-ais-refinement-list>
+        </ng-ais-panel>
       `
     })
   )
   .add(
-    "with operator `and`",
+    "panel header with operator `and`",
     wrapWithHits({
       template: `
-        <ng-ais-refinement-list
-          header="Price ranges"
-          attributeName="price_range"
-          operator="and"
-          [limitMin]="10"
-          [transformItems]="transformItems"
-        >
-        </ng-ais-refinement-list>
+        <ng-ais-panel header="Price ranges">
+          <ng-ais-refinement-list
+            attributeName="price_range"
+            operator="and"
+            [limitMin]="10"
+            [transformItems]="transformItems"
+          >
+          </ng-ais-refinement-list>
+        </ng-ais-panel>
       `,
       methods: {
         transformItems: items =>
@@ -434,15 +446,16 @@ storiesOf("SortBy").add(
 );
 
 storiesOf("RatingMenu").add(
-  "default",
+  "default with panel header",
   wrapWithHits({
     template: `
-      <ng-ais-rating-menu
-        header="Rating"
-        attributeName="rating"
-        [max]="5"
-      >
-      </ng-ais-rating-menu>
+      <ng-ais-panel header="Rating">
+        <ng-ais-rating-menu
+          attributeName="rating"
+          [max]="5"
+        >
+        </ng-ais-rating-menu>
+      </ng-ais-panel>
     `
   })
 );
