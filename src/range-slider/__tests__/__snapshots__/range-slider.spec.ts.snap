@@ -34,7 +34,6 @@ exports[`RangeSlider renders markup with state 1`] = `
         >
           <div
             class="noUi-origin"
-            style="left: 0%;"
           >
             <div
               aria-orientation="horizontal"
@@ -57,11 +56,9 @@ exports[`RangeSlider renders markup with state 1`] = `
           </div>
           <div
             class="noUi-connect"
-            style="left: 0%; right: 0%;"
           />
           <div
             class="noUi-origin"
-            style="left: 100%;"
           >
             <div
               aria-orientation="horizontal"
