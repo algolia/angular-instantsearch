@@ -2,6 +2,11 @@
 
 The range slider is a widget which provides a user-friendly way to filter the results based on a single numeric range.
 
+You will need to import by yourself the external CSS in order to make the range slider work. The CSS is available:
+
+* `https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/10.1.0/nouislider.min.css` (CDN)
+* `node_modules/nouislider/distribute/nouislider.min.css` (LOCAL)
+
 | Attributes       | Type       | Description
 | -                | -          | -
 | `attributeName`  | `string`   | Name of the attribute for faceting
