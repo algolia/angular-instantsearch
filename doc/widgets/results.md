@@ -2,11 +2,6 @@
 
 Displays a list of hits.
 
-| Attributes     | Type     | Description
-| -              | -        | -
-| `header?`      | `string` | Displays text before widget
-| `footer?`      | `string` | Displays text after widget
-
 You can use the directive `<ng-template></ng-template>` to customize the output:
 
 ```html

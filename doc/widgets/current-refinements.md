@@ -14,6 +14,4 @@ This widget is usually in the top part of the search UI.
 | `clearRefinements?`      | `"before" / "after" / boolean`  | Defines the clear all button position. By default, it is placed before the set of current filters. If the value is false, the button won’t be added in the widget
 | `clearsQuery?`   | `boolean`                       | If true, the clear all button also clears the active search query.
 | `clearRefinementsLabel?` | `string`                        | Label used on the clear all button.
-| `header?`        | `string`                        | Displays text before widget
-| `footer?`        | `string`                        | Displays text after widget
 | `autoHideContainer?` | `boolean`  | Hides the widget if there's no refinements to display
