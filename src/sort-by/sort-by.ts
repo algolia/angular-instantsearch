@@ -9,21 +9,19 @@ import { NgAisInstance } from "../instantsearch/instantsearch-instance";
   selector: "ng-ais-sort-by",
   template: `
     <div [class]="cx()">
-      <div [class]="cx('body')">
-        <select
-          [class]="cx('select')"
-          (change)="state.refine($event.target.value)"
+      <select
+        [class]="cx('select')"
+        (change)="state.refine($event.target.value)"
+      >
+        <option
+          [class]="cx('option')"
+          *ngFor="let item of state.options"
+          [value]="item.value"
+          [selected]="item.value === state.currentRefinement"
         >
-          <option
-            [class]="cx('option')"
-            *ngFor="let item of state.options"
-            [value]="item.value"
-            [selected]="item.value === state.currentRefinement"
-          >
-            {{item.label}}
-          </option>
-        </select>
-      </div>
+          {{item.label}}
+        </option>
+      </select>
     </div>
   `
 })
