@@ -359,7 +359,7 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
             
         </li>
         <li
-          class="ais-RefinementList-itemais-RefinementList-item--selected"
+          class="ais-RefinementList-item ais-RefinementList-item--selected"
         >
           
               
