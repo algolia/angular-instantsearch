@@ -47,7 +47,7 @@ exports[`RefinementList renders markup with state 1`] = `
           
               
           <span
-            class="undefined"
+            class="ais-RefinementList-labelText"
           >
             
                 
@@ -96,7 +96,7 @@ exports[`RefinementList renders markup with state 1`] = `
           
               
           <span
-            class="undefined"
+            class="ais-RefinementList-labelText"
           >
             
                 
@@ -145,7 +145,7 @@ exports[`RefinementList renders markup with state 1`] = `
           
               
           <span
-            class="undefined"
+            class="ais-RefinementList-labelText"
           >
             
                 
@@ -194,7 +194,7 @@ exports[`RefinementList renders markup with state 1`] = `
           
               
           <span
-            class="undefined"
+            class="ais-RefinementList-labelText"
           >
             
                 
@@ -330,7 +330,7 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
           
               
           <span
-            class="undefined"
+            class="ais-RefinementList-labelText"
           >
             
                 
@@ -379,7 +379,7 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
           
               
           <span
-            class="undefined"
+            class="ais-RefinementList-labelText"
           >
             
                 
@@ -428,7 +428,7 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
           
               
           <span
-            class="undefined"
+            class="ais-RefinementList-labelText"
           >
             
                 
@@ -477,7 +477,7 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
           
               
           <span
-            class="undefined"
+            class="ais-RefinementList-labelText"
           >
             
                 
