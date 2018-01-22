@@ -12,13 +12,7 @@ exports[`ClearRefinements renders markup without state 1`] = `
   updateState={[Function Function]}
 >
   
-      <div>
-    
-        
-    
-    
       
-  </div>
     
 </ng-ais-clear-refinements>
 `;

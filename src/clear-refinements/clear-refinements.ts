@@ -8,19 +8,17 @@ import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 @Component({
   selector: "ng-ais-clear-refinements",
   template: `
-    <div [class]="cx()">
-      <div
-        [class]="cx('body')"
-        *ngIf="!isHidden"
+    <div
+      [class]="cx()"
+      *ngIf="!isHidden"
+    >
+      <button
+        [class]="cx('button') + (!state.hasRefinements ? (' ' + cx('button', 'disabled')) : '')"
+        (click)="handleClick($event)"
+        [disabled]="!state.hasRefinements"
       >
-        <button
-          [class]="cx('button') + (!state.hasRefinements ? (' ' + cx('button', 'disabled')) : '')"
-          (click)="handleClick($event)"
-          [disabled]="!state.hasRefinements"
-        >
-          {{buttonLabel}}
-        </button>
-      </div>
+        {{buttonLabel}}
+      </button>
     </div>
   `
 })
