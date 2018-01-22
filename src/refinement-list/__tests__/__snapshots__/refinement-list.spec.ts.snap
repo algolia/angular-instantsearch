@@ -20,37 +20,44 @@ exports[`RefinementList renders markup with state 1`] = `
   >
     
         
-    
     <div
-      class="ais-RefinementList-body ais-body"
+      class="ais-RefinementList-searchBox"
     >
       
           
       
       
+        
+    </div>
+    
   
+        
+    <ul
+      class="ais-RefinementList-list"
+    >
+      
           
-      <ul
-        class="ais-RefinementList-list"
+      
+      <li
+        class="ais-RefinementList-item"
       >
         
             
-        
-        <li
-          class="ais-RefinementList-item"
+        <label
+          class="ais-RefinementList-label"
         >
           
               
-          <label
-            class="ais-RefinementList-label"
+          <input
+            class="ais-RefinementList-checkbox"
+            type="checkbox"
+            value="foo"
+          />
+          
+              
+          <span
+            class="undefined"
           >
-            
-                
-            <input
-              class="ais-RefinementList-checkbox"
-              type="checkbox"
-              value="foo"
-            />
             
                 
             <ng-ais-highlight
@@ -65,35 +72,41 @@ exports[`RefinementList renders markup with state 1`] = `
               </span>
             </ng-ais-highlight>
             
-                
-            <span
-              class="ais-RefinementList-count"
-            >
               
-                  100
-                
-            </span>
-            
+          </span>
+          
               
-          </label>
+          <span
+            class="ais-RefinementList-count"
+          >
+            100
+          </span>
           
             
-        </li>
-        <li
-          class="ais-RefinementList-item"
+        </label>
+        
+          
+      </li>
+      <li
+        class="ais-RefinementList-item"
+      >
+        
+            
+        <label
+          class="ais-RefinementList-label"
         >
           
               
-          <label
-            class="ais-RefinementList-label"
+          <input
+            class="ais-RefinementList-checkbox"
+            type="checkbox"
+            value="bar"
+          />
+          
+              
+          <span
+            class="undefined"
           >
-            
-                
-            <input
-              class="ais-RefinementList-checkbox"
-              type="checkbox"
-              value="bar"
-            />
             
                 
             <ng-ais-highlight
@@ -108,35 +121,41 @@ exports[`RefinementList renders markup with state 1`] = `
               </span>
             </ng-ais-highlight>
             
-                
-            <span
-              class="ais-RefinementList-count"
-            >
               
-                  100
-                
-            </span>
-            
+          </span>
+          
               
-          </label>
+          <span
+            class="ais-RefinementList-count"
+          >
+            100
+          </span>
           
             
-        </li>
-        <li
-          class="ais-RefinementList-item"
+        </label>
+        
+          
+      </li>
+      <li
+        class="ais-RefinementList-item"
+      >
+        
+            
+        <label
+          class="ais-RefinementList-label"
         >
           
               
-          <label
-            class="ais-RefinementList-label"
+          <input
+            class="ais-RefinementList-checkbox"
+            type="checkbox"
+            value="foobar"
+          />
+          
+              
+          <span
+            class="undefined"
           >
-            
-                
-            <input
-              class="ais-RefinementList-checkbox"
-              type="checkbox"
-              value="foobar"
-            />
             
                 
             <ng-ais-highlight
@@ -151,35 +170,41 @@ exports[`RefinementList renders markup with state 1`] = `
               </span>
             </ng-ais-highlight>
             
-                
-            <span
-              class="ais-RefinementList-count"
-            >
               
-                  100
-                
-            </span>
-            
+          </span>
+          
               
-          </label>
+          <span
+            class="ais-RefinementList-count"
+          >
+            100
+          </span>
           
             
-        </li>
-        <li
-          class="ais-RefinementList-item"
+        </label>
+        
+          
+      </li>
+      <li
+        class="ais-RefinementList-item"
+      >
+        
+            
+        <label
+          class="ais-RefinementList-label"
         >
           
               
-          <label
-            class="ais-RefinementList-label"
+          <input
+            class="ais-RefinementList-checkbox"
+            type="checkbox"
+            value="barfoo"
+          />
+          
+              
+          <span
+            class="undefined"
           >
-            
-                
-            <input
-              class="ais-RefinementList-checkbox"
-              type="checkbox"
-              value="barfoo"
-            />
             
                 
             <ng-ais-highlight
@@ -194,30 +219,28 @@ exports[`RefinementList renders markup with state 1`] = `
               </span>
             </ng-ais-highlight>
             
-                
-            <span
-              class="ais-RefinementList-count"
-            >
               
-                  100
-                
-            </span>
-            
+          </span>
+          
               
-          </label>
+          <span
+            class="ais-RefinementList-count"
+          >
+            100
+          </span>
           
             
-        </li>
+        </label>
         
           
-      </ul>
+      </li>
       
+        
+    </ul>
+    
   
-          
-      
-      
         
-    </div>
+    
     
       
   </div>
@@ -245,32 +268,31 @@ exports[`RefinementList renders markup without state 1`] = `
   >
     
         
-    
     <div
-      class="ais-RefinementList-body ais-body"
+      class="ais-RefinementList-searchBox"
     >
       
           
       
       
-  
-          
-      <ul
-        class="ais-RefinementList-list"
-      >
-        
-            
-        
-        
-          
-      </ul>
-      
-  
-          
-      
-      
         
     </div>
+    
+  
+        
+    <ul
+      class="ais-RefinementList-list"
+    >
+      
+          
+      
+      
+        
+    </ul>
+    
+  
+        
+    
     
       
   </div>
@@ -299,37 +321,44 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
   >
     
         
-    
     <div
-      class="ais-RefinementList-body ais-body"
+      class="ais-RefinementList-searchBox"
     >
       
           
       
       
+        
+    </div>
+    
   
+        
+    <ul
+      class="ais-RefinementList-list"
+    >
+      
           
-      <ul
-        class="ais-RefinementList-list"
+      
+      <li
+        class="ais-RefinementList-item"
       >
         
             
-        
-        <li
-          class="ais-RefinementList-item"
+        <label
+          class="ais-RefinementList-label"
         >
           
               
-          <label
-            class="ais-RefinementList-label"
+          <input
+            class="ais-RefinementList-checkbox"
+            type="checkbox"
+            value="foo"
+          />
+          
+              
+          <span
+            class="undefined"
           >
-            
-                
-            <input
-              class="ais-RefinementList-checkbox"
-              type="checkbox"
-              value="foo"
-            />
             
                 
             <ng-ais-highlight
@@ -344,35 +373,41 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
               </span>
             </ng-ais-highlight>
             
-                
-            <span
-              class="ais-RefinementList-count"
-            >
               
-                  100
-                
-            </span>
-            
+          </span>
+          
               
-          </label>
+          <span
+            class="ais-RefinementList-count"
+          >
+            100
+          </span>
           
             
-        </li>
-        <li
-          class="ais-RefinementList-item ais-RefinementList-item--selected"
+        </label>
+        
+          
+      </li>
+      <li
+        class="ais-RefinementList-item ais-RefinementList-item--selected"
+      >
+        
+            
+        <label
+          class="ais-RefinementList-label"
         >
           
               
-          <label
-            class="ais-RefinementList-label"
+          <input
+            class="ais-RefinementList-checkbox"
+            type="checkbox"
+            value="bar"
+          />
+          
+              
+          <span
+            class="undefined"
           >
-            
-                
-            <input
-              class="ais-RefinementList-checkbox"
-              type="checkbox"
-              value="bar"
-            />
             
                 
             <ng-ais-highlight
@@ -387,35 +422,41 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
               </span>
             </ng-ais-highlight>
             
-                
-            <span
-              class="ais-RefinementList-count"
-            >
               
-                  100
-                
-            </span>
-            
+          </span>
+          
               
-          </label>
+          <span
+            class="ais-RefinementList-count"
+          >
+            100
+          </span>
           
             
-        </li>
-        <li
-          class="ais-RefinementList-item"
+        </label>
+        
+          
+      </li>
+      <li
+        class="ais-RefinementList-item"
+      >
+        
+            
+        <label
+          class="ais-RefinementList-label"
         >
           
               
-          <label
-            class="ais-RefinementList-label"
+          <input
+            class="ais-RefinementList-checkbox"
+            type="checkbox"
+            value="foobar"
+          />
+          
+              
+          <span
+            class="undefined"
           >
-            
-                
-            <input
-              class="ais-RefinementList-checkbox"
-              type="checkbox"
-              value="foobar"
-            />
             
                 
             <ng-ais-highlight
@@ -430,35 +471,41 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
               </span>
             </ng-ais-highlight>
             
-                
-            <span
-              class="ais-RefinementList-count"
-            >
               
-                  100
-                
-            </span>
-            
+          </span>
+          
               
-          </label>
+          <span
+            class="ais-RefinementList-count"
+          >
+            100
+          </span>
           
             
-        </li>
-        <li
-          class="ais-RefinementList-item"
+        </label>
+        
+          
+      </li>
+      <li
+        class="ais-RefinementList-item"
+      >
+        
+            
+        <label
+          class="ais-RefinementList-label"
         >
           
               
-          <label
-            class="ais-RefinementList-label"
+          <input
+            class="ais-RefinementList-checkbox"
+            type="checkbox"
+            value="barfoo"
+          />
+          
+              
+          <span
+            class="undefined"
           >
-            
-                
-            <input
-              class="ais-RefinementList-checkbox"
-              type="checkbox"
-              value="barfoo"
-            />
             
                 
             <ng-ais-highlight
@@ -473,30 +520,28 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
               </span>
             </ng-ais-highlight>
             
-                
-            <span
-              class="ais-RefinementList-count"
-            >
               
-                  100
-                
-            </span>
-            
+          </span>
+          
               
-          </label>
+          <span
+            class="ais-RefinementList-count"
+          >
+            100
+          </span>
           
             
-        </li>
+        </label>
         
           
-      </ul>
+      </li>
       
+        
+    </ul>
+    
   
-          
-      
-      
         
-    </div>
+    
     
       
   </div>
@@ -520,15 +565,7 @@ exports[`RefinementList should be hidden with autoHideContainer 1`] = `
   updateState={[Function Function]}
 >
   
-      <div
-    class="ais-RefinementList"
-  >
-    
-        
-    
-    
       
-  </div>
     
 </ng-ais-refinement-list>
 `;
