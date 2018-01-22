@@ -15,55 +15,47 @@ exports[`NumericSelector renders markup with state 1`] = `
   >
     
         
-    <div
-      class="ais-NumericSelector-body ais-body"
+    <select
+      class="ais-NumericSelector-select"
     >
       
           
-      <select
-        class="ais-NumericSelector-select"
+      
+      <option
+        class="ais-NumericSelector-option"
+        value="10"
       >
         
-            
+            foo
+          
+      </option>
+      <option
+        class="ais-NumericSelector-option"
+        value="20"
+      >
         
-        <option
-          class="ais-NumericSelector-option"
-          value="10"
-        >
+            bar
           
-              foo
-            
-        </option>
-        <option
-          class="ais-NumericSelector-option"
-          value="20"
-        >
-          
-              bar
-            
-        </option>
-        <option
-          class="ais-NumericSelector-option"
-          value="30"
-        >
-          
-              foobar
-            
-        </option>
-        <option
-          class="ais-NumericSelector-option"
-          value="40"
-        >
-          
-              barfoo
-            
-        </option>
+      </option>
+      <option
+        class="ais-NumericSelector-option"
+        value="30"
+      >
         
+            foobar
           
-      </select>
+      </option>
+      <option
+        class="ais-NumericSelector-option"
+        value="40"
+      >
+        
+            barfoo
+          
+      </option>
       
         
-    </div>
+    </select>
     
       
   </div>
@@ -86,23 +78,15 @@ exports[`NumericSelector renders markup without state 1`] = `
   >
     
         
-    <div
-      class="ais-NumericSelector-body ais-body"
+    <select
+      class="ais-NumericSelector-select"
     >
       
           
-      <select
-        class="ais-NumericSelector-select"
-      >
-        
-            
-        
-        
-          
-      </select>
+      
       
         
-    </div>
+    </select>
     
       
   </div>
