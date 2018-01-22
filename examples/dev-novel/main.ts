@@ -515,6 +515,16 @@ storiesOf("CustomWidgets").add(
   })
 );
 
+storiesOf("RangeSlider").add(
+  "default",
+  wrapWithHits({
+    template: `
+      <ng-ais-range-slider attributeName="price">
+      </ng-ais-range-slider>
+    `
+  })
+);
+
 start({
   projectName: "Angular InstantSearch",
   projectLink: "https://github.com/algolia/angular-instantsearch"
