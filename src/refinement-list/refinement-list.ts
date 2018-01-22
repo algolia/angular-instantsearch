@@ -21,11 +21,11 @@ export type RefinementListState = {
 @Component({
   selector: "ng-ais-refinement-list",
   template: `
-    <div [class]="cx()">
-      <div
-        [class]="cx('body')"
-        *ngIf="!isHidden"
-      >
+    <div
+      [class]="cx()"
+      *ngIf="!isHidden"
+    >
+      <div [class]="cx('searchBox')">
         <form
           [class]="cx('form')"
           *ngIf="withSearchBox"
@@ -44,39 +44,35 @@ export type RefinementListState = {
             (input)="handleChange($event.target.value)"
           />
         </form>
-
-        <ul [class]="cx('list')">
-          <li
-            [class]="cx('item') + (item.isRefined ? (' ' + cx('item', 'selected')) : '')"
-            *ngFor="let item of items"
-            (click)="refine($event, item)"
-          >
-            <label [class]="cx('label')">
-              <input
-                [class]="cx('checkbox')"
-                type="checkbox"
-                value="{{item.value}}"
-                [checked]="item.isRefined"
-              />
-              <ng-ais-highlight
-                attributeName="highlighted"
-                [hit]="item"
-              >
-              </ng-ais-highlight>
-              <span [class]="cx('count')">
-                {{item.count}}
-              </span>
-            </label>
-          </li>
-        </ul>
-
-        <button
-          *ngIf="state.canToggleShowMore"
-          (click)="state.toggleShowMore()"
-        >
-          {{state.isShowingMore ? showLessLabel : showMoreLabel}}
-        </button>
       </div>
+
+      <ul [class]="cx('list')">
+        <li
+          [class]="cx('item') + (item.isRefined ? (' ' + cx('item', 'selected')) : '')"
+          *ngFor="let item of items"
+          (click)="refine($event, item)"
+        >
+          <label [class]="cx('label')">
+            <input
+              [class]="cx('checkbox')"
+              type="checkbox"
+              value="{{item.value}}"
+              [checked]="item.isRefined"
+            />
+            <span [class]="labelText">
+              <ng-ais-highlight attributeName="highlighted" [hit]="item"></ng-ais-highlight>
+            </span>
+            <span [class]="cx('count')">{{item.count}}</span>
+          </label>
+        </li>
+      </ul>
+
+      <button
+        *ngIf="state.canToggleShowMore"
+        (click)="state.toggleShowMore()"
+      >
+        {{state.isShowingMore ? showLessLabel : showMoreLabel}}
+      </button>
     </div>
   `
 })
