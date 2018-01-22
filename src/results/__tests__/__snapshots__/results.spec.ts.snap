@@ -15,109 +15,101 @@ exports[`Hits renders markup with state 1`] = `
   >
     
         
-    <div
-      class="ais-Results-body ais-body"
-    >
-      
-          
-      
-      
+    
+    
   
-          
+        
+    
+        
+    
+    <div>
       
           
-      
-      <div>
+      <ul
+        class="ais-Results-list"
+      >
         
             
-        <ul
-          class="ais-Results-list"
+        
+        <li
+          class="ais-Results-item"
         >
           
               
-          
-          <li
-            class="ais-Results-item"
+          <ng-ais-highlight
+            attributename="name"
+            ng-reflect-attribute-name="name"
+            ng-reflect-hit="[object Object]"
           >
-            
-                
-            <ng-ais-highlight
-              attributename="name"
-              ng-reflect-attribute-name="name"
-              ng-reflect-hit="[object Object]"
+            <span
+              class="ais-Highlight"
             >
-              <span
-                class="ais-Highlight"
-              >
-                foo
-              </span>
-            </ng-ais-highlight>
-            
-              
-          </li>
-          <li
-            class="ais-Results-item"
-          >
-            
-                
-            <ng-ais-highlight
-              attributename="name"
-              ng-reflect-attribute-name="name"
-              ng-reflect-hit="[object Object]"
-            >
-              <span
-                class="ais-Highlight"
-              >
-                bar
-              </span>
-            </ng-ais-highlight>
-            
-              
-          </li>
-          <li
-            class="ais-Results-item"
-          >
-            
-                
-            <ng-ais-highlight
-              attributename="name"
-              ng-reflect-attribute-name="name"
-              ng-reflect-hit="[object Object]"
-            >
-              <span
-                class="ais-Highlight"
-              >
-                foobar
-              </span>
-            </ng-ais-highlight>
-            
-              
-          </li>
-          <li
-            class="ais-Results-item"
-          >
-            
-                
-            <ng-ais-highlight
-              attributename="name"
-              ng-reflect-attribute-name="name"
-              ng-reflect-hit="[object Object]"
-            >
-              <span
-                class="ais-Highlight"
-              >
-                barfoo
-              </span>
-            </ng-ais-highlight>
-            
-              
-          </li>
+              foo
+            </span>
+          </ng-ais-highlight>
           
             
-        </ul>
+        </li>
+        <li
+          class="ais-Results-item"
+        >
+          
+              
+          <ng-ais-highlight
+            attributename="name"
+            ng-reflect-attribute-name="name"
+            ng-reflect-hit="[object Object]"
+          >
+            <span
+              class="ais-Highlight"
+            >
+              bar
+            </span>
+          </ng-ais-highlight>
+          
+            
+        </li>
+        <li
+          class="ais-Results-item"
+        >
+          
+              
+          <ng-ais-highlight
+            attributename="name"
+            ng-reflect-attribute-name="name"
+            ng-reflect-hit="[object Object]"
+          >
+            <span
+              class="ais-Highlight"
+            >
+              foobar
+            </span>
+          </ng-ais-highlight>
+          
+            
+        </li>
+        <li
+          class="ais-Results-item"
+        >
+          
+              
+          <ng-ais-highlight
+            attributename="name"
+            ng-reflect-attribute-name="name"
+            ng-reflect-hit="[object Object]"
+          >
+            <span
+              class="ais-Highlight"
+            >
+              barfoo
+            </span>
+          </ng-ais-highlight>
+          
+            
+        </li>
         
           
-      </div>
+      </ul>
       
         
     </div>
@@ -143,33 +135,25 @@ exports[`Hits renders markup without state 1`] = `
   >
     
         
-    <div
-      class="ais-Results-body ais-body"
-    >
-      
-          
-      
-      
+    
+    
   
-          
+        
+    
+        
+    
+    <div>
       
           
-      
-      <div>
+      <ul
+        class="ais-Results-list"
+      >
         
             
-        <ul
-          class="ais-Results-list"
-        >
-          
-              
-          
-          
-            
-        </ul>
+        
         
           
-      </div>
+      </ul>
       
         
     </div>
@@ -196,109 +180,101 @@ exports[`Hits should apply \`transformItems\` if specified 1`] = `
   >
     
         
-    <div
-      class="ais-Results-body ais-body"
-    >
-      
-          
-      
-      
+    
+    
   
-          
+        
+    
+        
+    
+    <div>
       
           
-      
-      <div>
+      <ul
+        class="ais-Results-list"
+      >
         
             
-        <ul
-          class="ais-Results-list"
+        
+        <li
+          class="ais-Results-item"
         >
           
               
-          
-          <li
-            class="ais-Results-item"
+          <ng-ais-highlight
+            attributename="name"
+            ng-reflect-attribute-name="name"
+            ng-reflect-hit="[object Object]"
           >
-            
-                
-            <ng-ais-highlight
-              attributename="name"
-              ng-reflect-attribute-name="name"
-              ng-reflect-hit="[object Object]"
+            <span
+              class="ais-Highlight"
             >
-              <span
-                class="ais-Highlight"
-              >
-                transformed - foo
-              </span>
-            </ng-ais-highlight>
-            
-              
-          </li>
-          <li
-            class="ais-Results-item"
-          >
-            
-                
-            <ng-ais-highlight
-              attributename="name"
-              ng-reflect-attribute-name="name"
-              ng-reflect-hit="[object Object]"
-            >
-              <span
-                class="ais-Highlight"
-              >
-                transformed - bar
-              </span>
-            </ng-ais-highlight>
-            
-              
-          </li>
-          <li
-            class="ais-Results-item"
-          >
-            
-                
-            <ng-ais-highlight
-              attributename="name"
-              ng-reflect-attribute-name="name"
-              ng-reflect-hit="[object Object]"
-            >
-              <span
-                class="ais-Highlight"
-              >
-                transformed - foobar
-              </span>
-            </ng-ais-highlight>
-            
-              
-          </li>
-          <li
-            class="ais-Results-item"
-          >
-            
-                
-            <ng-ais-highlight
-              attributename="name"
-              ng-reflect-attribute-name="name"
-              ng-reflect-hit="[object Object]"
-            >
-              <span
-                class="ais-Highlight"
-              >
-                transformed - barfoo
-              </span>
-            </ng-ais-highlight>
-            
-              
-          </li>
+              transformed - foo
+            </span>
+          </ng-ais-highlight>
           
             
-        </ul>
+        </li>
+        <li
+          class="ais-Results-item"
+        >
+          
+              
+          <ng-ais-highlight
+            attributename="name"
+            ng-reflect-attribute-name="name"
+            ng-reflect-hit="[object Object]"
+          >
+            <span
+              class="ais-Highlight"
+            >
+              transformed - bar
+            </span>
+          </ng-ais-highlight>
+          
+            
+        </li>
+        <li
+          class="ais-Results-item"
+        >
+          
+              
+          <ng-ais-highlight
+            attributename="name"
+            ng-reflect-attribute-name="name"
+            ng-reflect-hit="[object Object]"
+          >
+            <span
+              class="ais-Highlight"
+            >
+              transformed - foobar
+            </span>
+          </ng-ais-highlight>
+          
+            
+        </li>
+        <li
+          class="ais-Results-item"
+        >
+          
+              
+          <ng-ais-highlight
+            attributename="name"
+            ng-reflect-attribute-name="name"
+            ng-reflect-hit="[object Object]"
+          >
+            <span
+              class="ais-Highlight"
+            >
+              transformed - barfoo
+            </span>
+          </ng-ais-highlight>
+          
+            
+        </li>
         
           
-      </div>
+      </ul>
       
         
     </div>
