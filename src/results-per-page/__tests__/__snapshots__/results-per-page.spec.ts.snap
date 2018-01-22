@@ -14,48 +14,39 @@ exports[`ResultsPerPage renders markup with state 1`] = `
   >
     
         
-    
-    <div
-      class="ais-ResultsPerPage-body ais-body"
+    <select
+      class="ais-ResultsPerPage-select"
     >
       
           
-      <select
-        class="ais-ResultsPerPage-select"
+      
+      <option
+        class="ais-ResultsPerPage-option"
+        value="10"
       >
         
-            
+            10 per page
+          
+      </option>
+      <option
+        class="ais-ResultsPerPage-option"
+        value="20"
+      >
         
-        <option
-          class="ais-ResultsPerPage-option"
-          value="10"
-        >
+            20 per page
           
-              10 per page
-            
-        </option>
-        <option
-          class="ais-ResultsPerPage-option"
-          value="20"
-        >
-          
-              20 per page
-            
-        </option>
-        <option
-          class="ais-ResultsPerPage-option"
-          value="30"
-        >
-          
-              30 per page
-            
-        </option>
+      </option>
+      <option
+        class="ais-ResultsPerPage-option"
+        value="30"
+      >
         
+            30 per page
           
-      </select>
+      </option>
       
         
-    </div>
+    </select>
     
       
   </div>
@@ -72,13 +63,7 @@ exports[`ResultsPerPage renders markup without state 1`] = `
   updateState={[Function Function]}
 >
   
-      <div>
-    
-        
-    
-    
       
-  </div>
     
 </ng-ais-results-per-page>
 `;
@@ -93,13 +78,7 @@ exports[`ResultsPerPage should be hidden with autoHideContainer 1`] = `
   updateState={[Function Function]}
 >
   
-      <div>
-    
-        
-    
-    
       
-  </div>
     
 </ng-ais-results-per-page>
 `;
