@@ -16,30 +16,28 @@ import { NgAisInstance } from "../instantsearch/instantsearch-instance";
   selector: "ng-ais-infinite-results",
   template: `
     <div [class]="cx()">
-      <div [class]="cx('body')">
-        <ng-container *ngTemplateOutlet="template; context: state"></ng-container>
+      <ng-container *ngTemplateOutlet="template; context: state"></ng-container>
 
-        <!-- default rendering if no template specified -->
-        <div *ngIf="!template">
-          <ul [class]="cx('list')">
-            <li
-              [class]="cx('item')"
-              *ngFor="let hit of state.hits"
-            >
-              <ng-ais-highlight attributeName="name" [hit]="hit">
-              </ng-ais-highlight>
-            </li>
-          </ul>
-        </div>
-
-        <button
-          [class]="cx('showMore')"
-          (click)="showMore($event)"
-          [disabled]="state.isLastPage"
-        >
-          {{showMoreLabel}}
-        </button>
+      <!-- default rendering if no template specified -->
+      <div *ngIf="!template">
+        <ul [class]="cx('list')">
+          <li
+            [class]="cx('item')"
+            *ngFor="let hit of state.hits"
+          >
+            <ng-ais-highlight attributeName="name" [hit]="hit">
+            </ng-ais-highlight>
+          </li>
+        </ul>
       </div>
+
+      <button
+        [class]="cx('showMore')"
+        (click)="showMore($event)"
+        [disabled]="state.isLastPage"
+      >
+        {{showMoreLabel}}
+      </button>
     </div>
   `
 })

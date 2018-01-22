@@ -16,122 +16,114 @@ exports[`InfiniteHits renders markup with state 1`] = `
   >
     
         
-    <div
-      class="ais-InfiniteResults-body ais-body"
-    >
-      
-          
-      
-      
+    
+    
   
-          
+        
+    
+        
+    
+    <div>
       
           
-      
-      <div>
+      <ul
+        class="ais-InfiniteResults-list"
+      >
         
             
-        <ul
-          class="ais-InfiniteResults-list"
+        
+        <li
+          class="ais-InfiniteResults-item"
         >
           
               
-          
-          <li
-            class="ais-InfiniteResults-item"
+          <ng-ais-highlight
+            attributename="name"
+            ng-reflect-attribute-name="name"
+            ng-reflect-hit="[object Object]"
           >
-            
-                
-            <ng-ais-highlight
-              attributename="name"
-              ng-reflect-attribute-name="name"
-              ng-reflect-hit="[object Object]"
+            <span
+              class="ais-Highlight"
             >
-              <span
-                class="ais-Highlight"
-              >
-                foo
-              </span>
-            </ng-ais-highlight>
-            
-              
-          </li>
-          <li
-            class="ais-InfiniteResults-item"
-          >
-            
-                
-            <ng-ais-highlight
-              attributename="name"
-              ng-reflect-attribute-name="name"
-              ng-reflect-hit="[object Object]"
-            >
-              <span
-                class="ais-Highlight"
-              >
-                bar
-              </span>
-            </ng-ais-highlight>
-            
-              
-          </li>
-          <li
-            class="ais-InfiniteResults-item"
-          >
-            
-                
-            <ng-ais-highlight
-              attributename="name"
-              ng-reflect-attribute-name="name"
-              ng-reflect-hit="[object Object]"
-            >
-              <span
-                class="ais-Highlight"
-              >
-                foobar
-              </span>
-            </ng-ais-highlight>
-            
-              
-          </li>
-          <li
-            class="ais-InfiniteResults-item"
-          >
-            
-                
-            <ng-ais-highlight
-              attributename="name"
-              ng-reflect-attribute-name="name"
-              ng-reflect-hit="[object Object]"
-            >
-              <span
-                class="ais-Highlight"
-              >
-                barfoo
-              </span>
-            </ng-ais-highlight>
-            
-              
-          </li>
+              foo
+            </span>
+          </ng-ais-highlight>
           
             
-        </ul>
+        </li>
+        <li
+          class="ais-InfiniteResults-item"
+        >
+          
+              
+          <ng-ais-highlight
+            attributename="name"
+            ng-reflect-attribute-name="name"
+            ng-reflect-hit="[object Object]"
+          >
+            <span
+              class="ais-Highlight"
+            >
+              bar
+            </span>
+          </ng-ais-highlight>
+          
+            
+        </li>
+        <li
+          class="ais-InfiniteResults-item"
+        >
+          
+              
+          <ng-ais-highlight
+            attributename="name"
+            ng-reflect-attribute-name="name"
+            ng-reflect-hit="[object Object]"
+          >
+            <span
+              class="ais-Highlight"
+            >
+              foobar
+            </span>
+          </ng-ais-highlight>
+          
+            
+        </li>
+        <li
+          class="ais-InfiniteResults-item"
+        >
+          
+              
+          <ng-ais-highlight
+            attributename="name"
+            ng-reflect-attribute-name="name"
+            ng-reflect-hit="[object Object]"
+          >
+            <span
+              class="ais-Highlight"
+            >
+              barfoo
+            </span>
+          </ng-ais-highlight>
+          
+            
+        </li>
         
           
-      </div>
-      
-  
-          
-      <button
-        class="ais-InfiniteResults-showMore"
-      >
-        
-            Show more results
-          
-      </button>
+      </ul>
       
         
     </div>
+    
+  
+        
+    <button
+      class="ais-InfiniteResults-showMore"
+    >
+      
+          Show more results
+        
+    </button>
     
       
   </div>
@@ -155,46 +147,38 @@ exports[`InfiniteHits renders markup without state 1`] = `
   >
     
         
-    <div
-      class="ais-InfiniteResults-body ais-body"
-    >
-      
-          
-      
-      
+    
+    
   
-          
-      
-          
-      
-      <div>
         
-            
-        <ul
-          class="ais-InfiniteResults-list"
-        >
-          
-              
-          
-          
-            
-        </ul>
+    
         
-          
-      </div>
+    
+    <div>
       
-  
           
-      <button
-        class="ais-InfiniteResults-showMore"
+      <ul
+        class="ais-InfiniteResults-list"
       >
         
-            Show more results
+            
+        
+        
           
-      </button>
+      </ul>
       
         
     </div>
+    
+  
+        
+    <button
+      class="ais-InfiniteResults-showMore"
+    >
+      
+          Show more results
+        
+    </button>
     
       
   </div>
