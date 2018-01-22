@@ -17,44 +17,48 @@ export type CurrentRefinementsState = {
 @Component({
   selector: "ng-ais-current-refinements",
   template: `
-    <div [class]="cx()">
-      <div
-        [class]="cx('body')"
-        *ngIf="!isHidden"
-      >
-        <button
-          [class]="cx('reset')"
-          (click)="handleClearAllClick($event)"
-          *ngIf="clearRefinements === 'before' || clearRefinements === true">
-          {{clearRefinementsLabel}}
-        </button>
+    <div
+      [class]="cx()"
+      *ngIf="!isHidden"
+    >
+      <button
+        [class]="cx('reset')"
+        (click)="handleClearAllClick($event)"
+        *ngIf="clearRefinements === 'before' || clearRefinements === true">
+        {{clearRefinementsLabel}}
+      </button>
 
-        <ul [class]="cx('list')">
-          <li
-            [class]="cx('item')"
-            *ngFor="let refinement of refinements"
-            (click)="handleClick($event, refinement)"
-          >
-            <button [class]="cx('button')">
-              {{refinement.computedLabel}}
-              <span [class]="cx('count')">{{refinement.count}}</span>
-            </button>
-          </li>
-        </ul>
+      <ul [class]="cx('list')">
+        <li
+          [class]="cx('item')"
+          *ngFor="let refinement of refinements"
+          (click)="handleClick($event, refinement)"
+        >
+          <button [class]="cx('button')">
+            <span [class]="cx('label')">{{refinement.computedLabel}}</span>
+            <span
+              *ngIf="refinement.count && refinement.count > 0"
+              [class]="cx('count')"
+            >
+              {{refinement.count}}
+            </span>
+            <span [class]="cx('delete')">✕</span>
+          </button>
+        </li>
+      </ul>
 
-        <button
-          [class]="cx('reset')"
-          (click)="handleClearAllClick($event)"
-          *ngIf="clearRefinements === 'after'">
-          {{clearRefinementsLabel}}
-        </button>
-      </div>
+      <button
+        [class]="cx('reset')"
+        (click)="handleClearAllClick($event)"
+        *ngIf="clearRefinements === 'after'">
+        {{clearRefinementsLabel}}
+      </button>
     </div>
   `
 })
 export class NgAisCurrentRefinements extends BaseWidget {
   // render options
-  @Input() public clearRefinements: "before" | "after" | boolean = "before";
+  @Input() public clearRefinements: "before" | "after" | boolean = "after";
   @Input() public clearRefinementsLabel: string = "Clear refinements";
   @Input() public transformItems?: Function;
 
