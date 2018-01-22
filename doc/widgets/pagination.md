@@ -10,5 +10,3 @@ The Pagination widget displays a simple pagination system allowing the user to c
 | `showPrevious?` | `boolean` | Display the previous page link
 | `showNext?`     | `boolean` | Display the next page link
 | `pagesPadding?` | `number`  | How many page links to display around the current page
-| `header?`       | `string`  | Displays text before widget
-| `footer?`       | `string`  | Displays text after widget

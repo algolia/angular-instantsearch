@@ -13,6 +13,4 @@ The RefinementList component displays a list that let the end user choose multip
 | `withSearchBox?`     | `boolean`                | True if the component should display an input to search for facet values
 | `searchPlaceholder?` | `string`                 | The label of the search input placeholder
 | `sortBy?`            | `string[] / Function`    | How to sort facet values
-| `header?`            | `string`                 | Displays text before widget
-| `footer?`            | `string`                 | Displays text after widget
 | `autoHideContainer?` | `boolean`                | Hides the refinement list if there's no item to display

@@ -2,11 +2,6 @@
 
 The Stats component displays the total number of matching hits and the time it took to get them (time spent in the Algolia server).
 
-| Props     | Type     | Description
-| -         | -        | -
-| `header?` | `string` | Displays text before widget
-| `footer?` | `string` | Displays text after widget
-
 You can use the directive `<ng-template></ng-template>` to customize the output:
 
 ```ts

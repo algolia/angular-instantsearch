@@ -5,8 +5,6 @@ Displays a list of hits.
 | Attribures            | Type     | Description
 | -                     | -        | -
 | `showMoreLabel?`      | `string` | Label used on the show more button.
-| `header?`             | `string` | Displays text before widget
-| `footer?`             | `string` | Displays text after widget
 
 You can use the directive `<ng-template></ng-template>` to customize the output:
 

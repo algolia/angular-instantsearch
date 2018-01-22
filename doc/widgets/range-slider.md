@@ -9,5 +9,3 @@ The range slider is a widget which provides a user-friendly way to filter the re
 | `tooltips?`      | `boolean`  | Should we show tooltips or not.
 | `min?`           | `number`   | Minimal slider value, default to automatically computed
 | `max?`           | `number`   | Minimal slider value, default to automatically computed
-| `header?`        | `string`   | Displays text before widget
-| `footer?`        | `string`   | Displays text after widget

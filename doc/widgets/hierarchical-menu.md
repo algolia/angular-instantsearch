@@ -12,6 +12,4 @@ It is commonly used for categories with subcategories.
 | `rootPath?`          | `string`            | Prefix path to use if the first level is not the root level
 | `showParentLevel?`   | `boolean`           | Show the parent level of the current refined value
 | `sortBy?`            | `string[]/Function` | How to sort facet values
-| `header?`            | `string`            | Displays text before widget
-| `footer?`            | `string`            | Displays text after widget
 | `autoHideContainer?` | `boolean`           | Hides the widget if there's no item to display
