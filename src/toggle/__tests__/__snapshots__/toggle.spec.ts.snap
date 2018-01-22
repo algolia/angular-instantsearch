@@ -12,57 +12,57 @@ exports[`Toggle should render with a label 1`] = `
 >
   
       <div
-    class="ais-Toggle"
+    class="ais-ToggleRefinement"
   >
     
         
-    <div
-      class="ais-Toggle-body ais-body"
+    <ul
+      class="ais-ToggleRefinement-list"
     >
       
           
-      <ul
-        class="ais-Toggle-list"
+      <li
+        class="ais-ToggleRefinement-item"
       >
         
             
-        <li
-          class="ais-Toggle-item"
+        <label
+          class="ais-ToggleRefinement-label"
         >
           
               
-          <label
-            class="ais-Toggle-label"
+          <input
+            class="ais-ToggleRefinement-checkbox"
+            type="checkbox"
+            value="foobar"
+          />
+          
+  
+              
+          <span
+            class="ais-ToggleRefinement-labelText"
           >
             
-                
-            <input
-              class="ais-Toggle-checkbox"
-              type="checkbox"
-              value="foobar"
-            />
-            
                 Foo Label
-                
-            <span
-              class="ais-Toggle-count"
-            >
               
-                  666
-                
-            </span>
-            
+          </span>
+          
+  
               
-          </label>
+          <span
+            class="ais-ToggleRefinement-count"
+          >
+            666
+          </span>
           
             
-        </li>
+        </label>
         
           
-      </ul>
+      </li>
       
         
-    </div>
+    </ul>
     
       
   </div>
@@ -81,57 +81,57 @@ exports[`Toggle should render with state 1`] = `
 >
   
       <div
-    class="ais-Toggle"
+    class="ais-ToggleRefinement"
   >
     
         
-    <div
-      class="ais-Toggle-body ais-body"
+    <ul
+      class="ais-ToggleRefinement-list"
     >
       
           
-      <ul
-        class="ais-Toggle-list"
+      <li
+        class="ais-ToggleRefinement-item"
       >
         
             
-        <li
-          class="ais-Toggle-item"
+        <label
+          class="ais-ToggleRefinement-label"
         >
           
               
-          <label
-            class="ais-Toggle-label"
+          <input
+            class="ais-ToggleRefinement-checkbox"
+            type="checkbox"
+            value="foobar"
+          />
+          
+  
+              
+          <span
+            class="ais-ToggleRefinement-labelText"
           >
             
-                
-            <input
-              class="ais-Toggle-checkbox"
-              type="checkbox"
-              value="foobar"
-            />
-            
                 foobar
-                
-            <span
-              class="ais-Toggle-count"
-            >
               
-                  666
-                
-            </span>
-            
+          </span>
+          
+  
               
-          </label>
+          <span
+            class="ais-ToggleRefinement-count"
+          >
+            666
+          </span>
           
             
-        </li>
+        </label>
         
           
-      </ul>
+      </li>
       
         
-    </div>
+    </ul>
     
       
   </div>
@@ -150,57 +150,57 @@ exports[`Toggle should render without state 1`] = `
 >
   
       <div
-    class="ais-Toggle"
+    class="ais-ToggleRefinement"
   >
     
         
-    <div
-      class="ais-Toggle-body ais-body"
+    <ul
+      class="ais-ToggleRefinement-list"
     >
       
           
-      <ul
-        class="ais-Toggle-list"
+      <li
+        class="ais-ToggleRefinement-item"
       >
         
             
-        <li
-          class="ais-Toggle-item"
+        <label
+          class="ais-ToggleRefinement-label"
         >
           
               
-          <label
-            class="ais-Toggle-label"
+          <input
+            class="ais-ToggleRefinement-checkbox"
+            type="checkbox"
+            value=""
+          />
+          
+  
+              
+          <span
+            class="ais-ToggleRefinement-labelText"
           >
             
                 
-            <input
-              class="ais-Toggle-checkbox"
-              type="checkbox"
-              value=""
-            />
-            
-                
-                
-            <span
-              class="ais-Toggle-count"
-            >
               
-                  
-                
-            </span>
-            
+          </span>
+          
+  
               
-          </label>
+          <span
+            class="ais-ToggleRefinement-count"
+          >
+            
+          </span>
           
             
-        </li>
+        </label>
         
           
-      </ul>
+      </li>
       
         
-    </div>
+    </ul>
     
       
   </div>

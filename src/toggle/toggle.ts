@@ -19,26 +19,26 @@ export type ToggleState = {
   selector: "ng-ais-toggle",
   template: `
     <div [class]="cx()">
-      <div [class]="cx('body')">
-        <ul [class]="cx('list')">
-          <li
-            [class]="cx('item')"
-            (click)="handleClick($event)">
-            <label [class]="cx('label')">
-              <input
-                [class]="cx('checkbox')"
-                type="checkbox"
-                value="{{state.value.name}}"
-                [checked]="state.value.isRefined"
-              />
+      <ul [class]="cx('list')">
+        <li
+          [class]="cx('item')"
+          (click)="handleClick($event)">
+          <label [class]="cx('label')">
+            <input
+              [class]="cx('checkbox')"
+              type="checkbox"
+              value="{{state.value.name}}"
+              [checked]="state.value.isRefined"
+            />
+
+            <span [class]="cx('labelText')">
               {{label || state.value.name}}
-              <span [class]="cx('count')">
-                {{state.value.count}}
-              </span>
-            </label>
-          </li>
-        </ul>
-      </div>
+            </span>
+
+            <span [class]="cx('count')">{{state.value.count}}</span>
+          </label>
+        </li>
+      </ul>
     </div>
   `
 })
@@ -59,7 +59,7 @@ export class NgAisToggle extends BaseWidget {
     @Inject(PLATFORM_ID) public platformId: Object,
     searchInstance: NgAisInstance
   ) {
-    super(searchInstance, "Toggle");
+    super(searchInstance, "ToggleRefinement");
   }
 
   public ngOnInit() {
