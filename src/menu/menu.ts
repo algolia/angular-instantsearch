@@ -19,35 +19,34 @@ export type MenuState = {
 @Component({
   selector: "ng-ais-menu",
   template: `
-    <div [class]="cx()">
-      <div
-        [class]="cx('body')"
-        *ngIf="!isHidden"
-      >
-        <ul [class]="cx('list')">
-          <li
-            [class]="cx('item') + (item.isRefined ? (' ' + cx('item', 'selected')) : '')"
-            *ngFor="let item of items"
+    <div
+      [class]="cx()"
+      *ngIf="!isHidden"
+    >
+      <ul [class]="cx('list')">
+        <li
+          [class]="cx('item') + (item.isRefined ? (' ' + cx('item', 'selected')) : '')"
+          *ngFor="let item of items"
+          (click)="handleClick($event, item.value)"
+        >
+          <a
+            href="{{state.createURL(item.value)}}"
+            [class]="cx('link')"
             (click)="handleClick($event, item.value)"
           >
-            <a
-              href="{{state.createURL(item.value)}}"
-              (click)="handleClick($event, item.value)"
-            >
-              {{item.label}}
-              <span [class]="cx('count')">{{item.count}}</span>
-            </a>
-          </li>
-        </ul>
+            <span [class]="cx('label')">{{item.label}}</span>
+            <span [class]="cx('count')">{{item.count}}</span>
+          </a>
+        </li>
+      </ul>
 
-        <button
-          *ngIf="state.canToggleShowMore"
-          (click)="state.toggleShowMore()"
-          [class]="cx('showMore') + (!state.canToggleShowMore ? (' ' + cx('showMore', 'disabled')) : '')"
-        >
-          {{state.isShowingMore ? showLessLabel : showMoreLabel}}
-        </button>
-      </div>
+      <button
+        *ngIf="state.canToggleShowMore"
+        (click)="state.toggleShowMore()"
+        [class]="cx('showMore') + (!state.canToggleShowMore ? (' ' + cx('showMore', 'disabled')) : '')"
+      >
+        {{state.isShowingMore ? showLessLabel : showMoreLabel}}
+      </button>
     </div>
   `
 })

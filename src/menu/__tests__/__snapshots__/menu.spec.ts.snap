@@ -17,94 +17,106 @@ exports[`Menu renders markup with state 1`] = `
   >
     
         
-    
-    <div
-      class="ais-Menu-body ais-body"
+    <ul
+      class="ais-Menu-list"
     >
       
           
-      <ul
-        class="ais-Menu-list"
+      
+      <li
+        class="ais-Menu-item ais-Menu-item--selected"
       >
         
             
-        
-        <li
-          class="ais-Menu-item ais-Menu-item--selected"
+        <a
+          class="ais-Menu-link"
+          href=""
         >
           
               
-          <a
-            href=""
+          <span
+            class="ais-Menu-label"
           >
-            
-                foo
-                
-            <span
-              class="ais-Menu-count"
-            >
-              2
-            </span>
-            
-              
-          </a>
-          
-            
-        </li>
-        <li
-          class="ais-Menu-item"
-        >
+            foo
+          </span>
           
               
-          <a
-            href=""
+          <span
+            class="ais-Menu-count"
           >
-            
-                bar
-                
-            <span
-              class="ais-Menu-count"
-            >
-              3
-            </span>
-            
-              
-          </a>
+            2
+          </span>
           
             
-        </li>
-        <li
-          class="ais-Menu-item"
-        >
-          
-              
-          <a
-            href=""
-          >
-            
-                foobar
-                
-            <span
-              class="ais-Menu-count"
-            >
-              4
-            </span>
-            
-              
-          </a>
-          
-            
-        </li>
+        </a>
         
           
-      </ul>
+      </li>
+      <li
+        class="ais-Menu-item"
+      >
+        
+            
+        <a
+          class="ais-Menu-link"
+          href=""
+        >
+          
+              
+          <span
+            class="ais-Menu-label"
+          >
+            bar
+          </span>
+          
+              
+          <span
+            class="ais-Menu-count"
+          >
+            3
+          </span>
+          
+            
+        </a>
+        
+          
+      </li>
+      <li
+        class="ais-Menu-item"
+      >
+        
+            
+        <a
+          class="ais-Menu-link"
+          href=""
+        >
+          
+              
+          <span
+            class="ais-Menu-label"
+          >
+            foobar
+          </span>
+          
+              
+          <span
+            class="ais-Menu-count"
+          >
+            4
+          </span>
+          
+            
+        </a>
+        
+          
+      </li>
       
+        
+    </ul>
+    
   
-          
-      
-      
         
-    </div>
+    
     
       
   </div>
@@ -129,28 +141,19 @@ exports[`Menu renders markup without state 1`] = `
   >
     
         
-    
-    <div
-      class="ais-Menu-body ais-body"
+    <ul
+      class="ais-Menu-list"
     >
       
           
-      <ul
-        class="ais-Menu-list"
-      >
-        
-            
-        
-        
-          
-      </ul>
       
+      
+        
+    </ul>
+    
   
-          
-      
-      
         
-    </div>
+    
     
       
   </div>
@@ -176,94 +179,106 @@ exports[`Menu should apply \`transformItems\` if specified 1`] = `
   >
     
         
-    
-    <div
-      class="ais-Menu-body ais-body"
+    <ul
+      class="ais-Menu-list"
     >
       
           
-      <ul
-        class="ais-Menu-list"
+      
+      <li
+        class="ais-Menu-item ais-Menu-item--selected"
       >
         
             
-        
-        <li
-          class="ais-Menu-item ais-Menu-item--selected"
+        <a
+          class="ais-Menu-link"
+          href=""
         >
           
               
-          <a
-            href=""
+          <span
+            class="ais-Menu-label"
           >
-            
-                transformed - foo
-                
-            <span
-              class="ais-Menu-count"
-            >
-              2
-            </span>
-            
-              
-          </a>
-          
-            
-        </li>
-        <li
-          class="ais-Menu-item"
-        >
+            transformed - foo
+          </span>
           
               
-          <a
-            href=""
+          <span
+            class="ais-Menu-count"
           >
-            
-                transformed - bar
-                
-            <span
-              class="ais-Menu-count"
-            >
-              3
-            </span>
-            
-              
-          </a>
+            2
+          </span>
           
             
-        </li>
-        <li
-          class="ais-Menu-item"
-        >
-          
-              
-          <a
-            href=""
-          >
-            
-                transformed - foobar
-                
-            <span
-              class="ais-Menu-count"
-            >
-              4
-            </span>
-            
-              
-          </a>
-          
-            
-        </li>
+        </a>
         
           
-      </ul>
+      </li>
+      <li
+        class="ais-Menu-item"
+      >
+        
+            
+        <a
+          class="ais-Menu-link"
+          href=""
+        >
+          
+              
+          <span
+            class="ais-Menu-label"
+          >
+            transformed - bar
+          </span>
+          
+              
+          <span
+            class="ais-Menu-count"
+          >
+            3
+          </span>
+          
+            
+        </a>
+        
+          
+      </li>
+      <li
+        class="ais-Menu-item"
+      >
+        
+            
+        <a
+          class="ais-Menu-link"
+          href=""
+        >
+          
+              
+          <span
+            class="ais-Menu-label"
+          >
+            transformed - foobar
+          </span>
+          
+              
+          <span
+            class="ais-Menu-count"
+          >
+            4
+          </span>
+          
+            
+        </a>
+        
+          
+      </li>
       
+        
+    </ul>
+    
   
-          
-      
-      
         
-    </div>
+    
     
       
   </div>
@@ -284,15 +299,7 @@ exports[`Menu should be hidden with \`autoHideContainer\` 1`] = `
   updateState={[Function Function]}
 >
   
-      <div
-    class="ais-Menu"
-  >
-    
-        
-    
-    
       
-  </div>
     
 </ng-ais-menu>
 `;
