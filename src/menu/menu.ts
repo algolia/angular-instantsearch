@@ -41,7 +41,7 @@ export type MenuState = {
       </ul>
 
       <button
-        *ngIf="state.canToggleShowMore"
+        *ngIf="limitMax && state.canToggleShowMore"
         (click)="state.toggleShowMore()"
         [class]="cx('showMore') + (!state.canToggleShowMore ? (' ' + cx('showMore', 'disabled')) : '')"
       >
