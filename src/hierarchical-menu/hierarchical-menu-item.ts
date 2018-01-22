@@ -13,7 +13,7 @@ export type HierarchicalMenuItem = {
   selector: "ng-ais-hierarchical-menu-item",
   template: `
     <li
-      [class]="cx('item') + (item.isRefined ? (' ' + cx('item', 'selected')) : '')"
+      [class]="getItemClass(item)"
       (click)="handleClick($event, item)"
     >
       <a
@@ -21,14 +21,12 @@ export type HierarchicalMenuItem = {
         href="{{createURL(item.value)}}"
         (click)="handleClick($event, item)"
       >
-        {{item.label}}
-        <span [class]="cx('count')">
-          {{item.count}}
-        </span>
+        <span [class]="cx('label')">{{item.label}}</span>
+        <span [class]="cx('count')">{{item.count}}</span>
       </a>
 
       <ul
-        [class]="cx('list') + ' ' + cx('list', 'lvl' + lvl)"
+        [class]="getListClass(item)"
         *ngIf="item.isRefined && isArray(item.data) && item.data.length > 0"
       >
         <ng-ais-hierarchical-menu-item
@@ -50,6 +48,27 @@ export class NgAisHierarchicalMenuItem {
   @Input() public item: HierarchicalMenuItem;
 
   public cx = bem("HierarchicalMenu");
+
+  public getItemClass(item) {
+    let className = this.cx("item");
+
+    if (item.isRefined) {
+      className = `${className} ${this.cx("item", "selected")}`;
+    }
+
+    if (this.isArray(item.data) && item.data.length > 0) {
+      className = `${className} ${this.cx("item", "parent")}`;
+    }
+
+    return className;
+  }
+
+  public getListClass(item) {
+    return `${this.cx("list")} ${this.cx("list", "child")} ${this.cx(
+      "list",
+      "lvl" + this.lvl
+    )}`;
+  }
 
   public isArray(potentialArray: any) {
     return Array.isArray(potentialArray);

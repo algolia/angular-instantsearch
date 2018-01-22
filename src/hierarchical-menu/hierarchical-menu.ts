@@ -15,21 +15,19 @@ export type HierarchicalMenuState = {
 @Component({
   selector: "ng-ais-hierarchical-menu",
   template: `
-    <div [class]="cx()">
-      <div
-        [class]="cx('body')"
-        *ngIf="!isHidden"
-      >
-        <ul [class]="cx('list') + ' ' + cx('list', 'lvl0')">
-          <ng-ais-hierarchical-menu-item
-            *ngFor="let item of items"
-            [item]="item"
-            [createURL]="state.createURL"
-            [refine]="state.refine"
-          >
-          </ng-ais-hierarchical-menu-item>
-        </ul>
-      </div>
+    <div
+      [class]="cx()"
+      *ngIf="!isHidden"
+    >
+      <ul [class]="cx('list') + ' ' + cx('list', 'lvl0')">
+        <ng-ais-hierarchical-menu-item
+          *ngFor="let item of items"
+          [item]="item"
+          [createURL]="state.createURL"
+          [refine]="state.refine"
+        >
+        </ng-ais-hierarchical-menu-item>
+      </ul>
     </div>
   `
 })
