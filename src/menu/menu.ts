@@ -25,7 +25,7 @@ export type MenuState = {
     >
       <ul [class]="cx('list')">
         <li
-          [class]="cx('item') + (item.isRefined ? (' ' + cx('item', 'selected')) : '')"
+          [class]="getItemClass(item)"
           *ngFor="let item of items"
           (click)="handleClick($event, item.value)"
         >
@@ -43,7 +43,7 @@ export type MenuState = {
       <button
         *ngIf="limitMax && state.canToggleShowMore"
         (click)="state.toggleShowMore()"
-        [class]="cx('showMore') + (!state.canToggleShowMore ? (' ' + cx('showMore', 'disabled')) : '')"
+        [class]="showMoreClass"
       >
         {{state.isShowingMore ? showLessLabel : showMoreLabel}}
       </button>
@@ -74,6 +74,16 @@ export class NgAisMenu extends BaseWidget {
 
   get isHidden() {
     return this.state.items.length === 0 && this.autoHideContainer;
+  }
+
+  get showMoreClass() {
+    let className = this.cx("showMore");
+
+    if (!this.state.canToggleShowMore) {
+      className = `${className} ${this.cx("showMore", "disabled")}`;
+    }
+
+    return className;
   }
 
   get items() {

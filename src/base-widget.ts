@@ -70,4 +70,15 @@ export class BaseWidget implements OnInit, OnDestroy {
 
     this.state = state;
   };
+
+  // helper method for genering item list className
+  public getItemClass(item: { isRefined?: boolean }) {
+    let className = this.cx("item");
+
+    if (item.isRefined) {
+      className = `${className} ${this.cx("item", "selected")}`;
+    }
+
+    return className;
+  }
 }
