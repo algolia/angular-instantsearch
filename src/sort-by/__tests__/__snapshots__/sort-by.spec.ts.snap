@@ -14,39 +14,31 @@ exports[`SortBy renders markup with state 1`] = `
   >
     
         
-    <div
-      class="ais-SortBy-body ais-body"
+    <select
+      class="ais-SortBy-select"
     >
       
           
-      <select
-        class="ais-SortBy-select"
+      
+      <option
+        class="ais-SortBy-option"
+        value="foo"
       >
         
-            
+            foo
+          
+      </option>
+      <option
+        class="ais-SortBy-option"
+        value="bar"
+      >
         
-        <option
-          class="ais-SortBy-option"
-          value="foo"
-        >
+            bar
           
-              foo
-            
-        </option>
-        <option
-          class="ais-SortBy-option"
-          value="bar"
-        >
-          
-              bar
-            
-        </option>
-        
-          
-      </select>
+      </option>
       
         
-    </div>
+    </select>
     
       
   </div>
@@ -68,23 +60,15 @@ exports[`SortBy renders markup without state 1`] = `
   >
     
         
-    <div
-      class="ais-SortBy-body ais-body"
+    <select
+      class="ais-SortBy-select"
     >
       
           
-      <select
-        class="ais-SortBy-select"
-      >
-        
-            
-        
-        
-          
-      </select>
+      
       
         
-    </div>
+    </select>
     
       
   </div>
