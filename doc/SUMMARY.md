@@ -32,3 +32,4 @@
 * [RatingMenu](widgets/rating-menu.md)
 * [Stats](widgets/stats.md)
 * [Toggle](widgets/toggle.md)
+* [Panel](widgets/panel.md)
