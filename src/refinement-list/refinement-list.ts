@@ -4,7 +4,7 @@ import { noop, isFunction } from "lodash-es";
 
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
-import { parseNumberInput } from "../utils";
+import { bem, parseNumberInput } from "../utils";
 
 export type RefinementListState = {
   canRefine: boolean;
@@ -25,25 +25,15 @@ export type RefinementListState = {
       [class]="cx()"
       *ngIf="!isHidden"
     >
-      <div [class]="cx('searchBox')">
-        <form
-          [class]="cx('form')"
-          *ngIf="withSearchBox"
-          (submit)="handleSubmit($event)"
-          novalidate
+      <div
+        *ngIf="withSearchBox"
+        [class]="cx('searchBox')"
+      >
+        <ng-ais-facets-search
+          [search]="state.searchForItems"
+          [searchPlaceholder]="searchPlaceholder"
         >
-          <input
-            [class]="cx('input')"
-            autocapitalize="off"
-            autocorrect="off"
-            placeholder="{{searchPlaceholder}}"
-            role="textbox"
-            spellcheck="false"
-            type="text"
-            [value]="searchQuery"
-            (input)="handleChange($event.target.value)"
-          />
-        </form>
+        </ng-ais-facets-search>
       </div>
 
       <ul [class]="cx('list')">
@@ -90,9 +80,6 @@ export class NgAisRefinementList extends BaseWidget {
   @Input() public limitMin: number | string = 10;
   @Input() public limitMax: number | string;
   @Input() public sortBy: string[] | ((item: object) => number);
-
-  // inner state
-  searchQuery = "";
 
   public state: RefinementListState = {
     canRefine: false,
@@ -149,15 +136,5 @@ export class NgAisRefinementList extends BaseWidget {
       // refine through Algolia API
       this.state.refine(item.value);
     }
-  }
-
-  handleSubmit(event: MouseEvent) {
-    event.preventDefault();
-    this.state.searchForItems(this.searchQuery);
-  }
-
-  handleChange(value: string) {
-    this.searchQuery = value;
-    this.state.searchForItems(value);
   }
 }
