@@ -32,6 +32,29 @@ storiesOf("InstantSearch").add(
   })
 );
 
+storiesOf("Breadcrumb").add(
+  "default",
+  wrapWithHits({
+    template: `
+      <ng-ais-breadcrumb
+        [attributes]="[
+          'hierarchicalCategories.lvl0',
+          'hierarchicalCategories.lvl1',
+          'hierarchicalCategories.lvl2'
+        ]"
+      >
+      </ng-ais-breadcrumb>
+    `,
+    searchParameters: {
+      hierarchicalFacetsRefinements: {
+        "hierarchicalCategories.lvl0": [
+          "Cameras & Camcorders > Digital Cameras"
+        ]
+      }
+    }
+  })
+);
+
 storiesOf("ClearRefinements")
   .add(
     "default",
