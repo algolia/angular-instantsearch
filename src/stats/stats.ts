@@ -14,17 +14,12 @@ import { NgAisInstance } from "../instantsearch/instantsearch-instance";
   selector: "ng-ais-stats",
   template: `
     <div [class]="cx()">
-      <ng-container
-        [ngClass]="cx('body')"
-        *ngTemplateOutlet="template; context: templateContext">
+      <ng-container *ngTemplateOutlet="template; context: templateContext">
       </ng-container>
 
-      <div
-        [class]="cx('body')"
-        *ngIf="!template"
-      >
+      <span *ngIf="!template" [class]="cx('text')">
         {{state.nbHits}} results found in {{state.processingTimeMS}}ms.
-      </div>
+      </span>
     </div>
   `
 })
