@@ -14,18 +14,6 @@ exports[`Breadcrumb renders markup with two items 1`] = `
   >
     
         
-    <ng-ais-header
-      ng-reflect-class-name="ais-Breadcrumb-header ais-head"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-header>
-    
-  
-        
     
     <div
       class="ais-Breadcrumb-body ais-body"
@@ -92,18 +80,6 @@ exports[`Breadcrumb renders markup with two items 1`] = `
         
     </div>
     
-  
-        
-    <ng-ais-footer
-      ng-reflect-class-name="ais-Breadcrumb-footer ais-foot"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-footer>
-    
       
   </div>
     
@@ -124,18 +100,6 @@ exports[`Breadcrumb renders markup without state 1`] = `
   >
     
         
-    <ng-ais-header
-      ng-reflect-class-name="ais-Breadcrumb-header ais-head"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-header>
-    
-  
-        
     
     <div
       class="ais-Breadcrumb-body ais-body"
@@ -154,18 +118,6 @@ exports[`Breadcrumb renders markup without state 1`] = `
       
         
     </div>
-    
-  
-        
-    <ng-ais-footer
-      ng-reflect-class-name="ais-Breadcrumb-footer ais-foot"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-footer>
     
       
   </div>
@@ -188,31 +140,7 @@ exports[`Breadcrumb should be hidden with \`autoHideContainer\` 1`] = `
   >
     
         
-    <ng-ais-header
-      ng-reflect-class-name="ais-Breadcrumb-header ais-head"
-    >
-      
-      
-      
-      
     
-    </ng-ais-header>
-    
-  
-        
-    
-    
-  
-        
-    <ng-ais-footer
-      ng-reflect-class-name="ais-Breadcrumb-footer ais-foot"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-footer>
     
       
   </div>
@@ -236,26 +164,6 @@ exports[`Breadcrumb should display an header and a footer 1`] = `
   >
     
         
-    <ng-ais-header
-      ng-reflect-class-name="ais-Breadcrumb-header ais-head"
-      ng-reflect-header="Header title"
-    >
-      
-      
-      
-      <div
-        class="ais-Breadcrumb-header ais-header"
-      >
-        
-        Header title
-      
-      </div>
-      
-    
-    </ng-ais-header>
-    
-  
-        
     
     <div
       class="ais-Breadcrumb-body ais-body"
@@ -274,26 +182,6 @@ exports[`Breadcrumb should display an header and a footer 1`] = `
       
         
     </div>
-    
-  
-        
-    <ng-ais-footer
-      ng-reflect-class-name="ais-Breadcrumb-footer ais-foot"
-      ng-reflect-footer="Footer title"
-    >
-      
-      
-      
-      <div
-        class="ais-Breadcrumb-footer ais-footer"
-      >
-        
-        Footer title
-      
-      </div>
-      
-    
-    </ng-ais-footer>
     
       
   </div>

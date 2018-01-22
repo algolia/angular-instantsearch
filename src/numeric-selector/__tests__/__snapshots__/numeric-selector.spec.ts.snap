@@ -15,18 +15,6 @@ exports[`NumericSelector renders markup with state 1`] = `
   >
     
         
-    <ng-ais-header
-      ng-reflect-class-name="ais-NumericSelector-header ais"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-header>
-    
-  
-        
     <div
       class="ais-NumericSelector-body ais-body"
     >
@@ -77,18 +65,6 @@ exports[`NumericSelector renders markup with state 1`] = `
         
     </div>
     
-  
-        
-    <ng-ais-footer
-      ng-reflect-class-name="ais-NumericSelector-footer ais"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-footer>
-    
       
   </div>
     
@@ -110,18 +86,6 @@ exports[`NumericSelector renders markup without state 1`] = `
   >
     
         
-    <ng-ais-header
-      ng-reflect-class-name="ais-NumericSelector-header ais"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-header>
-    
-  
-        
     <div
       class="ais-NumericSelector-body ais-body"
     >
@@ -139,18 +103,6 @@ exports[`NumericSelector renders markup without state 1`] = `
       
         
     </div>
-    
-  
-        
-    <ng-ais-footer
-      ng-reflect-class-name="ais-NumericSelector-footer ais"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-footer>
     
       
   </div>

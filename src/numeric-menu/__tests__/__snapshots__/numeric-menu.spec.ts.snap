@@ -14,18 +14,6 @@ exports[`NumericRefinementList renders markup with state 1`] = `
   >
     
         
-    <ng-ais-header
-      ng-reflect-class-name="ais-NumericMenu-header ais-hea"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-header>
-    
-  
-        
     
     <div
       class="ais-NumericMenu-body ais-body"
@@ -89,18 +77,6 @@ exports[`NumericRefinementList renders markup with state 1`] = `
         
     </div>
     
-  
-        
-    <ng-ais-footer
-      ng-reflect-class-name="ais-NumericMenu-footer ais-foo"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-footer>
-    
       
   </div>
     
@@ -121,18 +97,6 @@ exports[`NumericRefinementList renders markup without state 1`] = `
   >
     
         
-    <ng-ais-header
-      ng-reflect-class-name="ais-NumericMenu-header ais-hea"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-header>
-    
-  
-        
     
     <div
       class="ais-NumericMenu-body ais-body"
@@ -151,18 +115,6 @@ exports[`NumericRefinementList renders markup without state 1`] = `
       
         
     </div>
-    
-  
-        
-    <ng-ais-footer
-      ng-reflect-class-name="ais-NumericMenu-footer ais-foo"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-footer>
     
       
   </div>
@@ -185,31 +137,7 @@ exports[`NumericRefinementList should be hidden with autoHideContainer 1`] = `
   >
     
         
-    <ng-ais-header
-      ng-reflect-class-name="ais-NumericMenu-header ais-hea"
-    >
-      
-      
-      
-      
     
-    </ng-ais-header>
-    
-  
-        
-    
-    
-  
-        
-    <ng-ais-footer
-      ng-reflect-class-name="ais-NumericMenu-footer ais-foo"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-footer>
     
       
   </div>

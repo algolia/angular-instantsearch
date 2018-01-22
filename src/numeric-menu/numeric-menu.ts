@@ -15,8 +15,6 @@ export type NumericRefinementListState = {
   selector: "ng-ais-numeric-menu",
   template: `
     <div [class]="cx()">
-      <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
-
       <div
         [class]="cx('body')"
         *ngIf="!isHidden"
@@ -39,8 +37,6 @@ export type NumericRefinementListState = {
           </li>
         </ul>
       </div>
-
-      <ng-ais-footer [footer]="footer" [className]="cx('footer')"></ng-ais-footer>
     </div>
   `
 })

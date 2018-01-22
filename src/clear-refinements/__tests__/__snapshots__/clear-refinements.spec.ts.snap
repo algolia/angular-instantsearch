@@ -15,27 +15,7 @@ exports[`ClearRefinements renders markup without state 1`] = `
       <div>
     
         
-    <ng-ais-header>
-      
-      
-      
-      
     
-    </ng-ais-header>
-    
-  
-        
-    
-    
-  
-        
-    <ng-ais-footer>
-      
-      
-      
-      
-    
-    </ng-ais-footer>
     
       
   </div>

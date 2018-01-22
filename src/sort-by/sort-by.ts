@@ -9,8 +9,6 @@ import { NgAisInstance } from "../instantsearch/instantsearch-instance";
   selector: "ng-ais-sort-by",
   template: `
     <div [class]="cx()">
-      <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
-
       <div [class]="cx('body')">
         <select
           [class]="cx('select')"
@@ -26,8 +24,6 @@ import { NgAisInstance } from "../instantsearch/instantsearch-instance";
           </option>
         </select>
       </div>
-
-      <ng-ais-footer [footer]="footer" [className]="cx('footer')"></ng-ais-footer>
     </div>
   `
 })

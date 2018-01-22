@@ -19,8 +19,6 @@ export type ToggleState = {
   selector: "ng-ais-toggle",
   template: `
     <div [class]="cx()">
-      <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
-
       <div [class]="cx('body')">
         <ul [class]="cx('list')">
           <li
@@ -41,8 +39,6 @@ export type ToggleState = {
           </li>
         </ul>
       </div>
-
-      <ng-ais-footer [footer]="footer" [className]="cx('footer')"></ng-ais-footer>
     </div>
   `
 })

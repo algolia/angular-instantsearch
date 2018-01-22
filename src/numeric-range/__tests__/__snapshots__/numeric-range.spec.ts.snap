@@ -19,18 +19,6 @@ exports[`NumericRange renders markup with state 1`] = `
   >
     
         
-    <ng-ais-header
-      ng-reflect-class-name="ais-RangeSlider-header ais-hea"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-header>
-    
-  
-        
     <div
       class="ais-RangeSlider-body ais-body"
     >
@@ -116,18 +104,6 @@ exports[`NumericRange renders markup with state 1`] = `
         
     </div>
     
-  
-        
-    <ng-ais-footer
-      ng-reflect-class-name="ais-RangeSlider-footer ais-foo"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-footer>
-    
       
   </div>
     
@@ -152,18 +128,6 @@ exports[`NumericRange renders markup without state 1`] = `
     class="ais-RangeSlider"
   >
     
-        
-    <ng-ais-header
-      ng-reflect-class-name="ais-RangeSlider-header ais-hea"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-header>
-    
-  
         
     <div
       class="ais-RangeSlider-body ais-body"
@@ -249,18 +213,6 @@ exports[`NumericRange renders markup without state 1`] = `
       
         
     </div>
-    
-  
-        
-    <ng-ais-footer
-      ng-reflect-class-name="ais-RangeSlider-footer ais-foo"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-footer>
     
       
   </div>

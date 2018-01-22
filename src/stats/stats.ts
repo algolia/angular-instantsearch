@@ -14,8 +14,6 @@ import { NgAisInstance } from "../instantsearch/instantsearch-instance";
   selector: "ng-ais-stats",
   template: `
     <div [class]="cx()">
-      <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
-
       <ng-container
         [ngClass]="cx('body')"
         *ngTemplateOutlet="template; context: templateContext">
@@ -27,8 +25,6 @@ import { NgAisInstance } from "../instantsearch/instantsearch-instance";
       >
         {{state.nbHits}} results found in {{state.processingTimeMS}}ms.
       </div>
-
-      <ng-ais-footer [footer]="footer" [className]="cx('footer')"></ng-ais-footer>
     </div>
   `
 })

@@ -14,8 +14,6 @@ export type ResultsPerPageState = {
   selector: "ng-ais-results-per-page",
   template: `
     <div [class]="cx()">
-      <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
-
       <div
         [class]="cx('body')"
         *ngIf="!isHidden"
@@ -34,8 +32,6 @@ export type ResultsPerPageState = {
           </option>
         </select>
       </div>
-
-      <ng-ais-footer [footer]="footer" [className]="cx('footer')"></ng-ais-footer>
     </div>
   `
 })

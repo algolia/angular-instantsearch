@@ -16,8 +16,6 @@ import { NgAisInstance } from "../instantsearch/instantsearch-instance";
   selector: "ng-ais-infinite-results",
   template: `
     <div [class]="cx()">
-      <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
-
       <div [class]="cx('body')">
         <ng-container *ngTemplateOutlet="template; context: state"></ng-container>
 
@@ -42,8 +40,6 @@ import { NgAisInstance } from "../instantsearch/instantsearch-instance";
           {{showMoreLabel}}
         </button>
       </div>
-
-      <ng-ais-footer [footer]="footer" [className]="cx('footer')"></ng-ais-footer>
     </div>
   `
 })

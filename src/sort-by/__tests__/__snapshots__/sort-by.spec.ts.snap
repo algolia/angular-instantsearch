@@ -14,18 +14,6 @@ exports[`SortBy renders markup with state 1`] = `
   >
     
         
-    <ng-ais-header
-      ng-reflect-class-name="ais-SortBy-header ais-header"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-header>
-    
-  
-        
     <div
       class="ais-SortBy-body ais-body"
     >
@@ -60,18 +48,6 @@ exports[`SortBy renders markup with state 1`] = `
         
     </div>
     
-  
-        
-    <ng-ais-footer
-      ng-reflect-class-name="ais-SortBy-footer ais-footer"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-footer>
-    
       
   </div>
     
@@ -92,18 +68,6 @@ exports[`SortBy renders markup without state 1`] = `
   >
     
         
-    <ng-ais-header
-      ng-reflect-class-name="ais-SortBy-header ais-header"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-header>
-    
-  
-        
     <div
       class="ais-SortBy-body ais-body"
     >
@@ -121,18 +85,6 @@ exports[`SortBy renders markup without state 1`] = `
       
         
     </div>
-    
-  
-        
-    <ng-ais-footer
-      ng-reflect-class-name="ais-SortBy-footer ais-footer"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-footer>
     
       
   </div>

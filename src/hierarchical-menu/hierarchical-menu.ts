@@ -16,8 +16,6 @@ export type HierarchicalMenuState = {
   selector: "ng-ais-hierarchical-menu",
   template: `
     <div [class]="cx()">
-      <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
-
       <div
         [class]="cx('body')"
         *ngIf="!isHidden"
@@ -32,8 +30,6 @@ export type HierarchicalMenuState = {
           </ng-ais-hierarchical-menu-item>
         </ul>
       </div>
-
-      <ng-ais-footer [footer]="footer" [className]="cx('footer')"></ng-ais-footer>
     </div>
   `
 })

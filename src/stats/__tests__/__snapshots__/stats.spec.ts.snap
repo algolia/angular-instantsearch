@@ -15,18 +15,6 @@ exports[`Stats should render with state 1`] = `
   >
     
         
-    <ng-ais-header
-      ng-reflect-class-name="ais-Stats-header ais-header"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-header>
-    
-  
-        
     
     
   
@@ -39,18 +27,6 @@ exports[`Stats should render with state 1`] = `
           100 results found in 123ms.
         
     </div>
-    
-  
-        
-    <ng-ais-footer
-      ng-reflect-class-name="ais-Stats-footer ais-footer"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-footer>
     
       
   </div>
@@ -71,31 +47,11 @@ exports[`Stats should render without state 1`] = `
       <div>
     
         
-    <ng-ais-header>
-      
-      
-      
-      
-    
-    </ng-ais-header>
-    
-  
-        
     
     
   
         
     
-    
-  
-        
-    <ng-ais-footer>
-      
-      
-      
-      
-    
-    </ng-ais-footer>
     
       
   </div>

@@ -16,8 +16,6 @@ export type RatingMenuState = {
   selector: "ng-ais-rating-menu",
   template: `
     <div [class]="cx()">
-      <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
-
       <div
         [class]="cx('body')"
         *ngIf="!isHidden"
@@ -79,8 +77,6 @@ export type RatingMenuState = {
           </li>
         </ul>
       </div>
-
-      <ng-ais-footer [footer]="footer" [className]="cx('footer')"></ng-ais-footer>
     </div>
   `
 })

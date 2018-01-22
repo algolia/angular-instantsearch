@@ -15,8 +15,6 @@ export type NumericSelectorState = {
   selector: "ng-ais-numeric-selector",
   template: `
     <div [class]="cx('')">
-      <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
-
       <div [class]="cx('body')">
         <select
           [class]="cx('select')"
@@ -32,8 +30,6 @@ export type NumericSelectorState = {
           </option>
         </select>
       </div>
-
-      <ng-ais-footer [footer]="footer" [className]="cx('footer')"></ng-ais-footer>
     </div>
   `
 })

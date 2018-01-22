@@ -16,18 +16,6 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
   >
     
         
-    <ng-ais-header
-      ng-reflect-class-name="ais-HierarchicalMenu-header ai"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-header>
-    
-  
-        
     
     <div
       class="ais-HierarchicalMenu-body ais-body"
@@ -429,18 +417,6 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
         
     </div>
     
-  
-        
-    <ng-ais-footer
-      ng-reflect-class-name="ais-HierarchicalMenu-footer ai"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-footer>
-    
       
   </div>
     
@@ -463,18 +439,6 @@ exports[`HierarchicalMenu renders markup without state 1`] = `
   >
     
         
-    <ng-ais-header
-      ng-reflect-class-name="ais-HierarchicalMenu-header ai"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-header>
-    
-  
-        
     
     <div
       class="ais-HierarchicalMenu-body ais-body"
@@ -493,18 +457,6 @@ exports[`HierarchicalMenu renders markup without state 1`] = `
       
         
     </div>
-    
-  
-        
-    <ng-ais-footer
-      ng-reflect-class-name="ais-HierarchicalMenu-footer ai"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-footer>
     
       
   </div>
@@ -528,18 +480,6 @@ exports[`HierarchicalMenu should apply \`transformItems\` if specified 1`] = `
     class="ais-HierarchicalMenu"
   >
     
-        
-    <ng-ais-header
-      ng-reflect-class-name="ais-HierarchicalMenu-header ai"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-header>
-    
-  
         
     
     <div
@@ -942,18 +882,6 @@ exports[`HierarchicalMenu should apply \`transformItems\` if specified 1`] = `
         
     </div>
     
-  
-        
-    <ng-ais-footer
-      ng-reflect-class-name="ais-HierarchicalMenu-footer ai"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-footer>
-    
       
   </div>
     
@@ -977,31 +905,7 @@ exports[`HierarchicalMenu should be hidden with \`autoHideContainer\` 1`] = `
   >
     
         
-    <ng-ais-header
-      ng-reflect-class-name="ais-HierarchicalMenu-header ai"
-    >
-      
-      
-      
-      
     
-    </ng-ais-header>
-    
-  
-        
-    
-    
-  
-        
-    <ng-ais-footer
-      ng-reflect-class-name="ais-HierarchicalMenu-footer ai"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-footer>
     
       
   </div>
