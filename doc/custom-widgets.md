@@ -1,10 +1,12 @@
 ## Customize widgets
 
-Angular InstantSearch comes with a set of UI widgets. Some of them have options to modify the HTML output (`<ng-template>`).
+Angular InstantSearch comes with a set of UI widgets. Some of them have options to modify the HTML output (`<ng-template>`). But sometime that is not sufficient and you want to completely customise the rendering of a widget.
+
+For this you can use our BaseWidget class.
 
 Every of these widgets are built using the [InstantSearch.js connectors API](https://community.algolia.com/instantsearch.js/v2/connectors.html) which contains the logic of the widgets without the rendering.
 
-### Introduce BaseWidget class
+### BaseWidget class
 
 The `BaseWidget` class helps you to create new widgets using the InstantSearch.js connectors with Angular.
 
@@ -15,6 +17,8 @@ Let's go step by step on how to write a custom widget using the `BaseWidget` cla
 ## Custom Menu Select widget
 
 In this example we will create a new custom widget using the `BaseWidget` class and the [connectMenu](https://community.algolia.com/instantsearch.js/v2/connectors/connectMenu.html) InstantSearch.js connector.
+
+The default menu widget renders a list of links, but we would like to render it as a select element instead.
 
 ### 1. Extending the `BaseWidget` class
 
@@ -77,7 +81,7 @@ export class MenuSelect extends BaseWidget {
 }
 ```
 
-And voilà, your widget is connected to InstantSearch.js and the state of the search it self!
+That's it, your widget is connected to InstantSearch.js and the state of the search it self! Now let's update the rendering of this widget
 
 ### 3. Render from the state
 
@@ -160,4 +164,4 @@ export class MenuSelect extends BaseWidget {
 
 You can now use your directive `<ng-ais-menu-select></ng-ais-menu-select>` to display your custom MenuSelect widget!
 
-See your freshly crafted MenuSelect in action [here](http://angular-instantsearch.netlify.com/dev-novel/?selectedStory=CustomWidgets.MenuSelect).
+We have a live example of this newly created MenuSelect in our [widget showcase](http://angular-instantsearch.netlify.com/dev-novel/?selectedStory=CustomWidgets.MenuSelect).
