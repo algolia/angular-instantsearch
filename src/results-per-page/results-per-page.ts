@@ -13,25 +13,23 @@ export type ResultsPerPageState = {
 @Component({
   selector: "ng-ais-results-per-page",
   template: `
-    <div [class]="cx()">
-      <div
-        [class]="cx('body')"
-        *ngIf="!isHidden"
+    <div
+      [class]="cx()"
+      *ngIf="!isHidden"
+    >
+      <select
+        [class]="cx('select')"
+        (change)="state.refine($event.target.value)"
       >
-        <select
-          [class]="cx('select')"
-          (change)="state.refine($event.target.value)"
+        <option
+          [class]="cx('option')"
+          *ngFor="let item of state.items"
+          [value]="item.value"
+          [selected]="item.isRefined"
         >
-          <option
-            [class]="cx('option')"
-            *ngFor="let item of state.items"
-            [value]="item.value"
-            [selected]="item.isRefined"
-          >
-            {{item.label}}
-          </option>
-        </select>
-      </div>
+          {{item.label}}
+        </option>
+      </select>
     </div>
   `
 })
