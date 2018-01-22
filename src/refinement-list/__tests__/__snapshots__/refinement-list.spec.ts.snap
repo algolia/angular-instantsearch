@@ -8,7 +8,6 @@ exports[`RefinementList renders markup with state 1`] = `
   platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
   searchPlaceholder={[Function String]}
-  searchQuery=""
   showLessLabel={[Function String]}
   showMoreLabel={[Function String]}
   state={[Function Object]}
@@ -20,15 +19,7 @@ exports[`RefinementList renders markup with state 1`] = `
   >
     
         
-    <div
-      class="ais-RefinementList-searchBox"
-    >
-      
-          
-      
-      
-        
-    </div>
+    
     
   
         
@@ -256,7 +247,6 @@ exports[`RefinementList renders markup without state 1`] = `
   platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
   searchPlaceholder={[Function String]}
-  searchQuery=""
   showLessLabel={[Function String]}
   showMoreLabel={[Function String]}
   state={[Function Object]}
@@ -268,15 +258,7 @@ exports[`RefinementList renders markup without state 1`] = `
   >
     
         
-    <div
-      class="ais-RefinementList-searchBox"
-    >
-      
-          
-      
-      
-        
-    </div>
+    
     
   
         
@@ -308,7 +290,6 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
   platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
   searchPlaceholder={[Function String]}
-  searchQuery=""
   showLessLabel={[Function String]}
   showMoreLabel={[Function String]}
   state={[Function Object]}
@@ -321,15 +302,7 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
   >
     
         
-    <div
-      class="ais-RefinementList-searchBox"
-    >
-      
-          
-      
-      
-        
-    </div>
+    
     
   
         
@@ -558,7 +531,6 @@ exports[`RefinementList should be hidden with autoHideContainer 1`] = `
   platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
   searchPlaceholder={[Function String]}
-  searchQuery=""
   showLessLabel={[Function String]}
   showMoreLabel={[Function String]}
   state={[Function Object]}

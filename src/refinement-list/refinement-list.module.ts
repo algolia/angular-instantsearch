@@ -3,9 +3,10 @@ import { NgModule } from "@angular/core";
 
 import { NgAisHighlightModule } from "../highlight/highlight.module";
 import { NgAisRefinementList } from "./refinement-list";
+import { NgAisFacetsSearch } from "./facets-search";
 
 @NgModule({
-  declarations: [NgAisRefinementList],
+  declarations: [NgAisRefinementList, NgAisFacetsSearch],
   entryComponents: [NgAisRefinementList],
   exports: [NgAisRefinementList],
   imports: [CommonModule, NgAisHighlightModule]
