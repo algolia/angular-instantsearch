@@ -11,7 +11,9 @@ exports[`highlight should fallback to non highlighted when no match 1`] = `
     ng-reflect-attribute-name="name"
     ng-reflect-hit="[object Object]"
   >
-    <span>
+    <span
+      class="ais-Highlight"
+    >
       foo bar
     </span>
   </ng-ais-highlight>
@@ -30,9 +32,11 @@ exports[`highlight should highlight nested objects 1`] = `
     ng-reflect-attribute-name="parent.name"
     ng-reflect-hit="[object Object]"
   >
-    <span>
+    <span
+      class="ais-Highlight"
+    >
       <em
-        class="ais-Highlight"
+        class="ais-Highlight-highlighted"
       >
         foo
       </em>
@@ -54,9 +58,11 @@ exports[`highlight should highlight strings 1`] = `
     ng-reflect-attribute-name="name"
     ng-reflect-hit="[object Object]"
   >
-    <span>
+    <span
+      class="ais-Highlight"
+    >
       <em
-        class="ais-Highlight"
+        class="ais-Highlight-highlighted"
       >
         foo
       </em>
@@ -78,9 +84,11 @@ exports[`highlight should highlight values in array 1`] = `
     ng-reflect-attribute-name="children[0].name"
     ng-reflect-hit="[object Object]"
   >
-    <span>
+    <span
+      class="ais-Highlight"
+    >
       <em
-        class="ais-Highlight"
+        class="ais-Highlight-highlighted"
       >
         foo
       </em>
@@ -102,9 +110,11 @@ exports[`highlight should use \`hit.highlighted\` if it exists 1`] = `
     ng-reflect-attribute-name="highlighted"
     ng-reflect-hit="[object Object]"
   >
-    <span>
+    <span
+      class="ais-Highlight"
+    >
       <em
-        class="ais-Highlight"
+        class="ais-Highlight-highlighted"
       >
         foo
       </em>
@@ -126,7 +136,9 @@ exports[`highlight should warn when attributeName is not found 1`] = `
     ng-reflect-attribute-name="invalid"
     ng-reflect-hit="[object Object]"
   >
-    <span />
+    <span
+      class="ais-Highlight"
+    />
   </ng-ais-highlight>
       
 </test-component>

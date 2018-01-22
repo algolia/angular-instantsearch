@@ -46,7 +46,9 @@ exports[`Hits renders markup with state 1`] = `
               ng-reflect-attribute-name="name"
               ng-reflect-hit="[object Object]"
             >
-              <span>
+              <span
+                class="ais-Highlight"
+              >
                 foo
               </span>
             </ng-ais-highlight>
@@ -63,7 +65,9 @@ exports[`Hits renders markup with state 1`] = `
               ng-reflect-attribute-name="name"
               ng-reflect-hit="[object Object]"
             >
-              <span>
+              <span
+                class="ais-Highlight"
+              >
                 bar
               </span>
             </ng-ais-highlight>
@@ -80,7 +84,9 @@ exports[`Hits renders markup with state 1`] = `
               ng-reflect-attribute-name="name"
               ng-reflect-hit="[object Object]"
             >
-              <span>
+              <span
+                class="ais-Highlight"
+              >
                 foobar
               </span>
             </ng-ais-highlight>
@@ -97,7 +103,9 @@ exports[`Hits renders markup with state 1`] = `
               ng-reflect-attribute-name="name"
               ng-reflect-hit="[object Object]"
             >
-              <span>
+              <span
+                class="ais-Highlight"
+              >
                 barfoo
               </span>
             </ng-ais-highlight>
@@ -219,7 +227,9 @@ exports[`Hits should apply \`transformItems\` if specified 1`] = `
               ng-reflect-attribute-name="name"
               ng-reflect-hit="[object Object]"
             >
-              <span>
+              <span
+                class="ais-Highlight"
+              >
                 transformed - foo
               </span>
             </ng-ais-highlight>
@@ -236,7 +246,9 @@ exports[`Hits should apply \`transformItems\` if specified 1`] = `
               ng-reflect-attribute-name="name"
               ng-reflect-hit="[object Object]"
             >
-              <span>
+              <span
+                class="ais-Highlight"
+              >
                 transformed - bar
               </span>
             </ng-ais-highlight>
@@ -253,7 +265,9 @@ exports[`Hits should apply \`transformItems\` if specified 1`] = `
               ng-reflect-attribute-name="name"
               ng-reflect-hit="[object Object]"
             >
-              <span>
+              <span
+                class="ais-Highlight"
+              >
                 transformed - foobar
               </span>
             </ng-ais-highlight>
@@ -270,7 +284,9 @@ exports[`Hits should apply \`transformItems\` if specified 1`] = `
               ng-reflect-attribute-name="name"
               ng-reflect-hit="[object Object]"
             >
-              <span>
+              <span
+                class="ais-Highlight"
+              >
                 transformed - barfoo
               </span>
             </ng-ais-highlight>

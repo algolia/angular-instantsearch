@@ -4,14 +4,14 @@ import { bem } from "../utils";
 
 @Component({
   selector: "ng-ais-highlight",
-  template: `<span [innerHtml]="content"></span>`
+  template: `<span [class]="cx()" [innerHtml]="content"></span>`
 })
 export class NgAisHighlight {
   @Input() attributeName: string;
   @Input() hit: { _highlightResult?: {}; label?: string; highlighted?: string };
   @Input() tagName: string = "em";
 
-  cx = bem("Highlight")();
+  cx = bem("Highlight");
 
   get content() {
     if (this.attributeName === "highlighted") {
@@ -51,7 +51,10 @@ export class NgAisHighlight {
 
   replaceWithTagName(value: string) {
     return value
-      .replace(new RegExp("<em>", "g"), `<${this.tagName} class="${this.cx}">`)
+      .replace(
+        new RegExp("<em>", "g"),
+        `<${this.tagName} class="${this.cx("highlighted")}">`
+      )
       .replace(new RegExp("</em>", "g"), `</${this.tagName}>`);
   }
 }
