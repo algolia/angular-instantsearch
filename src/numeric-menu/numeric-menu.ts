@@ -14,29 +14,27 @@ export type NumericRefinementListState = {
 @Component({
   selector: "ng-ais-numeric-menu",
   template: `
-    <div [class]="cx()">
-      <div
-        [class]="cx('body')"
-        *ngIf="!isHidden"
-      >
-        <ul [class]="cx('list')">
-          <li
-            [class]="cx('item') + (item.isRefined ? (' ' + cx('item', 'selected')) : '')"
-            *ngFor="let item of state.items"
-            (click)="refine($event, item)"
-          >
-            <label [class]="cx('label')">
-              <input
-                [class]="cx('radio')"
-                type="radio"
-                name="NumericRefinementList"
-                [checked]="item.isRefined"
-              />
-              {{item.label}}
-            </label>
-          </li>
-        </ul>
-      </div>
+    <div
+      [class]="cx()"
+      *ngIf="!isHidden"
+    >
+      <ul [class]="cx('list')">
+        <li
+          [class]="cx('item') + (item.isRefined ? (' ' + cx('item', 'selected')) : '')"
+          *ngFor="let item of state.items"
+          (click)="refine($event, item)"
+        >
+          <label [class]="cx('label')">
+            <input
+              [class]="cx('radio')"
+              type="radio"
+              name="NumericMenu"
+              [checked]="item.isRefined"
+            />
+            <span [class]="cx('labelText')">{{item.label}}</span>
+          </label>
+        </li>
+      </ul>
     </div>
   `
 })

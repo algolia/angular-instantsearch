@@ -14,68 +14,71 @@ exports[`NumericRefinementList renders markup with state 1`] = `
   >
     
         
-    
-    <div
-      class="ais-NumericMenu-body ais-body"
+    <ul
+      class="ais-NumericMenu-list"
     >
       
           
-      <ul
-        class="ais-NumericMenu-list"
+      
+      <li
+        class="ais-NumericMenu-item ais-NumericMenu-item--selected"
       >
         
             
-        
-        <li
-          class="ais-NumericMenu-item ais-NumericMenu-item--selected"
+        <label
+          class="ais-NumericMenu-label"
         >
           
               
-          <label
-            class="ais-NumericMenu-label"
-          >
-            
-                
-            <input
-              class="ais-NumericMenu-radio"
-              name="NumericRefinementList"
-              type="radio"
-            />
-            
-                10
+          <input
+            class="ais-NumericMenu-radio"
+            name="NumericMenu"
+            type="radio"
+          />
+          
               
-          </label>
+          <span
+            class="ais-NumericMenu-labelText"
+          >
+            10
+          </span>
           
             
-        </li>
-        <li
-          class="ais-NumericMenu-item"
+        </label>
+        
+          
+      </li>
+      <li
+        class="ais-NumericMenu-item"
+      >
+        
+            
+        <label
+          class="ais-NumericMenu-label"
         >
           
               
-          <label
-            class="ais-NumericMenu-label"
-          >
-            
-                
-            <input
-              class="ais-NumericMenu-radio"
-              name="NumericRefinementList"
-              type="radio"
-            />
-            
-                20
+          <input
+            class="ais-NumericMenu-radio"
+            name="NumericMenu"
+            type="radio"
+          />
+          
               
-          </label>
+          <span
+            class="ais-NumericMenu-labelText"
+          >
+            20
+          </span>
           
             
-        </li>
+        </label>
         
           
-      </ul>
+      </li>
       
         
-    </div>
+    </ul>
     
       
   </div>
@@ -97,24 +100,15 @@ exports[`NumericRefinementList renders markup without state 1`] = `
   >
     
         
-    
-    <div
-      class="ais-NumericMenu-body ais-body"
+    <ul
+      class="ais-NumericMenu-list"
     >
       
           
-      <ul
-        class="ais-NumericMenu-list"
-      >
-        
-            
-        
-        
-          
-      </ul>
+      
       
         
-    </div>
+    </ul>
     
       
   </div>
@@ -132,15 +126,7 @@ exports[`NumericRefinementList should be hidden with autoHideContainer 1`] = `
   updateState={[Function Function]}
 >
   
-      <div
-    class="ais-NumericMenu"
-  >
-    
-        
-    
-    
       
-  </div>
     
 </ng-ais-numeric-menu>
 `;
