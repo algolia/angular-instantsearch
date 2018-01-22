@@ -29,33 +29,35 @@
 
         <section class="facet-wrapper">
           <div class="facet-category-title">Refine by</div>
-          <ng-ais-refinement-list
-            header="Materials"
-            attributeName="materials"
-            operator="or"
-            limit="10"
-          >
-          </ng-ais-refinement-list>
+          <ng-ais-panel header="Materials">
+            <ng-ais-refinement-list
+              attributeName="materials"
+              operator="or"
+              limit="10"
+            >
+            </ng-ais-refinement-list>
+          </ng-ais-panel>
 
-          <ng-ais-refinement-list
-            header="Colors"
-            attributeName="colors"
-            operator="or"
-            limit="10"
-          >
-          </ng-ais-refinement-list>
+          <ng-ais-panel header="Colors">
+            <ng-ais-refinement-list
+              attributeName="colors"
+              operator="or"
+              limit="10"
+            >
+            </ng-ais-refinement-list>
+          </ng-ais-panel>
 
-          <ng-ais-rating-menu
-            header="Ratings"
-            attributeName="rating"
-          >
-          </ng-ais-rating-menu>
+          <ng-ais-panel header="Ratings">
+            <ng-ais-rating-menu attributeName="rating"></ng-ais-rating-menu>
+          </ng-ais-panel>
 
-          <ng-ais-numeric-range
-            header="Prices"
-            attributeName="price"
-          >
-          </ng-ais-numeric-range>
+          <ng-ais-panel header="Prices">
+            <ng-ais-numeric-range
+              header="Prices"
+              attributeName="price"
+            >
+            </ng-ais-numeric-range>
+          </ng-ais-panel>
         </section>
 
         <div class="thank-you">
@@ -65,17 +67,18 @@
 
       <div class="results-wrapper">
       <section id="results-topbar">
-        <ng-ais-sort-by
-          header="Sort by"
-          [indices]="
-            [
-              {name: 'ikea', label: 'Featured'},
-              {name: 'ikea_price_asc', label: 'Price asc.'},
-              {name: 'ikea_price_desc', label: 'Price desc.'}
-            ]
-          "
-        >
-        </ng-ais-sort-by>
+        <ng-ais-panel header="Sort by">
+          <ng-ais-sort-by
+            [indices]="
+              [
+                {name: 'ikea', label: 'Featured'},
+                {name: 'ikea_price_asc', label: 'Price asc.'},
+                {name: 'ikea_price_desc', label: 'Price desc.'}
+              ]
+            "
+          >
+          </ng-ais-sort-by>
+        </ng-ais-panel>
         <ng-ais-stats></ng-ais-stats>
       </section>
 

@@ -104,7 +104,7 @@ aside {
     margin-bottom: 16px;
   }
 
-  .ais-header {
+  .ais-Panel-header {
     color: #333;
     font-weight: bold;
     margin: 4px 0;
@@ -143,12 +143,10 @@ aside {
 
     &:before {
       content: "(";
-      margin-right: -3px;
     }
 
     &:after {
       content: ")";
-      margin-left: -3px;
     }
   }
 
@@ -278,7 +276,7 @@ aside {
   line-height: 22px;
   @include clearfix;
 
-  .ais-SortBy {
+  .ais-Panel {
     float: right;
 
     &-header {
