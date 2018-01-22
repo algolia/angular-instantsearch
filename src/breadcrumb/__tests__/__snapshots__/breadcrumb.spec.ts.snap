@@ -127,35 +127,3 @@ exports[`Breadcrumb should be hidden with \`autoHideContainer\` 1`] = `
     
 </ng-ais-breadcrumb>
 `;
-
-exports[`Breadcrumb should display an header and a footer 1`] = `
-<ng-ais-breadcrumb
-  cx={[Function Function]}
-  footer={[Function String]}
-  header={[Function String]}
-  platformId={[Function String]}
-  searchInstance={[Function NgAisInstance]}
-  state={[Function Object]}
-  updateState={[Function Function]}
->
-  
-      <div
-    class="ais-Breadcrumb"
-  >
-    
-        
-    <ul
-      class="ais-Breadcrumb-list"
-    >
-      
-          
-      
-      
-        
-    </ul>
-    
-      
-  </div>
-    
-</ng-ais-breadcrumb>
-`;

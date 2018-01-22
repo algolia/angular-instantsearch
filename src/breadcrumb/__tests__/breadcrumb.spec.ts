@@ -55,15 +55,6 @@ describe("Breadcrumb", () => {
     expect(refine).toHaveBeenCalledWith("foo");
   });
 
-  it("should display an header and a footer", () => {
-    const fixture = render();
-    fixture.componentInstance.header = "Header title";
-    fixture.componentInstance.footer = "Footer title";
-    fixture.detectChanges();
-
-    expect(fixture).toMatchSnapshot();
-  });
-
   it("should be hidden with `autoHideContainer`", () => {
     const fixture = render({ items: [] });
     fixture.componentInstance.autoHideContainer = true;
