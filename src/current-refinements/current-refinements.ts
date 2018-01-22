@@ -18,8 +18,6 @@ export type CurrentRefinementsState = {
   selector: "ng-ais-current-refinements",
   template: `
     <div [class]="cx()">
-      <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
-
       <div
         [class]="cx('body')"
         *ngIf="!isHidden"
@@ -51,8 +49,6 @@ export type CurrentRefinementsState = {
           {{clearRefinementsLabel}}
         </button>
       </div>
-
-      <ng-ais-footer [footer]="footer" [className]="cx('footer')"></ng-ais-footer>
     </div>
   `
 })

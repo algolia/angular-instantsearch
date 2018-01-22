@@ -9,8 +9,6 @@ import { NgAisInstance } from "../instantsearch/instantsearch-instance";
   selector: "ng-ais-clear-refinements",
   template: `
     <div [class]="cx()">
-      <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
-
       <div
         [class]="cx('body')"
         *ngIf="!isHidden"
@@ -23,8 +21,6 @@ import { NgAisInstance } from "../instantsearch/instantsearch-instance";
           {{buttonLabel}}
         </button>
       </div>
-
-      <ng-ais-footer [footer]="footer" [className]="cx('footer')"></ng-ais-footer>
     </div>
   `
 })

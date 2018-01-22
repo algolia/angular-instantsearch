@@ -10,8 +10,6 @@ import { parseNumberInput } from "../utils";
   selector: "ng-ais-pagination",
   template: `
     <div [class]="cx()">
-      <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
-
       <div [class]="cx('body')">
         <ul [class]="cx('list')">
           <li
@@ -95,8 +93,6 @@ import { parseNumberInput } from "../utils";
           </li>
         </ul>
       </div>
-
-      <ng-ais-footer [footer]="footer" [className]="cx('footer')"></ng-ais-footer>
     </div>
   `
 })

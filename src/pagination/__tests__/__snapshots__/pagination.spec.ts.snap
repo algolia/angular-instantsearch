@@ -19,18 +19,6 @@ exports[`Pagination renders does not uses pagesPadding when nbPages < pagesPaddi
   >
     
         
-    <ng-ais-header
-      ng-reflect-class-name="ais-Pagination-header ais-head"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-header>
-    
-  
-        
     <div
       class="ais-Pagination-body ais-body"
     >
@@ -193,18 +181,6 @@ exports[`Pagination renders does not uses pagesPadding when nbPages < pagesPaddi
         
     </div>
     
-  
-        
-    <ng-ais-footer
-      ng-reflect-class-name="ais-Pagination-footer ais-foot"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-footer>
-    
       
   </div>
     
@@ -227,16 +203,6 @@ exports[`Pagination renders markup without state 1`] = `
   
       <div>
     
-        
-    <ng-ais-header>
-      
-      
-      
-      
-    
-    </ng-ais-header>
-    
-  
         
     <div>
       
@@ -268,16 +234,6 @@ exports[`Pagination renders markup without state 1`] = `
         
     </div>
     
-  
-        
-    <ng-ais-footer>
-      
-      
-      
-      
-    
-    </ng-ais-footer>
-    
       
   </div>
     
@@ -302,18 +258,6 @@ exports[`Pagination renders with pages in state 1`] = `
     class="ais-Pagination"
   >
     
-        
-    <ng-ais-header
-      ng-reflect-class-name="ais-Pagination-header ais-head"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-header>
-    
-  
         
     <div
       class="ais-Pagination-body ais-body"
@@ -508,18 +452,6 @@ exports[`Pagination renders with pages in state 1`] = `
       
         
     </div>
-    
-  
-        
-    <ng-ais-footer
-      ng-reflect-class-name="ais-Pagination-footer ais-foot"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-footer>
     
       
   </div>
@@ -548,26 +480,6 @@ exports[`Pagination should display an header and a footer 1`] = `
   >
     
         
-    <ng-ais-header
-      ng-reflect-class-name="ais-Pagination-header ais-head"
-      ng-reflect-header="Header title"
-    >
-      
-      
-      
-      <div
-        class="ais-Pagination-header ais-header"
-      >
-        
-        Header title
-      
-      </div>
-      
-    
-    </ng-ais-header>
-    
-  
-        
     <div
       class="ais-Pagination-body ais-body"
     >
@@ -761,26 +673,6 @@ exports[`Pagination should display an header and a footer 1`] = `
       
         
     </div>
-    
-  
-        
-    <ng-ais-footer
-      ng-reflect-class-name="ais-Pagination-footer ais-foot"
-      ng-reflect-footer="Footer title"
-    >
-      
-      
-      
-      <div
-        class="ais-Pagination-footer ais-footer"
-      >
-        
-        Footer title
-      
-      </div>
-      
-    
-    </ng-ais-footer>
     
       
   </div>

@@ -14,18 +14,6 @@ exports[`ResultsPerPage renders markup with state 1`] = `
   >
     
         
-    <ng-ais-header
-      ng-reflect-class-name="ais-ResultsPerPage-header ais-"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-header>
-    
-  
-        
     
     <div
       class="ais-ResultsPerPage-body ais-body"
@@ -69,18 +57,6 @@ exports[`ResultsPerPage renders markup with state 1`] = `
         
     </div>
     
-  
-        
-    <ng-ais-footer
-      ng-reflect-class-name="ais-ResultsPerPage-footer ais-"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-footer>
-    
       
   </div>
     
@@ -99,27 +75,7 @@ exports[`ResultsPerPage renders markup without state 1`] = `
       <div>
     
         
-    <ng-ais-header>
-      
-      
-      
-      
     
-    </ng-ais-header>
-    
-  
-        
-    
-    
-  
-        
-    <ng-ais-footer>
-      
-      
-      
-      
-    
-    </ng-ais-footer>
     
       
   </div>
@@ -140,27 +96,7 @@ exports[`ResultsPerPage should be hidden with autoHideContainer 1`] = `
       <div>
     
         
-    <ng-ais-header>
-      
-      
-      
-      
     
-    </ng-ais-header>
-    
-  
-        
-    
-    
-  
-        
-    <ng-ais-footer>
-      
-      
-      
-      
-    
-    </ng-ais-footer>
     
       
   </div>

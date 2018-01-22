@@ -34,10 +34,6 @@ export class BaseWidget implements OnInit, OnDestroy {
   // ssr platformId
   public plateformId: Object;
 
-  // header footer
-  @Input() public header?: string;
-  @Input() public footer?: string;
-
   @Input() public autoHideContainer?: boolean;
 
   public widget?: Widget;

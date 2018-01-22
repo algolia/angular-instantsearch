@@ -16,18 +16,6 @@ exports[`InfiniteHits renders markup with state 1`] = `
   >
     
         
-    <ng-ais-header
-      ng-reflect-class-name="ais-InfiniteResults-header ais"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-header>
-    
-  
-        
     <div
       class="ais-InfiniteResults-body ais-body"
     >
@@ -137,18 +125,6 @@ exports[`InfiniteHits renders markup with state 1`] = `
         
     </div>
     
-  
-        
-    <ng-ais-footer
-      ng-reflect-class-name="ais-InfiniteResults-footer ais"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-footer>
-    
       
   </div>
     
@@ -170,18 +146,6 @@ exports[`InfiniteHits renders markup without state 1`] = `
     class="ais-InfiniteResults"
   >
     
-        
-    <ng-ais-header
-      ng-reflect-class-name="ais-InfiniteResults-header ais"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-header>
-    
-  
         
     <div
       class="ais-InfiniteResults-body ais-body"
@@ -223,18 +187,6 @@ exports[`InfiniteHits renders markup without state 1`] = `
       
         
     </div>
-    
-  
-        
-    <ng-ais-footer
-      ng-reflect-class-name="ais-InfiniteResults-footer ais"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-footer>
     
       
   </div>

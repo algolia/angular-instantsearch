@@ -16,18 +16,6 @@ exports[`Toggle should render with a label 1`] = `
   >
     
         
-    <ng-ais-header
-      ng-reflect-class-name="ais-Toggle-header ais-header"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-header>
-    
-  
-        
     <div
       class="ais-Toggle-body ais-body"
     >
@@ -76,18 +64,6 @@ exports[`Toggle should render with a label 1`] = `
         
     </div>
     
-  
-        
-    <ng-ais-footer
-      ng-reflect-class-name="ais-Toggle-footer ais-footer"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-footer>
-    
       
   </div>
     
@@ -108,18 +84,6 @@ exports[`Toggle should render with state 1`] = `
     class="ais-Toggle"
   >
     
-        
-    <ng-ais-header
-      ng-reflect-class-name="ais-Toggle-header ais-header"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-header>
-    
-  
         
     <div
       class="ais-Toggle-body ais-body"
@@ -169,18 +133,6 @@ exports[`Toggle should render with state 1`] = `
         
     </div>
     
-  
-        
-    <ng-ais-footer
-      ng-reflect-class-name="ais-Toggle-footer ais-footer"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-footer>
-    
       
   </div>
     
@@ -201,18 +153,6 @@ exports[`Toggle should render without state 1`] = `
     class="ais-Toggle"
   >
     
-        
-    <ng-ais-header
-      ng-reflect-class-name="ais-Toggle-header ais-header"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-header>
-    
-  
         
     <div
       class="ais-Toggle-body ais-body"
@@ -261,18 +201,6 @@ exports[`Toggle should render without state 1`] = `
       
         
     </div>
-    
-  
-        
-    <ng-ais-footer
-      ng-reflect-class-name="ais-Toggle-footer ais-footer"
-    >
-      
-      
-      
-      
-    
-    </ng-ais-footer>
     
       
   </div>

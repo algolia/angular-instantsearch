@@ -16,8 +16,6 @@ export type NumericRangeState = {
   selector: "ng-ais-numeric-range",
   template: `
     <div [class]="cx()">
-      <ng-ais-header [header]="header" [className]="cx('header')"></ng-ais-header>
-
       <div [class]="cx('body')">
         <form
           [class]="cx('form')"
@@ -62,8 +60,6 @@ export type NumericRangeState = {
           </button>
         </form>
       </div>
-
-      <ng-ais-footer [footer]="footer" [className]="cx('footer')"></ng-ais-footer>
     </div>
   `
 })
