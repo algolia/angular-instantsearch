@@ -18,36 +18,39 @@ import { Component, OnDestroy } from "@angular/core";
 
         <div class="row">
           <div class="col-4">
-            <ng-ais-hierarchical-menu
-              header="Show results for"
-              [attributes]="['category', 'sub_category', 'sub_sub_category']"
-              [sortBy]="['name:asc']"
-            >
-            </ng-ais-hierarchical-menu>
+            <ng-ais-panel header="Show results for">
+              <ng-ais-hierarchical-menu
+                [attributes]="['category', 'sub_category', 'sub_sub_category']"
+                [sortBy]="['name:asc']"
+              >
+              </ng-ais-hierarchical-menu>
+            </ng-ais-panel>
           </div>
 
           <div class="col-4">
-            <ng-ais-refinement-list
-              header="Colors"
-              attributeName="colors"
-              operator="or"
-              limit="10"
-            >
-            </ng-ais-refinement-list>
+            <ng-ais-panel header="Colors">
+              <ng-ais-refinement-list
+                attributeName="colors"
+                operator="or"
+                limit="10"
+              >
+              </ng-ais-refinement-list>
+            </ng-ais-panel>
           </div>
 
           <div class="col-4">
-            <ng-ais-sort-by
-              header="Sort by"
-              [indices]="
-                [
-                  {name: 'ikea', label: 'Featured'},
-                  {name: 'ikea_price_asc', label: 'Price asc.'},
-                  {name: 'ikea_price_desc', label: 'Price desc.'}
-                ]
-              "
-            >
-            </ng-ais-sort-by>
+            <ng-ais-panel header="Sort by">
+              <ng-ais-sort-by
+                [indices]="
+                  [
+                    {name: 'ikea', label: 'Featured'},
+                    {name: 'ikea_price_asc', label: 'Price asc.'},
+                    {name: 'ikea_price_desc', label: 'Price desc.'}
+                  ]
+                "
+              >
+              </ng-ais-sort-by>
+            </ng-ais-panel>
             <hr />
             <ng-ais-menu-select>
             </ng-ais-menu-select>
