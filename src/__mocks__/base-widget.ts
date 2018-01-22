@@ -32,4 +32,14 @@ export class BaseWidget implements OnInit, OnDestroy {
   public updateState = (state, isFirstRendering): Promise<void> | void => {
     this.state = state;
   };
+
+  public getItemClass(item: { isRefined?: boolean }) {
+    let className = this.cx("item");
+
+    if (item.isRefined) {
+      className = `${className} ${this.cx("item", "selected")}`;
+    }
+
+    return className;
+  }
 }
