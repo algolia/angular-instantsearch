@@ -32,7 +32,7 @@ export type Connector = (
 
 export class BaseWidget implements OnInit, OnDestroy {
   // ssr platformId
-  public plateformId: Object;
+  public platformId: Object;
 
   @Input() public autoHideContainer?: boolean;
 
@@ -53,7 +53,7 @@ export class BaseWidget implements OnInit, OnDestroy {
   }
 
   public ngOnDestroy() {
-    if (isPlatformBrowser(this.plateformId)) {
+    if (isPlatformBrowser(this.platformId)) {
       this.searchInstance.removeWidget(this.widget);
     }
   }

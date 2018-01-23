@@ -44,7 +44,7 @@ export class NgAisResults extends BaseWidget {
   public state: { hits: {}[]; results: {} } = { hits: [], results: {} };
 
   constructor(
-    @Inject(PLATFORM_ID) public plateformId: Object,
+    @Inject(PLATFORM_ID) public platformId: Object,
     searchInstance: NgAisInstance
   ) {
     super(searchInstance, "Results");
