@@ -14,7 +14,7 @@ Highlighting is based on the results and you will need to make a custom Hit temp
 Here is an example in which we define a custom Hit template for results that have a `description` field that is highlighted:
 
 ```html
-<ng-ais-results>
+<ng-ais-hits>
     <ng-template let-hits="hits">
         <div *ngFor="let hit of hits">
             <ng-ais-highlight
@@ -24,5 +24,5 @@ Here is an example in which we define a custom Hit template for results that hav
             </ng-ais-highlight>
         </div>
     </ng-template>
-</ng-ais-results>
+</ng-ais-hits>
 ```
