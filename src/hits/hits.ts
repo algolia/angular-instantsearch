@@ -14,7 +14,7 @@ import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 
 @Component({
-  selector: "ng-ais-results",
+  selector: "ng-ais-hits",
   template: `
     <div [class]="cx()">
       <ng-container *ngTemplateOutlet="template; context: state"></ng-container>

@@ -40,7 +40,7 @@ export function wrapWithHits({
             </ng-ais-search-box>
           </div>
           <div id="results-hits-container">
-            <ng-ais-results>
+            <ng-ais-hits>
               <ng-template let-hits="hits">
                 <div
                   *ngFor="let hit of hits"
@@ -68,7 +68,7 @@ export function wrapWithHits({
                   </div>
                 </div>
               </ng-template>
-            </ng-ais-results>
+            </ng-ais-hits>
           </div>
           <div id="results-pagination-container">
             <ng-ais-pagination [maxPages]="20"></ng-ais-pagination>

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Hits renders markup with state 1`] = `
-<ng-ais-results
+<ng-ais-hits
   cx={[Function Function]}
   platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
@@ -117,11 +117,11 @@ exports[`Hits renders markup with state 1`] = `
       
   </div>
     
-</ng-ais-results>
+</ng-ais-hits>
 `;
 
 exports[`Hits renders markup without state 1`] = `
-<ng-ais-results
+<ng-ais-hits
   cx={[Function Function]}
   platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
@@ -161,11 +161,11 @@ exports[`Hits renders markup without state 1`] = `
       
   </div>
     
-</ng-ais-results>
+</ng-ais-hits>
 `;
 
 exports[`Hits should apply \`transformItems\` if specified 1`] = `
-<ng-ais-results
+<ng-ais-hits
   cx={[Function Function]}
   platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
@@ -282,5 +282,5 @@ exports[`Hits should apply \`transformItems\` if specified 1`] = `
       
   </div>
     
-</ng-ais-results>
+</ng-ais-hits>
 `;

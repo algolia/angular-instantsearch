@@ -138,7 +138,7 @@ To display results, let's add the Results widget. This widget will display all t
     urlSync: true
   }"
 >
-  <ng-ais-results></ng-ais-results>
+  <ng-ais-hits></ng-ais-hits>
 </ng-ais-instantsearch>
 ```
 
@@ -146,17 +146,17 @@ Here's the result:
 ![First hits](./first-hits.png)
 
 You should now be able to see the results, now let's try to use a custom template for hits,
-replace `<ng-ais-results></ng-ais-results>` with:
+replace `<ng-ais-hits></ng-ais-hits>` with:
 
 ```html
 <!-- <ng-ais-instantsearch [config]="{...}"> -->
-  <ng-ais-results>
+  <ng-ais-hits>
     <ng-template let-hits="hits">
       <div *ngFor="let hit of hits">
         Hit {{hit.objectID}}: {{hit.name}}
       </div>
     </ng-template>
-  </ng-ais-results>
+  </ng-ais-hits>
 <!-- </ng-ais-instantsearch> -->
 ```
 
@@ -164,7 +164,7 @@ One very important aspect of the search is highlightning the matching parts of t
 
 ```html
 <!-- <ng-ais-instantsearch [config]="{...}"> -->
-  <ng-ais-results>
+  <ng-ais-hits>
     <ng-template let-hits="hits">
       <div *ngFor="let hit of hits">
         Hit {{hit.objectID}}:
@@ -172,7 +172,7 @@ One very important aspect of the search is highlightning the matching parts of t
         </ng-ais-highlight>
       </div>
     </ng-template>
-  </ng-ais-results>
+  </ng-ais-hits>
 <!-- </ng-ais-instantsearch> -->
 ```
 
@@ -190,7 +190,7 @@ Now that we’ve added the results, we can start querying our index. To do this,
 ```html
 <!-- <ng-ais-instantsearch [config]="{...}"> -->
   <ng-ais-search-box></ng-ais-search-box>
-  <!-- <ng-ais-results></ng-ais-results> -->
+  <!-- <ng-ais-hits></ng-ais-hits> -->
 <!-- </ng-ais-instantsearch> -->
 ```
 
@@ -214,7 +214,7 @@ Since the dataset used here is an e-commerce one, let’s add a [RefinementList]
 
   <ng-ais-refinement-list attributeName="brand"></ng-ais-refinement-list>
 
-  <!-- <ng-ais-results></ng-ais-results> -->
+  <!-- <ng-ais-hits></ng-ais-hits> -->
 </ng-ais-instantsearch>
 ```
 
@@ -262,7 +262,7 @@ Those two features are implemented respectively with the [Pagination](/widgets/p
   </ng-ais-clear-all>
 
   <!-- Hits -->
-  <ng-ais-results></ng-ais-results>
+  <ng-ais-hits></ng-ais-hits>
 
   <!-- Pagination -->
   <ng-ais-pagination [maxPages]="20">
