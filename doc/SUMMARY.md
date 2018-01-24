@@ -17,7 +17,7 @@
 * [CurrentRefinements](widgets/current-refinements.md)
 * [HierarchicalMenu](widgets/hierarchical-menu.md)
 * [Highlight](widgets/highlight.md)
-* [Results](widgets/results.md)
+* [Hits](widgets/hits.md)
 * [ResultsPerPage](widgets/results-per-page.md)
 * [InfiniteResults](widgets/infinite-results.md)
 * [Menu](widgets/menu.md)

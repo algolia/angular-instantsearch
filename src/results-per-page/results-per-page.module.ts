@@ -1,12 +1,12 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 
-import { NgAisResultsPerPage } from "./results-per-page";
+import { NgAisHitsPerPage } from "./results-per-page";
 
 @NgModule({
-  declarations: [NgAisResultsPerPage],
-  entryComponents: [NgAisResultsPerPage],
-  exports: [NgAisResultsPerPage],
+  declarations: [NgAisHitsPerPage],
+  entryComponents: [NgAisHitsPerPage],
+  exports: [NgAisHitsPerPage],
   imports: [CommonModule]
 })
-export class NgAisResultsPerPageModule {}
+export class NgAisHitsPerPageModule {}

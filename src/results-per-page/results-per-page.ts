@@ -33,7 +33,7 @@ export type ResultsPerPageState = {
     </div>
   `
 })
-export class NgAisResultsPerPage extends BaseWidget {
+export class NgAisHitsPerPage extends BaseWidget {
   @Input()
   public items: {
     value: number;
