@@ -1,3 +1,55 @@
+<a name="1.0.0-beta.9"></a>
+# [1.0.0-beta.9](https://github.com/algolia/angular-instantsearch/compare/1.0.0-beta.8...1.0.0-beta.9) (2018-01-24)
+
+### Breaking Changes
+
+* Widgets naming changes:
+
+| Before | Now |
+| -      | -   |
+| `<ng-ais-results>` | `<ng-ais-hits>` |
+| `<ng-ais-results-per-page>` | `<ng-ais-hits-per-page>` |
+| `<ng-ais-numeric-range>` | `<ng-ais-range-input>` |
+
+* Widgets does not have a `-body` CSS class anymore
+* Widgets does not have a `header` and `footer` option, you should use the `<ng-ais-panel>` component now ([documentation](https://algolia.gitbooks.io/angular-instantsearch/widgets/panel.html))
+
+### Bug Fixes
+
+* **hits:** mass replace left-overs ([77d3df8](https://github.com/algolia/angular-instantsearch/commit/77d3df8))
+* **menu:** dont display `showMore` button if no `limitMax` set ([364afcb](https://github.com/algolia/angular-instantsearch/commit/364afcb))
+* **refinementList:** `labelText` className ([9a31c91](https://github.com/algolia/angular-instantsearch/commit/9a31c91))
+* **refinementList:** apply correctly `selected` className ([1a1419c](https://github.com/algolia/angular-instantsearch/commit/1a1419c))
+* **results:** remove `body` div ([3bf3057](https://github.com/algolia/angular-instantsearch/commit/3bf3057))
+* **widgets:** use method for complex CSS className ([5fb84d7](https://github.com/algolia/angular-instantsearch/commit/5fb84d7))
+
+
+### Features
+
+* **breadcrumb:** update markup to is.css v6 ([64800f1](https://github.com/algolia/angular-instantsearch/commit/64800f1))
+* **clearRefinements:** update markup to is.css v6 ([6981cf3](https://github.com/algolia/angular-instantsearch/commit/6981cf3))
+* **currentRefinements:** update markup to is.css v6 ([ceafcdb](https://github.com/algolia/angular-instantsearch/commit/ceafcdb))
+* **hierarchicalMenu:** update markup to is.css v6 ([51a7e95](https://github.com/algolia/angular-instantsearch/commit/51a7e95))
+* **highlight:** update markup to is.css v6 ([b21cceb](https://github.com/algolia/angular-instantsearch/commit/b21cceb))
+* **infiniteResults:** update markup to is.css v6 ([8c63657](https://github.com/algolia/angular-instantsearch/commit/8c63657))
+* **menu:** udpate markup to is.css v6 ([05450e4](https://github.com/algolia/angular-instantsearch/commit/05450e4))
+* **numericMenu:** update markup to is.css v6 ([45d9845](https://github.com/algolia/angular-instantsearch/commit/45d9845))
+* **numericSelector:** update markup to is.css v6 ([e3ba6f2](https://github.com/algolia/angular-instantsearch/commit/e3ba6f2))
+* **pagination:** update markup to is.css v6 ([3889955](https://github.com/algolia/angular-instantsearch/commit/3889955))
+* **panel:** add `<ng-ais-panel>` component ([a58cbae](https://github.com/algolia/angular-instantsearch/commit/a58cbae))
+* **range-input:** update markup to is.css v6 ([7be7abd](https://github.com/algolia/angular-instantsearch/commit/7be7abd))
+* **ratingMenu:** update markup to is.css v6 ([5c23d49](https://github.com/algolia/angular-instantsearch/commit/5c23d49))
+* **refinementList:** update markup to is.css v6 ([dee2ff7](https://github.com/algolia/angular-instantsearch/commit/dee2ff7))
+* **refinementList:** update markup to is.css v6 ([ba0aacd](https://github.com/algolia/angular-instantsearch/commit/ba0aacd))
+* **resultsPerPage:** update markup to is.css v6 ([b8f961c](https://github.com/algolia/angular-instantsearch/commit/b8f961c))
+* **searchBox:** update markup to is.css v6 ([833e86c](https://github.com/algolia/angular-instantsearch/commit/833e86c))
+* **sortBy:** update markup to is.css v6 ([4d234e9](https://github.com/algolia/angular-instantsearch/commit/4d234e9))
+* **stats:** update markup to is.css v6 ([77b3df0](https://github.com/algolia/angular-instantsearch/commit/77b3df0))
+* **toggle:** update markup to is.css v6 ([656040d](https://github.com/algolia/angular-instantsearch/commit/656040d))
+* **widgets:** remove header/footer ([55853b5](https://github.com/algolia/angular-instantsearch/commit/55853b5))
+
+
+
 <a name="1.0.0-beta.8"></a>
 # [1.0.0-beta.8](https://github.com/algolia/angular-instantsearch/compare/1.0.0-beta.7...1.0.0-beta.8) (2018-01-19)
 
