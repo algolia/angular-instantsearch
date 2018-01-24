@@ -18,7 +18,7 @@
 * [HierarchicalMenu](widgets/hierarchical-menu.md)
 * [Highlight](widgets/highlight.md)
 * [Hits](widgets/hits.md)
-* [ResultsPerPage](widgets/results-per-page.md)
+* [ResultsPerPage](widgets/hits-per-page.md)
 * [InfiniteResults](widgets/infinite-results.md)
 * [Menu](widgets/menu.md)
 * [NumericMenu](widgets/numeric-menu.md)

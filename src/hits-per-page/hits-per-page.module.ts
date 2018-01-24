@@ -1,7 +1,7 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 
-import { NgAisHitsPerPage } from "./results-per-page";
+import { NgAisHitsPerPage } from "./hits-per-page";
 
 @NgModule({
   declarations: [NgAisHitsPerPage],
