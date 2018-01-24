@@ -19,90 +19,82 @@ exports[`RangeInput renders markup with state 1`] = `
   >
     
         
-    <div
-      class="ais-RangeInput-body ais-body"
+    <form
+      class="ais-RangeInput-form"
+      novalidate=""
     >
       
           
-      <form
-        class="ais-RangeInput-form"
-        novalidate=""
+      <label
+        class="ais-RangeInput-label"
       >
         
             
-        <label
-          class="ais-RangeInput-label"
-        >
-          
-              
-          <span
-            class="ais-RangeInput-currency"
-          >
-            $ 
-          </span>
-          
-              
-          <input
-            class="ais-RangeInput-input"
-            max="100"
-            min="0"
-            placeholder="0"
-            step="0.01"
-            type="number"
-          />
-          
-            
-        </label>
-        
-  
-            
         <span
-          class="ais-RangeInput-separator"
+          class="ais-RangeInput-currency"
         >
-           to 
+          $
         </span>
         
-  
             
-        <label
-          class="ais-RangeInput-label"
-        >
-          
-              
-          <span
-            class="ais-RangeInput-currency"
-          >
-            $ 
-          </span>
-          
-              
-          <input
-            class="ais-RangeInput-input"
-            max="100"
-            min="0"
-            placeholder="100"
-            step="0.01"
-            type="number"
-          />
-          
-            
-        </label>
-        
-  
-            
-        <button
-          class="ais-RangeInput-submit"
-        >
-          
-              Go
-            
-        </button>
+        <input
+          class="ais-RangeInput-input--min"
+          max="100"
+          min="0"
+          placeholder="0"
+          step="0.01"
+          type="number"
+        />
         
           
-      </form>
+      </label>
+      
+  
+          
+      <span
+        class="ais-RangeInput-separator"
+      >
+        to
+      </span>
+      
+  
+          
+      <label
+        class="ais-RangeInput-label"
+      >
+        
+            
+        <span
+          class="ais-RangeInput-currency"
+        >
+          $
+        </span>
+        
+            
+        <input
+          class="ais-RangeInput-input--max"
+          max="100"
+          min="0"
+          placeholder="100"
+          step="0.01"
+          type="number"
+        />
+        
+          
+      </label>
+      
+  
+          
+      <button
+        class="ais-RangeInput-submit"
+      >
+        
+            Go
+          
+      </button>
       
         
-    </div>
+    </form>
     
       
   </div>
@@ -129,90 +121,82 @@ exports[`RangeInput renders markup without state 1`] = `
   >
     
         
-    <div
-      class="ais-RangeInput-body ais-body"
+    <form
+      class="ais-RangeInput-form"
+      novalidate=""
     >
       
           
-      <form
-        class="ais-RangeInput-form"
-        novalidate=""
+      <label
+        class="ais-RangeInput-label"
       >
         
             
-        <label
-          class="ais-RangeInput-label"
-        >
-          
-              
-          <span
-            class="ais-RangeInput-currency"
-          >
-            $ 
-          </span>
-          
-              
-          <input
-            class="ais-RangeInput-input"
-            max="undefined"
-            min="undefined"
-            placeholder="undefined"
-            step="0.01"
-            type="number"
-          />
-          
-            
-        </label>
-        
-  
-            
         <span
-          class="ais-RangeInput-separator"
+          class="ais-RangeInput-currency"
         >
-           to 
+          $
         </span>
         
-  
             
-        <label
-          class="ais-RangeInput-label"
-        >
-          
-              
-          <span
-            class="ais-RangeInput-currency"
-          >
-            $ 
-          </span>
-          
-              
-          <input
-            class="ais-RangeInput-input"
-            max="undefined"
-            min="undefined"
-            placeholder="undefined"
-            step="0.01"
-            type="number"
-          />
-          
-            
-        </label>
-        
-  
-            
-        <button
-          class="ais-RangeInput-submit"
-        >
-          
-              Go
-            
-        </button>
+        <input
+          class="ais-RangeInput-input--min"
+          max="undefined"
+          min="undefined"
+          placeholder="undefined"
+          step="0.01"
+          type="number"
+        />
         
           
-      </form>
+      </label>
+      
+  
+          
+      <span
+        class="ais-RangeInput-separator"
+      >
+        to
+      </span>
+      
+  
+          
+      <label
+        class="ais-RangeInput-label"
+      >
+        
+            
+        <span
+          class="ais-RangeInput-currency"
+        >
+          $
+        </span>
+        
+            
+        <input
+          class="ais-RangeInput-input--max"
+          max="undefined"
+          min="undefined"
+          placeholder="undefined"
+          step="0.01"
+          type="number"
+        />
+        
+          
+      </label>
+      
+  
+          
+      <button
+        class="ais-RangeInput-submit"
+      >
+        
+            Go
+          
+      </button>
       
         
-    </div>
+    </form>
     
       
   </div>

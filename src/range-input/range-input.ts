@@ -16,50 +16,48 @@ export type NumericRangeState = {
   selector: "ng-ais-range-input",
   template: `
     <div [class]="cx()">
-      <div [class]="cx('body')">
-        <form
-          [class]="cx('form')"
-          (submit)="handleSubmit($event)"
-          novalidate
+      <form
+        [class]="cx('form')"
+        (submit)="handleSubmit($event)"
+        novalidate
+      >
+        <label [class]="cx('label')">
+          <span [class]="cx('currency')">{{currency}}</span>
+          <input
+            [class]="cx('input', 'min')"
+            type="number"
+            [min]="state.range.min"
+            [max]="state.range.max"
+            [placeholder]="state.range.min"
+            [value]="minInputValue"
+            [step]="step"
+            (change)="handleChange($event, 'min')"
+          />
+        </label>
+
+        <span [class]="cx('separator')">{{separator}}</span>
+
+        <label [class]="cx('label')">
+          <span [class]="cx('currency')">{{currency}}</span>
+          <input
+            [class]="cx('input', 'max')"
+            type="number"
+            [min]="state.range.min"
+            [max]="state.range.max"
+            [placeholder]="state.range.max"
+            [value]="maxInputValue"
+            [step]="step"
+            (change)="handleChange($event, 'max')"
+          />
+        </label>
+
+        <button
+          [class]="cx('submit')"
+          (click)="handleSubmit($event)"
         >
-          <label [class]="cx('label')">
-            <span [class]="cx('currency')">{{currency}} </span>
-            <input
-              [class]="cx('input')"
-              type="number"
-              [min]="state.range.min"
-              [max]="state.range.max"
-              [placeholder]="state.range.min"
-              [value]="minInputValue"
-              [step]="step"
-              (change)="handleChange($event, 'min')"
-            />
-          </label>
-
-          <span [class]="cx('separator')"> {{separator}} </span>
-
-          <label [class]="cx('label')">
-            <span [class]="cx('currency')">{{currency}} </span>
-            <input
-              [class]="cx('input')"
-              type="number"
-              [min]="state.range.min"
-              [max]="state.range.max"
-              [placeholder]="state.range.max"
-              [value]="maxInputValue"
-              [step]="step"
-              (change)="handleChange($event, 'max')"
-            />
-          </label>
-
-          <button
-            [class]="cx('submit')"
-            (click)="handleSubmit($event)"
-          >
-            {{submitLabel}}
-          </button>
-        </form>
-      </div>
+          {{submitLabel}}
+        </button>
+      </form>
     </div>
   `
 })
