@@ -195,14 +195,14 @@ storiesOf("HierarchicalMenu")
     })
   );
 
-storiesOf("Results").add(
+storiesOf("Hits").add(
   "default",
   wrapWithHits({
     template: "<ng-ais-hits></ng-ais-hits>"
   })
 );
 
-storiesOf("ResultsPerPage")
+storiesOf("HitsPerPage")
   .add(
     "default",
     wrapWithHits({
@@ -497,7 +497,7 @@ storiesOf("Toggle")
     })
   );
 
-storiesOf("NumericRange").add(
+storiesOf("RangeInput").add(
   "default",
   wrapWithHits({
     template: `
