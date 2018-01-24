@@ -13,7 +13,7 @@ export type NumericRangeState = {
 };
 
 @Component({
-  selector: "ng-ais-numeric-range",
+  selector: "ng-ais-range-input",
   template: `
     <div [class]="cx()">
       <div [class]="cx('body')">
@@ -63,7 +63,7 @@ export type NumericRangeState = {
     </div>
   `
 })
-export class NgAisNumericRange extends BaseWidget {
+export class NgAisRangeInput extends BaseWidget {
   // render options
   @Input() public currency: string = "$";
   @Input() public separator: string = "to";
@@ -90,7 +90,7 @@ export class NgAisNumericRange extends BaseWidget {
   };
 
   constructor(searchInstance: NgAisInstance) {
-    super(searchInstance, "RangeSlider");
+    super(searchInstance, "RangeInput");
   }
 
   public ngOnInit() {
