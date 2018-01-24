@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NumericRange renders markup with state 1`] = `
-<ng-ais-numeric-range
+exports[`RangeInput renders markup with state 1`] = `
+<ng-ais-range-input
   currency={[Function String]}
   cx={[Function Function]}
   maxInputValue=""
@@ -15,35 +15,35 @@ exports[`NumericRange renders markup with state 1`] = `
 >
   
       <div
-    class="ais-RangeSlider"
+    class="ais-RangeInput"
   >
     
         
     <div
-      class="ais-RangeSlider-body ais-body"
+      class="ais-RangeInput-body ais-body"
     >
       
           
       <form
-        class="ais-RangeSlider-form"
+        class="ais-RangeInput-form"
         novalidate=""
       >
         
             
         <label
-          class="ais-RangeSlider-label"
+          class="ais-RangeInput-label"
         >
           
               
           <span
-            class="ais-RangeSlider-currency"
+            class="ais-RangeInput-currency"
           >
             $ 
           </span>
           
               
           <input
-            class="ais-RangeSlider-input"
+            class="ais-RangeInput-input"
             max="100"
             min="0"
             placeholder="0"
@@ -57,7 +57,7 @@ exports[`NumericRange renders markup with state 1`] = `
   
             
         <span
-          class="ais-RangeSlider-separator"
+          class="ais-RangeInput-separator"
         >
            to 
         </span>
@@ -65,19 +65,19 @@ exports[`NumericRange renders markup with state 1`] = `
   
             
         <label
-          class="ais-RangeSlider-label"
+          class="ais-RangeInput-label"
         >
           
               
           <span
-            class="ais-RangeSlider-currency"
+            class="ais-RangeInput-currency"
           >
             $ 
           </span>
           
               
           <input
-            class="ais-RangeSlider-input"
+            class="ais-RangeInput-input"
             max="100"
             min="0"
             placeholder="100"
@@ -91,7 +91,7 @@ exports[`NumericRange renders markup with state 1`] = `
   
             
         <button
-          class="ais-RangeSlider-submit"
+          class="ais-RangeInput-submit"
         >
           
               Go
@@ -107,11 +107,11 @@ exports[`NumericRange renders markup with state 1`] = `
       
   </div>
     
-</ng-ais-numeric-range>
+</ng-ais-range-input>
 `;
 
-exports[`NumericRange renders markup without state 1`] = `
-<ng-ais-numeric-range
+exports[`RangeInput renders markup without state 1`] = `
+<ng-ais-range-input
   currency={[Function String]}
   cx={[Function Function]}
   maxInputValue=""
@@ -125,35 +125,35 @@ exports[`NumericRange renders markup without state 1`] = `
 >
   
       <div
-    class="ais-RangeSlider"
+    class="ais-RangeInput"
   >
     
         
     <div
-      class="ais-RangeSlider-body ais-body"
+      class="ais-RangeInput-body ais-body"
     >
       
           
       <form
-        class="ais-RangeSlider-form"
+        class="ais-RangeInput-form"
         novalidate=""
       >
         
             
         <label
-          class="ais-RangeSlider-label"
+          class="ais-RangeInput-label"
         >
           
               
           <span
-            class="ais-RangeSlider-currency"
+            class="ais-RangeInput-currency"
           >
             $ 
           </span>
           
               
           <input
-            class="ais-RangeSlider-input"
+            class="ais-RangeInput-input"
             max="undefined"
             min="undefined"
             placeholder="undefined"
@@ -167,7 +167,7 @@ exports[`NumericRange renders markup without state 1`] = `
   
             
         <span
-          class="ais-RangeSlider-separator"
+          class="ais-RangeInput-separator"
         >
            to 
         </span>
@@ -175,19 +175,19 @@ exports[`NumericRange renders markup without state 1`] = `
   
             
         <label
-          class="ais-RangeSlider-label"
+          class="ais-RangeInput-label"
         >
           
               
           <span
-            class="ais-RangeSlider-currency"
+            class="ais-RangeInput-currency"
           >
             $ 
           </span>
           
               
           <input
-            class="ais-RangeSlider-input"
+            class="ais-RangeInput-input"
             max="undefined"
             min="undefined"
             placeholder="undefined"
@@ -201,7 +201,7 @@ exports[`NumericRange renders markup without state 1`] = `
   
             
         <button
-          class="ais-RangeSlider-submit"
+          class="ais-RangeInput-submit"
         >
           
               Go
@@ -217,5 +217,5 @@ exports[`NumericRange renders markup without state 1`] = `
       
   </div>
     
-</ng-ais-numeric-range>
+</ng-ais-range-input>
 `;

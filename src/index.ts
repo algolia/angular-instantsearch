@@ -21,7 +21,7 @@ import { NgAisRatingMenuModule } from "./rating-menu/rating-menu.module";
 import { NgAisStatsModule } from "./stats/stats.module";
 import { NgAisToggleModule } from "./toggle/toggle.module";
 import { NgAisHighlightModule } from "./highlight/highlight.module";
-import { NgAisNumericRangeModule } from "./numeric-range/numeric-range.module";
+import { NgAisRangeInputModule } from "./range-input/range-input.module";
 import { NgAisPanelModule } from "./panel/panel.module";
 
 // Custom SSR algoliasearchClient
@@ -59,7 +59,7 @@ const NGIS_MODULES = [
   NgAisRangeSliderModule,
   NgAisBreadcrumbModule,
   NgAisHighlightModule,
-  NgAisNumericRangeModule,
+  NgAisRangeInputModule,
   NgAisPanelModule
 ];
 

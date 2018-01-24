@@ -1,8 +1,8 @@
 import { TestBed } from "@angular/core/testing";
 
 import { NgAisInstantSearchModule } from "../../instantsearch/instantsearch.module";
-import { NgAisNumericRangeModule } from "../numeric-range.module";
-import { NgAisNumericRange } from "../numeric-range";
+import { NgAisRangeInputModule } from "../range-input.module";
+import { NgAisRangeInput } from "../range-input";
 
 jest.mock("../../base-widget");
 
@@ -13,7 +13,7 @@ const defaultState = {
 };
 
 const render = (state?: {}) => {
-  const fixture = TestBed.createComponent(NgAisNumericRange);
+  const fixture = TestBed.createComponent(NgAisRangeInput);
 
   if (state) {
     fixture.componentInstance.updateState({ ...defaultState, ...state });
@@ -23,11 +23,11 @@ const render = (state?: {}) => {
   return fixture;
 };
 
-describe("NumericRange", () => {
+describe("RangeInput", () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [],
-      imports: [NgAisInstantSearchModule.forRoot(), NgAisNumericRangeModule]
+      imports: [NgAisInstantSearchModule.forRoot(), NgAisRangeInputModule]
     });
   });
 
