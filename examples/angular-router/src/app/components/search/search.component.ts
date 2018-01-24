@@ -57,7 +57,7 @@ import { Component, OnDestroy } from "@angular/core";
           </div>
         </div>
       </div>
-      <ng-ais-results></ng-ais-results>
+      <ng-ais-hits></ng-ais-hits>
       <hr>
       <ng-ais-pagination></ng-ais-pagination>
     </ng-ais-instantsearch>

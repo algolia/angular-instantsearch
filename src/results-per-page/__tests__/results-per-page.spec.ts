@@ -1,8 +1,8 @@
 import { TestBed } from "@angular/core/testing";
 
 import { NgAisInstantSearchModule } from "../../instantsearch/instantsearch.module";
-import { NgAisResultsPerPageModule } from "../results-per-page.module";
-import { NgAisResultsPerPage } from "../results-per-page";
+import { NgAisHitsPerPageModule } from "../results-per-page.module";
+import { NgAisHitsPerPage } from "../results-per-page";
 
 jest.mock("../../base-widget");
 
@@ -10,17 +10,17 @@ describe("ResultsPerPage", () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
       declarations: [],
-      imports: [NgAisInstantSearchModule.forRoot(), NgAisResultsPerPageModule]
+      imports: [NgAisInstantSearchModule.forRoot(), NgAisHitsPerPageModule]
     })
   );
 
   it("renders markup without state", () => {
-    const fixture = TestBed.createComponent(NgAisResultsPerPage);
+    const fixture = TestBed.createComponent(NgAisHitsPerPage);
     expect(fixture).toMatchSnapshot();
   });
 
   it("renders markup with state", () => {
-    const fixture = TestBed.createComponent(NgAisResultsPerPage);
+    const fixture = TestBed.createComponent(NgAisHitsPerPage);
 
     fixture.componentInstance.updateState(
       {
@@ -40,7 +40,7 @@ describe("ResultsPerPage", () => {
 
   it("should refine() when selecting another option", () => {
     const refine = jest.fn();
-    const fixture = TestBed.createComponent(NgAisResultsPerPage);
+    const fixture = TestBed.createComponent(NgAisHitsPerPage);
 
     fixture.componentInstance.updateState(
       {
@@ -64,7 +64,7 @@ describe("ResultsPerPage", () => {
   });
 
   it("should be hidden with autoHideContainer", () => {
-    const fixture = TestBed.createComponent(NgAisResultsPerPage);
+    const fixture = TestBed.createComponent(NgAisHitsPerPage);
     fixture.componentInstance.updateState({ items: [] }, false);
     fixture.componentInstance.autoHideContainer = true;
 

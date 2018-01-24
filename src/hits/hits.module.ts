@@ -2,12 +2,12 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 
 import { NgAisHighlightModule } from "../highlight/highlight.module";
-import { NgAisResults } from "./results";
+import { NgAisHits } from "./hits";
 
 @NgModule({
-  declarations: [NgAisResults],
-  entryComponents: [NgAisResults],
-  exports: [NgAisResults],
+  declarations: [NgAisHits],
+  entryComponents: [NgAisHits],
+  exports: [NgAisHits],
   imports: [CommonModule, NgAisHighlightModule]
 })
-export class NgAisResultsModule {}
+export class NgAisHitsModule {}

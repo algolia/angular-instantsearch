@@ -198,7 +198,7 @@ storiesOf("HierarchicalMenu")
 storiesOf("Results").add(
   "default",
   wrapWithHits({
-    template: "<ng-ais-results></ng-ais-results>"
+    template: "<ng-ais-hits></ng-ais-hits>"
   })
 );
 

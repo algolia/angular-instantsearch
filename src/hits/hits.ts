@@ -34,7 +34,7 @@ import { NgAisInstance } from "../instantsearch/instantsearch-instance";
     </div>
   `
 })
-export class NgAisResults extends BaseWidget {
+export class NgAisHits extends BaseWidget {
   @ContentChild(TemplateRef) public template?: TemplateRef<any>;
 
   // render options

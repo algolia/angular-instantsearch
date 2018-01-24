@@ -5,8 +5,8 @@ import { NgAisBreadcrumbModule } from "./breadcrumb/breadcrumb.module";
 import { NgAisClearRefinementsModule } from "./clear-refinements/clear-refinements.module";
 import { NgAisCurrentRefinementsModule } from "./current-refinements/current-refinements.module";
 import { NgAisHierarchicalMenuModule } from "./hierarchical-menu/hierarchical-menu.module";
-import { NgAisResultsPerPageModule } from "./results-per-page/results-per-page.module";
-import { NgAisResultsModule } from "./results/results.module";
+import { NgAisHitsPerPageModule } from "./results-per-page/results-per-page.module";
+import { NgAisHitsModule } from "./hits/hits.module";
 import { NgAisInfiniteResultsModule } from "./infinite-results/infinite-results.module";
 import { NgAisInstantSearchModule } from "./instantsearch/instantsearch.module";
 import { NgAisMenuModule } from "./menu/menu.module";
@@ -40,13 +40,13 @@ export { NgAisInstance };
 
 const NGIS_MODULES = [
   NgAisInstantSearchModule,
-  NgAisResultsModule,
+  NgAisHitsModule,
   NgAisSearchBoxModule,
   NgAisClearRefinementsModule,
   NgAisMenuModule,
   NgAisPaginationModule,
   NgAisRefinementListModule,
-  NgAisResultsPerPageModule,
+  NgAisHitsPerPageModule,
   NgAisSortByModule,
   NgAisNumericSelectorModule,
   NgAisNumericMenuModule,
