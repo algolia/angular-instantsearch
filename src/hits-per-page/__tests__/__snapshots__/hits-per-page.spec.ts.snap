@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ResultsPerPage renders markup with state 1`] = `
-<ng-ais-results-per-page
+exports[`HitsPerPage renders markup with state 1`] = `
+<ng-ais-hits-per-page
   cx={[Function Function]}
   platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
@@ -51,11 +51,11 @@ exports[`ResultsPerPage renders markup with state 1`] = `
       
   </div>
     
-</ng-ais-results-per-page>
+</ng-ais-hits-per-page>
 `;
 
-exports[`ResultsPerPage renders markup without state 1`] = `
-<ng-ais-results-per-page
+exports[`HitsPerPage renders markup without state 1`] = `
+<ng-ais-hits-per-page
   cx={[Function Function]}
   platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
@@ -65,11 +65,11 @@ exports[`ResultsPerPage renders markup without state 1`] = `
   
       
     
-</ng-ais-results-per-page>
+</ng-ais-hits-per-page>
 `;
 
-exports[`ResultsPerPage should be hidden with autoHideContainer 1`] = `
-<ng-ais-results-per-page
+exports[`HitsPerPage should be hidden with autoHideContainer 1`] = `
+<ng-ais-hits-per-page
   autoHideContainer={[Function Boolean]}
   cx={[Function Function]}
   platformId={[Function String]}
@@ -80,5 +80,5 @@ exports[`ResultsPerPage should be hidden with autoHideContainer 1`] = `
   
       
     
-</ng-ais-results-per-page>
+</ng-ais-hits-per-page>
 `;

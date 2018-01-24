@@ -1,12 +1,12 @@
 import { TestBed } from "@angular/core/testing";
 
 import { NgAisInstantSearchModule } from "../../instantsearch/instantsearch.module";
-import { NgAisHitsPerPageModule } from "../results-per-page.module";
-import { NgAisHitsPerPage } from "../results-per-page";
+import { NgAisHitsPerPageModule } from "../hits-per-page.module";
+import { NgAisHitsPerPage } from "../hits-per-page";
 
 jest.mock("../../base-widget");
 
-describe("ResultsPerPage", () => {
+describe("HitsPerPage", () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
       declarations: [],

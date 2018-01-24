@@ -11,7 +11,7 @@ export type ResultsPerPageState = {
 };
 
 @Component({
-  selector: "ng-ais-results-per-page",
+  selector: "ng-ais-hits-per-page",
   template: `
     <div
       [class]="cx()"
