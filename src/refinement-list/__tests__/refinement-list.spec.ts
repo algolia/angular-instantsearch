@@ -53,6 +53,9 @@ describe("RefinementList", () => {
   it("should call `toggleShowMore()` on click", () => {
     const toggleShowMore = jest.fn();
     const fixture = render({ toggleShowMore, canToggleShowMore: true });
+    fixture.componentInstance.limit = 5;
+    fixture.componentInstance.showMoreLimit = 10;
+    fixture.detectChanges();
 
     const showMoreBtn = fixture.debugElement.nativeElement.querySelector(
       "button"
@@ -88,7 +91,7 @@ describe("RefinementList", () => {
     const fixture = render({ searchForItems });
 
     // display search box
-    fixture.componentInstance.withSearchBox = true;
+    fixture.componentInstance.searchable = true;
     fixture.detectChanges();
 
     const input = fixture.debugElement.nativeElement.querySelector("input");

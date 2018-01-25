@@ -212,7 +212,7 @@ Since the dataset used here is an e-commerce one, let’s add a [RefinementList]
 <ng-ais-instantsearch [config]="{...}">
   <!-- <ng-ais-search-box></ng-ais-search-box> -->
 
-  <ng-ais-refinement-list attributeName="brand"></ng-ais-refinement-list>
+  <ng-ais-refinement-list attribute="brand"></ng-ais-refinement-list>
 
   <!-- <ng-ais-hits></ng-ais-hits> -->
 </ng-ais-instantsearch>
@@ -246,7 +246,7 @@ Those two features are implemented respectively with the [Pagination](/widgets/p
   <ng-ais-searchbox></ng-ais-searchbox>
 
   <!-- RefinementList -->
-  <ng-ais-refinement-list attributeName="category">
+  <ng-ais-refinement-list attribute="category">
   </ng-ais-refinement-list>
 
   <!-- CurrentRefinedValues -->

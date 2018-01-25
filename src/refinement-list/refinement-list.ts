@@ -26,7 +26,7 @@ export type RefinementListState = {
       *ngIf="!isHidden"
     >
       <div
-        *ngIf="withSearchBox"
+        *ngIf="searchable"
         [class]="cx('searchBox')"
       >
         <ng-ais-facets-search
@@ -58,7 +58,7 @@ export type RefinementListState = {
       </ul>
 
       <button
-        *ngIf="state.canToggleShowMore"
+        *ngIf="showMoreLimit && state.canToggleShowMore"
         (click)="state.toggleShowMore()"
       >
         {{state.isShowingMore ? showLessLabel : showMoreLabel}}
@@ -71,14 +71,14 @@ export class NgAisRefinementList extends BaseWidget {
   @Input() public showMoreLabel: string = "Show more";
   @Input() public showLessLabel: string = "Show less";
   @Input() public transformItems?: Function;
-  @Input() public withSearchBox?: boolean;
+  @Input() public searchable?: boolean;
   @Input() public searchPlaceholder: string = "Search here...";
 
   // connectors options
-  @Input() public attributeName: string;
+  @Input() public attribute: string;
   @Input() public operator: "or" | "and" = "or";
-  @Input() public limitMin: number | string = 10;
-  @Input() public limitMax: number | string;
+  @Input() public limit: number | string = 10;
+  @Input() public showMoreLimit: number | string;
   @Input() public sortBy: string[] | ((item: object) => number);
 
   public state: RefinementListState = {
@@ -112,9 +112,9 @@ export class NgAisRefinementList extends BaseWidget {
 
   public ngOnInit() {
     this.createWidget(connectRefinementList, {
-      limit: parseNumberInput(this.limitMin),
-      showMoreLimit: parseNumberInput(this.limitMax),
-      attributeName: this.attributeName,
+      limit: parseNumberInput(this.limit),
+      showMoreLimit: parseNumberInput(this.showMoreLimit),
+      attributeName: this.attribute,
       sortBy: this.sortBy,
       escapeFacetValues: true
     });

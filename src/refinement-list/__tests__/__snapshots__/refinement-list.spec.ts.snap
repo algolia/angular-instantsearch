@@ -3,7 +3,7 @@
 exports[`RefinementList renders markup with state 1`] = `
 <ng-ais-refinement-list
   cx={[Function Function]}
-  limitMin={[Function Number]}
+  limit={[Function Number]}
   operator={[Function String]}
   platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
@@ -242,7 +242,7 @@ exports[`RefinementList renders markup with state 1`] = `
 exports[`RefinementList renders markup without state 1`] = `
 <ng-ais-refinement-list
   cx={[Function Function]}
-  limitMin={[Function Number]}
+  limit={[Function Number]}
   operator={[Function String]}
   platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
@@ -285,7 +285,7 @@ exports[`RefinementList renders markup without state 1`] = `
 exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
 <ng-ais-refinement-list
   cx={[Function Function]}
-  limitMin={[Function Number]}
+  limit={[Function Number]}
   operator={[Function String]}
   platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
@@ -526,7 +526,7 @@ exports[`RefinementList should be hidden with autoHideContainer 1`] = `
 <ng-ais-refinement-list
   autoHideContainer={[Function Boolean]}
   cx={[Function Function]}
-  limitMin={[Function Number]}
+  limit={[Function Number]}
   operator={[Function String]}
   platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}

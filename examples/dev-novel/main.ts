@@ -15,9 +15,9 @@ storiesOf("InstantSearch").add(
     template: `
       <ng-ais-panel header="Brand">
         <ng-ais-refinement-list
-          attributeName="brand"
+          attribute="brand"
           operator="or"
-          [limitMin]="10"
+          [limit]="10"
         >
         </ng-ais-refinement-list>
       </ng-ais-panel>
@@ -340,9 +340,9 @@ storiesOf("RefinementList")
       template: `
         <ng-ais-panel header="Brand">
           <ng-ais-refinement-list
-            attributeName="brand"
+            attribute="brand"
             operator="or"
-            [limitMin]="10"
+            [limit]="10"
           >
           </ng-ais-refinement-list>
         </ng-ais-panel>
@@ -355,10 +355,10 @@ storiesOf("RefinementList")
       template: `
         <ng-ais-panel header="Brand with show more">
           <ng-ais-refinement-list
-            attributeName="brand"
+            attribute="brand"
             operator="or"
-            [limitMin]="3"
-            [limitMax]="10"
+            [limit]="3"
+            [showMoreLimit]="10"
           >
           </ng-ais-refinement-list>
         </ng-ais-panel>
@@ -371,11 +371,11 @@ storiesOf("RefinementList")
       template: `
         <ng-ais-panel header="Searchable brands">
           <ng-ais-refinement-list
-            attributeName="brand"
+            attribute="brand"
             operator="or"
             searchPlaceholder="Find other brands..."
-            [withSearchBox]="true"
-            [limitMin]="10"
+            [searchable]="true"
+            [limit]="10"
           >
           </ng-ais-refinement-list>
         </ng-ais-panel>
@@ -388,9 +388,9 @@ storiesOf("RefinementList")
       template: `
         <ng-ais-panel header="Price ranges">
           <ng-ais-refinement-list
-            attributeName="price_range"
+            attribute="price_range"
             operator="and"
-            [limitMin]="10"
+            [limit]="10"
             [transformItems]="transformItems"
           >
           </ng-ais-refinement-list>
