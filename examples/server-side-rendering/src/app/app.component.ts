@@ -31,7 +31,7 @@ import {
             <div class="col-4">
               <ng-ais-refinement-list
                 header="Colors"
-                attributeName="colors"
+                attribute="colors"
                 operator="or"
                 limit="10"
               >

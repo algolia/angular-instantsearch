@@ -30,7 +30,7 @@ import { Component, OnDestroy } from "@angular/core";
           <div class="col-4">
             <ng-ais-panel header="Colors">
               <ng-ais-refinement-list
-                attributeName="colors"
+                attribute="colors"
                 operator="or"
                 limit="10"
               >
