@@ -66,8 +66,8 @@ describe("Menu", () => {
     const toggleShowMore = jest.fn();
     const fixture = render({ toggleShowMore, canToggleShowMore: true });
 
-    fixture.componentInstance.limitMin = 3;
-    fixture.componentInstance.limitMax = 4;
+    fixture.componentInstance.limit = 3;
+    fixture.componentInstance.showMoreLimit = 4;
     fixture.detectChanges();
 
     fixture.debugElement.nativeElement.querySelector("button").click();

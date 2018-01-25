@@ -41,7 +41,7 @@ export type MenuState = {
       </ul>
 
       <button
-        *ngIf="limitMax && state.canToggleShowMore"
+        *ngIf="showMoreLimit && state.canToggleShowMore"
         (click)="state.toggleShowMore()"
         [class]="showMoreClass"
       >
@@ -57,9 +57,9 @@ export class NgAisMenu extends BaseWidget {
   @Input() public transformItems?: Function;
 
   // connector options
-  @Input() public attributeName: string;
-  @Input() public limitMin?: number | string = 10;
-  @Input() public limitMax?: number | string;
+  @Input() public attribute: string;
+  @Input() public limit?: number | string = 10;
+  @Input() public showMoreLimit?: number | string;
   @Input() public sortBy?: string[] | ((item: object) => number);
 
   public state: MenuState = {
@@ -101,9 +101,9 @@ export class NgAisMenu extends BaseWidget {
 
   public ngOnInit() {
     this.createWidget(connectMenu, {
-      limit: parseNumberInput(this.limitMin),
-      showMoreLimit: parseNumberInput(this.limitMax),
-      attributeName: this.attributeName,
+      limit: parseNumberInput(this.limit),
+      showMoreLimit: parseNumberInput(this.showMoreLimit),
+      attributeName: this.attribute,
       sortBy: this.sortBy
     });
 
