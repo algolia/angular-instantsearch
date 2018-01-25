@@ -39,7 +39,7 @@ export type NumericRefinementListState = {
   `
 })
 export class NgAisNumericMenu extends BaseWidget {
-  @Input() public attributeName: string;
+  @Input() public attribute: string;
   @Input()
   public options: {
     name: string;
@@ -66,7 +66,7 @@ export class NgAisNumericMenu extends BaseWidget {
 
   public ngOnInit() {
     this.createWidget(connectNumericRefinementList, {
-      attributeName: this.attributeName,
+      attributeName: this.attribute,
       options: this.options
     });
     super.ngOnInit();

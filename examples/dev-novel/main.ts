@@ -270,7 +270,7 @@ storiesOf("NumericMenu").add(
     template: `
       <ng-ais-panel header="Numeric menu (price)">
         <ng-ais-numeric-menu
-          attributeName="price"
+          attribute="price"
           operator="or"
           [options]="[
             { name: 'All' },
