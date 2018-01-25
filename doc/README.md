@@ -265,7 +265,7 @@ Those two features are implemented respectively with the [Pagination](/widgets/p
   <ng-ais-hits></ng-ais-hits>
 
   <!-- Pagination -->
-  <ng-ais-pagination [maxPages]="20">
+  <ng-ais-pagination [totalPages]="20">
   </ng-ais-pagination>
 </ng-ais-instantsearch>
 ```

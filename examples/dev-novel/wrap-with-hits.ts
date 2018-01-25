@@ -71,7 +71,7 @@ export function wrapWithHits({
             </ng-ais-hits>
           </div>
           <div id="results-pagination-container">
-            <ng-ais-pagination [maxPages]="20"></ng-ais-pagination>
+            <ng-ais-pagination [totalPages]="20"></ng-ais-pagination>
           </div>
         </div>
       </ng-ais-instantsearch>

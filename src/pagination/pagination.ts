@@ -110,10 +110,10 @@ export class NgAisPagination extends BaseWidget {
   @Input() public showLast: boolean = false;
   @Input() public showPrevious: boolean = true;
   @Input() public showNext: boolean = true;
-  @Input() public pagesPadding: number | string = 3;
+  @Input() public padding: number | string = 3;
 
   // connector optionsw
-  @Input() public maxPages?: number | string;
+  @Input() public totalPages?: number | string;
 
   public state = {
     createURL: noop,
@@ -132,9 +132,9 @@ export class NgAisPagination extends BaseWidget {
     );
 
     const pagesPadding =
-      typeof this.pagesPadding === "string"
-        ? parseInt(this.pagesPadding, 10)
-        : this.pagesPadding;
+      typeof this.padding === "string"
+        ? parseInt(this.padding, 10)
+        : this.padding;
 
     if (pagesPadding && pagesPadding > 0) {
       // should not display pages that does not exists
@@ -174,7 +174,7 @@ export class NgAisPagination extends BaseWidget {
 
   public ngOnInit() {
     this.createWidget(connectPagination, {
-      maxPages: parseNumberInput(this.maxPages)
+      maxPages: parseNumberInput(this.totalPages)
     });
     super.ngOnInit();
   }

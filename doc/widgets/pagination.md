@@ -4,9 +4,9 @@ The Pagination widget displays a simple pagination system allowing the user to c
 
 | Attributes      | Type      | Description
 | -               | -         | -
-| `maxPages?`     | `number`  | Maximum number of pages to display
+| `totalPages?`   | `number`  | Maximum number of pages to display
 | `showFirst?`    | `boolean` | Display the first page link
 | `showLast?`     | `boolean` | Display the last page link
 | `showPrevious?` | `boolean` | Display the previous page link
 | `showNext?`     | `boolean` | Display the next page link
-| `pagesPadding?` | `number`  | How many page links to display around the current page
+| `padding?`      | `number`  | How many page links to display around the current page
