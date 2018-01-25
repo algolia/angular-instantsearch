@@ -1,3 +1,25 @@
+<a name="1.0.0-beta.10"></a>
+# [1.0.0-beta.10](https://github.com/algolia/angular-instantsearch/compare/1.0.0-beta.9...1.0.0-beta.10) (2018-01-25)
+
+### Breaking Changes
+
+* Rename of `attributeName` option to `attribute` on every widgets
+* Rename of options on Menu, NumericMenu, NumericSelector, RangeSlider, RatingMenu, RefinementList, SortBy and Toggle widgets
+
+### Features
+
+* **menu:** update options ([ba1d055](https://github.com/algolia/angular-instantsearch/commit/ba1d055))
+* **numeric-menu:** update options ([d0162f5](https://github.com/algolia/angular-instantsearch/commit/d0162f5))
+* **numeric-selector:** update options ([c64385d](https://github.com/algolia/angular-instantsearch/commit/c64385d))
+* **pagination:** update options ([788b81c](https://github.com/algolia/angular-instantsearch/commit/788b81c))
+* **range-slider:** update options ([75f2bd1](https://github.com/algolia/angular-instantsearch/commit/75f2bd1))
+* **rating-menu:** update options ([07f041c](https://github.com/algolia/angular-instantsearch/commit/07f041c))
+* **refinement-list:** update options ([f69fff1](https://github.com/algolia/angular-instantsearch/commit/f69fff1))
+* **sort-by:** update options ([3471e56](https://github.com/algolia/angular-instantsearch/commit/3471e56))
+* **toggle:** update options ([f1523a6](https://github.com/algolia/angular-instantsearch/commit/f1523a6))
+
+
+
 <a name="1.0.0-beta.9"></a>
 # [1.0.0-beta.9](https://github.com/algolia/angular-instantsearch/compare/1.0.0-beta.8...1.0.0-beta.9) (2018-01-24)
 
