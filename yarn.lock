@@ -134,8 +134,8 @@
     "@types/lodash" "*"
 
 "@types/lodash@*":
-  version "4.14.95"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.95.tgz#02c170690719bbaca8293d9c8cdcccb565728081"
+  version "4.14.96"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.96.tgz#49a402bb6984af7dd9a48cea3781744a3774bff1"
 
 "@types/node@^9.3.0":
   version "9.3.0"
@@ -148,8 +148,8 @@
     "@types/wnumb" "*"
 
 "@types/react@^16.0.18":
-  version "16.0.34"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.0.34.tgz#7a8f795afd8a404a9c4af9539b24c75d3996914e"
+  version "16.0.35"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.0.35.tgz#7ce8a83cad9690fd965551fc513217a74fc9e079"
 
 "@types/wnumb@*":
   version "1.0.28"
@@ -1598,8 +1598,8 @@ caniuse-api@^1.5.2:
     lodash.uniq "^4.5.0"
 
 caniuse-db@^1.0.30000529, caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
-  version "1.0.30000794"
-  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000794.tgz#bbe71104fa277ce4b362387d54905e8b88e52f35"
+  version "1.0.30000795"
+  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000795.tgz#644f03fab00dd8bd1693e5e1e70d86b31c5cfece"
 
 caniuse-lite@^1.0.30000792:
   version "1.0.30000792"
@@ -4538,8 +4538,8 @@ jsbn@~0.1.0:
   resolved "https://registry.yarnpkg.com/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
 
 jsdom@^11.5.1:
-  version "11.6.0"
-  resolved "https://registry.yarnpkg.com/jsdom/-/jsdom-11.6.0.tgz#7334781595ee8bdeea9742fc33fab5cdad6d195f"
+  version "11.6.1"
+  resolved "https://registry.yarnpkg.com/jsdom/-/jsdom-11.6.1.tgz#43fffc10072597a8ee9680cba46900d9e4dbeba2"
   dependencies:
     abab "^1.0.4"
     acorn "^5.3.0"
@@ -7082,8 +7082,8 @@ time-stamp@^2.0.0:
   resolved "https://registry.yarnpkg.com/time-stamp/-/time-stamp-2.0.0.tgz#95c6a44530e15ba8d6f4a3ecb8c3a3fac46da357"
 
 timers-browserify@^2.0.4:
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/timers-browserify/-/timers-browserify-2.0.5.tgz#04878fb12a155a159c9d1e59faa1f77bf4ecc44c"
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/timers-browserify/-/timers-browserify-2.0.6.tgz#241e76927d9ca05f4d959819022f5b3664b64bae"
   dependencies:
     setimmediate "^1.0.4"
 
@@ -7204,8 +7204,8 @@ tslib@^1.0.0, tslib@^1.7.1, tslib@^1.8.0, tslib@^1.8.1:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.0.tgz#e37a86fda8cbbaf23a057f473c9f4dc64e5fc2e8"
 
 tslint-config-airbnb@^5.3.0:
-  version "5.4.2"
-  resolved "https://registry.yarnpkg.com/tslint-config-airbnb/-/tslint-config-airbnb-5.4.2.tgz#18eeff28f697b578731249d9a3ef8955b2f04f44"
+  version "5.5.0"
+  resolved "https://registry.yarnpkg.com/tslint-config-airbnb/-/tslint-config-airbnb-5.5.0.tgz#686b19560645eeb44a6662dc94a63ce9353d589e"
   dependencies:
     tslint-consistent-codestyle "^1.10.0"
     tslint-eslint-rules "^4.1.1"
