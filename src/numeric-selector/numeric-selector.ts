@@ -33,10 +33,10 @@ export type NumericSelectorState = {
 })
 export class NgAisNumericSelector extends BaseWidget {
   // connector options
-  @Input() public attributeName: string;
+  @Input() public attribute: string;
   @Input() public operator: "<" | "<=" | "=" | ">=" | ">" | "!=" = "=";
   @Input()
-  public options: {
+  public items: {
     value: number;
     label: string;
   }[];
@@ -56,9 +56,9 @@ export class NgAisNumericSelector extends BaseWidget {
 
   public ngOnInit() {
     this.createWidget(connectNumericSelector, {
-      attributeName: this.attributeName,
+      attributeName: this.attribute,
       operator: this.operator,
-      options: this.options
+      options: this.items
     });
     super.ngOnInit();
   }
