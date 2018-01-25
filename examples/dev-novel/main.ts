@@ -451,7 +451,7 @@ storiesOf("RatingMenu").add(
     template: `
       <ng-ais-panel header="Rating">
         <ng-ais-rating-menu
-          attributeName="rating"
+          attribute="rating"
           [max]="5"
         >
         </ng-ais-rating-menu>

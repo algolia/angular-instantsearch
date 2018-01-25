@@ -80,7 +80,7 @@ export class NgAisRatingMenu extends BaseWidget {
   @Input() public andUpLabel: string = "& Up";
 
   // connectors options
-  @Input() public attributeName: string;
+  @Input() public attribute: string;
   @Input() public max?: number = 5;
 
   public state: RatingMenuState = {
@@ -103,7 +103,7 @@ export class NgAisRatingMenu extends BaseWidget {
 
   public ngOnInit() {
     this.createWidget(connectStarRating, {
-      attributeName: this.attributeName,
+      attributeName: this.attribute,
       max: this.max
     });
     super.ngOnInit();
