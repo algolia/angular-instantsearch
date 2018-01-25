@@ -474,7 +474,7 @@ storiesOf("Toggle")
       template: `
         <ng-ais-toggle
           label="Free Shipping (toggle single value)"
-          attributeName="free_shipping"
+          attribute="free_shipping"
         >
         </ng-ais-toggle>
       `
@@ -486,7 +486,7 @@ storiesOf("Toggle")
       template: `
         <ng-ais-toggle
           label="Canon (not checked) or Sony (checked)"
-          attributeName="brand"
+          attribute="brand"
           [values]="{
             on: 'Sony',
             off: 'Canon'

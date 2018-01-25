@@ -44,7 +44,7 @@ export type ToggleState = {
 })
 export class NgAisToggle extends BaseWidget {
   // connector options
-  @Input() public attributeName: string;
+  @Input() public attribute: string;
   @Input() public label: string;
   @Input()
   public values: { on?: boolean; off?: boolean } = { on: true, off: undefined };
@@ -64,7 +64,7 @@ export class NgAisToggle extends BaseWidget {
 
   public ngOnInit() {
     this.createWidget(connectToggle, {
-      attributeName: this.attributeName,
+      attributeName: this.attribute,
       label: this.label,
       values: this.values
     });
