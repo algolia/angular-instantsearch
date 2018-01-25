@@ -292,9 +292,9 @@ storiesOf("NumericSelector")
     wrapWithHits({
       template: `
         <ng-ais-numeric-selector
+          attrribute="popularity"
           operator=">="
-          attributeName="popularity"
-          [options]="[
+          [items]="[
             { label: 'Default', value: 0 },
             { label: 'Top 10', value: 21459 },
             { label: 'Top 100', value: 21369 },
@@ -310,9 +310,9 @@ storiesOf("NumericSelector")
     wrapWithHits({
       template: `
         <ng-ais-numeric-selector
+          attribute="rating"
           operator="="
-          attributeName="rating"
-          [options]="[
+          [items]="[
             { label: 'No rating selected', value: undefined },
             { label: 'Rating: 5', value: 5 },
             { label: 'Rating: 4', value: 4 },
