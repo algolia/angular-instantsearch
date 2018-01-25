@@ -27,7 +27,7 @@ import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 })
 export class NgAisSortBy extends BaseWidget {
   @Input()
-  public indices: {
+  public items: {
     name: string;
     label: string;
   }[];
@@ -50,7 +50,7 @@ export class NgAisSortBy extends BaseWidget {
   }
 
   public ngOnInit() {
-    this.createWidget(connectSortBySelector, { indices: this.indices });
+    this.createWidget(connectSortBySelector, { indices: this.items });
     super.ngOnInit();
   }
 }

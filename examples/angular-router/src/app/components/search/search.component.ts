@@ -41,7 +41,7 @@ import { Component, OnDestroy } from "@angular/core";
           <div class="col-4">
             <ng-ais-panel header="Sort by">
               <ng-ais-sort-by
-                [indices]="
+                [items]="
                   [
                     {name: 'ikea', label: 'Featured'},
                     {name: 'ikea_price_asc', label: 'Price asc.'},
