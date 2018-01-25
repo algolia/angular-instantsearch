@@ -245,7 +245,7 @@ storiesOf("Menu")
   .add(
     "default",
     wrapWithHits({
-      template: '<ng-ais-menu attributeName="categories"></ng-ais-menu>'
+      template: '<ng-ais-menu attribute="categories"></ng-ais-menu>'
     })
   )
   .add(
@@ -254,9 +254,9 @@ storiesOf("Menu")
       template: `
         <ng-ais-panel header="Categories">
           <ng-ais-menu
-            attributeName="categories"
-            [limitMin]="3"
-            [limitMax]="10"
+            attribute="categories"
+            [limit]="3"
+            [showMoreLimit]="10"
           >
           </ng-ais-menu>
         </ng-ais-panel>
