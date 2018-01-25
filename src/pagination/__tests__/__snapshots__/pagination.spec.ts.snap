@@ -3,7 +3,7 @@
 exports[`Pagination renders does not uses pagesPadding when nbPages < pagesPadding * 2 + 1 1`] = `
 <ng-ais-pagination
   cx={[Function Function]}
-  pagesPadding={[Function Number]}
+  padding={[Function Number]}
   platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
   showFirst={[Function Boolean]}
@@ -182,7 +182,7 @@ exports[`Pagination renders does not uses pagesPadding when nbPages < pagesPaddi
 exports[`Pagination renders markup without state 1`] = `
 <ng-ais-pagination
   cx={[Function Function]}
-  pagesPadding={[Function Number]}
+  padding={[Function Number]}
   platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
   showFirst={[Function Boolean]}
@@ -229,7 +229,7 @@ exports[`Pagination renders markup without state 1`] = `
 exports[`Pagination renders with pages in state 1`] = `
 <ng-ais-pagination
   cx={[Function Function]}
-  pagesPadding={[Function Number]}
+  padding={[Function Number]}
   platformId={[Function String]}
   searchInstance={[Function NgAisInstance]}
   showFirst={[Function Boolean]}
