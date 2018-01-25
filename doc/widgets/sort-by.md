@@ -4,4 +4,4 @@ The SortBy component displays a list of indexes allowing a user to change the hi
 
 | Attributes  | Type                              | Description
 | -           | -                                 | -
-| `indices`   | `{name: string, label: string}[]` | The list of indexes to search in
+| `items`     | `{name: string, label: string}[]` | The list of indexes to search in

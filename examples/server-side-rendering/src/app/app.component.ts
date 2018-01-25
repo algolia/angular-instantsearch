@@ -41,7 +41,7 @@ import {
             <div class="col-4">
               <ng-ais-sort-by
                 header="Sort by"
-                [indices]="
+                [items]="
                   [
                     {name: 'ikea', label: 'Featured'},
                     {name: 'ikea_price_asc', label: 'Price asc.'},
