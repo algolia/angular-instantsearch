@@ -9,7 +9,7 @@ You will need to import by yourself the external CSS in order to make the range 
 
 | Attributes       | Type       | Description
 | -                | -          | -
-| `attributeName`  | `string`   | Name of the attribute for faceting
+| `attribute`      | `string`   | Name of the attribute for faceting
 | `pips?`          | `boolean`  | Show slider pips
 | `tooltips?`      | `boolean`  | Should we show tooltips or not.
 | `min?`           | `number`   | Minimal slider value, default to automatically computed
