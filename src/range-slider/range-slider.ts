@@ -37,7 +37,7 @@ export class NgAisRangeSlider extends BaseWidget {
   @Input() public tooltips: boolean = true;
 
   // connector options
-  @Input() public attributeName: string;
+  @Input() public attribute: string;
   @Input() public min?: number | string;
   @Input() public max?: number | string;
   @Input() public precision?: number | string = 2;
@@ -64,7 +64,7 @@ export class NgAisRangeSlider extends BaseWidget {
 
   public ngOnInit() {
     this.createWidget(connectRange, {
-      attributeName: this.attributeName,
+      attributeName: this.attribute,
       max: parseNumberInput(this.max),
       min: parseNumberInput(this.min),
       precision: parseNumberInput(this.precision)

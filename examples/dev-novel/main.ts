@@ -519,7 +519,7 @@ storiesOf("RangeSlider").add(
   "default",
   wrapWithHits({
     template: `
-      <ng-ais-range-slider attributeName="price">
+      <ng-ais-range-slider attribute="price">
       </ng-ais-range-slider>
     `
   })
