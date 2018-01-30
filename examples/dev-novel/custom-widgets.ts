@@ -1,5 +1,5 @@
-import { Component, Inject, PLATFORM_ID } from "@angular/core";
-import { BaseWidget, NgAisInstance } from "angular-instantsearch";
+import { Component, Inject, forwardRef } from "@angular/core";
+import { BaseWidget, NgAisInstantSearch } from "angular-instantsearch";
 import { connectMenu } from "instantsearch.js/es/connectors";
 
 @Component({
@@ -21,10 +21,10 @@ import { connectMenu } from "instantsearch.js/es/connectors";
 })
 export class MenuSelect extends BaseWidget {
   constructor(
-    @Inject(PLATFORM_ID) public platformId: Object,
-    searchInstance: NgAisInstance
+    @Inject(forwardRef(() => NgAisInstantSearch))
+    public instantSearchParent
   ) {
-    super(searchInstance, "MenuSelect");
+    super("MenuSelect");
   }
 
   public ngOnInit() {
