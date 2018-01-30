@@ -21,154 +21,156 @@ exports[`CurrentRefinedValues renders markup with state 1`] = `
         
   
         
+        
         <ul
           class="ais-CurrentRefinements-list"
         >
           
           
-          
           <li
             class="ais-CurrentRefinements-item"
           >
             
             
-            <button
-              class="ais-CurrentRefinements-button"
+            <span
+              class="ais-CurrentRefinements-label"
+            >
+              Brand:
+            </span>
+            
+  
+            
+            
+            <span
+              class="ais-CurrentRefinements-category"
             >
               
               
               <span
-                class="ais-CurrentRefinements-label"
+                class="ais-CurrentRefinements-categoryLabel"
               >
                 Canon
               </span>
               
               
-              
-              <span
-                class="ais-CurrentRefinements-count"
-              >
-                
-                27
-              
-              </span>
-              
-              
-              <span
+              <button
                 class="ais-CurrentRefinements-delete"
               >
                 ✕
-              </span>
+              </button>
               
             
-            </button>
-            
-          
-          </li>
-          <li
-            class="ais-CurrentRefinements-item"
-          >
-            
-            
-            <button
-              class="ais-CurrentRefinements-button"
+            </span>
+            <span
+              class="ais-CurrentRefinements-category"
             >
               
               
               <span
-                class="ais-CurrentRefinements-label"
+                class="ais-CurrentRefinements-categoryLabel"
               >
                 Sony
               </span>
               
               
-              
-              <span
-                class="ais-CurrentRefinements-count"
-              >
-                
-                28
-              
-              </span>
-              
-              
-              <span
+              <button
                 class="ais-CurrentRefinements-delete"
               >
                 ✕
-              </span>
+              </button>
               
             
-            </button>
+            </span>
             
           
           </li>
+          
+        
+        </ul>
+        <ul
+          class="ais-CurrentRefinements-list"
+        >
+          
+          
           <li
             class="ais-CurrentRefinements-item"
           >
             
             
-            <button
-              class="ais-CurrentRefinements-button"
+            <span
+              class="ais-CurrentRefinements-label"
+            >
+              Hierarchicalcategories.lvl0:
+            </span>
+            
+  
+            
+            
+            <span
+              class="ais-CurrentRefinements-category"
             >
               
               
               <span
-                class="ais-CurrentRefinements-label"
+                class="ais-CurrentRefinements-categoryLabel"
               >
                 Cameras & Camcorders
               </span>
               
               
-              
-              <span
-                class="ais-CurrentRefinements-count"
-              >
-                
-                55
-              
-              </span>
-              
-              
-              <span
+              <button
                 class="ais-CurrentRefinements-delete"
               >
                 ✕
-              </span>
+              </button>
               
             
-            </button>
+            </span>
             
           
           </li>
+          
+        
+        </ul>
+        <ul
+          class="ais-CurrentRefinements-list"
+        >
+          
+          
           <li
             class="ais-CurrentRefinements-item"
           >
             
             
-            <button
-              class="ais-CurrentRefinements-button"
+            <span
+              class="ais-CurrentRefinements-label"
+            >
+              Popularity:
+            </span>
+            
+  
+            
+            
+            <span
+              class="ais-CurrentRefinements-category"
             >
               
               
               <span
-                class="ais-CurrentRefinements-label"
+                class="ais-CurrentRefinements-categoryLabel"
               >
-                ≥ 0
+                0
               </span>
               
               
-              
-              
-              
-              <span
+              <button
                 class="ais-CurrentRefinements-delete"
               >
                 ✕
-              </span>
+              </button>
               
             
-            </button>
+            </span>
             
           
           </li>
@@ -220,15 +222,7 @@ exports[`CurrentRefinedValues renders markup without state 1`] = `
         
   
         
-        <ul
-          class="ais-CurrentRefinements-list"
-        >
-          
-          
-          
-          
         
-        </ul>
         
   
         
@@ -274,154 +268,156 @@ exports[`CurrentRefinedValues should apply \`transformItems\` if specified 1`] =
         
   
         
+        
         <ul
           class="ais-CurrentRefinements-list"
         >
           
           
-          
           <li
             class="ais-CurrentRefinements-item"
           >
             
             
-            <button
-              class="ais-CurrentRefinements-button"
+            <span
+              class="ais-CurrentRefinements-label"
+            >
+              Brand:
+            </span>
+            
+  
+            
+            
+            <span
+              class="ais-CurrentRefinements-category"
             >
               
               
               <span
-                class="ais-CurrentRefinements-label"
+                class="ais-CurrentRefinements-categoryLabel"
               >
-                foo - Canon
+                Canon
               </span>
               
               
-              
-              <span
-                class="ais-CurrentRefinements-count"
-              >
-                
-                27
-              
-              </span>
-              
-              
-              <span
+              <button
                 class="ais-CurrentRefinements-delete"
               >
                 ✕
-              </span>
+              </button>
               
             
-            </button>
-            
-          
-          </li>
-          <li
-            class="ais-CurrentRefinements-item"
-          >
-            
-            
-            <button
-              class="ais-CurrentRefinements-button"
+            </span>
+            <span
+              class="ais-CurrentRefinements-category"
             >
               
               
               <span
-                class="ais-CurrentRefinements-label"
+                class="ais-CurrentRefinements-categoryLabel"
               >
-                foo - Sony
+                Sony
               </span>
               
               
-              
-              <span
-                class="ais-CurrentRefinements-count"
-              >
-                
-                28
-              
-              </span>
-              
-              
-              <span
+              <button
                 class="ais-CurrentRefinements-delete"
               >
                 ✕
-              </span>
+              </button>
               
             
-            </button>
+            </span>
             
           
           </li>
+          
+        
+        </ul>
+        <ul
+          class="ais-CurrentRefinements-list"
+        >
+          
+          
           <li
             class="ais-CurrentRefinements-item"
           >
             
             
-            <button
-              class="ais-CurrentRefinements-button"
+            <span
+              class="ais-CurrentRefinements-label"
+            >
+              Hierarchicalcategories.lvl0:
+            </span>
+            
+  
+            
+            
+            <span
+              class="ais-CurrentRefinements-category"
             >
               
               
               <span
-                class="ais-CurrentRefinements-label"
+                class="ais-CurrentRefinements-categoryLabel"
               >
-                foo - Cameras & Camcorders
+                Cameras & Camcorders
               </span>
               
               
-              
-              <span
-                class="ais-CurrentRefinements-count"
-              >
-                
-                55
-              
-              </span>
-              
-              
-              <span
+              <button
                 class="ais-CurrentRefinements-delete"
               >
                 ✕
-              </span>
+              </button>
               
             
-            </button>
+            </span>
             
           
           </li>
+          
+        
+        </ul>
+        <ul
+          class="ais-CurrentRefinements-list"
+        >
+          
+          
           <li
             class="ais-CurrentRefinements-item"
           >
             
             
-            <button
-              class="ais-CurrentRefinements-button"
+            <span
+              class="ais-CurrentRefinements-label"
+            >
+              Popularity:
+            </span>
+            
+  
+            
+            
+            <span
+              class="ais-CurrentRefinements-category"
             >
               
               
               <span
-                class="ais-CurrentRefinements-label"
+                class="ais-CurrentRefinements-categoryLabel"
               >
-                foo - ≥ 0
+                0
               </span>
               
               
-              
-              
-              
-              <span
+              <button
                 class="ais-CurrentRefinements-delete"
               >
                 ✕
-              </span>
+              </button>
               
             
-            </button>
+            </span>
             
           
           </li>
