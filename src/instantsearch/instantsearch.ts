@@ -8,7 +8,11 @@ import {
   EventEmitter
 } from "@angular/core";
 
-import { NgAisInstance, InstantSearchConfig } from "./instantsearch-instance";
+import {
+  NgAisInstance,
+  InstantSearchConfig,
+  InstantSearchInstance
+} from "./instantsearch-instance";
 
 @Component({
   selector: "ng-ais-instantsearch",
@@ -16,6 +20,7 @@ import { NgAisInstance, InstantSearchConfig } from "./instantsearch-instance";
 })
 export class NgAisInstantSearch implements AfterViewInit, OnInit, OnDestroy {
   @Input() public config: InstantSearchConfig;
+  @Input() public instanceName: string = "default";
 
   @Output()
   change: EventEmitter<{ results: {}; state: {} }> = new EventEmitter<{
@@ -23,10 +28,16 @@ export class NgAisInstantSearch implements AfterViewInit, OnInit, OnDestroy {
     state: {};
   }>();
 
-  constructor(private searchInstance: NgAisInstance) {}
+  public searchInstance: InstantSearchInstance;
+
+  constructor(private instantSearchInstances: NgAisInstance) {}
 
   public ngOnInit() {
-    this.searchInstance.init(this.config);
+    this.searchInstance = this.instantSearchInstances.init(
+      this.config,
+      this.instanceName
+    );
+
     this.searchInstance.on("render", this.onInstantSearchRender);
   }
 
@@ -35,13 +46,14 @@ export class NgAisInstantSearch implements AfterViewInit, OnInit, OnDestroy {
   }
 
   public ngOnDestroy() {
-    this.searchInstance.off("render", this.onInstantSearchRender);
+    this.searchInstance.removeListener("render", this.onInstantSearchRender);
+    this.instantSearchInstances.dispose(this.instanceName);
   }
 
   onInstantSearchRender = () => {
-    const results = this.searchInstance.getResults();
-    const state = this.searchInstance.getState();
-
-    this.change.emit({ results, state });
+    this.change.emit({
+      results: this.searchInstance.helper.lastResults,
+      state: this.searchInstance.helper.state
+    });
   };
 }

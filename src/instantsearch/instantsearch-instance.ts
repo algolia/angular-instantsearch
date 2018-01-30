@@ -47,16 +47,27 @@ export class InstantSearchInstance {
     lastResults: Object;
     state: Object;
   };
+
+  public dispose: () => void;
 }
 
 @Injectable()
 export class NgAisInstance {
-  private instance?: InstantSearchInstance;
+  private instances: { instance: InstantSearchInstance; name: string }[] = [];
   private didSSR: boolean;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
-  public init(config: InstantSearchConfig) {
+  public getInstantSearchInstance(
+    name: string = "default"
+  ): InstantSearchInstance {
+    return this.instances.find(instance => instance.name === name).instance;
+  }
+
+  public init(
+    config: InstantSearchConfig,
+    instanceName: string = "default"
+  ): InstantSearchInstance {
     // add default searchParameters with highlighting config
     if (!config.searchParameters) config.searchParameters = {};
     Object.assign(config.searchParameters, {
@@ -78,42 +89,26 @@ export class NgAisInstance {
       };
     }
 
-    this.instance = instantsearch(config);
+    const instance = instantsearch(config);
+
+    this.instances.push({
+      name: instanceName,
+      instance: instantsearch(config)
+    });
+
+    return instance;
   }
 
-  public start() {
-    this.instance.start();
-  }
+  // remove all remaining widgets and remove instance from
+  // `this.instances` array
+  public dispose(instanceName: string) {
+    const currentInstance = this.getInstantSearchInstance(instanceName);
+    currentInstance.dispose();
 
-  public addWidget(widget: Widget) {
-    this.instance.addWidget(widget);
-  }
+    const idx = this.instances.findIndex(
+      instance => instance.name === instanceName
+    );
 
-  public addWidgets(widgets: Widget[]) {
-    this.instance.addWidgets(widgets);
-  }
-
-  public removeWidget(widget: Widget) {
-    this.instance.removeWidget(widget);
-  }
-
-  public removeWidgets(widgets: Widget[]) {
-    this.instance.removeWidgets(widgets);
-  }
-
-  public on(eventName: string, callback: Function) {
-    this.instance.on(eventName, callback);
-  }
-
-  public off(eventName: string, callback: Function) {
-    this.instance.removeListener(eventName, callback);
-  }
-
-  getResults() {
-    return this.instance.helper.lastResults;
-  }
-
-  getState() {
-    return this.instance.helper.state;
+    this.instances.splice(idx, 1);
   }
 }
