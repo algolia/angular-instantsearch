@@ -4,7 +4,7 @@ import {
   Component,
   ContentChild,
   TemplateRef,
-  PLATFORM_ID
+  forwardRef
 } from "@angular/core";
 
 import { connectHits } from "instantsearch.js/es/connectors";
@@ -12,6 +12,7 @@ import { isFunction } from "lodash-es";
 
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
+import { NgAisInstantSearch } from "../instantsearch/instantsearch";
 
 @Component({
   selector: "ng-ais-hits",
@@ -44,10 +45,10 @@ export class NgAisHits extends BaseWidget {
   public state: { hits: {}[]; results: {} } = { hits: [], results: {} };
 
   constructor(
-    @Inject(PLATFORM_ID) public platformId: Object,
-    searchInstance: NgAisInstance
+    @Inject(forwardRef(() => NgAisInstantSearch))
+    public instantSearchParent: any
   ) {
-    super(searchInstance, "Results");
+    super("Results");
     this.createWidget(connectHits, { escapeHits: true });
   }
 

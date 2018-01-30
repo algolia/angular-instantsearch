@@ -1,9 +1,10 @@
-import { Component, Input, Inject, PLATFORM_ID } from "@angular/core";
+import { Component, Input, Inject, forwardRef } from "@angular/core";
+
 import { connectStarRating } from "instantsearch.js/es/connectors";
 import { noop } from "lodash-es";
 
 import { BaseWidget } from "../base-widget";
-import { NgAisInstance } from "../instantsearch/instantsearch-instance";
+import { NgAisInstantSearch } from "../instantsearch/instantsearch";
 
 export type RatingMenuState = {
   createURL: Function;
@@ -95,10 +96,10 @@ export class NgAisRatingMenu extends BaseWidget {
   }
 
   constructor(
-    @Inject(PLATFORM_ID) public platformId: Object,
-    searchInstance: NgAisInstance
+    @Inject(forwardRef(() => NgAisInstantSearch))
+    public instantSearchParent: any
   ) {
-    super(searchInstance, "RatingMenu");
+    super("RatingMenu");
   }
 
   public ngOnInit() {

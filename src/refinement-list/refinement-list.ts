@@ -1,9 +1,10 @@
-import { Component, Input, Inject, PLATFORM_ID } from "@angular/core";
+import { Component, Input, Inject, forwardRef } from "@angular/core";
+
 import { connectRefinementList } from "instantsearch.js/es/connectors";
 import { noop, isFunction } from "lodash-es";
 
 import { BaseWidget } from "../base-widget";
-import { NgAisInstance } from "../instantsearch/instantsearch-instance";
+import { NgAisInstantSearch } from "../instantsearch/instantsearch";
 import { bem, parseNumberInput } from "../utils";
 
 export type RefinementListState = {
@@ -98,10 +99,10 @@ export class NgAisRefinementList extends BaseWidget {
   }
 
   constructor(
-    @Inject(PLATFORM_ID) public platformId: Object,
-    searchInstance: NgAisInstance
+    @Inject(forwardRef(() => NgAisInstantSearch))
+    public instantSearchParent: any
   ) {
-    super(searchInstance, "RefinementList");
+    super("RefinementList");
   }
 
   get items() {

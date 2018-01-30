@@ -1,9 +1,10 @@
-import { Component, Input } from "@angular/core";
+import { Inject, Component, Input, forwardRef } from "@angular/core";
+
 import { connectRange } from "instantsearch.js/es/connectors";
 import { noop } from "lodash-es";
 
 import { BaseWidget } from "../base-widget";
-import { NgAisInstance } from "../instantsearch/instantsearch-instance";
+import { NgAisInstantSearch } from "../instantsearch/instantsearch";
 import { parseNumberInput } from "../utils";
 
 export type NumericRangeState = {
@@ -87,8 +88,11 @@ export class NgAisRangeInput extends BaseWidget {
     start: [0, 0]
   };
 
-  constructor(searchInstance: NgAisInstance) {
-    super(searchInstance, "RangeInput");
+  constructor(
+    @Inject(forwardRef(() => NgAisInstantSearch))
+    public instantSearchParent: any
+  ) {
+    super("RangeInput");
   }
 
   public ngOnInit() {
