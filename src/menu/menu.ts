@@ -1,9 +1,10 @@
-import { Component, Input, Inject, PLATFORM_ID } from "@angular/core";
+import { Component, Input, Inject, forwardRef } from "@angular/core";
+
 import { connectMenu } from "instantsearch.js/es/connectors";
 import { noop, isFunction } from "lodash-es";
 
 import { BaseWidget } from "../base-widget";
-import { NgAisInstance } from "../instantsearch/instantsearch-instance";
+import { NgAisInstantSearch } from "../instantsearch/instantsearch";
 import { parseNumberInput } from "../utils";
 
 export type MenuState = {
@@ -93,10 +94,10 @@ export class NgAisMenu extends BaseWidget {
   }
 
   constructor(
-    @Inject(PLATFORM_ID) public platformId: Object,
-    searchInstance: NgAisInstance
+    @Inject(forwardRef(() => NgAisInstantSearch))
+    public instantSearchParent: any
   ) {
-    super(searchInstance, "Menu");
+    super("Menu");
   }
 
   public ngOnInit() {

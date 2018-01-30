@@ -1,9 +1,10 @@
-import { Component, Input, Inject, PLATFORM_ID } from "@angular/core";
+import { Component, Input, Inject, forwardRef } from "@angular/core";
+
 import { connectBreadcrumb } from "instantsearch.js/es/connectors";
 import { noop } from "lodash-es";
 
 import { BaseWidget } from "../base-widget";
-import { NgAisInstance } from "../instantsearch/instantsearch-instance";
+import { NgAisInstantSearch } from "../instantsearch/instantsearch";
 
 export type BreadcrumbState = {
   createURL: Function;
@@ -77,10 +78,10 @@ export class NgAisBreadcrumb extends BaseWidget {
   };
 
   constructor(
-    @Inject(PLATFORM_ID) public platformId: Object,
-    searchInstance: NgAisInstance
+    @Inject(forwardRef(() => NgAisInstantSearch))
+    public instantSearchParent: any
   ) {
-    super(searchInstance, "Breadcrumb");
+    super("Breadcrumb");
   }
 
   public ngOnInit() {

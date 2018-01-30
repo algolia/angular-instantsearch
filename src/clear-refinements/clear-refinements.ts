@@ -1,9 +1,16 @@
-import { Component, Input, Inject, PLATFORM_ID } from "@angular/core";
+import {
+  Component,
+  Input,
+  Inject,
+  PLATFORM_ID,
+  forwardRef
+} from "@angular/core";
 import { connectClearAll } from "instantsearch.js/es/connectors";
 import { noop } from "lodash-es";
 
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
+import { NgAisInstantSearch } from "../instantsearch/instantsearch";
 
 @Component({
   selector: "ng-ais-clear-refinements",
@@ -34,10 +41,10 @@ export class NgAisClearRefinements extends BaseWidget {
   }
 
   constructor(
-    @Inject(PLATFORM_ID) public platformId: Object,
-    searchInstance: NgAisInstance
+    @Inject(forwardRef(() => NgAisInstantSearch))
+    public instantSearchParent: any
   ) {
-    super(searchInstance, "ClearRefinements");
+    super("ClearRefinements");
   }
 
   public ngOnInit() {

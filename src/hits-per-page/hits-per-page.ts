@@ -1,9 +1,11 @@
-import { Component, Input, Inject, PLATFORM_ID } from "@angular/core";
+import { Component, Input, Inject, forwardRef } from "@angular/core";
+
 import { connectHitsPerPage } from "instantsearch.js/es/connectors";
 import { noop } from "lodash-es";
 
 import { BaseWidget } from "../base-widget";
 import { NgAisInstance } from "../instantsearch/instantsearch-instance";
+import { NgAisInstantSearch } from "../instantsearch/instantsearch";
 
 export type ResultsPerPageState = {
   items: {}[];
@@ -51,10 +53,10 @@ export class NgAisHitsPerPage extends BaseWidget {
   }
 
   constructor(
-    @Inject(PLATFORM_ID) public platformId: Object,
-    searchInstance: NgAisInstance
+    @Inject(forwardRef(() => NgAisInstantSearch))
+    public instantSearchParent: any
   ) {
-    super(searchInstance, "ResultsPerPage");
+    super("ResultsPerPage");
   }
 
   public ngOnInit() {
