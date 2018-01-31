@@ -1,209 +1,229 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Toggle should render with a label 1`] = `
-<ng-ais-toggle
-  cx={[Function Function]}
-  label={[Function String]}
-  platformId={[Function String]}
-  searchInstance={[Function NgAisInstance]}
-  state={[Function Object]}
-  updateState={[Function Function]}
-  values={[Function Object]}
+<ng-component
+  testedWidget={[Function NgAisToggle]}
 >
   
-      <div
-    class="ais-ToggleRefinement"
-  >
+        <ng-ais-instantsearch>
     
-        
-    <ul
-      class="ais-ToggleRefinement-list"
-    >
-      
           
-      <li
-        class="ais-ToggleRefinement-item"
+    <ng-ais-toggle>
+      
+      
+      <div
+        class="ais-ToggleRefinement"
       >
         
-            
-        <label
-          class="ais-ToggleRefinement-label"
+        
+        <ul
+          class="ais-ToggleRefinement-list"
         >
           
-              
-          <input
-            class="ais-ToggleRefinement-checkbox"
-            type="checkbox"
-            value="foobar"
-          />
           
-  
-              
-          <span
-            class="ais-ToggleRefinement-labelText"
+          <li
+            class="ais-ToggleRefinement-item"
           >
             
+            
+            <label
+              class="ais-ToggleRefinement-label"
+            >
+              
+              
+              <input
+                class="ais-ToggleRefinement-checkbox"
+                type="checkbox"
+                value="foobar"
+              />
+              
+  
+              
+              <span
+                class="ais-ToggleRefinement-labelText"
+              >
+                
                 Foo Label
               
-          </span>
-          
+              </span>
+              
   
               
-          <span
-            class="ais-ToggleRefinement-count"
-          >
-            666
-          </span>
-          
+              <span
+                class="ais-ToggleRefinement-count"
+              >
+                666
+              </span>
+              
             
-        </label>
-        
+            </label>
+            
           
-      </li>
-      
+          </li>
+          
         
-    </ul>
-    
+        </ul>
+        
       
-  </div>
+      </div>
+      
     
-</ng-ais-toggle>
+    </ng-ais-toggle>
+    
+        
+  </ng-ais-instantsearch>
+      
+</ng-component>
 `;
 
 exports[`Toggle should render with state 1`] = `
-<ng-ais-toggle
-  cx={[Function Function]}
-  platformId={[Function String]}
-  searchInstance={[Function NgAisInstance]}
-  state={[Function Object]}
-  updateState={[Function Function]}
-  values={[Function Object]}
+<ng-component
+  testedWidget={[Function NgAisToggle]}
 >
   
-      <div
-    class="ais-ToggleRefinement"
-  >
+        <ng-ais-instantsearch>
     
-        
-    <ul
-      class="ais-ToggleRefinement-list"
-    >
-      
           
-      <li
-        class="ais-ToggleRefinement-item"
+    <ng-ais-toggle>
+      
+      
+      <div
+        class="ais-ToggleRefinement"
       >
         
-            
-        <label
-          class="ais-ToggleRefinement-label"
+        
+        <ul
+          class="ais-ToggleRefinement-list"
         >
           
-              
-          <input
-            class="ais-ToggleRefinement-checkbox"
-            type="checkbox"
-            value="foobar"
-          />
           
-  
-              
-          <span
-            class="ais-ToggleRefinement-labelText"
+          <li
+            class="ais-ToggleRefinement-item"
           >
             
+            
+            <label
+              class="ais-ToggleRefinement-label"
+            >
+              
+              
+              <input
+                class="ais-ToggleRefinement-checkbox"
+                type="checkbox"
+                value="foobar"
+              />
+              
+  
+              
+              <span
+                class="ais-ToggleRefinement-labelText"
+              >
+                
                 foobar
               
-          </span>
-          
+              </span>
+              
   
               
-          <span
-            class="ais-ToggleRefinement-count"
-          >
-            666
-          </span>
-          
+              <span
+                class="ais-ToggleRefinement-count"
+              >
+                666
+              </span>
+              
             
-        </label>
-        
+            </label>
+            
           
-      </li>
-      
+          </li>
+          
         
-    </ul>
-    
+        </ul>
+        
       
-  </div>
+      </div>
+      
     
-</ng-ais-toggle>
+    </ng-ais-toggle>
+    
+        
+  </ng-ais-instantsearch>
+      
+</ng-component>
 `;
 
 exports[`Toggle should render without state 1`] = `
-<ng-ais-toggle
-  cx={[Function Function]}
-  platformId={[Function String]}
-  searchInstance={[Function NgAisInstance]}
-  state={[Function Object]}
-  updateState={[Function Function]}
-  values={[Function Object]}
+<ng-component
+  testedWidget={[Function NgAisToggle]}
 >
   
-      <div
-    class="ais-ToggleRefinement"
-  >
+        <ng-ais-instantsearch>
     
-        
-    <ul
-      class="ais-ToggleRefinement-list"
-    >
-      
           
-      <li
-        class="ais-ToggleRefinement-item"
+    <ng-ais-toggle>
+      
+      
+      <div
+        class="ais-ToggleRefinement"
       >
         
-            
-        <label
-          class="ais-ToggleRefinement-label"
+        
+        <ul
+          class="ais-ToggleRefinement-list"
         >
           
-              
-          <input
-            class="ais-ToggleRefinement-checkbox"
-            type="checkbox"
-            value=""
-          />
           
-  
-              
-          <span
-            class="ais-ToggleRefinement-labelText"
+          <li
+            class="ais-ToggleRefinement-item"
           >
             
+            
+            <label
+              class="ais-ToggleRefinement-label"
+            >
+              
+              
+              <input
+                class="ais-ToggleRefinement-checkbox"
+                type="checkbox"
+                value=""
+              />
+              
+  
+              
+              <span
+                class="ais-ToggleRefinement-labelText"
+              >
+                
                 
               
-          </span>
-          
+              </span>
+              
   
               
-          <span
-            class="ais-ToggleRefinement-count"
-          >
+              <span
+                class="ais-ToggleRefinement-count"
+              >
+                
+              </span>
+              
             
-          </span>
-          
+            </label>
             
-        </label>
-        
           
-      </li>
-      
+          </li>
+          
         
-    </ul>
-    
+        </ul>
+        
       
-  </div>
+      </div>
+      
     
-</ng-ais-toggle>
+    </ng-ais-toggle>
+    
+        
+  </ng-ais-instantsearch>
+      
+</ng-component>
 `;

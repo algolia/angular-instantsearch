@@ -1,305 +1,326 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Menu renders markup with state 1`] = `
-<ng-ais-menu
-  cx={[Function Function]}
-  limit={[Function Number]}
-  platformId={[Function String]}
-  searchInstance={[Function NgAisInstance]}
-  showLessLabel={[Function String]}
-  showMoreLabel={[Function String]}
-  state={[Function Object]}
-  updateState={[Function Function]}
+<ng-component
+  testedWidget={[Function NgAisMenu]}
 >
   
+        <ng-ais-instantsearch>
+    
+          
+    <ng-ais-menu>
+      
+      
+      
       <div
-    class="ais-Menu"
-  >
-    
-        
-    <ul
-      class="ais-Menu-list"
-    >
-      
-          
-      
-      <li
-        class="ais-Menu-item ais-Menu-item--selected"
+        class="ais-Menu"
       >
         
-            
-        <a
-          class="ais-Menu-link"
-          href=""
+        
+        <ul
+          class="ais-Menu-list"
         >
           
-              
-          <span
-            class="ais-Menu-label"
-          >
-            foo
-          </span>
           
-              
-          <span
-            class="ais-Menu-count"
-          >
-            2
-          </span>
           
+          <li
+            class="ais-Menu-item ais-Menu-item--selected"
+          >
             
-        </a>
-        
-          
-      </li>
-      <li
-        class="ais-Menu-item"
-      >
-        
             
-        <a
-          class="ais-Menu-link"
-          href=""
-        >
-          
+            <a
+              class="ais-Menu-link"
+              href=""
+            >
               
-          <span
-            class="ais-Menu-label"
-          >
-            bar
-          </span>
-          
               
-          <span
-            class="ais-Menu-count"
-          >
-            3
-          </span>
-          
+              <span
+                class="ais-Menu-label"
+              >
+                foo
+              </span>
+              
+              
+              <span
+                class="ais-Menu-count"
+              >
+                2
+              </span>
+              
             
-        </a>
-        
-          
-      </li>
-      <li
-        class="ais-Menu-item"
-      >
-        
+            </a>
             
-        <a
-          class="ais-Menu-link"
-          href=""
-        >
           
-              
-          <span
-            class="ais-Menu-label"
+          </li>
+          <li
+            class="ais-Menu-item"
           >
-            foobar
-          </span>
-          
-              
-          <span
-            class="ais-Menu-count"
-          >
-            4
-          </span>
-          
             
-        </a>
-        
+            
+            <a
+              class="ais-Menu-link"
+              href=""
+            >
+              
+              
+              <span
+                class="ais-Menu-label"
+              >
+                bar
+              </span>
+              
+              
+              <span
+                class="ais-Menu-count"
+              >
+                3
+              </span>
+              
+            
+            </a>
+            
           
-      </li>
-      
+          </li>
+          <li
+            class="ais-Menu-item"
+          >
+            
+            
+            <a
+              class="ais-Menu-link"
+              href=""
+            >
+              
+              
+              <span
+                class="ais-Menu-label"
+              >
+                foobar
+              </span>
+              
+              
+              <span
+                class="ais-Menu-count"
+              >
+                4
+              </span>
+              
+            
+            </a>
+            
+          
+          </li>
+          
         
-    </ul>
-    
+        </ul>
+        
   
         
-    
-    
+        
+        
       
-  </div>
+      </div>
+      
     
-</ng-ais-menu>
+    </ng-ais-menu>
+    
+        
+  </ng-ais-instantsearch>
+      
+</ng-component>
 `;
 
 exports[`Menu renders markup without state 1`] = `
-<ng-ais-menu
-  cx={[Function Function]}
-  limit={[Function Number]}
-  platformId={[Function String]}
-  searchInstance={[Function NgAisInstance]}
-  showLessLabel={[Function String]}
-  showMoreLabel={[Function String]}
-  state={[Function Object]}
-  updateState={[Function Function]}
+<ng-component
+  testedWidget={[Function NgAisMenu]}
 >
   
-      <div
-    class="ais-Menu"
-  >
+        <ng-ais-instantsearch>
     
-        
-    <ul
-      class="ais-Menu-list"
-    >
-      
           
+    <ng-ais-menu>
       
       
+      
+      <div
+        class="ais-Menu"
+      >
         
-    </ul>
-    
+        
+        <ul
+          class="ais-Menu-list"
+        >
+          
+          
+          
+          
+        
+        </ul>
+        
   
         
-    
-    
+        
+        
       
-  </div>
+      </div>
+      
     
-</ng-ais-menu>
+    </ng-ais-menu>
+    
+        
+  </ng-ais-instantsearch>
+      
+</ng-component>
 `;
 
 exports[`Menu should apply \`transformItems\` if specified 1`] = `
-<ng-ais-menu
-  cx={[Function Function]}
-  limit={[Function Number]}
-  platformId={[Function String]}
-  searchInstance={[Function NgAisInstance]}
-  showLessLabel={[Function String]}
-  showMoreLabel={[Function String]}
-  state={[Function Object]}
-  transformItems={[Function Function]}
-  updateState={[Function Function]}
+<ng-component
+  testedWidget={[Function NgAisMenu]}
 >
   
+        <ng-ais-instantsearch>
+    
+          
+    <ng-ais-menu>
+      
+      
+      
       <div
-    class="ais-Menu"
-  >
-    
-        
-    <ul
-      class="ais-Menu-list"
-    >
-      
-          
-      
-      <li
-        class="ais-Menu-item ais-Menu-item--selected"
+        class="ais-Menu"
       >
         
-            
-        <a
-          class="ais-Menu-link"
-          href=""
+        
+        <ul
+          class="ais-Menu-list"
         >
           
-              
-          <span
-            class="ais-Menu-label"
-          >
-            transformed - foo
-          </span>
           
-              
-          <span
-            class="ais-Menu-count"
-          >
-            2
-          </span>
           
+          <li
+            class="ais-Menu-item ais-Menu-item--selected"
+          >
             
-        </a>
-        
-          
-      </li>
-      <li
-        class="ais-Menu-item"
-      >
-        
             
-        <a
-          class="ais-Menu-link"
-          href=""
-        >
-          
+            <a
+              class="ais-Menu-link"
+              href=""
+            >
               
-          <span
-            class="ais-Menu-label"
-          >
-            transformed - bar
-          </span>
-          
               
-          <span
-            class="ais-Menu-count"
-          >
-            3
-          </span>
-          
+              <span
+                class="ais-Menu-label"
+              >
+                transformed - foo
+              </span>
+              
+              
+              <span
+                class="ais-Menu-count"
+              >
+                2
+              </span>
+              
             
-        </a>
-        
-          
-      </li>
-      <li
-        class="ais-Menu-item"
-      >
-        
+            </a>
             
-        <a
-          class="ais-Menu-link"
-          href=""
-        >
           
-              
-          <span
-            class="ais-Menu-label"
+          </li>
+          <li
+            class="ais-Menu-item"
           >
-            transformed - foobar
-          </span>
-          
-              
-          <span
-            class="ais-Menu-count"
-          >
-            4
-          </span>
-          
             
-        </a>
-        
+            
+            <a
+              class="ais-Menu-link"
+              href=""
+            >
+              
+              
+              <span
+                class="ais-Menu-label"
+              >
+                transformed - bar
+              </span>
+              
+              
+              <span
+                class="ais-Menu-count"
+              >
+                3
+              </span>
+              
+            
+            </a>
+            
           
-      </li>
-      
+          </li>
+          <li
+            class="ais-Menu-item"
+          >
+            
+            
+            <a
+              class="ais-Menu-link"
+              href=""
+            >
+              
+              
+              <span
+                class="ais-Menu-label"
+              >
+                transformed - foobar
+              </span>
+              
+              
+              <span
+                class="ais-Menu-count"
+              >
+                4
+              </span>
+              
+            
+            </a>
+            
+          
+          </li>
+          
         
-    </ul>
-    
+        </ul>
+        
   
         
-    
-    
+        
+        
       
-  </div>
+      </div>
+      
     
-</ng-ais-menu>
+    </ng-ais-menu>
+    
+        
+  </ng-ais-instantsearch>
+      
+</ng-component>
 `;
 
 exports[`Menu should be hidden with \`autoHideContainer\` 1`] = `
-<ng-ais-menu
-  autoHideContainer={[Function Boolean]}
-  cx={[Function Function]}
-  limit={[Function Number]}
-  platformId={[Function String]}
-  searchInstance={[Function NgAisInstance]}
-  showLessLabel={[Function String]}
-  showMoreLabel={[Function String]}
-  state={[Function Object]}
-  updateState={[Function Function]}
+<ng-component
+  testedWidget={[Function NgAisMenu]}
 >
   
+        <ng-ais-instantsearch>
+    
+          
+    <ng-ais-menu>
+      
+      
+      
       
     
-</ng-ais-menu>
+    </ng-ais-menu>
+    
+        
+  </ng-ais-instantsearch>
+      
+</ng-component>
 `;

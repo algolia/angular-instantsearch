@@ -1,462 +1,475 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CurrentRefinedValues renders markup with state 1`] = `
-<ng-ais-current-refinements
-  attributes={[Function Array]}
-  clearRefinements={[Function String]}
-  clearRefinementsLabel={[Function String]}
-  clearsQuery="false"
-  cx={[Function Function]}
-  onlyListedAttributes="false"
-  platformId={[Function String]}
-  searchInstance={[Function NgAisInstance]}
-  state={[Function Object]}
-  updateState={[Function Function]}
+<ng-component
+  testedWidget={[Function NgAisCurrentRefinements]}
 >
   
-      <div
-    class="ais-CurrentRefinements"
-  >
+        <ng-ais-instantsearch>
     
-        
-    
-    
-  
-        
-    <ul
-      class="ais-CurrentRefinements-list"
-    >
-      
           
+    <ng-ais-current-refinements>
       
-      <li
-        class="ais-CurrentRefinements-item"
+      
+      
+      <div
+        class="ais-CurrentRefinements"
       >
         
-            
-        <button
-          class="ais-CurrentRefinements-button"
+        
+        
+        
+  
+        
+        <ul
+          class="ais-CurrentRefinements-list"
         >
           
-              
-          <span
-            class="ais-CurrentRefinements-label"
-          >
-            Canon
-          </span>
           
-              
           
-          <span
-            class="ais-CurrentRefinements-count"
+          <li
+            class="ais-CurrentRefinements-item"
           >
             
+            
+            <button
+              class="ais-CurrentRefinements-button"
+            >
+              
+              
+              <span
+                class="ais-CurrentRefinements-label"
+              >
+                Canon
+              </span>
+              
+              
+              
+              <span
+                class="ais-CurrentRefinements-count"
+              >
+                
                 27
               
-          </span>
-          
+              </span>
               
-          <span
-            class="ais-CurrentRefinements-delete"
-          >
-            ✕
-          </span>
-          
+              
+              <span
+                class="ais-CurrentRefinements-delete"
+              >
+                ✕
+              </span>
+              
             
-        </button>
-        
-          
-      </li>
-      <li
-        class="ais-CurrentRefinements-item"
-      >
-        
+            </button>
             
-        <button
-          class="ais-CurrentRefinements-button"
-        >
           
-              
-          <span
-            class="ais-CurrentRefinements-label"
-          >
-            Sony
-          </span>
-          
-              
-          
-          <span
-            class="ais-CurrentRefinements-count"
+          </li>
+          <li
+            class="ais-CurrentRefinements-item"
           >
             
+            
+            <button
+              class="ais-CurrentRefinements-button"
+            >
+              
+              
+              <span
+                class="ais-CurrentRefinements-label"
+              >
+                Sony
+              </span>
+              
+              
+              
+              <span
+                class="ais-CurrentRefinements-count"
+              >
+                
                 28
               
-          </span>
-          
+              </span>
               
-          <span
-            class="ais-CurrentRefinements-delete"
-          >
-            ✕
-          </span>
-          
+              
+              <span
+                class="ais-CurrentRefinements-delete"
+              >
+                ✕
+              </span>
+              
             
-        </button>
-        
-          
-      </li>
-      <li
-        class="ais-CurrentRefinements-item"
-      >
-        
+            </button>
             
-        <button
-          class="ais-CurrentRefinements-button"
-        >
           
-              
-          <span
-            class="ais-CurrentRefinements-label"
-          >
-            Cameras & Camcorders
-          </span>
-          
-              
-          
-          <span
-            class="ais-CurrentRefinements-count"
+          </li>
+          <li
+            class="ais-CurrentRefinements-item"
           >
             
+            
+            <button
+              class="ais-CurrentRefinements-button"
+            >
+              
+              
+              <span
+                class="ais-CurrentRefinements-label"
+              >
+                Cameras & Camcorders
+              </span>
+              
+              
+              
+              <span
+                class="ais-CurrentRefinements-count"
+              >
+                
                 55
               
-          </span>
-          
+              </span>
               
-          <span
-            class="ais-CurrentRefinements-delete"
-          >
-            ✕
-          </span>
-          
+              
+              <span
+                class="ais-CurrentRefinements-delete"
+              >
+                ✕
+              </span>
+              
             
-        </button>
-        
-          
-      </li>
-      <li
-        class="ais-CurrentRefinements-item"
-      >
-        
+            </button>
             
-        <button
-          class="ais-CurrentRefinements-button"
-        >
           
-              
-          <span
-            class="ais-CurrentRefinements-label"
+          </li>
+          <li
+            class="ais-CurrentRefinements-item"
           >
-            ≥ 0
-          </span>
-          
-              
-          
-          
-              
-          <span
-            class="ais-CurrentRefinements-delete"
-          >
-            ✕
-          </span>
-          
             
-        </button>
-        
+            
+            <button
+              class="ais-CurrentRefinements-button"
+            >
+              
+              
+              <span
+                class="ais-CurrentRefinements-label"
+              >
+                ≥ 0
+              </span>
+              
+              
+              
+              
+              
+              <span
+                class="ais-CurrentRefinements-delete"
+              >
+                ✕
+              </span>
+              
+            
+            </button>
+            
           
-      </li>
-      
+          </li>
+          
         
-    </ul>
-    
+        </ul>
+        
   
         
-    
-    <button
-      class="ais-CurrentRefinements-reset"
-    >
-      
+        
+        <button
+          class="ais-CurrentRefinements-reset"
+        >
+          
           Clear refinements
         
-    </button>
-    
+        </button>
+        
       
-  </div>
+      </div>
+      
     
-</ng-ais-current-refinements>
+    </ng-ais-current-refinements>
+    
+        
+  </ng-ais-instantsearch>
+      
+</ng-component>
 `;
 
 exports[`CurrentRefinedValues renders markup without state 1`] = `
-<ng-ais-current-refinements
-  attributes={[Function Array]}
-  clearRefinements={[Function String]}
-  clearRefinementsLabel={[Function String]}
-  clearsQuery="false"
-  cx={[Function Function]}
-  onlyListedAttributes="false"
-  platformId={[Function String]}
-  searchInstance={[Function NgAisInstance]}
-  state={[Function Object]}
-  updateState={[Function Function]}
+<ng-component
+  testedWidget={[Function NgAisCurrentRefinements]}
 >
   
-      <div
-    class="ais-CurrentRefinements"
-  >
+        <ng-ais-instantsearch>
     
-        
-    
-    
-  
-        
-    <ul
-      class="ais-CurrentRefinements-list"
-    >
-      
           
+    <ng-ais-current-refinements>
       
       
+      
+      <div
+        class="ais-CurrentRefinements"
+      >
         
-    </ul>
-    
+        
+        
+        
   
         
-    
-    <button
-      class="ais-CurrentRefinements-reset"
-    >
-      
+        <ul
+          class="ais-CurrentRefinements-list"
+        >
+          
+          
+          
+          
+        
+        </ul>
+        
+  
+        
+        
+        <button
+          class="ais-CurrentRefinements-reset"
+        >
+          
           Clear refinements
         
-    </button>
-    
+        </button>
+        
       
-  </div>
+      </div>
+      
     
-</ng-ais-current-refinements>
+    </ng-ais-current-refinements>
+    
+        
+  </ng-ais-instantsearch>
+      
+</ng-component>
 `;
 
 exports[`CurrentRefinedValues should apply \`transformItems\` if specified 1`] = `
-<ng-ais-current-refinements
-  attributes={[Function Array]}
-  clearRefinements={[Function String]}
-  clearRefinementsLabel={[Function String]}
-  clearsQuery="false"
-  cx={[Function Function]}
-  onlyListedAttributes="false"
-  platformId={[Function String]}
-  searchInstance={[Function NgAisInstance]}
-  state={[Function Object]}
-  transformItems={[Function Function]}
-  updateState={[Function Function]}
+<ng-component
+  testedWidget={[Function NgAisCurrentRefinements]}
 >
   
-      <div
-    class="ais-CurrentRefinements"
-  >
+        <ng-ais-instantsearch>
     
-        
-    
-    
-  
-        
-    <ul
-      class="ais-CurrentRefinements-list"
-    >
-      
           
+    <ng-ais-current-refinements>
       
-      <li
-        class="ais-CurrentRefinements-item"
+      
+      
+      <div
+        class="ais-CurrentRefinements"
       >
         
-            
-        <button
-          class="ais-CurrentRefinements-button"
+        
+        
+        
+  
+        
+        <ul
+          class="ais-CurrentRefinements-list"
         >
           
-              
-          <span
-            class="ais-CurrentRefinements-label"
-          >
-            foo - Canon
-          </span>
           
-              
           
-          <span
-            class="ais-CurrentRefinements-count"
+          <li
+            class="ais-CurrentRefinements-item"
           >
             
+            
+            <button
+              class="ais-CurrentRefinements-button"
+            >
+              
+              
+              <span
+                class="ais-CurrentRefinements-label"
+              >
+                foo - Canon
+              </span>
+              
+              
+              
+              <span
+                class="ais-CurrentRefinements-count"
+              >
+                
                 27
               
-          </span>
-          
+              </span>
               
-          <span
-            class="ais-CurrentRefinements-delete"
-          >
-            ✕
-          </span>
-          
+              
+              <span
+                class="ais-CurrentRefinements-delete"
+              >
+                ✕
+              </span>
+              
             
-        </button>
-        
-          
-      </li>
-      <li
-        class="ais-CurrentRefinements-item"
-      >
-        
+            </button>
             
-        <button
-          class="ais-CurrentRefinements-button"
-        >
           
-              
-          <span
-            class="ais-CurrentRefinements-label"
-          >
-            foo - Sony
-          </span>
-          
-              
-          
-          <span
-            class="ais-CurrentRefinements-count"
+          </li>
+          <li
+            class="ais-CurrentRefinements-item"
           >
             
+            
+            <button
+              class="ais-CurrentRefinements-button"
+            >
+              
+              
+              <span
+                class="ais-CurrentRefinements-label"
+              >
+                foo - Sony
+              </span>
+              
+              
+              
+              <span
+                class="ais-CurrentRefinements-count"
+              >
+                
                 28
               
-          </span>
-          
+              </span>
               
-          <span
-            class="ais-CurrentRefinements-delete"
-          >
-            ✕
-          </span>
-          
+              
+              <span
+                class="ais-CurrentRefinements-delete"
+              >
+                ✕
+              </span>
+              
             
-        </button>
-        
-          
-      </li>
-      <li
-        class="ais-CurrentRefinements-item"
-      >
-        
+            </button>
             
-        <button
-          class="ais-CurrentRefinements-button"
-        >
           
-              
-          <span
-            class="ais-CurrentRefinements-label"
-          >
-            foo - Cameras & Camcorders
-          </span>
-          
-              
-          
-          <span
-            class="ais-CurrentRefinements-count"
+          </li>
+          <li
+            class="ais-CurrentRefinements-item"
           >
             
+            
+            <button
+              class="ais-CurrentRefinements-button"
+            >
+              
+              
+              <span
+                class="ais-CurrentRefinements-label"
+              >
+                foo - Cameras & Camcorders
+              </span>
+              
+              
+              
+              <span
+                class="ais-CurrentRefinements-count"
+              >
+                
                 55
               
-          </span>
-          
+              </span>
               
-          <span
-            class="ais-CurrentRefinements-delete"
-          >
-            ✕
-          </span>
-          
+              
+              <span
+                class="ais-CurrentRefinements-delete"
+              >
+                ✕
+              </span>
+              
             
-        </button>
-        
-          
-      </li>
-      <li
-        class="ais-CurrentRefinements-item"
-      >
-        
+            </button>
             
-        <button
-          class="ais-CurrentRefinements-button"
-        >
           
-              
-          <span
-            class="ais-CurrentRefinements-label"
+          </li>
+          <li
+            class="ais-CurrentRefinements-item"
           >
-            foo - ≥ 0
-          </span>
-          
-              
-          
-          
-              
-          <span
-            class="ais-CurrentRefinements-delete"
-          >
-            ✕
-          </span>
-          
             
-        </button>
-        
+            
+            <button
+              class="ais-CurrentRefinements-button"
+            >
+              
+              
+              <span
+                class="ais-CurrentRefinements-label"
+              >
+                foo - ≥ 0
+              </span>
+              
+              
+              
+              
+              
+              <span
+                class="ais-CurrentRefinements-delete"
+              >
+                ✕
+              </span>
+              
+            
+            </button>
+            
           
-      </li>
-      
+          </li>
+          
         
-    </ul>
-    
+        </ul>
+        
   
         
-    
-    <button
-      class="ais-CurrentRefinements-reset"
-    >
-      
+        
+        <button
+          class="ais-CurrentRefinements-reset"
+        >
+          
           Clear refinements
         
-    </button>
-    
+        </button>
+        
       
-  </div>
+      </div>
+      
     
-</ng-ais-current-refinements>
+    </ng-ais-current-refinements>
+    
+        
+  </ng-ais-instantsearch>
+      
+</ng-component>
 `;
 
 exports[`CurrentRefinedValues should be hidden with \`autoHideContainer\` 1`] = `
-<ng-ais-current-refinements
-  attributes={[Function Array]}
-  autoHideContainer={[Function Boolean]}
-  clearRefinements={[Function String]}
-  clearRefinementsLabel={[Function String]}
-  clearsQuery="false"
-  cx={[Function Function]}
-  onlyListedAttributes="false"
-  platformId={[Function String]}
-  searchInstance={[Function NgAisInstance]}
-  state={[Function Object]}
-  updateState={[Function Function]}
+<ng-component
+  testedWidget={[Function NgAisCurrentRefinements]}
 >
   
+        <ng-ais-instantsearch>
+    
+          
+    <ng-ais-current-refinements>
+      
+      
+      
       
     
-</ng-ais-current-refinements>
+    </ng-ais-current-refinements>
+    
+        
+  </ng-ais-instantsearch>
+      
+</ng-component>
 `;

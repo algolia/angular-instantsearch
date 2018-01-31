@@ -1,10 +1,6 @@
-import { TestBed } from "@angular/core/testing";
-
-import { NgAisInstantSearchModule } from "../../instantsearch/instantsearch.module";
-import { NgAisRefinementListModule } from "../refinement-list.module";
+import { createRenderer } from "../../../helpers/test-renderer";
 import { NgAisRefinementList } from "../refinement-list";
-
-jest.mock("../../base-widget");
+import { NgAisHighlight } from "../../highlight/highlight";
 
 const defaultState = {
   canRefine: true,
@@ -21,25 +17,14 @@ const defaultState = {
   toggleShowMore: jest.fn()
 };
 
-const render = (state?: {}) => {
-  const fixture = TestBed.createComponent(NgAisRefinementList);
-
-  if (state) {
-    fixture.componentInstance.updateState({ ...defaultState, ...state }, false);
-  }
-
-  fixture.detectChanges();
-  return fixture;
-};
+const render = createRenderer({
+  defaultState,
+  template: "<ng-ais-refinement-list></ng-ais-refinement-list>",
+  TestedWidget: NgAisRefinementList,
+  additionalDeclarations: [NgAisHighlight]
+});
 
 describe("RefinementList", () => {
-  beforeEach(() =>
-    TestBed.configureTestingModule({
-      declarations: [],
-      imports: [NgAisInstantSearchModule.forRoot(), NgAisRefinementListModule]
-    })
-  );
-
   it("renders markup without state", () => {
     const fixture = render();
     expect(fixture).toMatchSnapshot();
@@ -53,8 +38,8 @@ describe("RefinementList", () => {
   it("should call `toggleShowMore()` on click", () => {
     const toggleShowMore = jest.fn();
     const fixture = render({ toggleShowMore, canToggleShowMore: true });
-    fixture.componentInstance.limit = 5;
-    fixture.componentInstance.showMoreLimit = 10;
+    fixture.componentInstance.testedWidget.limit = 5;
+    fixture.componentInstance.testedWidget.showMoreLimit = 10;
     fixture.detectChanges();
 
     const showMoreBtn = fixture.debugElement.nativeElement.querySelector(
@@ -80,7 +65,7 @@ describe("RefinementList", () => {
 
   it("should apply `transformItems` if specified", () => {
     const fixture = render({});
-    fixture.componentInstance.transformItems = items =>
+    fixture.componentInstance.testedWidget.transformItems = items =>
       items.map(item => ({ ...item, label: `transformed - ${item.label}` }));
     fixture.detectChanges();
     expect(fixture).toMatchSnapshot();
@@ -91,7 +76,7 @@ describe("RefinementList", () => {
     const fixture = render({ searchForItems });
 
     // display search box
-    fixture.componentInstance.searchable = true;
+    fixture.componentInstance.testedWidget.searchable = true;
     fixture.detectChanges();
 
     const input = fixture.debugElement.nativeElement.querySelector("input");
@@ -104,7 +89,7 @@ describe("RefinementList", () => {
 
   it("should be hidden with autoHideContainer", () => {
     const fixture = render({ items: [] });
-    fixture.componentInstance.autoHideContainer = true;
+    fixture.componentInstance.testedWidget.autoHideContainer = true;
     fixture.detectChanges();
 
     expect(fixture).toMatchSnapshot();

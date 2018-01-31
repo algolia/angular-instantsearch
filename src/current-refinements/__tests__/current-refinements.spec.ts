@@ -1,12 +1,7 @@
-import { TestBed } from "@angular/core/testing";
-
-import { NgAisInstantSearchModule } from "../../instantsearch/instantsearch.module";
-import { NgAisCurrentRefinementsModule } from "../current-refinements.module";
+import { createRenderer } from "../../../helpers/test-renderer";
 import { NgAisCurrentRefinements } from "../current-refinements";
 
 import { bem } from "../../utils";
-
-jest.mock("../../base-widget");
 
 const cx = bem("CurrentRefinements");
 
@@ -51,28 +46,13 @@ const defaultState = {
   ]
 };
 
-const render = (state?: {}) => {
-  const fixture = TestBed.createComponent(NgAisCurrentRefinements);
-
-  if (state) {
-    fixture.componentInstance.updateState({ ...defaultState, ...state }, false);
-  }
-
-  fixture.detectChanges();
-  return fixture;
-};
+const render = createRenderer({
+  defaultState,
+  template: "<ng-ais-current-refinements></ng-ais-current-refinements>",
+  TestedWidget: NgAisCurrentRefinements
+});
 
 describe("CurrentRefinedValues", () => {
-  beforeEach(() =>
-    TestBed.configureTestingModule({
-      declarations: [],
-      imports: [
-        NgAisInstantSearchModule.forRoot(),
-        NgAisCurrentRefinementsModule
-      ]
-    })
-  );
-
   it("renders markup without state", () => {
     const fixture = render();
     expect(fixture).toMatchSnapshot();
@@ -106,7 +86,7 @@ describe("CurrentRefinedValues", () => {
   it("should apply `transformItems` if specified", () => {
     const fixture = render({});
 
-    fixture.componentInstance.transformItems = items =>
+    fixture.componentInstance.testedWidget.transformItems = items =>
       items.map(item => ({
         ...item,
         computedLabel: `foo - ${item.computedLabel}`
@@ -118,7 +98,7 @@ describe("CurrentRefinedValues", () => {
 
   it("should be hidden with `autoHideContainer`", () => {
     const fixture = render({ refinements: [] });
-    fixture.componentInstance.autoHideContainer = true;
+    fixture.componentInstance.testedWidget.autoHideContainer = true;
     fixture.detectChanges();
 
     expect(fixture).toMatchSnapshot();

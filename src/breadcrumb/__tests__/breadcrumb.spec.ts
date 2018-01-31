@@ -1,10 +1,5 @@
-import { TestBed } from "@angular/core/testing";
-
-import { NgAisInstantSearchModule } from "../../instantsearch/instantsearch.module";
-import { NgAisBreadcrumbModule } from "../breadcrumb.module";
+import { createRenderer } from "../../../helpers/test-renderer";
 import { NgAisBreadcrumb } from "../breadcrumb";
-
-jest.mock("../../base-widget");
 
 const defaultState = {
   createURL: jest.fn(),
@@ -12,25 +7,13 @@ const defaultState = {
   refine: jest.fn()
 };
 
-const render = (state?: {}) => {
-  const fixture = TestBed.createComponent(NgAisBreadcrumb);
-
-  if (state) {
-    fixture.componentInstance.updateState({ ...defaultState, ...state }, false);
-  }
-
-  fixture.detectChanges();
-  return fixture;
-};
+const render = createRenderer({
+  defaultState,
+  template: "<ng-ais-breadcrumb></ng-ais-breadcrumb>",
+  TestedWidget: NgAisBreadcrumb
+});
 
 describe("Breadcrumb", () => {
-  beforeEach(() =>
-    TestBed.configureTestingModule({
-      declarations: [],
-      imports: [NgAisInstantSearchModule.forRoot(), NgAisBreadcrumbModule]
-    })
-  );
-
   it("renders markup without state", () => {
     const fixture = render();
     expect(fixture).toMatchSnapshot();
@@ -57,7 +40,7 @@ describe("Breadcrumb", () => {
 
   it("should be hidden with `autoHideContainer`", () => {
     const fixture = render({ items: [] });
-    fixture.componentInstance.autoHideContainer = true;
+    fixture.componentInstance.testedWidget.autoHideContainer = true;
     fixture.detectChanges();
 
     expect(fixture).toMatchSnapshot();

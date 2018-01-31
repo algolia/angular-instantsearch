@@ -1,10 +1,5 @@
-import { TestBed } from "@angular/core/testing";
-
-import { NgAisInstantSearchModule } from "../../instantsearch/instantsearch.module";
-import { NgAisNumericMenuModule } from "../numeric-menu.module";
+import { createRenderer } from "../../../helpers/test-renderer";
 import { NgAisNumericMenu } from "../numeric-menu";
-
-jest.mock("../../base-widget");
 
 const defaultState = {
   createURL: jest.fn(),
@@ -15,25 +10,13 @@ const defaultState = {
   refine: jest.fn()
 };
 
-const render = (state?: {}) => {
-  const fixture = TestBed.createComponent(NgAisNumericMenu);
-
-  if (state) {
-    fixture.componentInstance.updateState({ ...defaultState, ...state });
-  }
-
-  fixture.detectChanges();
-  return fixture;
-};
+const render = createRenderer({
+  defaultState,
+  template: "<ng-ais-numeric-menu></ng-ais-numeric-menu>",
+  TestedWidget: NgAisNumericMenu
+});
 
 describe("NumericRefinementList", () => {
-  beforeEach(() =>
-    TestBed.configureTestingModule({
-      declarations: [],
-      imports: [NgAisInstantSearchModule.forRoot(), NgAisNumericMenuModule]
-    })
-  );
-
   it("renders markup without state", () => {
     const fixture = render();
     expect(fixture).toMatchSnapshot();
@@ -68,7 +51,7 @@ describe("NumericRefinementList", () => {
 
   it("should be hidden with autoHideContainer", () => {
     const fixture = render({ items: [] });
-    fixture.componentInstance.autoHideContainer = true;
+    fixture.componentInstance.testedWidget.autoHideContainer = true;
     fixture.detectChanges();
 
     expect(fixture).toMatchSnapshot();

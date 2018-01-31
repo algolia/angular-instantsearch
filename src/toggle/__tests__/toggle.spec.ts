@@ -1,10 +1,5 @@
-import { TestBed } from "@angular/core/testing";
-
-import { NgAisInstantSearchModule } from "../../instantsearch/instantsearch.module";
-import { NgAisToggleModule } from "../toggle.module";
+import { createRenderer } from "../../../helpers/test-renderer";
 import { NgAisToggle } from "../toggle";
-
-jest.mock("../../base-widget");
 
 const defaultState = {
   createURL: jest.fn(),
@@ -16,25 +11,13 @@ const defaultState = {
   }
 };
 
-const render = (state?: {}) => {
-  const fixture = TestBed.createComponent(NgAisToggle);
-
-  if (state) {
-    fixture.componentInstance.updateState({ ...defaultState, ...state });
-  }
-
-  fixture.detectChanges();
-  return fixture;
-};
+const render = createRenderer({
+  defaultState,
+  template: "<ng-ais-toggle></ng-ais-toggle>",
+  TestedWidget: NgAisToggle
+});
 
 describe("Toggle", () => {
-  beforeEach(() =>
-    TestBed.configureTestingModule({
-      declarations: [],
-      imports: [NgAisInstantSearchModule.forRoot(), NgAisToggleModule]
-    })
-  );
-
   it("should render without state", () => {
     const fixture = render();
     expect(fixture).toMatchSnapshot();
@@ -47,7 +30,7 @@ describe("Toggle", () => {
 
   it("should render with a label", () => {
     const fixture = render({});
-    fixture.componentInstance.label = "Foo Label";
+    fixture.componentInstance.testedWidget.label = "Foo Label";
     fixture.detectChanges();
     expect(fixture).toMatchSnapshot();
   });

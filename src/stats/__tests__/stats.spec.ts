@@ -1,42 +1,31 @@
-import { TestBed } from "@angular/core/testing";
-
-import { NgAisInstantSearchModule } from "../../instantsearch/instantsearch.module";
-import { NgAisStatsModule } from "../stats.module";
+import { createRenderer } from "../../../helpers/test-renderer";
 import { NgAisStats } from "../stats";
 
 import { bem } from "../../utils";
 
 const cx = bem("Stats");
 
-jest.mock("../../base-widget");
+const render = createRenderer({
+  defaultState: {
+    hitPerPage: 20,
+    nbHits: 100,
+    nbPages: 5,
+    page: 0,
+    processingTimeMS: 123,
+    query: "foobar"
+  },
+  template: "<ng-ais-stats></ng-ais-stats>",
+  TestedWidget: NgAisStats
+});
 
 describe("Stats", () => {
-  beforeEach(() =>
-    TestBed.configureTestingModule({
-      declarations: [],
-      imports: [NgAisInstantSearchModule.forRoot(), NgAisStatsModule]
-    })
-  );
-
   it("should render without state", () => {
-    const fixture = TestBed.createComponent(NgAisStats);
+    const fixture = render();
     expect(fixture).toMatchSnapshot();
   });
 
   it("should render with state", () => {
-    const fixture = TestBed.createComponent(NgAisStats);
-    fixture.componentInstance.updateState(
-      {
-        hitPerPage: 20,
-        nbHits: 100,
-        nbPages: 5,
-        page: 0,
-        processingTimeMS: 123,
-        query: "foobar"
-      },
-      false
-    );
-    fixture.detectChanges();
+    const fixture = render({});
     expect(fixture).toMatchSnapshot();
   });
 });

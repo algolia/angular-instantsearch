@@ -1,10 +1,5 @@
-import { TestBed } from "@angular/core/testing";
-
-import { NgAisInstantSearchModule } from "../../instantsearch/instantsearch.module";
-import { NgAisSortByModule } from "../sort-by.module";
+import { createRenderer } from "../../../helpers/test-renderer";
 import { NgAisSortBy } from "../sort-by";
-
-jest.mock("../../base-widget");
 
 const defaultState = {
   currentRefinement: "foo",
@@ -12,25 +7,13 @@ const defaultState = {
   refine: jest.fn()
 };
 
-const render = (state?: {}) => {
-  const fixture = TestBed.createComponent(NgAisSortBy);
-
-  if (state) {
-    fixture.componentInstance.updateState({ ...defaultState, ...state }, false);
-  }
-
-  fixture.detectChanges();
-  return fixture;
-};
+const render = createRenderer({
+  defaultState,
+  template: "<ng-ais-sort-by></ng-ais-sort-by>",
+  TestedWidget: NgAisSortBy
+});
 
 describe("SortBy", () => {
-  beforeEach(() =>
-    TestBed.configureTestingModule({
-      declarations: [],
-      imports: [NgAisInstantSearchModule.forRoot(), NgAisSortByModule]
-    })
-  );
-
   it("renders markup without state", () => {
     const fixture = render();
     expect(fixture).toMatchSnapshot();

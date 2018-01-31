@@ -1,438 +1,499 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Pagination renders does not uses pagesPadding when nbPages < pagesPadding * 2 + 1 1`] = `
-<ng-ais-pagination
-  cx={[Function Function]}
-  padding={[Function Number]}
-  platformId={[Function String]}
-  searchInstance={[Function NgAisInstance]}
-  showFirst={[Function Boolean]}
-  showLast="false"
-  showNext={[Function Boolean]}
-  showPrevious={[Function Boolean]}
-  state={[Function Object]}
-  updateState={[Function Function]}
+<ng-component
+  testedWidget={[Function NgAisPagination]}
 >
   
-      <div
-    class="ais-Pagination"
-  >
+        <ng-ais-instantsearch>
     
-        
-    <ul
-      class="ais-Pagination-list"
-    >
-      
           
+    <ng-ais-pagination>
       
-      <li
-        class="ais-Pagination-item ais-Pagination-item--firstPage ais-Pagination-item--disabled"
+      
+      <div
+        class="ais-Pagination"
       >
         
-            
-        <a
-          class="ais-Pagination-link"
-          href="null"
+        
+        <ul
+          class="ais-Pagination-list"
         >
           
+          
+          
+          <li
+            class="ais-Pagination-item ais-Pagination-item--firstPage ais-Pagination-item--disabled"
+          >
+            
+            
+            <a
+              class="ais-Pagination-link"
+              href="null"
+            >
+              
               ‹‹
             
-        </a>
-        
+            </a>
+            
           
-      </li>
-      
+          </li>
+          
   
           
-      
-      <li
-        class="ais-Pagination-item ais-Pagination-item--previousPage ais-Pagination-item--disabled"
-      >
-        
-            
-        <a
-          class="ais-Pagination-link"
-          href="null"
-        >
           
+          <li
+            class="ais-Pagination-item ais-Pagination-item--previousPage ais-Pagination-item--disabled"
+          >
+            
+            
+            <a
+              class="ais-Pagination-link"
+              href="null"
+            >
+              
               ‹
             
-        </a>
-        
+            </a>
+            
           
-      </li>
-      
+          </li>
+          
   
           
-      
-      <li
-        class="ais-Pagination-item ais-Pagination-item--page ais-Pagination-item--selected"
-      >
-        
-            
-        <a
-          class="ais-Pagination-link"
-          href="null"
-        >
           
+          <li
+            class="ais-Pagination-item ais-Pagination-item--page ais-Pagination-item--selected"
+          >
+            
+            
+            <a
+              class="ais-Pagination-link"
+              href="null"
+            >
+              
               1
             
-        </a>
-        
-          
-      </li>
-      <li
-        class="ais-Pagination-item ais-Pagination-item--page"
-      >
-        
+            </a>
             
-        <a
-          class="ais-Pagination-link"
-          href="null"
-        >
           
+          </li>
+          <li
+            class="ais-Pagination-item ais-Pagination-item--page"
+          >
+            
+            
+            <a
+              class="ais-Pagination-link"
+              href="null"
+            >
+              
               2
             
-        </a>
-        
-          
-      </li>
-      <li
-        class="ais-Pagination-item ais-Pagination-item--page"
-      >
-        
+            </a>
             
-        <a
-          class="ais-Pagination-link"
-          href="null"
-        >
           
+          </li>
+          <li
+            class="ais-Pagination-item ais-Pagination-item--page"
+          >
+            
+            
+            <a
+              class="ais-Pagination-link"
+              href="null"
+            >
+              
               3
             
-        </a>
-        
-          
-      </li>
-      <li
-        class="ais-Pagination-item ais-Pagination-item--page"
-      >
-        
+            </a>
             
-        <a
-          class="ais-Pagination-link"
-          href="null"
-        >
           
+          </li>
+          <li
+            class="ais-Pagination-item ais-Pagination-item--page"
+          >
+            
+            
+            <a
+              class="ais-Pagination-link"
+              href="null"
+            >
+              
               4
             
-        </a>
-        
-          
-      </li>
-      <li
-        class="ais-Pagination-item ais-Pagination-item--page"
-      >
-        
+            </a>
             
-        <a
-          class="ais-Pagination-link"
-          href="null"
-        >
           
+          </li>
+          <li
+            class="ais-Pagination-item ais-Pagination-item--page"
+          >
+            
+            
+            <a
+              class="ais-Pagination-link"
+              href="null"
+            >
+              
               5
             
-        </a>
-        
+            </a>
+            
           
-      </li>
-      
+          </li>
+          
   
           
-      
-      <li
-        class="ais-Pagination-item ais-Pagination-item--nextPage"
-      >
-        
-            
-        <a
-          class="ais-Pagination-link"
-          href="null"
-        >
           
+          <li
+            class="ais-Pagination-item ais-Pagination-item--nextPage"
+          >
+            
+            
+            <a
+              class="ais-Pagination-link"
+              href="null"
+            >
+              
               ›
             
-        </a>
-        
+            </a>
+            
           
-      </li>
-      
+          </li>
+          
   
           
-      
-      
+          
+          
         
-    </ul>
-    
+        </ul>
+        
       
-  </div>
+      </div>
+      
     
-</ng-ais-pagination>
+    </ng-ais-pagination>
+    
+        
+  </ng-ais-instantsearch>
+      
+</ng-component>
 `;
 
 exports[`Pagination renders markup without state 1`] = `
-<ng-ais-pagination
-  cx={[Function Function]}
-  padding={[Function Number]}
-  platformId={[Function String]}
-  searchInstance={[Function NgAisInstance]}
-  showFirst={[Function Boolean]}
-  showLast="false"
-  showNext={[Function Boolean]}
-  showPrevious={[Function Boolean]}
-  state={[Function Object]}
-  updateState={[Function Function]}
+<ng-component
+  testedWidget={[Function NgAisPagination]}
 >
   
-      <div>
+        <ng-ais-instantsearch>
+    
+          
+    <ng-ais-pagination>
+      
+      
+      <div
+        class="ais-Pagination"
+      >
+        
+        
+        <ul
+          class="ais-Pagination-list"
+        >
+          
+          
+          
+          <li
+            class="ais-Pagination-item ais-Pagination-item--firstPage ais-Pagination-item--disabled"
+          >
+            
+            
+            <a
+              class="ais-Pagination-link"
+              href="null"
+            >
+              
+              ‹‹
+            
+            </a>
+            
+          
+          </li>
+          
+  
+          
+          
+          <li
+            class="ais-Pagination-item ais-Pagination-item--previousPage ais-Pagination-item--disabled"
+          >
+            
+            
+            <a
+              class="ais-Pagination-link"
+              href="null"
+            >
+              
+              ‹
+            
+            </a>
+            
+          
+          </li>
+          
+  
+          
+          
+          
+  
+          
+          
+          <li
+            class="ais-Pagination-item ais-Pagination-item--nextPage"
+          >
+            
+            
+            <a
+              class="ais-Pagination-link"
+              href="null"
+            >
+              
+              ›
+            
+            </a>
+            
+          
+          </li>
+          
+  
+          
+          
+          
+        
+        </ul>
+        
+      
+      </div>
+      
+    
+    </ng-ais-pagination>
     
         
-    <ul>
+  </ng-ais-instantsearch>
       
-          
-      
-      
-  
-          
-      
-      
-  
-          
-      
-      
-  
-          
-      
-      
-  
-          
-      
-      
-        
-    </ul>
-    
-      
-  </div>
-    
-</ng-ais-pagination>
+</ng-component>
 `;
 
 exports[`Pagination renders with pages in state 1`] = `
-<ng-ais-pagination
-  cx={[Function Function]}
-  padding={[Function Number]}
-  platformId={[Function String]}
-  searchInstance={[Function NgAisInstance]}
-  showFirst={[Function Boolean]}
-  showLast="false"
-  showNext={[Function Boolean]}
-  showPrevious={[Function Boolean]}
-  state={[Function Object]}
-  updateState={[Function Function]}
+<ng-component
+  testedWidget={[Function NgAisPagination]}
 >
   
-      <div
-    class="ais-Pagination"
-  >
+        <ng-ais-instantsearch>
     
-        
-    <ul
-      class="ais-Pagination-list"
-    >
-      
           
+    <ng-ais-pagination>
       
-      <li
-        class="ais-Pagination-item ais-Pagination-item--firstPage ais-Pagination-item--disabled"
+      
+      <div
+        class="ais-Pagination"
       >
         
-            
-        <a
-          class="ais-Pagination-link"
-          href="null"
+        
+        <ul
+          class="ais-Pagination-list"
         >
           
+          
+          
+          <li
+            class="ais-Pagination-item ais-Pagination-item--firstPage ais-Pagination-item--disabled"
+          >
+            
+            
+            <a
+              class="ais-Pagination-link"
+              href="null"
+            >
+              
               ‹‹
             
-        </a>
-        
+            </a>
+            
           
-      </li>
-      
+          </li>
+          
   
           
-      
-      <li
-        class="ais-Pagination-item ais-Pagination-item--previousPage ais-Pagination-item--disabled"
-      >
-        
-            
-        <a
-          class="ais-Pagination-link"
-          href="null"
-        >
           
+          <li
+            class="ais-Pagination-item ais-Pagination-item--previousPage ais-Pagination-item--disabled"
+          >
+            
+            
+            <a
+              class="ais-Pagination-link"
+              href="null"
+            >
+              
               ‹
             
-        </a>
-        
+            </a>
+            
           
-      </li>
-      
+          </li>
+          
   
           
-      
-      <li
-        class="ais-Pagination-item ais-Pagination-item--page ais-Pagination-item--selected"
-      >
-        
-            
-        <a
-          class="ais-Pagination-link"
-          href="null"
-        >
           
+          <li
+            class="ais-Pagination-item ais-Pagination-item--page ais-Pagination-item--selected"
+          >
+            
+            
+            <a
+              class="ais-Pagination-link"
+              href="null"
+            >
+              
               1
             
-        </a>
-        
-          
-      </li>
-      <li
-        class="ais-Pagination-item ais-Pagination-item--page"
-      >
-        
+            </a>
             
-        <a
-          class="ais-Pagination-link"
-          href="null"
-        >
           
+          </li>
+          <li
+            class="ais-Pagination-item ais-Pagination-item--page"
+          >
+            
+            
+            <a
+              class="ais-Pagination-link"
+              href="null"
+            >
+              
               2
             
-        </a>
-        
-          
-      </li>
-      <li
-        class="ais-Pagination-item ais-Pagination-item--page"
-      >
-        
+            </a>
             
-        <a
-          class="ais-Pagination-link"
-          href="null"
-        >
           
+          </li>
+          <li
+            class="ais-Pagination-item ais-Pagination-item--page"
+          >
+            
+            
+            <a
+              class="ais-Pagination-link"
+              href="null"
+            >
+              
               3
             
-        </a>
-        
-          
-      </li>
-      <li
-        class="ais-Pagination-item ais-Pagination-item--page"
-      >
-        
+            </a>
             
-        <a
-          class="ais-Pagination-link"
-          href="null"
-        >
           
+          </li>
+          <li
+            class="ais-Pagination-item ais-Pagination-item--page"
+          >
+            
+            
+            <a
+              class="ais-Pagination-link"
+              href="null"
+            >
+              
               4
             
-        </a>
-        
-          
-      </li>
-      <li
-        class="ais-Pagination-item ais-Pagination-item--page"
-      >
-        
+            </a>
             
-        <a
-          class="ais-Pagination-link"
-          href="null"
-        >
           
+          </li>
+          <li
+            class="ais-Pagination-item ais-Pagination-item--page"
+          >
+            
+            
+            <a
+              class="ais-Pagination-link"
+              href="null"
+            >
+              
               5
             
-        </a>
-        
-          
-      </li>
-      <li
-        class="ais-Pagination-item ais-Pagination-item--page"
-      >
-        
+            </a>
             
-        <a
-          class="ais-Pagination-link"
-          href="null"
-        >
           
+          </li>
+          <li
+            class="ais-Pagination-item ais-Pagination-item--page"
+          >
+            
+            
+            <a
+              class="ais-Pagination-link"
+              href="null"
+            >
+              
               6
             
-        </a>
-        
-          
-      </li>
-      <li
-        class="ais-Pagination-item ais-Pagination-item--page"
-      >
-        
+            </a>
             
-        <a
-          class="ais-Pagination-link"
-          href="null"
-        >
           
+          </li>
+          <li
+            class="ais-Pagination-item ais-Pagination-item--page"
+          >
+            
+            
+            <a
+              class="ais-Pagination-link"
+              href="null"
+            >
+              
               7
             
-        </a>
-        
+            </a>
+            
           
-      </li>
-      
+          </li>
+          
   
           
-      
-      <li
-        class="ais-Pagination-item ais-Pagination-item--nextPage"
-      >
-        
-            
-        <a
-          class="ais-Pagination-link"
-          href="null"
-        >
           
+          <li
+            class="ais-Pagination-item ais-Pagination-item--nextPage"
+          >
+            
+            
+            <a
+              class="ais-Pagination-link"
+              href="null"
+            >
+              
               ›
             
-        </a>
-        
+            </a>
+            
           
-      </li>
-      
+          </li>
+          
   
           
-      
-      
+          
+          
         
-    </ul>
-    
+        </ul>
+        
       
-  </div>
+      </div>
+      
     
-</ng-ais-pagination>
+    </ng-ais-pagination>
+    
+        
+  </ng-ais-instantsearch>
+      
+</ng-component>
 `;

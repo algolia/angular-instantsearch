@@ -1,205 +1,211 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RangeInput renders markup with state 1`] = `
-<ng-ais-range-input
-  currency={[Function String]}
-  cx={[Function Function]}
-  maxInputValue=""
-  minInputValue=""
-  precision={[Function Number]}
-  searchInstance={[Function NgAisInstance]}
-  separator={[Function String]}
-  state={[Function Object]}
-  submitLabel={[Function String]}
-  updateState={[Function Function]}
+<ng-component
+  testedWidget={[Function NgAisRangeInput]}
 >
   
-      <div
-    class="ais-RangeInput"
-  >
+        <ng-ais-instantsearch>
     
-        
-    <form
-      class="ais-RangeInput-form"
-      novalidate=""
-    >
-      
           
-      <label
-        class="ais-RangeInput-label"
+    <ng-ais-range-input>
+      
+      
+      <div
+        class="ais-RangeInput"
       >
         
-            
-        <span
-          class="ais-RangeInput-currency"
+        
+        <form
+          class="ais-RangeInput-form"
+          novalidate=""
         >
-          $
-        </span>
-        
-            
-        <input
-          class="ais-RangeInput-input--min"
-          max="100"
-          min="0"
-          placeholder="0"
-          step="0.01"
-          type="number"
-        />
-        
           
-      </label>
-      
+          
+          <label
+            class="ais-RangeInput-label"
+          >
+            
+            
+            <span
+              class="ais-RangeInput-currency"
+            >
+              $
+            </span>
+            
+            
+            <input
+              class="ais-RangeInput-input--min"
+              max="100"
+              min="0"
+              placeholder="0"
+              step="0.01"
+              type="number"
+            />
+            
+          
+          </label>
+          
   
           
-      <span
-        class="ais-RangeInput-separator"
-      >
-        to
-      </span>
-      
+          <span
+            class="ais-RangeInput-separator"
+          >
+            to
+          </span>
+          
   
           
-      <label
-        class="ais-RangeInput-label"
-      >
-        
+          <label
+            class="ais-RangeInput-label"
+          >
             
-        <span
-          class="ais-RangeInput-currency"
-        >
-          $
-        </span>
-        
             
-        <input
-          class="ais-RangeInput-input--max"
-          max="100"
-          min="0"
-          placeholder="100"
-          step="0.01"
-          type="number"
-        />
-        
+            <span
+              class="ais-RangeInput-currency"
+            >
+              $
+            </span>
+            
+            
+            <input
+              class="ais-RangeInput-input--max"
+              max="100"
+              min="0"
+              placeholder="100"
+              step="0.01"
+              type="number"
+            />
+            
           
-      </label>
-      
+          </label>
+          
   
           
-      <button
-        class="ais-RangeInput-submit"
-      >
-        
+          <button
+            class="ais-RangeInput-submit"
+          >
+            
             Go
           
-      </button>
-      
+          </button>
+          
         
-    </form>
-    
+        </form>
+        
       
-  </div>
+      </div>
+      
     
-</ng-ais-range-input>
+    </ng-ais-range-input>
+    
+        
+  </ng-ais-instantsearch>
+      
+</ng-component>
 `;
 
 exports[`RangeInput renders markup without state 1`] = `
-<ng-ais-range-input
-  currency={[Function String]}
-  cx={[Function Function]}
-  maxInputValue=""
-  minInputValue=""
-  precision={[Function Number]}
-  searchInstance={[Function NgAisInstance]}
-  separator={[Function String]}
-  state={[Function Object]}
-  submitLabel={[Function String]}
-  updateState={[Function Function]}
+<ng-component
+  testedWidget={[Function NgAisRangeInput]}
 >
   
-      <div
-    class="ais-RangeInput"
-  >
+        <ng-ais-instantsearch>
     
-        
-    <form
-      class="ais-RangeInput-form"
-      novalidate=""
-    >
-      
           
-      <label
-        class="ais-RangeInput-label"
+    <ng-ais-range-input>
+      
+      
+      <div
+        class="ais-RangeInput"
       >
         
-            
-        <span
-          class="ais-RangeInput-currency"
+        
+        <form
+          class="ais-RangeInput-form"
+          novalidate=""
         >
-          $
-        </span>
-        
-            
-        <input
-          class="ais-RangeInput-input--min"
-          max="undefined"
-          min="undefined"
-          placeholder="undefined"
-          step="0.01"
-          type="number"
-        />
-        
           
-      </label>
-      
+          
+          <label
+            class="ais-RangeInput-label"
+          >
+            
+            
+            <span
+              class="ais-RangeInput-currency"
+            >
+              $
+            </span>
+            
+            
+            <input
+              class="ais-RangeInput-input--min"
+              max="undefined"
+              min="undefined"
+              placeholder="undefined"
+              step="0.01"
+              type="number"
+            />
+            
+          
+          </label>
+          
   
           
-      <span
-        class="ais-RangeInput-separator"
-      >
-        to
-      </span>
-      
+          <span
+            class="ais-RangeInput-separator"
+          >
+            to
+          </span>
+          
   
           
-      <label
-        class="ais-RangeInput-label"
-      >
-        
+          <label
+            class="ais-RangeInput-label"
+          >
             
-        <span
-          class="ais-RangeInput-currency"
-        >
-          $
-        </span>
-        
             
-        <input
-          class="ais-RangeInput-input--max"
-          max="undefined"
-          min="undefined"
-          placeholder="undefined"
-          step="0.01"
-          type="number"
-        />
-        
+            <span
+              class="ais-RangeInput-currency"
+            >
+              $
+            </span>
+            
+            
+            <input
+              class="ais-RangeInput-input--max"
+              max="undefined"
+              min="undefined"
+              placeholder="undefined"
+              step="0.01"
+              type="number"
+            />
+            
           
-      </label>
-      
+          </label>
+          
   
           
-      <button
-        class="ais-RangeInput-submit"
-      >
-        
+          <button
+            class="ais-RangeInput-submit"
+          >
+            
             Go
           
-      </button>
-      
+          </button>
+          
         
-    </form>
-    
+        </form>
+        
       
-  </div>
+      </div>
+      
     
-</ng-ais-range-input>
+    </ng-ais-range-input>
+    
+        
+  </ng-ais-instantsearch>
+      
+</ng-component>
 `;

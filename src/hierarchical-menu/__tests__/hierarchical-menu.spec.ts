@@ -1,10 +1,6 @@
-import { TestBed } from "@angular/core/testing";
-
-import { NgAisInstantSearchModule } from "../../instantsearch/instantsearch.module";
-import { NgAisHierarchicalMenuModule } from "../hierarchical-menu.module";
+import { createRenderer } from "../../../helpers/test-renderer";
 import { NgAisHierarchicalMenu } from "../hierarchical-menu";
-
-jest.mock("../../base-widget");
+import { NgAisHierarchicalMenuItem } from "../hierarchical-menu-item";
 
 const defaultState = {
   items: [
@@ -29,25 +25,14 @@ const defaultState = {
   createURL: jest.fn()
 };
 
-const render = (state?: {}) => {
-  const fixture = TestBed.createComponent(NgAisHierarchicalMenu);
-
-  if (state) {
-    fixture.componentInstance.updateState({ ...defaultState, ...state }, false);
-  }
-
-  fixture.detectChanges();
-  return fixture;
-};
+const render = createRenderer({
+  defaultState,
+  template: "<ng-ais-hierarchical-menu></ng-ais-hierarchical-menu>",
+  TestedWidget: NgAisHierarchicalMenu,
+  additionalDeclarations: [NgAisHierarchicalMenuItem]
+});
 
 describe("HierarchicalMenu", () => {
-  beforeEach(() =>
-    TestBed.configureTestingModule({
-      declarations: [],
-      imports: [NgAisInstantSearchModule.forRoot(), NgAisHierarchicalMenuModule]
-    })
-  );
-
   it("renders markup without state", () => {
     const fixture = render();
     expect(fixture).toMatchSnapshot();
@@ -81,7 +66,7 @@ describe("HierarchicalMenu", () => {
         data: item.data ? mapItems(item.data) : null
       }));
 
-    fixture.componentInstance.transformItems = mapItems;
+    fixture.componentInstance.testedWidget.transformItems = mapItems;
     fixture.detectChanges();
 
     expect(fixture).toMatchSnapshot();
@@ -89,7 +74,7 @@ describe("HierarchicalMenu", () => {
 
   it("should be hidden with `autoHideContainer`", () => {
     const fixture = render({ items: [] });
-    fixture.componentInstance.autoHideContainer = true;
+    fixture.componentInstance.testedWidget.autoHideContainer = true;
     fixture.detectChanges();
 
     expect(fixture).toMatchSnapshot();
