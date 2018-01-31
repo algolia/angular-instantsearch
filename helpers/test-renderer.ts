@@ -10,16 +10,22 @@ jest.mock("../src/instantsearch/instantsearch");
 export function createRenderer({
   template,
   TestedWidget,
-  defaultState
+  defaultState,
+  additionalImports,
+  additionalDeclarations
 }: {
   template: string;
   TestedWidget: any;
+  additionalImports?: any[];
+  additionalDeclarations?: any[];
   defaultState?: {};
 }) {
   return function(state?: {}) {
     return render({
       template,
       TestedWidget,
+      additionalImports,
+      additionalDeclarations,
       state: state ? { ...(defaultState || {}), ...state } : undefined
     });
   };
@@ -28,10 +34,14 @@ export function createRenderer({
 function render({
   template,
   TestedWidget,
+  additionalImports,
+  additionalDeclarations,
   state
 }: {
   template: string;
   TestedWidget: any;
+  additionalImports?: any[];
+  additionalDeclarations?: any[];
   state?: {};
 }) {
   @Component({
@@ -46,8 +56,12 @@ function render({
   }
 
   TestBed.configureTestingModule({
-    declarations: [TestContainer, TestedWidget],
-    imports: [NgAisInstantSearchModule.forRoot()]
+    declarations: [
+      TestContainer,
+      TestedWidget,
+      ...(additionalDeclarations || [])
+    ],
+    imports: [NgAisInstantSearchModule.forRoot(), ...(additionalImports || [])]
   });
 
   const fixture = TestBed.createComponent(TestContainer);
