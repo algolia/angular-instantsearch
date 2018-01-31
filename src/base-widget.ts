@@ -2,10 +2,6 @@ import { Input, OnDestroy, OnInit } from "@angular/core";
 import { isPlatformBrowser } from "@angular/common";
 import { noop } from "lodash-es";
 
-import {
-  NgAisInstance,
-  InstantSearchInstance
-} from "./instantsearch/instantsearch-instance";
 import { NgAisInstantSearch } from "./instantsearch/instantsearch";
 import { bem } from "./utils";
 
@@ -35,9 +31,7 @@ export type Connector = (
 ) => (widgetOptions?: object) => Widget;
 
 export class BaseWidget implements OnInit, OnDestroy {
-  public platformId: Object;
   public instantSearchParent: any;
-  public searchInstance: InstantSearchInstance;
 
   @Input() public autoHideContainer?: boolean;
 
@@ -54,16 +48,13 @@ export class BaseWidget implements OnInit, OnDestroy {
   }
 
   public ngOnInit() {
-    // Get informations from `<ng-ais-instantsearch>` parent
-    this.platformId = this.instantSearchParent.platformId;
-    this.searchInstance = this.instantSearchParent.searchInstance;
-
-    this.searchInstance.addWidget(this.widget);
+    // add widget to the InstantSearch Instance
+    this.instantSearchParent.addWidget(this.widget);
   }
 
   public ngOnDestroy() {
-    if (isPlatformBrowser(this.platformId)) {
-      this.searchInstance.removeWidget(this.widget);
+    if (isPlatformBrowser(this.instantSearchParent.platformId)) {
+      this.instantSearchParent.removeWidget(this.widget);
     }
   }
 
