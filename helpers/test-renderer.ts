@@ -20,30 +20,36 @@ export function createRenderer({
   additionalDeclarations?: any[];
   defaultState?: {};
 }) {
-  return function(state?: {}) {
-    return render({
-      template,
-      TestedWidget,
-      additionalImports,
-      additionalDeclarations,
-      state: state ? { ...(defaultState || {}), ...state } : undefined
-    });
+  return function(state?: {}, firstRender = false) {
+    return render(
+      {
+        template,
+        TestedWidget,
+        additionalImports,
+        additionalDeclarations,
+        state: state ? { ...(defaultState || {}), ...state } : undefined
+      },
+      firstRender
+    );
   };
 }
 
-function render({
-  template,
-  TestedWidget,
-  additionalImports,
-  additionalDeclarations,
-  state
-}: {
-  template: string;
-  TestedWidget: any;
-  additionalImports?: any[];
-  additionalDeclarations?: any[];
-  state?: {};
-}) {
+function render(
+  {
+    template,
+    TestedWidget,
+    additionalImports,
+    additionalDeclarations,
+    state
+  }: {
+    template: string;
+    TestedWidget: any;
+    additionalImports?: any[];
+    additionalDeclarations?: any[];
+    state?: {};
+  },
+  firstRender = false
+) {
   @Component({
     template: `
       <ng-ais-instantsearch>
@@ -68,7 +74,7 @@ function render({
   fixture.detectChanges();
 
   if (state) {
-    fixture.componentInstance.testedWidget.updateState(state, false);
+    fixture.componentInstance.testedWidget.updateState(state, firstRender);
     fixture.detectChanges();
   }
 
