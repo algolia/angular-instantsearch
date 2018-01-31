@@ -4,7 +4,6 @@ import { connectCurrentRefinedValues } from "instantsearch.js/es/connectors";
 import { noop, isFunction } from "lodash-es";
 
 import { BaseWidget } from "../base-widget";
-import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
 
 export type CurrentRefinementsState = {
