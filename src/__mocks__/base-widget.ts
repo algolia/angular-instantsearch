@@ -1,7 +1,6 @@
 import { Input, OnDestroy, OnInit } from "@angular/core";
 import { noop } from "lodash-es";
 
-import { NgAisInstance } from "./instantsearch/instantsearch-instance";
 import { bem } from "../utils";
 
 export class BaseWidget implements OnInit, OnDestroy {
@@ -13,7 +12,7 @@ export class BaseWidget implements OnInit, OnDestroy {
   public state?: object;
   public cx?: Function;
 
-  constructor(private searchInstance: NgAisInstance, widgetName: string) {
+  constructor(widgetName: string) {
     this.cx = bem(widgetName);
   }
 
