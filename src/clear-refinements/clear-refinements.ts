@@ -9,7 +9,6 @@ import { connectClearAll } from "instantsearch.js/es/connectors";
 import { noop } from "lodash-es";
 
 import { BaseWidget } from "../base-widget";
-import { NgAisInstance } from "../instantsearch/instantsearch-instance";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
 
 @Component({
