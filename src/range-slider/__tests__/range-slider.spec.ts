@@ -20,13 +20,13 @@ describe("RangeSlider", () => {
   });
 
   it("renders markup with state", () => {
-    const fixture = render({});
+    const fixture = render({}, true);
     expect(fixture).toMatchSnapshot();
   });
 
   it("should call refine() on slider change", () => {
     const refine = jest.fn();
-    const fixture = render({ refine });
+    const fixture = render({ refine }, true);
 
     fixture.componentInstance.testedWidget.handleChange([10, 50]);
 
