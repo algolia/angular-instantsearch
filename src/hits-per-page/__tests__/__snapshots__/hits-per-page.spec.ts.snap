@@ -1,84 +1,125 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`HitsPerPage renders markup with state 1`] = `
-<ng-ais-hits-per-page
-  cx={[Function Function]}
-  platformId={[Function String]}
-  searchInstance={[Function NgAisInstance]}
-  state={[Function Object]}
-  updateState={[Function Function]}
+<ng-component
+  testedWidget={[Function NgAisHitsPerPage]}
 >
   
-      <div
-    class="ais-ResultsPerPage"
-  >
+        <ng-ais-instantsearch>
     
-        
-    <select
-      class="ais-ResultsPerPage-select"
-    >
-      
           
+    <ng-ais-hits-per-page>
       
-      <option
-        class="ais-ResultsPerPage-option"
-        value="10"
+      
+      
+      <div
+        class="ais-ResultsPerPage"
       >
         
+        
+        <select
+          class="ais-ResultsPerPage-select"
+        >
+          
+          
+          
+          <option
+            class="ais-ResultsPerPage-option"
+            value="10"
+          >
+            
             10 per page
           
-      </option>
-      <option
-        class="ais-ResultsPerPage-option"
-        value="20"
-      >
-        
+          </option>
+          <option
+            class="ais-ResultsPerPage-option"
+            value="20"
+          >
+            
             20 per page
           
-      </option>
-      <option
-        class="ais-ResultsPerPage-option"
-        value="30"
-      >
-        
+          </option>
+          <option
+            class="ais-ResultsPerPage-option"
+            value="30"
+          >
+            
             30 per page
           
-      </option>
-      
+          </option>
+          
         
-    </select>
-    
+        </select>
+        
       
-  </div>
+      </div>
+      
     
-</ng-ais-hits-per-page>
+    </ng-ais-hits-per-page>
+    
+        
+  </ng-ais-instantsearch>
+      
+</ng-component>
 `;
 
 exports[`HitsPerPage renders markup without state 1`] = `
-<ng-ais-hits-per-page
-  cx={[Function Function]}
-  platformId={[Function String]}
-  searchInstance={[Function NgAisInstance]}
-  state={[Function Object]}
-  updateState={[Function Function]}
+<ng-component
+  testedWidget={[Function NgAisHitsPerPage]}
 >
   
+        <ng-ais-instantsearch>
+    
+          
+    <ng-ais-hits-per-page>
+      
+      
+      
+      <div
+        class="ais-ResultsPerPage"
+      >
+        
+        
+        <select
+          class="ais-ResultsPerPage-select"
+        >
+          
+          
+          
+          
+        
+        </select>
+        
+      
+      </div>
       
     
-</ng-ais-hits-per-page>
+    </ng-ais-hits-per-page>
+    
+        
+  </ng-ais-instantsearch>
+      
+</ng-component>
 `;
 
 exports[`HitsPerPage should be hidden with autoHideContainer 1`] = `
-<ng-ais-hits-per-page
-  autoHideContainer={[Function Boolean]}
-  cx={[Function Function]}
-  platformId={[Function String]}
-  searchInstance={[Function NgAisInstance]}
-  state={[Function Object]}
-  updateState={[Function Function]}
+<ng-component
+  testedWidget={[Function NgAisHitsPerPage]}
 >
   
+        <ng-ais-instantsearch>
+    
+          
+    <ng-ais-hits-per-page>
+      
+      
+      
       
     
-</ng-ais-hits-per-page>
+    </ng-ais-hits-per-page>
+    
+        
+  </ng-ais-instantsearch>
+      
+</ng-component>
 `;

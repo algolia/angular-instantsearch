@@ -1,10 +1,5 @@
-import { TestBed } from "@angular/core/testing";
-
-import { NgAisInstantSearchModule } from "../../instantsearch/instantsearch.module";
-import { NgAisNumericSelectorModule } from "../numeric-selector.module";
+import { createRenderer } from "../../../helpers/test-renderer";
 import { NgAisNumericSelector } from "../numeric-selector";
-
-jest.mock("../../base-widget");
 
 const defaultState = {
   currentRefinement: 10,
@@ -17,25 +12,13 @@ const defaultState = {
   refine: jest.fn()
 };
 
-const render = (state?: {}) => {
-  const fixture = TestBed.createComponent(NgAisNumericSelector);
-
-  if (state) {
-    fixture.componentInstance.updateState({ ...defaultState, ...state }, false);
-  }
-
-  fixture.detectChanges();
-  return fixture;
-};
+const render = createRenderer({
+  defaultState,
+  template: "<ng-ais-numeric-selector></ng-ais-numeric-selector>",
+  TestedWidget: NgAisNumericSelector
+});
 
 describe("NumericSelector", () => {
-  beforeEach(() =>
-    TestBed.configureTestingModule({
-      declarations: [],
-      imports: [NgAisInstantSearchModule.forRoot(), NgAisNumericSelectorModule]
-    })
-  );
-
   it("renders markup without state", () => {
     const fixture = render();
     expect(fixture).toMatchSnapshot();

@@ -1,10 +1,6 @@
-import { TestBed } from "@angular/core/testing";
-
-import { NgAisInstantSearchModule } from "../../instantsearch/instantsearch.module";
-import { NgAisInfiniteResultsModule } from "../infinite-results.module";
+import { createRenderer } from "../../../helpers/test-renderer";
 import { NgAisInfiniteResults } from "../infinite-results";
-
-jest.mock("../../base-widget");
+import { NgAisHighlight } from "../../highlight/highlight";
 
 const defaultState = {
   hits: [
@@ -17,25 +13,14 @@ const defaultState = {
   isLastPage: false
 };
 
-const render = (state?: {}) => {
-  const fixture = TestBed.createComponent(NgAisInfiniteResults);
-
-  if (state) {
-    fixture.componentInstance.updateState({ ...defaultState, ...state }, false);
-  }
-
-  fixture.detectChanges();
-  return fixture;
-};
+const render = createRenderer({
+  defaultState,
+  template: "<ng-ais-infinite-results></ng-ais-infinite-results>",
+  TestedWidget: NgAisInfiniteResults,
+  additionalDeclarations: [NgAisHighlight]
+});
 
 describe("InfiniteHits", () => {
-  beforeEach(() =>
-    TestBed.configureTestingModule({
-      declarations: [],
-      imports: [NgAisInstantSearchModule.forRoot(), NgAisInfiniteResultsModule]
-    })
-  );
-
   it("renders markup without state", () => {
     const fixture = render();
     expect(fixture).toMatchSnapshot();

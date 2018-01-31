@@ -1,14 +1,9 @@
-import { TestBed } from "@angular/core/testing";
-
-import { NgAisInstantSearchModule } from "../../instantsearch/instantsearch.module";
-import { NgAisPaginationModule } from "../pagination.module";
+import { createRenderer } from "../../../helpers/test-renderer";
 import { NgAisPagination } from "../pagination";
 
 import { bem } from "../../utils";
 
 const cx = bem("Pagination");
-
-jest.mock("../../base-widget");
 
 const defaultState = {
   createURL: jest.fn(),
@@ -18,25 +13,13 @@ const defaultState = {
   refine: jest.fn()
 };
 
-const render = (state?: {}) => {
-  const fixture = TestBed.createComponent(NgAisPagination);
-
-  if (state) {
-    fixture.componentInstance.updateState({ ...defaultState, ...state });
-    fixture.detectChanges();
-  }
-
-  return fixture;
-};
+const render = createRenderer({
+  defaultState,
+  template: "<ng-ais-pagination></ng-ais-pagination>",
+  TestedWidget: NgAisPagination
+});
 
 describe("Pagination", () => {
-  beforeEach(() =>
-    TestBed.configureTestingModule({
-      declarations: [],
-      imports: [NgAisInstantSearchModule.forRoot(), NgAisPaginationModule]
-    })
-  );
-
   it("renders markup without state", () => {
     const fixture = render();
     expect(fixture).toMatchSnapshot();
@@ -68,7 +51,7 @@ describe("Pagination", () => {
     expect(refine).toHaveBeenCalled();
     expect(refine).toHaveBeenCalledWith(1);
 
-    fixture.componentInstance.state.currentRefinement = 3;
+    fixture.componentInstance.testedWidget.state.currentRefinement = 3;
     fixture.detectChanges();
 
     const previous = el.querySelector("." + cx("item", "previousPage"));
@@ -86,7 +69,7 @@ describe("Pagination", () => {
     const refine = jest.fn();
     const fixture = render({ refine });
 
-    fixture.componentInstance.showLast = true;
+    fixture.componentInstance.testedWidget.showLast = true;
     fixture.detectChanges();
 
     const lastPage = fixture.debugElement.nativeElement.querySelector(

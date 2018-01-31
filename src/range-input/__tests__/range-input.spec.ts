@@ -1,10 +1,5 @@
-import { TestBed } from "@angular/core/testing";
-
-import { NgAisInstantSearchModule } from "../../instantsearch/instantsearch.module";
-import { NgAisRangeInputModule } from "../range-input.module";
+import { createRenderer } from "../../../helpers/test-renderer";
 import { NgAisRangeInput } from "../range-input";
-
-jest.mock("../../base-widget");
 
 const defaultState = {
   range: { min: 0, max: 100 },
@@ -12,25 +7,13 @@ const defaultState = {
   refine: jest.fn()
 };
 
-const render = (state?: {}) => {
-  const fixture = TestBed.createComponent(NgAisRangeInput);
-
-  if (state) {
-    fixture.componentInstance.updateState({ ...defaultState, ...state });
-  }
-
-  fixture.detectChanges();
-  return fixture;
-};
+const render = createRenderer({
+  defaultState,
+  template: "<ng-ais-range-input></ng-ais-range-input>",
+  TestedWidget: NgAisRangeInput
+});
 
 describe("RangeInput", () => {
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [],
-      imports: [NgAisInstantSearchModule.forRoot(), NgAisRangeInputModule]
-    });
-  });
-
   it("renders markup without state", () => {
     const fixture = render();
     expect(fixture).toMatchSnapshot();
@@ -55,8 +38,8 @@ describe("RangeInput", () => {
     maxInput.value = "50";
     maxInput.dispatchEvent(new Event("change"));
 
-    expect(fixture.componentInstance.minInputValue).toBe(20);
-    expect(fixture.componentInstance.maxInputValue).toBe(50);
+    expect(fixture.componentInstance.testedWidget.minInputValue).toBe(20);
+    expect(fixture.componentInstance.testedWidget.maxInputValue).toBe(50);
   });
 
   it("should call renfine when submitting form", () => {
@@ -74,8 +57,8 @@ describe("RangeInput", () => {
     maxInput.value = "50";
     maxInput.dispatchEvent(new Event("change"));
 
-    expect(fixture.componentInstance.minInputValue).toBe(20);
-    expect(fixture.componentInstance.maxInputValue).toBe(50);
+    expect(fixture.componentInstance.testedWidget.minInputValue).toBe(20);
+    expect(fixture.componentInstance.testedWidget.maxInputValue).toBe(50);
 
     const submitBtn = fixture.debugElement.nativeElement.querySelector(
       "button"

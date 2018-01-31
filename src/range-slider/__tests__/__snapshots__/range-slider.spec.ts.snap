@@ -248,37 +248,39 @@ exports[`RangeSlider renders markup with state 1`] = `
 `;
 
 exports[`RangeSlider renders markup without state 1`] = `
-<ng-ais-range-slider
-  cx={[Function Function]}
-  formatTooltip={[Function Function]}
-  handleChange={[Function Function]}
-  pips={[Function Boolean]}
-  platformId={[Function String]}
-  precision={[Function Number]}
-  searchInstance={[Function NgAisInstance]}
-  sliderContainer={[Function ElementRef]}
-  state={[Function Object]}
-  tooltips={[Function Boolean]}
-  updateState={[Function Function]}
+<ng-component
+  testedWidget={[Function NgAisRangeSlider]}
 >
   
-      <div
-    class="ais-RangeSlider"
-  >
+        <ng-ais-instantsearch>
     
-        
-    <div
-      class="ais-RangeSlider-body ais-body"
-    >
-      
           
-      <div />
+    <ng-ais-range-slider>
       
+      
+      <div
+        class="ais-RangeSlider"
+      >
         
-    </div>
-    
+        
+        <div
+          class="ais-RangeSlider-body ais-body"
+        >
+          
+          
+          <div />
+          
+        
+        </div>
+        
       
-  </div>
+      </div>
+      
     
-</ng-ais-range-slider>
+    </ng-ais-range-slider>
+    
+        
+  </ng-ais-instantsearch>
+      
+</ng-component>
 `;

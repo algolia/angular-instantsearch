@@ -1,10 +1,5 @@
-import { TestBed } from "@angular/core/testing";
-
-import { NgAisInstantSearchModule } from "../../instantsearch/instantsearch.module";
-import { NgAisMenuModule } from "../menu.module";
+import { createRenderer } from "../../../helpers/test-renderer";
 import { NgAisMenu } from "../menu";
-
-jest.mock("../../base-widget");
 
 const defaultState = {
   canRefine: true,
@@ -20,25 +15,13 @@ const defaultState = {
   toggleShowMore: jest.fn()
 };
 
-const render = (state?: {}) => {
-  const fixture = TestBed.createComponent(NgAisMenu);
-
-  if (state) {
-    fixture.componentInstance.updateState({ ...defaultState, ...state });
-  }
-
-  fixture.detectChanges();
-  return fixture;
-};
+const render = createRenderer({
+  defaultState,
+  template: "<ng-ais-menu></ng-ais-menu>",
+  TestedWidget: NgAisMenu
+});
 
 describe("Menu", () => {
-  beforeEach(() =>
-    TestBed.configureTestingModule({
-      declarations: [],
-      imports: [NgAisInstantSearchModule.forRoot(), NgAisMenuModule]
-    })
-  );
-
   it("renders markup without state", () => {
     const fixture = render();
     expect(fixture).toMatchSnapshot();
@@ -66,8 +49,8 @@ describe("Menu", () => {
     const toggleShowMore = jest.fn();
     const fixture = render({ toggleShowMore, canToggleShowMore: true });
 
-    fixture.componentInstance.limit = 3;
-    fixture.componentInstance.showMoreLimit = 4;
+    fixture.componentInstance.testedWidget.limit = 3;
+    fixture.componentInstance.testedWidget.showMoreLimit = 4;
     fixture.detectChanges();
 
     fixture.debugElement.nativeElement.querySelector("button").click();
@@ -77,7 +60,7 @@ describe("Menu", () => {
 
   it("should apply `transformItems` if specified", () => {
     const fixture = render({});
-    fixture.componentInstance.transformItems = items =>
+    fixture.componentInstance.testedWidget.transformItems = items =>
       items.map(item => ({ ...item, label: `transformed - ${item.label}` }));
     fixture.detectChanges();
     expect(fixture).toMatchSnapshot();
@@ -85,7 +68,7 @@ describe("Menu", () => {
 
   it("should be hidden with `autoHideContainer`", () => {
     const fixture = render({ items: [] });
-    fixture.componentInstance.autoHideContainer = true;
+    fixture.componentInstance.testedWidget.autoHideContainer = true;
     fixture.detectChanges();
 
     expect(fixture).toMatchSnapshot();

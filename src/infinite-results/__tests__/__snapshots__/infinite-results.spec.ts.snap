@@ -1,187 +1,199 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`InfiniteHits renders markup with state 1`] = `
-<ng-ais-infinite-results
-  cx={[Function Function]}
-  platformId={[Function String]}
-  searchInstance={[Function NgAisInstance]}
-  showMoreLabel={[Function String]}
-  state={[Function Object]}
-  template="undefined"
-  updateState={[Function Function]}
+<ng-component
+  testedWidget={[Function NgAisInfiniteResults]}
 >
   
-      <div
-    class="ais-InfiniteResults"
-  >
+        <ng-ais-instantsearch>
     
-        
-    
-    
-  
-        
-    
-        
-    
-    <div>
-      
           
-      <ul
-        class="ais-InfiniteResults-list"
+    <ng-ais-infinite-results>
+      
+      
+      <div
+        class="ais-InfiniteResults"
       >
         
-            
         
-        <li
-          class="ais-InfiniteResults-item"
-        >
-          
-              
-          <ng-ais-highlight
-            attributename="name"
-            ng-reflect-attribute-name="name"
-            ng-reflect-hit="[object Object]"
-          >
-            <span
-              class="ais-Highlight"
-            >
-              foo
-            </span>
-          </ng-ais-highlight>
-          
-            
-        </li>
-        <li
-          class="ais-InfiniteResults-item"
-        >
-          
-              
-          <ng-ais-highlight
-            attributename="name"
-            ng-reflect-attribute-name="name"
-            ng-reflect-hit="[object Object]"
-          >
-            <span
-              class="ais-Highlight"
-            >
-              bar
-            </span>
-          </ng-ais-highlight>
-          
-            
-        </li>
-        <li
-          class="ais-InfiniteResults-item"
-        >
-          
-              
-          <ng-ais-highlight
-            attributename="name"
-            ng-reflect-attribute-name="name"
-            ng-reflect-hit="[object Object]"
-          >
-            <span
-              class="ais-Highlight"
-            >
-              foobar
-            </span>
-          </ng-ais-highlight>
-          
-            
-        </li>
-        <li
-          class="ais-InfiniteResults-item"
-        >
-          
-              
-          <ng-ais-highlight
-            attributename="name"
-            ng-reflect-attribute-name="name"
-            ng-reflect-hit="[object Object]"
-          >
-            <span
-              class="ais-Highlight"
-            >
-              barfoo
-            </span>
-          </ng-ais-highlight>
-          
-            
-        </li>
         
-          
-      </ul>
-      
         
-    </div>
-    
   
         
-    <button
-      class="ais-InfiniteResults-showMore"
-    >
-      
+        
+        
+        
+        <div>
+          
+          
+          <ul
+            class="ais-InfiniteResults-list"
+          >
+            
+            
+            
+            <li
+              class="ais-InfiniteResults-item"
+            >
+              
+              
+              <ng-ais-highlight
+                attributename="name"
+                ng-reflect-attribute-name="name"
+                ng-reflect-hit="[object Object]"
+              >
+                <span
+                  class="ais-Highlight"
+                >
+                  foo
+                </span>
+              </ng-ais-highlight>
+              
+            
+            </li>
+            <li
+              class="ais-InfiniteResults-item"
+            >
+              
+              
+              <ng-ais-highlight
+                attributename="name"
+                ng-reflect-attribute-name="name"
+                ng-reflect-hit="[object Object]"
+              >
+                <span
+                  class="ais-Highlight"
+                >
+                  bar
+                </span>
+              </ng-ais-highlight>
+              
+            
+            </li>
+            <li
+              class="ais-InfiniteResults-item"
+            >
+              
+              
+              <ng-ais-highlight
+                attributename="name"
+                ng-reflect-attribute-name="name"
+                ng-reflect-hit="[object Object]"
+              >
+                <span
+                  class="ais-Highlight"
+                >
+                  foobar
+                </span>
+              </ng-ais-highlight>
+              
+            
+            </li>
+            <li
+              class="ais-InfiniteResults-item"
+            >
+              
+              
+              <ng-ais-highlight
+                attributename="name"
+                ng-reflect-attribute-name="name"
+                ng-reflect-hit="[object Object]"
+              >
+                <span
+                  class="ais-Highlight"
+                >
+                  barfoo
+                </span>
+              </ng-ais-highlight>
+              
+            
+            </li>
+            
+          
+          </ul>
+          
+        
+        </div>
+        
+  
+        
+        <button
+          class="ais-InfiniteResults-showMore"
+        >
+          
           Show more results
         
-    </button>
-    
+        </button>
+        
       
-  </div>
+      </div>
+      
     
-</ng-ais-infinite-results>
+    </ng-ais-infinite-results>
+    
+        
+  </ng-ais-instantsearch>
+      
+</ng-component>
 `;
 
 exports[`InfiniteHits renders markup without state 1`] = `
-<ng-ais-infinite-results
-  cx={[Function Function]}
-  platformId={[Function String]}
-  searchInstance={[Function NgAisInstance]}
-  showMoreLabel={[Function String]}
-  state={[Function Object]}
-  template="undefined"
-  updateState={[Function Function]}
+<ng-component
+  testedWidget={[Function NgAisInfiniteResults]}
 >
   
-      <div
-    class="ais-InfiniteResults"
-  >
+        <ng-ais-instantsearch>
     
-        
-    
-    
-  
-        
-    
-        
-    
-    <div>
-      
           
-      <ul
-        class="ais-InfiniteResults-list"
+    <ng-ais-infinite-results>
+      
+      
+      <div
+        class="ais-InfiniteResults"
       >
         
-            
         
         
-          
-      </ul>
-      
         
-    </div>
-    
   
         
-    <button
-      class="ais-InfiniteResults-showMore"
-    >
-      
+        
+        
+        
+        <div>
+          
+          
+          <ul
+            class="ais-InfiniteResults-list"
+          >
+            
+            
+            
+            
+          
+          </ul>
+          
+        
+        </div>
+        
+  
+        
+        <button
+          class="ais-InfiniteResults-showMore"
+        >
+          
           Show more results
         
-    </button>
-    
+        </button>
+        
       
-  </div>
+      </div>
+      
     
-</ng-ais-infinite-results>
+    </ng-ais-infinite-results>
+    
+        
+  </ng-ais-instantsearch>
+      
+</ng-component>
 `;

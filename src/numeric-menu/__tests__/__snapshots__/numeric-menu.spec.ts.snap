@@ -1,132 +1,157 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NumericRefinementList renders markup with state 1`] = `
-<ng-ais-numeric-menu
-  cx={[Function Function]}
-  platformId={[Function String]}
-  searchInstance={[Function NgAisInstance]}
-  state={[Function Object]}
-  updateState={[Function Function]}
+<ng-component
+  testedWidget={[Function NgAisNumericMenu]}
 >
   
+        <ng-ais-instantsearch>
+    
+          
+    <ng-ais-numeric-menu>
+      
+      
+      
       <div
-    class="ais-NumericMenu"
-  >
-    
-        
-    <ul
-      class="ais-NumericMenu-list"
-    >
-      
-          
-      
-      <li
-        class="ais-NumericMenu-item ais-NumericMenu-item--selected"
+        class="ais-NumericMenu"
       >
         
-            
-        <label
-          class="ais-NumericMenu-label"
+        
+        <ul
+          class="ais-NumericMenu-list"
         >
           
-              
-          <input
-            class="ais-NumericMenu-radio"
-            name="NumericMenu"
-            type="radio"
-          />
           
-              
-          <span
-            class="ais-NumericMenu-labelText"
+          
+          <li
+            class="ais-NumericMenu-item ais-NumericMenu-item--selected"
           >
-            10
-          </span>
-          
             
-        </label>
-        
-          
-      </li>
-      <li
-        class="ais-NumericMenu-item"
-      >
-        
             
-        <label
-          class="ais-NumericMenu-label"
-        >
-          
+            <label
+              class="ais-NumericMenu-label"
+            >
               
-          <input
-            class="ais-NumericMenu-radio"
-            name="NumericMenu"
-            type="radio"
-          />
-          
               
-          <span
-            class="ais-NumericMenu-labelText"
+              <input
+                class="ais-NumericMenu-radio"
+                name="NumericMenu"
+                type="radio"
+              />
+              
+              
+              <span
+                class="ais-NumericMenu-labelText"
+              >
+                10
+              </span>
+              
+            
+            </label>
+            
+          
+          </li>
+          <li
+            class="ais-NumericMenu-item"
           >
-            20
-          </span>
-          
             
-        </label>
-        
+            
+            <label
+              class="ais-NumericMenu-label"
+            >
+              
+              
+              <input
+                class="ais-NumericMenu-radio"
+                name="NumericMenu"
+                type="radio"
+              />
+              
+              
+              <span
+                class="ais-NumericMenu-labelText"
+              >
+                20
+              </span>
+              
+            
+            </label>
+            
           
-      </li>
-      
+          </li>
+          
         
-    </ul>
-    
+        </ul>
+        
       
-  </div>
+      </div>
+      
     
-</ng-ais-numeric-menu>
+    </ng-ais-numeric-menu>
+    
+        
+  </ng-ais-instantsearch>
+      
+</ng-component>
 `;
 
 exports[`NumericRefinementList renders markup without state 1`] = `
-<ng-ais-numeric-menu
-  cx={[Function Function]}
-  platformId={[Function String]}
-  searchInstance={[Function NgAisInstance]}
-  state={[Function Object]}
-  updateState={[Function Function]}
+<ng-component
+  testedWidget={[Function NgAisNumericMenu]}
 >
   
-      <div
-    class="ais-NumericMenu"
-  >
+        <ng-ais-instantsearch>
     
-        
-    <ul
-      class="ais-NumericMenu-list"
-    >
-      
           
+    <ng-ais-numeric-menu>
       
       
+      
+      <div
+        class="ais-NumericMenu"
+      >
         
-    </ul>
-    
+        
+        <ul
+          class="ais-NumericMenu-list"
+        >
+          
+          
+          
+          
+        
+        </ul>
+        
       
-  </div>
+      </div>
+      
     
-</ng-ais-numeric-menu>
+    </ng-ais-numeric-menu>
+    
+        
+  </ng-ais-instantsearch>
+      
+</ng-component>
 `;
 
 exports[`NumericRefinementList should be hidden with autoHideContainer 1`] = `
-<ng-ais-numeric-menu
-  autoHideContainer={[Function Boolean]}
-  cx={[Function Function]}
-  platformId={[Function String]}
-  searchInstance={[Function NgAisInstance]}
-  state={[Function Object]}
-  updateState={[Function Function]}
+<ng-component
+  testedWidget={[Function NgAisNumericMenu]}
 >
   
+        <ng-ais-instantsearch>
+    
+          
+    <ng-ais-numeric-menu>
+      
+      
+      
       
     
-</ng-ais-numeric-menu>
+    </ng-ais-numeric-menu>
+    
+        
+  </ng-ais-instantsearch>
+      
+</ng-component>
 `;

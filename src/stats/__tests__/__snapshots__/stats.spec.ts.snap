@@ -1,60 +1,83 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Stats should render with state 1`] = `
-<ng-ais-stats
-  cx={[Function Function]}
-  platformId={[Function String]}
-  searchInstance={[Function NgAisInstance]}
-  state={[Function Object]}
-  template="undefined"
-  updateState={[Function Function]}
+<ng-component
+  testedWidget={[Function NgAisStats]}
 >
   
+        <ng-ais-instantsearch>
+    
+          
+    <ng-ais-stats>
+      
+      
       <div
-    class="ais-Stats"
-  >
-    
+        class="ais-Stats"
+      >
         
-    
-    
+        
+        
+        
   
         
-    
-    <span
-      class="ais-Stats-text"
-    >
-      
+        
+        <span
+          class="ais-Stats-text"
+        >
+          
           100 results found in 123ms.
         
-    </span>
-    
+        </span>
+        
       
-  </div>
+      </div>
+      
     
-</ng-ais-stats>
+    </ng-ais-stats>
+    
+        
+  </ng-ais-instantsearch>
+      
+</ng-component>
 `;
 
 exports[`Stats should render without state 1`] = `
-<ng-ais-stats
-  cx={[Function Function]}
-  platformId={[Function String]}
-  searchInstance={[Function NgAisInstance]}
-  state={[Function Object]}
-  template="undefined"
-  updateState={[Function Function]}
+<ng-component
+  testedWidget={[Function NgAisStats]}
 >
   
-      <div>
+        <ng-ais-instantsearch>
     
+          
+    <ng-ais-stats>
+      
+      
+      <div
+        class="ais-Stats"
+      >
         
-    
-    
+        
+        
+        
   
         
-    
-    
+        
+        <span
+          class="ais-Stats-text"
+        >
+          
+          0 results found in 0ms.
+        
+        </span>
+        
       
-  </div>
+      </div>
+      
     
-</ng-ais-stats>
+    </ng-ais-stats>
+    
+        
+  </ng-ais-instantsearch>
+      
+</ng-component>
 `;

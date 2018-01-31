@@ -1,77 +1,93 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SortBy renders markup with state 1`] = `
-<ng-ais-sort-by
-  cx={[Function Function]}
-  platformId={[Function String]}
-  searchInstance={[Function NgAisInstance]}
-  state={[Function Object]}
-  updateState={[Function Function]}
+<ng-component
+  testedWidget={[Function NgAisSortBy]}
 >
   
-      <div
-    class="ais-SortBy"
-  >
+        <ng-ais-instantsearch>
     
-        
-    <select
-      class="ais-SortBy-select"
-    >
-      
           
+    <ng-ais-sort-by>
       
-      <option
-        class="ais-SortBy-option"
-        value="foo"
+      
+      <div
+        class="ais-SortBy"
       >
         
+        
+        <select
+          class="ais-SortBy-select"
+        >
+          
+          
+          
+          <option
+            class="ais-SortBy-option"
+            value="foo"
+          >
+            
             foo
           
-      </option>
-      <option
-        class="ais-SortBy-option"
-        value="bar"
-      >
-        
+          </option>
+          <option
+            class="ais-SortBy-option"
+            value="bar"
+          >
+            
             bar
           
-      </option>
-      
+          </option>
+          
         
-    </select>
-    
+        </select>
+        
       
-  </div>
+      </div>
+      
     
-</ng-ais-sort-by>
+    </ng-ais-sort-by>
+    
+        
+  </ng-ais-instantsearch>
+      
+</ng-component>
 `;
 
 exports[`SortBy renders markup without state 1`] = `
-<ng-ais-sort-by
-  cx={[Function Function]}
-  platformId={[Function String]}
-  searchInstance={[Function NgAisInstance]}
-  state={[Function Object]}
-  updateState={[Function Function]}
+<ng-component
+  testedWidget={[Function NgAisSortBy]}
 >
   
-      <div
-    class="ais-SortBy"
-  >
+        <ng-ais-instantsearch>
     
-        
-    <select
-      class="ais-SortBy-select"
-    >
-      
           
+    <ng-ais-sort-by>
       
       
+      <div
+        class="ais-SortBy"
+      >
         
-    </select>
-    
+        
+        <select
+          class="ais-SortBy-select"
+        >
+          
+          
+          
+          
+        
+        </select>
+        
       
-  </div>
+      </div>
+      
     
-</ng-ais-sort-by>
+    </ng-ais-sort-by>
+    
+        
+  </ng-ais-instantsearch>
+      
+</ng-component>
 `;

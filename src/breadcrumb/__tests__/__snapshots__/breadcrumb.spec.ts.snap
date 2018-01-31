@@ -1,129 +1,154 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Breadcrumb renders markup with two items 1`] = `
-<ng-ais-breadcrumb
-  cx={[Function Function]}
-  platformId={[Function String]}
-  searchInstance={[Function NgAisInstance]}
-  state={[Function Object]}
-  updateState={[Function Function]}
+<ng-component
+  testedWidget={[Function NgAisBreadcrumb]}
 >
   
-      <div
-    class="ais-Breadcrumb"
-  >
+        <ng-ais-instantsearch>
     
-        
-    <ul
-      class="ais-Breadcrumb-list"
-    >
-      
           
+    <ng-ais-breadcrumb>
       
-      <li
-        class="ais-Breadcrumb-item"
+      
+      
+      <div
+        class="ais-Breadcrumb"
       >
         
-            
         
-        
-            
-        
-        <a
-          class="ais-Breadcrumb-link"
-          href=""
+        <ul
+          class="ais-Breadcrumb-list"
         >
           
+          
+          
+          <li
+            class="ais-Breadcrumb-item"
+          >
+            
+            
+            
+            
+            
+            
+            <a
+              class="ais-Breadcrumb-link"
+              href=""
+            >
+              
               foo
             
-        </a>
-        
+            </a>
+            
   
             
-        
-        
-          
-      </li>
-      <li
-        class="ais-Breadcrumb-item--selected"
-      >
-        
             
-        
-        <span
-          aria-hidden="true"
-          class="ais-Breadcrumb-separator"
-        >
+            
           
+          </li>
+          <li
+            class="ais-Breadcrumb-item--selected"
+          >
+            
+            
+            
+            <span
+              aria-hidden="true"
+              class="ais-Breadcrumb-separator"
+            >
+              
               &gt;
             
-        </span>
-        
+            </span>
             
-        
-        
+            
+            
+            
   
             
-        
-        <span>
-          
+            
+            <span>
+              
               bar
             
-        </span>
-        
+            </span>
+            
           
-      </li>
-      
+          </li>
+          
         
-    </ul>
-    
+        </ul>
+        
       
-  </div>
+      </div>
+      
     
-</ng-ais-breadcrumb>
+    </ng-ais-breadcrumb>
+    
+        
+  </ng-ais-instantsearch>
+      
+</ng-component>
 `;
 
 exports[`Breadcrumb renders markup without state 1`] = `
-<ng-ais-breadcrumb
-  cx={[Function Function]}
-  platformId={[Function String]}
-  searchInstance={[Function NgAisInstance]}
-  state={[Function Object]}
-  updateState={[Function Function]}
+<ng-component
+  testedWidget={[Function NgAisBreadcrumb]}
 >
   
-      <div
-    class="ais-Breadcrumb"
-  >
+        <ng-ais-instantsearch>
     
-        
-    <ul
-      class="ais-Breadcrumb-list"
-    >
-      
           
+    <ng-ais-breadcrumb>
       
       
+      
+      <div
+        class="ais-Breadcrumb"
+      >
         
-    </ul>
-    
+        
+        <ul
+          class="ais-Breadcrumb-list"
+        >
+          
+          
+          
+          
+        
+        </ul>
+        
       
-  </div>
+      </div>
+      
     
-</ng-ais-breadcrumb>
+    </ng-ais-breadcrumb>
+    
+        
+  </ng-ais-instantsearch>
+      
+</ng-component>
 `;
 
 exports[`Breadcrumb should be hidden with \`autoHideContainer\` 1`] = `
-<ng-ais-breadcrumb
-  autoHideContainer={[Function Boolean]}
-  cx={[Function Function]}
-  platformId={[Function String]}
-  searchInstance={[Function NgAisInstance]}
-  state={[Function Object]}
-  updateState={[Function Function]}
+<ng-component
+  testedWidget={[Function NgAisBreadcrumb]}
 >
   
+        <ng-ais-instantsearch>
+    
+          
+    <ng-ais-breadcrumb>
+      
+      
+      
       
     
-</ng-ais-breadcrumb>
+    </ng-ais-breadcrumb>
+    
+        
+  </ng-ais-instantsearch>
+      
+</ng-component>
 `;

@@ -1,37 +1,20 @@
-import { TestBed } from "@angular/core/testing";
-
-import { NgAisInstantSearchModule } from "../../instantsearch/instantsearch.module";
-import { NgAisSearchBoxModule } from "../search-box.module";
+import { createRenderer } from "../../../helpers/test-renderer";
 import { NgAisSearchBox } from "../search-box";
-
-jest.mock("../../base-widget");
 
 const defaultState = {
   query: "foo",
   refine: jest.fn()
 };
 
-const render = (state?: {}) => {
-  const fixture = TestBed.createComponent(NgAisSearchBox);
-
-  if (state) {
-    fixture.componentInstance.updateState({ ...defaultState, ...state }, false);
-  }
-
-  fixture.detectChanges();
-  return fixture;
-};
+const render = createRenderer({
+  defaultState,
+  template: "<ng-ais-search-box></ng-ais-search-box>",
+  TestedWidget: NgAisSearchBox
+});
 
 // FIXME: find way to render SVG
 
 describe("SearchBox", () => {
-  beforeEach(() =>
-    TestBed.configureTestingModule({
-      declarations: [],
-      imports: [NgAisInstantSearchModule.forRoot(), NgAisSearchBoxModule]
-    })
-  );
-
   it.skip("renders markup without state", () => {
     const fixture = render();
     expect(fixture).toMatchSnapshot();

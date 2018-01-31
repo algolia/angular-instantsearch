@@ -1,95 +1,109 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NumericSelector renders markup with state 1`] = `
-<ng-ais-numeric-selector
-  cx={[Function Function]}
-  operator={[Function String]}
-  platformId={[Function String]}
-  searchInstance={[Function NgAisInstance]}
-  state={[Function Object]}
-  updateState={[Function Function]}
+<ng-component
+  testedWidget={[Function NgAisNumericSelector]}
 >
   
-      <div
-    class="ais-NumericSelector"
-  >
+        <ng-ais-instantsearch>
     
-        
-    <select
-      class="ais-NumericSelector-select"
-    >
-      
           
+    <ng-ais-numeric-selector>
       
-      <option
-        class="ais-NumericSelector-option"
-        value="10"
+      
+      <div
+        class="ais-NumericSelector"
       >
         
+        
+        <select
+          class="ais-NumericSelector-select"
+        >
+          
+          
+          
+          <option
+            class="ais-NumericSelector-option"
+            value="10"
+          >
+            
             foo
           
-      </option>
-      <option
-        class="ais-NumericSelector-option"
-        value="20"
-      >
-        
+          </option>
+          <option
+            class="ais-NumericSelector-option"
+            value="20"
+          >
+            
             bar
           
-      </option>
-      <option
-        class="ais-NumericSelector-option"
-        value="30"
-      >
-        
+          </option>
+          <option
+            class="ais-NumericSelector-option"
+            value="30"
+          >
+            
             foobar
           
-      </option>
-      <option
-        class="ais-NumericSelector-option"
-        value="40"
-      >
-        
+          </option>
+          <option
+            class="ais-NumericSelector-option"
+            value="40"
+          >
+            
             barfoo
           
-      </option>
-      
+          </option>
+          
         
-    </select>
-    
+        </select>
+        
       
-  </div>
+      </div>
+      
     
-</ng-ais-numeric-selector>
+    </ng-ais-numeric-selector>
+    
+        
+  </ng-ais-instantsearch>
+      
+</ng-component>
 `;
 
 exports[`NumericSelector renders markup without state 1`] = `
-<ng-ais-numeric-selector
-  cx={[Function Function]}
-  operator={[Function String]}
-  platformId={[Function String]}
-  searchInstance={[Function NgAisInstance]}
-  state={[Function Object]}
-  updateState={[Function Function]}
+<ng-component
+  testedWidget={[Function NgAisNumericSelector]}
 >
   
-      <div
-    class="ais-NumericSelector"
-  >
+        <ng-ais-instantsearch>
     
-        
-    <select
-      class="ais-NumericSelector-select"
-    >
-      
           
+    <ng-ais-numeric-selector>
       
       
+      <div
+        class="ais-NumericSelector"
+      >
         
-    </select>
-    
+        
+        <select
+          class="ais-NumericSelector-select"
+        >
+          
+          
+          
+          
+        
+        </select>
+        
       
-  </div>
+      </div>
+      
     
-</ng-ais-numeric-selector>
+    </ng-ais-numeric-selector>
+    
+        
+  </ng-ais-instantsearch>
+      
+</ng-component>
 `;
