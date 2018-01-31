@@ -35,9 +35,6 @@ export { parseServerRequest };
 import { BaseWidget } from "./base-widget";
 export { BaseWidget };
 
-import { NgAisInstance } from "./instantsearch/instantsearch-instance";
-export { NgAisInstance };
-
 import { NgAisInstantSearch } from "./instantsearch/instantsearch";
 export { NgAisInstantSearch };
 

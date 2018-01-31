@@ -3,7 +3,6 @@ import { ModuleWithProviders, NgModule } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
 
 import { NgAisInstantSearch } from "./instantsearch";
-import { NgAisInstance } from "./instantsearch-instance";
 
 @NgModule({
   declarations: [NgAisInstantSearch],
@@ -15,7 +14,7 @@ export class NgAisInstantSearchModule {
   public static forRoot(): ModuleWithProviders {
     return {
       ngModule: NgAisInstantSearchModule,
-      providers: [NgAisInstance]
+      providers: []
     };
   }
 }
