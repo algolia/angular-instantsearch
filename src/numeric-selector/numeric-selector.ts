@@ -7,7 +7,7 @@ import { BaseWidget } from "../base-widget";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
 
 export type NumericSelectorState = {
-  currentRefinement?: string;
+  currentRefinement?: string | null;
   options: {}[];
   refine: Function;
 };
