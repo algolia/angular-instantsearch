@@ -272,7 +272,7 @@ storiesOf("NumericMenu").add(
         <ng-ais-numeric-menu
           attribute="price"
           operator="or"
-          [options]="[
+          [items]="[
             { name: 'All' },
             { end: 4, name: 'less than 4' },
             { start: 4, end: 4, name: '4' },
