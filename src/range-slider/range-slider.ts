@@ -35,7 +35,7 @@ export class NgAisRangeSlider extends BaseWidget {
   @Input() public attribute: string;
   @Input() public min?: number | string;
   @Input() public max?: number | string;
-  @Input() public precision?: number | string = 2;
+  @Input() public precision: number | string = 2;
 
   public state: RangeSliderState = {
     range: { min: 0, max: 1 },
@@ -47,7 +47,8 @@ export class NgAisRangeSlider extends BaseWidget {
 
   get step() {
     // compute step from the precision value
-    return 1 / Math.pow(10, parseNumberInput(this.precision));
+    const precision = parseNumberInput(this.precision) || 2;
+    return 1 / Math.pow(10, precision);
   }
 
   constructor(

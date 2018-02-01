@@ -37,7 +37,7 @@ export class BaseWidget implements OnInit, OnDestroy {
 
   public widget?: Widget;
   public state?: object = {};
-  public cx?: Function;
+  public cx: Function;
 
   constructor(widgetName: string) {
     this.cx = bem(widgetName);
