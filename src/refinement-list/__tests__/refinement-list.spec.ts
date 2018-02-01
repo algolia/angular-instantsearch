@@ -1,5 +1,6 @@
 import { createRenderer } from "../../../helpers/test-renderer";
 import { NgAisRefinementList } from "../refinement-list";
+import { NgAisFacetsSearch } from "../facets-search";
 import { NgAisHighlight } from "../../highlight/highlight";
 
 const defaultState = {
@@ -21,7 +22,7 @@ const render = createRenderer({
   defaultState,
   template: "<ng-ais-refinement-list></ng-ais-refinement-list>",
   TestedWidget: NgAisRefinementList,
-  additionalDeclarations: [NgAisHighlight]
+  additionalDeclarations: [NgAisHighlight, NgAisFacetsSearch]
 });
 
 describe("RefinementList", () => {
