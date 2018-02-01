@@ -292,7 +292,7 @@ storiesOf("NumericSelector")
     wrapWithHits({
       template: `
         <ng-ais-numeric-selector
-          attrribute="popularity"
+          attribute="popularity"
           operator=">="
           [items]="[
             { label: 'Default', value: 0 },
