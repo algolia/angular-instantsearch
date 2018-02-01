@@ -25,8 +25,8 @@ The default menu widget renders a list of links, but we would like to render it 
 First of all, you will need to write some boilerplate code in order to initialize correctly the `BaseWidget` class. This happens in the `constructor()` of your class extending the `BaseWidget` class.
 
 ```ts
-import { Component, Inject, PLATFORM_ID } from '@angular/core';
-import { BaseWidget, NgAisInstance } from 'angular-instantsearch';
+import { Component, Inject, forwardRef } from '@angular/core';
+import { BaseWidget, NgAisInstantSearch } from 'angular-instantsearch';
 
 @Component({
   selector: 'ng-ais-menu-select',
@@ -34,16 +34,16 @@ import { BaseWidget, NgAisInstance } from 'angular-instantsearch';
 })
 export class MenuSelect extends BaseWidget {
   constructor(
-    @Inject(PLATFORM_ID) public platformId: Object,
-    searchInstance: NgAisInstance
+    @Inject(forwardRef(() => NgAisInstantSearch))
+    public instantSearchParent
   ) {
-    super(searchInstance, 'MenuSelect');
+    super('MenuSelect');
   }
 }
 ```
 
-* We need to indicate the `BaseWidget` class if we are in a browser or server environment
-* We need to indicate also the widget name in order to generate the CSS classes
+* We need to reference the `<ng-ais-instantsearch>` parent component instance on the widget class
+* We need to indicate also the widget name
 
 We have the first code needed for our MenuSelect widget, let's move on with the connector part!
 
@@ -58,8 +58,8 @@ In our case, we will use the `connectMenu` which accepts multiple options but fo
 (The `attributeName` is the name of the attribute for faceting)
 
 ```ts
-import { Component, Inject, PLATFORM_ID } from '@angular/core';
-import { BaseWidget, NgAisInstance } from 'angular-instantsearch';
+import { Component, Inject, forwardRef } from '@angular/core';
+import { BaseWidget, NgAisInstantSearch } from 'angular-instantsearch';
 import { connectMenu } from 'instantsearch.js/es/connectors';
 
 @Component({
@@ -68,10 +68,10 @@ import { connectMenu } from 'instantsearch.js/es/connectors';
 })
 export class MenuSelect extends BaseWidget {
   constructor(
-    @Inject(PLATFORM_ID) public platformId: Object,
-    searchInstance: NgAisInstance
+    @Inject(forwardRef(() => NgAisInstantSearch))
+    public instantSearchParent
   ) {
-    super(searchInstance, 'MenuSelect');
+    super('MenuSelect');
   }
 
   public ngOnInit() {
@@ -116,8 +116,8 @@ state: {
 Last step, let's write together the component template:
 
 ```ts
-import { Component, Inject, PLATFORM_ID } from '@angular/core';
-import { BaseWidget, NgAisInstance } from 'angular-instantsearch';
+import { Component, Inject, forwardRef } from '@angular/core';
+import { BaseWidget, NgAisInstantSearch } from 'angular-instantsearch';
 import { connectMenu } from 'instantsearch.js/es/connectors';
 
 @Component({
@@ -149,10 +149,10 @@ export class MenuSelect extends BaseWidget {
   }
 
   constructor(
-    @Inject(PLATFORM_ID) public platformId: Object,
-    searchInstance: NgAisInstance
+    @Inject(forwardRef(() => NgAisInstantSearch))
+    public instantSearchParent
   ) {
-    super(searchInstance, 'MenuSelect');
+    super('MenuSelect');
   }
 
   public ngOnInit() {
