@@ -12,7 +12,7 @@ exports[`InfiniteHits renders markup with state 1`] = `
       
       
       <div
-        class="ais-InfiniteResults"
+        class="ais-InfiniteHits"
       >
         
         
@@ -27,13 +27,13 @@ exports[`InfiniteHits renders markup with state 1`] = `
           
           
           <ul
-            class="ais-InfiniteResults-list"
+            class="ais-InfiniteHits-list"
           >
             
             
             
             <li
-              class="ais-InfiniteResults-item"
+              class="ais-InfiniteHits-item"
             >
               
               
@@ -52,7 +52,7 @@ exports[`InfiniteHits renders markup with state 1`] = `
             
             </li>
             <li
-              class="ais-InfiniteResults-item"
+              class="ais-InfiniteHits-item"
             >
               
               
@@ -71,7 +71,7 @@ exports[`InfiniteHits renders markup with state 1`] = `
             
             </li>
             <li
-              class="ais-InfiniteResults-item"
+              class="ais-InfiniteHits-item"
             >
               
               
@@ -90,7 +90,7 @@ exports[`InfiniteHits renders markup with state 1`] = `
             
             </li>
             <li
-              class="ais-InfiniteResults-item"
+              class="ais-InfiniteHits-item"
             >
               
               
@@ -117,8 +117,9 @@ exports[`InfiniteHits renders markup with state 1`] = `
         
   
         
+        
         <button
-          class="ais-InfiniteResults-showMore"
+          class="ais-InfiniteHits-showMore"
         >
           
           Show more results
@@ -149,7 +150,7 @@ exports[`InfiniteHits renders markup without state 1`] = `
       
       
       <div
-        class="ais-InfiniteResults"
+        class="ais-InfiniteHits"
       >
         
         
@@ -164,7 +165,7 @@ exports[`InfiniteHits renders markup without state 1`] = `
           
           
           <ul
-            class="ais-InfiniteResults-list"
+            class="ais-InfiniteHits-list"
           >
             
             
@@ -178,8 +179,9 @@ exports[`InfiniteHits renders markup without state 1`] = `
         
   
         
+        
         <button
-          class="ais-InfiniteResults-showMore"
+          class="ais-InfiniteHits-showMore"
         >
           
           Show more results
