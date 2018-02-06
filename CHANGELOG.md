@@ -1,3 +1,18 @@
+<a name="1.0.0-beta.12"></a>
+# [1.0.0-beta.12](https://github.com/algolia/angular-instantsearch/compare/1.0.0-beta.11...1.0.0-beta.12) (2018-02-06)
+
+### Breaking changes
+
+* Rename `<ng-ais-infinite-results>` to `<ng-ais-infinite-hits>`
+* Do not display load more button when using a template on infinite-hits
+
+### Features
+
+* **infinite-hits:** dont display `loadMore` when using template ([1b70c5e](https://github.com/algolia/angular-instantsearch/commit/1b70c5e))
+* **widgets:** rename infinite-results to infinite-hits ([0218a49](https://github.com/algolia/angular-instantsearch/commit/0218a49))
+
+
+
 <a name="1.0.0-beta.11"></a>
 # [1.0.0-beta.11](https://github.com/algolia/angular-instantsearch/compare/1.0.0-beta.10...1.0.0-beta.11) (2018-02-01)
 
