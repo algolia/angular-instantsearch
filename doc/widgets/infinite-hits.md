@@ -13,6 +13,7 @@ You can use the directive `<ng-template></ng-template>` to customize the output:
   <ng-template
     let-hits="hits"
     let-results="results"
+    let-showMore="showMore"
   >
     <!-- No results message -->
     <div *ngIf="hits.length === 0">
@@ -31,6 +32,9 @@ You can use the directive `<ng-template></ng-template>` to customize the output:
 
       <p>{{hit.description}}</p>
     </div>
+
+    <!-- Load more hits button -->
+    <button (click)="showMore()">Load more</button>
   </ng-template>
 </ng-ais-infinite-hits>
 ```
