@@ -36,6 +36,7 @@ import { NgAisInstantSearch } from "../instantsearch/instantsearch";
         [class]="cx('showMore')"
         (click)="showMore($event)"
         [disabled]="state.isLastPage"
+        *ngIf="!template"
       >
         {{showMoreLabel}}
       </button>
