@@ -2,12 +2,12 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 
 import { NgAisHighlightModule } from "../highlight/highlight.module";
-import { NgAisInfiniteResults } from "./infinite-results";
+import { NgAisInfiniteHits } from "./infinite-hits";
 
 @NgModule({
-  declarations: [NgAisInfiniteResults],
-  entryComponents: [NgAisInfiniteResults],
-  exports: [NgAisInfiniteResults],
+  declarations: [NgAisInfiniteHits],
+  entryComponents: [NgAisInfiniteHits],
+  exports: [NgAisInfiniteHits],
   imports: [CommonModule, NgAisHighlightModule]
 })
-export class NgAisInfiniteResultsModule {}
+export class NgAisInfiniteHitsModule {}

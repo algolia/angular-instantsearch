@@ -2,13 +2,13 @@
 
 exports[`InfiniteHits renders markup with state 1`] = `
 <ng-component
-  testedWidget={[Function NgAisInfiniteResults]}
+  testedWidget={[Function NgAisInfiniteHits]}
 >
   
         <ng-ais-instantsearch>
     
           
-    <ng-ais-infinite-results>
+    <ng-ais-infinite-hits>
       
       
       <div
@@ -129,7 +129,7 @@ exports[`InfiniteHits renders markup with state 1`] = `
       </div>
       
     
-    </ng-ais-infinite-results>
+    </ng-ais-infinite-hits>
     
         
   </ng-ais-instantsearch>
@@ -139,13 +139,13 @@ exports[`InfiniteHits renders markup with state 1`] = `
 
 exports[`InfiniteHits renders markup without state 1`] = `
 <ng-component
-  testedWidget={[Function NgAisInfiniteResults]}
+  testedWidget={[Function NgAisInfiniteHits]}
 >
   
         <ng-ais-instantsearch>
     
           
-    <ng-ais-infinite-results>
+    <ng-ais-infinite-hits>
       
       
       <div
@@ -190,7 +190,7 @@ exports[`InfiniteHits renders markup without state 1`] = `
       </div>
       
     
-    </ng-ais-infinite-results>
+    </ng-ais-infinite-hits>
     
         
   </ng-ais-instantsearch>

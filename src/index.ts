@@ -7,7 +7,7 @@ import { NgAisCurrentRefinementsModule } from "./current-refinements/current-ref
 import { NgAisHierarchicalMenuModule } from "./hierarchical-menu/hierarchical-menu.module";
 import { NgAisHitsPerPageModule } from "./hits-per-page/hits-per-page.module";
 import { NgAisHitsModule } from "./hits/hits.module";
-import { NgAisInfiniteResultsModule } from "./infinite-results/infinite-results.module";
+import { NgAisInfiniteHitsModule } from "./infinite-hits/infinite-hits.module";
 import { NgAisInstantSearchModule } from "./instantsearch/instantsearch.module";
 import { NgAisMenuModule } from "./menu/menu.module";
 import { NgAisNumericMenuModule } from "./numeric-menu/numeric-menu.module";
@@ -52,7 +52,7 @@ const NGIS_MODULES = [
   NgAisNumericMenuModule,
   NgAisStatsModule,
   NgAisToggleModule,
-  NgAisInfiniteResultsModule,
+  NgAisInfiniteHitsModule,
   NgAisCurrentRefinementsModule,
   NgAisHierarchicalMenuModule,
   NgAisRatingMenuModule,

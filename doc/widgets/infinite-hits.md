@@ -1,4 +1,4 @@
-## `<ng-ais-infinite-results />`
+## `<ng-ais-infinite-hits />`
 
 Displays a list of hits.
 
@@ -9,7 +9,7 @@ Displays a list of hits.
 You can use the directive `<ng-template></ng-template>` to customize the output:
 
 ```html
-<ng-ais-infinite-results>
+<ng-ais-infinite-hits>
   <ng-template
     let-hits="hits"
     let-results="results"
@@ -32,5 +32,5 @@ You can use the directive `<ng-template></ng-template>` to customize the output:
       <p>{{hit.description}}</p>
     </div>
   </ng-template>
-</ng-ais-infinite-results>
+</ng-ais-infinite-hits>
 ```

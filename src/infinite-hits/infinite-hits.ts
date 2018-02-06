@@ -14,7 +14,7 @@ import { BaseWidget } from "../base-widget";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
 
 @Component({
-  selector: "ng-ais-infinite-results",
+  selector: "ng-ais-infinite-hits",
   template: `
     <div [class]="cx()">
       <ng-container *ngTemplateOutlet="template; context: state"></ng-container>
@@ -42,7 +42,7 @@ import { NgAisInstantSearch } from "../instantsearch/instantsearch";
     </div>
   `
 })
-export class NgAisInfiniteResults extends BaseWidget {
+export class NgAisInfiniteHits extends BaseWidget {
   @ContentChild(TemplateRef) public template?: any;
 
   // render options

@@ -19,7 +19,7 @@
 * [Highlight](widgets/highlight.md)
 * [Hits](widgets/hits.md)
 * [HitsPerPage](widgets/hits-per-page.md)
-* [InfiniteResults](widgets/infinite-results.md)
+* [InfiniteHits](widgets/infinite-hits.md)
 * [Menu](widgets/menu.md)
 * [NumericMenu](widgets/numeric-menu.md)
 * [NumericSelector](widgets/numeric-selector.md)

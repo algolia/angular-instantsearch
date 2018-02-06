@@ -234,10 +234,10 @@ storiesOf("HitsPerPage")
     })
   );
 
-storiesOf("InfiniteResults").add(
+storiesOf("InfiniteHits").add(
   "default",
   wrapWithHits({
-    template: "<ng-ais-infinite-results></ng-ais-infinite-results>"
+    template: "<ng-ais-infinite-hits></ng-ais-infinite-hits>"
   })
 );
 
