@@ -234,12 +234,31 @@ storiesOf("HitsPerPage")
     })
   );
 
-storiesOf("InfiniteHits").add(
-  "default",
-  wrapWithHits({
-    template: "<ng-ais-infinite-hits></ng-ais-infinite-hits>"
-  })
-);
+storiesOf("InfiniteHits")
+  .add(
+    "default",
+    wrapWithHits({
+      template: "<ng-ais-infinite-hits></ng-ais-infinite-hits>"
+    })
+  )
+  .add(
+    "with custom template",
+    wrapWithHits({
+      template: `
+        <ng-ais-infinite-hits>
+          <ng-template
+            let-hits="hits"
+            let-showMore="showMore"
+          >
+            <div *ngFor="let hit of hits">
+              <strong>{{hit.name}}</strong>
+            </div>
+            <button (click)="showMore()">Load more</button>
+          </ng-template>
+        </ng-ais-infinite-hits>
+      `
+    })
+  );
 
 storiesOf("Menu")
   .add(
