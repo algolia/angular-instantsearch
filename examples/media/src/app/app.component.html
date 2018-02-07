@@ -56,7 +56,7 @@
       <hr>
 
       <!-- Hits -->
-      <ng-ais-hits>
+      <ng-ais-hits [transformItems]="transformHits">
         <ng-template let-hits="hits">
           <div class="hit media" *ngFor="let hit of hits">
             <div class="media-left">
@@ -65,15 +65,26 @@
             <div class="media-body">
               <h4 class="media-heading">
                 <ng-ais-highlight [hit]="hit" attributeName="title"></ng-ais-highlight>
+
+                <i
+                  *ngFor="let star of hit.stars"
+                  [ngClass]="{
+                    'fa': true,
+                    'fa-star': star,
+                    'fa-star-o': !star
+                  }"
+                >
+                </i>
               </h4>
 
               <p class="year">{{hit.year}}</p>
               <div class="genre">
                 <span
                   class="badge"
-                  *ngFor="let genre of hit.genres"
+                  *ngFor="let genre of hit.genre"
+                  style="margin-right: 5px;"
                 >
-                  {{genre.name}}
+                  {{genre}}
                 </span>
               </div>
             </div>
