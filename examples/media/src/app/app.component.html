@@ -1,0 +1,88 @@
+<ng-ais-instantsearch
+  [config]="{
+    appId: 'latency',
+    apiKey: '6be0576ff61c053d5f9a3225e2a90f76',
+    indexName: 'movies'
+  }"
+>
+  <header class="row">
+    <div>
+      <a href="#" class="logo">
+        You <i class="fa fa-youtube-play"></i>
+      </a>
+    </div>
+
+    <div class="searchbox-container">
+      <div class="input-group">
+        <ng-ais-search-box></ng-ais-search-box>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <aside>
+      <ul class="nav nav-list">
+        <li>
+          <a href="#">
+            <i class="fa fa-home"></i> Home
+          </a>
+        </li>
+        <li class="separator"></li>
+      </ul>
+
+      <!-- Genres refinement list -->
+      <h5><i class="fa fa-chevron-right"></i> Genres</h5>
+      <div id="genres">
+        <ng-ais-refinement-list attribute="genre"></ng-ais-refinement-list>
+      </div>
+
+      <!-- Ratings -->
+      <h5><i class="fa fa-chevron-right"></i> Ratings</h5>
+      <div id="ratings">
+        <ng-ais-rating-menu attribute="rating" max="5"></ng-ais-rating-menu>
+      </div>
+
+      <div class="thank-you">
+        Data courtesy of <a href="https://www.imdb.com">imdb.com</a>
+      </div>
+    </aside>
+
+    <article>
+      <!-- Stats -->
+      <div id="stats" class="text-muted text-right">
+        <ng-ais-stats></ng-ais-stats>
+      </div>
+
+      <hr>
+
+      <!-- Hits -->
+      <ng-ais-hits>
+        <ng-template let-hits="hits">
+          <div class="hit media" *ngFor="let hit of hits">
+            <div class="media-left">
+              <img [src]="hit.image" class="media-object" />
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">
+                <ng-ais-highlight [hit]="hit" attributeName="title"></ng-ais-highlight>
+              </h4>
+
+              <p class="year">{{hit.year}}</p>
+              <div class="genre">
+                <span
+                  class="badge"
+                  *ngFor="let genre of hit.genres"
+                >
+                  {{genre.name}}
+                </span>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </ng-ais-hits>
+
+      <!-- Pagination -->
+      <ng-ais-pagination></ng-ais-pagination>
+    </article>
+  </section>
+</ng-ais-instantsearch>
