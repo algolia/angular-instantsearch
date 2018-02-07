@@ -5,7 +5,7 @@ import './editThisPage.js';
 const docSearch = {
   apiKey: '5cb6763f264e31381e18639a1147634c',
   indexName: 'react-instantsearch',
-  inputSelector: '#searchbox',
+  inputSelector: '#searchbox'
 };
 
 /* eslint-disable no-unused-vars */

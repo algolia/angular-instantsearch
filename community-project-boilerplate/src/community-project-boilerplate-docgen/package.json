@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "algolia-aerial": "1.2.6",
+    "algolia-aerial": "^1.2.8",
     "algolia-frontend-components": "0.0.34",
     "async": "2.6.0",
     "autoprefixer": "7.2.1",

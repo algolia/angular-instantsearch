@@ -1,8 +1,5 @@
 ---
 title: ⚡ Homepage
-layout: single-column.pug
+layout: homepage.pug
 ---
 
-# Homepage
-
-Hello

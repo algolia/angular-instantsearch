@@ -1,6 +1,12 @@
 a
   color: #00A7FF
 
+h1, .h1,
+h2, .h2,
+h3, .h3
+  margin-top: 0 !important
+  margin-bottom: 0 !important
+
 .home
   @media (max-width: $screen-md)
     .btn-static-theme
@@ -30,14 +36,18 @@ a
       top: 100px
 
 .section-infinite-possibilities
-  @include diagonal(-4deg, /*$titan-white*/ $titan-white, 180px, after)
+  @include diagonal(-6deg, /*$titan-white*/ $titan-white, 180px, after)
     top: -80px
     left: 0
 
 .section-framework
-  @include diagonal(-4deg, /*$titan-white*/ #FFF, 180px, after)
+  @include diagonal(-6deg, /*$titan-white*/ #FFF, 180px, before)
     top: -80px
     left: 0
+  @include diagonal(-6deg, $titan-white, 180px, after)
+    bottom: -80px
+    left: 0
+    z-index: 10
 
   .phone_illustration,
   .computer_illustration
@@ -60,7 +70,7 @@ a
       transform: scale(0.5)
 
 .start-section
-  @include diagonal(-4deg, /*$titan-white*/ $titan-white, 180px, after)
+  @include diagonal(-6deg, /*$titan-white*/ $titan-white, 180px, after)
     top: -80px
     left: 0
 
@@ -101,12 +111,32 @@ a
   .flex-container
     padding: 0
 
+    .flex-it-3
+      perspective: 600px
+
+      @media (max-width: $screen-sm)
+        transform: none !important
+
+        div
+          transform: none !important
+
+    .flex-it-3:first-child
+      transform: translateX(32px)
+      div
+        transform: rotateY(10deg)
+
+    .flex-it-3:last-child
+      transform: translateX(-32px)
+      div
+        transform: rotateY(-10deg)
+
+
   @media (max-width: $screen-sm)
     .flex-it-3
       flex: 0 1 100%
 
 .discover-section
-  @include diagonal(-4deg, /*$titan-white*/ #FFF, 180px, after)
+  @include diagonal(-6deg, /*$titan-white*/ #FFF, 180px, after)
     top: -80px
     left: 0
   .card
@@ -172,47 +202,19 @@ a
 
 
 
-
-
-/// List
-ul.subtle-check-list
-  list-style: none
-  padding: 0
-  margin: 0
-  width: 200px
-  position: absolute
-  z-index: 9
-  right: 20px
-  width: 170px
-  top: 140px
-
-  li
-    display: inline-block
-    width: 100%
-    color: #00aeff
-    font-weight: 400
-    padding: 0 16px
-    height: 40px
-    min-width: 150px
-    margin-bottom: 20px
-    line-height: 40px
-    clear: both
-    background: rgba(255, 255, 255, 0.9)
-    border-radius: 18px
-    -webkit-box-shadow: 0 2px 10px 0 rgba(40, 120, 236, 0.2)
-    box-shadow: 0 2px 10px 0 rgba(40, 120, 236, 0.2)
-    text-transform: uppercase
-
-    svg
-      width: 12px
-      height: 36px
-      float: right
-
-      use
-        fill: $purple-heart
-        width: 12px
-
-  @media (max-width: $screen-sm)
-    left: 0
-    right: 0
+// Responsive
+@media (max-width: $screen-sm)
+  img
     margin: auto
+    max-width: 100%
+
+  .col-md-12,
+  .col-md-6
+    padding: 0
+
+  .btn
+    margin: auto
+    display: block
+
+  .hero .btn
+    max-width: 80%

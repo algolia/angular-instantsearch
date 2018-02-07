@@ -1,7 +1,7 @@
 // This file is defining code snippets styling for the homepage
 
 $light-theme: (
-  ('keyword', '#8e43e7'),
+  ('keyword', '#DD0031'),
   ('operator', '#f95faa'),
   ('property', '#75de00'),
   ('variable', '#3369e7'),
@@ -17,10 +17,7 @@ $gutter-width: 3.5em;
 $padding: 13px;
 $line-number-size: round(($size / 2)*1.538462);
 
-pre.al-snippet code {
-  transform: scale(0.765);
-  font-size: $size;
-}
+
 pre {
   &.al-snippet {
     color: $bunting;
@@ -35,28 +32,16 @@ pre {
     font-size: 12px;
     border: none;
 
-
-    code {
-      position: relative;
-      top: -0.5em;
+    @each $name, $color in $light-theme {
+      .sn-#{$name} {
+        color: #{$color}
+      }
     }
 
-    // Theme
-    &[data-snippet-theme="dark"] {
-
-      // Now, let' give it colors
-      // Namespace : sn-
-      @each $name, $color in $light-theme {
-        .sn-#{$name} {
-          color: #{$color}
-        }
-      }
+    ::selection {
+      background: #DD0031;
+      color: #fff
     }
   }
 }
 
-[debug-code-snippet] pre.al-snippet {
-  background-image: linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
-  background-size: $size $size;
-  background-origin: content-box;
-}
