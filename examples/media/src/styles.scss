@@ -132,19 +132,50 @@ section {
       margin-top: 20px;
     }
 
-    .badge {
-      font-size: .8em;
-      background: #BBBBBB;
-      position: relative;
-      top: 1px;
-    }
-
     .ais-RefinementList,
     .ais-RatingMenu {
       margin: 0 20px;
 
       &-count {
+        background: #BBBBBB;
+        border-radius: 8px;
+        display: block;
+        color: #FFF;
         float: right;
+        font-size: .8em;
+        padding: 0.1rem 0.4rem;
+
+        &:before,
+        &:after {
+          content: '';
+        }
+      }
+    }
+
+    .ais-RatingMenu {
+      &-link {
+        display: block;
+
+        & > * {
+          display: inline-block;
+          margin-left: 0;
+        }
+      }
+
+      &-label {
+        color: #333;
+        position: relative;
+        top: -6px;
+      }
+
+      &-item--selected {
+        .ais-RatingMenu-label {
+          color: #CE1312;
+        }
+
+        .ais-RatingMenu-count {
+          background: $media-text-color;
+        }
       }
     }
 
@@ -167,13 +198,11 @@ section {
         }
       }
 
-      .active {
-        label {
-          border: 1px solid $media-red-dark;
-          margin-top: -1px;
-        }
+      .ais-RefinementList-item--selected {
+        border: 1px solid $media-red-dark;
+        margin-top: -1px;
 
-        .badge {
+        .ais-RefinementList-count {
           background: $media-text-color;
         }
       }
