@@ -146,9 +146,9 @@ ajv@^5.0.0, ajv@^5.1.0, ajv@^5.1.5, ajv@^5.2.3, ajv@^5.3.0:
     fast-json-stable-stringify "^2.0.0"
     json-schema-traverse "^0.3.0"
 
-algolia-aerial@1.2.6:
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/algolia-aerial/-/algolia-aerial-1.2.6.tgz#e111b0043bdd899acd47339f407a7bb2e70ecb06"
+algolia-aerial@^1.2.12:
+  version "1.2.12"
+  resolved "https://registry.yarnpkg.com/algolia-aerial/-/algolia-aerial-1.2.12.tgz#decb8ac37d88ecaea44a7c6b4645c8560d4c18a7"
   dependencies:
     clean-css-cli "^4.1.6"
     css-loader "^0.28.4"

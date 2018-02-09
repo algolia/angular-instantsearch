@@ -5,15 +5,15 @@ html(lang="en")
   body
     include ./common/header.pug
     include ./common/hero.pug
-    section.row.fill-white.p-xlarge.m-l-none.m-r-none.pos-rel
+    section.row.fill-white.p-xlarge.m-l-none.m-r-none.pos-rel.section-angular
       .container.pos-rel.z-10
         .col-md-6.hidden-sm
           img.section-illustration(src="assets/images/Angular-filters.svg", alt="InstantSearch components", width="525", height="254.67")
         .col-md-6.p-l-xlarge
           header
             h3.no-p-t.m-t-none.text-lg Built for Angular 4 and 5
-          .spacer16.visible-sm
-          img.section-illustration.visible-sm(src="assets/images/Angular-filters.svg", alt="InstantSearch components", width="525", height="254.67")
+          .spacer32.visible-sm
+          img.section-illustration.visible-sm.m-l-r-auto(src="assets/images/Angular-filters.svg", alt="InstantSearch components", width="525", height="254.67")
           .spacer24
           p.color-logan.text-regular.text-demi Angular InstantSearch is future proof. Build a powerful Search UI using Angular’s latest technologies.
 
@@ -139,7 +139,7 @@ html(lang="en")
           .inline.spacer32
           .inline.spacer40.hidden-sm
 
-    section.row.fill-white.p-xlarge.discover-section.m-l-none.m-r-none.pos-rel
+    section.row.fill-white.p-xlarge.m-l-none.m-r-none.pos-rel.section-discover
       .container
         .inline.spacer40
         .col-md-12.z-10.text-center.row
@@ -155,13 +155,13 @@ html(lang="en")
                 div.heading.w100p.text-left
                   small.color-logan InstantSearch for native
             .col-md-12.mobile-projects
-              .col-md-4.col-md-offset-2
+              .col-md-4.col-sm-6.col-md-offset-2
                 .card.fill-white.elevation1.radius6.p-large.h100.text-left
                   a(href="https://community.algolia.com/instantsearch-android/")
                     figure
                       img(src="assets/images/InstantSearch-Android.svg", alt="Logo InstantSearch Android")
                       figcaption InstantSearch for Android
-              .col-md-4
+              .col-md-4.col-sm-6
                 .card.fill-white.elevation1.radius6.p-large.h100.text-left
                   a(href="https://community.algolia.com/instantsearch-ios/")
                     figure
@@ -174,25 +174,27 @@ html(lang="en")
               div.heading.w100p.text-left.m-l-large
                 small.color-logan InstantSearch for web
             .col-md-12
-              .col-md-3
+              .col-md-3.col-sm-6
                 .card.fill-white.elevation1.radius6.p-large.h100.text-left
                   a(href="https://community.algolia.com/instantsearch.js/v2")
                     figure
                       img.w100p(src="assets/images/InstantSearch-JavaScript.svg", alt="Logo InstantSearch Javascript")
                       figcaption InstantSearch for Javascript
-              .col-md-3
+                .spacer32.visible-sm
+              .col-md-3.col-sm-6
                 .card.fill-white.elevation1.radius6.p-large.h100.text-left
                   a(href="https://community.algolia.com/react-instantsearch/")
                     figure
                       img.w100p(src="assets/images/InstantSearch-React.svg", alt="Logo InstantSearch React")
                       figcaption InstantSearch for React
-              .col-md-3
+                .spacer32.visible-sm
+              .col-md-3.col-sm-6
                 .card.fill-white.elevation1.radius6.p-large.h100.text-left
                   a(href="https://community.algolia.com/vue-instantsearch")
                     figure
                       img.w100p(src="assets/images/InstantSearch-Vue.svg", alt="Logo InstantSearch Vue")
                       figcaption InstantSearch for Vue.js
-              .col-md-3
+              .col-md-3.col-sm-6
                 .card.fill-white.elevation1.radius6.p-large.h100.text-left
                   a(href="https://community.algolia.com/vue-instantsearch")
                     figure

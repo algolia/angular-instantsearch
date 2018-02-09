@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="334" height="338" viewBox="0 0 334 338">
+    <defs>
+        <rect id="b" width="254" height="250" y="38" rx="38"/>
+        <filter id="a" width="151.2%" height="152%" x="-25.6%" y="-22%" filterUnits="objectBoundingBox">
+            <feOffset dy="10" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="20"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.440703533 0 0 0 0 0.503310129 0 0 0 0 0.68486926 0 0 0 0.384454257 0"/>
+        </filter>
+        <filter id="c" width="135.4%" height="136%" x="-17.7%" y="-14%" filterUnits="objectBoundingBox">
+            <feOffset dy="-10" in="SourceAlpha" result="shadowOffsetInner1"/>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+            <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0.403921569 0 0 0 0 0.458823529 0 0 0 0 0.631372549 0 0 0 0.06 0"/>
+        </filter>
+        <linearGradient id="d" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#E3005C"/>
+            <stop offset="100%" stop-color="#C3002F"/>
+        </linearGradient>
+        <linearGradient id="e" x1="21.895%" x2="77.978%" y1="121.561%" y2="8.499%">
+            <stop offset="0%" stop-color="#201C38"/>
+            <stop offset="100%" stop-color="#3E396B"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" transform="translate(40)">
+        <use fill="#000" filter="url(#a)" xlink:href="#b"/>
+        <use fill="#FFF" xlink:href="#b"/>
+        <use fill="#000" filter="url(#c)" xlink:href="#b"/>
+        <circle cx="254" cy="37" r="35" fill="#3E396B"/>
+        <path fill="url(#d)" d="M254.5 75c20.71 0 37.5-16.79 37.5-37.5S275.21 0 254.5 0 217 16.79 217 37.5 233.79 75 254.5 75z"/>
+        <path fill="url(#d)" fill-rule="nonzero" d="M126.4 125.4c2 0 3.9-.4 5.8-1l3.2 5.5 2.2 3.8c.6 1.1 1.7 1.7 2.9 1.7.6 0 1.1-.1 1.7-.4 1.6-.9 2.1-3 1.2-4.6l-2.2-3.8-3.2-5.6c3.7-3.2 6.1-8 6.1-13.3 0-9.7-7.9-17.6-17.6-17.6-9.7 0-17.7 7.9-17.7 17.7 0 9.8 7.9 17.6 17.6 17.6zm0-28.6c6 0 10.9 4.9 10.9 10.9s-4.9 10.9-10.9 10.9-10.9-4.9-10.9-10.9 4.9-10.9 10.9-10.9z"/>
+        <path fill="url(#e)" fill-rule="nonzero" d="M152.3 134.8c-8.6 0-15.7 6.2-17.3 14.3h-10.7c-1.8 0-3.3 1.5-3.3 3.3 0 1.8 1.5 3.3 3.3 3.3H135c1.6 8.1 8.7 14.3 17.3 14.3 9.7 0 17.6-7.9 17.6-17.6 0-9.7-7.9-17.6-17.6-17.6zm0 28.6c-6 0-10.9-4.9-10.9-10.9s4.9-10.9 10.9-10.9 10.9 4.9 10.9 10.9-4.9 10.9-10.9 10.9zm-40.1-24.2c3.7 3.2 6.1 7.9 6 13.3 0 9.7-7.9 17.6-17.6 17.6-9.7 0-17.6-7.8-17.6-17.6s7.9-17.7 17.6-17.7c2.1 0 4 .4 5.8 1l3.2-5.5 2.2-3.8c1-1.6 3-2.1 4.6-1.2 1.6 1 2.1 3 1.2 4.6l-2.2 3.8-3.2 5.5zm-11.6 24.2c6.1 0 11-4.9 10.9-10.9 0-6-4.9-10.9-10.9-10.9s-10.9 4.9-10.9 10.9 4.9 10.9 10.9 10.9z"/>
+        <text fill="#3E396B" font-family="Montserrat-SemiBold, Montserrat" font-size="24" font-weight="500">
+            <tspan x="41.492" y="214">InstantSearch</tspan>
+        </text>
+        <text fill="#8994C6" font-family="Montserrat-Regular, Montserrat" font-size="16">
+            <tspan x="81.952" y="238">for Angular</tspan>
+        </text>
+        <path fill="#FFF" fill-rule="nonzero" d="M254.5 17l20.5 7.304-3.127 27.082L254.5 61l-17.373-9.614L234 24.304 254.5 17zm0 4.862l-12.815 28.71h4.778l2.576-6.424h10.878l2.576 6.424h4.778L254.5 21.862zm3.743 18.326h-7.486l3.743-8.998 3.743 8.998z"/>
+    </g>
+</svg>
