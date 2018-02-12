@@ -130,15 +130,29 @@ h3, .h3
       div
         transform: rotateY(-10deg)
 
+  @media (min-width: $screen-sm)
+    img
+      max-width: 100px
+  @media (min-width: $screen-md)
+    img
+      max-width: 200px
+
+
 
   @media (max-width: $screen-sm)
     .flex-it-3
       flex: 0 1 100%
 
-.discover-section
-  @include diagonal(-6deg, /*$titan-white*/ #FFF, 180px, after)
+
+.section-discover
+
+  .logo-is
+    max-width: 245px
+
+  @include diagonal(-6deg, #FFF, 180px, after)
     top: -80px
     left: 0
+
   .card
     line-height: 60px
 
@@ -152,9 +166,10 @@ h3, .h3
     .card
       margin-bottom: 1em
 
-    .col-md-12 .col-md-4,
     .mobile-projects
       padding: 0
+
+
 
 
 

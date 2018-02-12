@@ -159,13 +159,13 @@ html(lang="en")
                 .card.fill-white.elevation1.radius6.p-large.h100.text-left
                   a(href="https://community.algolia.com/instantsearch-android/")
                     figure
-                      img(src="assets/images/InstantSearch-Android.svg", alt="Logo InstantSearch Android")
+                      img.logo-is(src="assets/images/InstantSearch-Android.svg", alt="Logo InstantSearch Android")
                       figcaption InstantSearch for Android
               .col-md-4.col-sm-6
                 .card.fill-white.elevation1.radius6.p-large.h100.text-left
                   a(href="https://community.algolia.com/instantsearch-ios/")
                     figure
-                      img(src="assets/images/InstantSearch-iOS.svg", alt="Logo InstantSearch iOS")
+                      img.logo-is(src="assets/images/InstantSearch-iOS.svg", alt="Logo InstantSearch iOS")
                       figcaption InstantSearch for iOS
 
           .spacer40.inline
@@ -178,36 +178,36 @@ html(lang="en")
                 .card.fill-white.elevation1.radius6.p-large.h100.text-left
                   a(href="https://community.algolia.com/instantsearch.js/v2")
                     figure
-                      img.w100p(src="assets/images/InstantSearch-JavaScript.svg", alt="Logo InstantSearch Javascript")
+                      img.logo-is.w100p(src="assets/images/InstantSearch-JavaScript.svg", alt="Logo InstantSearch Javascript")
                       figcaption InstantSearch for Javascript
                 .spacer32.visible-sm
               .col-md-3.col-sm-6
                 .card.fill-white.elevation1.radius6.p-large.h100.text-left
                   a(href="https://community.algolia.com/react-instantsearch/")
                     figure
-                      img.w100p(src="assets/images/InstantSearch-React.svg", alt="Logo InstantSearch React")
+                      img.logo-is.w100p(src="assets/images/InstantSearch-React.svg", alt="Logo InstantSearch React")
                       figcaption InstantSearch for React
                 .spacer32.visible-sm
               .col-md-3.col-sm-6
                 .card.fill-white.elevation1.radius6.p-large.h100.text-left
                   a(href="https://community.algolia.com/vue-instantsearch")
                     figure
-                      img.w100p(src="assets/images/InstantSearch-Vue.svg", alt="Logo InstantSearch Vue")
+                      img.logo-is.w100p(src="assets/images/InstantSearch-Vue.svg", alt="Logo InstantSearch Vue")
                       figcaption InstantSearch for Vue.js
               .col-md-3.col-sm-6
                 .card.fill-white.elevation1.radius6.p-large.h100.text-left
                   a(href="https://community.algolia.com/vue-instantsearch")
                     figure
-                      img.w100p(src="assets/images/InstantSearch-Angular.svg", alt="Logo InstantSearch Vue")
+                      img.logo-is.w100p(src="assets/images/InstantSearch-Angular.svg", alt="Logo InstantSearch Angular")
                       figcaption InstantSearch for Angular
 
         .inline.spacer80
-        .inline.spacer120
+        .inline.spacer120.hidden-sm
 
 
 
-        .inline.spacer80
-        .inline.spacer120
+        .inline.spacer80.hidden-sm
+        .inline.spacer120.hidden-sm
     include ./common/footer.pug
     script(src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js")
     script(src=webpack.assets['js/common.js'])
