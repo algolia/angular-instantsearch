@@ -77,12 +77,13 @@ header {
       &-input {
         border-radius: 0;
         padding-bottom: 7px;
-        padding-left: 1rem;
+        padding-right: 1rem;
         width: 100%;
       }
 
       &-submit {
-        display: none;
+        right: .3em;
+        left: unset;
       }
     }
   }
