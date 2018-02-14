@@ -22,7 +22,8 @@
     "examples:media:build": "./scripts/build-example.sh media",
     "release": "./scripts/release.sh",
     "netlify": "./scripts/netlify.sh",
-    "doc:publish": "git subtree push --prefix doc origin gitbook"
+    "doc:publish": "git subtree push --prefix doc origin gitbook",
+    "doc:dev": "(cd community-website && yarn start)"
   },
   "jest": {
     "preset": "jest-preset-angular",
