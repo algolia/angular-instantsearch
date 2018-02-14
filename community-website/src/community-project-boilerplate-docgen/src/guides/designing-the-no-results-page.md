@@ -1,4 +1,9 @@
-## Designing the no results page
+---
+title: Guide - Designing the no results page
+layout: guide.pug
+---
+
+# Designing the no results page
 
 When a query returns no results, it is important to let the user know that their query led to no results.
 

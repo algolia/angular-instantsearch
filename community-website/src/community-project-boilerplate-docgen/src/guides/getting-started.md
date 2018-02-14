@@ -1,3 +1,8 @@
+---
+title: Guide - Getting started
+layout: guide.pug
+---
+
 # Welcome to Angular InstantSearch
 
 Angular InstantSearch is an **Angular 4 and 5** TypeScript library that lets you create an instant search results experience using Algolia's REST API.
@@ -50,7 +55,7 @@ First install `angular-instantsearch` via npm:
 Once installed you need to import our main module into your Angular application,
 so for example if you generated an app with the Angular cli, it would be in `src/app/app.module.ts`:
 
-```ts
+```js
 import { NgAisModule } from 'angular-instantsearch';
 ```
 
@@ -61,7 +66,7 @@ When done at the root level of your app, the syntax is a bit different.
 
 * At the root module:
 
-```ts
+```js
 import { NgAisModule } from 'angular-instantsearch';
 
 @NgModule({
@@ -74,7 +79,7 @@ export class AppModule {}
 
 * In another module, like a search module:
 
-```ts
+```js
 import { NgAisModule } from 'angular-instantsearch';
 
 @NgModule({
@@ -143,7 +148,7 @@ To display results, let's add the Results widget. This widget will display all t
 ```
 
 Here's the result:
-![First hits](./first-hits.png)
+![First hits](/assets/images/first-hits.png)
 
 You should now be able to see the results, now let's try to use a custom template for hits,
 replace `<ng-ais-hits></ng-ais-hits>` with:
@@ -229,7 +234,7 @@ In this part, we’ve seen that:
 * Facets are computed from the results
 
 Here's the result:
-![RefinementList](./refinement-list.png)
+![RefinementList](/assets/images/refinement-list.png)
 
 ## Going further
 

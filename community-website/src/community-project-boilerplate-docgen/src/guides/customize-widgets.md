@@ -1,4 +1,9 @@
-## Customize widgets
+---
+title: Guide - Customize widgets
+layout: guide.pug
+---
+
+# Customize widgets
 
 Angular InstantSearch comes with a set of UI widgets. Some of them have options to modify the HTML output (`<ng-template>`). But sometime that is not sufficient and you want to completely customise the rendering of a widget.
 

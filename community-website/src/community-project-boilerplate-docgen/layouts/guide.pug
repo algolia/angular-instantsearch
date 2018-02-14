@@ -1,0 +1,35 @@
+doctype html
+html(lang="en")
+  head
+    include ./common/meta.pug
+  body
+    include ./common/header.pug
+
+    .documentation-section
+      .container
+
+        nav.sidebar.pos-abt
+          .sidebar-container
+            ul.sidebar-elements
+              li.sidebar-element.level-h2.navItem.widgets
+                a(href="guides/getting-started.html") Getting started
+              li.sidebar-element.level-h2.navItem.widgets
+                a(href="guides/customize-widgets.html") Customize widgets
+              li.sidebar-element.level-h2.navItem.widgets
+                a(href="guides/designing-the-no-results-page.html") Designing the no results page
+              li.sidebar-element.level-h2.navItem.widgets
+                a(href="guides/highlighting-results.html") Highlighting results
+              li.sidebar-element.level-h2.navItem.widgets
+                a(href="guides/server-side-rendering.html") Server side rendering
+
+        a.sidebar-opener
+
+        .documentation-container
+          block content
+            .content!=contents
+
+    include ./common/footer.pug
+    
+    script(src="https://cdn.jsde  livr.net/docsearch.js/2/docsearch.min.js")
+    script(src=webpack.assets['js/common.js'])
+    script(src=webpack.assets['js/main.js'])

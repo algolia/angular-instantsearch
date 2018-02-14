@@ -1,4 +1,9 @@
-## Server Side Rendering
+---
+title: Guide - Server side rendering
+layout: guide.pug
+---
+
+# Server Side Rendering
 
 This is an advanced guide, if you never used Angular InstantSearch, you should follow the [gettind-started](/) first.
 
