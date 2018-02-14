@@ -1,3 +1,46 @@
+<a name="1.0.0-beta.12"></a>
+# [1.0.0-beta.12](https://github.com/algolia/angular-instantsearch/compare/1.0.0-beta.11...1.0.0-beta.12) (2018-02-06)
+
+### Breaking changes
+
+* Rename `<ng-ais-infinite-results>` to `<ng-ais-infinite-hits>`
+* Do not display load more button when using a template on infinite-hits
+
+### Features
+
+* **infinite-hits:** dont display `loadMore` when using template ([1b70c5e](https://github.com/algolia/angular-instantsearch/commit/1b70c5e))
+* **widgets:** rename infinite-results to infinite-hits ([0218a49](https://github.com/algolia/angular-instantsearch/commit/0218a49))
+
+
+
+<a name="1.0.0-beta.11"></a>
+# [1.0.0-beta.11](https://github.com/algolia/angular-instantsearch/compare/1.0.0-beta.10...1.0.0-beta.11) (2018-02-01)
+
+### Breaking Changes
+
+* Custom widgets needs to be updated, the `constructor()` call has changed: [see guide](https://algolia.gitbooks.io/angular-instantsearch/custom-widgets.html)
+* NumericMenu option `options` is now called `items`
+* CurrentRefinements widget now group same refinement (like React-InstantSearch)
+
+### Bug Fixes
+
+* **dev-novel:** typo `attribute` ([5e074bd](https://github.com/algolia/angular-instantsearch/commit/5e074bd))
+* **numeric-menu:** update `options` -> `items` ([75033e9](https://github.com/algolia/angular-instantsearch/commit/75033e9))
+* **tsconfig-aot:** ensure it compiles with `strictNullChecks` ([701188a](https://github.com/algolia/angular-instantsearch/commit/701188a))
+* **typings:** make it work with `strictNullChecks` ([593cd00](https://github.com/algolia/angular-instantsearch/commit/593cd00))
+
+
+### Features
+
+* **BaseWidget:** support multiple instances ([e6e5c7a](https://github.com/algolia/angular-instantsearch/commit/e6e5c7a))
+* **current-refinements:** group refinement by type and attributeName ([8965b35](https://github.com/algolia/angular-instantsearch/commit/8965b35))
+* **instantsearch:** remove Instance Service ([bbcc27b](https://github.com/algolia/angular-instantsearch/commit/bbcc27b))
+* **instantsearch:** support multiple instances ([d30f58f](https://github.com/algolia/angular-instantsearch/commit/d30f58f))
+* **library:** export `NgAisInstantSearch` for custom widgets ([6cc1954](https://github.com/algolia/angular-instantsearch/commit/6cc1954))
+* **widgets:** support new BaseWidget API ([beaea7f](https://github.com/algolia/angular-instantsearch/commit/beaea7f))
+
+
+
 <a name="1.0.0-beta.10"></a>
 # [1.0.0-beta.10](https://github.com/algolia/angular-instantsearch/compare/1.0.0-beta.9...1.0.0-beta.10) (2018-01-25)
 

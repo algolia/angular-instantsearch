@@ -14,7 +14,7 @@ import { BaseWidget } from "../base-widget";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
 
 @Component({
-  selector: "ng-ais-infinite-results",
+  selector: "ng-ais-infinite-hits",
   template: `
     <div [class]="cx()">
       <ng-container *ngTemplateOutlet="template; context: state"></ng-container>
@@ -36,13 +36,14 @@ import { NgAisInstantSearch } from "../instantsearch/instantsearch";
         [class]="cx('showMore')"
         (click)="showMore($event)"
         [disabled]="state.isLastPage"
+        *ngIf="!template"
       >
         {{showMoreLabel}}
       </button>
     </div>
   `
 })
-export class NgAisInfiniteResults extends BaseWidget {
+export class NgAisInfiniteHits extends BaseWidget {
   @ContentChild(TemplateRef) public template?: any;
 
   // render options
@@ -66,7 +67,7 @@ export class NgAisInfiniteResults extends BaseWidget {
     @Inject(forwardRef(() => NgAisInstantSearch))
     public instantSearchParent: any
   ) {
-    super("InfiniteResults");
+    super("InfiniteHits");
     this.createWidget(connectInfiniteHits, { escapeHits: true });
   }
 

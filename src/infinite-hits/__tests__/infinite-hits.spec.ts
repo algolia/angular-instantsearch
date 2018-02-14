@@ -1,5 +1,5 @@
 import { createRenderer } from "../../../helpers/test-renderer";
-import { NgAisInfiniteResults } from "../infinite-results";
+import { NgAisInfiniteHits } from "../infinite-hits";
 import { NgAisHighlight } from "../../highlight/highlight";
 
 const defaultState = {
@@ -15,8 +15,8 @@ const defaultState = {
 
 const render = createRenderer({
   defaultState,
-  template: "<ng-ais-infinite-results></ng-ais-infinite-results>",
-  TestedWidget: NgAisInfiniteResults,
+  template: "<ng-ais-infinite-hits></ng-ais-infinite-hits>",
+  TestedWidget: NgAisInfiniteHits,
   additionalDeclarations: [NgAisHighlight]
 });
 

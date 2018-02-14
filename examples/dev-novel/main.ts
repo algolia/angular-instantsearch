@@ -234,12 +234,31 @@ storiesOf("HitsPerPage")
     })
   );
 
-storiesOf("InfiniteResults").add(
-  "default",
-  wrapWithHits({
-    template: "<ng-ais-infinite-results></ng-ais-infinite-results>"
-  })
-);
+storiesOf("InfiniteHits")
+  .add(
+    "default",
+    wrapWithHits({
+      template: "<ng-ais-infinite-hits></ng-ais-infinite-hits>"
+    })
+  )
+  .add(
+    "with custom template",
+    wrapWithHits({
+      template: `
+        <ng-ais-infinite-hits>
+          <ng-template
+            let-hits="hits"
+            let-showMore="showMore"
+          >
+            <div *ngFor="let hit of hits">
+              <strong>{{hit.name}}</strong>
+            </div>
+            <button (click)="showMore()">Load more</button>
+          </ng-template>
+        </ng-ais-infinite-hits>
+      `
+    })
+  );
 
 storiesOf("Menu")
   .add(
@@ -272,7 +291,7 @@ storiesOf("NumericMenu").add(
         <ng-ais-numeric-menu
           attribute="price"
           operator="or"
-          [options]="[
+          [items]="[
             { name: 'All' },
             { end: 4, name: 'less than 4' },
             { start: 4, end: 4, name: '4' },
@@ -292,7 +311,7 @@ storiesOf("NumericSelector")
     wrapWithHits({
       template: `
         <ng-ais-numeric-selector
-          attrribute="popularity"
+          attribute="popularity"
           operator=">="
           [items]="[
             { label: 'Default', value: 0 },

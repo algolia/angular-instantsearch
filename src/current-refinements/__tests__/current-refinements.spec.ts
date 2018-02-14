@@ -67,7 +67,9 @@ describe("CurrentRefinedValues", () => {
     const refine = jest.fn();
     const fixture = render({ refine });
 
-    const [firstEl] = fixture.debugElement.nativeElement.querySelectorAll("li");
+    const [firstEl] = fixture.debugElement.nativeElement.querySelectorAll(
+      "span > button"
+    );
     firstEl.click();
 
     expect(refine).toHaveBeenCalled();

@@ -1,6 +1,6 @@
 {
   "name": "angular-instantsearch",
-  "version": "1.0.0-beta.10",
+  "version": "1.0.0-beta.12",
   "description": "Lightning-fast search for Angular apps, by Algolia.",
   "author": {
     "name": "Algolia, Inc.",
@@ -18,6 +18,8 @@
     "examples:ecommerce:build": "./scripts/build-example.sh e-commerce",
     "examples:router": "./scripts/run-example.sh angular-router",
     "examples:router:build": "./scripts/build-example.sh angular-router",
+    "examples:media": "./scripts/run-example.sh media",
+    "examples:media:build": "./scripts/build-example.sh media",
     "release": "./scripts/release.sh",
     "netlify": "./scripts/netlify.sh",
     "doc:publish": "git subtree push --prefix doc origin gitbook"
@@ -49,7 +51,7 @@
     "@angular/core": "^4.4.5",
     "algoliasearch": "^3.24.7",
     "algoliasearch-helper": "^2.23.0",
-    "instantsearch.css": "^6.0.1",
+    "instantsearch.css": "^7.0.0",
     "instantsearch.js": "^2.3.1",
     "lodash-es": "^4.17.4",
     "nouislider": "^10.0.0",

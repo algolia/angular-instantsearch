@@ -12,6 +12,8 @@
     "rootDir": "./src",
     "sourceMap": true,
     "inlineSources": true,
+    "strictNullChecks": true,
+    "noStrictGenericChecks": false,
     "skipLibCheck": true
   },
   "files": [

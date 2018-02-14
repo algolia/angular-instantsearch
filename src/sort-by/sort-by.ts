@@ -34,7 +34,7 @@ export class NgAisSortBy extends BaseWidget {
   }[];
 
   public state: {
-    currentRefinement?: string;
+    currentRefinement: string | null;
     options: {}[];
     refine: Function;
   } = {
