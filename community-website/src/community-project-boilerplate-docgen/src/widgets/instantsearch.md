@@ -1,4 +1,9 @@
-## `<ng-ais-instantsearch />`
+---
+title: Widgets - Instantsearch
+layout: widget.pug
+---
+
+# `<ng-ais-instantsearch />`
 
 Is the root component of all Angular InstantSearch implementations.
 
@@ -16,7 +21,7 @@ Those parameters can be found in your [Algolia dashboard](https://www.algolia.co
 
 Example:
 
-```ts
+```js
 @Component({
   selector: 'ng-ais-app',
   template: `

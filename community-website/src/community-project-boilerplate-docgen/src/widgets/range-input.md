@@ -1,4 +1,9 @@
-## `<ng-ais-range-input />`
+---
+title: Widgets - Range Input
+layout: widget.pug
+---
+
+# `<ng-ais-range-input />`
 
 Numeric range widget allows a user to select a numeric range using a minimum and maximum input.
 

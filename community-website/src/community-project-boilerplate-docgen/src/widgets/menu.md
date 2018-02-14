@@ -1,4 +1,9 @@
-## `<ng-ais-menu />`
+---
+title: Widgets - Menu
+layout: widget.pug
+---
+
+# `<ng-ais-menu />`
 
 The Menu component displays a menu that lets the user choose a single value for a specific attribute.
 

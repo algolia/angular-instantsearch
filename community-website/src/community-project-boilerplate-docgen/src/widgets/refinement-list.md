@@ -1,4 +1,9 @@
-## `<ng-ais-refinement-list />`
+---
+title: Widgets - Refinement List
+layout: widget.pug
+---
+
+# `<ng-ais-refinement-list />`
 
 The RefinementList component displays a list that let the end user choose multiple values for a specific facet.
 

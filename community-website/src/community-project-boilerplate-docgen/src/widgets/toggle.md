@@ -1,4 +1,9 @@
-## `<ng-ais-toggle />`
+---
+title: Widgets - Toggle
+layout: widget.pug
+---
+
+# `<ng-ais-toggle />`
 
 The toggle widget lets the user either:
 

@@ -1,4 +1,9 @@
-## `<ng-ais-breadcrumb />`
+---
+title: Widgets - Breadcrumb
+layout: widget.pug
+---
+
+# `<ng-ais-breadcrumb />`
 
 A breadcrumb is a secondary navigation scheme that allows the user to see where the current page is in relation to the website or web application’s hierarchy. In terms of usability, using a breadcrumb reduces the number of actions a visitor needs to take in order to get to a higher-level page.
 

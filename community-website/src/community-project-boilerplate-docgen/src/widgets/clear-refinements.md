@@ -1,4 +1,9 @@
-## `<ng-ais-clear-refinements />`
+---
+title: Widgets - ClearRefinements
+layout: widget.pug
+---
+
+# `<ng-ais-clear-refinements />`
 
 The ClearRefinements widget displays a button that lets the user clean every refinement applied to the search.
 

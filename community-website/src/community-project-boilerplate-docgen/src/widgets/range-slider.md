@@ -1,4 +1,9 @@
-## `<ng-ais-range-slider />`
+---
+title: Widgets - Range Slider
+layout: widget.pug
+---
+
+# `<ng-ais-range-slider />`
 
 The range slider is a widget which provides a user-friendly way to filter the results based on a single numeric range.
 

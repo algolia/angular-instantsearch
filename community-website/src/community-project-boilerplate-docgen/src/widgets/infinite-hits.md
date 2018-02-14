@@ -1,4 +1,9 @@
-## `<ng-ais-infinite-results />`
+---
+title: Widgets - Infinite Results
+layout: widget.pug
+---
+
+# `<ng-ais-infinite-results />`
 
 Displays a list of hits.
 

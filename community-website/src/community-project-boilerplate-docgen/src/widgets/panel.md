@@ -1,4 +1,9 @@
-## `<ng-ais-panel />`
+---
+title: Widgets - Panel
+layout: widget.pug
+---
+
+# `<ng-ais-panel />`
 
 The Panel widget wraps other widgets in a consistent panel design.
 

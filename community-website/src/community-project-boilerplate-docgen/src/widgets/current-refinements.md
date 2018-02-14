@@ -1,4 +1,9 @@
-## `<ng-ais-current-refinements />`
+---
+title: Widgets - CurrentRefinements
+layout: widget.pug
+---
+
+# `<ng-ais-current-refinements />`
 
 The current refinements widget has two purposes:
 

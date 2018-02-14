@@ -1,4 +1,9 @@
-##### `<ng-ais-sort-by />`
+---
+title: Widgets - Sort By
+layout: widget.pug
+---
+
+# `<ng-ais-sort-by />`
 
 The SortBy component displays a list of indexes allowing a user to change the hits are sorting.
 

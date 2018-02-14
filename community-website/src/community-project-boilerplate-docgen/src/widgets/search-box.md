@@ -1,4 +1,9 @@
-## `<ng-ais-search-box />`
+---
+title: Widgets - Search Box
+layout: widget.pug
+---
+
+# `<ng-ais-search-box />`
 
 The SearchBox component displays a search box that lets the user search for a specific query.
 

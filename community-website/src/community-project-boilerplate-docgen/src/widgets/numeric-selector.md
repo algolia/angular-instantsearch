@@ -1,4 +1,9 @@
-## `<ng-ais-numeric-selector />`
+---
+title: Widgets - Numeric Selector
+layout: widget.pug
+---
+
+# `<ng-ais-numeric-selector />`
 
 The NumericSelector component lets the user choose between numerical refinements from a dropdown menu.
 

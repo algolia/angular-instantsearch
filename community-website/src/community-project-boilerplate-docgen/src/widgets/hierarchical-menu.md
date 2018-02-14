@@ -1,4 +1,9 @@
-## `<ng-ais-hierarchical-menu />`
+---
+title: Widgets - HierarchicalMenu
+layout: widget.pug
+---
+
+# `<ng-ais-hierarchical-menu />`
 
 The hierarchical menu widget is used to create a navigation based on a hierarchy of facet attributes.
 

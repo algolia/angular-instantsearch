@@ -1,3 +1,8 @@
+---
+title: Widgets - Numeric Menu
+layout: widget.pug
+---
+
 ## `<ng-ais-numeric-menu />`
 
 The NumericMenu is a component that displays a list of numeric filters in a list. Those numeric filters are pre-configured with creating the widget.

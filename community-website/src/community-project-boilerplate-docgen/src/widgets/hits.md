@@ -1,4 +1,9 @@
-## `<ng-ais-hits />`
+---
+title: Widgets - Hits
+layout: widget.pug
+---
+
+# `<ng-ais-hits />`
 
 Displays a list of hits.
 

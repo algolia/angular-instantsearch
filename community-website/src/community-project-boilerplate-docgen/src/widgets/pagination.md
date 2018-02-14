@@ -1,4 +1,9 @@
-## `<ng-ais-pagination />`
+---
+title: Widgets - Pagination
+layout: widget.pug
+---
+
+# `<ng-ais-pagination />`
 
 The Pagination widget displays a simple pagination system allowing the user to change the current page.
 

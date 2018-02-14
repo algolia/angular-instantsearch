@@ -1,4 +1,9 @@
-## `<ng-ais-highlight />`
+---
+title: Widgets - Highlight
+layout: widget.pug
+---
+
+# `<ng-ais-highlight />`
 
 Renders any attribute from an hit into its highlighted form when relevant.
 

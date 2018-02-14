@@ -1,4 +1,9 @@
-## `<ng-ais-rating-menu />`
+---
+title: Widgets - Rating Menu
+layout: widget.pug
+---
+
+# `<ng-ais-rating-menu />`
 
 RatingMenu is used for displaying grade like filters. The values are normalized within boundaries.
 

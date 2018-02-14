@@ -1,4 +1,9 @@
-## `<ng-ais-hits-per-page />`
+---
+title: Widgets - Hits Per Page
+layout: widget.pug
+---
+
+# `<ng-ais-hits-per-page />`
 
 The ResultsPerPage widget displays a dropdown menu to let the user change the number of displayed hits.
 
