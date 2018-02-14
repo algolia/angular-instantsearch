@@ -11,14 +11,7 @@ In this tutorial you'll learn how to:
 
 * Install and use `angular-instantsearch` in your angular application
 * Display results from Algolia
-* Add widgets / components to filter the results
-
-## Beta feedback
-
-This project is currently in **beta**, we welcome any feedback via [GitHub issues](https://github.com/algolia/angular-instantsearch/issues/new) and there's also a dedicated chat available at [gitter.im/angular-instantsearch](https://gitter.im/angular-instantsearch).
-
-During the beta, we will do substantial changes based on your feedback. For all of those changes, we will warn
-every users via our chat, discourse and GitHub releases.
+* Add widgets / components to filter the resultss
 
 ## Before we start
 
