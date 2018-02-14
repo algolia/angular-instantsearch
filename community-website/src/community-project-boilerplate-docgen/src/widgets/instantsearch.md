@@ -96,7 +96,7 @@ You can register to the `(change)` event on the `<ng-ais-instantsearch>` which w
 </ng-ais-instantsearch>
 ```
 
-```ts
+```js
 onSearchChange({ results, state }: { results: {}, state: {} }) {
   // Do what ever you need with the results or the state of search
 }

@@ -44,7 +44,7 @@ Now you have all the requirements to start developing your universal Angular Ins
 
 Once you installed the dependencies you will need to add the `TransferState`, `preboot` and `HttpClient` modules into `src/app/app.module.ts`:
 
-```ts
+```js
 import {
   BrowserModule,
   BrowserTransferStateModule
@@ -82,7 +82,7 @@ export class AppModule { }
 
 We need also to import `ServerTransferStateModule` into `src/app/app.server.module.ts`:
 
-```ts
+```js
 
 import { NgModule } from '@angular/core';
 import {
@@ -112,7 +112,7 @@ And voilà, you have the requirements and your are now ready to plug Angular Ins
 
 In order to get the query of the client request into your Angular application you need to provide the original `request` object you receive into the express server. Open `./server.ts` and replace this block:
 
-```ts
+```js
 app.engine('html', ngExpressEngine({
   bootstrap: AppServerModuleNgFactory,
   providers: [
@@ -123,7 +123,7 @@ app.engine('html', ngExpressEngine({
 
 By this one:
 
-```ts
+```js
 app.engine('html', (_, options, callback) => {
   const engine = ngExpressEngine({
     bootstrap: AppServerModuleNgFactory,
@@ -146,7 +146,7 @@ The only difference is on how you configure `<ng-ais-instantsearch>` component.
 
 This will be our starting component. For simplicity you can re-use the Home component from the universal starter boilerplate:
 
-```ts
+```js
 import { Component } from '@angular/core';
 
 @Component({
@@ -172,7 +172,7 @@ export class HomeComponent {
 
 We will need to now import the `TransferState`, `HttpClient`, `Injector` and `PLATFORM_ID` into our constructor, let's update our component code:
 
-```ts
+```js
 import { Component, Injector, Inject, PLATFORM_ID } from "@angular/core";
 import { isPlatformServer } from "@angular/common";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
@@ -206,7 +206,7 @@ export class HomeComponent {
 
 Final step is to update the `instantSearchConfig` with the modules we provide into `angular-instantsearch` in order to allow the Algolia API requests to be made on the server side:
 
-```ts
+```js
 import {
   createSSRAlgoliaClient,
   parseServerRequest
