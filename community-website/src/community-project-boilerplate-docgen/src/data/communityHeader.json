@@ -64,6 +64,10 @@
       "url": "/widgets/instantsearch.html"
     },
     {
+      "name": "Demos",
+      "url": "/examples.html"
+    },
+    {
       "name": "Github",
       "image": "<img src='assets/images/github-icon.svg'/>",
       "url": "https://github.com/algolia/angular-instantsearch"
@@ -71,17 +75,21 @@
   ],
   "mobileMenu": [
     {
-      "name": "About",
-      "url": "about.html"
+      "name": "Guides",
+      "url": "/guides/getting-started.html"
     },
     {
-      "name": "Support",
-      "url": "support.html"
+      "name": "Widgets",
+      "url": "/widgets/instantsearch.html"
+    },
+    {
+      "name": "Demos",
+      "url": "/examples.html"
     },
     {
       "name": "Github",
       "image": "<img src='assets/images/github-icon.svg'/>",
-      "url": "https://github.com/algolia/instantsearch-angular"
+      "url": "https://github.com/algolia/angular-instantsearch"
     }
   ],
   "docSearch": {
