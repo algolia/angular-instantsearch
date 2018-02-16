@@ -1,6 +1,7 @@
 import activateClipboard from './activateClipboard.js';
 import alg from 'algolia-frontend-components/javascripts.js';
 import './editThisPage.js';
+import './sidebar-active-el';
 
 import { fixSidebar, followSidebarNavigation } from './fix-sidebar.js';
 
@@ -22,12 +23,16 @@ if (sidebarContainer) {
   const headerHeight = document
     .querySelector('.algc-navigation')
     .getBoundingClientRect().height;
+
   const contentContainer = document.querySelector('.documentation-container');
   fixSidebar({ sidebarContainer, topOffset: headerHeight });
-  followSidebarNavigation(
-    sidebarContainer.querySelectorAll('a'),
-    contentContainer.querySelectorAll('h2')
-  );
+
+  if (document.location.pathname.includes('getting-started')) {
+    followSidebarNavigation(
+      sidebarContainer.querySelectorAll('a'),
+      contentContainer.querySelectorAll('h2')
+    );
+  }
 }
 
 // The Following function will make the '.sidebar-opener'
