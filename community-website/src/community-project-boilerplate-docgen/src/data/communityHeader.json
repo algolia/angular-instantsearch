@@ -56,8 +56,12 @@
   },
   "sideMenu": [
     {
+      "name": "Getting started",
+      "url": "/getting-started.html"
+    },
+    {
       "name": "Guides",
-      "url": "/guides/getting-started.html"
+      "url": "/guides/customize-widgets.html"
     },
     {
       "name": "Widgets",
@@ -74,6 +78,10 @@
     }
   ],
   "mobileMenu": [
+    {
+      "name": "Getting started",
+      "url": "/getting-started.html"
+    },
     {
       "name": "Guides",
       "url": "/guides/getting-started.html"

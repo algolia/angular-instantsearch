@@ -1,6 +1,6 @@
 ---
-title: Guide - Getting started
-layout: guide.pug
+title: Getting started
+layout: getting-started.pug
 ---
 
 # Welcome to Angular InstantSearch
