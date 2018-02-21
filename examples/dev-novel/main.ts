@@ -117,7 +117,7 @@ storiesOf("CurrentRefinements")
     wrapWithHits({
       template: `
         <ng-ais-panel header='Current refinements'>
-          <ng-ais-current-refinements header='Current refinements'>
+          <ng-ais-current-refinements>
           </ng-ais-current-refinements>
         </ng-ais-panel>
       `
