@@ -3,11 +3,28 @@ title: Widgets - Hits Per Page
 layout: widget.pug
 ---
 
-# `<ng-ais-hits-per-page />`
+# Hits per page
 
-The ResultsPerPage widget displays a dropdown menu to let the user change the number of displayed hits.
+## Description
+
+The Hits per page widget displays a dropdown menu to let the user change the number of displayed hits.
+
+## Options
 
 | Attributes     | Type                                                  | Description
 | -              | -                                                     | -
 | `items`        | `{value: number, label: string, default?: boolean}[]` | List of available options
 | `autoHideContainer?` | `boolean`  | Hides the results per pages if there's no item to display
+
+## Code example
+
+```html
+<ng-ais-hits-per-page
+  [items]="[
+    { value: 3, label: '3 per page' },
+    { value: 5, label: '5 per page' },
+    { value: 10, label: '10 per page' }
+  ]"
+>
+</ng-ais-hits-per-page>
+```

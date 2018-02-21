@@ -3,9 +3,13 @@ title: Widgets - Stats
 layout: widget.pug
 ---
 
-# `<ng-ais-stats />`
+# Stats
+
+## Description
 
 The Stats component displays the total number of matching hits and the time it took to get them (time spent in the Algolia server).
+
+## Code example
 
 You can use the directive `<ng-template></ng-template>` to customize the output:
 

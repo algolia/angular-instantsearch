@@ -3,9 +3,13 @@ title: Widgets - Pagination
 layout: widget.pug
 ---
 
-# `<ng-ais-pagination />`
+# Pagination
+
+## Description
 
 The Pagination widget displays a simple pagination system allowing the user to change the current page.
+
+## Options
 
 | Attributes      | Type      | Description
 | -               | -         | -
@@ -15,3 +19,9 @@ The Pagination widget displays a simple pagination system allowing the user to c
 | `showPrevious?` | `boolean` | Display the previous page link
 | `showNext?`     | `boolean` | Display the next page link
 | `padding?`      | `number`  | How many page links to display around the current page
+
+## Code example
+
+```html
+<ng-ais-pagination></ng-ais-pagination>
+```

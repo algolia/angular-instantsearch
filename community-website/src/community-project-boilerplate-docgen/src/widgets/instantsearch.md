@@ -3,9 +3,13 @@ title: Widgets - Instantsearch
 layout: widget.pug
 ---
 
-# `<ng-ais-instantsearch />`
+# Instantsearch
+
+## Description
 
 Is the root component of all Angular InstantSearch implementations.
+
+## Options
 
 | Attributes    | Type            | Description
 | -             | -               | -
@@ -19,7 +23,7 @@ Three parameters are required to get you started with instantsearch.js:
 
 Those parameters can be found in your [Algolia dashboard](https://www.algolia.com/api-keys).
 
-Example:
+## Code example
 
 ```js
 @Component({
@@ -38,7 +42,7 @@ Example:
 export class AppComponent {}
 ```
 
-#### ConfigOptions
+## Config object options
 
 `appId: string`
 > The Algolia application ID

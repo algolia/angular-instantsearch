@@ -3,11 +3,14 @@ title: Widgets - Hits
 layout: widget.pug
 ---
 
-# `<ng-ais-hits />`
+# Hits
+
+## Description
 
 Displays a list of hits.
+sYou can use the directive `<ng-template></ng-template>` to customize.
 
-You can use the directive `<ng-template></ng-template>` to customize the output:
+## Code example
 
 ```html
 <ng-ais-hits>

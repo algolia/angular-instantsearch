@@ -3,7 +3,9 @@ title: Widgets - CurrentRefinements
 layout: widget.pug
 ---
 
-# `<ng-ais-current-refinements />`
+# Current Refinements
+
+## Description
 
 The current refinements widget has two purposes:
 
@@ -11,6 +13,8 @@ The current refinements widget has two purposes:
 * give the user the ability to remove a filter.
 
 This widget is usually in the top part of the search UI.
+
+## Options
 
 | Attributes       | Type                            | Description
 | -                | -                               | -
@@ -20,3 +24,10 @@ This widget is usually in the top part of the search UI.
 | `clearsQuery?`   | `boolean`                       | If true, the clear all button also clears the active search query.
 | `clearRefinementsLabel?` | `string`                        | Label used on the clear all button.
 | `autoHideContainer?` | `boolean`  | Hides the widget if there's no refinements to display
+
+## Code example
+
+```html
+<ng-ais-current-refinements [clearsQuery]="true">
+</ng-ais-current-refinements>
+```

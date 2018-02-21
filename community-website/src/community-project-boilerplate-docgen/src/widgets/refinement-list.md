@@ -3,9 +3,13 @@ title: Widgets - Refinement List
 layout: widget.pug
 ---
 
-# `<ng-ais-refinement-list />`
+# Refinement List
+
+## Description
 
 The RefinementList component displays a list that let the end user choose multiple values for a specific facet.
+
+## Options
 
 | Attributes           | Type                     | Description
 | -                    | -                        | -
@@ -19,3 +23,14 @@ The RefinementList component displays a list that let the end user choose multip
 | `searchPlaceholder?` | `string`                 | The label of the search input placeholder
 | `sortBy?`            | `string[] / Function`    | How to sort facet values
 | `autoHideContainer?` | `boolean`                | Hides the refinement list if there's no item to display
+
+## Code example
+
+```html
+<ng-ais-refinement-list
+  attribute="brand"
+  operator="or"
+  [limit]="10"
+>
+</ng-ais-refinement-list>
+```

@@ -3,9 +3,13 @@ title: Widgets - Rating Menu
 layout: widget.pug
 ---
 
-# `<ng-ais-rating-menu />`
+# Rating Menu
+
+## Description
 
 RatingMenu is used for displaying grade like filters. The values are normalized within boundaries.
+
+## Options
 
 | Attributes           | Type       | Description
 | -                    | -          | -
@@ -13,3 +17,13 @@ RatingMenu is used for displaying grade like filters. The values are normalized 
 | `andUpLabel?`        | `string`   | Label to display after the stars
 | `max?`               | `number`   | The maximum rating value
 | `autoHideContainer?` | `boolean`  | Hides the rating menu if there's no item to display
+
+## Code example
+
+```html
+<ng-ais-rating-menu
+  attribute="rating"
+  [max]="5"
+>
+</ng-ais-rating-menu>
+```

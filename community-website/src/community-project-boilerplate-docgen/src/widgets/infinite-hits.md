@@ -3,15 +3,20 @@ title: Widgets - Infinite hits
 layout: widget.pug
 ---
 
-# `<ng-ais-infinite-hits />`
+# Infinite Hits
+
+## Description
 
 Displays a list of hits.
+You can use the directive `<ng-template></ng-template>` to customize the output.
+
+## Options
 
 | Attribures            | Type     | Description
 | -                     | -        | -
 | `showMoreLabel?`      | `string` | Label used on the show more button.
 
-You can use the directive `<ng-template></ng-template>` to customize the output:
+## Code example
 
 ```html
 <ng-ais-infinite-hits>

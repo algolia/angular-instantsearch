@@ -3,10 +3,13 @@ title: Widgets - Menu
 layout: widget.pug
 ---
 
-# `<ng-ais-menu />`
+# Menu
+
+## Description
 
 The Menu component displays a menu that lets the user choose a single value for a specific attribute.
 
+## Options
 
 | Attributes           | Type                  | Description
 | -                    | -                     | -
@@ -17,3 +20,14 @@ The Menu component displays a menu that lets the user choose a single value for 
 | `showLessLabel?`     | `string`              | Label of the show less button
 | `sortBy?`            | `string[] / Function` | How to sort facet values
 | `autoHideContainer?` | `boolean`             | Hides the menu if there's no item to display
+
+## Code example
+
+```html
+<ng-ais-menu
+  attribute="categories"
+  [limit]="3"
+  [showMoreLimit]="10"
+>
+</ng-ais-menu>
+```

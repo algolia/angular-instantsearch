@@ -3,11 +3,15 @@ title: Widgets - HierarchicalMenu
 layout: widget.pug
 ---
 
-# `<ng-ais-hierarchical-menu />`
+# Hierarchical Menu
+
+## Description
 
 The hierarchical menu widget is used to create a navigation based on a hierarchy of facet attributes.
 
 It is commonly used for categories with subcategories.
+
+## Options
 
 | Attributes           | Type                | Description
 | -                    | -                   | -
@@ -18,3 +22,17 @@ It is commonly used for categories with subcategories.
 | `showParentLevel?`   | `boolean`           | Show the parent level of the current refined value
 | `sortBy?`            | `string[]/Function` | How to sort facet values
 | `autoHideContainer?` | `boolean`           | Hides the widget if there's no item to display
+
+## Code example
+
+```html
+<ng-ais-hierarchical-menu
+  [showParentLevel]="false"
+  [attributes]="[
+    'hierarchicalCategories.lvl0',
+    'hierarchicalCategories.lvl1',
+    'hierarchicalCategories.lvl2'
+  ]"
+>
+</ng-ais-hierarchical-menu>
+```
