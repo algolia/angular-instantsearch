@@ -47,7 +47,7 @@ export class NgAisHits extends BaseWidget {
     @Inject(forwardRef(() => NgAisInstantSearch))
     public instantSearchParent: any
   ) {
-    super("Results");
+    super("Hits");
     this.createWidget(connectHits, { escapeHits: true });
   }
 

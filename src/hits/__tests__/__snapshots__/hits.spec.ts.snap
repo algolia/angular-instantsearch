@@ -12,7 +12,7 @@ exports[`Hits renders markup with state 1`] = `
       
       
       <div
-        class="ais-Results"
+        class="ais-Hits"
       >
         
         
@@ -27,13 +27,13 @@ exports[`Hits renders markup with state 1`] = `
           
           
           <ul
-            class="ais-Results-list"
+            class="ais-Hits-list"
           >
             
             
             
             <li
-              class="ais-Results-item"
+              class="ais-Hits-item"
             >
               
               
@@ -52,7 +52,7 @@ exports[`Hits renders markup with state 1`] = `
             
             </li>
             <li
-              class="ais-Results-item"
+              class="ais-Hits-item"
             >
               
               
@@ -71,7 +71,7 @@ exports[`Hits renders markup with state 1`] = `
             
             </li>
             <li
-              class="ais-Results-item"
+              class="ais-Hits-item"
             >
               
               
@@ -90,7 +90,7 @@ exports[`Hits renders markup with state 1`] = `
             
             </li>
             <li
-              class="ais-Results-item"
+              class="ais-Hits-item"
             >
               
               
@@ -139,7 +139,7 @@ exports[`Hits renders markup without state 1`] = `
       
       
       <div
-        class="ais-Results"
+        class="ais-Hits"
       >
         
         
@@ -154,7 +154,7 @@ exports[`Hits renders markup without state 1`] = `
           
           
           <ul
-            class="ais-Results-list"
+            class="ais-Hits-list"
           >
             
             
@@ -190,7 +190,7 @@ exports[`Hits should apply \`transformItems\` if specified 1`] = `
       
       
       <div
-        class="ais-Results"
+        class="ais-Hits"
       >
         
         
@@ -205,13 +205,13 @@ exports[`Hits should apply \`transformItems\` if specified 1`] = `
           
           
           <ul
-            class="ais-Results-list"
+            class="ais-Hits-list"
           >
             
             
             
             <li
-              class="ais-Results-item"
+              class="ais-Hits-item"
             >
               
               
@@ -230,7 +230,7 @@ exports[`Hits should apply \`transformItems\` if specified 1`] = `
             
             </li>
             <li
-              class="ais-Results-item"
+              class="ais-Hits-item"
             >
               
               
@@ -249,7 +249,7 @@ exports[`Hits should apply \`transformItems\` if specified 1`] = `
             
             </li>
             <li
-              class="ais-Results-item"
+              class="ais-Hits-item"
             >
               
               
@@ -268,7 +268,7 @@ exports[`Hits should apply \`transformItems\` if specified 1`] = `
             
             </li>
             <li
-              class="ais-Results-item"
+              class="ais-Hits-item"
             >
               
               
