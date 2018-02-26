@@ -13,18 +13,18 @@ exports[`HitsPerPage renders markup with state 1`] = `
       
       
       <div
-        class="ais-ResultsPerPage"
+        class="ais-HitsPerPage"
       >
         
         
         <select
-          class="ais-ResultsPerPage-select"
+          class="ais-HitsPerPage-select"
         >
           
           
           
           <option
-            class="ais-ResultsPerPage-option"
+            class="ais-HitsPerPage-option"
             value="10"
           >
             
@@ -32,7 +32,7 @@ exports[`HitsPerPage renders markup with state 1`] = `
           
           </option>
           <option
-            class="ais-ResultsPerPage-option"
+            class="ais-HitsPerPage-option"
             value="20"
           >
             
@@ -40,7 +40,7 @@ exports[`HitsPerPage renders markup with state 1`] = `
           
           </option>
           <option
-            class="ais-ResultsPerPage-option"
+            class="ais-HitsPerPage-option"
             value="30"
           >
             
@@ -76,12 +76,12 @@ exports[`HitsPerPage renders markup without state 1`] = `
       
       
       <div
-        class="ais-ResultsPerPage"
+        class="ais-HitsPerPage"
       >
         
         
         <select
-          class="ais-ResultsPerPage-select"
+          class="ais-HitsPerPage-select"
         >
           
           

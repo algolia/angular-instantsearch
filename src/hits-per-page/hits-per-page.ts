@@ -55,7 +55,7 @@ export class NgAisHitsPerPage extends BaseWidget {
     @Inject(forwardRef(() => NgAisInstantSearch))
     public instantSearchParent: any
   ) {
-    super("ResultsPerPage");
+    super("HitsPerPage");
   }
 
   public ngOnInit() {
