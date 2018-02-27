@@ -10,11 +10,11 @@ then
   exit 1
 fi
 
-rm -rf netlify-dist docs/*
+rm -rf netlify-dist docs
 
 ROOT_PATH=/angular-instantsearch/ yarn netlify
 cp -R netlify-dist docs
 
-git add dist-docs
+git add docs
 git commit -m "docs(community): deploy documentation website"
 git push origin master
