@@ -6,8 +6,9 @@ import './sidebar-active-el';
 import { fixSidebar, followSidebarNavigation } from './fix-sidebar.js';
 
 const docSearch = {
-  apiKey: '5cb6763f264e31381e18639a1147634c',
-  indexName: 'react-instantsearch',
+  appId: '6DKK9OCRLB',
+  apiKey: '1da2702c999d7bca6535c6f7f9c61e89',
+  indexName: 'angular-instantsearch',
   inputSelector: '#searchbox',
 };
 
