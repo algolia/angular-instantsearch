@@ -2,8 +2,7 @@
 
 set -e # exit when error
 
-rm -rf ./netlify-dist/*
-touch ./netlify-dist/.gitkeep
+mkdir -p ./netlify-dist/examples
 
 # build community website
 (cd community-website && yarn)
@@ -19,7 +18,6 @@ yarn examples:media:build
 # build dev-novel
 MODE=build webpack --config webpack.demo.js
 
-mkdir -p ./netlify-dist/examples
 mv ./examples/e-commerce/dist ./netlify-dist/examples/e-commerce
 mv ./examples/angular-router/dist ./netlify-dist/examples/angular-router
 mv ./examples/media/dist ./netlify-dist/examples/media
