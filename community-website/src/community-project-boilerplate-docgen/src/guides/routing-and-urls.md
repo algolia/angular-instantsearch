@@ -5,7 +5,7 @@ layout: guide.pug
 
 # Routing and URLs
 
-Angular InstantSearch comes out of the box with an URLSync mechanism. You can enable it by passing `urlSync: true` to your main [`<ng-ais-instantsearch>`](/widgets/instantsearch.md) config:
+Angular InstantSearch comes out of the box with an URLSync mechanism. You can enable it by passing `urlSync: true` to your main [`<ng-ais-instantsearch>`](widgets/instantsearch.html) config:
 
 
 ```html

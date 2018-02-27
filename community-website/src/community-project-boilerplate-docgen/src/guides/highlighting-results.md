@@ -11,7 +11,7 @@ This feature is already packaged for you in Angular InstantSearch.
 
 ## `<ng-ais-highlight></ng-ais-highlight>`
 
-Highlighting is based on the results and you will need to make a custom Hit template in order to use the Highlighter. The [`<ng-ais-highlight>`](/widgets/highlight.md) directive takes two attributes:
+Highlighting is based on the results and you will need to make a custom Hit template in order to use the Highlighter. The [`<ng-ais-highlight>`](widgets/highlight.html) directive takes two attributes:
 
 * `attributeName`: the path to the highlighted attribute
 * `hit`: a single result object

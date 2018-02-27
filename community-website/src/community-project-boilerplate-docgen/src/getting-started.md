@@ -141,7 +141,7 @@ To display results, let's add the Results widget. This widget will display all t
 ```
 
 Here's the result:
-![First hits](/assets/images/first-hits.png)
+![First hits](assets/images/first-hits.png)
 
 You should now be able to see the results, now let's try to use a custom template for hits,
 replace `<ng-ais-hits></ng-ais-hits>` with:
@@ -204,7 +204,7 @@ While the SearchBox is the way to go when it comes to textual search, you may al
 
 Algolia provides a set of parameters for filtering by facets, numbers or geo location. Angular InstantSearch packages those into a set of widgets.
 
-Since the dataset used here is an e-commerce one, let’s add a [RefinementList](/widgets/refinement-list.md) to filter the products by categories:
+Since the dataset used here is an e-commerce one, let’s add a [RefinementList](widgets/refinement-list.html) to filter the products by categories:
 
 ```html
 <ng-ais-instantsearch [config]="{...}">
@@ -227,7 +227,7 @@ In this part, we’ve seen that:
 * Facets are computed from the results
 
 Here's the result:
-![RefinementList](/assets/images/refinement-list.png)
+![RefinementList](assets/images/refinement-list.png)
 
 ## Going further
 
@@ -236,7 +236,7 @@ We now miss two elements in our search interface:
 * The ability to browse beyond the first page of results
 * The ability to reset the filters
 
-Those two features are implemented respectively with the [Pagination](/widgets/pagination.md), [ClearAll](/widgets/clear-all.md) and [CurrentRefinedValues](/widgets/current-refined-values.md) widgets. They all have nice defaults which means that we can use them directly without further configuration.
+Those two features are implemented respectively with the [Pagination](widgets/pagination.html), [ClearAll](widgets/clear-all.html) and [CurrentRefinedValues](widgets/current-refined-values.html) widgets. They all have nice defaults which means that we can use them directly without further configuration.
 
 ```html
 <ng-ais-instantsearch [config]="{...}">

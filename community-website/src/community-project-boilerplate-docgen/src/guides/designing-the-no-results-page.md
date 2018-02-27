@@ -46,7 +46,7 @@ When there are no results, the user will see a paragraph that says: “No result
 
 To go further, we can also let the user clear the filters and start their search from scratch. This way, we allow the user to make mistake.
 
-To be able to do this part, you need to have the URL sync mechanism activated so that we can easily clear the filters using the URL ([Read about the URL sync mechanism](/routing-and-urls.md)).
+To be able to do this part, you need to have the URL sync mechanism activated so that we can easily clear the filters using the URL ([Read about the URL sync mechanism](guides/routing-and-urls.html)).
 
 URL sync makes your InstantSearch app aware of changes in the URL. With this, we can easily influence the parameters of the search. In this case, we want to clear all the filters so we can make a link to this page, without the parameters.
 
