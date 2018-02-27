@@ -57,19 +57,19 @@
   "sideMenu": [
     {
       "name": "Getting started",
-      "url": "/getting-started.html"
+      "url": "getting-started.html"
     },
     {
       "name": "Guides",
-      "url": "/guides/customize-widgets.html"
+      "url": "guides/customize-widgets.html"
     },
     {
       "name": "Widgets",
-      "url": "/widgets/instantsearch.html"
+      "url": "widgets/instantsearch.html"
     },
     {
       "name": "Demos",
-      "url": "/examples.html"
+      "url": "examples.html"
     },
     {
       "name": "Github",
@@ -84,15 +84,15 @@
     },
     {
       "name": "Guides",
-      "url": "/guides/getting-started.html"
+      "url": "guides/getting-started.html"
     },
     {
       "name": "Widgets",
-      "url": "/widgets/instantsearch.html"
+      "url": "widgets/instantsearch.html"
     },
     {
       "name": "Demos",
-      "url": "/examples.html"
+      "url": "examples.html"
     },
     {
       "name": "Github",

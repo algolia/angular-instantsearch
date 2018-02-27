@@ -23,7 +23,8 @@
     "release": "./scripts/release.sh",
     "netlify": "./scripts/netlify.sh",
     "doc:dev": "(cd community-website && yarn start)",
-    "doc:build": "(cd community-website && yarn docs:build)"
+    "doc:build": "(cd community-website && yarn docs:build)",
+    "doc:publish": "./scripts/publish-docs.sh"
   },
   "jest": {
     "preset": "jest-preset-angular",
