@@ -1,0 +1,33 @@
+---
+title: Widgets - Menu
+layout: widget.pug
+---
+
+# Menu
+
+## Description
+
+The Menu component displays a menu that lets the user choose a single value for a specific attribute.
+
+## Options
+
+| Attributes           | Type                  | Description
+| -                    | -                     | -
+| `attribute`          | `string`              | Name of the attribute for faceting (eg. "free_shipping")
+| `limit?`             | `number`              | How many facets values to retrieve
+| `showMoreLimit?`     | `number`              | Bigger than `limit` if the component should display a button that will expand the number of items
+| `showMoreLabel?`     | `string`              | Label of the show more button
+| `showLessLabel?`     | `string`              | Label of the show less button
+| `sortBy?`            | `string[] / Function` | How to sort facet values
+| `autoHideContainer?` | `boolean`             | Hides the menu if there's no item to display
+
+## Code example
+
+```html
+<ng-ais-menu
+  attribute="categories"
+  [limit]="3"
+  [showMoreLimit]="10"
+>
+</ng-ais-menu>
+```

@@ -1,0 +1,4 @@
+# eslint by default only ignores root node_modules/
+src/*/node_modules
+docs/
+docs-dev/
