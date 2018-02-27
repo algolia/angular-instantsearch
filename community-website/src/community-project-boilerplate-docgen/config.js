@@ -31,7 +31,6 @@ const configs = {
 
 module.exports = {
   ...configs[process.env.NODE_ENV],
-  publicPath:
-    typeof process.env.ROOT_PATH === 'undefined' ? '/' : process.env.ROOT_PATH,
+  publicPath: process.env.ROOT_PATH || '/',
   header,
 };
