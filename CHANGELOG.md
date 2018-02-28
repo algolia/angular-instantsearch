@@ -1,3 +1,14 @@
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/algolia/angular-instantsearch/compare/1.0.0-beta.12...1.0.0) (2018-02-28)
+
+
+### Bug Fixes
+
+* **scripts:** publish docs ([7a41e23](https://github.com/algolia/angular-instantsearch/commit/7a41e23))
+* **widgets:** replace results by hitts ([2e2ec63](https://github.com/algolia/angular-instantsearch/commit/2e2ec63))
+
+
+
 <a name="1.0.0-beta.12"></a>
 # [1.0.0-beta.12](https://github.com/algolia/angular-instantsearch/compare/1.0.0-beta.11...1.0.0-beta.12) (2018-02-06)
 
