@@ -520,7 +520,7 @@ storiesOf("RangeInput").add(
   "default",
   wrapWithHits({
     template: `
-      <ng-ais-range-input attributeName="price">
+      <ng-ais-range-input attribute="price">
       </ng-ais-range-input>
     `
   })
