@@ -50,8 +50,8 @@ exports[`RefinementList renders markup with state 1`] = `
                 
                 
                 <ng-ais-highlight
-                  attributename="highlighted"
-                  ng-reflect-attribute-name="highlighted"
+                  attribute="highlighted"
+                  ng-reflect-attribute="highlighted"
                   ng-reflect-hit="[object Object]"
                 >
                   <span
@@ -99,8 +99,8 @@ exports[`RefinementList renders markup with state 1`] = `
                 
                 
                 <ng-ais-highlight
-                  attributename="highlighted"
-                  ng-reflect-attribute-name="highlighted"
+                  attribute="highlighted"
+                  ng-reflect-attribute="highlighted"
                   ng-reflect-hit="[object Object]"
                 >
                   <span
@@ -148,8 +148,8 @@ exports[`RefinementList renders markup with state 1`] = `
                 
                 
                 <ng-ais-highlight
-                  attributename="highlighted"
-                  ng-reflect-attribute-name="highlighted"
+                  attribute="highlighted"
+                  ng-reflect-attribute="highlighted"
                   ng-reflect-hit="[object Object]"
                 >
                   <span
@@ -197,8 +197,8 @@ exports[`RefinementList renders markup with state 1`] = `
                 
                 
                 <ng-ais-highlight
-                  attributename="highlighted"
-                  ng-reflect-attribute-name="highlighted"
+                  attribute="highlighted"
+                  ng-reflect-attribute="highlighted"
                   ng-reflect-hit="[object Object]"
                 >
                   <span
@@ -340,8 +340,8 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
                 
                 
                 <ng-ais-highlight
-                  attributename="highlighted"
-                  ng-reflect-attribute-name="highlighted"
+                  attribute="highlighted"
+                  ng-reflect-attribute="highlighted"
                   ng-reflect-hit="[object Object]"
                 >
                   <span
@@ -389,8 +389,8 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
                 
                 
                 <ng-ais-highlight
-                  attributename="highlighted"
-                  ng-reflect-attribute-name="highlighted"
+                  attribute="highlighted"
+                  ng-reflect-attribute="highlighted"
                   ng-reflect-hit="[object Object]"
                 >
                   <span
@@ -438,8 +438,8 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
                 
                 
                 <ng-ais-highlight
-                  attributename="highlighted"
-                  ng-reflect-attribute-name="highlighted"
+                  attribute="highlighted"
+                  ng-reflect-attribute="highlighted"
                   ng-reflect-hit="[object Object]"
                 >
                   <span
@@ -487,8 +487,8 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
                 
                 
                 <ng-ais-highlight
-                  attributename="highlighted"
-                  ng-reflect-attribute-name="highlighted"
+                  attribute="highlighted"
+                  ng-reflect-attribute="highlighted"
                   ng-reflect-hit="[object Object]"
                 >
                   <span
