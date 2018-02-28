@@ -7,14 +7,14 @@ import { bem } from "../utils";
   template: `<span [class]="cx()" [innerHtml]="content"></span>`
 })
 export class NgAisHighlight {
-  @Input() attributeName: string;
+  @Input() attribute: string;
   @Input() hit: { _highlightResult?: {}; label?: string; highlighted?: string };
   @Input() tagName: string = "em";
 
   cx = bem("Highlight");
 
   get content() {
-    if (this.attributeName === "highlighted") {
+    if (this.attribute === "highlighted") {
       return this.hit.highlighted
         ? this.replaceWithTagName(this.hit.highlighted)
         : this.hit.label;
@@ -23,7 +23,7 @@ export class NgAisHighlight {
     if (this.hit.hasOwnProperty("_highlightResult")) {
       const attributeHighlighted = get(
         this.hit._highlightResult,
-        this.attributeName
+        this.attribute
       );
 
       // check that the attributeHighlighted is a string
@@ -35,11 +35,11 @@ export class NgAisHighlight {
       }
     }
 
-    const fallback = get(this.hit, this.attributeName);
+    const fallback = get(this.hit, this.attribute);
     if (!fallback) {
       console.warn(
-        `Could not find attributeName [${
-          this.attributeName
+        `Could not find attribute [${
+          this.attribute
         }] into hit object, will display an empty string.`
       );
 

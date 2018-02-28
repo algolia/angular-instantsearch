@@ -26,7 +26,7 @@ import { NgAisInstantSearch } from "../instantsearch/instantsearch";
             [class]="cx('item')"
             *ngFor="let hit of state.hits"
           >
-            <ng-ais-highlight attributeName="name" [hit]="hit">
+            <ng-ais-highlight attribute="name" [hit]="hit">
             </ng-ais-highlight>
           </li>
         </ul>
