@@ -38,8 +38,8 @@ exports[`InfiniteHits renders markup with state 1`] = `
               
               
               <ng-ais-highlight
-                attributename="name"
-                ng-reflect-attribute-name="name"
+                attribute="name"
+                ng-reflect-attribute="name"
                 ng-reflect-hit="[object Object]"
               >
                 <span
@@ -57,8 +57,8 @@ exports[`InfiniteHits renders markup with state 1`] = `
               
               
               <ng-ais-highlight
-                attributename="name"
-                ng-reflect-attribute-name="name"
+                attribute="name"
+                ng-reflect-attribute="name"
                 ng-reflect-hit="[object Object]"
               >
                 <span
@@ -76,8 +76,8 @@ exports[`InfiniteHits renders markup with state 1`] = `
               
               
               <ng-ais-highlight
-                attributename="name"
-                ng-reflect-attribute-name="name"
+                attribute="name"
+                ng-reflect-attribute="name"
                 ng-reflect-hit="[object Object]"
               >
                 <span
@@ -95,8 +95,8 @@ exports[`InfiniteHits renders markup with state 1`] = `
               
               
               <ng-ais-highlight
-                attributename="name"
-                ng-reflect-attribute-name="name"
+                attribute="name"
+                ng-reflect-attribute="name"
                 ng-reflect-hit="[object Object]"
               >
                 <span
