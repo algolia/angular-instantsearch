@@ -326,7 +326,7 @@ replace <code>&lt;ng-ais-hits&gt;&lt;/ng-ais-hits&gt;</code> with:</p>
     <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">ng-template</span> <span class="cm-attribute">let-hits</span>=<span class="cm-string">&quot;hits&quot;</span><span class="cm-tag cm-bracket">&gt;</span>
       <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">*ngFor</span>=<span class="cm-string">&quot;let hit of hits&quot;</span><span class="cm-tag cm-bracket">&gt;</span>
         Hit {{hit.objectID}}:
-        <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">ng-ais-highlight</span> <span class="cm-attribute">attributeName</span>=<span class="cm-string">&quot;name&quot;</span> <span class="cm-attribute">[hit]</span>=<span class="cm-string">&quot;hit&quot;</span><span class="cm-tag cm-bracket">&gt;</span>
+        <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">ng-ais-highlight</span> <span class="cm-attribute">attribute</span>=<span class="cm-string">&quot;name&quot;</span> <span class="cm-attribute">[hit]</span>=<span class="cm-string">&quot;hit&quot;</span><span class="cm-tag cm-bracket">&gt;</span>
         <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">ng-ais-highlight</span><span class="cm-tag cm-bracket">&gt;</span>
       <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
     <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">ng-template</span><span class="cm-tag cm-bracket">&gt;</span>
@@ -364,7 +364,7 @@ replace <code>&lt;ng-ais-hits&gt;&lt;/ng-ais-hits&gt;</code> with:</p>
   <span class="cm-comment">&lt;!-- &lt;ng-ais-hits&gt;&lt;/ng-ais-hits&gt; --&gt;</span>
 <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">ng-ais-instantsearch</span><span class="cm-tag cm-bracket">&gt;</span>
 </code></div></pre>
-<p>The <code>attributeName</code> option specifies the faceted attribute to use in this widget. This attribute should be declared as a facet in the index configuration as well.</p>
+<p>The <code>attribute</code> option specifies the faceted attribute to use in this widget. This attribute should be declared as a facet in the index configuration as well.</p>
 <p>The values displayed are computed by Algolia from the results.</p>
 <p>In this part, we’ve seen that:</p>
 <ul>
