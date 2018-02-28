@@ -51,7 +51,7 @@ export type RefinementListState = {
               [checked]="item.isRefined"
             />
             <span [class]="cx('labelText')">
-              <ng-ais-highlight attributeName="highlighted" [hit]="item"></ng-ais-highlight>
+              <attribute="highlighted" [hit]="item"></ng-ais-highlight>
             </span>
             <span [class]="cx('count')">{{item.count}}</span>
           </label>

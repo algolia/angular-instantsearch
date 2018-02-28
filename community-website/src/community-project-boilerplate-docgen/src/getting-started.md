@@ -166,7 +166,7 @@ One very important aspect of the search is highlightning the matching parts of t
     <ng-template let-hits="hits">
       <div *ngFor="let hit of hits">
         Hit {{hit.objectID}}:
-        <ng-ais-highlight attributeName="name" [hit]="hit">
+        <ng-ais-highlight attribute="name" [hit]="hit">
         </ng-ais-highlight>
       </div>
     </ng-template>
@@ -216,7 +216,7 @@ Since the dataset used here is an e-commerce one, let’s add a [RefinementList]
 </ng-ais-instantsearch>
 ```
 
-The `attributeName` option specifies the faceted attribute to use in this widget. This attribute should be declared as a facet in the index configuration as well.
+The `attribute` option specifies the faceted attribute to use in this widget. This attribute should be declared as a facet in the index configuration as well.
 
 The values displayed are computed by Algolia from the results.
 

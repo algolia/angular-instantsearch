@@ -53,7 +53,7 @@ export function wrapWithHits({
 
                   <div class="hit-content">
                     <div>
-                      <ng-ais-highlight [hit]="hit" attributeName="name"></ng-ais-highlight>
+                      <ng-ais-highlight [hit]="hit" attribute="name"></ng-ais-highlight>
                       <span>\${{hit.price}}</span>
                       <span>{{hit.rating}} stars</span>
                     </div>
@@ -61,7 +61,7 @@ export function wrapWithHits({
                     <div class="hit-description">
                       <ng-ais-highlight
                         [hit]="hit"
-                        attributeName="description"
+                        attribute="description"
                       >
                       </ng-ais-highlight>
                     </div>

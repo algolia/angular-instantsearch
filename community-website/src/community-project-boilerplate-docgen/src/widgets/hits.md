@@ -27,7 +27,7 @@ sYou can use the directive `<ng-template></ng-template>` to customize.
     <div *ngFor="let hit of hits">
       <h1>
         <ng-ais-highlight
-          attributeName="title"
+          attribute="title"
           [hit]="hit"
         >
         </ng-ais-highlight>

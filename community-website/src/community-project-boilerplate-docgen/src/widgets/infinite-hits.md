@@ -33,7 +33,7 @@ You can use the directive `<ng-template></ng-template>` to customize the output.
     <div *ngFor="let hit of hits">
       <h1>
         <ng-ais-highlight
-          attributeName="title"
+          attribute="title"
           [hit]="hit"
         >
         </ng-ais-highlight>
