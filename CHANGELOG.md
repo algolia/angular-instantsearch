@@ -1,3 +1,16 @@
+<a name="1.0.1"></a>
+## [1.0.1](https://github.com/algolia/angular-instantsearch/compare/1.0.0...1.0.1) (2018-02-28)
+
+
+### Bug Fixes
+
+* **highlight:** use `attribute` instead of `attributeName` ([d1d3ce8](https://github.com/algolia/angular-instantsearch/commit/d1d3ce8))
+* **range-input:** use `attribute` instead of `attributeName` ([d81878e](https://github.com/algolia/angular-instantsearch/commit/d81878e))
+* **refinement-list:** tag removed ([beab390](https://github.com/algolia/angular-instantsearch/commit/beab390))
+* **release-script:** reset --hard ([624c813](https://github.com/algolia/angular-instantsearch/commit/624c813))
+
+
+
 <a name="1.0.0"></a>
 # [1.0.0](https://github.com/algolia/angular-instantsearch/compare/1.0.0-beta.12...1.0.0) (2018-02-28)
 
