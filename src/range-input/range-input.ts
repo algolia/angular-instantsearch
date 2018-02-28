@@ -69,7 +69,7 @@ export class NgAisRangeInput extends BaseWidget {
   @Input() public submitLabel: string = "Go";
 
   // connector options
-  @Input() public attributeName: string;
+  @Input() public attribute: string;
   @Input() public min?: number | string;
   @Input() public max?: number | string;
   @Input() public precision: number | string = 2;
@@ -98,7 +98,7 @@ export class NgAisRangeInput extends BaseWidget {
 
   public ngOnInit() {
     this.createWidget(connectRange, {
-      attributeName: this.attributeName,
+      attributeName: this.attribute,
       max: parseNumberInput(this.max),
       min: parseNumberInput(this.min),
       precision: parseNumberInput(this.precision)

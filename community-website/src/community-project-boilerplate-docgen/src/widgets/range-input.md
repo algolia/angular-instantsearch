@@ -13,7 +13,7 @@ Numeric range widget allows a user to select a numeric range using a minimum and
 
 | Attributes       | Type       | Description
 | -                | -          | -
-| `attributeName`  | `string`   | Name of the attribute for faceting
+| `attribute`      | `string`   | Name of the attribute for faceting
 | `min?`           | `number`   | Minimal value, default to automatically computed
 | `max?`           | `number`   | Maximal value, default to automatically computed
 | `precision?`     | `number`   | Number of digits after decimal point to use
@@ -22,7 +22,7 @@ Numeric range widget allows a user to select a numeric range using a minimum and
 
 ```html
 <ng-ais-range-input
-  attributeName="price"
+  attribute="price"
   [min]="10"
   [max]="10"
   [precision]="2"
