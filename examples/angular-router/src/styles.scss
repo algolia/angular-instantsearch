@@ -1,6 +1,6 @@
 @charset 'utf-8';
-@import '../node_modules/angular-instantsearch/bundles/instantsearch.css';
-@import '../node_modules/angular-instantsearch/bundles/instantsearch-theme-algolia.css';
+@import '~angular-instantsearch/bundles/instantsearch.css';
+@import '~angular-instantsearch/bundles/instantsearch-theme-algolia.css';
 
 body {
   padding-top: 1.5rem;
