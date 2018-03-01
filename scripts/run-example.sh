@@ -2,8 +2,12 @@
 
 set -e # exit when error
 
-yarn build
-yarn link
+(
+  yarn build
+  cd dist
+  yarn unlink
+  yarn link
+)
 
 (
   cd examples/$1
