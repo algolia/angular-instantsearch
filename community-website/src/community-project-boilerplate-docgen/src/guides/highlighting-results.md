@@ -13,7 +13,7 @@ This feature is already packaged for you in Angular InstantSearch.
 
 Highlighting is based on the results and you will need to make a custom Hit template in order to use the Highlighter. The [`<ng-ais-highlight>`](widgets/highlight.html) directive takes two attributes:
 
-* `attributeName`: the path to the highlighted attribute
+* `attribute`: the path to the highlighted attribute
 * `hit`: a single result object
 
 Here is an example in which we define a custom Hit template for results that have a `description` field that is highlighted:
@@ -23,7 +23,7 @@ Here is an example in which we define a custom Hit template for results that hav
     <ng-template let-hits="hits">
         <div *ngFor="let hit of hits">
             <ng-ais-highlight
-                attributeName="description"
+                attribute="description"
                 [hit]="hit"
             >
             </ng-ais-highlight>
