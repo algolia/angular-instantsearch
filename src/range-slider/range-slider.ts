@@ -69,7 +69,7 @@ export class NgAisRangeSlider extends BaseWidget {
     super.ngOnInit();
   }
 
-  public updateState = (state: RangeSliderState, isFirstRendering: boolean) => {
+  public updateState = (state, isFirstRendering: boolean) => {
     if (isFirstRendering) {
       // create slider
       const config = {

@@ -51,10 +51,7 @@ export class NgAisHits extends BaseWidget {
     this.createWidget(connectHits, { escapeHits: true });
   }
 
-  updateState = (
-    state: { hits: {}[]; results: {} },
-    isFirstRendering: boolean
-  ) => {
+  updateState = (state, isFirstRendering: boolean) => {
     if (isFirstRendering) return;
 
     this.state = {
