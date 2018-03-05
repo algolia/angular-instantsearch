@@ -5,10 +5,10 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
   testedWidget={[Function NgAisHierarchicalMenu]}
 >
   
-        <ng-ais-instantsearch>
+        <ais-instantsearch>
     
           
-    <ng-ais-hierarchical-menu>
+    <ais-hierarchical-menu>
       
       
       
@@ -23,7 +23,7 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
           
           
           
-          <ng-ais-hierarchical-menu-item
+          <ais-hierarchical-menu-item
             ng-reflect-create-u-r-l="function () {
           return f"
             ng-reflect-item="[object Object]"
@@ -67,8 +67,8 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
             </li>
             
     
-          </ng-ais-hierarchical-menu-item>
-          <ng-ais-hierarchical-menu-item
+          </ais-hierarchical-menu-item>
+          <ais-hierarchical-menu-item
             ng-reflect-create-u-r-l="function () {
           return f"
             ng-reflect-item="[object Object]"
@@ -113,7 +113,7 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
                 
           
                 
-                <ng-ais-hierarchical-menu-item
+                <ais-hierarchical-menu-item
                   ng-reflect-create-u-r-l="function () {
           return f"
                   ng-reflect-item="[object Object]"
@@ -158,8 +158,8 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
                   </li>
                   
     
-                </ng-ais-hierarchical-menu-item>
-                <ng-ais-hierarchical-menu-item
+                </ais-hierarchical-menu-item>
+                <ais-hierarchical-menu-item
                   ng-reflect-create-u-r-l="function () {
           return f"
                   ng-reflect-item="[object Object]"
@@ -204,8 +204,8 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
                   </li>
                   
     
-                </ng-ais-hierarchical-menu-item>
-                <ng-ais-hierarchical-menu-item
+                </ais-hierarchical-menu-item>
+                <ais-hierarchical-menu-item
                   ng-reflect-create-u-r-l="function () {
           return f"
                   ng-reflect-item="[object Object]"
@@ -250,8 +250,8 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
                   </li>
                   
     
-                </ng-ais-hierarchical-menu-item>
-                <ng-ais-hierarchical-menu-item
+                </ais-hierarchical-menu-item>
+                <ais-hierarchical-menu-item
                   ng-reflect-create-u-r-l="function () {
           return f"
                   ng-reflect-item="[object Object]"
@@ -296,7 +296,7 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
                   </li>
                   
     
-                </ng-ais-hierarchical-menu-item>
+                </ais-hierarchical-menu-item>
                 
         
               </ul>
@@ -305,8 +305,8 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
             </li>
             
     
-          </ng-ais-hierarchical-menu-item>
-          <ng-ais-hierarchical-menu-item
+          </ais-hierarchical-menu-item>
+          <ais-hierarchical-menu-item
             ng-reflect-create-u-r-l="function () {
           return f"
             ng-reflect-item="[object Object]"
@@ -350,8 +350,8 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
             </li>
             
     
-          </ng-ais-hierarchical-menu-item>
-          <ng-ais-hierarchical-menu-item
+          </ais-hierarchical-menu-item>
+          <ais-hierarchical-menu-item
             ng-reflect-create-u-r-l="function () {
           return f"
             ng-reflect-item="[object Object]"
@@ -395,8 +395,8 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
             </li>
             
     
-          </ng-ais-hierarchical-menu-item>
-          <ng-ais-hierarchical-menu-item
+          </ais-hierarchical-menu-item>
+          <ais-hierarchical-menu-item
             ng-reflect-create-u-r-l="function () {
           return f"
             ng-reflect-item="[object Object]"
@@ -440,7 +440,7 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
             </li>
             
     
-          </ng-ais-hierarchical-menu-item>
+          </ais-hierarchical-menu-item>
           
         
         </ul>
@@ -449,10 +449,10 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
       </div>
       
     
-    </ng-ais-hierarchical-menu>
+    </ais-hierarchical-menu>
     
         
-  </ng-ais-instantsearch>
+  </ais-instantsearch>
       
 </ng-component>
 `;
@@ -462,10 +462,10 @@ exports[`HierarchicalMenu renders markup without state 1`] = `
   testedWidget={[Function NgAisHierarchicalMenu]}
 >
   
-        <ng-ais-instantsearch>
+        <ais-instantsearch>
     
           
-    <ng-ais-hierarchical-menu>
+    <ais-hierarchical-menu>
       
       
       
@@ -488,10 +488,10 @@ exports[`HierarchicalMenu renders markup without state 1`] = `
       </div>
       
     
-    </ng-ais-hierarchical-menu>
+    </ais-hierarchical-menu>
     
         
-  </ng-ais-instantsearch>
+  </ais-instantsearch>
       
 </ng-component>
 `;
@@ -501,10 +501,10 @@ exports[`HierarchicalMenu should apply \`transformItems\` if specified 1`] = `
   testedWidget={[Function NgAisHierarchicalMenu]}
 >
   
-        <ng-ais-instantsearch>
+        <ais-instantsearch>
     
           
-    <ng-ais-hierarchical-menu>
+    <ais-hierarchical-menu>
       
       
       
@@ -519,7 +519,7 @@ exports[`HierarchicalMenu should apply \`transformItems\` if specified 1`] = `
           
           
           
-          <ng-ais-hierarchical-menu-item
+          <ais-hierarchical-menu-item
             ng-reflect-create-u-r-l="function () {
           return f"
             ng-reflect-item="[object Object]"
@@ -563,8 +563,8 @@ exports[`HierarchicalMenu should apply \`transformItems\` if specified 1`] = `
             </li>
             
     
-          </ng-ais-hierarchical-menu-item>
-          <ng-ais-hierarchical-menu-item
+          </ais-hierarchical-menu-item>
+          <ais-hierarchical-menu-item
             ng-reflect-create-u-r-l="function () {
           return f"
             ng-reflect-item="[object Object]"
@@ -609,7 +609,7 @@ exports[`HierarchicalMenu should apply \`transformItems\` if specified 1`] = `
                 
           
                 
-                <ng-ais-hierarchical-menu-item
+                <ais-hierarchical-menu-item
                   ng-reflect-create-u-r-l="function () {
           return f"
                   ng-reflect-item="[object Object]"
@@ -654,8 +654,8 @@ exports[`HierarchicalMenu should apply \`transformItems\` if specified 1`] = `
                   </li>
                   
     
-                </ng-ais-hierarchical-menu-item>
-                <ng-ais-hierarchical-menu-item
+                </ais-hierarchical-menu-item>
+                <ais-hierarchical-menu-item
                   ng-reflect-create-u-r-l="function () {
           return f"
                   ng-reflect-item="[object Object]"
@@ -700,8 +700,8 @@ exports[`HierarchicalMenu should apply \`transformItems\` if specified 1`] = `
                   </li>
                   
     
-                </ng-ais-hierarchical-menu-item>
-                <ng-ais-hierarchical-menu-item
+                </ais-hierarchical-menu-item>
+                <ais-hierarchical-menu-item
                   ng-reflect-create-u-r-l="function () {
           return f"
                   ng-reflect-item="[object Object]"
@@ -746,8 +746,8 @@ exports[`HierarchicalMenu should apply \`transformItems\` if specified 1`] = `
                   </li>
                   
     
-                </ng-ais-hierarchical-menu-item>
-                <ng-ais-hierarchical-menu-item
+                </ais-hierarchical-menu-item>
+                <ais-hierarchical-menu-item
                   ng-reflect-create-u-r-l="function () {
           return f"
                   ng-reflect-item="[object Object]"
@@ -792,7 +792,7 @@ exports[`HierarchicalMenu should apply \`transformItems\` if specified 1`] = `
                   </li>
                   
     
-                </ng-ais-hierarchical-menu-item>
+                </ais-hierarchical-menu-item>
                 
         
               </ul>
@@ -801,8 +801,8 @@ exports[`HierarchicalMenu should apply \`transformItems\` if specified 1`] = `
             </li>
             
     
-          </ng-ais-hierarchical-menu-item>
-          <ng-ais-hierarchical-menu-item
+          </ais-hierarchical-menu-item>
+          <ais-hierarchical-menu-item
             ng-reflect-create-u-r-l="function () {
           return f"
             ng-reflect-item="[object Object]"
@@ -846,8 +846,8 @@ exports[`HierarchicalMenu should apply \`transformItems\` if specified 1`] = `
             </li>
             
     
-          </ng-ais-hierarchical-menu-item>
-          <ng-ais-hierarchical-menu-item
+          </ais-hierarchical-menu-item>
+          <ais-hierarchical-menu-item
             ng-reflect-create-u-r-l="function () {
           return f"
             ng-reflect-item="[object Object]"
@@ -891,8 +891,8 @@ exports[`HierarchicalMenu should apply \`transformItems\` if specified 1`] = `
             </li>
             
     
-          </ng-ais-hierarchical-menu-item>
-          <ng-ais-hierarchical-menu-item
+          </ais-hierarchical-menu-item>
+          <ais-hierarchical-menu-item
             ng-reflect-create-u-r-l="function () {
           return f"
             ng-reflect-item="[object Object]"
@@ -936,7 +936,7 @@ exports[`HierarchicalMenu should apply \`transformItems\` if specified 1`] = `
             </li>
             
     
-          </ng-ais-hierarchical-menu-item>
+          </ais-hierarchical-menu-item>
           
         
         </ul>
@@ -945,10 +945,10 @@ exports[`HierarchicalMenu should apply \`transformItems\` if specified 1`] = `
       </div>
       
     
-    </ng-ais-hierarchical-menu>
+    </ais-hierarchical-menu>
     
         
-  </ng-ais-instantsearch>
+  </ais-instantsearch>
       
 </ng-component>
 `;
@@ -958,19 +958,19 @@ exports[`HierarchicalMenu should be hidden with \`autoHideContainer\` 1`] = `
   testedWidget={[Function NgAisHierarchicalMenu]}
 >
   
-        <ng-ais-instantsearch>
+        <ais-instantsearch>
     
           
-    <ng-ais-hierarchical-menu>
+    <ais-hierarchical-menu>
       
       
       
       
     
-    </ng-ais-hierarchical-menu>
+    </ais-hierarchical-menu>
     
         
-  </ng-ais-instantsearch>
+  </ais-instantsearch>
       
 </ng-component>
 `;

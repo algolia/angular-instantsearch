@@ -16,7 +16,7 @@ export type CurrentRefinementsState = {
 };
 
 @Component({
-  selector: "ng-ais-current-refinements",
+  selector: "ais-current-refinements",
   template: `
     <div
       [class]="cx()"

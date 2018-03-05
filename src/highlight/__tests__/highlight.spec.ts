@@ -7,8 +7,8 @@ const render = ({ hit, attribute, tagName = "em" }) => {
   @Component({
     selector: "test-component",
     template: `
-      <ng-ais-highlight [attribute]="attribute" [hit]="hit">
-      </ng-ais-highlight>
+      <ais-highlight [attribute]="attribute" [hit]="hit">
+      </ais-highlight>
     `
   })
   class TestComponent {

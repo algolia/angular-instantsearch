@@ -12,7 +12,7 @@ import { BaseWidget } from "../base-widget";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
 
 @Component({
-  selector: "ng-ais-stats",
+  selector: "ais-stats",
   template: `
     <div [class]="cx()">
       <ng-container *ngTemplateOutlet="template; context: templateContext">

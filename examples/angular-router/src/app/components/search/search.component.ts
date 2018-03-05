@@ -3,7 +3,7 @@ import { Component, OnDestroy } from "@angular/core";
 @Component({
   selector: "app-search",
   template: `
-    <ng-ais-instantsearch
+    <ais-instantsearch
       [config]="{
         appId: 'latency',
         apiKey: '6be0576ff61c053d5f9a3225e2a90f76',
@@ -13,34 +13,34 @@ import { Component, OnDestroy } from "@angular/core";
     >
       <div class="jumbotron">
         <p class="text-center">
-          <ng-ais-search-box placeholder="Search a product"></ng-ais-search-box>
+          <ais-search-box placeholder="Search a product"></ais-search-box>
         </p>
 
         <div class="row">
           <div class="col-4">
-            <ng-ais-panel header="Show results for">
-              <ng-ais-hierarchical-menu
+            <ais-panel header="Show results for">
+              <ais-hierarchical-menu
                 [attributes]="['category', 'sub_category', 'sub_sub_category']"
                 [sortBy]="['name:asc']"
               >
-              </ng-ais-hierarchical-menu>
-            </ng-ais-panel>
+              </ais-hierarchical-menu>
+            </ais-panel>
           </div>
 
           <div class="col-4">
-            <ng-ais-panel header="Colors">
-              <ng-ais-refinement-list
+            <ais-panel header="Colors">
+              <ais-refinement-list
                 attribute="colors"
                 operator="or"
                 limit="10"
               >
-              </ng-ais-refinement-list>
-            </ng-ais-panel>
+              </ais-refinement-list>
+            </ais-panel>
           </div>
 
           <div class="col-4">
-            <ng-ais-panel header="Sort by">
-              <ng-ais-sort-by
+            <ais-panel header="Sort by">
+              <ais-sort-by
                 [items]="
                   [
                     {name: 'ikea', label: 'Featured'},
@@ -49,18 +49,18 @@ import { Component, OnDestroy } from "@angular/core";
                   ]
                 "
               >
-              </ng-ais-sort-by>
-            </ng-ais-panel>
+              </ais-sort-by>
+            </ais-panel>
             <hr />
-            <ng-ais-menu-select>
-            </ng-ais-menu-select>
+            <ais-menu-select>
+            </ais-menu-select>
           </div>
         </div>
       </div>
-      <ng-ais-hits></ng-ais-hits>
+      <ais-hits></ais-hits>
       <hr>
-      <ng-ais-pagination></ng-ais-pagination>
-    </ng-ais-instantsearch>
+      <ais-pagination></ais-pagination>
+    </ais-instantsearch>
   `,
   styles: []
 })

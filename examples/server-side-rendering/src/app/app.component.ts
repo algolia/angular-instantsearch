@@ -12,34 +12,34 @@ import {
   selector: "app-root",
   template: `
     <div class="container">
-      <ng-ais-instantsearch [config]="instantsearchConfig">
+      <ais-instantsearch [config]="instantsearchConfig">
         <div class="jumbotron">
           <p class="text-center">
-            <ng-ais-search-box placeholder="Search a product"></ng-ais-search-box>
+            <ais-search-box placeholder="Search a product"></ais-search-box>
           </p>
 
           <div class="row">
             <div class="col-4">
-              <ng-ais-hierarchical-menu
+              <ais-hierarchical-menu
                 header="Show results for"
                 [attributes]="['category', 'sub_category', 'sub_sub_category']"
                 [sortBy]="['name:asc']"
               >
-              </ng-ais-hierarchical-menu>
+              </ais-hierarchical-menu>
             </div>
 
             <div class="col-4">
-              <ng-ais-refinement-list
+              <ais-refinement-list
                 header="Colors"
                 attribute="colors"
                 operator="or"
                 limit="10"
               >
-              </ng-ais-refinement-list>
+              </ais-refinement-list>
             </div>
 
             <div class="col-4">
-              <ng-ais-sort-by
+              <ais-sort-by
                 header="Sort by"
                 [items]="
                   [
@@ -49,14 +49,14 @@ import {
                   ]
                 "
               >
-              </ng-ais-sort-by>
+              </ais-sort-by>
             </div>
           </div>
         </div>
-        <ng-ais-hits></ng-ais-hits>
+        <ais-hits></ais-hits>
         <hr>
-        <ng-ais-pagination></ng-ais-pagination>
-      </ng-ais-instantsearch>
+        <ais-pagination></ais-pagination>
+      </ais-instantsearch>
     </div>
   `,
   styles: []

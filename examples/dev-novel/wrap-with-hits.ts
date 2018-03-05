@@ -26,21 +26,21 @@ export function wrapWithHits({
 }) {
   return (container: Element) => {
     @Component({
-      selector: "ng-ais-app",
+      selector: "ais-app",
       template: `
-      <ng-ais-instantsearch [config]="config">
+      <ais-instantsearch [config]="config">
         <div id="widget-display">
           ${template}
         </div>
         <div id="results-display">
           <div id="results-search-box-container">
-            <ng-ais-search-box
+            <ais-search-box
               placeholder="Search into furnitures"
             >
-            </ng-ais-search-box>
+            </ais-search-box>
           </div>
           <div id="results-hits-container">
-            <ng-ais-hits>
+            <ais-hits>
               <ng-template let-hits="hits">
                 <div
                   *ngFor="let hit of hits"
@@ -53,28 +53,28 @@ export function wrapWithHits({
 
                   <div class="hit-content">
                     <div>
-                      <ng-ais-highlight [hit]="hit" attribute="name"></ng-ais-highlight>
+                      <ais-highlight [hit]="hit" attribute="name"></ais-highlight>
                       <span>\${{hit.price}}</span>
                       <span>{{hit.rating}} stars</span>
                     </div>
 
                     <div class="hit-description">
-                      <ng-ais-highlight
+                      <ais-highlight
                         [hit]="hit"
                         attribute="description"
                       >
-                      </ng-ais-highlight>
+                      </ais-highlight>
                     </div>
                   </div>
                 </div>
               </ng-template>
-            </ng-ais-hits>
+            </ais-hits>
           </div>
           <div id="results-pagination-container">
-            <ng-ais-pagination [totalPages]="20"></ng-ais-pagination>
+            <ais-pagination [totalPages]="20"></ais-pagination>
           </div>
         </div>
-      </ng-ais-instantsearch>
+      </ais-instantsearch>
     `,
       styles: [
         styles,
@@ -142,7 +142,7 @@ export function wrapWithHits({
     })
     class NgApp {}
 
-    container.innerHTML = "<ng-ais-app></ng-ais-app>";
+    container.innerHTML = "<ais-app></ais-app>";
     platformBrowserDynamic().bootstrapModule(NgApp);
   };
 }

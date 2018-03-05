@@ -5,10 +5,10 @@ exports[`SortBy renders markup with state 1`] = `
   testedWidget={[Function NgAisSortBy]}
 >
   
-        <ng-ais-instantsearch>
+        <ais-instantsearch>
     
           
-    <ng-ais-sort-by>
+    <ais-sort-by>
       
       
       <div
@@ -46,10 +46,10 @@ exports[`SortBy renders markup with state 1`] = `
       </div>
       
     
-    </ng-ais-sort-by>
+    </ais-sort-by>
     
         
-  </ng-ais-instantsearch>
+  </ais-instantsearch>
       
 </ng-component>
 `;
@@ -59,10 +59,10 @@ exports[`SortBy renders markup without state 1`] = `
   testedWidget={[Function NgAisSortBy]}
 >
   
-        <ng-ais-instantsearch>
+        <ais-instantsearch>
     
           
-    <ng-ais-sort-by>
+    <ais-sort-by>
       
       
       <div
@@ -84,10 +84,10 @@ exports[`SortBy renders markup without state 1`] = `
       </div>
       
     
-    </ng-ais-sort-by>
+    </ais-sort-by>
     
         
-  </ng-ais-instantsearch>
+  </ais-instantsearch>
       
 </ng-component>
 `;

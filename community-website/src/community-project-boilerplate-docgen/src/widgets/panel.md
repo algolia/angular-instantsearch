@@ -19,9 +19,9 @@ The Panel widget wraps other widgets in a consistent panel design.
 ## Code example
 
 ```html
-<ng-ais-panel
+<ais-panel
   header="Header foo"
   footer="Footer bar"
 >
-</ng-ais-panel>
+</ais-panel>
 ```

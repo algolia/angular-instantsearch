@@ -14,7 +14,7 @@ const defaultState = {
 
 const render = createRenderer({
   defaultState,
-  template: "<ng-ais-hits></ng-ais-hits>",
+  template: "<ais-hits></ais-hits>",
   TestedWidget: NgAisHits,
   additionalDeclarations: [NgAisHighlight]
 });

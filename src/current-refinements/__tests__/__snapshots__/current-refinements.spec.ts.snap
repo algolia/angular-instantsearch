@@ -5,10 +5,10 @@ exports[`CurrentRefinedValues renders markup with state 1`] = `
   testedWidget={[Function NgAisCurrentRefinements]}
 >
   
-        <ng-ais-instantsearch>
+        <ais-instantsearch>
     
           
-    <ng-ais-current-refinements>
+    <ais-current-refinements>
       
       
       
@@ -193,10 +193,10 @@ exports[`CurrentRefinedValues renders markup with state 1`] = `
       </div>
       
     
-    </ng-ais-current-refinements>
+    </ais-current-refinements>
     
         
-  </ng-ais-instantsearch>
+  </ais-instantsearch>
       
 </ng-component>
 `;
@@ -206,10 +206,10 @@ exports[`CurrentRefinedValues renders markup without state 1`] = `
   testedWidget={[Function NgAisCurrentRefinements]}
 >
   
-        <ng-ais-instantsearch>
+        <ais-instantsearch>
     
           
-    <ng-ais-current-refinements>
+    <ais-current-refinements>
       
       
       
@@ -239,10 +239,10 @@ exports[`CurrentRefinedValues renders markup without state 1`] = `
       </div>
       
     
-    </ng-ais-current-refinements>
+    </ais-current-refinements>
     
         
-  </ng-ais-instantsearch>
+  </ais-instantsearch>
       
 </ng-component>
 `;
@@ -252,10 +252,10 @@ exports[`CurrentRefinedValues should apply \`transformItems\` if specified 1`] =
   testedWidget={[Function NgAisCurrentRefinements]}
 >
   
-        <ng-ais-instantsearch>
+        <ais-instantsearch>
     
           
-    <ng-ais-current-refinements>
+    <ais-current-refinements>
       
       
       
@@ -440,10 +440,10 @@ exports[`CurrentRefinedValues should apply \`transformItems\` if specified 1`] =
       </div>
       
     
-    </ng-ais-current-refinements>
+    </ais-current-refinements>
     
         
-  </ng-ais-instantsearch>
+  </ais-instantsearch>
       
 </ng-component>
 `;
@@ -453,19 +453,19 @@ exports[`CurrentRefinedValues should be hidden with \`autoHideContainer\` 1`] = 
   testedWidget={[Function NgAisCurrentRefinements]}
 >
   
-        <ng-ais-instantsearch>
+        <ais-instantsearch>
     
           
-    <ng-ais-current-refinements>
+    <ais-current-refinements>
       
       
       
       
     
-    </ng-ais-current-refinements>
+    </ais-current-refinements>
     
         
-  </ng-ais-instantsearch>
+  </ais-instantsearch>
       
 </ng-component>
 `;

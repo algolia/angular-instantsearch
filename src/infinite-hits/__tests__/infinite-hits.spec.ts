@@ -15,7 +15,7 @@ const defaultState = {
 
 const render = createRenderer({
   defaultState,
-  template: "<ng-ais-infinite-hits></ng-ais-infinite-hits>",
+  template: "<ais-infinite-hits></ais-infinite-hits>",
   TestedWidget: NgAisInfiniteHits,
   additionalDeclarations: [NgAisHighlight]
 });

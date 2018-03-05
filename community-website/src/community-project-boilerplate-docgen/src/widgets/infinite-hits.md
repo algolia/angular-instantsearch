@@ -19,7 +19,7 @@ You can use the directive `<ng-template></ng-template>` to customize the output.
 ## Code example
 
 ```html
-<ng-ais-infinite-hits>
+<ais-infinite-hits>
   <ng-template
     let-hits="hits"
     let-results="results"
@@ -32,15 +32,15 @@ You can use the directive `<ng-template></ng-template>` to customize the output.
     <!-- Hit template -->
     <div *ngFor="let hit of hits">
       <h1>
-        <ng-ais-highlight
+        <ais-highlight
           attribute="title"
           [hit]="hit"
         >
-        </ng-ais-highlight>
+        </ais-highlight>
       </h1>
 
       <p>{{hit.description}}</p>
     </div>
   </ng-template>
-</ng-ais-infinite-hits>
+</ais-infinite-hits>
 ```

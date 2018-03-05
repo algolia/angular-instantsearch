@@ -13,7 +13,7 @@ sYou can use the directive `<ng-template></ng-template>` to customize.
 ## Code example
 
 ```html
-<ng-ais-hits>
+<ais-hits>
   <ng-template
     let-hits="hits"
     let-results="results"
@@ -26,15 +26,15 @@ sYou can use the directive `<ng-template></ng-template>` to customize.
     <!-- Hit template -->
     <div *ngFor="let hit of hits">
       <h1>
-        <ng-ais-highlight
+        <ais-highlight
           attribute="title"
           [hit]="hit"
         >
-        </ng-ais-highlight>
+        </ais-highlight>
       </h1>
 
       <p>{{hit.description}}</p>
     </div>
   </ng-template>
-</ng-ais-hits>
+</ais-hits>
 ```

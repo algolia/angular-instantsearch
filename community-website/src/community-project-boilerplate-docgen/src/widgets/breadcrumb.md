@@ -20,12 +20,12 @@ A breadcrumb is a secondary navigation scheme that allows the user to see where 
 ## Code example
 
 ```html
-<ng-ais-breadcrumb
+<ais-breadcrumb
   [attributes]="[
     'hierarchicalCategories.lvl0',
     'hierarchicalCategories.lvl1',
     'hierarchicalCategories.lvl2'
   ]"
 >
-</ng-ais-breadcrumb>
+</ais-breadcrumb>
 ```

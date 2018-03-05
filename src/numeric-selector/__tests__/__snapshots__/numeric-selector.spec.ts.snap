@@ -5,10 +5,10 @@ exports[`NumericSelector renders markup with state 1`] = `
   testedWidget={[Function NgAisNumericSelector]}
 >
   
-        <ng-ais-instantsearch>
+        <ais-instantsearch>
     
           
-    <ng-ais-numeric-selector>
+    <ais-numeric-selector>
       
       
       <div
@@ -62,10 +62,10 @@ exports[`NumericSelector renders markup with state 1`] = `
       </div>
       
     
-    </ng-ais-numeric-selector>
+    </ais-numeric-selector>
     
         
-  </ng-ais-instantsearch>
+  </ais-instantsearch>
       
 </ng-component>
 `;
@@ -75,10 +75,10 @@ exports[`NumericSelector renders markup without state 1`] = `
   testedWidget={[Function NgAisNumericSelector]}
 >
   
-        <ng-ais-instantsearch>
+        <ais-instantsearch>
     
           
-    <ng-ais-numeric-selector>
+    <ais-numeric-selector>
       
       
       <div
@@ -100,10 +100,10 @@ exports[`NumericSelector renders markup without state 1`] = `
       </div>
       
     
-    </ng-ais-numeric-selector>
+    </ais-numeric-selector>
     
         
-  </ng-ais-instantsearch>
+  </ais-instantsearch>
       
 </ng-component>
 `;

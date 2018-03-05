@@ -5,10 +5,10 @@ exports[`Menu renders markup with state 1`] = `
   testedWidget={[Function NgAisMenu]}
 >
   
-        <ng-ais-instantsearch>
+        <ais-instantsearch>
     
           
-    <ng-ais-menu>
+    <ais-menu>
       
       
       
@@ -122,10 +122,10 @@ exports[`Menu renders markup with state 1`] = `
       </div>
       
     
-    </ng-ais-menu>
+    </ais-menu>
     
         
-  </ng-ais-instantsearch>
+  </ais-instantsearch>
       
 </ng-component>
 `;
@@ -135,10 +135,10 @@ exports[`Menu renders markup without state 1`] = `
   testedWidget={[Function NgAisMenu]}
 >
   
-        <ng-ais-instantsearch>
+        <ais-instantsearch>
     
           
-    <ng-ais-menu>
+    <ais-menu>
       
       
       
@@ -165,10 +165,10 @@ exports[`Menu renders markup without state 1`] = `
       </div>
       
     
-    </ng-ais-menu>
+    </ais-menu>
     
         
-  </ng-ais-instantsearch>
+  </ais-instantsearch>
       
 </ng-component>
 `;
@@ -178,10 +178,10 @@ exports[`Menu should apply \`transformItems\` if specified 1`] = `
   testedWidget={[Function NgAisMenu]}
 >
   
-        <ng-ais-instantsearch>
+        <ais-instantsearch>
     
           
-    <ng-ais-menu>
+    <ais-menu>
       
       
       
@@ -295,10 +295,10 @@ exports[`Menu should apply \`transformItems\` if specified 1`] = `
       </div>
       
     
-    </ng-ais-menu>
+    </ais-menu>
     
         
-  </ng-ais-instantsearch>
+  </ais-instantsearch>
       
 </ng-component>
 `;
@@ -308,19 +308,19 @@ exports[`Menu should be hidden with \`autoHideContainer\` 1`] = `
   testedWidget={[Function NgAisMenu]}
 >
   
-        <ng-ais-instantsearch>
+        <ais-instantsearch>
     
           
-    <ng-ais-menu>
+    <ais-menu>
       
       
       
       
     
-    </ng-ais-menu>
+    </ais-menu>
     
         
-  </ng-ais-instantsearch>
+  </ais-instantsearch>
       
 </ng-component>
 `;

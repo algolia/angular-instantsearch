@@ -14,7 +14,7 @@ export type NumericRangeState = {
 };
 
 @Component({
-  selector: "ng-ais-range-input",
+  selector: "ais-range-input",
   template: `
     <div [class]="cx()">
       <form

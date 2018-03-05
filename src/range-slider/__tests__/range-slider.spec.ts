@@ -9,7 +9,7 @@ const defaultState = {
 
 const render = createRenderer({
   defaultState,
-  template: "<ng-ais-range-slider></ng-ais-range-slider>",
+  template: "<ais-range-slider></ais-range-slider>",
   TestedWidget: NgAisRangeSlider
 });
 

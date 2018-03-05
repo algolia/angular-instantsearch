@@ -24,7 +24,7 @@ const defaultState = {
 
 const render = createRenderer({
   defaultState,
-  template: "<ng-ais-rating-menu></ng-ais-rating-menu>",
+  template: "<ais-rating-menu></ais-rating-menu>",
   TestedWidget: NgAisRatingMenu
 });
 

@@ -20,7 +20,7 @@ The Numeric Menu is a component that displays a list of numeric filters in a lis
 ## Code example
 
 ```html
-<ng-ais-numeric-menu
+<ais-numeric-menu
   attribute="price"
   operator="or"
   [items]="[
@@ -31,5 +31,5 @@ The Numeric Menu is a component that displays a list of numeric filters in a lis
     { start: 10, name: 'more than 10' }
   ]"
 >
-</ng-ais-numeric-menu>
+</ais-numeric-menu>
 ```

@@ -18,7 +18,7 @@ export type BreadcrumbItem = {
 };
 
 @Component({
-  selector: "ng-ais-breadcrumb",
+  selector: "ais-breadcrumb",
   template: `
     <div
       [class]="cx()"

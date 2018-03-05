@@ -23,5 +23,5 @@ The Pagination widget displays a simple pagination system allowing the user to c
 ## Code example
 
 ```html
-<ng-ais-pagination></ng-ais-pagination>
+<ais-pagination></ais-pagination>
 ```

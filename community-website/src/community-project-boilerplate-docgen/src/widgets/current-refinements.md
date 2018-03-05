@@ -28,6 +28,6 @@ This widget is usually in the top part of the search UI.
 ## Code example
 
 ```html
-<ng-ais-current-refinements [clearsQuery]="true">
-</ng-ais-current-refinements>
+<ais-current-refinements [clearsQuery]="true">
+</ais-current-refinements>
 ```

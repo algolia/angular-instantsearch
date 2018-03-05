@@ -13,7 +13,7 @@ const defaultState = {
 
 const render = createRenderer({
   defaultState,
-  template: "<ng-ais-toggle></ng-ais-toggle>",
+  template: "<ais-toggle></ais-toggle>",
   TestedWidget: NgAisToggle
 });
 

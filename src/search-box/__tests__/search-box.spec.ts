@@ -8,7 +8,7 @@ const defaultState = {
 
 const render = createRenderer({
   defaultState,
-  template: "<ng-ais-search-box></ng-ais-search-box>",
+  template: "<ais-search-box></ais-search-box>",
   TestedWidget: NgAisSearchBox
 });
 

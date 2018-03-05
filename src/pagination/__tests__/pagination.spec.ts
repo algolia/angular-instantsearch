@@ -15,7 +15,7 @@ const defaultState = {
 
 const render = createRenderer({
   defaultState,
-  template: "<ng-ais-pagination></ng-ais-pagination>",
+  template: "<ais-pagination></ais-pagination>",
   TestedWidget: NgAisPagination
 });
 

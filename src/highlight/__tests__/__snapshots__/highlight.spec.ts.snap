@@ -7,7 +7,7 @@ exports[`highlight should fallback to non highlighted when no match 1`] = `
   tagName={[Function String]}
 >
   
-        <ng-ais-highlight
+        <ais-highlight
     ng-reflect-attribute="name"
     ng-reflect-hit="[object Object]"
   >
@@ -16,7 +16,7 @@ exports[`highlight should fallback to non highlighted when no match 1`] = `
     >
       foo bar
     </span>
-  </ng-ais-highlight>
+  </ais-highlight>
       
 </test-component>
 `;
@@ -28,7 +28,7 @@ exports[`highlight should highlight nested objects 1`] = `
   tagName={[Function String]}
 >
   
-        <ng-ais-highlight
+        <ais-highlight
     ng-reflect-attribute="parent.name"
     ng-reflect-hit="[object Object]"
   >
@@ -42,7 +42,7 @@ exports[`highlight should highlight nested objects 1`] = `
       </em>
        bar
     </span>
-  </ng-ais-highlight>
+  </ais-highlight>
       
 </test-component>
 `;
@@ -54,7 +54,7 @@ exports[`highlight should highlight strings 1`] = `
   tagName={[Function String]}
 >
   
-        <ng-ais-highlight
+        <ais-highlight
     ng-reflect-attribute="name"
     ng-reflect-hit="[object Object]"
   >
@@ -68,7 +68,7 @@ exports[`highlight should highlight strings 1`] = `
       </em>
        bar
     </span>
-  </ng-ais-highlight>
+  </ais-highlight>
       
 </test-component>
 `;
@@ -80,7 +80,7 @@ exports[`highlight should highlight values in array 1`] = `
   tagName={[Function String]}
 >
   
-        <ng-ais-highlight
+        <ais-highlight
     ng-reflect-attribute="children[0].name"
     ng-reflect-hit="[object Object]"
   >
@@ -94,7 +94,7 @@ exports[`highlight should highlight values in array 1`] = `
       </em>
        bar
     </span>
-  </ng-ais-highlight>
+  </ais-highlight>
       
 </test-component>
 `;
@@ -106,7 +106,7 @@ exports[`highlight should use \`hit.highlighted\` if it exists 1`] = `
   tagName={[Function String]}
 >
   
-        <ng-ais-highlight
+        <ais-highlight
     ng-reflect-attribute="highlighted"
     ng-reflect-hit="[object Object]"
   >
@@ -120,7 +120,7 @@ exports[`highlight should use \`hit.highlighted\` if it exists 1`] = `
       </em>
        bar
     </span>
-  </ng-ais-highlight>
+  </ais-highlight>
       
 </test-component>
 `;
@@ -132,14 +132,14 @@ exports[`highlight should warn when attribute is not found 1`] = `
   tagName={[Function String]}
 >
   
-        <ng-ais-highlight
+        <ais-highlight
     ng-reflect-attribute="invalid"
     ng-reflect-hit="[object Object]"
   >
     <span
       class="ais-Highlight"
     />
-  </ng-ais-highlight>
+  </ais-highlight>
       
 </test-component>
 `;

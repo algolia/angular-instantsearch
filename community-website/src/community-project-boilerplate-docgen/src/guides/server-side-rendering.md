@@ -142,7 +142,7 @@ Now on server-side rendering we can have access to the `request` object by using
 
 First, you need to import the Angular InstantSearch module into your application like you will do in any Angular application. (If you don't know how to do this, please read the following part in the [getting started](/#import-module) guide).
 
-The only difference is on how you configure `<ng-ais-instantsearch>` component.
+The only difference is on how you configure `<ais-instantsearch>` component.
 
 This will be our starting component. For simplicity you can re-use the Home component from the universal starter boilerplate:
 
@@ -152,8 +152,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'home',
   template: `
-    <ng-ais-instantsearch [config]="instantSearchConfig">
-    </ng-ais-instantsearch>
+    <ais-instantsearch [config]="instantSearchConfig">
+    </ais-instantsearch>
   `
 })
 export class HomeComponent {
@@ -181,8 +181,8 @@ import { TransferState, makeStateKey } from "@angular/platform-browser";
 @Component({
   selector: 'home',
   template: `
-    <ng-ais-instantsearch [config]="instantSearchConfig">
-    </ng-ais-instantsearch>
+    <ais-instantsearch [config]="instantSearchConfig">
+    </ais-instantsearch>
   `
 })
 export class HomeComponent {

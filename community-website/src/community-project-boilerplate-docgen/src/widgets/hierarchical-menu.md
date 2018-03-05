@@ -26,7 +26,7 @@ It is commonly used for categories with subcategories.
 ## Code example
 
 ```html
-<ng-ais-hierarchical-menu
+<ais-hierarchical-menu
   [showParentLevel]="false"
   [attributes]="[
     'hierarchicalCategories.lvl0',
@@ -34,5 +34,5 @@ It is commonly used for categories with subcategories.
     'hierarchicalCategories.lvl2'
   ]"
 >
-</ng-ais-hierarchical-menu>
+</ais-hierarchical-menu>
 ```
