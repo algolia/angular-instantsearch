@@ -76,10 +76,7 @@ export class NgAisInfiniteHits extends BaseWidget {
     this.state.showMore();
   }
 
-  updateState = (
-    state: { hits: {}[]; results: {}; isLastPage: boolean; showMore: Function },
-    isFirstRendering: boolean
-  ) => {
+  updateState = (state, isFirstRendering: boolean) => {
     if (isFirstRendering) return;
 
     this.state = {
