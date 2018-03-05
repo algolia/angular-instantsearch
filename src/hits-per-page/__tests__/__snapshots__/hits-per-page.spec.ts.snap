@@ -4,62 +4,38 @@ exports[`HitsPerPage renders markup with state 1`] = `
 <ng-component
   testedWidget={[Function NgAisHitsPerPage]}
 >
-  
-        <ais-instantsearch>
-    
-          
+  <ais-instantsearch>
     <ais-hits-per-page>
-      
-      
       
       <div
         class="ais-HitsPerPage"
       >
-        
-        
         <select
           class="ais-HitsPerPage-select"
         >
-          
-          
           
           <option
             class="ais-HitsPerPage-option"
             value="10"
           >
-            
-            10 per page
-          
+             10 per page 
           </option>
           <option
             class="ais-HitsPerPage-option"
             value="20"
           >
-            
-            20 per page
-          
+             20 per page 
           </option>
           <option
             class="ais-HitsPerPage-option"
             value="30"
           >
-            
-            30 per page
-          
+             30 per page 
           </option>
-          
-        
         </select>
-        
-      
       </div>
-      
-    
     </ais-hits-per-page>
-    
-        
   </ais-instantsearch>
-      
 </ng-component>
 `;
 
@@ -67,38 +43,20 @@ exports[`HitsPerPage renders markup without state 1`] = `
 <ng-component
   testedWidget={[Function NgAisHitsPerPage]}
 >
-  
-        <ais-instantsearch>
-    
-          
+  <ais-instantsearch>
     <ais-hits-per-page>
-      
-      
       
       <div
         class="ais-HitsPerPage"
       >
-        
-        
         <select
           class="ais-HitsPerPage-select"
         >
           
-          
-          
-          
-        
         </select>
-        
-      
       </div>
-      
-    
     </ais-hits-per-page>
-    
-        
   </ais-instantsearch>
-      
 </ng-component>
 `;
 
@@ -106,20 +64,10 @@ exports[`HitsPerPage should be hidden with autoHideContainer 1`] = `
 <ng-component
   testedWidget={[Function NgAisHitsPerPage]}
 >
-  
-        <ais-instantsearch>
-    
-          
+  <ais-instantsearch>
     <ais-hits-per-page>
       
-      
-      
-      
-    
     </ais-hits-per-page>
-    
-        
   </ais-instantsearch>
-      
 </ng-component>
 `;
