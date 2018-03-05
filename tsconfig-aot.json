@@ -13,6 +13,10 @@
     "sourceMap": true,
     "inlineSources": true,
     "strictNullChecks": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": false,
     "noStrictGenericChecks": false,
     "skipLibCheck": true
   },
