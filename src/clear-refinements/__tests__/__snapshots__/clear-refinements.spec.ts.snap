@@ -4,36 +4,20 @@ exports[`ClearRefinements renders markup without state 1`] = `
 <ng-component
   testedWidget={[Function NgAisClearRefinements]}
 >
-  
-        <ais-instantsearch>
-    
-          
+  <ais-instantsearch>
     <ais-clear-refinements>
-      
-      
       
       <div
         class="ais-ClearRefinements"
       >
-        
-        
         <button
           class="ais-ClearRefinements-button ais-ClearRefinements-button--disabled"
           disabled=""
         >
-          
-          Clear refinements
-        
+           Clear refinements 
         </button>
-        
-      
       </div>
-      
-    
     </ais-clear-refinements>
-    
-        
   </ais-instantsearch>
-      
 </ng-component>
 `;

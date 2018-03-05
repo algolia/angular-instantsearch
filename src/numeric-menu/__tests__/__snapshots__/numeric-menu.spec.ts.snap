@@ -4,94 +4,56 @@ exports[`NumericRefinementList renders markup with state 1`] = `
 <ng-component
   testedWidget={[Function NgAisNumericMenu]}
 >
-  
-        <ais-instantsearch>
-    
-          
+  <ais-instantsearch>
     <ais-numeric-menu>
-      
-      
       
       <div
         class="ais-NumericMenu"
       >
-        
-        
         <ul
           class="ais-NumericMenu-list"
         >
           
-          
-          
           <li
             class="ais-NumericMenu-item ais-NumericMenu-item--selected"
           >
-            
-            
             <label
               class="ais-NumericMenu-label"
             >
-              
-              
               <input
                 class="ais-NumericMenu-radio"
                 name="NumericMenu"
                 type="radio"
               />
-              
-              
               <span
                 class="ais-NumericMenu-labelText"
               >
                 10
               </span>
-              
-            
             </label>
-            
-          
           </li>
           <li
             class="ais-NumericMenu-item"
           >
-            
-            
             <label
               class="ais-NumericMenu-label"
             >
-              
-              
               <input
                 class="ais-NumericMenu-radio"
                 name="NumericMenu"
                 type="radio"
               />
-              
-              
               <span
                 class="ais-NumericMenu-labelText"
               >
                 20
               </span>
-              
-            
             </label>
-            
-          
           </li>
-          
-        
         </ul>
-        
-      
       </div>
-      
-    
     </ais-numeric-menu>
-    
-        
   </ais-instantsearch>
-      
 </ng-component>
 `;
 
@@ -99,38 +61,20 @@ exports[`NumericRefinementList renders markup without state 1`] = `
 <ng-component
   testedWidget={[Function NgAisNumericMenu]}
 >
-  
-        <ais-instantsearch>
-    
-          
+  <ais-instantsearch>
     <ais-numeric-menu>
-      
-      
       
       <div
         class="ais-NumericMenu"
       >
-        
-        
         <ul
           class="ais-NumericMenu-list"
         >
           
-          
-          
-          
-        
         </ul>
-        
-      
       </div>
-      
-    
     </ais-numeric-menu>
-    
-        
   </ais-instantsearch>
-      
 </ng-component>
 `;
 
@@ -138,20 +82,10 @@ exports[`NumericRefinementList should be hidden with autoHideContainer 1`] = `
 <ng-component
   testedWidget={[Function NgAisNumericMenu]}
 >
-  
-        <ais-instantsearch>
-    
-          
+  <ais-instantsearch>
     <ais-numeric-menu>
       
-      
-      
-      
-    
     </ais-numeric-menu>
-    
-        
   </ais-instantsearch>
-      
 </ng-component>
 `;

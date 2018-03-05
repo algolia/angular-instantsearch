@@ -4,39 +4,21 @@ exports[`Hits renders markup with state 1`] = `
 <ng-component
   testedWidget={[Function NgAisHits]}
 >
-  
-        <ais-instantsearch>
-    
-          
+  <ais-instantsearch>
     <ais-hits>
-      
-      
       <div
         class="ais-Hits"
       >
         
         
-        
-        
-  
-        
-        
-        
-        
         <div>
-          
-          
           <ul
             class="ais-Hits-list"
           >
             
-            
-            
             <li
               class="ais-Hits-item"
             >
-              
-              
               <ais-highlight
                 attribute="name"
                 ng-reflect-attribute="name"
@@ -48,14 +30,10 @@ exports[`Hits renders markup with state 1`] = `
                   foo
                 </span>
               </ais-highlight>
-              
-            
             </li>
             <li
               class="ais-Hits-item"
             >
-              
-              
               <ais-highlight
                 attribute="name"
                 ng-reflect-attribute="name"
@@ -67,14 +45,10 @@ exports[`Hits renders markup with state 1`] = `
                   bar
                 </span>
               </ais-highlight>
-              
-            
             </li>
             <li
               class="ais-Hits-item"
             >
-              
-              
               <ais-highlight
                 attribute="name"
                 ng-reflect-attribute="name"
@@ -86,14 +60,10 @@ exports[`Hits renders markup with state 1`] = `
                   foobar
                 </span>
               </ais-highlight>
-              
-            
             </li>
             <li
               class="ais-Hits-item"
             >
-              
-              
               <ais-highlight
                 attribute="name"
                 ng-reflect-attribute="name"
@@ -105,25 +75,12 @@ exports[`Hits renders markup with state 1`] = `
                   barfoo
                 </span>
               </ais-highlight>
-              
-            
             </li>
-            
-          
           </ul>
-          
-        
         </div>
-        
-      
       </div>
-      
-    
     </ais-hits>
-    
-        
   </ais-instantsearch>
-      
 </ng-component>
 `;
 
@@ -131,50 +88,23 @@ exports[`Hits renders markup without state 1`] = `
 <ng-component
   testedWidget={[Function NgAisHits]}
 >
-  
-        <ais-instantsearch>
-    
-          
+  <ais-instantsearch>
     <ais-hits>
-      
-      
       <div
         class="ais-Hits"
       >
         
         
-        
-        
-  
-        
-        
-        
-        
         <div>
-          
-          
           <ul
             class="ais-Hits-list"
           >
             
-            
-            
-            
-          
           </ul>
-          
-        
         </div>
-        
-      
       </div>
-      
-    
     </ais-hits>
-    
-        
   </ais-instantsearch>
-      
 </ng-component>
 `;
 
@@ -182,39 +112,21 @@ exports[`Hits should apply \`transformItems\` if specified 1`] = `
 <ng-component
   testedWidget={[Function NgAisHits]}
 >
-  
-        <ais-instantsearch>
-    
-          
+  <ais-instantsearch>
     <ais-hits>
-      
-      
       <div
         class="ais-Hits"
       >
         
         
-        
-        
-  
-        
-        
-        
-        
         <div>
-          
-          
           <ul
             class="ais-Hits-list"
           >
             
-            
-            
             <li
               class="ais-Hits-item"
             >
-              
-              
               <ais-highlight
                 attribute="name"
                 ng-reflect-attribute="name"
@@ -226,14 +138,10 @@ exports[`Hits should apply \`transformItems\` if specified 1`] = `
                   transformed - foo
                 </span>
               </ais-highlight>
-              
-            
             </li>
             <li
               class="ais-Hits-item"
             >
-              
-              
               <ais-highlight
                 attribute="name"
                 ng-reflect-attribute="name"
@@ -245,14 +153,10 @@ exports[`Hits should apply \`transformItems\` if specified 1`] = `
                   transformed - bar
                 </span>
               </ais-highlight>
-              
-            
             </li>
             <li
               class="ais-Hits-item"
             >
-              
-              
               <ais-highlight
                 attribute="name"
                 ng-reflect-attribute="name"
@@ -264,14 +168,10 @@ exports[`Hits should apply \`transformItems\` if specified 1`] = `
                   transformed - foobar
                 </span>
               </ais-highlight>
-              
-            
             </li>
             <li
               class="ais-Hits-item"
             >
-              
-              
               <ais-highlight
                 attribute="name"
                 ng-reflect-attribute="name"
@@ -283,24 +183,11 @@ exports[`Hits should apply \`transformItems\` if specified 1`] = `
                   transformed - barfoo
                 </span>
               </ais-highlight>
-              
-            
             </li>
-            
-          
           </ul>
-          
-        
         </div>
-        
-      
       </div>
-      
-    
     </ais-hits>
-    
-        
   </ais-instantsearch>
-      
 </ng-component>
 `;
