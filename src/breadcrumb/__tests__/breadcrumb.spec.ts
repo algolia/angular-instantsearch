@@ -9,7 +9,7 @@ const defaultState = {
 
 const render = createRenderer({
   defaultState,
-  template: "<ng-ais-breadcrumb></ng-ais-breadcrumb>",
+  template: "<ais-breadcrumb></ais-breadcrumb>",
   TestedWidget: NgAisBreadcrumb
 });
 

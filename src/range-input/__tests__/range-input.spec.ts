@@ -9,7 +9,7 @@ const defaultState = {
 
 const render = createRenderer({
   defaultState,
-  template: "<ng-ais-range-input></ng-ais-range-input>",
+  template: "<ais-range-input></ais-range-input>",
   TestedWidget: NgAisRangeInput
 });
 

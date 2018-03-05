@@ -13,7 +13,7 @@ export type NumericSelectorState = {
 };
 
 @Component({
-  selector: "ng-ais-numeric-selector",
+  selector: "ais-numeric-selector",
   template: `
     <div [class]="cx('')">
       <select

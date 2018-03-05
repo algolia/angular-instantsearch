@@ -5,10 +5,10 @@ exports[`RefinementList renders markup with state 1`] = `
   testedWidget={[Function NgAisRefinementList]}
 >
   
-        <ng-ais-instantsearch>
+        <ais-instantsearch>
     
           
-    <ng-ais-refinement-list>
+    <ais-refinement-list>
       
       
       
@@ -49,7 +49,7 @@ exports[`RefinementList renders markup with state 1`] = `
               >
                 
                 
-                <ng-ais-highlight
+                <ais-highlight
                   attribute="highlighted"
                   ng-reflect-attribute="highlighted"
                   ng-reflect-hit="[object Object]"
@@ -59,7 +59,7 @@ exports[`RefinementList renders markup with state 1`] = `
                   >
                     foo
                   </span>
-                </ng-ais-highlight>
+                </ais-highlight>
                 
               
               </span>
@@ -98,7 +98,7 @@ exports[`RefinementList renders markup with state 1`] = `
               >
                 
                 
-                <ng-ais-highlight
+                <ais-highlight
                   attribute="highlighted"
                   ng-reflect-attribute="highlighted"
                   ng-reflect-hit="[object Object]"
@@ -108,7 +108,7 @@ exports[`RefinementList renders markup with state 1`] = `
                   >
                     bar
                   </span>
-                </ng-ais-highlight>
+                </ais-highlight>
                 
               
               </span>
@@ -147,7 +147,7 @@ exports[`RefinementList renders markup with state 1`] = `
               >
                 
                 
-                <ng-ais-highlight
+                <ais-highlight
                   attribute="highlighted"
                   ng-reflect-attribute="highlighted"
                   ng-reflect-hit="[object Object]"
@@ -157,7 +157,7 @@ exports[`RefinementList renders markup with state 1`] = `
                   >
                     foobar
                   </span>
-                </ng-ais-highlight>
+                </ais-highlight>
                 
               
               </span>
@@ -196,7 +196,7 @@ exports[`RefinementList renders markup with state 1`] = `
               >
                 
                 
-                <ng-ais-highlight
+                <ais-highlight
                   attribute="highlighted"
                   ng-reflect-attribute="highlighted"
                   ng-reflect-hit="[object Object]"
@@ -206,7 +206,7 @@ exports[`RefinementList renders markup with state 1`] = `
                   >
                     barfoo
                   </span>
-                </ng-ais-highlight>
+                </ais-highlight>
                 
               
               </span>
@@ -235,10 +235,10 @@ exports[`RefinementList renders markup with state 1`] = `
       </div>
       
     
-    </ng-ais-refinement-list>
+    </ais-refinement-list>
     
         
-  </ng-ais-instantsearch>
+  </ais-instantsearch>
       
 </ng-component>
 `;
@@ -248,10 +248,10 @@ exports[`RefinementList renders markup without state 1`] = `
   testedWidget={[Function NgAisRefinementList]}
 >
   
-        <ng-ais-instantsearch>
+        <ais-instantsearch>
     
           
-    <ng-ais-refinement-list>
+    <ais-refinement-list>
       
       
       
@@ -282,10 +282,10 @@ exports[`RefinementList renders markup without state 1`] = `
       </div>
       
     
-    </ng-ais-refinement-list>
+    </ais-refinement-list>
     
         
-  </ng-ais-instantsearch>
+  </ais-instantsearch>
       
 </ng-component>
 `;
@@ -295,10 +295,10 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
   testedWidget={[Function NgAisRefinementList]}
 >
   
-        <ng-ais-instantsearch>
+        <ais-instantsearch>
     
           
-    <ng-ais-refinement-list>
+    <ais-refinement-list>
       
       
       
@@ -339,7 +339,7 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
               >
                 
                 
-                <ng-ais-highlight
+                <ais-highlight
                   attribute="highlighted"
                   ng-reflect-attribute="highlighted"
                   ng-reflect-hit="[object Object]"
@@ -349,7 +349,7 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
                   >
                     transformed - foo
                   </span>
-                </ng-ais-highlight>
+                </ais-highlight>
                 
               
               </span>
@@ -388,7 +388,7 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
               >
                 
                 
-                <ng-ais-highlight
+                <ais-highlight
                   attribute="highlighted"
                   ng-reflect-attribute="highlighted"
                   ng-reflect-hit="[object Object]"
@@ -398,7 +398,7 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
                   >
                     transformed - bar
                   </span>
-                </ng-ais-highlight>
+                </ais-highlight>
                 
               
               </span>
@@ -437,7 +437,7 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
               >
                 
                 
-                <ng-ais-highlight
+                <ais-highlight
                   attribute="highlighted"
                   ng-reflect-attribute="highlighted"
                   ng-reflect-hit="[object Object]"
@@ -447,7 +447,7 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
                   >
                     transformed - foobar
                   </span>
-                </ng-ais-highlight>
+                </ais-highlight>
                 
               
               </span>
@@ -486,7 +486,7 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
               >
                 
                 
-                <ng-ais-highlight
+                <ais-highlight
                   attribute="highlighted"
                   ng-reflect-attribute="highlighted"
                   ng-reflect-hit="[object Object]"
@@ -496,7 +496,7 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
                   >
                     transformed - barfoo
                   </span>
-                </ng-ais-highlight>
+                </ais-highlight>
                 
               
               </span>
@@ -525,10 +525,10 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
       </div>
       
     
-    </ng-ais-refinement-list>
+    </ais-refinement-list>
     
         
-  </ng-ais-instantsearch>
+  </ais-instantsearch>
       
 </ng-component>
 `;
@@ -538,19 +538,19 @@ exports[`RefinementList should be hidden with autoHideContainer 1`] = `
   testedWidget={[Function NgAisRefinementList]}
 >
   
-        <ng-ais-instantsearch>
+        <ais-instantsearch>
     
           
-    <ng-ais-refinement-list>
+    <ais-refinement-list>
       
       
       
       
     
-    </ng-ais-refinement-list>
+    </ais-refinement-list>
     
         
-  </ng-ais-instantsearch>
+  </ais-instantsearch>
       
 </ng-component>
 `;

@@ -7,7 +7,7 @@ import { BaseWidget } from "../base-widget";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
 
 @Component({
-  selector: "ng-ais-sort-by",
+  selector: "ais-sort-by",
   template: `
     <div [class]="cx()">
       <select

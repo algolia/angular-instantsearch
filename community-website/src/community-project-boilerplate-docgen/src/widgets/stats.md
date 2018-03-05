@@ -17,11 +17,11 @@ You can use the directive `<ng-template></ng-template>` to customize the output:
 @Component({
   selector: 'my-app',
   template: `
-    <ng-ais-stats>
+    <ais-stats>
       <ng-template let-state="state">
         {{stats.nbHits}} results found in {{stats.processingTimeMS}}ms.
       </ng-template>
-    </ng-ais-stats>
+    </ais-stats>
   `
 })
 export class AppComponent {}

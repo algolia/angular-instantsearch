@@ -4,7 +4,7 @@ window.addEventListener('load', () => {
   if ($sidebar) {
     let { id: title } = document.querySelector('.documentation-container h1');
     title = title
-      .replace('ng-ais-', '')
+      .replace('ais-', '')
       .replace(/-/g, ' ')
       .toLowerCase();
 

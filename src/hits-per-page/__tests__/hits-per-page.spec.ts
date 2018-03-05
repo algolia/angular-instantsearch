@@ -10,7 +10,7 @@ const render = createRenderer({
     ],
     refine: jest.fn()
   },
-  template: "<ng-ais-hits-per-page></ng-ais-hits-per-page>",
+  template: "<ais-hits-per-page></ais-hits-per-page>",
   TestedWidget: NgAisHitsPerPage
 });
 

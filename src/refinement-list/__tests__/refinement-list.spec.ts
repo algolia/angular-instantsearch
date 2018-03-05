@@ -20,7 +20,7 @@ const defaultState = {
 
 const render = createRenderer({
   defaultState,
-  template: "<ng-ais-refinement-list></ng-ais-refinement-list>",
+  template: "<ais-refinement-list></ais-refinement-list>",
   TestedWidget: NgAisRefinementList,
   additionalDeclarations: [NgAisHighlight, NgAisFacetsSearch]
 });

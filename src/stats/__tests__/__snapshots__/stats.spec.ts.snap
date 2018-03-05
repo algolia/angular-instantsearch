@@ -5,10 +5,10 @@ exports[`Stats should render with state 1`] = `
   testedWidget={[Function NgAisStats]}
 >
   
-        <ng-ais-instantsearch>
+        <ais-instantsearch>
     
           
-    <ng-ais-stats>
+    <ais-stats>
       
       
       <div
@@ -33,10 +33,10 @@ exports[`Stats should render with state 1`] = `
       </div>
       
     
-    </ng-ais-stats>
+    </ais-stats>
     
         
-  </ng-ais-instantsearch>
+  </ais-instantsearch>
       
 </ng-component>
 `;
@@ -46,10 +46,10 @@ exports[`Stats should render without state 1`] = `
   testedWidget={[Function NgAisStats]}
 >
   
-        <ng-ais-instantsearch>
+        <ais-instantsearch>
     
           
-    <ng-ais-stats>
+    <ais-stats>
       
       
       <div
@@ -74,10 +74,10 @@ exports[`Stats should render without state 1`] = `
       </div>
       
     
-    </ng-ais-stats>
+    </ais-stats>
     
         
-  </ng-ais-instantsearch>
+  </ais-instantsearch>
       
 </ng-component>
 `;

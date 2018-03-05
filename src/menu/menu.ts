@@ -18,7 +18,7 @@ export type MenuState = {
 };
 
 @Component({
-  selector: "ng-ais-menu",
+  selector: "ais-menu",
   template: `
     <div
       [class]="cx()"

@@ -5,10 +5,10 @@ exports[`InfiniteHits renders markup with state 1`] = `
   testedWidget={[Function NgAisInfiniteHits]}
 >
   
-        <ng-ais-instantsearch>
+        <ais-instantsearch>
     
           
-    <ng-ais-infinite-hits>
+    <ais-infinite-hits>
       
       
       <div
@@ -37,7 +37,7 @@ exports[`InfiniteHits renders markup with state 1`] = `
             >
               
               
-              <ng-ais-highlight
+              <ais-highlight
                 attribute="name"
                 ng-reflect-attribute="name"
                 ng-reflect-hit="[object Object]"
@@ -47,7 +47,7 @@ exports[`InfiniteHits renders markup with state 1`] = `
                 >
                   foo
                 </span>
-              </ng-ais-highlight>
+              </ais-highlight>
               
             
             </li>
@@ -56,7 +56,7 @@ exports[`InfiniteHits renders markup with state 1`] = `
             >
               
               
-              <ng-ais-highlight
+              <ais-highlight
                 attribute="name"
                 ng-reflect-attribute="name"
                 ng-reflect-hit="[object Object]"
@@ -66,7 +66,7 @@ exports[`InfiniteHits renders markup with state 1`] = `
                 >
                   bar
                 </span>
-              </ng-ais-highlight>
+              </ais-highlight>
               
             
             </li>
@@ -75,7 +75,7 @@ exports[`InfiniteHits renders markup with state 1`] = `
             >
               
               
-              <ng-ais-highlight
+              <ais-highlight
                 attribute="name"
                 ng-reflect-attribute="name"
                 ng-reflect-hit="[object Object]"
@@ -85,7 +85,7 @@ exports[`InfiniteHits renders markup with state 1`] = `
                 >
                   foobar
                 </span>
-              </ng-ais-highlight>
+              </ais-highlight>
               
             
             </li>
@@ -94,7 +94,7 @@ exports[`InfiniteHits renders markup with state 1`] = `
             >
               
               
-              <ng-ais-highlight
+              <ais-highlight
                 attribute="name"
                 ng-reflect-attribute="name"
                 ng-reflect-hit="[object Object]"
@@ -104,7 +104,7 @@ exports[`InfiniteHits renders markup with state 1`] = `
                 >
                   barfoo
                 </span>
-              </ng-ais-highlight>
+              </ais-highlight>
               
             
             </li>
@@ -130,10 +130,10 @@ exports[`InfiniteHits renders markup with state 1`] = `
       </div>
       
     
-    </ng-ais-infinite-hits>
+    </ais-infinite-hits>
     
         
-  </ng-ais-instantsearch>
+  </ais-instantsearch>
       
 </ng-component>
 `;
@@ -143,10 +143,10 @@ exports[`InfiniteHits renders markup without state 1`] = `
   testedWidget={[Function NgAisInfiniteHits]}
 >
   
-        <ng-ais-instantsearch>
+        <ais-instantsearch>
     
           
-    <ng-ais-infinite-hits>
+    <ais-infinite-hits>
       
       
       <div
@@ -192,10 +192,10 @@ exports[`InfiniteHits renders markup without state 1`] = `
       </div>
       
     
-    </ng-ais-infinite-hits>
+    </ais-infinite-hits>
     
         
-  </ng-ais-instantsearch>
+  </ais-instantsearch>
       
 </ng-component>
 `;

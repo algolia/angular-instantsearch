@@ -5,10 +5,10 @@ exports[`RangeInput renders markup with state 1`] = `
   testedWidget={[Function NgAisRangeInput]}
 >
   
-        <ng-ais-instantsearch>
+        <ais-instantsearch>
     
           
-    <ng-ais-range-input>
+    <ais-range-input>
       
       
       <div
@@ -97,10 +97,10 @@ exports[`RangeInput renders markup with state 1`] = `
       </div>
       
     
-    </ng-ais-range-input>
+    </ais-range-input>
     
         
-  </ng-ais-instantsearch>
+  </ais-instantsearch>
       
 </ng-component>
 `;
@@ -110,10 +110,10 @@ exports[`RangeInput renders markup without state 1`] = `
   testedWidget={[Function NgAisRangeInput]}
 >
   
-        <ng-ais-instantsearch>
+        <ais-instantsearch>
     
           
-    <ng-ais-range-input>
+    <ais-range-input>
       
       
       <div
@@ -202,10 +202,10 @@ exports[`RangeInput renders markup without state 1`] = `
       </div>
       
     
-    </ng-ais-range-input>
+    </ais-range-input>
     
         
-  </ng-ais-instantsearch>
+  </ais-instantsearch>
       
 </ng-component>
 `;

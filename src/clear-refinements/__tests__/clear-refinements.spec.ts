@@ -3,7 +3,7 @@ import { NgAisClearRefinements } from "../clear-refinements";
 
 const render = createRenderer({
   defaultState: {},
-  template: "<ng-ais-clear-refinements></ng-ais-clear-refinements>",
+  template: "<ais-clear-refinements></ais-clear-refinements>",
   TestedWidget: NgAisClearRefinements
 });
 

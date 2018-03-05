@@ -62,7 +62,7 @@ export class InstantSearchInstance {
 }
 
 @Component({
-  selector: "ng-ais-instantsearch",
+  selector: "ais-instantsearch",
   template: `<ng-content></ng-content>`
 })
 export class NgAisInstantSearch implements AfterViewInit, OnInit, OnDestroy {

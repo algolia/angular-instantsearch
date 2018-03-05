@@ -20,5 +20,5 @@ The ClearRefinements widget displays a button that lets the user clean every ref
 ## Code example
 
 ```html
-<ng-ais-current-refinements></ng-ais-current-refinements>
+<ais-current-refinements></ais-current-refinements>
 ```

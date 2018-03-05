@@ -15,7 +15,7 @@ export type RangeSliderState = {
 };
 
 @Component({
-  selector: "ng-ais-range-slider",
+  selector: "ais-range-slider",
   template: `
     <div [class]="cx()">
       <div [class]="cx('body')">

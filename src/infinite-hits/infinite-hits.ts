@@ -14,7 +14,7 @@ import { BaseWidget } from "../base-widget";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
 
 @Component({
-  selector: "ng-ais-infinite-hits",
+  selector: "ais-infinite-hits",
   template: `
     <div [class]="cx()">
       <ng-container *ngTemplateOutlet="template; context: state"></ng-container>
@@ -26,8 +26,8 @@ import { NgAisInstantSearch } from "../instantsearch/instantsearch";
             [class]="cx('item')"
             *ngFor="let hit of state.hits"
           >
-            <ng-ais-highlight attribute="name" [hit]="hit">
-            </ng-ais-highlight>
+            <ais-highlight attribute="name" [hit]="hit">
+            </ais-highlight>
           </li>
         </ul>
       </div>

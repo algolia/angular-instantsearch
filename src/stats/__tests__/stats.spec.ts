@@ -14,7 +14,7 @@ const render = createRenderer({
     processingTimeMS: 123,
     query: "foobar"
   },
-  template: "<ng-ais-stats></ng-ais-stats>",
+  template: "<ais-stats></ais-stats>",
   TestedWidget: NgAisStats
 });
 

@@ -13,7 +13,7 @@ export type NumericRefinementListState = {
 };
 
 @Component({
-  selector: "ng-ais-numeric-menu",
+  selector: "ais-numeric-menu",
   template: `
     <div
       [class]="cx()"

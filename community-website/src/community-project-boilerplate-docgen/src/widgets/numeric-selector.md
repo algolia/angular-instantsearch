@@ -20,7 +20,7 @@ The Numeric Selector component lets the user choose between numerical refinement
 ## Code example
 
 ```html
-<ng-ais-numeric-selector
+<ais-numeric-selector
   attribute="rating"
   operator="="
   [items]="[
@@ -32,5 +32,5 @@ The Numeric Selector component lets the user choose between numerical refinement
     { label: 'Rating: 1', value: 1 }
   ]"
 >
-</ng-ais-numeric-selector>
+</ais-numeric-selector>
 ```

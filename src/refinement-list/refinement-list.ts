@@ -20,7 +20,7 @@ export type RefinementListState = {
 };
 
 @Component({
-  selector: "ng-ais-refinement-list",
+  selector: "ais-refinement-list",
   template: `
     <div
       [class]="cx()"
@@ -30,11 +30,11 @@ export type RefinementListState = {
         *ngIf="searchable"
         [class]="cx('searchBox')"
       >
-        <ng-ais-facets-search
+        <ais-facets-search
           [search]="state.searchForItems"
           [searchPlaceholder]="searchPlaceholder"
         >
-        </ng-ais-facets-search>
+        </ais-facets-search>
       </div>
 
       <ul [class]="cx('list')">
@@ -51,7 +51,7 @@ export type RefinementListState = {
               [checked]="item.isRefined"
             />
             <span [class]="cx('labelText')">
-              <ng-ais-highlight attribute="highlighted" [hit]="item"></ng-ais-highlight>
+              <ais-highlight attribute="highlighted" [hit]="item"></ais-highlight>
             </span>
             <span [class]="cx('count')">{{item.count}}</span>
           </label>

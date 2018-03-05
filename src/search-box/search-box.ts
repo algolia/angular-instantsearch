@@ -14,7 +14,7 @@ import { BaseWidget } from "../base-widget";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
 
 @Component({
-  selector: "ng-ais-search-box",
+  selector: "ais-search-box",
   template: `
     <div [class]="cx()">
       <form

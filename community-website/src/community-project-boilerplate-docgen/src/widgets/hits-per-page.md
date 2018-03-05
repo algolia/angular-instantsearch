@@ -19,12 +19,12 @@ The Hits per page widget displays a dropdown menu to let the user change the num
 ## Code example
 
 ```html
-<ng-ais-hits-per-page
+<ais-hits-per-page
   [items]="[
     { value: 3, label: '3 per page' },
     { value: 5, label: '5 per page' },
     { value: 10, label: '10 per page' }
   ]"
 >
-</ng-ais-hits-per-page>
+</ais-hits-per-page>
 ```

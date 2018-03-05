@@ -2,7 +2,7 @@ import { Component, Input } from "@angular/core";
 import { bem } from "../utils";
 
 @Component({
-  selector: "ng-ais-facets-search",
+  selector: "ais-facets-search",
   template: `
     <div [class]="cx()">
       <form

@@ -5,10 +5,10 @@ exports[`RangeSlider renders markup with state 1`] = `
   testedWidget={[Function NgAisRangeSlider]}
 >
   
-        <ng-ais-instantsearch>
+        <ais-instantsearch>
     
           
-    <ng-ais-range-slider>
+    <ais-range-slider>
       
       
       <div
@@ -240,10 +240,10 @@ exports[`RangeSlider renders markup with state 1`] = `
       </div>
       
     
-    </ng-ais-range-slider>
+    </ais-range-slider>
     
         
-  </ng-ais-instantsearch>
+  </ais-instantsearch>
       
 </ng-component>
 `;
@@ -253,10 +253,10 @@ exports[`RangeSlider renders markup without state 1`] = `
   testedWidget={[Function NgAisRangeSlider]}
 >
   
-        <ng-ais-instantsearch>
+        <ais-instantsearch>
     
           
-    <ng-ais-range-slider>
+    <ais-range-slider>
       
       
       <div
@@ -278,10 +278,10 @@ exports[`RangeSlider renders markup without state 1`] = `
       </div>
       
     
-    </ng-ais-range-slider>
+    </ais-range-slider>
     
         
-  </ng-ais-instantsearch>
+  </ais-instantsearch>
       
 </ng-component>
 `;

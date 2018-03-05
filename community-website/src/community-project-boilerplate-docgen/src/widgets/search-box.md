@@ -21,6 +21,6 @@ The Search Box component displays a search box that lets the user search for a s
 ## Code example
 
 ```html
-<ng-ais-search-box placeholder='Search for products'>
-</ng-ais-search-box>
+<ais-search-box placeholder='Search for products'>
+</ais-search-box>
 ```

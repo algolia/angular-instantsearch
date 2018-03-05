@@ -27,16 +27,16 @@ Those parameters can be found in your [Algolia dashboard](https://www.algolia.co
 
 ```js
 @Component({
-  selector: 'ng-ais-app',
+  selector: 'ais-app',
   template: `
-    <ng-ais-instantsearch
+    <ais-instantsearch
       [config]="{
         apiKey: '6be0576ff61c053d5f9a3225e2a90f76',
         appId: 'latency',
         indexName: 'instant_search'
       }"
     >
-    </ng-ais-instantsearch>
+    </ais-instantsearch>
   `
 })
 export class AppComponent {}
@@ -90,14 +90,14 @@ export class AppComponent {}
 
 #### Events
 
-You can register to the `(change)` event on the `<ng-ais-instantsearch>` which will be fired after every new search. This event is useful for instance to push data to Google Analytics to know more about your users search:
+You can register to the `(change)` event on the `<ais-instantsearch>` which will be fired after every new search. This event is useful for instance to push data to Google Analytics to know more about your users search:
 
 ```html
-<ng-ais-instantsearch
+<ais-instantsearch
   [config]="{...}"
   (change)="onSearchChange($event)"
 >
-</ng-ais-instantsearch>
+</ais-instantsearch>
 ```
 
 ```js

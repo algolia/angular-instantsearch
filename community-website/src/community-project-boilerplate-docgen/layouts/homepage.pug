@@ -45,29 +45,29 @@ html(lang="en")
           .col-md-7.no-padding.
               <pre class="al-snippet p-xlarge elevation1 fill-white" data-snippet-theme="dark">
               <code>
-                &lt;ng-ais-instantsearch
+                &lt;ais-instantsearch
                   [<span class="sn-keyword">config</span>]<span class="sn-operator">=</span>"{
                     <span class="sn-keyword">appId</span>: '<span class="sn-string">latency</span>',
                     <span class="sn-keyword">apiKey</span>: '<span class="sn-string">6be0576ff61c053d5f9a3225e2a90f76</span>',
                     <span class="sn-keyword">indexName</span>: '<span class="sn-string">ikea</span>'
                   }">
                   &lt;div class<span class="sn-operator">=</span>"<span class="sn-string">left</span>">
-                    &lt;ng-ais-hierarchical-menu>
+                    &lt;ais-hierarchical-menu>
                       [<span class="sn-keyword">attributes</span>]<span class="sn-operator">=</span>"['<span class="sn-string">category</span>', '<span class="sn-string">sub_category</span>', '<span class="sn-string">sub_sub_category</span>']"
                       [<span class="sn-keyword">sortBy</span>]<span class="sn-operator">=</span>"['<span class="sn-string">name:asc</span>']">
-                    &lt;/ng-ais-hierarchical-menu>
-                    &lt;ng-ais-refinement-list>
+                    &lt;/ais-hierarchical-menu>
+                    &lt;ais-refinement-list>
                       <span class="sn-keyword">attribute</span><span class="sn-operator">=</span>"<span class="sn-string">materials</span>"
                       <span class="sn-keyword">operator</span><span class="sn-operator">=</span>"<span class="sn-string">or</span>"
                       <span class="sn-keyword">limit</span><span class="sn-operator">=</span>"<span class="sn-string">10</span>">
-                    &lt;/ng-ais-refinement-list>
+                    &lt;/ais-refinement-list>
                   &lt;/div>
 
                   &lt;div class<span class="sn-operator">=</span>"<span class="sn-string">right</span>">
-                    &lt;ng-ais-search-box placeholder</span><span class="sn-operator">=</span>"<span class="sn-string">Search a product</span>">&lt;/ng-ais-search-box>
-                    &lt;ng-ais-hits</span>>&lt;/ng-ais-hits>
+                    &lt;ais-search-box placeholder</span><span class="sn-operator">=</span>"<span class="sn-string">Search a product</span>">&lt;/ais-search-box>
+                    &lt;ais-hits</span>>&lt;/ais-hits>
                   &lt;/div>
-                &lt;/ng-ais-instantsearch>
+                &lt;/ais-instantsearch>
 
               </code></pre>
         .inline.spacer80

@@ -1,7 +1,7 @@
 import { Component, Input } from "@angular/core";
 
 @Component({
-  selector: "ng-ais-panel",
+  selector: "ais-panel",
   template: `
     <div class="ais-Panel">
       <div *ngIf="header" class="ais-Panel-header">

@@ -12,7 +12,7 @@ const defaultState = {
 
 const render = createRenderer({
   defaultState,
-  template: "<ng-ais-numeric-menu></ng-ais-numeric-menu>",
+  template: "<ais-numeric-menu></ais-numeric-menu>",
   TestedWidget: NgAisNumericMenu
 });
 
