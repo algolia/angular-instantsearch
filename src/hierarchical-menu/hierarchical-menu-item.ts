@@ -10,7 +10,7 @@ export type HierarchicalMenuItem = {
 };
 
 @Component({
-  selector: "ng-ais-hierarchical-menu-item",
+  selector: "ais-hierarchical-menu-item",
   template: `
     <li
       [class]="getItemClass(item)"
@@ -29,14 +29,14 @@ export type HierarchicalMenuItem = {
         [class]="getListClass(item)"
         *ngIf="item.isRefined && isArray(item.data) && item.data.length > 0"
       >
-        <ng-ais-hierarchical-menu-item
+        <ais-hierarchical-menu-item
           *ngFor="let child of item.data"
           [item]="child"
           [createURL]="createURL"
           [refine]="refine"
           [lvl]="lvl + 1"
         >
-        </ng-ais-hierarchical-menu-item>
+        </ais-hierarchical-menu-item>
       </ul>
     </li>
   `

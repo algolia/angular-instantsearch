@@ -27,10 +27,10 @@ The RefinementList component displays a list that let the end user choose multip
 ## Code example
 
 ```html
-<ng-ais-refinement-list
+<ais-refinement-list
   attribute="brand"
   operator="or"
   [limit]="10"
 >
-</ng-ais-refinement-list>
+</ais-refinement-list>
 ```

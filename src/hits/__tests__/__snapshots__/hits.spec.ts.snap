@@ -5,10 +5,10 @@ exports[`Hits renders markup with state 1`] = `
   testedWidget={[Function NgAisHits]}
 >
   
-        <ng-ais-instantsearch>
+        <ais-instantsearch>
     
           
-    <ng-ais-hits>
+    <ais-hits>
       
       
       <div
@@ -37,7 +37,7 @@ exports[`Hits renders markup with state 1`] = `
             >
               
               
-              <ng-ais-highlight
+              <ais-highlight
                 attribute="name"
                 ng-reflect-attribute="name"
                 ng-reflect-hit="[object Object]"
@@ -47,7 +47,7 @@ exports[`Hits renders markup with state 1`] = `
                 >
                   foo
                 </span>
-              </ng-ais-highlight>
+              </ais-highlight>
               
             
             </li>
@@ -56,7 +56,7 @@ exports[`Hits renders markup with state 1`] = `
             >
               
               
-              <ng-ais-highlight
+              <ais-highlight
                 attribute="name"
                 ng-reflect-attribute="name"
                 ng-reflect-hit="[object Object]"
@@ -66,7 +66,7 @@ exports[`Hits renders markup with state 1`] = `
                 >
                   bar
                 </span>
-              </ng-ais-highlight>
+              </ais-highlight>
               
             
             </li>
@@ -75,7 +75,7 @@ exports[`Hits renders markup with state 1`] = `
             >
               
               
-              <ng-ais-highlight
+              <ais-highlight
                 attribute="name"
                 ng-reflect-attribute="name"
                 ng-reflect-hit="[object Object]"
@@ -85,7 +85,7 @@ exports[`Hits renders markup with state 1`] = `
                 >
                   foobar
                 </span>
-              </ng-ais-highlight>
+              </ais-highlight>
               
             
             </li>
@@ -94,7 +94,7 @@ exports[`Hits renders markup with state 1`] = `
             >
               
               
-              <ng-ais-highlight
+              <ais-highlight
                 attribute="name"
                 ng-reflect-attribute="name"
                 ng-reflect-hit="[object Object]"
@@ -104,7 +104,7 @@ exports[`Hits renders markup with state 1`] = `
                 >
                   barfoo
                 </span>
-              </ng-ais-highlight>
+              </ais-highlight>
               
             
             </li>
@@ -119,10 +119,10 @@ exports[`Hits renders markup with state 1`] = `
       </div>
       
     
-    </ng-ais-hits>
+    </ais-hits>
     
         
-  </ng-ais-instantsearch>
+  </ais-instantsearch>
       
 </ng-component>
 `;
@@ -132,10 +132,10 @@ exports[`Hits renders markup without state 1`] = `
   testedWidget={[Function NgAisHits]}
 >
   
-        <ng-ais-instantsearch>
+        <ais-instantsearch>
     
           
-    <ng-ais-hits>
+    <ais-hits>
       
       
       <div
@@ -170,10 +170,10 @@ exports[`Hits renders markup without state 1`] = `
       </div>
       
     
-    </ng-ais-hits>
+    </ais-hits>
     
         
-  </ng-ais-instantsearch>
+  </ais-instantsearch>
       
 </ng-component>
 `;
@@ -183,10 +183,10 @@ exports[`Hits should apply \`transformItems\` if specified 1`] = `
   testedWidget={[Function NgAisHits]}
 >
   
-        <ng-ais-instantsearch>
+        <ais-instantsearch>
     
           
-    <ng-ais-hits>
+    <ais-hits>
       
       
       <div
@@ -215,7 +215,7 @@ exports[`Hits should apply \`transformItems\` if specified 1`] = `
             >
               
               
-              <ng-ais-highlight
+              <ais-highlight
                 attribute="name"
                 ng-reflect-attribute="name"
                 ng-reflect-hit="[object Object]"
@@ -225,7 +225,7 @@ exports[`Hits should apply \`transformItems\` if specified 1`] = `
                 >
                   transformed - foo
                 </span>
-              </ng-ais-highlight>
+              </ais-highlight>
               
             
             </li>
@@ -234,7 +234,7 @@ exports[`Hits should apply \`transformItems\` if specified 1`] = `
             >
               
               
-              <ng-ais-highlight
+              <ais-highlight
                 attribute="name"
                 ng-reflect-attribute="name"
                 ng-reflect-hit="[object Object]"
@@ -244,7 +244,7 @@ exports[`Hits should apply \`transformItems\` if specified 1`] = `
                 >
                   transformed - bar
                 </span>
-              </ng-ais-highlight>
+              </ais-highlight>
               
             
             </li>
@@ -253,7 +253,7 @@ exports[`Hits should apply \`transformItems\` if specified 1`] = `
             >
               
               
-              <ng-ais-highlight
+              <ais-highlight
                 attribute="name"
                 ng-reflect-attribute="name"
                 ng-reflect-hit="[object Object]"
@@ -263,7 +263,7 @@ exports[`Hits should apply \`transformItems\` if specified 1`] = `
                 >
                   transformed - foobar
                 </span>
-              </ng-ais-highlight>
+              </ais-highlight>
               
             
             </li>
@@ -272,7 +272,7 @@ exports[`Hits should apply \`transformItems\` if specified 1`] = `
             >
               
               
-              <ng-ais-highlight
+              <ais-highlight
                 attribute="name"
                 ng-reflect-attribute="name"
                 ng-reflect-hit="[object Object]"
@@ -282,7 +282,7 @@ exports[`Hits should apply \`transformItems\` if specified 1`] = `
                 >
                   transformed - barfoo
                 </span>
-              </ng-ais-highlight>
+              </ais-highlight>
               
             
             </li>
@@ -297,10 +297,10 @@ exports[`Hits should apply \`transformItems\` if specified 1`] = `
       </div>
       
     
-    </ng-ais-hits>
+    </ais-hits>
     
         
-  </ng-ais-instantsearch>
+  </ais-instantsearch>
       
 </ng-component>
 `;

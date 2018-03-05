@@ -8,7 +8,7 @@ import { NgAisInstantSearch } from "../instantsearch/instantsearch";
 import { parseNumberInput } from "../utils";
 
 @Component({
-  selector: "ng-ais-pagination",
+  selector: "ais-pagination",
   template: `
     <div [class]="cx()">
       <ul [class]="cx('list')">

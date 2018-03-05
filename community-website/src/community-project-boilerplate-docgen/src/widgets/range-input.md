@@ -21,11 +21,11 @@ Numeric range widget allows a user to select a numeric range using a minimum and
 ## Code example
 
 ```html
-<ng-ais-range-input
+<ais-range-input
   attribute="price"
   [min]="10"
   [max]="10"
   [precision]="2"
 >
-</ng-ais-range-input>
+</ais-range-input>
 ```

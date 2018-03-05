@@ -1,4 +1,4 @@
-<ng-ais-instantsearch
+<ais-instantsearch
   [config]="{
     appId: 'latency',
     apiKey: '6be0576ff61c053d5f9a3225e2a90f76',
@@ -14,7 +14,7 @@
 
     <div class="searchbox-container">
       <div class="input-group">
-        <ng-ais-search-box></ng-ais-search-box>
+        <ais-search-box></ais-search-box>
       </div>
     </div>
   </header>
@@ -33,13 +33,13 @@
       <!-- Genres refinement list -->
       <h5><i class="fa fa-chevron-right"></i> Genres</h5>
       <div id="genres">
-        <ng-ais-refinement-list attribute="genre"></ng-ais-refinement-list>
+        <ais-refinement-list attribute="genre"></ais-refinement-list>
       </div>
 
       <!-- Ratings -->
       <h5><i class="fa fa-chevron-right"></i> Ratings</h5>
       <div id="ratings">
-        <ng-ais-rating-menu attribute="rating" max="5"></ng-ais-rating-menu>
+        <ais-rating-menu attribute="rating" max="5"></ais-rating-menu>
       </div>
 
       <div class="thank-you">
@@ -50,13 +50,13 @@
     <article>
       <!-- Stats -->
       <div id="stats" class="text-muted text-right">
-        <ng-ais-stats></ng-ais-stats>
+        <ais-stats></ais-stats>
       </div>
 
       <hr>
 
       <!-- Hits -->
-      <ng-ais-hits [transformItems]="transformHits">
+      <ais-hits [transformItems]="transformHits">
         <ng-template let-hits="hits">
           <div class="hit media" *ngFor="let hit of hits">
             <div class="media-left">
@@ -64,7 +64,7 @@
             </div>
             <div class="media-body">
               <h4 class="media-heading">
-                <ng-ais-highlight [hit]="hit" attribute="title"></ng-ais-highlight>
+                <ais-highlight [hit]="hit" attribute="title"></ais-highlight>
 
                 <i
                   *ngFor="let star of hit.stars"
@@ -90,10 +90,10 @@
             </div>
           </div>
         </ng-template>
-      </ng-ais-hits>
+      </ais-hits>
 
       <!-- Pagination -->
-      <ng-ais-pagination></ng-ais-pagination>
+      <ais-pagination></ais-pagination>
     </article>
   </section>
-</ng-ais-instantsearch>
+</ais-instantsearch>

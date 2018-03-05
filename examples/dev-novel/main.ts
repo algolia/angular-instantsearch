@@ -13,14 +13,14 @@ storiesOf("InstantSearch").add(
   "searchFunction with forced refinement",
   wrapWithHits({
     template: `
-      <ng-ais-panel header="Brand">
-        <ng-ais-refinement-list
+      <ais-panel header="Brand">
+        <ais-refinement-list
           attribute="brand"
           operator="or"
           [limit]="10"
         >
-        </ng-ais-refinement-list>
-      </ng-ais-panel>
+        </ais-refinement-list>
+      </ais-panel>
     `,
     searchParameters: {
       disjunctiveFacetsRefinements: { brand: ["Apple"] },
@@ -37,14 +37,14 @@ storiesOf("Breadcrumb").add(
   "default",
   wrapWithHits({
     template: `
-      <ng-ais-breadcrumb
+      <ais-breadcrumb
         [attributes]="[
           'hierarchicalCategories.lvl0',
           'hierarchicalCategories.lvl1',
           'hierarchicalCategories.lvl2'
         ]"
       >
-      </ng-ais-breadcrumb>
+      </ais-breadcrumb>
     `,
     searchParameters: {
       hierarchicalFacetsRefinements: {
@@ -60,7 +60,7 @@ storiesOf("ClearRefinements")
   .add(
     "default",
     wrapWithHits({
-      template: "<ng-ais-clear-refinements></ng-ais-clear-refinements>",
+      template: "<ais-clear-refinements></ais-clear-refinements>",
       searchParameters: {
         disjunctiveFacetsRefinements: { brand: ["Apple"] },
         disjunctiveFacets: ["brand"]
@@ -70,14 +70,14 @@ storiesOf("ClearRefinements")
   .add(
     "with nothing to clear",
     wrapWithHits({
-      template: "<ng-ais-clear-refinements></ng-ais-clear-refinements>"
+      template: "<ais-clear-refinements></ais-clear-refinements>"
     })
   )
   .add(
     "with clear refinements and query",
     wrapWithHits({
       template:
-        "<ng-ais-clear-refinements [clearsQuery]='true'></ng-ais-clear-refinements>",
+        "<ais-clear-refinements [clearsQuery]='true'></ais-clear-refinements>",
       searchParameters: {
         disjunctiveFacetsRefinements: { brand: ["Apple"] },
         disjunctiveFacets: ["brand"]
@@ -89,7 +89,7 @@ storiesOf("CurrentRefinements")
   .add(
     "default",
     wrapWithHits({
-      template: "<ng-ais-current-refinements></ng-ais-current-refinements>",
+      template: "<ais-current-refinements></ais-current-refinements>",
       searchParameters: {
         disjunctiveFacetsRefinements: { brand: ["Apple", "Samsung"] },
         disjunctiveFacets: ["brand"],
@@ -101,9 +101,9 @@ storiesOf("CurrentRefinements")
     "with panel header",
     wrapWithHits({
       template: `
-        <ng-ais-panel header='Current refinements'>
-          <ng-ais-current-refinements></ng-ais-current-refinements>
-        </ng-ais-panel>
+        <ais-panel header='Current refinements'>
+          <ais-current-refinements></ais-current-refinements>
+        </ais-panel>
       `,
       searchParameters: {
         disjunctiveFacetsRefinements: { brand: ["Apple", "Samsung"] },
@@ -116,10 +116,10 @@ storiesOf("CurrentRefinements")
     "with panel header but no refinements",
     wrapWithHits({
       template: `
-        <ng-ais-panel header='Current refinements'>
-          <ng-ais-current-refinements>
-          </ng-ais-current-refinements>
-        </ng-ais-panel>
+        <ais-panel header='Current refinements'>
+          <ais-current-refinements>
+          </ais-current-refinements>
+        </ais-panel>
       `
     })
   )
@@ -127,10 +127,10 @@ storiesOf("CurrentRefinements")
     "with clearsQuery",
     wrapWithHits({
       template: `
-        <ng-ais-panel header='Current refinements'>
-          <ng-ais-current-refinements [clearsQuery]="true">
-          </ng-ais-current-refinements>
-        </ng-ais-panel>
+        <ais-panel header='Current refinements'>
+          <ais-current-refinements [clearsQuery]="true">
+          </ais-current-refinements>
+        </ais-panel>
       `,
       searchParameters: {
         disjunctiveFacetsRefinements: { brand: ["Apple", "Samsung"] },
@@ -145,14 +145,14 @@ storiesOf("HierarchicalMenu")
     "default",
     wrapWithHits({
       template: `
-    <ng-ais-hierarchical-menu
+    <ais-hierarchical-menu
       [attributes]="[
         'hierarchicalCategories.lvl0',
         'hierarchicalCategories.lvl1',
         'hierarchicalCategories.lvl2'
       ]"
     >
-    </ng-ais-hierarchical-menu>
+    </ais-hierarchical-menu>
   `
     })
   )
@@ -160,7 +160,7 @@ storiesOf("HierarchicalMenu")
     "hide parent level",
     wrapWithHits({
       template: `
-        <ng-ais-hierarchical-menu
+        <ais-hierarchical-menu
           [showParentLevel]="false"
           [attributes]="[
             'hierarchicalCategories.lvl0',
@@ -168,7 +168,7 @@ storiesOf("HierarchicalMenu")
             'hierarchicalCategories.lvl2'
           ]"
         >
-        </ng-ais-hierarchical-menu>
+        </ais-hierarchical-menu>
       `
     })
   )
@@ -176,14 +176,14 @@ storiesOf("HierarchicalMenu")
     "with default selected item",
     wrapWithHits({
       template: `
-        <ng-ais-hierarchical-menu
+        <ais-hierarchical-menu
           [attributes]="[
             'hierarchicalCategories.lvl0',
             'hierarchicalCategories.lvl1',
             'hierarchicalCategories.lvl2'
           ]"
         >
-        </ng-ais-hierarchical-menu>
+        </ais-hierarchical-menu>
       `,
       searchParameters: {
         hierarchicalFacetsRefinements: {
@@ -198,7 +198,7 @@ storiesOf("HierarchicalMenu")
 storiesOf("Hits").add(
   "default",
   wrapWithHits({
-    template: "<ng-ais-hits></ng-ais-hits>"
+    template: "<ais-hits></ais-hits>"
   })
 );
 
@@ -207,14 +207,14 @@ storiesOf("HitsPerPage")
     "default",
     wrapWithHits({
       template: `
-      <ng-ais-hits-per-page
+      <ais-hits-per-page
         [items]="[
           { value: 3, label: '3 per page' },
           { value: 5, label: '5 per page' },
           { value: 10, label: '10 per page' }
         ]"
       >
-      </ng-ais-hits-per-page>
+      </ais-hits-per-page>
     `
     })
   )
@@ -222,14 +222,14 @@ storiesOf("HitsPerPage")
     "with default to 5",
     wrapWithHits({
       template: `
-        <ng-ais-hits-per-page
+        <ais-hits-per-page
           [items]="[
             { value: 3, label: '3 per page' },
             { value: 5, label: '5 per page', default: true },
             { value: 10, label: '10 per page' }
           ]"
         >
-        </ng-ais-hits-per-page>
+        </ais-hits-per-page>
       `
     })
   );
@@ -238,14 +238,14 @@ storiesOf("InfiniteHits")
   .add(
     "default",
     wrapWithHits({
-      template: "<ng-ais-infinite-hits></ng-ais-infinite-hits>"
+      template: "<ais-infinite-hits></ais-infinite-hits>"
     })
   )
   .add(
     "with custom template",
     wrapWithHits({
       template: `
-        <ng-ais-infinite-hits>
+        <ais-infinite-hits>
           <ng-template
             let-hits="hits"
             let-showMore="showMore"
@@ -255,7 +255,7 @@ storiesOf("InfiniteHits")
             </div>
             <button (click)="showMore()">Load more</button>
           </ng-template>
-        </ng-ais-infinite-hits>
+        </ais-infinite-hits>
       `
     })
   );
@@ -264,21 +264,21 @@ storiesOf("Menu")
   .add(
     "default",
     wrapWithHits({
-      template: '<ng-ais-menu attribute="categories"></ng-ais-menu>'
+      template: '<ais-menu attribute="categories"></ais-menu>'
     })
   )
   .add(
     "with showMore and panel header",
     wrapWithHits({
       template: `
-        <ng-ais-panel header="Categories">
-          <ng-ais-menu
+        <ais-panel header="Categories">
+          <ais-menu
             attribute="categories"
             [limit]="3"
             [showMoreLimit]="10"
           >
-          </ng-ais-menu>
-        </ng-ais-panel>
+          </ais-menu>
+        </ais-panel>
       `
     })
   );
@@ -287,8 +287,8 @@ storiesOf("NumericMenu").add(
   "default with panel header",
   wrapWithHits({
     template: `
-      <ng-ais-panel header="Numeric menu (price)">
-        <ng-ais-numeric-menu
+      <ais-panel header="Numeric menu (price)">
+        <ais-numeric-menu
           attribute="price"
           operator="or"
           [items]="[
@@ -299,8 +299,8 @@ storiesOf("NumericMenu").add(
             { start: 10, name: 'more than 10' }
           ]"
         >
-        </ng-ais-numeric-menu>
-      </ng-ais-panel>
+        </ais-numeric-menu>
+      </ais-panel>
     `
   })
 );
@@ -310,7 +310,7 @@ storiesOf("NumericSelector")
     "default",
     wrapWithHits({
       template: `
-        <ng-ais-numeric-selector
+        <ais-numeric-selector
           attribute="popularity"
           operator=">="
           [items]="[
@@ -320,7 +320,7 @@ storiesOf("NumericSelector")
             { label: 'Top 500', value: 20969 }
           ]"
         >
-        </ng-ais-numeric-selector>
+        </ais-numeric-selector>
       `
     })
   )
@@ -328,7 +328,7 @@ storiesOf("NumericSelector")
     "with default value",
     wrapWithHits({
       template: `
-        <ng-ais-numeric-selector
+        <ais-numeric-selector
           attribute="rating"
           operator="="
           [items]="[
@@ -340,7 +340,7 @@ storiesOf("NumericSelector")
             { label: 'Rating: 1', value: 1 }
           ]"
         >
-        </ng-ais-numeric-selector>
+        </ais-numeric-selector>
       `
     })
   );
@@ -348,7 +348,7 @@ storiesOf("NumericSelector")
 storiesOf("Pagination").add(
   "default",
   wrapWithHits({
-    template: "<ng-ais-pagination></ng-ais-pagination>"
+    template: "<ais-pagination></ais-pagination>"
   })
 );
 
@@ -357,14 +357,14 @@ storiesOf("RefinementList")
     "default with panel header",
     wrapWithHits({
       template: `
-        <ng-ais-panel header="Brand">
-          <ng-ais-refinement-list
+        <ais-panel header="Brand">
+          <ais-refinement-list
             attribute="brand"
             operator="or"
             [limit]="10"
           >
-          </ng-ais-refinement-list>
-        </ng-ais-panel>
+          </ais-refinement-list>
+        </ais-panel>
       `
     })
   )
@@ -372,15 +372,15 @@ storiesOf("RefinementList")
     "panel header with showMore",
     wrapWithHits({
       template: `
-        <ng-ais-panel header="Brand with show more">
-          <ng-ais-refinement-list
+        <ais-panel header="Brand with show more">
+          <ais-refinement-list
             attribute="brand"
             operator="or"
             [limit]="3"
             [showMoreLimit]="10"
           >
-          </ng-ais-refinement-list>
-        </ng-ais-panel>
+          </ais-refinement-list>
+        </ais-panel>
       `
     })
   )
@@ -388,16 +388,16 @@ storiesOf("RefinementList")
     "panel header with search inside the items",
     wrapWithHits({
       template: `
-        <ng-ais-panel header="Searchable brands">
-          <ng-ais-refinement-list
+        <ais-panel header="Searchable brands">
+          <ais-refinement-list
             attribute="brand"
             operator="or"
             searchPlaceholder="Find other brands..."
             [searchable]="true"
             [limit]="10"
           >
-          </ng-ais-refinement-list>
-        </ng-ais-panel>
+          </ais-refinement-list>
+        </ais-panel>
       `
     })
   )
@@ -405,15 +405,15 @@ storiesOf("RefinementList")
     "panel header with operator `and`",
     wrapWithHits({
       template: `
-        <ng-ais-panel header="Price ranges">
-          <ng-ais-refinement-list
+        <ais-panel header="Price ranges">
+          <ais-refinement-list
             attribute="price_range"
             operator="and"
             [limit]="10"
             [transformItems]="transformItems"
           >
-          </ng-ais-refinement-list>
-        </ng-ais-panel>
+          </ais-refinement-list>
+        </ais-panel>
       `,
       methods: {
         transformItems: items =>
@@ -432,18 +432,18 @@ storiesOf("SearchBox")
     "default",
     wrapWithHits({
       template:
-        "<ng-ais-search-box placeholder='Search for products'></ng-ais-search-box>"
+        "<ais-search-box placeholder='Search for products'></ais-search-box>"
     })
   )
   .add(
     "search on enter",
     wrapWithHits({
       template: `
-        <ng-ais-search-box
+        <ais-search-box
           placeholder="Search for products"
           [searchAsYouType]="false"
         >
-        </ng-ais-search-box>
+        </ais-search-box>
       `
     })
   );
@@ -452,14 +452,14 @@ storiesOf("SortBy").add(
   "default",
   wrapWithHits({
     template: `
-      <ng-ais-sort-by
+      <ais-sort-by
         [items]="[
           { name: 'instant_search', label: 'Most relevant' },
           { name: 'instant_search_price_asc', label: 'Lowest price' },
           { name: 'instant_search_price_desc', label: 'Highest price' }
         ]"
       >
-      </ng-ais-sort-by>
+      </ais-sort-by>
     `
   })
 );
@@ -468,13 +468,13 @@ storiesOf("RatingMenu").add(
   "default with panel header",
   wrapWithHits({
     template: `
-      <ng-ais-panel header="Rating">
-        <ng-ais-rating-menu
+      <ais-panel header="Rating">
+        <ais-rating-menu
           attribute="rating"
           [max]="5"
         >
-        </ng-ais-rating-menu>
-      </ng-ais-panel>
+        </ais-rating-menu>
+      </ais-panel>
     `
   })
 );
@@ -482,7 +482,7 @@ storiesOf("RatingMenu").add(
 storiesOf("Stats").add(
   "default",
   wrapWithHits({
-    template: "<ng-ais-stats></ng-ais-stats>"
+    template: "<ais-stats></ais-stats>"
   })
 );
 
@@ -491,11 +491,11 @@ storiesOf("Toggle")
     "with single value",
     wrapWithHits({
       template: `
-        <ng-ais-toggle
+        <ais-toggle
           label="Free Shipping (toggle single value)"
           attribute="free_shipping"
         >
-        </ng-ais-toggle>
+        </ais-toggle>
       `
     })
   )
@@ -503,7 +503,7 @@ storiesOf("Toggle")
     "with on & off values",
     wrapWithHits({
       template: `
-        <ng-ais-toggle
+        <ais-toggle
           label="Canon (not checked) or Sony (checked)"
           attribute="brand"
           [values]="{
@@ -511,7 +511,7 @@ storiesOf("Toggle")
             off: 'Canon'
           }"
         >
-        </ng-ais-toggle>
+        </ais-toggle>
       `
     })
   );
@@ -520,8 +520,8 @@ storiesOf("RangeInput").add(
   "default",
   wrapWithHits({
     template: `
-      <ng-ais-range-input attribute="price">
-      </ng-ais-range-input>
+      <ais-range-input attribute="price">
+      </ais-range-input>
     `
   })
 );
@@ -529,7 +529,7 @@ storiesOf("RangeInput").add(
 storiesOf("CustomWidgets").add(
   "MenuSelect",
   wrapWithHits({
-    template: `<ng-ais-menu-select></ng-ais-menu-select>`,
+    template: `<ais-menu-select></ais-menu-select>`,
     appDeclarations: [MenuSelect]
   })
 );
@@ -538,8 +538,8 @@ storiesOf("RangeSlider").add(
   "default",
   wrapWithHits({
     template: `
-      <ng-ais-range-slider attribute="price">
-      </ng-ais-range-slider>
+      <ais-range-slider attribute="price">
+      </ais-range-slider>
     `
   })
 );

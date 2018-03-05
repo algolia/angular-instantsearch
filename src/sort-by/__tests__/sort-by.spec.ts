@@ -9,7 +9,7 @@ const defaultState = {
 
 const render = createRenderer({
   defaultState,
-  template: "<ng-ais-sort-by></ng-ais-sort-by>",
+  template: "<ais-sort-by></ais-sort-by>",
   TestedWidget: NgAisSortBy
 });
 

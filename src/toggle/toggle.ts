@@ -17,7 +17,7 @@ export type ToggleState = {
 };
 
 @Component({
-  selector: "ng-ais-toggle",
+  selector: "ais-toggle",
   template: `
     <div [class]="cx()">
       <ul [class]="cx('list')">

@@ -5,10 +5,10 @@ exports[`Toggle should render with a label 1`] = `
   testedWidget={[Function NgAisToggle]}
 >
   
-        <ng-ais-instantsearch>
+        <ais-instantsearch>
     
           
-    <ng-ais-toggle>
+    <ais-toggle>
       
       
       <div
@@ -68,10 +68,10 @@ exports[`Toggle should render with a label 1`] = `
       </div>
       
     
-    </ng-ais-toggle>
+    </ais-toggle>
     
         
-  </ng-ais-instantsearch>
+  </ais-instantsearch>
       
 </ng-component>
 `;
@@ -81,10 +81,10 @@ exports[`Toggle should render with state 1`] = `
   testedWidget={[Function NgAisToggle]}
 >
   
-        <ng-ais-instantsearch>
+        <ais-instantsearch>
     
           
-    <ng-ais-toggle>
+    <ais-toggle>
       
       
       <div
@@ -144,10 +144,10 @@ exports[`Toggle should render with state 1`] = `
       </div>
       
     
-    </ng-ais-toggle>
+    </ais-toggle>
     
         
-  </ng-ais-instantsearch>
+  </ais-instantsearch>
       
 </ng-component>
 `;
@@ -157,10 +157,10 @@ exports[`Toggle should render without state 1`] = `
   testedWidget={[Function NgAisToggle]}
 >
   
-        <ng-ais-instantsearch>
+        <ais-instantsearch>
     
           
-    <ng-ais-toggle>
+    <ais-toggle>
       
       
       <div
@@ -220,10 +220,10 @@ exports[`Toggle should render without state 1`] = `
       </div>
       
     
-    </ng-ais-toggle>
+    </ais-toggle>
     
         
-  </ng-ais-instantsearch>
+  </ais-instantsearch>
       
 </ng-component>
 `;

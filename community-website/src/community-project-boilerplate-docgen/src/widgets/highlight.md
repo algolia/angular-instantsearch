@@ -20,13 +20,13 @@ Renders any attribute from an hit into its highlighted form when relevant.
 ## Code example
 
 ```html
-<ng-ais-hits>
+<ais-hits>
   <ng-template let-hits="hits">
     <div *ngFor="let hit of hits">
       Hit {{hit.objectID}}:
-      <ng-ais-highlight attribute="name" [hit]="hit">
-      </ng-ais-highlight>
+      <ais-highlight attribute="name" [hit]="hit">
+      </ais-highlight>
     </div>
   </ng-template>
-</ng-ais-hits>
+</ais-hits>
 ```

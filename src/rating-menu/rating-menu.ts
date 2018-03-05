@@ -14,7 +14,7 @@ export type RatingMenuState = {
 };
 
 @Component({
-  selector: "ng-ais-rating-menu",
+  selector: "ais-rating-menu",
   template: `
     <div
       [class]="cx()"

@@ -52,9 +52,9 @@ function render(
 ) {
   @Component({
     template: `
-      <ng-ais-instantsearch>
+      <ais-instantsearch>
         ${template}
-      </ng-ais-instantsearch>
+      </ais-instantsearch>
     `
   })
   class TestContainer {

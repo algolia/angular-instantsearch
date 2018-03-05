@@ -5,10 +5,10 @@ exports[`ClearRefinements renders markup without state 1`] = `
   testedWidget={[Function NgAisClearRefinements]}
 >
   
-        <ng-ais-instantsearch>
+        <ais-instantsearch>
     
           
-    <ng-ais-clear-refinements>
+    <ais-clear-refinements>
       
       
       
@@ -30,10 +30,10 @@ exports[`ClearRefinements renders markup without state 1`] = `
       </div>
       
     
-    </ng-ais-clear-refinements>
+    </ais-clear-refinements>
     
         
-  </ng-ais-instantsearch>
+  </ais-instantsearch>
       
 </ng-component>
 `;

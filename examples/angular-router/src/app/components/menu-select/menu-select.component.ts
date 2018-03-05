@@ -3,7 +3,7 @@ import { BaseWidget, NgAisInstantSearch } from "angular-instantsearch";
 import { connectMenu } from "instantsearch.js/es/connectors";
 
 @Component({
-  selector: "ng-ais-menu-select",
+  selector: "ais-menu-select",
   template: `
     <select
       class="menu-select"

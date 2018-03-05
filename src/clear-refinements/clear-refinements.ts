@@ -12,7 +12,7 @@ import { BaseWidget } from "../base-widget";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
 
 @Component({
-  selector: "ng-ais-clear-refinements",
+  selector: "ais-clear-refinements",
   template: `
     <div
       [class]="cx()"

@@ -27,7 +27,7 @@ const defaultState = {
 
 const render = createRenderer({
   defaultState,
-  template: "<ng-ais-hierarchical-menu></ng-ais-hierarchical-menu>",
+  template: "<ais-hierarchical-menu></ais-hierarchical-menu>",
   TestedWidget: NgAisHierarchicalMenu,
   additionalDeclarations: [NgAisHierarchicalMenuItem]
 });

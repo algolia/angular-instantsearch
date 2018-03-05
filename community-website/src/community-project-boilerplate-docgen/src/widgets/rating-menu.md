@@ -21,9 +21,9 @@ RatingMenu is used for displaying grade like filters. The values are normalized 
 ## Code example
 
 ```html
-<ng-ais-rating-menu
+<ais-rating-menu
   attribute="rating"
   [max]="5"
 >
-</ng-ais-rating-menu>
+</ais-rating-menu>
 ```

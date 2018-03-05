@@ -24,10 +24,10 @@ The Menu component displays a menu that lets the user choose a single value for 
 ## Code example
 
 ```html
-<ng-ais-menu
+<ais-menu
   attribute="categories"
   [limit]="3"
   [showMoreLimit]="10"
 >
-</ng-ais-menu>
+</ais-menu>
 ```

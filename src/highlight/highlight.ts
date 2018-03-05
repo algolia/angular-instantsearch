@@ -3,7 +3,7 @@ import { isPlainObject, escape, get } from "lodash-es";
 import { bem } from "../utils";
 
 @Component({
-  selector: "ng-ais-highlight",
+  selector: "ais-highlight",
   template: `<span [class]="cx()" [innerHtml]="content"></span>`
 })
 export class NgAisHighlight {

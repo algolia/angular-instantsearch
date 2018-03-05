@@ -5,10 +5,10 @@ exports[`Pagination renders does not uses pagesPadding when nbPages < pagesPaddi
   testedWidget={[Function NgAisPagination]}
 >
   
-        <ng-ais-instantsearch>
+        <ais-instantsearch>
     
           
-    <ng-ais-pagination>
+    <ais-pagination>
       
       
       <div
@@ -174,10 +174,10 @@ exports[`Pagination renders does not uses pagesPadding when nbPages < pagesPaddi
       </div>
       
     
-    </ng-ais-pagination>
+    </ais-pagination>
     
         
-  </ng-ais-instantsearch>
+  </ais-instantsearch>
       
 </ng-component>
 `;
@@ -187,10 +187,10 @@ exports[`Pagination renders markup without state 1`] = `
   testedWidget={[Function NgAisPagination]}
 >
   
-        <ng-ais-instantsearch>
+        <ais-instantsearch>
     
           
-    <ng-ais-pagination>
+    <ais-pagination>
       
       
       <div
@@ -276,10 +276,10 @@ exports[`Pagination renders markup without state 1`] = `
       </div>
       
     
-    </ng-ais-pagination>
+    </ais-pagination>
     
         
-  </ng-ais-instantsearch>
+  </ais-instantsearch>
       
 </ng-component>
 `;
@@ -289,10 +289,10 @@ exports[`Pagination renders with pages in state 1`] = `
   testedWidget={[Function NgAisPagination]}
 >
   
-        <ng-ais-instantsearch>
+        <ais-instantsearch>
     
           
-    <ng-ais-pagination>
+    <ais-pagination>
       
       
       <div
@@ -490,10 +490,10 @@ exports[`Pagination renders with pages in state 1`] = `
       </div>
       
     
-    </ng-ais-pagination>
+    </ais-pagination>
     
         
-  </ng-ais-instantsearch>
+  </ais-instantsearch>
       
 </ng-component>
 `;

@@ -27,17 +27,17 @@ This widget is particularly useful if you have a boolean value in the records.
 With single value:
 
 ```html
-<ng-ais-toggle
+<ais-toggle
   label="Free Shipping (toggle single value)"
   attribute="free_shipping"
 >
-</ng-ais-toggle>
+</ais-toggle>
 ```
 
 With on & off values:
 
 ```html
-<ng-ais-toggle
+<ais-toggle
   label="Canon (not checked) or Sony (checked)"
   attribute="brand"
   [values]="{
@@ -45,5 +45,5 @@ With on & off values:
     off: 'Canon'
   }"
 >
-</ng-ais-toggle>
+</ais-toggle>
 ```

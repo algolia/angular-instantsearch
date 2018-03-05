@@ -34,7 +34,7 @@ import { Component, Inject, forwardRef } from '@angular/core';
 import { BaseWidget, NgAisInstantSearch } from 'angular-instantsearch';
 
 @Component({
-  selector: 'ng-ais-menu-select',
+  selector: 'ais-menu-select',
   template: '<p>It works!</p>'
 })
 export class MenuSelect extends BaseWidget {
@@ -47,7 +47,7 @@ export class MenuSelect extends BaseWidget {
 }
 ```
 
-* We need to reference the `<ng-ais-instantsearch>` parent component instance on the widget class
+* We need to reference the `<ais-instantsearch>` parent component instance on the widget class
 * We need to indicate also the widget name
 
 We have the first code needed for our MenuSelect widget, let's move on with the connector part!
@@ -68,7 +68,7 @@ import { BaseWidget, NgAisInstantSearch } from 'angular-instantsearch';
 import { connectMenu } from 'instantsearch.js/es/connectors';
 
 @Component({
-  selector: 'ng-ais-menu-select',
+  selector: 'ais-menu-select',
   template: '<p>It works!</p>'
 })
 export class MenuSelect extends BaseWidget {
@@ -126,7 +126,7 @@ import { BaseWidget, NgAisInstantSearch } from 'angular-instantsearch';
 import { connectMenu } from 'instantsearch.js/es/connectors';
 
 @Component({
-  selector: 'ng-ais-menu-select',
+  selector: 'ais-menu-select',
   template: `
     <select
       class="menu-select"
@@ -167,6 +167,6 @@ export class MenuSelect extends BaseWidget {
 }
 ```
 
-You can now use your directive `<ng-ais-menu-select></ng-ais-menu-select>` to display your custom MenuSelect widget!
+You can now use your directive `<ais-menu-select></ais-menu-select>` to display your custom MenuSelect widget!
 
 We have a live example of this newly created MenuSelect in our [widget showcase](http://angular-instantsearch.netlify.com/dev-novel/?selectedStory=CustomWidgets.MenuSelect).

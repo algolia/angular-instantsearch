@@ -14,7 +14,7 @@ const defaultState = {
 
 const render = createRenderer({
   defaultState,
-  template: "<ng-ais-numeric-selector></ng-ais-numeric-selector>",
+  template: "<ais-numeric-selector></ais-numeric-selector>",
   TestedWidget: NgAisNumericSelector
 });
 

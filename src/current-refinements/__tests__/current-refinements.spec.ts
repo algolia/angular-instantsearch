@@ -48,7 +48,7 @@ const defaultState = {
 
 const render = createRenderer({
   defaultState,
-  template: "<ng-ais-current-refinements></ng-ais-current-refinements>",
+  template: "<ais-current-refinements></ais-current-refinements>",
   TestedWidget: NgAisCurrentRefinements
 });
 
