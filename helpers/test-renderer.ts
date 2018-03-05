@@ -61,7 +61,9 @@ function render(
     @ViewChild(TestedWidget) testedWidget;
   }
 
-  TestBed.configureTestingModule({
+  TestBed.configureCompiler({
+    preserveWhitespaces: false
+  } as any).configureTestingModule({
     declarations: [
       TestContainer,
       TestedWidget,
