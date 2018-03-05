@@ -4,91 +4,49 @@ exports[`Breadcrumb renders markup with two items 1`] = `
 <ng-component
   testedWidget={[Function NgAisBreadcrumb]}
 >
-  
-        <ais-instantsearch>
-    
-          
+  <ais-instantsearch>
     <ais-breadcrumb>
-      
-      
       
       <div
         class="ais-Breadcrumb"
       >
-        
-        
         <ul
           class="ais-Breadcrumb-list"
         >
-          
-          
           
           <li
             class="ais-Breadcrumb-item"
           >
             
             
-            
-            
-            
-            
             <a
               class="ais-Breadcrumb-link"
               href=""
             >
-              
-              foo
-            
+               foo 
             </a>
             
-  
-            
-            
-            
-          
           </li>
           <li
             class="ais-Breadcrumb-item--selected"
           >
             
-            
-            
             <span
               aria-hidden="true"
               class="ais-Breadcrumb-separator"
             >
-              
-              &gt;
-            
+               &gt; 
             </span>
-            
-            
-            
-            
-  
             
             
             <span>
-              
-              bar
-            
+               bar 
             </span>
-            
-          
           </li>
-          
-        
         </ul>
-        
-      
       </div>
-      
-    
     </ais-breadcrumb>
-    
-        
   </ais-instantsearch>
-      
 </ng-component>
 `;
 
@@ -96,38 +54,20 @@ exports[`Breadcrumb renders markup without state 1`] = `
 <ng-component
   testedWidget={[Function NgAisBreadcrumb]}
 >
-  
-        <ais-instantsearch>
-    
-          
+  <ais-instantsearch>
     <ais-breadcrumb>
-      
-      
       
       <div
         class="ais-Breadcrumb"
       >
-        
-        
         <ul
           class="ais-Breadcrumb-list"
         >
           
-          
-          
-          
-        
         </ul>
-        
-      
       </div>
-      
-    
     </ais-breadcrumb>
-    
-        
   </ais-instantsearch>
-      
 </ng-component>
 `;
 
@@ -135,20 +75,10 @@ exports[`Breadcrumb should be hidden with \`autoHideContainer\` 1`] = `
 <ng-component
   testedWidget={[Function NgAisBreadcrumb]}
 >
-  
-        <ais-instantsearch>
-    
-          
+  <ais-instantsearch>
     <ais-breadcrumb>
       
-      
-      
-      
-    
     </ais-breadcrumb>
-    
-        
   </ais-instantsearch>
-      
 </ng-component>
 `;

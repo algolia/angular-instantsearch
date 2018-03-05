@@ -4,129 +4,78 @@ exports[`Menu renders markup with state 1`] = `
 <ng-component
   testedWidget={[Function NgAisMenu]}
 >
-  
-        <ais-instantsearch>
-    
-          
+  <ais-instantsearch>
     <ais-menu>
-      
-      
       
       <div
         class="ais-Menu"
       >
-        
-        
         <ul
           class="ais-Menu-list"
         >
           
-          
-          
           <li
             class="ais-Menu-item ais-Menu-item--selected"
           >
-            
-            
             <a
               class="ais-Menu-link"
               href=""
             >
-              
-              
               <span
                 class="ais-Menu-label"
               >
                 foo
               </span>
-              
-              
               <span
                 class="ais-Menu-count"
               >
                 2
               </span>
-              
-            
             </a>
-            
-          
           </li>
           <li
             class="ais-Menu-item"
           >
-            
-            
             <a
               class="ais-Menu-link"
               href=""
             >
-              
-              
               <span
                 class="ais-Menu-label"
               >
                 bar
               </span>
-              
-              
               <span
                 class="ais-Menu-count"
               >
                 3
               </span>
-              
-            
             </a>
-            
-          
           </li>
           <li
             class="ais-Menu-item"
           >
-            
-            
             <a
               class="ais-Menu-link"
               href=""
             >
-              
-              
               <span
                 class="ais-Menu-label"
               >
                 foobar
               </span>
-              
-              
               <span
                 class="ais-Menu-count"
               >
                 4
               </span>
-              
-            
             </a>
-            
-          
           </li>
-          
-        
         </ul>
         
-  
-        
-        
-        
-      
       </div>
-      
-    
     </ais-menu>
-    
-        
   </ais-instantsearch>
-      
 </ng-component>
 `;
 
@@ -134,42 +83,21 @@ exports[`Menu renders markup without state 1`] = `
 <ng-component
   testedWidget={[Function NgAisMenu]}
 >
-  
-        <ais-instantsearch>
-    
-          
+  <ais-instantsearch>
     <ais-menu>
-      
-      
       
       <div
         class="ais-Menu"
       >
-        
-        
         <ul
           class="ais-Menu-list"
         >
           
-          
-          
-          
-        
         </ul>
         
-  
-        
-        
-        
-      
       </div>
-      
-    
     </ais-menu>
-    
-        
   </ais-instantsearch>
-      
 </ng-component>
 `;
 
@@ -177,129 +105,78 @@ exports[`Menu should apply \`transformItems\` if specified 1`] = `
 <ng-component
   testedWidget={[Function NgAisMenu]}
 >
-  
-        <ais-instantsearch>
-    
-          
+  <ais-instantsearch>
     <ais-menu>
-      
-      
       
       <div
         class="ais-Menu"
       >
-        
-        
         <ul
           class="ais-Menu-list"
         >
           
-          
-          
           <li
             class="ais-Menu-item ais-Menu-item--selected"
           >
-            
-            
             <a
               class="ais-Menu-link"
               href=""
             >
-              
-              
               <span
                 class="ais-Menu-label"
               >
                 transformed - foo
               </span>
-              
-              
               <span
                 class="ais-Menu-count"
               >
                 2
               </span>
-              
-            
             </a>
-            
-          
           </li>
           <li
             class="ais-Menu-item"
           >
-            
-            
             <a
               class="ais-Menu-link"
               href=""
             >
-              
-              
               <span
                 class="ais-Menu-label"
               >
                 transformed - bar
               </span>
-              
-              
               <span
                 class="ais-Menu-count"
               >
                 3
               </span>
-              
-            
             </a>
-            
-          
           </li>
           <li
             class="ais-Menu-item"
           >
-            
-            
             <a
               class="ais-Menu-link"
               href=""
             >
-              
-              
               <span
                 class="ais-Menu-label"
               >
                 transformed - foobar
               </span>
-              
-              
               <span
                 class="ais-Menu-count"
               >
                 4
               </span>
-              
-            
             </a>
-            
-          
           </li>
-          
-        
         </ul>
         
-  
-        
-        
-        
-      
       </div>
-      
-    
     </ais-menu>
-    
-        
   </ais-instantsearch>
-      
 </ng-component>
 `;
 
@@ -307,20 +184,10 @@ exports[`Menu should be hidden with \`autoHideContainer\` 1`] = `
 <ng-component
   testedWidget={[Function NgAisMenu]}
 >
-  
-        <ais-instantsearch>
-    
-          
+  <ais-instantsearch>
     <ais-menu>
       
-      
-      
-      
-    
     </ais-menu>
-    
-        
   </ais-instantsearch>
-      
 </ng-component>
 `;

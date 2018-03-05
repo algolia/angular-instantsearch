@@ -4,24 +4,15 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
 <ng-component
   testedWidget={[Function NgAisHierarchicalMenu]}
 >
-  
-        <ais-instantsearch>
-    
-          
+  <ais-instantsearch>
     <ais-hierarchical-menu>
-      
-      
       
       <div
         class="ais-HierarchicalMenu"
       >
-        
-        
         <ul
           class="ais-HierarchicalMenu-list ais-HierarchicalMenu-list--lvl0"
         >
-          
-          
           
           <ais-hierarchical-menu-item
             ng-reflect-create-u-r-l="function () {
@@ -30,43 +21,26 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
             ng-reflect-refine="function () {
           return f"
           >
-            
-      
             <li
               class="ais-HierarchicalMenu-item"
             >
-              
-        
               <a
                 class="ais-HierarchicalMenu-link"
                 href=""
               >
-                
-          
                 <span
                   class="ais-HierarchicalMenu-label"
                 >
                   one
                 </span>
-                
-          
                 <span
                   class="ais-HierarchicalMenu-count"
                 >
                   100
                 </span>
-                
-        
               </a>
               
-  
-        
-              
-              
-      
             </li>
-            
-    
           </ais-hierarchical-menu-item>
           <ais-hierarchical-menu-item
             ng-reflect-create-u-r-l="function () {
@@ -75,44 +49,29 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
             ng-reflect-refine="function () {
           return f"
           >
-            
-      
             <li
               class="ais-HierarchicalMenu-item ais-HierarchicalMenu-item--selected ais-HierarchicalMenu-item--parent"
             >
-              
-        
               <a
                 class="ais-HierarchicalMenu-link"
                 href=""
               >
-                
-          
                 <span
                   class="ais-HierarchicalMenu-label"
                 >
                   two
                 </span>
-                
-          
                 <span
                   class="ais-HierarchicalMenu-count"
                 >
                   100
                 </span>
-                
-        
               </a>
-              
-  
-        
               
               <ul
                 class="ais-HierarchicalMenu-list ais-HierarchicalMenu-list--child ais-HierarchicalMenu-list--lvl1"
               >
                 
-          
-                
                 <ais-hierarchical-menu-item
                   ng-reflect-create-u-r-l="function () {
           return f"
@@ -121,43 +80,26 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
                   ng-reflect-refine="function () {
           return f"
                 >
-                  
-      
                   <li
                     class="ais-HierarchicalMenu-item"
                   >
-                    
-        
                     <a
                       class="ais-HierarchicalMenu-link"
                       href=""
                     >
-                      
-          
                       <span
                         class="ais-HierarchicalMenu-label"
                       >
                         six
                       </span>
-                      
-          
                       <span
                         class="ais-HierarchicalMenu-count"
                       >
                         100
                       </span>
-                      
-        
                     </a>
                     
-  
-        
-                    
-                    
-      
                   </li>
-                  
-    
                 </ais-hierarchical-menu-item>
                 <ais-hierarchical-menu-item
                   ng-reflect-create-u-r-l="function () {
@@ -167,43 +109,26 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
                   ng-reflect-refine="function () {
           return f"
                 >
-                  
-      
                   <li
                     class="ais-HierarchicalMenu-item"
                   >
-                    
-        
                     <a
                       class="ais-HierarchicalMenu-link"
                       href=""
                     >
-                      
-          
                       <span
                         class="ais-HierarchicalMenu-label"
                       >
                         seven
                       </span>
-                      
-          
                       <span
                         class="ais-HierarchicalMenu-count"
                       >
                         100
                       </span>
-                      
-        
                     </a>
                     
-  
-        
-                    
-                    
-      
                   </li>
-                  
-    
                 </ais-hierarchical-menu-item>
                 <ais-hierarchical-menu-item
                   ng-reflect-create-u-r-l="function () {
@@ -213,43 +138,26 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
                   ng-reflect-refine="function () {
           return f"
                 >
-                  
-      
                   <li
                     class="ais-HierarchicalMenu-item"
                   >
-                    
-        
                     <a
                       class="ais-HierarchicalMenu-link"
                       href=""
                     >
-                      
-          
                       <span
                         class="ais-HierarchicalMenu-label"
                       >
                         eight
                       </span>
-                      
-          
                       <span
                         class="ais-HierarchicalMenu-count"
                       >
                         100
                       </span>
-                      
-        
                     </a>
                     
-  
-        
-                    
-                    
-      
                   </li>
-                  
-    
                 </ais-hierarchical-menu-item>
                 <ais-hierarchical-menu-item
                   ng-reflect-create-u-r-l="function () {
@@ -259,52 +167,29 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
                   ng-reflect-refine="function () {
           return f"
                 >
-                  
-      
                   <li
                     class="ais-HierarchicalMenu-item"
                   >
-                    
-        
                     <a
                       class="ais-HierarchicalMenu-link"
                       href=""
                     >
-                      
-          
                       <span
                         class="ais-HierarchicalMenu-label"
                       >
                         nine
                       </span>
-                      
-          
                       <span
                         class="ais-HierarchicalMenu-count"
                       >
                         100
                       </span>
-                      
-        
                     </a>
                     
-  
-        
-                    
-                    
-      
                   </li>
-                  
-    
                 </ais-hierarchical-menu-item>
-                
-        
               </ul>
-              
-      
             </li>
-            
-    
           </ais-hierarchical-menu-item>
           <ais-hierarchical-menu-item
             ng-reflect-create-u-r-l="function () {
@@ -313,43 +198,26 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
             ng-reflect-refine="function () {
           return f"
           >
-            
-      
             <li
               class="ais-HierarchicalMenu-item"
             >
-              
-        
               <a
                 class="ais-HierarchicalMenu-link"
                 href=""
               >
-                
-          
                 <span
                   class="ais-HierarchicalMenu-label"
                 >
                   three
                 </span>
-                
-          
                 <span
                   class="ais-HierarchicalMenu-count"
                 >
                   100
                 </span>
-                
-        
               </a>
               
-  
-        
-              
-              
-      
             </li>
-            
-    
           </ais-hierarchical-menu-item>
           <ais-hierarchical-menu-item
             ng-reflect-create-u-r-l="function () {
@@ -358,43 +226,26 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
             ng-reflect-refine="function () {
           return f"
           >
-            
-      
             <li
               class="ais-HierarchicalMenu-item"
             >
-              
-        
               <a
                 class="ais-HierarchicalMenu-link"
                 href=""
               >
-                
-          
                 <span
                   class="ais-HierarchicalMenu-label"
                 >
                   four
                 </span>
-                
-          
                 <span
                   class="ais-HierarchicalMenu-count"
                 >
                   100
                 </span>
-                
-        
               </a>
               
-  
-        
-              
-              
-      
             </li>
-            
-    
           </ais-hierarchical-menu-item>
           <ais-hierarchical-menu-item
             ng-reflect-create-u-r-l="function () {
@@ -403,57 +254,31 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
             ng-reflect-refine="function () {
           return f"
           >
-            
-      
             <li
               class="ais-HierarchicalMenu-item"
             >
-              
-        
               <a
                 class="ais-HierarchicalMenu-link"
                 href=""
               >
-                
-          
                 <span
                   class="ais-HierarchicalMenu-label"
                 >
                   five
                 </span>
-                
-          
                 <span
                   class="ais-HierarchicalMenu-count"
                 >
                   100
                 </span>
-                
-        
               </a>
               
-  
-        
-              
-              
-      
             </li>
-            
-    
           </ais-hierarchical-menu-item>
-          
-        
         </ul>
-        
-      
       </div>
-      
-    
     </ais-hierarchical-menu>
-    
-        
   </ais-instantsearch>
-      
 </ng-component>
 `;
 
@@ -461,38 +286,20 @@ exports[`HierarchicalMenu renders markup without state 1`] = `
 <ng-component
   testedWidget={[Function NgAisHierarchicalMenu]}
 >
-  
-        <ais-instantsearch>
-    
-          
+  <ais-instantsearch>
     <ais-hierarchical-menu>
-      
-      
       
       <div
         class="ais-HierarchicalMenu"
       >
-        
-        
         <ul
           class="ais-HierarchicalMenu-list ais-HierarchicalMenu-list--lvl0"
         >
           
-          
-          
-          
-        
         </ul>
-        
-      
       </div>
-      
-    
     </ais-hierarchical-menu>
-    
-        
   </ais-instantsearch>
-      
 </ng-component>
 `;
 
@@ -500,24 +307,15 @@ exports[`HierarchicalMenu should apply \`transformItems\` if specified 1`] = `
 <ng-component
   testedWidget={[Function NgAisHierarchicalMenu]}
 >
-  
-        <ais-instantsearch>
-    
-          
+  <ais-instantsearch>
     <ais-hierarchical-menu>
-      
-      
       
       <div
         class="ais-HierarchicalMenu"
       >
-        
-        
         <ul
           class="ais-HierarchicalMenu-list ais-HierarchicalMenu-list--lvl0"
         >
-          
-          
           
           <ais-hierarchical-menu-item
             ng-reflect-create-u-r-l="function () {
@@ -526,43 +324,26 @@ exports[`HierarchicalMenu should apply \`transformItems\` if specified 1`] = `
             ng-reflect-refine="function () {
           return f"
           >
-            
-      
             <li
               class="ais-HierarchicalMenu-item"
             >
-              
-        
               <a
                 class="ais-HierarchicalMenu-link"
                 href=""
               >
-                
-          
                 <span
                   class="ais-HierarchicalMenu-label"
                 >
                   foo - one
                 </span>
-                
-          
                 <span
                   class="ais-HierarchicalMenu-count"
                 >
                   100
                 </span>
-                
-        
               </a>
               
-  
-        
-              
-              
-      
             </li>
-            
-    
           </ais-hierarchical-menu-item>
           <ais-hierarchical-menu-item
             ng-reflect-create-u-r-l="function () {
@@ -571,44 +352,29 @@ exports[`HierarchicalMenu should apply \`transformItems\` if specified 1`] = `
             ng-reflect-refine="function () {
           return f"
           >
-            
-      
             <li
               class="ais-HierarchicalMenu-item ais-HierarchicalMenu-item--selected ais-HierarchicalMenu-item--parent"
             >
-              
-        
               <a
                 class="ais-HierarchicalMenu-link"
                 href=""
               >
-                
-          
                 <span
                   class="ais-HierarchicalMenu-label"
                 >
                   foo - two
                 </span>
-                
-          
                 <span
                   class="ais-HierarchicalMenu-count"
                 >
                   100
                 </span>
-                
-        
               </a>
-              
-  
-        
               
               <ul
                 class="ais-HierarchicalMenu-list ais-HierarchicalMenu-list--child ais-HierarchicalMenu-list--lvl1"
               >
                 
-          
-                
                 <ais-hierarchical-menu-item
                   ng-reflect-create-u-r-l="function () {
           return f"
@@ -617,43 +383,26 @@ exports[`HierarchicalMenu should apply \`transformItems\` if specified 1`] = `
                   ng-reflect-refine="function () {
           return f"
                 >
-                  
-      
                   <li
                     class="ais-HierarchicalMenu-item"
                   >
-                    
-        
                     <a
                       class="ais-HierarchicalMenu-link"
                       href=""
                     >
-                      
-          
                       <span
                         class="ais-HierarchicalMenu-label"
                       >
                         foo - six
                       </span>
-                      
-          
                       <span
                         class="ais-HierarchicalMenu-count"
                       >
                         100
                       </span>
-                      
-        
                     </a>
                     
-  
-        
-                    
-                    
-      
                   </li>
-                  
-    
                 </ais-hierarchical-menu-item>
                 <ais-hierarchical-menu-item
                   ng-reflect-create-u-r-l="function () {
@@ -663,43 +412,26 @@ exports[`HierarchicalMenu should apply \`transformItems\` if specified 1`] = `
                   ng-reflect-refine="function () {
           return f"
                 >
-                  
-      
                   <li
                     class="ais-HierarchicalMenu-item"
                   >
-                    
-        
                     <a
                       class="ais-HierarchicalMenu-link"
                       href=""
                     >
-                      
-          
                       <span
                         class="ais-HierarchicalMenu-label"
                       >
                         foo - seven
                       </span>
-                      
-          
                       <span
                         class="ais-HierarchicalMenu-count"
                       >
                         100
                       </span>
-                      
-        
                     </a>
                     
-  
-        
-                    
-                    
-      
                   </li>
-                  
-    
                 </ais-hierarchical-menu-item>
                 <ais-hierarchical-menu-item
                   ng-reflect-create-u-r-l="function () {
@@ -709,43 +441,26 @@ exports[`HierarchicalMenu should apply \`transformItems\` if specified 1`] = `
                   ng-reflect-refine="function () {
           return f"
                 >
-                  
-      
                   <li
                     class="ais-HierarchicalMenu-item"
                   >
-                    
-        
                     <a
                       class="ais-HierarchicalMenu-link"
                       href=""
                     >
-                      
-          
                       <span
                         class="ais-HierarchicalMenu-label"
                       >
                         foo - eight
                       </span>
-                      
-          
                       <span
                         class="ais-HierarchicalMenu-count"
                       >
                         100
                       </span>
-                      
-        
                     </a>
                     
-  
-        
-                    
-                    
-      
                   </li>
-                  
-    
                 </ais-hierarchical-menu-item>
                 <ais-hierarchical-menu-item
                   ng-reflect-create-u-r-l="function () {
@@ -755,52 +470,29 @@ exports[`HierarchicalMenu should apply \`transformItems\` if specified 1`] = `
                   ng-reflect-refine="function () {
           return f"
                 >
-                  
-      
                   <li
                     class="ais-HierarchicalMenu-item"
                   >
-                    
-        
                     <a
                       class="ais-HierarchicalMenu-link"
                       href=""
                     >
-                      
-          
                       <span
                         class="ais-HierarchicalMenu-label"
                       >
                         foo - nine
                       </span>
-                      
-          
                       <span
                         class="ais-HierarchicalMenu-count"
                       >
                         100
                       </span>
-                      
-        
                     </a>
                     
-  
-        
-                    
-                    
-      
                   </li>
-                  
-    
                 </ais-hierarchical-menu-item>
-                
-        
               </ul>
-              
-      
             </li>
-            
-    
           </ais-hierarchical-menu-item>
           <ais-hierarchical-menu-item
             ng-reflect-create-u-r-l="function () {
@@ -809,43 +501,26 @@ exports[`HierarchicalMenu should apply \`transformItems\` if specified 1`] = `
             ng-reflect-refine="function () {
           return f"
           >
-            
-      
             <li
               class="ais-HierarchicalMenu-item"
             >
-              
-        
               <a
                 class="ais-HierarchicalMenu-link"
                 href=""
               >
-                
-          
                 <span
                   class="ais-HierarchicalMenu-label"
                 >
                   foo - three
                 </span>
-                
-          
                 <span
                   class="ais-HierarchicalMenu-count"
                 >
                   100
                 </span>
-                
-        
               </a>
               
-  
-        
-              
-              
-      
             </li>
-            
-    
           </ais-hierarchical-menu-item>
           <ais-hierarchical-menu-item
             ng-reflect-create-u-r-l="function () {
@@ -854,43 +529,26 @@ exports[`HierarchicalMenu should apply \`transformItems\` if specified 1`] = `
             ng-reflect-refine="function () {
           return f"
           >
-            
-      
             <li
               class="ais-HierarchicalMenu-item"
             >
-              
-        
               <a
                 class="ais-HierarchicalMenu-link"
                 href=""
               >
-                
-          
                 <span
                   class="ais-HierarchicalMenu-label"
                 >
                   foo - four
                 </span>
-                
-          
                 <span
                   class="ais-HierarchicalMenu-count"
                 >
                   100
                 </span>
-                
-        
               </a>
               
-  
-        
-              
-              
-      
             </li>
-            
-    
           </ais-hierarchical-menu-item>
           <ais-hierarchical-menu-item
             ng-reflect-create-u-r-l="function () {
@@ -899,57 +557,31 @@ exports[`HierarchicalMenu should apply \`transformItems\` if specified 1`] = `
             ng-reflect-refine="function () {
           return f"
           >
-            
-      
             <li
               class="ais-HierarchicalMenu-item"
             >
-              
-        
               <a
                 class="ais-HierarchicalMenu-link"
                 href=""
               >
-                
-          
                 <span
                   class="ais-HierarchicalMenu-label"
                 >
                   foo - five
                 </span>
-                
-          
                 <span
                   class="ais-HierarchicalMenu-count"
                 >
                   100
                 </span>
-                
-        
               </a>
               
-  
-        
-              
-              
-      
             </li>
-            
-    
           </ais-hierarchical-menu-item>
-          
-        
         </ul>
-        
-      
       </div>
-      
-    
     </ais-hierarchical-menu>
-    
-        
   </ais-instantsearch>
-      
 </ng-component>
 `;
 
@@ -957,20 +589,10 @@ exports[`HierarchicalMenu should be hidden with \`autoHideContainer\` 1`] = `
 <ng-component
   testedWidget={[Function NgAisHierarchicalMenu]}
 >
-  
-        <ais-instantsearch>
-    
-          
+  <ais-instantsearch>
     <ais-hierarchical-menu>
       
-      
-      
-      
-    
     </ais-hierarchical-menu>
-    
-        
   </ais-instantsearch>
-      
 </ng-component>
 `;

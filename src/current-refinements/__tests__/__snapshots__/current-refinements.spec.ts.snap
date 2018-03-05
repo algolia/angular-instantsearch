@@ -4,200 +4,121 @@ exports[`CurrentRefinedValues renders markup with state 1`] = `
 <ng-component
   testedWidget={[Function NgAisCurrentRefinements]}
 >
-  
-        <ais-instantsearch>
-    
-          
+  <ais-instantsearch>
     <ais-current-refinements>
-      
-      
       
       <div
         class="ais-CurrentRefinements"
       >
         
         
-        
-        
-  
-        
-        
         <ul
           class="ais-CurrentRefinements-list"
         >
-          
-          
           <li
             class="ais-CurrentRefinements-item"
           >
-            
-            
             <span
               class="ais-CurrentRefinements-label"
             >
               Brand:
             </span>
             
-  
-            
-            
             <span
               class="ais-CurrentRefinements-category"
             >
-              
-              
               <span
                 class="ais-CurrentRefinements-categoryLabel"
               >
                 Canon
               </span>
-              
-              
               <button
                 class="ais-CurrentRefinements-delete"
               >
                 ✕
               </button>
-              
-            
             </span>
             <span
               class="ais-CurrentRefinements-category"
             >
-              
-              
               <span
                 class="ais-CurrentRefinements-categoryLabel"
               >
                 Sony
               </span>
-              
-              
               <button
                 class="ais-CurrentRefinements-delete"
               >
                 ✕
               </button>
-              
-            
             </span>
-            
-          
           </li>
-          
-        
         </ul>
         <ul
           class="ais-CurrentRefinements-list"
         >
-          
-          
           <li
             class="ais-CurrentRefinements-item"
           >
-            
-            
             <span
               class="ais-CurrentRefinements-label"
             >
               Hierarchicalcategories.lvl0:
             </span>
             
-  
-            
-            
             <span
               class="ais-CurrentRefinements-category"
             >
-              
-              
               <span
                 class="ais-CurrentRefinements-categoryLabel"
               >
                 Cameras & Camcorders
               </span>
-              
-              
               <button
                 class="ais-CurrentRefinements-delete"
               >
                 ✕
               </button>
-              
-            
             </span>
-            
-          
           </li>
-          
-        
         </ul>
         <ul
           class="ais-CurrentRefinements-list"
         >
-          
-          
           <li
             class="ais-CurrentRefinements-item"
           >
-            
-            
             <span
               class="ais-CurrentRefinements-label"
             >
               Popularity:
             </span>
             
-  
-            
-            
             <span
               class="ais-CurrentRefinements-category"
             >
-              
-              
               <span
                 class="ais-CurrentRefinements-categoryLabel"
               >
                 0
               </span>
-              
-              
               <button
                 class="ais-CurrentRefinements-delete"
               >
                 ✕
               </button>
-              
-            
             </span>
-            
-          
           </li>
-          
-        
         </ul>
-        
-  
-        
         
         <button
           class="ais-CurrentRefinements-reset"
         >
-          
-          Clear refinements
-        
+           Clear refinements 
         </button>
-        
-      
       </div>
-      
-    
     </ais-current-refinements>
-    
-        
   </ais-instantsearch>
-      
 </ng-component>
 `;
 
@@ -205,13 +126,8 @@ exports[`CurrentRefinedValues renders markup without state 1`] = `
 <ng-component
   testedWidget={[Function NgAisCurrentRefinements]}
 >
-  
-        <ais-instantsearch>
-    
-          
+  <ais-instantsearch>
     <ais-current-refinements>
-      
-      
       
       <div
         class="ais-CurrentRefinements"
@@ -219,31 +135,14 @@ exports[`CurrentRefinedValues renders markup without state 1`] = `
         
         
         
-        
-  
-        
-        
-        
-  
-        
-        
         <button
           class="ais-CurrentRefinements-reset"
         >
-          
-          Clear refinements
-        
+           Clear refinements 
         </button>
-        
-      
       </div>
-      
-    
     </ais-current-refinements>
-    
-        
   </ais-instantsearch>
-      
 </ng-component>
 `;
 
@@ -251,200 +150,121 @@ exports[`CurrentRefinedValues should apply \`transformItems\` if specified 1`] =
 <ng-component
   testedWidget={[Function NgAisCurrentRefinements]}
 >
-  
-        <ais-instantsearch>
-    
-          
+  <ais-instantsearch>
     <ais-current-refinements>
-      
-      
       
       <div
         class="ais-CurrentRefinements"
       >
         
         
-        
-        
-  
-        
-        
         <ul
           class="ais-CurrentRefinements-list"
         >
-          
-          
           <li
             class="ais-CurrentRefinements-item"
           >
-            
-            
             <span
               class="ais-CurrentRefinements-label"
             >
               Brand:
             </span>
             
-  
-            
-            
             <span
               class="ais-CurrentRefinements-category"
             >
-              
-              
               <span
                 class="ais-CurrentRefinements-categoryLabel"
               >
                 Canon
               </span>
-              
-              
               <button
                 class="ais-CurrentRefinements-delete"
               >
                 ✕
               </button>
-              
-            
             </span>
             <span
               class="ais-CurrentRefinements-category"
             >
-              
-              
               <span
                 class="ais-CurrentRefinements-categoryLabel"
               >
                 Sony
               </span>
-              
-              
               <button
                 class="ais-CurrentRefinements-delete"
               >
                 ✕
               </button>
-              
-            
             </span>
-            
-          
           </li>
-          
-        
         </ul>
         <ul
           class="ais-CurrentRefinements-list"
         >
-          
-          
           <li
             class="ais-CurrentRefinements-item"
           >
-            
-            
             <span
               class="ais-CurrentRefinements-label"
             >
               Hierarchicalcategories.lvl0:
             </span>
             
-  
-            
-            
             <span
               class="ais-CurrentRefinements-category"
             >
-              
-              
               <span
                 class="ais-CurrentRefinements-categoryLabel"
               >
                 Cameras & Camcorders
               </span>
-              
-              
               <button
                 class="ais-CurrentRefinements-delete"
               >
                 ✕
               </button>
-              
-            
             </span>
-            
-          
           </li>
-          
-        
         </ul>
         <ul
           class="ais-CurrentRefinements-list"
         >
-          
-          
           <li
             class="ais-CurrentRefinements-item"
           >
-            
-            
             <span
               class="ais-CurrentRefinements-label"
             >
               Popularity:
             </span>
             
-  
-            
-            
             <span
               class="ais-CurrentRefinements-category"
             >
-              
-              
               <span
                 class="ais-CurrentRefinements-categoryLabel"
               >
                 0
               </span>
-              
-              
               <button
                 class="ais-CurrentRefinements-delete"
               >
                 ✕
               </button>
-              
-            
             </span>
-            
-          
           </li>
-          
-        
         </ul>
-        
-  
-        
         
         <button
           class="ais-CurrentRefinements-reset"
         >
-          
-          Clear refinements
-        
+           Clear refinements 
         </button>
-        
-      
       </div>
-      
-    
     </ais-current-refinements>
-    
-        
   </ais-instantsearch>
-      
 </ng-component>
 `;
 
@@ -452,20 +272,10 @@ exports[`CurrentRefinedValues should be hidden with \`autoHideContainer\` 1`] = 
 <ng-component
   testedWidget={[Function NgAisCurrentRefinements]}
 >
-  
-        <ais-instantsearch>
-    
-          
+  <ais-instantsearch>
     <ais-current-refinements>
       
-      
-      
-      
-    
     </ais-current-refinements>
-    
-        
   </ais-instantsearch>
-      
 </ng-component>
 `;
