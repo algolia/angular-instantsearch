@@ -2,6 +2,12 @@
   "name": "angular-instantsearch",
   "version": "1.0.1",
   "description": "Lightning-fast search for Angular apps, by Algolia.",
+  "keywords": [
+    "algolia",
+    "instantsearch",
+    "search",
+    "angular"
+  ],
   "author": {
     "name": "Algolia, Inc.",
     "url": "https://www.algolia.com"
