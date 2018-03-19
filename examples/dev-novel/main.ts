@@ -544,6 +544,17 @@ storiesOf("RangeSlider").add(
   })
 );
 
+storiesOf("Configure").add(
+  "with 1 hit per page",
+  wrapWithHits({
+    template: `
+      <p>This widget renders nothing, here we are forcing hitsPerPage to 1</p>
+      <ais-configure [searchParameters]="{ hitsPerPage: 1 }">
+      </ais-configure>
+    `
+  })
+);
+
 start({
   projectName: "Angular InstantSearch",
   projectLink: "https://github.com/algolia/angular-instantsearch"
