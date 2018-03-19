@@ -23,6 +23,7 @@ import { NgAisToggleModule } from "./toggle/toggle.module";
 import { NgAisHighlightModule } from "./highlight/highlight.module";
 import { NgAisRangeInputModule } from "./range-input/range-input.module";
 import { NgAisPanelModule } from "./panel/panel.module";
+import { NgAisConfigureModule } from "./configure/configure.module";
 
 // Custom SSR algoliasearchClient
 import { createSSRAlgoliaClient } from "./create-ssr-algolia-client";
@@ -60,7 +61,8 @@ const NGIS_MODULES = [
   NgAisBreadcrumbModule,
   NgAisHighlightModule,
   NgAisRangeInputModule,
-  NgAisPanelModule
+  NgAisPanelModule,
+  NgAisConfigureModule
 ];
 
 @NgModule({
