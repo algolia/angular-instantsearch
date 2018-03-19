@@ -122,7 +122,7 @@ export function wrapWithHits({
         appId: "latency",
         indexName: "instant_search",
         searchParameters: {
-          hitsPerPage: 3,
+          // hitsPerPage: 3,
           ...searchParameters
         }
       };
