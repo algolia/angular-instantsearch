@@ -86,7 +86,7 @@ import { parseNumberInput } from "../utils";
 
         <li
           *ngIf="showLast"
-          (click)="refine($event, state.nbPages)"
+          (click)="refine($event, state.nbPages - 1)"
           [class]="
             cx('item') +
             ' ' +
@@ -95,7 +95,7 @@ import { parseNumberInput } from "../utils";
           "
         >
           <a
-            [href]="state.createURL(state.nbPages)"
+            [href]="state.createURL(state.nbPages - 1)"
             [class]="cx('link')"
           >
             ››
@@ -184,8 +184,14 @@ export class NgAisPagination extends BaseWidget {
     event.stopPropagation();
     event.preventDefault();
 
-    if (page <= this.state.nbPages && page >= 0) {
-      this.state.refine(page);
+    if (
+      page < 0 ||
+      page === this.state.currentRefinement ||
+      page >= this.state.nbPages
+    ) {
+      return;
     }
+
+    this.state.refine(page);
   }
 }
