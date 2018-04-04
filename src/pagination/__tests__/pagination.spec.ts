@@ -79,6 +79,34 @@ describe("Pagination", () => {
     lastPage.click();
 
     expect(refine).toHaveBeenCalled();
-    expect(refine).toHaveBeenCalledWith(defaultState.nbPages);
+    expect(refine).toHaveBeenCalledWith(defaultState.nbPages - 1);
+  });
+
+  it("should not refine when there's no other pages", () => {
+    const refine = jest.fn();
+    const fixture = render({ refine, nbPages: 1 });
+
+    fixture.componentInstance.testedWidget.showLast = true;
+    fixture.detectChanges();
+
+    const firstPage = fixture.debugElement.nativeElement.querySelector(
+      "." + cx("item", "firstPage")
+    );
+    const previousPage = fixture.debugElement.nativeElement.querySelector(
+      "." + cx("item", "previousPage")
+    );
+    const nextPage = fixture.debugElement.nativeElement.querySelector(
+      "." + cx("item", "nextPage")
+    );
+    const lastPage = fixture.debugElement.nativeElement.querySelector(
+      "." + cx("item", "lastPage")
+    );
+
+    firstPage.click();
+    previousPage.click();
+    nextPage.click();
+    lastPage.click();
+
+    expect(refine).not.toHaveBeenCalled();
   });
 });
