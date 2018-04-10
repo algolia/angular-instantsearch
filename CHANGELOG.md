@@ -1,3 +1,14 @@
+<a name="1.0.2"></a>
+## [1.0.2](https://github.com/algolia/angular-instantsearch/compare/1.0.1...1.0.2) (2018-04-10)
+
+
+### Bug Fixes
+
+* **pagination:** [#102](https://github.com/algolia/angular-instantsearch/issues/102) ([2da735e](https://github.com/algolia/angular-instantsearch/commit/2da735e))
+* **typings:** ensure compiles with strict rules ([39817b6](https://github.com/algolia/angular-instantsearch/commit/39817b6))
+
+
+
 <a name="1.0.1"></a>
 ## [1.0.1](https://github.com/algolia/angular-instantsearch/compare/1.0.0...1.0.1) (2018-02-28)
 
