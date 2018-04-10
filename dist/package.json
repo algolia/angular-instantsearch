@@ -28,7 +28,7 @@
   "dependencies": {
     "algoliasearch": "^3.24.7",
     "algoliasearch-helper": "^2.23.0",
-    "instantsearch.js": "^2.3.1",
+    "instantsearch.js": "^2.7.0",
     "lodash-es": "^4.17.4",
     "nouislider": "^10.0.0",
     "querystring-es3": "^0.2.1"
