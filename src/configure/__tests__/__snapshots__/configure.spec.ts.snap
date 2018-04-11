@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Configure renders markup without state 1`] = `
+<ng-component
+  testedWidget={[Function NgAisConfigure]}
+>
+  <ais-instantsearch>
+    <ais-configure />
+  </ais-instantsearch>
+</ng-component>
+`;
