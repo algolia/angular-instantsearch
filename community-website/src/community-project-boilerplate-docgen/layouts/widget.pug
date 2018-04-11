@@ -4,21 +4,23 @@ html(lang="en")
     include ./common/meta.pug
   body
     include ./common/header.pug
-    
+
     section.fill-titan
       .container.z-10
         .spacer80
         h1.heading-text.text-heading Widgets
       .spacer32
-    
+
     .documentation-section
       .container
-        
+
         nav.sidebar.pos-abt
           .sidebar-container
             ul.sidebar-elements
               li.sidebar-element.level-h2.navItem.widgets
                 a(href="widgets/breadcrumb.html") Breadcrumb
+              li.sidebar-element.level-h2.navItem.widgets
+                a(href="widgets/configure.html") Configure
               li.sidebar-element.level-h2.navItem.widgets
                 a(href="widgets/clear-refinements.html") Clear Refinements
               li.sidebar-element.level-h2.navItem.widgets
@@ -59,19 +61,19 @@ html(lang="en")
                 a(href="widgets/stats.html") Stats
               li.sidebar-element.level-h2.navItem.widgets
                 a(href="widgets/toggle.html") Toggle
-                
+
         a.sidebar-opener
-          
+
         .documentation-container
           block content
             .content!=contents
-            
+
           hr
           p
             strong Can't find what you are looking for? #[a(href="https://github.com/algolia/angular-instantsearch/issues/new?title=I could not find what I was looking for&body=Hi! I have a documentation issue on Angular-InstantSearch, I could not find what I was looking for which is: -- PLEASE FILL IN HERE --") Open an issue], we'll get back to you.
-          
+
     include ./common/footer.pug
-    
+
     script(src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js")
     script(src=webpack.assets['js/common.js'])
     script(src=webpack.assets['js/main.js'])
