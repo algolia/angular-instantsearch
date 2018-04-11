@@ -5,7 +5,7 @@ layout: guide.pug
 
 # Server Side Rendering
 
-This is an advanced guide, if you never used Angular InstantSearch, you should follow the [gettind-started](/) first.
+This is an advanced guide, if you never used Angular InstantSearch, you should follow the [getting-started](https://community.algolia.com/angular-instantsearch/getting-started.html) first.
 
 You can find the result of this guide on the Angular InstantSearch [repository](https://github.com/algolia/angular-instantsearch/tree/master/examples/server-side-rendering).
 
