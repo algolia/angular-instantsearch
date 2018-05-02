@@ -11,14 +11,15 @@ import {
 } from "@angular/core";
 import { isPlatformBrowser } from "@angular/common";
 
+import * as algoliasearch from "algoliasearch";
 import instantsearch from "instantsearch.js/es";
 
 import { Widget } from "../base-widget";
 import { VERSION } from "../version";
 
 export type InstantSearchConfig = {
-  appId: string;
-  apiKey: string;
+  appId?: string;
+  apiKey?: string;
   indexName: string;
 
   numberLocale?: string;
@@ -28,6 +29,7 @@ export type InstantSearchConfig = {
     appId: string,
     apiKey: string
   ) => object;
+  searchClient?: object;
   searchParameters?: object | void;
   urlSync?:
     | boolean
@@ -106,12 +108,13 @@ export class NgAisInstantSearch implements AfterViewInit, OnInit, OnDestroy {
     }
 
     // custom algolia client agent
-    if (!config.createAlgoliaClient) {
-      config.createAlgoliaClient = (algoliasearch, appId, apiKey) => {
-        const client = algoliasearch(appId, apiKey);
-        client.addAlgoliaAgent(`angular-instantsearch ${VERSION}`);
-        return client;
-      };
+    if (!config.searchClient && !config.createAlgoliaClient) {
+      const client = algoliasearch(config.appId, config.apiKey);
+      client.addAlgoliaAgent(`angular-instantsearch ${VERSION}`);
+
+      config.searchClient = client;
+      config.appId = undefined;
+      config.apiKey = undefined;
     }
 
     this.instantSearchInstance = instantsearch(config);
