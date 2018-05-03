@@ -60,9 +60,13 @@ export class AppComponent {}
 > A hook that will be called each time a search needs to be done, with the helper as a parameter. It’s your responsibility to call `helper.search()`. This option allows you to avoid doing searches at page load for example.
 
 `createAlgoliaClient?: (algoliasearch: Function, appId: string, apiKey: string) => CustomClient`
+> _Deprecated in favor of `searchClient`._
 > Allows you to provide your own algolia client instead of the one instantiated internally.
 > Useful in situations where you need to setup complex mechanism on the client or if you need to share it easily.
 > We forward `algoliasearch` which is the original algoliasearch module imported inside angular-instantsearch.
+
+`searchClient?: {}`
+> The search client to plug to InstantSearch.js.
 
 `searchParameters?: {}`
 > Additional parameters to pass to the Algolia API.
