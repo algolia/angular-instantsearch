@@ -20,8 +20,8 @@ import { VERSION } from "../version";
 const algoliasearch = algoliasearchProxy.default || algoliasearchProxy;
 
 export type SearchClient = {
-  search: () => Promise<object>;
-  searchForFacetValues?: () => Promise<object>;
+  search: (requests: object) => Promise<object>;
+  searchForFacetValues?: (requests: object) => Promise<object>;
 };
 
 export type InstantSearchConfig = {
