@@ -15,6 +15,7 @@ export function wrapWithHits({
   searchParameters = {},
   methods = {},
   searchFunction,
+  searchClient,
   appDeclarations = []
 }: {
   template: string;
@@ -22,6 +23,7 @@ export function wrapWithHits({
   searchParameters?: {};
   methods?: {};
   searchFunction?: (helper: Helper) => void;
+  searchClient?: {};
   appDeclarations?: any[];
 }) {
   return (container: Element) => {
@@ -117,9 +119,12 @@ export function wrapWithHits({
     })
     class AppComponent {
       config = {
+        ...(!searchClient && {
+          appId: "latency",
+          apiKey: "6be0576ff61c053d5f9a3225e2a90f76"
+        }),
         searchFunction,
-        apiKey: "6be0576ff61c053d5f9a3225e2a90f76",
-        appId: "latency",
+        searchClient,
         indexName: "instant_search",
         searchParameters: {
           hitsPerPage: 3,
