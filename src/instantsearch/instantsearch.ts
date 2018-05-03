@@ -109,12 +109,13 @@ export type SearchParameters = {
 
 export interface SearchRequestParameters extends SearchParameters {
   query: string;
-};
+}
 
-export interface SearchForFacetValuesRequestParameters extends SearchParameters {
+export interface SearchForFacetValuesRequestParameters
+  extends SearchParameters {
   facetQuery: string;
   facetName: string;
-};
+}
 
 export type GeoRectangle = [number, number, number, number];
 export type GeoPolygon = [number, number, number, number, number, number];
@@ -134,7 +135,7 @@ export type SearchResponse = {
 
 export type Hit = {
   _highlightResult?: object;
-}
+};
 
 // Documentation: https://www.algolia.com/doc/rest-api/search/?language=javascript#search-for-facet-values
 export type SearchForFacetValuesResponse = {
