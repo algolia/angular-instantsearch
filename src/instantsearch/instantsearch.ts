@@ -21,16 +21,16 @@ const algoliasearch = algoliasearchProxy.default || algoliasearchProxy;
 
 export type SearchRequest = {
   indexName: string;
-  params: SearchParameters;
+  params: SearchRequestParameters;
 };
 
 export type SearchForFacetValuesRequest = {
   indexName: string;
-  params: SearchForFacetValuesParameters;
+  params: SearchForFacetValuesRequestParameters;
 };
 
 // Documentation: https://www.algolia.com/doc/api-reference/search-api-parameters/
-export type Parameters = {
+export type SearchParameters = {
   // Attributes
   attributesToRetrieve?: string[];
   restrictSearchableAttributes?: string[];
@@ -107,11 +107,11 @@ export type Parameters = {
   replaceSynonymsInHighlight?: boolean;
 };
 
-export interface SearchParameters extends Parameters {
+export interface SearchRequestParameters extends SearchParameters {
   query: string;
 };
 
-export interface SearchForFacetValuesParameters extends Parameters {
+export interface SearchForFacetValuesRequestParameters extends SearchParameters {
   facetQuery: string;
   facetName: string;
 };
@@ -163,7 +163,7 @@ export type InstantSearchConfig = {
     apiKey: string
   ) => object;
   searchClient?: SearchClient;
-  searchParameters?: object | void;
+  searchParameters?: SearchParameters | void;
   urlSync?:
     | boolean
     | {
