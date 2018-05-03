@@ -19,6 +19,11 @@ import { VERSION } from "../version";
 
 const algoliasearch = algoliasearchProxy.default || algoliasearchProxy;
 
+export type SearchClient = {
+  search: () => Promise<object>;
+  searchForFacetValues?: () => Promise<object>;
+};
+
 export type InstantSearchConfig = {
   appId?: string;
   apiKey?: string;
@@ -31,7 +36,7 @@ export type InstantSearchConfig = {
     appId: string,
     apiKey: string
   ) => object;
-  searchClient?: object;
+  searchClient?: SearchClient;
   searchParameters?: object | void;
   urlSync?:
     | boolean
