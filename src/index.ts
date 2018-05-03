@@ -26,8 +26,11 @@ import { NgAisPanelModule } from "./panel/panel.module";
 import { NgAisConfigureModule } from "./configure/configure.module";
 
 // Custom SSR algoliasearchClient
-import { createSSRAlgoliaClient } from "./create-ssr-algolia-client";
-export { createSSRAlgoliaClient };
+import {
+  createSSRAlgoliaClient,
+  createSSRSearchClient,
+} from "./create-ssr-algolia-client";
+export { createSSRAlgoliaClient, createSSRSearchClient };
 
 import { parseServerRequest } from "./parse-server-request";
 export { parseServerRequest };
