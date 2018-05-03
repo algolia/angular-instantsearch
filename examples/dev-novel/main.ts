@@ -38,7 +38,7 @@ storiesOf("InstantSearch").add(
   "with algoliasearch search client",
   wrapWithHits({
     template: "",
-    searchClient: algoliasearch("latency", "6be0576ff61c053d5f9a3225e2a90f76"),
+    searchClient: algoliasearch("latency", "6be0576ff61c053d5f9a3225e2a90f76")
   })
 );
 
@@ -54,34 +54,38 @@ storiesOf("InstantSearch").add(
               hits: [
                 {
                   objectID: "1",
-                  image: "https://cdn-demo.algolia.com/bestbuy-0118/5477500_sb.jpg",
+                  image:
+                    "https://cdn-demo.algolia.com/bestbuy-0118/5477500_sb.jpg",
                   price: "99.99",
                   rating: 4,
-                  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nunc lacus, vestibulum non rutrum a, dapibus interdum magna. Quisque semper orci erat, id placerat nunc convallis at. Praesent commodo, elit non fermentum blandit, augue dolor cursus metus, eu auctor leo erat sit amet ante. Interdum et malesuada fames ac ante ipsum primis in faucibus.",
+                  description:
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nunc lacus, vestibulum non rutrum a, dapibus interdum magna. Quisque semper orci erat, id placerat nunc convallis at. Praesent commodo, elit non fermentum blandit, augue dolor cursus metus, eu auctor leo erat sit amet ante. Interdum et malesuada fames ac ante ipsum primis in faucibus.",
                   _highlightResult: {
                     name: {
-                      value: "Fake Result 1",
-                    },
-                  },
+                      value: "Fake Result 1"
+                    }
+                  }
                 },
                 {
                   objectID: "2",
-                  image: "https://cdn-demo.algolia.com/bestbuy-0118/4397400_sb.jpg",
+                  image:
+                    "https://cdn-demo.algolia.com/bestbuy-0118/4397400_sb.jpg",
                   price: "39.99",
                   rating: 3,
-                  description: "Morbi pretium urna et massa maximus maximus. Nunc risus lectus, mattis non malesuada quis, pretium eget ligula. Sed vulputate mauris congue, tempor velit et, pretium felis. Ut ullamcorper et ligula et congue. Nunc consequat massa massa. Etiam eu purus lorem. Ut bibendum nisi nec sapien imperdiet, vel laoreet velit porttitor.",
+                  description:
+                    "Morbi pretium urna et massa maximus maximus. Nunc risus lectus, mattis non malesuada quis, pretium eget ligula. Sed vulputate mauris congue, tempor velit et, pretium felis. Ut ullamcorper et ligula et congue. Nunc consequat massa massa. Etiam eu purus lorem. Ut bibendum nisi nec sapien imperdiet, vel laoreet velit porttitor.",
                   _highlightResult: {
                     name: {
-                      value: "Fake Result 2",
-                    },
-                  },
-                },
-              ],
-            },
-          ],
+                      value: "Fake Result 2"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
         });
-      },
-    },
+      }
+    }
   })
 );
 
