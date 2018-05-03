@@ -11,13 +11,13 @@ import {
 } from "@angular/core";
 import { isPlatformBrowser } from "@angular/common";
 
-import * as algoliasearchProxy from 'algoliasearch'
+import * as algoliasearchProxy from "algoliasearch";
 import instantsearch from "instantsearch.js/es";
 
 import { Widget } from "../base-widget";
 import { VERSION } from "../version";
 
-const algoliasearch = algoliasearchProxy.default || algoliasearchProxy
+const algoliasearch = algoliasearchProxy.default || algoliasearchProxy;
 
 export type InstantSearchConfig = {
   appId?: string;
