@@ -1,0 +1,25 @@
+{
+  "$schema": "./node_modules/ng-packagr/ng-package.schema.json",
+  "lib": {
+    "entryFile": "src/index.ts",
+    "umdModuleIds": {
+      "lodash-es": "_",
+      "algoliasearch": "algoliasearch",
+      "algoliasearch/index": "algoliasearch",
+      "instantsearch.js/es": "instantsearch",
+      "instantsearch.js/es/connectors": "instantsearch.connectors",
+      "nouislider": "noUiSlider",
+      "querystring-es3/encode": "qs.encode",
+      "algoliasearch-helper": "algoliasearchHelper"
+    }
+  },
+  "whitelistedNonPeerDependencies": [
+    "algoliasearch",
+    "algoliasearch-helper",
+    "instantsearch.js",
+    "lodash-es",
+    "nouislider",
+    "querystring-es3",
+    "instantsearch.css"
+  ]
+}
