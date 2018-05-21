@@ -236,7 +236,7 @@ We now miss two elements in our search interface:
 * The ability to browse beyond the first page of results
 * The ability to reset the filters
 
-Those two features are implemented respectively with the [Pagination](widgets/pagination.html), [ClearRefinements](clear-refinements.html) and [CurrentRefinements](widgets/current-refinements.html) widgets. They all have nice defaults which means that we can use them directly without further configuration.
+Those two features are implemented respectively with the [Pagination](widgets/pagination.html), [ClearRefinements](widgets/clear-refinements.html) and [CurrentRefinements](widgets/current-refinements.html) widgets. They all have nice defaults which means that we can use them directly without further configuration.
 
 ```html
 <ng-ais-instantsearch [config]="{...}">
