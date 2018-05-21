@@ -236,7 +236,7 @@ We now miss two elements in our search interface:
 * The ability to browse beyond the first page of results
 * The ability to reset the filters
 
-Those two features are implemented respectively with the [Pagination](widgets/pagination.html), [ClearAll](widgets/clear-all.html) and [CurrentRefinedValues](widgets/current-refined-values.html) widgets. They all have nice defaults which means that we can use them directly without further configuration.
+Those two features are implemented respectively with the [Pagination](widgets/pagination.html), [ClearRefinements](clear-refinements.html) and [CurrentRefinements](widgets/current-refinements.html) widgets. They all have nice defaults which means that we can use them directly without further configuration.
 
 ```html
 <ng-ais-instantsearch [config]="{...}">
@@ -247,17 +247,17 @@ Those two features are implemented respectively with the [Pagination](widgets/pa
   <ng-ais-refinement-list attribute="category">
   </ng-ais-refinement-list>
 
-  <!-- CurrentRefinedValues -->
-  <ng-ais-current-refined-values [clearAll]="false">
+  <!-- CurrentRefinements -->
+  <ng-ais-current-refinements [clearRefinements]="false">
     <!--
-      This widget can also contain a clear all link to remove all filters,
-      we disable it in this example since we use `clearAll` widget on its own.
+      This widget can also contain a clear refinements link to remove all filters,
+      we disable it in this example since we use `ClearRefinements` widget on its own.
     -->
-  </ng-ais-current-refined-values>
+  </ng-ais-current-refinements>
 
-  <!-- ClearAll -->
-  <ng-ais-clear-all clearAllLabel="Reset everything">
-  </ng-ais-clear-all>
+  <!-- ClearRefinements -->
+  <ng-ais-clear-refinements buttonLabel="Reset everything">
+  </ng-ais-clear-refinements>
 
   <!-- Hits -->
   <ng-ais-hits></ng-ais-hits>
