@@ -28,7 +28,7 @@ It contains sample data for an e-commerce website.
 This guide also expects you to have a working angular application. You can use the official [angular CLI](http://cli.angular.io) to bootstrap a new application this way:
 
 ```sh
-npm install -g @angular/cli
+npm install -g @angular/cli@6
 ng new example-angular-instantsearch
 cd example-angular-instantsearch
 ng serve
@@ -83,19 +83,27 @@ export class OtherModule {}
 ```
 
 You also need load the companion CSS files. To do so, you need to add the relevant CSS files to
-your `.angular-cli.json` file, in the `apps > styles` array:
+your `angular.json` file, in the `apps > styles` array:
 
 ```json
 {
   "styles": [
-    "../node_modules/angular-instantsearch/bundles/instantsearch.min.css",
-    "../node_modules/angular-instantsearch/bundles/instantsearch-theme-algolia.min.css",
+    "node_modules/angular-instantsearch/bundles/instantsearch.min.css",
+    "node_modules/angular-instantsearch/bundles/instantsearch-theme-algolia.min.css",
     "styles.css"
   ]
 }
 ```
 
-And then kill and reload (`ng serve`) your server.
+Then you need to update the file named `polyfills.ts` to add, at the bottom of the file:
+
+```js
+(window as any).process = {
+  env: { DEBUG: undefined },
+};
+```
+
+Finally, kill (ctrl + c) and reload (`ng serve`) your server.
 
 ## Initialization
 
@@ -133,7 +141,7 @@ To display results, let's add the Results widget. This widget will display all t
     apiKey: '6be0576ff61c053d5f9a3225e2a90f76',
     appId: 'latency',
     indexName: 'instant_search',
-    urlSync: true
+    routing: true
   }"
 >
   <ng-ais-hits></ng-ais-hits>
@@ -143,8 +151,26 @@ To display results, let's add the Results widget. This widget will display all t
 Here's the result:
 ![First hits](assets/images/first-hits.png)
 
-You should now be able to see the results, now let's try to use a custom template for hits,
-replace `<ng-ais-hits></ng-ais-hits>` with:
+## Add a SearchBox
+
+Now that we’ve added the results, we can start querying our index. To do this, we are going to use the Searchbox widget. Let’s add it in the application template:
+
+```html
+<!-- <ng-ais-instantsearch [config]="{...}"> -->
+  <ng-ais-search-box></ng-ais-search-box>
+  <!-- <ng-ais-hits></ng-ais-hits> -->
+<!-- </ng-ais-instantsearch> -->
+```
+
+The search is now interactive and we see what matched in each of the products. Good thing for us, Algolia computes the matching part. For better control over what kind of data is returned, you should configure the [attributeToRetrieve](https://www.algolia.com/doc/rest#param-attributesToRetrieve) and [attributeToHighlight](https://www.algolia.com/doc/rest#param-attributesToHighlight) of your index
+
+In this part, we’ve seen:
+
+* How to use the searchbox to query Algolia with text
+
+## Customize the results
+
+Now let's try to use a custom template for hits, replace `<ng-ais-hits></ng-ais-hits>` with:
 
 ```html
 <!-- <ng-ais-instantsearch [config]="{...}"> -->
@@ -180,23 +206,6 @@ In this section we’ve seen:
 * How to display the results from Algolia
 * How to customize the display of those results
 * How to leverage highlighting in results
-
-## Add a SearchBox
-
-Now that we’ve added the results, we can start querying our index. To do this, we are going to use the Searchbox widget. Let’s add it in the application template:
-
-```html
-<!-- <ng-ais-instantsearch [config]="{...}"> -->
-  <ng-ais-search-box></ng-ais-search-box>
-  <!-- <ng-ais-hits></ng-ais-hits> -->
-<!-- </ng-ais-instantsearch> -->
-```
-
-The search is now interactive and we see what matched in each of the products. Good thing for us, Algolia computes the matching part. For better control over what kind of data is returned, you should configure the [attributeToRetrieve](https://www.algolia.com/doc/rest#param-attributesToRetrieve) and [attributeToHighlight](https://www.algolia.com/doc/rest#param-attributesToHighlight) of your index
-
-In this part, we’ve seen:
-
-* How to use the searchbox to query Algolia with text
 
 ## Add a RefinementList
 
@@ -277,4 +286,4 @@ In this part, we’ve seen:
 
 ## Wrapping up
 
-Congratulations, you now have a fully featured InstantSearch result page. But this is only the beginning! If you want to dig further into Angular InstantSearch, we suggest reading the other guides and the widgets API.
+Congratulations, you now have a fully featured InstantSearch result page. But this is only the beginning! If you want to dig further into Angular InstantSearch, we suggest reading the other [guides](https://community.algolia.com/angular-instantsearch/guides/customize-widgets.html) and the [widgets API](widgets/instantsearch.html).
