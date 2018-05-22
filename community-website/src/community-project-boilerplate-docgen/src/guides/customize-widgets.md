@@ -86,11 +86,11 @@ export class MenuSelect extends BaseWidget {
 }
 ```
 
-That's it, your widget is connected to InstantSearch.js and the state of the search it self! Now let's update the rendering of this widget
+That's it, your widget is connected to InstantSearch.js and the state of the search itself! Now let's update the rendering of this widget
 
 ### 3. Render from the state
 
-Your component instance has access a property `this.state` which holds the rendering options of the widget.
+Your component instance has access to a property `this.state` which holds the rendering options of the widget.
 
 From the [connectMenu](https://community.algolia.com/instantsearch.js/v2/connectors/connectMenu.html) InstantSearch.js connector documentation, we can see that we have access to:
 
@@ -166,6 +166,7 @@ export class MenuSelect extends BaseWidget {
   }
 }
 ```
+In `app.module.ts`, make sure to add the component by doing `import { MenuSelect } from './menu.component';` and then adding `MenuSelect` to the `declarations`.
 
 You can now use your directive `<ng-ais-menu-select></ng-ais-menu-select>` to display your custom MenuSelect widget!
 
