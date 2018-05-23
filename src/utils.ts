@@ -16,10 +16,10 @@ export function bem(widgetName: string) {
 
       // output `ais-Widget-Xyz`
       return scoppedWidgetName;
-    } else {
-      // output `ais-Widget`
-      return `ais-${widgetName}`;
     }
+
+    // output `ais-Widget`
+    return `ais-${widgetName}`;
   };
   return cx;
 }
