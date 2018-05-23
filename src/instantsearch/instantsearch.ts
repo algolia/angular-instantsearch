@@ -174,6 +174,14 @@ export type InstantSearchConfig = {
         useHash?: boolean;
         getHistoryState?: () => object;
       };
+  routing?:
+    | boolean
+    | {
+        stateMapping?: {
+          stateToRoute(object): object;
+          routeToState(object): object;
+        };
+      };
 };
 
 export class InstantSearchInstance {
@@ -238,7 +246,8 @@ export class NgAisInstantSearch implements AfterViewInit, OnInit, OnDestroy {
 
     // remove URLSync widget if on SSR
     if (!isPlatformBrowser(this.platformId)) {
-      config.urlSync = false;
+      if (typeof config.urlSync !== "undefined") delete config.urlSync;
+      if (typeof config.routing !== "undefined") delete config.routing;
     }
 
     // custom algolia client agent
