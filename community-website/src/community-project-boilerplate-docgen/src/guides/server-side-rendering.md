@@ -9,9 +9,11 @@ This is an advanced guide, if you never used Angular InstantSearch, you should f
 
 You can find the result of this guide on the Angular InstantSearch [repository](https://github.com/algolia/angular-instantsearch/tree/master/examples/server-side-rendering).
 
-Angular InstantSearch is compatible with server-side rendering starting with Angular version 5. We provide an API that is easy to use with [@angular/universal](https://github.com/angular/universal) modules.
+Angular InstantSearch is compatible with server-side rendering with Angular version 5. We provide an API that is easy to use with [@angular/universal](https://github.com/angular/universal) modules.
 
 For simplicity we are going to use the [@angular/universal-starter](https://github.com/angular/universal-starter) boilerplate which is a minimal Angular starter for Universal JavaScript using TypeScript and Webpack.
+
+**Angular Universal is not working completely with version 6, you will need to checkout a specific commit of `universal-start` boilerplate.**
 
 ### How it works?
 
@@ -28,14 +30,15 @@ First, clone the [@angular/universal-starter](https://github.com/angular/univers
 
 ```sh
 > git clone git@github.com:angular/universal-starter.git [your-app-name]
+> git reset --hard 02758f80501b18b9f49834e367136bd9590ccc04 # Angular 5
 > cd [your-app-name]
-> npm install
+> yarn
 ```
 
 The next step is to install [preboot](https://github.com/angular/preboot) and [angular-instantsearch](https://github.com/algolia/angular-instantsearch) packages as well:
 
 ```sh
-> npm install preboot angular-instantsearch --save
+> yarn add preboot angular-instantsearch
 ```
 
 Now you have all the requirements to start developing your universal Angular InstantSearch application!
@@ -208,7 +211,7 @@ Final step is to update the `instantSearchConfig` with the modules we provide in
 
 ```js
 import {
-  createSSRAlgoliaClient,
+  createSSRSearchClient,
   parseServerRequest
 } from "angular-instantsearch";
 
@@ -228,19 +231,21 @@ constructor(
 
   this.instantSearchConfig = {
     searchParameters,
-    appId: "latency",
-    apiKey: "6be0576ff61c053d5f9a3225e2a90f76",
     indexName: "ikea",
     urlSync: true,
-    createAlgoliaClient: createSSRAlgoliaClient({
+    createAlgoliaClient: createSSRSearchClient({
       makeStateKey,
       HttpHeaders,
       transferState: this.transferState,
-      httpClient: this.httpClient
+      httpClient: this.httpClient,
+      appId: "latency",
+      apiKey: "6be0576ff61c053d5f9a3225e2a90f76"
     })
   };
 }
 ```
+
+**You cannot use `routing: true` option instead of `urlSync: true` yet, there is an issue with Preboot that will randomly render a blank page**
 
 ### 4. Wrapping up
 
