@@ -2,11 +2,25 @@
   "name": "angular-instantsearch",
   "version": "1.0.2",
   "description": "Lightning-fast search for Angular apps, by Algolia.",
+  "license": "MIT",
+  "keywords": [
+    "algolia",
+    "instantsearch",
+    "search",
+    "angular"
+  ],
   "author": {
     "name": "Algolia, Inc.",
     "url": "https://www.algolia.com"
   },
-  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/algolia/angular-instantsearch.git"
+  },
+  "homepage": "https://github.com/algolia/angular-instantsearch",
+  "bugs": {
+    "url": "https://github.com/algolia/angular-instantsearch/issues"
+  },
   "scripts": {
     "build": "./scripts/build.sh",
     "lint": "tslint '{src,examples}/**/*.ts' -e '**/node_modules/**'",
