@@ -20,6 +20,7 @@
     "examples:router:build": "./scripts/build-example.sh angular-router",
     "examples:media": "./scripts/run-example.sh media",
     "examples:media:build": "./scripts/build-example.sh media",
+    "examples:ssr": "./scripts/run-example.sh server-side-rendering",
     "release": "./scripts/release.js",
     "netlify": "./scripts/netlify.sh",
     "doc:dev": "(cd community-website && yarn start)",
