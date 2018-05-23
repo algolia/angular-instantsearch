@@ -13,10 +13,10 @@ export function createSSRAlgoliaClient({
   httpClient,
   HttpHeaders,
   transferState,
-  makeStateKey,
+  makeStateKey
 }) {
   console.warn(
-    '`createSSRAlgoliaClient` is deprecated in favor of `createSSRSearchClient` to be plugged to `searchClient`.'
+    "`createSSRAlgoliaClient` is deprecated in favor of `createSSRSearchClient` to be plugged to `searchClient`."
   );
 
   return (_, appId, apiKey) =>
@@ -26,7 +26,7 @@ export function createSSRAlgoliaClient({
       httpClient,
       HttpHeaders,
       transferState,
-      makeStateKey,
+      makeStateKey
     });
 }
 
