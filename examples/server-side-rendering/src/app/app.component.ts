@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { TransferState, makeStateKey } from "@angular/platform-browser";
 
 import {
-  createSSRAlgoliaClient,
+  createSSRSearchClient,
   parseServerRequest
 } from "angular-instantsearch";
 
@@ -78,13 +78,13 @@ export class AppComponent {
 
     this.instantsearchConfig = {
       searchParameters,
-      appId: "latency",
-      apiKey: "6be0576ff61c053d5f9a3225e2a90f76",
       indexName: "ikea",
       urlSync: true,
-      createAlgoliaClient: createSSRAlgoliaClient({
+      searchClient: createSSRSearchClient({
         makeStateKey,
         HttpHeaders,
+        appId: "latency",
+        apiKey: "6be0576ff61c053d5f9a3225e2a90f76",
         transferState: this.transferState,
         httpClient: this.httpClient
       })
