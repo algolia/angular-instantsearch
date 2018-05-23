@@ -114,7 +114,10 @@ export class NgAisRangeSlider extends BaseWidget {
     this.state = state;
 
     // update the slider state
-    const { range: { min, max }, start } = state;
+    const {
+      range: { min, max },
+      start
+    } = state;
 
     const disabled = min === max;
     const range = disabled ? { min, max: max + 0.0001 } : { min, max };

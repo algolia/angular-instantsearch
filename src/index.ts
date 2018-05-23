@@ -28,7 +28,7 @@ import { NgAisConfigureModule } from "./configure/configure.module";
 // Custom SSR algoliasearchClient
 import {
   createSSRAlgoliaClient,
-  createSSRSearchClient,
+  createSSRSearchClient
 } from "./create-ssr-algolia-client";
 export { createSSRAlgoliaClient, createSSRSearchClient };
 
