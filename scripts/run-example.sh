@@ -2,6 +2,7 @@
 
 set -e # exit when error
 
+yarn
 yarn build
 
 (
@@ -18,5 +19,11 @@ yarn build
   mkdir -p ./node_modules/instantsearch.js
   cp -R ../../node_modules/instantsearch.js/* ./node_modules/instantsearch.js
 
-  yarn start
+  if [ $1 = "server-side-rendering" ]
+  then
+    yarn build:ssr
+    yarn serve:ssr
+  else
+    yarn start
+  fi
 )
