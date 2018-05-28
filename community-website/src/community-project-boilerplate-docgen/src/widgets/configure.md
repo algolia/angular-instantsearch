@@ -11,6 +11,8 @@ Configure is a widget that lets you provide raw search parameters to the Algolia
 
 Any of the searchParameters added to this widget will be forwarded to Algolia. For more information on the different parameters that can be set, have a look at the [reference](https://www.algolia.com/doc/api-client/javascript/search#search-parameters).
 
+You can dynamically update the `searchParameters` Object and a new search will be triggered.
+
 ## Options
 
 | Attributes           | Type       | Description
