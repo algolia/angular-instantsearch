@@ -24,6 +24,7 @@ This widget is usually in the top part of the search UI.
 | `clearsQuery?`   | `boolean`                       | If true, the clear all button also clears the active search query.
 | `clearRefinementsLabel?` | `string`                        | Label used on the clear all button.
 | `autoHideContainer?` | `boolean`  | Hides the widget if there's no refinements to display
+| `transformItems?` | `(items) => items` | Function to modify the items being displayed, e.g. for filtering or sorting them
 
 ## Code example
 

@@ -20,6 +20,7 @@ The Menu component displays a menu that lets the user choose a single value for 
 | `showLessLabel?`     | `string`              | Label of the show less button
 | `sortBy?`            | `string[] / Function` | How to sort facet values
 | `autoHideContainer?` | `boolean`             | Hides the menu if there's no item to display
+| `transformItems?`    | `(items) => items`    | Function to modify the items being displayed, e.g. for filtering or sorting them
 
 ## Code example
 
