@@ -8,7 +8,13 @@ layout: widget.pug
 ## Description
 
 Displays a list of hits.
-sYou can use the directive `<ng-template></ng-template>` to customize.
+You can use the directive `<ng-template></ng-template>` to customize.
+
+## Options
+
+| Attributes        | Type               | Description
+| -                 | -                  | -
+| `transformItems?` | `(items) => items` | Function to modify the items being displayed, e.g. for filtering or sorting them
 
 ## Code example
 

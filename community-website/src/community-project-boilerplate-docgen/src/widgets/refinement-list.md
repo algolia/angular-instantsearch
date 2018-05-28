@@ -23,6 +23,7 @@ The RefinementList component displays a list that let the end user choose multip
 | `searchPlaceholder?` | `string`                 | The label of the search input placeholder
 | `sortBy?`            | `string[] / Function`    | How to sort facet values
 | `autoHideContainer?` | `boolean`                | Hides the refinement list if there's no item to display
+| `transformItems?`    | `(items) => items`       | Function to modify the items being displayed, e.g. for filtering or sorting them
 
 ## Code example
 
