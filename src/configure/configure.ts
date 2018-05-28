@@ -1,6 +1,13 @@
-import { Component, Input, Inject, forwardRef } from "@angular/core";
+import {
+  Component,
+  Input,
+  Inject,
+  forwardRef,
+  SimpleChanges
+} from "@angular/core";
 
 import { connectConfigure } from "instantsearch.js/es/connectors";
+import { noop } from "lodash-es";
 
 import { BaseWidget } from "../base-widget";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
@@ -11,6 +18,10 @@ import { NgAisInstantSearch } from "../instantsearch/instantsearch";
 })
 export class NgAisConfigure extends BaseWidget {
   @Input() searchParameters: {} = {};
+
+  public state: { refine: Function } = {
+    refine: noop
+  };
 
   constructor(
     @Inject(forwardRef(() => NgAisInstantSearch))
@@ -24,5 +35,11 @@ export class NgAisConfigure extends BaseWidget {
       searchParameters: this.searchParameters
     });
     super.ngOnInit();
+  }
+
+  public ngOnChanges(changes: SimpleChanges) {
+    if (!changes.searchParameters.isFirstChange) {
+      this.state.refine(changes.searchParameters.currentValue);
+    }
   }
 }
