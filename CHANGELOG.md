@@ -1,3 +1,35 @@
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/algolia/angular-instantsearch/compare/1.0.2...2.0.0) (2018-05-30)
+
+
+### Bug Fixes
+
+* Lint ([9c91e16](https://github.com/algolia/angular-instantsearch/commit/9c91e16))
+* **instantsearch:** do not mix `urlSync` && `routing` on SSR ([c2983d2](https://github.com/algolia/angular-instantsearch/commit/c2983d2))
+* **lint:** glob pattern was incorrect ([4c00bc3](https://github.com/algolia/angular-instantsearch/commit/4c00bc3))
+* **ng-:** remove reserver prefix ([e972e7b](https://github.com/algolia/angular-instantsearch/commit/e972e7b))
+* **run-examples:** copy instantsearch.js as well ([8200ac1](https://github.com/algolia/angular-instantsearch/commit/8200ac1))
+* **scripts/release:** how to check npm ownership ([074f285](https://github.com/algolia/angular-instantsearch/commit/074f285))
+
+
+### Features
+
+* Add SearchClient type ([9d97603](https://github.com/algolia/angular-instantsearch/commit/9d97603))
+* **configure:** detect channges of `searchParameters` ([e92e325](https://github.com/algolia/angular-instantsearch/commit/e92e325))
+* **dev-novel:** Add `searchClient` support ([245f3a9](https://github.com/algolia/angular-instantsearch/commit/245f3a9))
+* **dev-novel:** Add search client stories ([b3bfeb2](https://github.com/algolia/angular-instantsearch/commit/b3bfeb2))
+* Change `algoliasearch` import for Rollup ([1b5f6f6](https://github.com/algolia/angular-instantsearch/commit/1b5f6f6))
+* **widgets:** add <ais-configure> ([0f09f71](https://github.com/algolia/angular-instantsearch/commit/0f09f71))
+* Add `createSSRSearchClient` as a `createSSRAlgoliaClient` alternative ([03da52b](https://github.com/algolia/angular-instantsearch/commit/03da52b))
+* Add function signature for SearchClient type ([ef9cc65](https://github.com/algolia/angular-instantsearch/commit/ef9cc65))
+* Add support for `searchClient` ([12b66bb](https://github.com/algolia/angular-instantsearch/commit/12b66bb))
+* Export `createSSRSearchClient` ([59e80d8](https://github.com/algolia/angular-instantsearch/commit/59e80d8))
+* Type SearchClient and SearchParameters ([5415cde](https://github.com/algolia/angular-instantsearch/commit/5415cde))
+* Update Client, Helper and InstantSearch ([6fa4e8f](https://github.com/algolia/angular-instantsearch/commit/6fa4e8f))
+* Use SearchParameters type for `searchParameters` option ([8182211](https://github.com/algolia/angular-instantsearch/commit/8182211))
+
+
+
 <a name="1.0.2"></a>
 ## [1.0.2](https://github.com/algolia/angular-instantsearch/compare/1.0.1...1.0.2) (2018-04-10)
 
