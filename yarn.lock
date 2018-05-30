@@ -164,7 +164,7 @@
     tree-kill "^1.0.0"
     webpack-sources "^1.1.0"
 
-"@types/jest@^22.0.0", "@types/jest@^22.1.3":
+"@types/jest@^22.0.1", "@types/jest@^22.1.3":
   version "22.2.3"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-22.2.3.tgz#0157c0316dc3722c43a7b71de3fdf3acbccef10d"
 
@@ -8119,7 +8119,7 @@ ts-jest@^22.4.1:
     source-map-support "^0.5.5"
     yargs "^11.0.0"
 
-ts-loader@^2.0.0:
+ts-loader@^2.0.1:
   version "2.3.7"
   resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-2.3.7.tgz#a9028ced473bee12f28a75f9c5b139979d33f2fc"
   dependencies:

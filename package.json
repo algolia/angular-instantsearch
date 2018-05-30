@@ -1,6 +1,6 @@
 {
   "name": "angular-instantsearch",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Lightning-fast search for Angular apps, by Algolia.",
   "license": "MIT",
   "keywords": [
@@ -80,7 +80,7 @@
     "@angular/platform-browser": "^5.0.0",
     "@angular/platform-browser-dynamic": "^5.0.0",
     "@ngtools/webpack": "^1.7.4",
-    "@types/jest": "^22.0.0",
+    "@types/jest": "^22.0.1",
     "@types/lodash-es": "^4.17.0",
     "@types/node": "^9.3.0",
     "@types/nouislider": "^9.0.3",
@@ -111,7 +111,7 @@
     "rxjs": "^5.4.3",
     "shelljs": "^0.8.1",
     "style-loader": "^0.19.0",
-    "ts-loader": "^2.0.0",
+    "ts-loader": "^2.0.1",
     "tsickle": "^0.28.0",
     "tslint": "^5.8.0",
     "tslint-config-airbnb": "^5.3.0",

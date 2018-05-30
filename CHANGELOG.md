@@ -1,3 +1,13 @@
+<a name="2.0.1"></a>
+## [2.0.1](https://github.com/algolia/angular-instantsearch/compare/2.0.0...2.0.1) (2018-05-30)
+
+
+### Bug Fixes
+
+* **scripts/release:** npm publish in dist folder ([c0d2387](https://github.com/algolia/angular-instantsearch/commit/c0d2387))
+
+
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/algolia/angular-instantsearch/compare/1.0.2...2.0.0) (2018-05-30)
 
