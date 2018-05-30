@@ -203,13 +203,16 @@
       </li></ul></div></div>
 
     </nav>
-    <!-- End community_header --> </div><section class="fill-titan"><div class="container z-10"><div class="spacer80"></div><h1 class="heading-text text-heading">Getting started</h1></div><div class="spacer32"></div></section><div class="documentation-section"><div class="container"><nav class="sidebar pos-abt"><div class="sidebar-container"><ul class="sidebar-elements"><li class="sidebar-element level-h2 navItem widgets"><a href="getting-started.html#before-we-start">Before we start</a></li><li class="sidebar-element level-h2 navItem widgets"><a href="getting-started.html#install-angular-instantsearch">Install Angular InstantSearch</a></li><li class="sidebar-element level-h2 navItem widgets"><a href="getting-started.html#import-module">Import module</a></li><li class="sidebar-element level-h2 navItem widgets"><a href="getting-started.html#initialization">Initialization</a></li><li class="sidebar-element level-h2 navItem widgets"><a href="getting-started.html#display-results">Display results</a></li><li class="sidebar-element level-h2 navItem widgets"><a href="getting-started.html#add-a-searchbox">Add a SearchBox</a></li><li class="sidebar-element level-h2 navItem widgets"><a href="getting-started.html#add-a-refinementlist">Add a RefinementList</a></li><li class="sidebar-element level-h2 navItem widgets"><a href="getting-started.html#going-further">Going further</a></li><li class="sidebar-element level-h2 navItem widgets"><a href="getting-started.html#wrapping-up">Wrapping up</a></li></ul></div></nav><a class="sidebar-opener"></a><div class="documentation-container"><div class="content"><h1 id="welcome-to-angular-instantsearch">Welcome to Angular InstantSearch <a class="anchor" href="getting-started.html#welcome-to-angular-instantsearch" aria-hidden="true"></a></h1>
-<p>Angular InstantSearch is an <strong>Angular 4 and 5</strong> TypeScript library that lets you create an instant search results experience using Algolia’s REST API.</p>
+    <!-- End community_header --> </div><section class="fill-titan"><div class="container z-10"><div class="spacer80"></div><h1 class="heading-text text-heading">Getting started</h1></div><div class="spacer32"></div></section><div class="documentation-section"><div class="container"><nav class="sidebar pos-abt"><div class="sidebar-container"><ul class="sidebar-elements"><li class="sidebar-element level-h2 navItem widgets"><a href="getting-started.html#before-we-start">Before we start</a></li><li class="sidebar-element level-h2 navItem widgets"><a href="getting-started.html#install-angular-instantsearch">Install Angular InstantSearch</a></li><li class="sidebar-element level-h2 navItem widgets"><a href="getting-started.html#import-module">Import module</a></li><li class="sidebar-element level-h2 navItem widgets"><a href="getting-started.html#initialization">Initialization</a></li><li class="sidebar-element level-h2 navItem widgets"><a href="getting-started.html#display-results">Display results</a></li><li class="sidebar-element level-h2 navItem widgets"><a href="getting-started.html#add-a-searchbox">Add a SearchBox</a></li><li class="sidebar-element level-h2 navItem widgets"><a href="getting-started.html#add-a-refinementlist">Add a RefinementList</a></li><li class="sidebar-element level-h2 navItem widgets"><a href="getting-started.html#going-further">Going further</a></li><li class="sidebar-element level-h2 navItem widgets"><a href="getting-started.html#wrapping-up">Wrapping up</a></li></ul></div></nav><a class="sidebar-opener"></a><div class="documentation-container"><div class="content"><blockquote>
+<p>If you are comming from Angular InstantSearch v1 and you want to upgrade to v2, you can simply use the <a href="guides/migration-guide.html">migration guide</a>.</p>
+</blockquote>
+<h1 id="welcome-to-angular-instantsearch">Welcome to Angular InstantSearch <a class="anchor" href="getting-started.html#welcome-to-angular-instantsearch" aria-hidden="true"></a></h1>
+<p>Angular InstantSearch is an <strong>Angular 5 &amp; 6</strong> TypeScript library that lets you create an instant search results experience using Algolia’s REST API.</p>
 <p>In this tutorial you’ll learn how to:</p>
 <ul>
 <li>Install and use <code>angular-instantsearch</code> in your angular application</li>
 <li>Display results from Algolia</li>
-<li>Add widgets / components to filter the resultss</li>
+<li>Add widgets / components to filter the results</li>
 </ul>
 <h2 id="before-we-start">Before we start <a class="anchor" href="getting-started.html#before-we-start" aria-hidden="true"></a></h2>
 <p>Angular InstantSearch is meant to be used with Algolia.</p>
@@ -265,22 +268,27 @@ When done at the root level of your app, the syntax is a bit different.</p>
 <span class="cm-keyword">export</span> <span class="cm-keyword">class</span> <span class="cm-def">OtherModule</span> {}
 </code></div></pre>
 <p>You also need load the companion CSS files. To do so, you need to add the relevant CSS files to
-your <code>.angular-cli.json</code> file, in the <code>apps &gt; styles</code> array:</p>
+your <code>angular.json</code> file, in the <code>apps &gt; styles</code> array:</p>
 <pre class="code-sample cm-s-mdn-like codeMirror json" data-code-type="Code"><div class="code-wrap"><code>{
   &quot;styles&quot;: [
-    &quot;../node_modules/angular-instantsearch/bundles/instantsearch.min.css&quot;,
-    &quot;../node_modules/angular-instantsearch/bundles/instantsearch-theme-algolia.min.css&quot;,
+    &quot;node_modules/angular-instantsearch/bundles/instantsearch.min.css&quot;,
+    &quot;node_modules/angular-instantsearch/bundles/instantsearch-theme-algolia.min.css&quot;,
     &quot;styles.css&quot;
   ]
 }
 </code></div></pre>
-<p>And then kill and reload (<code>ng serve</code>) your server.</p>
+<p>Then you need to update the file named <code>polyfills.ts</code> to add, at the bottom of the file:</p>
+<pre class="code-sample cm-s-mdn-like codeMirror jsx" data-code-type="Code"><div class="code-wrap"><code>(<span class="cm-variable">window</span> <span class="cm-variable">as</span> <span class="cm-variable">any</span>).<span class="cm-property">process</span> <span class="cm-operator">=</span> {
+  <span class="cm-property">env</span>: { <span class="cm-property">DEBUG</span>: <span class="cm-atom">undefined</span> },
+};
+</code></div></pre>
+<p>Finally, kill (ctrl + c) and reload (<code>ng serve</code>) your server.</p>
 <h2 id="initialization">Initialization <a class="anchor" href="getting-started.html#initialization" aria-hidden="true"></a></h2>
 <p>Now that you have imported Angular InstantSearch module into your application, you can use any widgets with their respective directive.</p>
-<p><code>&lt;ng-ais-instantsearch&gt;</code> is the component that will connect to Algolia and will synchronize all the widgets togethers. It has to be the root component of every other widgets you will import.</p>
+<p><code>&lt;ais-instantsearch&gt;</code> is the component that will connect to Algolia and will synchronize all the widgets togethers. It has to be the root component of every other widgets you will import.</p>
 <p>If you used Angular cli, then you can change the content of <code>src/app/app.component.html</code> to:</p>
 <pre class="code-sample cm-s-mdn-like codeMirror htmlmixed" data-code-type="Code"><div class="code-wrap"><code><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">h1</span><span class="cm-tag cm-bracket">&gt;</span>My first search app<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">h1</span><span class="cm-tag cm-bracket">&gt;</span>
-<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">ng-ais-instantsearch</span>
+<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">ais-instantsearch</span>
   <span class="cm-attribute">[config]</span>=<span class="cm-string">&quot;{</span>
     <span class="cm-string">apiKey: &#39;6be0576ff61c053d5f9a3225e2a90f76&#39;,</span>
     <span class="cm-string">appId: &#39;latency&#39;,</span>
@@ -288,50 +296,62 @@ your <code>.angular-cli.json</code> file, in the <code>apps &gt; styles</code> a
   <span class="cm-string">}&quot;</span>
 <span class="cm-tag cm-bracket">&gt;</span>
   <span class="cm-comment">&lt;!-- Search Widgets will go there --&gt;</span>
-<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">ng-ais-instantsearch</span><span class="cm-tag cm-bracket">&gt;</span>
+<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">ais-instantsearch</span><span class="cm-tag cm-bracket">&gt;</span>
 </code></div></pre>
 <p>Congrats! Your application is now connected to Algolia 🚀… But it does not display anything for now,
 let’s add more widgets!</p>
 <h2 id="display-results">Display results <a class="anchor" href="getting-started.html#display-results" aria-hidden="true"></a></h2>
 <p>The core of a search experience is to display results. By default, Angular InstantSearch will do a query at the start of the page and will retrieve the most relevant hits.</p>
 <p>To display results, let’s add the Results widget. This widget will display all the results returned by Algolia, and it will update when there are new results:</p>
-<pre class="code-sample cm-s-mdn-like codeMirror htmlmixed" data-code-type="Code"><div class="code-wrap"><code><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">ng-ais-instantsearch</span>
+<pre class="code-sample cm-s-mdn-like codeMirror htmlmixed" data-code-type="Code"><div class="code-wrap"><code><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">ais-instantsearch</span>
   <span class="cm-attribute">[config]</span>=<span class="cm-string">&quot;{</span>
     <span class="cm-string">apiKey: &#39;6be0576ff61c053d5f9a3225e2a90f76&#39;,</span>
     <span class="cm-string">appId: &#39;latency&#39;,</span>
     <span class="cm-string">indexName: &#39;instant_search&#39;,</span>
-    <span class="cm-string">urlSync: true</span>
+    <span class="cm-string">routing: true</span>
   <span class="cm-string">}&quot;</span>
 <span class="cm-tag cm-bracket">&gt;</span>
-  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">ng-ais-hits</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">ng-ais-hits</span><span class="cm-tag cm-bracket">&gt;</span>
-<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">ng-ais-instantsearch</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">ais-hits</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">ais-hits</span><span class="cm-tag cm-bracket">&gt;</span>
+<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">ais-instantsearch</span><span class="cm-tag cm-bracket">&gt;</span>
 </code></div></pre>
 <p>Here’s the result:
 <img src="assets/images/first-hits-cac08e3e2b0f8a59a62762601a45f548.png" alt="First hits"></p>
-<p>You should now be able to see the results, now let’s try to use a custom template for hits,
-replace <code>&lt;ng-ais-hits&gt;&lt;/ng-ais-hits&gt;</code> with:</p>
-<pre class="code-sample cm-s-mdn-like codeMirror htmlmixed" data-code-type="Code"><div class="code-wrap"><code><span class="cm-comment">&lt;!-- &lt;ng-ais-instantsearch [config]=&quot;{...}&quot;&gt; --&gt;</span>
-  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">ng-ais-hits</span><span class="cm-tag cm-bracket">&gt;</span>
+<h2 id="add-a-searchbox">Add a SearchBox <a class="anchor" href="getting-started.html#add-a-searchbox" aria-hidden="true"></a></h2>
+<p>Now that we’ve added the results, we can start querying our index. To do this, we are going to use the Searchbox widget. Let’s add it in the application template:</p>
+<pre class="code-sample cm-s-mdn-like codeMirror htmlmixed" data-code-type="Code"><div class="code-wrap"><code><span class="cm-comment">&lt;!-- &lt;ais-instantsearch [config]=&quot;{...}&quot;&gt; --&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">ais-search-box</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">ais-search-box</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-comment">&lt;!-- &lt;ais-hits&gt;&lt;/ais-hits&gt; --&gt;</span>
+<span class="cm-comment">&lt;!-- &lt;/ais-instantsearch&gt; --&gt;</span>
+</code></div></pre>
+<p>The search is now interactive and we see what matched in each of the products. Good thing for us, Algolia computes the matching part. For better control over what kind of data is returned, you should configure the <a href="https://www.algolia.com/doc/rest#param-attributesToRetrieve">attributeToRetrieve</a> and <a href="https://www.algolia.com/doc/rest#param-attributesToHighlight">attributeToHighlight</a> of your index</p>
+<p>In this part, we’ve seen:</p>
+<ul>
+<li>How to use the searchbox to query Algolia with text</li>
+</ul>
+<h2 id="customize-the-results">Customize the results <a class="anchor" href="getting-started.html#customize-the-results" aria-hidden="true"></a></h2>
+<p>Now let’s try to use a custom template for hits, replace <code>&lt;ais-hits&gt;&lt;/ais-hits&gt;</code> with:</p>
+<pre class="code-sample cm-s-mdn-like codeMirror htmlmixed" data-code-type="Code"><div class="code-wrap"><code><span class="cm-comment">&lt;!-- &lt;ais-instantsearch [config]=&quot;{...}&quot;&gt; --&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">ais-hits</span><span class="cm-tag cm-bracket">&gt;</span>
     <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">ng-template</span> <span class="cm-attribute">let-hits</span>=<span class="cm-string">&quot;hits&quot;</span><span class="cm-tag cm-bracket">&gt;</span>
       <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">*ngFor</span>=<span class="cm-string">&quot;let hit of hits&quot;</span><span class="cm-tag cm-bracket">&gt;</span>
         Hit {{hit.objectID}}: {{hit.name}}
       <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
     <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">ng-template</span><span class="cm-tag cm-bracket">&gt;</span>
-  <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">ng-ais-hits</span><span class="cm-tag cm-bracket">&gt;</span>
-<span class="cm-comment">&lt;!-- &lt;/ng-ais-instantsearch&gt; --&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">ais-hits</span><span class="cm-tag cm-bracket">&gt;</span>
+<span class="cm-comment">&lt;!-- &lt;/ais-instantsearch&gt; --&gt;</span>
 </code></div></pre>
-<p>One very important aspect of the search is highlightning the matching parts of the results. We can use the <code>&lt;ng-ais-highlight&gt;</code> widget to do that for you:</p>
-<pre class="code-sample cm-s-mdn-like codeMirror htmlmixed" data-code-type="Code"><div class="code-wrap"><code><span class="cm-comment">&lt;!-- &lt;ng-ais-instantsearch [config]=&quot;{...}&quot;&gt; --&gt;</span>
-  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">ng-ais-hits</span><span class="cm-tag cm-bracket">&gt;</span>
+<p>One very important aspect of the search is highlightning the matching parts of the results. We can use the <code>&lt;ais-highlight&gt;</code> widget to do that for you:</p>
+<pre class="code-sample cm-s-mdn-like codeMirror htmlmixed" data-code-type="Code"><div class="code-wrap"><code><span class="cm-comment">&lt;!-- &lt;ais-instantsearch [config]=&quot;{...}&quot;&gt; --&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">ais-hits</span><span class="cm-tag cm-bracket">&gt;</span>
     <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">ng-template</span> <span class="cm-attribute">let-hits</span>=<span class="cm-string">&quot;hits&quot;</span><span class="cm-tag cm-bracket">&gt;</span>
       <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">*ngFor</span>=<span class="cm-string">&quot;let hit of hits&quot;</span><span class="cm-tag cm-bracket">&gt;</span>
         Hit {{hit.objectID}}:
-        <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">ng-ais-highlight</span> <span class="cm-attribute">attribute</span>=<span class="cm-string">&quot;name&quot;</span> <span class="cm-attribute">[hit]</span>=<span class="cm-string">&quot;hit&quot;</span><span class="cm-tag cm-bracket">&gt;</span>
-        <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">ng-ais-highlight</span><span class="cm-tag cm-bracket">&gt;</span>
+        <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">ais-highlight</span> <span class="cm-attribute">attribute</span>=<span class="cm-string">&quot;name&quot;</span> <span class="cm-attribute">[hit]</span>=<span class="cm-string">&quot;hit&quot;</span><span class="cm-tag cm-bracket">&gt;</span>
+        <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">ais-highlight</span><span class="cm-tag cm-bracket">&gt;</span>
       <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
     <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">ng-template</span><span class="cm-tag cm-bracket">&gt;</span>
-  <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">ng-ais-hits</span><span class="cm-tag cm-bracket">&gt;</span>
-<span class="cm-comment">&lt;!-- &lt;/ng-ais-instantsearch&gt; --&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">ais-hits</span><span class="cm-tag cm-bracket">&gt;</span>
+<span class="cm-comment">&lt;!-- &lt;/ais-instantsearch&gt; --&gt;</span>
 </code></div></pre>
 <p>In this section we’ve seen:</p>
 <ul>
@@ -340,29 +360,17 @@ replace <code>&lt;ng-ais-hits&gt;&lt;/ng-ais-hits&gt;</code> with:</p>
 <li>How to customize the display of those results</li>
 <li>How to leverage highlighting in results</li>
 </ul>
-<h2 id="add-a-searchbox">Add a SearchBox <a class="anchor" href="getting-started.html#add-a-searchbox" aria-hidden="true"></a></h2>
-<p>Now that we’ve added the results, we can start querying our index. To do this, we are going to use the Searchbox widget. Let’s add it in the application template:</p>
-<pre class="code-sample cm-s-mdn-like codeMirror htmlmixed" data-code-type="Code"><div class="code-wrap"><code><span class="cm-comment">&lt;!-- &lt;ng-ais-instantsearch [config]=&quot;{...}&quot;&gt; --&gt;</span>
-  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">ng-ais-search-box</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">ng-ais-search-box</span><span class="cm-tag cm-bracket">&gt;</span>
-  <span class="cm-comment">&lt;!-- &lt;ng-ais-hits&gt;&lt;/ng-ais-hits&gt; --&gt;</span>
-<span class="cm-comment">&lt;!-- &lt;/ng-ais-instantsearch&gt; --&gt;</span>
-</code></div></pre>
-<p>The search is now interactive and we see what matched in each of the products. Good thing for us, Algolia computes the matching part. For better control over what kind of data is returned, you should configure the <a href="https://www.algolia.com/doc/rest#param-attributesToRetrieve">attributeToRetrieve</a> and <a href="https://www.algolia.com/doc/rest#param-attributesToHighlight">attributeToHighlight</a> of your index</p>
-<p>In this part, we’ve seen:</p>
-<ul>
-<li>How to use the searchbox to query Algolia with text</li>
-</ul>
 <h2 id="add-a-refinementlist">Add a RefinementList <a class="anchor" href="getting-started.html#add-a-refinementlist" aria-hidden="true"></a></h2>
 <p>While the SearchBox is the way to go when it comes to textual search, you may also want to provide filters based on the structure of the records.</p>
 <p>Algolia provides a set of parameters for filtering by facets, numbers or geo location. Angular InstantSearch packages those into a set of widgets.</p>
 <p>Since the dataset used here is an e-commerce one, let’s add a <a href="widgets/refinement-list.html">RefinementList</a> to filter the products by categories:</p>
-<pre class="code-sample cm-s-mdn-like codeMirror htmlmixed" data-code-type="Code"><div class="code-wrap"><code><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">ng-ais-instantsearch</span> <span class="cm-attribute">[config]</span>=<span class="cm-string">&quot;{...}&quot;</span><span class="cm-tag cm-bracket">&gt;</span>
-  <span class="cm-comment">&lt;!-- &lt;ng-ais-search-box&gt;&lt;/ng-ais-search-box&gt; --&gt;</span>
+<pre class="code-sample cm-s-mdn-like codeMirror htmlmixed" data-code-type="Code"><div class="code-wrap"><code><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">ais-instantsearch</span> <span class="cm-attribute">[config]</span>=<span class="cm-string">&quot;{...}&quot;</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-comment">&lt;!-- &lt;ais-search-box&gt;&lt;/ais-search-box&gt; --&gt;</span>
 
-  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">ng-ais-refinement-list</span> <span class="cm-attribute">attribute</span>=<span class="cm-string">&quot;brand&quot;</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">ng-ais-refinement-list</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">ais-refinement-list</span> <span class="cm-attribute">attribute</span>=<span class="cm-string">&quot;brand&quot;</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">ais-refinement-list</span><span class="cm-tag cm-bracket">&gt;</span>
 
-  <span class="cm-comment">&lt;!-- &lt;ng-ais-hits&gt;&lt;/ng-ais-hits&gt; --&gt;</span>
-<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">ng-ais-instantsearch</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-comment">&lt;!-- &lt;ais-hits&gt;&lt;/ais-hits&gt; --&gt;</span>
+<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">ais-instantsearch</span><span class="cm-tag cm-bracket">&gt;</span>
 </code></div></pre>
 <p>The <code>attribute</code> option specifies the faceted attribute to use in this widget. This attribute should be declared as a facet in the index configuration as well.</p>
 <p>The values displayed are computed by Algolia from the results.</p>
@@ -380,34 +388,34 @@ replace <code>&lt;ng-ais-hits&gt;&lt;/ng-ais-hits&gt;</code> with:</p>
 <li>The ability to browse beyond the first page of results</li>
 <li>The ability to reset the filters</li>
 </ul>
-<p>Those two features are implemented respectively with the <a href="widgets/pagination.html">Pagination</a>, <a href="widgets/clear-all.html">ClearAll</a> and <a href="widgets/current-refined-values.html">CurrentRefinedValues</a> widgets. They all have nice defaults which means that we can use them directly without further configuration.</p>
-<pre class="code-sample cm-s-mdn-like codeMirror htmlmixed" data-code-type="Code"><div class="code-wrap"><code><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">ng-ais-instantsearch</span> <span class="cm-attribute">[config]</span>=<span class="cm-string">&quot;{...}&quot;</span><span class="cm-tag cm-bracket">&gt;</span>
+<p>Those two features are implemented respectively with the <a href="widgets/pagination.html">Pagination</a>, <a href="widgets/clear-refinements.html">ClearRefinements</a> and <a href="widgets/current-refinements.html">CurrentRefinements</a> widgets. They all have nice defaults which means that we can use them directly without further configuration.</p>
+<pre class="code-sample cm-s-mdn-like codeMirror htmlmixed" data-code-type="Code"><div class="code-wrap"><code><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">ais-instantsearch</span> <span class="cm-attribute">[config]</span>=<span class="cm-string">&quot;{...}&quot;</span><span class="cm-tag cm-bracket">&gt;</span>
   <span class="cm-comment">&lt;!-- SearchBox --&gt;</span>
-  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">ng-ais-searchbox</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">ng-ais-searchbox</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">ais-searchbox</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">ais-searchbox</span><span class="cm-tag cm-bracket">&gt;</span>
 
   <span class="cm-comment">&lt;!-- RefinementList --&gt;</span>
-  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">ng-ais-refinement-list</span> <span class="cm-attribute">attribute</span>=<span class="cm-string">&quot;category&quot;</span><span class="cm-tag cm-bracket">&gt;</span>
-  <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">ng-ais-refinement-list</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">ais-refinement-list</span> <span class="cm-attribute">attribute</span>=<span class="cm-string">&quot;category&quot;</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">ais-refinement-list</span><span class="cm-tag cm-bracket">&gt;</span>
 
   <span class="cm-comment">&lt;!-- CurrentRefinedValues --&gt;</span>
-  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">ng-ais-current-refined-values</span> <span class="cm-attribute">[clearAll]</span>=<span class="cm-string">&quot;false&quot;</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">ais-current-refined-values</span> <span class="cm-attribute">[clearRefinements]</span>=<span class="cm-string">&quot;false&quot;</span><span class="cm-tag cm-bracket">&gt;</span>
     <span class="cm-comment">&lt;!--</span>
-      <span class="cm-comment">This widget can also contain a clear all link to remove all filters,</span>
-      <span class="cm-comment">we disable it in this example since we use `clearAll` widget on its own.</span>
+      <span class="cm-comment">This widget can also contain a clear refinements link to remove all filters,</span>
+      <span class="cm-comment">we disable it in this example since we use `ClearRefinements` widget on its own.</span>
     <span class="cm-comment">--&gt;</span>
-  <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">ng-ais-current-refined-values</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag cm-error">ng-ais-current-refinements</span><span class="cm-tag cm-bracket cm-error">&gt;</span>
 
-  <span class="cm-comment">&lt;!-- ClearAll --&gt;</span>
-  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">ng-ais-clear-all</span> <span class="cm-attribute">clearAllLabel</span>=<span class="cm-string">&quot;Reset everything&quot;</span><span class="cm-tag cm-bracket">&gt;</span>
-  <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">ng-ais-clear-all</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-comment">&lt;!-- ClearRefinements --&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">ng-ais-clear-refinements</span> <span class="cm-attribute">buttonLabel</span>=<span class="cm-string">&quot;Reset everything&quot;</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">ng-ais-clear-refinements</span><span class="cm-tag cm-bracket">&gt;</span>
 
   <span class="cm-comment">&lt;!-- Hits --&gt;</span>
-  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">ng-ais-hits</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">ng-ais-hits</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">ais-hits</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">ais-hits</span><span class="cm-tag cm-bracket">&gt;</span>
 
   <span class="cm-comment">&lt;!-- Pagination --&gt;</span>
-  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">ng-ais-pagination</span> <span class="cm-attribute">[totalPages]</span>=<span class="cm-string">&quot;20&quot;</span><span class="cm-tag cm-bracket">&gt;</span>
-  <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">ng-ais-pagination</span><span class="cm-tag cm-bracket">&gt;</span>
-<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">ng-ais-instantsearch</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">ais-pagination</span> <span class="cm-attribute">[totalPages]</span>=<span class="cm-string">&quot;20&quot;</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">ais-pagination</span><span class="cm-tag cm-bracket">&gt;</span>
+<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">ais-instantsearch</span><span class="cm-tag cm-bracket">&gt;</span>
 </code></div></pre>
 <p>Current filters will display all the filters currently selected by the user. This gives the user a synthetic way of understanding the current search. ClearAll displays a button to remove all the filters.</p>
 <p>In this part, we’ve seen:</p>
@@ -416,5 +424,5 @@ replace <code>&lt;ng-ais-hits&gt;&lt;/ng-ais-hits&gt;</code> with:</p>
 <li>How to paginate the results</li>
 </ul>
 <h2 id="wrapping-up">Wrapping up <a class="anchor" href="getting-started.html#wrapping-up" aria-hidden="true"></a></h2>
-<p>Congratulations, you now have a fully featured InstantSearch result page. But this is only the beginning! If you want to dig further into Angular InstantSearch, we suggest reading the other guides and the widgets API.</p>
-</div><hr><p><strong>Can't find what you are looking for? <a href="https://github.com/algolia/angular-instantsearch/issues/new?title=I could not find what I was looking for&amp;body=Hi! I have a documentation issue on Angular-InstantSearch, I could not find what I was looking for which is: -- PLEASE FILL IN HERE --">Open an issue</a>, we'll get back to you.</strong></p></div></div></div><section class="footer-new-cta footer-new h300 pos-rel"><div class="container color-white stellar-container vh-center"><div class="col-md-5"><div class="spacer120 hidden-sm"></div><div class="spacer32 visible-xs"></div><header><h2 class="text-normal m-t-none">Start creating stellar search,<span class="cf hidden-xs"></span>no strings attached.</h2><p>Dive into Algolia with our 14-day trial - No credit card required. Plenty of time to see how Algolia can change your business.</p></header></div><div class="col-md-7 pos-rel z-10"><div class="spacer120 inline hidden-sm"></div><div class="spacer32 inline hidden-sm"></div><div class="spacer16 visible-sm"></div><div class="button-holder h200 p-r-large"><div class="spacer16 hidden-md hidden-sm"></div><span class="inline pos-rel"><a class="btn btn-static-primary btn-static-shadow-dark" href="https://algolia.com/users/sign_up">Get Started<svg class="arrow-icon" width="22"><use xlink:href="#arrow-right"></use></svg></a><svg class="search-icon" width="22"><use xlink:href="#search-icon"></use></svg></span></div></div></div></section><div id="footer"><div class="credits"><div class="container pos-rel"><div class="row"><div class="col-md-12 text-center"><a data-no-turbolink="true" href="/"><img width="40" src="https://www.algolia.com/static_assets/images/flat2/algolia/algolia-logo_badge-598a1fe6.svg"></a></div></div><div class="spacer40"></div></div></div></div><svg style="display: none;"><symbol width="40" height="40" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" id="search-icon"><path d="M26.806 29.012a16.312 16.312 0 0 1-10.427 3.746C7.33 32.758 0 25.425 0 16.378 0 7.334 7.333 0 16.38 0c9.045 0 16.378 7.333 16.378 16.38 0 3.96-1.406 7.593-3.746 10.426L39.547 37.34c.607.608.61 1.59-.004 2.203a1.56 1.56 0 0 1-2.202.004L26.808 29.012zm-10.427.627c7.32 0 13.26-5.94 13.26-13.26 0-7.325-5.94-13.26-13.26-13.26-7.325 0-13.26 5.935-13.26 13.26 0 7.32 5.935 13.26 13.26 13.26z" fill-rule="evenodd"></path></symbol><symbol width="46" height="38" viewbox="0 0 46 38" xmlns="http://www.w3.org/2000/svg" id="arrow-right"><path d="M34.852 15.725l-8.624-9.908L24.385 3.7 28.62.014l1.84 2.116 13.1 15.05 1.606 1.846-1.61 1.844-13.1 15.002-1.845 2.114-4.23-3.692 1.85-2.114 9.465-10.84h-24.66v-5.615h23.817zm-26.774 0h-.002 2.96v5.614H0v-5.615h8.078z" fill-rule="evenodd"></path></symbol><symbol xmlns="http://www.w3.org/2000/svg" viewbox="0 0 708.8 717" id="icon-copy"><path d="M658.8 158H490.2c-13.3 0-26 5.3-35.4 14.6l-4.6 4.6V25c0-13.8-11.2-25-25-25H235.6c-6.6 0-13 2.6-17.7 7.3L7.3 218C2.6 222.6 0 229 0 235.6V541c0 13.8 11.2 25 25 25h227.8v101c0 27.6 22.4 50 50 50h356c27.6 0 50-22.4 50-50V208c0-27.6-22.4-50-50-50zm-204 85.4V360H338.2l116.6-116.6zm-253-149.2V209H87L201.8 94.2zM50 516V259h176.8c13.8 0 25-11.2 25-25V50h148.4v177.3L267.5 360c-9.4 9.4-14.6 22.1-14.6 35.4V516H50zm608.8 151h-356V410h177c13.8 0 25-11.2 25-25V208h154v459z"></path></symbol><symbol id="check-icon" viewbox="0 0 33 26"><path d="M32.57872 2.63298L30.2617.31596c-.38617-.38617-1.01808-.38617-1.40425 0l-18.1851 18.20266-6.4947-6.49468c-.38616-.38617-1.01808-.38617-1.40425 0L.45638 14.34096c-.38617.38617-.38617 1.01808 0 1.40425l7.17926 7.17928 2.31702 2.31702c.38617.38616 1.01808.38616 1.40425 0l2.3346-2.29948 18.8872-18.9048c.38617-.38616.38617-1.01807 0-1.40424z" fill-rule="evenodd"></path></symbol></svg><!--Google Tag Manager--><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-N8JP8G" height="0" width="0" style="display:none;visibility:hidden;"></iframe></noscript><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N8JP8G');</script><script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script><script src="/angular-instantsearch/js/common-build-08e35441fd900db11645700dcd5400ad.js"></script><script src="/angular-instantsearch/js/main-build-24bddbc5c03434b7d5221ad4ddf0ab1e.js"></script></body></html>
+<p>Congratulations, you now have a fully featured InstantSearch result page. But this is only the beginning! If you want to dig further into Angular InstantSearch, we suggest reading the other <a href="https://community.algolia.com/angular-instantsearch/guides/customize-widgets.html">guides</a> and the <a href="widgets/instantsearch.html">widgets API</a>.</p>
+</div><hr><p><strong>Can't find what you are looking for? <a href="https://github.com/algolia/angular-instantsearch/issues/new?title=I could not find what I was looking for&amp;body=Hi! I have a documentation issue on Angular-InstantSearch, I could not find what I was looking for which is: -- PLEASE FILL IN HERE --">Open an issue</a>, we'll get back to you.</strong></p></div></div></div><section class="footer-new-cta footer-new h300 pos-rel"><div class="container color-white stellar-container vh-center"><div class="col-md-5"><div class="spacer120 hidden-sm"></div><div class="spacer32 visible-xs"></div><header><h2 class="text-normal m-t-none">Start creating stellar search,<span class="cf hidden-xs"></span>no strings attached.</h2><p>Dive into Algolia with our 14-day trial - No credit card required. Plenty of time to see how Algolia can change your business.</p></header></div><div class="col-md-7 pos-rel z-10"><div class="spacer120 inline hidden-sm"></div><div class="spacer32 inline hidden-sm"></div><div class="spacer16 visible-sm"></div><div class="button-holder h200 p-r-large"><div class="spacer16 hidden-md hidden-sm"></div><span class="inline pos-rel"><a class="btn btn-static-primary btn-static-shadow-dark" href="https://algolia.com/users/sign_up">Get Started<svg class="arrow-icon" width="22"><use xlink:href="#arrow-right"></use></svg></a><svg class="search-icon" width="22"><use xlink:href="#search-icon"></use></svg></span></div></div></div></section><div id="footer"><div class="credits"><div class="container pos-rel"><div class="row"><div class="col-md-12 text-center"><a data-no-turbolink="true" href="/"><img width="40" src="https://www.algolia.com/static_assets/images/flat2/algolia/algolia-logo_badge-598a1fe6.svg"></a></div></div><div class="spacer40"></div></div></div></div><svg style="display: none;"><symbol width="40" height="40" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" id="search-icon"><path d="M26.806 29.012a16.312 16.312 0 0 1-10.427 3.746C7.33 32.758 0 25.425 0 16.378 0 7.334 7.333 0 16.38 0c9.045 0 16.378 7.333 16.378 16.38 0 3.96-1.406 7.593-3.746 10.426L39.547 37.34c.607.608.61 1.59-.004 2.203a1.56 1.56 0 0 1-2.202.004L26.808 29.012zm-10.427.627c7.32 0 13.26-5.94 13.26-13.26 0-7.325-5.94-13.26-13.26-13.26-7.325 0-13.26 5.935-13.26 13.26 0 7.32 5.935 13.26 13.26 13.26z" fill-rule="evenodd"></path></symbol><symbol width="46" height="38" viewbox="0 0 46 38" xmlns="http://www.w3.org/2000/svg" id="arrow-right"><path d="M34.852 15.725l-8.624-9.908L24.385 3.7 28.62.014l1.84 2.116 13.1 15.05 1.606 1.846-1.61 1.844-13.1 15.002-1.845 2.114-4.23-3.692 1.85-2.114 9.465-10.84h-24.66v-5.615h23.817zm-26.774 0h-.002 2.96v5.614H0v-5.615h8.078z" fill-rule="evenodd"></path></symbol><symbol xmlns="http://www.w3.org/2000/svg" viewbox="0 0 708.8 717" id="icon-copy"><path d="M658.8 158H490.2c-13.3 0-26 5.3-35.4 14.6l-4.6 4.6V25c0-13.8-11.2-25-25-25H235.6c-6.6 0-13 2.6-17.7 7.3L7.3 218C2.6 222.6 0 229 0 235.6V541c0 13.8 11.2 25 25 25h227.8v101c0 27.6 22.4 50 50 50h356c27.6 0 50-22.4 50-50V208c0-27.6-22.4-50-50-50zm-204 85.4V360H338.2l116.6-116.6zm-253-149.2V209H87L201.8 94.2zM50 516V259h176.8c13.8 0 25-11.2 25-25V50h148.4v177.3L267.5 360c-9.4 9.4-14.6 22.1-14.6 35.4V516H50zm608.8 151h-356V410h177c13.8 0 25-11.2 25-25V208h154v459z"></path></symbol><symbol id="check-icon" viewbox="0 0 33 26"><path d="M32.57872 2.63298L30.2617.31596c-.38617-.38617-1.01808-.38617-1.40425 0l-18.1851 18.20266-6.4947-6.49468c-.38616-.38617-1.01808-.38617-1.40425 0L.45638 14.34096c-.38617.38617-.38617 1.01808 0 1.40425l7.17926 7.17928 2.31702 2.31702c.38617.38616 1.01808.38616 1.40425 0l2.3346-2.29948 18.8872-18.9048c.38617-.38616.38617-1.01807 0-1.40424z" fill-rule="evenodd"></path></symbol></svg><!--Google Tag Manager--><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-N8JP8G" height="0" width="0" style="display:none;visibility:hidden;"></iframe></noscript><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N8JP8G');</script><script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script><script src="/angular-instantsearch/js/common-build-08e35441fd900db11645700dcd5400ad.js"></script><script src="/angular-instantsearch/js/main-build-dfec9d1601c6260b91743075b00586af.js"></script></body></html>
