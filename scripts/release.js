@@ -184,14 +184,14 @@ shell.echo('Push to github, publish on npm'.blue);
 if (strategy === 'stable') {
   shell.exec('git push origin master');
   shell.exec('git push origin --tags');
-  shell.exec('npm publish');
+  shell.exec('(cd dist && npm publish && cd ..)');
   shell.exec('git checkout develop');
   shell.exec('git pull origin develop');
   shell.exec('git merge master');
   shell.exec('git push origin develop');
 } else {
   shell.exec(`git push origin ${currentBranch}`);
-  shell.exec('npm publish --tag beta');
+  shell.exec('(cd dist && npm publish --tag beta && cd ..');
 }
 
 return process.exit(0);
