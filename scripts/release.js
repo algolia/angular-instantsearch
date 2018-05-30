@@ -11,11 +11,13 @@ const readline = require('readline-sync');
 shell.echo('');
 
 // check if user can publish a new version
-const { code: isNotOwner } = shell.exec('$(npm owner add `npm whoami`)', {
-  silent: true,
-});
+const ownersFound = parseFloat(
+  shell.exec('npm owner ls | grep "`npm whoami` " | wc -l', {
+    silent: true,
+  })
+);
 
-if (isNotOwner) {
+if (ownersFound !== 1) {
   shell.echo(
     `
 You are not an owner of the npm repository,
