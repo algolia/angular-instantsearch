@@ -3,6 +3,8 @@ title: Getting started
 layout: getting-started.pug
 ---
 
+> If you are comming from Angular InstantSearch v1 and you want to upgrade to v2, you can simply use the [migration guide](guides/migration-guide.html).
+
 # Welcome to Angular InstantSearch
 
 Angular InstantSearch is an **Angular 5 & 6** TypeScript library that lets you create an instant search results experience using Algolia's REST API.
@@ -11,7 +13,7 @@ In this tutorial you'll learn how to:
 
 * Install and use `angular-instantsearch` in your angular application
 * Display results from Algolia
-* Add widgets / components to filter the resultss
+* Add widgets / components to filter the results
 
 ## Before we start
 
