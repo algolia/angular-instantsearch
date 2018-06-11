@@ -30,7 +30,7 @@ It contains sample data for an e-commerce website.
 This guide also expects you to have a working angular application. You can use the official [angular CLI](http://cli.angular.io) to bootstrap a new application this way:
 
 ```sh
-npm install -g @angular/cli
+npm install -g @angular/cli@6
 ng new example-angular-instantsearch
 cd example-angular-instantsearch
 ng serve
@@ -121,32 +121,11 @@ If you used Angular cli, then you can change the content of `src/app/app.compone
   [config]="{
     apiKey: '6be0576ff61c053d5f9a3225e2a90f76',
     appId: 'latency',
-    indexName: 'instant_search'
-  }"
->
-  <!-- Search Widgets will go there -->
-</ais-instantsearch>
-```
-
-Congrats! Your application is now connected to Algolia 🚀... But it does not display anything for now,
-let's add more widgets!
-
-## Display results
-
-The core of a search experience is to display results. By default, Angular InstantSearch will do a query at the start of the page and will retrieve the most relevant hits.
-
-To display results, let's add the Results widget. This widget will display all the results returned by Algolia, and it will update when there are new results:
-
-```html
-<ais-instantsearch
-  [config]="{
-    apiKey: '6be0576ff61c053d5f9a3225e2a90f76',
-    appId: 'latency',
     indexName: 'instant_search',
     routing: true
   }"
 >
-  <ais-hits></ais-hits>
+  <ng-ais-hits></ng-ais-hits>
 </ais-instantsearch>
 ```
 
@@ -158,10 +137,10 @@ Here's the result:
 Now that we’ve added the results, we can start querying our index. To do this, we are going to use the Searchbox widget. Let’s add it in the application template:
 
 ```html
-<!-- <ais-instantsearch [config]="{...}"> -->
+<ais-instantsearch [config]="{...}">
   <ais-search-box></ais-search-box>
-  <!-- <ais-hits></ais-hits> -->
-<!-- </ais-instantsearch> -->
+  <ais-hits></ais-hits>
+</ais-instantsearch>
 ```
 
 The search is now interactive and we see what matched in each of the products. Good thing for us, Algolia computes the matching part. For better control over what kind of data is returned, you should configure the [attributeToRetrieve](https://www.algolia.com/doc/rest#param-attributesToRetrieve) and [attributeToHighlight](https://www.algolia.com/doc/rest#param-attributesToHighlight) of your index
@@ -175,31 +154,27 @@ In this part, we’ve seen:
 Now let's try to use a custom template for hits, replace `<ais-hits></ais-hits>` with:
 
 ```html
-<!-- <ais-instantsearch [config]="{...}"> -->
-  <ais-hits>
-    <ng-template let-hits="hits">
-      <div *ngFor="let hit of hits">
-        Hit {{hit.objectID}}: {{hit.name}}
-      </div>
-    </ng-template>
-  </ais-hits>
-<!-- </ais-instantsearch> -->
+<ais-hits>
+  <ng-template let-hits="hits">
+    <div *ngFor="let hit of hits">
+      Hit {{hit.objectID}}: {{hit.name}}
+    </div>
+  </ng-template>
+</ais-hits>
 ```
 
 One very important aspect of the search is highlightning the matching parts of the results. We can use the `<ais-highlight>` widget to do that for you:
 
 ```html
-<!-- <ais-instantsearch [config]="{...}"> -->
-  <ais-hits>
-    <ng-template let-hits="hits">
-      <div *ngFor="let hit of hits">
-        Hit {{hit.objectID}}:
-        <ais-highlight attribute="name" [hit]="hit">
-        </ais-highlight>
-      </div>
-    </ng-template>
-  </ais-hits>
-<!-- </ais-instantsearch> -->
+<ais-hits>
+  <ng-template let-hits="hits">
+    <div *ngFor="let hit of hits">
+      Hit {{hit.objectID}}:
+      <ais-highlight attribute="name" [hit]="hit">
+      </ais-highlight>
+    </div>
+  </ng-template>
+</ais-hits>
 ```
 
 In this section we’ve seen:
@@ -217,14 +192,9 @@ Algolia provides a set of parameters for filtering by facets, numbers or geo loc
 
 Since the dataset used here is an e-commerce one, let’s add a [RefinementList](widgets/refinement-list.html) to filter the products by categories:
 
+Add this code right after `</ais-hits>`
 ```html
-<ais-instantsearch [config]="{...}">
-  <!-- <ais-search-box></ais-search-box> -->
-
   <ais-refinement-list attribute="brand"></ais-refinement-list>
-
-  <!-- <ais-hits></ais-hits> -->
-</ais-instantsearch>
 ```
 
 The `attribute` option specifies the faceted attribute to use in this widget. This attribute should be declared as a facet in the index configuration as well.
@@ -245,46 +215,9 @@ Here's the result:
 We now miss two elements in our search interface:
 
 * The ability to browse beyond the first page of results
-* The ability to reset the filters
+* The ability see and reset current filters
 
 Those two features are implemented respectively with the [Pagination](widgets/pagination.html), [ClearRefinements](widgets/clear-refinements.html) and [CurrentRefinements](widgets/current-refinements.html) widgets. They all have nice defaults which means that we can use them directly without further configuration.
-
-```html
-<ais-instantsearch [config]="{...}">
-  <!-- SearchBox -->
-  <ais-searchbox></ais-searchbox>
-
-  <!-- RefinementList -->
-  <ais-refinement-list attribute="category">
-  </ais-refinement-list>
-
-  <!-- CurrentRefinedValues -->
-  <ais-current-refined-values [clearRefinements]="false">
-    <!--
-      This widget can also contain a clear refinements link to remove all filters,
-      we disable it in this example since we use `ClearRefinements` widget on its own.
-    -->
-  </ng-ais-current-refinements>
-
-  <!-- ClearRefinements -->
-  <ng-ais-clear-refinements buttonLabel="Reset everything">
-  </ng-ais-clear-refinements>
-
-  <!-- Hits -->
-  <ais-hits></ais-hits>
-
-  <!-- Pagination -->
-  <ais-pagination [totalPages]="20">
-  </ais-pagination>
-</ais-instantsearch>
-```
-
-Current filters will display all the filters currently selected by the user. This gives the user a synthetic way of understanding the current search. ClearAll displays a button to remove all the filters.
-
-In this part, we’ve seen:
-
-* How to clear the filters
-* How to paginate the results
 
 ## Wrapping up
 
