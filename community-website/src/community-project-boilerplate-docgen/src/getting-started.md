@@ -125,7 +125,7 @@ If you used Angular cli, then you can change the content of `src/app/app.compone
     routing: true
   }"
 >
-  <ng-ais-hits></ng-ais-hits>
+  <ais-hits></ais-hits>
 </ais-instantsearch>
 ```
 
