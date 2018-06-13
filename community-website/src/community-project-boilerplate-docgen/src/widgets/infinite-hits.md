@@ -24,6 +24,7 @@ You can use the directive `<ng-template></ng-template>` to customize the output.
   <ng-template
     let-hits="hits"
     let-results="results"
+    let-refine="showMore"
   >
     <!-- No results message -->
     <div *ngIf="hits.length === 0">
@@ -42,6 +43,11 @@ You can use the directive `<ng-template></ng-template>` to customize the output.
 
       <p>{{hit.description}}</p>
     </div>
+
+    <!-- Show more button template -->
+    <button (click)="refine($event)">
+      Show more
+    </button>
   </ng-template>
 </ais-infinite-hits>
 ```
