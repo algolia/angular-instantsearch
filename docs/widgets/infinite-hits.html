@@ -234,6 +234,7 @@ You can use the directive <code>&lt;ng-template&gt;&lt;/ng-template&gt;</code> t
   <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">ng-template</span>
     <span class="cm-attribute">let-hits</span>=<span class="cm-string">&quot;hits&quot;</span>
     <span class="cm-attribute">let-results</span>=<span class="cm-string">&quot;results&quot;</span>
+    <span class="cm-attribute">let-refine</span>=<span class="cm-string">&quot;showMore&quot;</span>
   <span class="cm-tag cm-bracket">&gt;</span>
     <span class="cm-comment">&lt;!-- No results message --&gt;</span>
     <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">*ngIf</span>=<span class="cm-string">&quot;hits.length === 0&quot;</span><span class="cm-tag cm-bracket">&gt;</span>
@@ -252,6 +253,11 @@ You can use the directive <code>&lt;ng-template&gt;&lt;/ng-template&gt;</code> t
 
       <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">p</span><span class="cm-tag cm-bracket">&gt;</span>{{hit.description}}<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">p</span><span class="cm-tag cm-bracket">&gt;</span>
     <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+
+    <span class="cm-comment">&lt;!-- Show more button template --&gt;</span>
+    <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">button</span> <span class="cm-attribute">(click)</span>=<span class="cm-string">&quot;refine($event)&quot;</span><span class="cm-tag cm-bracket">&gt;</span>
+      Show more
+    <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">button</span><span class="cm-tag cm-bracket">&gt;</span>
   <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">ng-template</span><span class="cm-tag cm-bracket">&gt;</span>
 <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">ais-infinite-hits</span><span class="cm-tag cm-bracket">&gt;</span>
 </code></div></pre>
