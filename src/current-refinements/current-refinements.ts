@@ -3,6 +3,7 @@ import { Component, Input, Inject, forwardRef } from "@angular/core";
 import { connectCurrentRefinedValues } from "instantsearch.js/es/connectors";
 import { BaseWidget } from "../base-widget";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
+import { noop } from "../utils";
 
 export type CurrentRefinementsState = {
   attributes: {};
@@ -70,10 +71,10 @@ export class NgAisCurrentRefinements extends BaseWidget {
 
   public state: CurrentRefinementsState = {
     attributes: {},
-    clearAllClick: () => {},
-    clearAllURL: () => {},
-    createURL: () => {},
-    refine: () => {},
+    clearAllClick: noop,
+    clearAllURL: noop,
+    createURL: noop,
+    refine: noop,
     refinements: []
   };
 

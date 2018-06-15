@@ -3,7 +3,7 @@ import { Component, Input, Inject, forwardRef } from "@angular/core";
 import { connectPagination } from "instantsearch.js/es/connectors";
 import { BaseWidget } from "../base-widget";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
-import { parseNumberInput } from "../utils";
+import { parseNumberInput, noop } from "../utils";
 // https://github.com/lodash/lodash/issues/3542#issuecomment-360376983
 import range = require("lodash/range");
 
@@ -117,11 +117,11 @@ export class NgAisPagination extends BaseWidget {
   @Input() public totalPages?: number | string;
 
   public state = {
-    createURL: () => {},
+    createURL: noop,
     currentRefinement: 0,
     nbHits: 0,
     nbPages: 0,
-    refine: () => {}
+    refine: noop
   };
 
   get pages() {

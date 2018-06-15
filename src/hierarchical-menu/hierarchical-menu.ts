@@ -3,7 +3,7 @@ import { Component, Input, Inject, forwardRef } from "@angular/core";
 import { connectHierarchicalMenu } from "instantsearch.js/es/connectors";
 import { BaseWidget } from "../base-widget";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
-import { bem, parseNumberInput } from "../utils";
+import { bem, parseNumberInput, noop } from "../utils";
 
 export type HierarchicalMenuState = {
   createURL: Function;
@@ -43,9 +43,9 @@ export class NgAisHierarchicalMenu extends BaseWidget {
   @Input() public sortBy?: string[] | ((item: object) => number);
 
   public state: HierarchicalMenuState = {
-    createURL: () => {},
+    createURL: noop,
     items: [],
-    refine: () => {}
+    refine: noop
   };
 
   get isHidden() {

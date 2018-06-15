@@ -3,7 +3,7 @@ import { Component, Input, Inject, forwardRef } from "@angular/core";
 import { connectMenu } from "instantsearch.js/es/connectors";
 import { BaseWidget } from "../base-widget";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
-import { parseNumberInput } from "../utils";
+import { parseNumberInput, noop } from "../utils";
 
 export type MenuState = {
   canRefine: boolean;
@@ -64,11 +64,11 @@ export class NgAisMenu extends BaseWidget {
   public state: MenuState = {
     canRefine: false,
     canToggleShowMore: false,
-    createURL: () => {},
+    createURL: noop,
     isShowingMore: false,
     items: [],
-    refine: () => {},
-    toggleShowMore: () => {}
+    refine: noop,
+    toggleShowMore: noop
   };
 
   get isHidden() {

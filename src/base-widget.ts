@@ -1,7 +1,7 @@
 import { Input, OnDestroy, OnInit } from "@angular/core";
 import { isPlatformBrowser } from "@angular/common";
 import { NgAisInstantSearch } from "./instantsearch/instantsearch";
-import { bem } from "./utils";
+import { bem, noop } from "./utils";
 
 export class Widget {
   public init: () => void;
@@ -42,7 +42,7 @@ export class BaseWidget implements OnInit, OnDestroy {
   }
 
   public createWidget(connector: Connector, options: object = {}) {
-    this.widget = connector(this.updateState, () => {})(options);
+    this.widget = connector(this.updateState, noop)(options);
   }
 
   public ngOnInit() {

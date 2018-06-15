@@ -3,6 +3,7 @@ import { Component, Input, Inject, forwardRef } from "@angular/core";
 import { connectStarRating } from "instantsearch.js/es/connectors";
 import { BaseWidget } from "../base-widget";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
+import { noop } from "../utils";
 
 export type RatingMenuState = {
   createURL: Function;
@@ -83,10 +84,10 @@ export class NgAisRatingMenu extends BaseWidget {
   @Input() public max?: number = 5;
 
   public state: RatingMenuState = {
-    createURL: () => {},
+    createURL: noop,
     hasNoResults: false,
     items: [],
-    refine: () => {}
+    refine: noop
   };
 
   get isHidden() {

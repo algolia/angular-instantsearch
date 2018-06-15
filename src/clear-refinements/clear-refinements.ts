@@ -8,6 +8,7 @@ import {
 import { connectClearAll } from "instantsearch.js/es/connectors";
 import { BaseWidget } from "../base-widget";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
+import { noop } from "../utils";
 
 @Component({
   selector: "ais-clear-refinements",
@@ -31,7 +32,10 @@ export class NgAisClearRefinements extends BaseWidget {
   @Input() public clearsQuery: boolean = false;
   @Input() public excludeAttributes: string[] = [];
 
-  public state = { hasRefinements: false, refine: () => {} };
+  public state = {
+    hasRefinements: false,
+    refine: noop
+  };
 
   get isHidden() {
     return !this.state.hasRefinements && this.autoHideContainer;

@@ -3,6 +3,7 @@ import { Component, Input, Inject, forwardRef } from "@angular/core";
 import { connectToggle } from "instantsearch.js/es/connectors";
 import { BaseWidget } from "../base-widget";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
+import { noop } from "../utils";
 
 export type ToggleState = {
   createURL: Function;
@@ -49,8 +50,8 @@ export class NgAisToggle extends BaseWidget {
   public values: { on?: boolean; off?: boolean } = { on: true, off: undefined };
 
   public state: ToggleState = {
-    createURL: () => {},
-    refine: () => {},
+    createURL: noop,
+    refine: noop,
     value: {}
   };
 

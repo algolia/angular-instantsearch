@@ -5,7 +5,7 @@ import * as noUiSlider from "nouislider";
 
 import { BaseWidget } from "../base-widget";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
-import { parseNumberInput } from "../utils";
+import { parseNumberInput, noop } from "../utils";
 
 export type RangeSliderState = {
   range: { min: number; max: number };
@@ -38,7 +38,7 @@ export class NgAisRangeSlider extends BaseWidget {
 
   public state: RangeSliderState = {
     range: { min: 0, max: 1 },
-    refine: () => {},
+    refine: noop,
     start: [0, 1]
   };
 

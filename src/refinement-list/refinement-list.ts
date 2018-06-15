@@ -3,7 +3,7 @@ import { Component, Input, Inject, forwardRef } from "@angular/core";
 import { connectRefinementList } from "instantsearch.js/es/connectors";
 import { BaseWidget } from "../base-widget";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
-import { bem, parseNumberInput } from "../utils";
+import { bem, parseNumberInput, noop } from "../utils";
 
 export type RefinementListState = {
   canRefine: boolean;
@@ -83,12 +83,12 @@ export class NgAisRefinementList extends BaseWidget {
   public state: RefinementListState = {
     canRefine: false,
     canToggleShowMore: false,
-    createURL: () => {},
+    createURL: noop,
     isShowingMore: false,
     items: [],
-    refine: () => {},
-    toggleShowMore: () => {},
-    searchForItems: () => {},
+    refine: noop,
+    toggleShowMore: noop,
+    searchForItems: noop,
     isFormSearch: false
   };
 

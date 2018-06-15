@@ -10,6 +10,7 @@ import {
 import { connectInfiniteHits } from "instantsearch.js/es/connectors";
 import { BaseWidget } from "../base-widget";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
+import { noop } from "../utils";
 
 @Component({
   selector: "ais-infinite-hits",
@@ -57,7 +58,7 @@ export class NgAisInfiniteHits extends BaseWidget {
   } = {
     hits: [],
     isLastPage: false,
-    showMore: () => {},
+    showMore: noop,
     results: {}
   };
 

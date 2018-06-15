@@ -2,6 +2,7 @@ import { Component, Input, Inject, forwardRef } from "@angular/core";
 import { connectBreadcrumb } from "instantsearch.js/es/connectors";
 import { BaseWidget } from "../base-widget";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
+import { noop } from "../utils";
 
 export type BreadcrumbState = {
   createURL: Function;
@@ -69,9 +70,9 @@ export class NgAisBreadcrumb extends BaseWidget {
   }
 
   public state: BreadcrumbState = {
-    createURL: () => {},
+    createURL: noop,
     items: [],
-    refine: () => {}
+    refine: noop
   };
 
   constructor(

@@ -3,6 +3,7 @@ import { Component, Input, Inject, forwardRef } from "@angular/core";
 import { connectNumericRefinementList } from "instantsearch.js/es/connectors";
 import { BaseWidget } from "../base-widget";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
+import { noop } from "../utils";
 
 export type NumericRefinementListState = {
   createURL: Function;
@@ -47,9 +48,9 @@ export class NgAisNumericMenu extends BaseWidget {
   }[];
 
   public state: NumericRefinementListState = {
-    createURL: () => {},
+    createURL: noop,
     items: [],
-    refine: () => {}
+    refine: noop
   };
 
   get isHidden() {

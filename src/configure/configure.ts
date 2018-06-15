@@ -9,6 +9,7 @@ import {
 import { connectConfigure } from "instantsearch.js/es/connectors";
 import { BaseWidget } from "../base-widget";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
+import { noop } from "../utils";
 
 @Component({
   selector: "ais-configure",
@@ -18,7 +19,7 @@ export class NgAisConfigure extends BaseWidget {
   @Input() searchParameters: {} = {};
 
   public state: { refine: Function } = {
-    refine: () => {}
+    refine: noop
   };
 
   constructor(
