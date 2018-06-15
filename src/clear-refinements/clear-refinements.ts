@@ -1,10 +1,4 @@
-import {
-  Component,
-  Input,
-  Inject,
-  PLATFORM_ID,
-  forwardRef
-} from "@angular/core";
+import { Component, Input, Inject, forwardRef } from "@angular/core";
 import { connectClearAll } from "instantsearch.js/es/connectors";
 import { BaseWidget } from "../base-widget";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
