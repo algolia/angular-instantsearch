@@ -1,6 +1,5 @@
+import get from "lodash-es/get";
 import { Component, Input } from "@angular/core";
-// https://github.com/lodash/lodash/issues/3542#issuecomment-360376983
-import get = require("lodash/get");
 import { bem } from "../utils";
 
 @Component({
