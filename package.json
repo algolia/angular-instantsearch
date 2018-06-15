@@ -82,6 +82,7 @@
     "@angular/platform-browser-dynamic": "^5.0.0",
     "@ngtools/webpack": "^1.7.4",
     "@types/jest": "^22.0.1",
+    "@types/lodash": "^4.14.109",
     "@types/node": "^9.3.0",
     "@types/nouislider": "^9.0.3",
     "angular2-template-loader": "^0.6.2",
