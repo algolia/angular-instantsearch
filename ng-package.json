@@ -3,6 +3,8 @@
   "lib": {
     "entryFile": "src/index.ts",
     "umdModuleIds": {
+      "lodash-es": "_.get",
+      "lodash-es/range": "_.range",
       "algoliasearch": "algoliasearch",
       "algoliasearch/index": "algoliasearch",
       "instantsearch.js/es": "instantsearch",
@@ -16,6 +18,7 @@
     "algoliasearch",
     "algoliasearch-helper",
     "instantsearch.js",
+    "lodash-es",
     "nouislider",
     "querystring-es3",
     "instantsearch.css"
