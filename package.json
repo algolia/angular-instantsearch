@@ -69,7 +69,7 @@
     "algoliasearch-helper": "^2.26.0",
     "instantsearch.css": "^7.0.0",
     "instantsearch.js": "^2.8.0",
-    "lodash": "4.17.10",
+    "lodash": "^4.17.10",
     "nouislider": "^10.0.0",
     "querystring-es3": "^0.2.1"
   },
