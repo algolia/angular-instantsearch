@@ -3,7 +3,7 @@ import { Component, Input, Inject, forwardRef } from "@angular/core";
 import { connectCurrentRefinedValues } from "instantsearch.js/es/connectors";
 import { BaseWidget } from "../base-widget";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
-import { noop } from "../utils";
+import { noop, capitalize } from "../utils";
 
 export type CurrentRefinementsState = {
   attributes: {};
@@ -136,8 +136,4 @@ export class NgAisCurrentRefinements extends BaseWidget {
     event.preventDefault();
     this.state.clearAllClick();
   }
-}
-
-function capitalize(s) {
-  return s.charAt(0).toUpperCase() + s.slice(1);
 }
