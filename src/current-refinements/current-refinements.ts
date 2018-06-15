@@ -1,8 +1,6 @@
 import { Component, Input, Inject, forwardRef } from "@angular/core";
 
 import { connectCurrentRefinedValues } from "instantsearch.js/es/connectors";
-import { capitalize, noop, isFunction } from "lodash-es";
-
 import { BaseWidget } from "../base-widget";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
 
@@ -72,10 +70,10 @@ export class NgAisCurrentRefinements extends BaseWidget {
 
   public state: CurrentRefinementsState = {
     attributes: {},
-    clearAllClick: noop,
-    clearAllURL: noop,
-    createURL: noop,
-    refine: noop,
+    clearAllClick: () => {},
+    clearAllURL: () => {},
+    createURL: () => {},
+    refine: () => {},
     refinements: []
   };
 
@@ -84,9 +82,10 @@ export class NgAisCurrentRefinements extends BaseWidget {
   }
 
   get refinements() {
-    const items = isFunction(this.transformItems)
-      ? this.transformItems(this.state.refinements)
-      : this.state.refinements;
+    const items =
+      typeof this.transformItems === "function"
+        ? this.transformItems(this.state.refinements)
+        : this.state.refinements;
 
     // group refinements by category? (attributeName && type)
     return items.reduce((res, { type, attributeName, ...refinement }) => {
@@ -136,4 +135,8 @@ export class NgAisCurrentRefinements extends BaseWidget {
     event.preventDefault();
     this.state.clearAllClick();
   }
+}
+
+function capitalize(s) {
+  return s.charAt(0).toUpperCase() + s.slice(1);
 }

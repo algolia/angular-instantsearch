@@ -1,8 +1,6 @@
 import { Component, Input, Inject, forwardRef } from "@angular/core";
 
 import { connectMenu } from "instantsearch.js/es/connectors";
-import { noop, isFunction } from "lodash-es";
-
 import { BaseWidget } from "../base-widget";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
 import { parseNumberInput } from "../utils";
@@ -66,11 +64,11 @@ export class NgAisMenu extends BaseWidget {
   public state: MenuState = {
     canRefine: false,
     canToggleShowMore: false,
-    createURL: noop,
+    createURL: () => {},
     isShowingMore: false,
     items: [],
-    refine: noop,
-    toggleShowMore: noop
+    refine: () => {},
+    toggleShowMore: () => {}
   };
 
   get isHidden() {
@@ -88,7 +86,7 @@ export class NgAisMenu extends BaseWidget {
   }
 
   get items() {
-    return isFunction(this.transformItems)
+    return typeof this.transformItems === "function"
       ? this.transformItems(this.state.items)
       : this.state.items;
   }

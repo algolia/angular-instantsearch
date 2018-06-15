@@ -1,8 +1,6 @@
 import { Component, Input, Inject, forwardRef } from "@angular/core";
 
 import { connectHierarchicalMenu } from "instantsearch.js/es/connectors";
-import { noop, isFunction } from "lodash-es";
-
 import { BaseWidget } from "../base-widget";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
 import { bem, parseNumberInput } from "../utils";
@@ -45,9 +43,9 @@ export class NgAisHierarchicalMenu extends BaseWidget {
   @Input() public sortBy?: string[] | ((item: object) => number);
 
   public state: HierarchicalMenuState = {
-    createURL: noop,
+    createURL: () => {},
     items: [],
-    refine: noop
+    refine: () => {}
   };
 
   get isHidden() {
@@ -55,7 +53,7 @@ export class NgAisHierarchicalMenu extends BaseWidget {
   }
 
   get items() {
-    return isFunction(this.transformItems)
+    return typeof this.transformItems === "function"
       ? this.transformItems(this.state.items)
       : this.state.items;
   }

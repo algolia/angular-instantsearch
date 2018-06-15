@@ -8,8 +8,6 @@ import {
 } from "@angular/core";
 
 import { connectSearchBox } from "instantsearch.js/es/connectors";
-import { noop } from "lodash-es";
-
 import { BaseWidget } from "../base-widget";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
 
@@ -89,7 +87,7 @@ export class NgAisSearchBox extends BaseWidget {
 
   public state = {
     query: "",
-    refine: noop
+    refine: () => {}
   };
 
   constructor(

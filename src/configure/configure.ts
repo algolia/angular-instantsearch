@@ -7,8 +7,6 @@ import {
 } from "@angular/core";
 
 import { connectConfigure } from "instantsearch.js/es/connectors";
-import { noop } from "lodash-es";
-
 import { BaseWidget } from "../base-widget";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
 
@@ -20,7 +18,7 @@ export class NgAisConfigure extends BaseWidget {
   @Input() searchParameters: {} = {};
 
   public state: { refine: Function } = {
-    refine: noop
+    refine: () => {}
   };
 
   constructor(

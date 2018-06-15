@@ -24,6 +24,7 @@
   "scripts": {
     "build": "./scripts/build.sh",
     "lint": "tslint '{src,examples}/**/*.ts' -e '**/node_modules/**'",
+    "lint:fix": "tslint '{src,examples}/**/*.ts' -e '**/node_modules/**' --fix",
     "dev": "webpack-dev-server --config webpack.demo.js --inline --progress --host 0.0.0.0 --port 3000",
     "test": "jest",
     "test:ci": "yarn lint && jest --runInBand && yarn build",
@@ -54,7 +55,7 @@
       "^.+\\.js$": "babel-jest"
     },
     "transformIgnorePatterns": [
-      "node_modules/(?!instantsearch|lodash-es)"
+      "node_modules/(?!instantsearch)"
     ],
     "globals": {
       "ts-jest": {
@@ -68,7 +69,7 @@
     "algoliasearch-helper": "^2.26.0",
     "instantsearch.css": "^7.0.0",
     "instantsearch.js": "^2.8.0",
-    "lodash-es": "^4.17.4",
+    "lodash": "4.17.10",
     "nouislider": "^10.0.0",
     "querystring-es3": "^0.2.1"
   },
@@ -81,7 +82,6 @@
     "@angular/platform-browser-dynamic": "^5.0.0",
     "@ngtools/webpack": "^1.7.4",
     "@types/jest": "^22.0.1",
-    "@types/lodash-es": "^4.17.0",
     "@types/node": "^9.3.0",
     "@types/nouislider": "^9.0.3",
     "angular2-template-loader": "^0.6.2",

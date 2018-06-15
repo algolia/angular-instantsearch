@@ -1,8 +1,6 @@
 import { Component, Input, Inject, forwardRef } from "@angular/core";
 
 import { connectSortBySelector } from "instantsearch.js/es/connectors";
-import { noop } from "lodash-es";
-
 import { BaseWidget } from "../base-widget";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
 
@@ -40,7 +38,7 @@ export class NgAisSortBy extends BaseWidget {
   } = {
     currentRefinement: null,
     options: [],
-    refine: noop
+    refine: () => {}
   };
 
   constructor(

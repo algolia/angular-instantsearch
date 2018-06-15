@@ -1,8 +1,6 @@
 import { Inject, Component, Input, forwardRef } from "@angular/core";
 
 import { connectRange } from "instantsearch.js/es/connectors";
-import { noop } from "lodash-es";
-
 import { BaseWidget } from "../base-widget";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
 import { parseNumberInput } from "../utils";
@@ -85,7 +83,7 @@ export class NgAisRangeInput extends BaseWidget {
 
   public state: NumericRangeState = {
     range: { min: undefined, max: undefined },
-    refine: noop,
+    refine: () => {},
     start: [0, 0]
   };
 

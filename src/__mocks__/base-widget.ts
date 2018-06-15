@@ -1,6 +1,4 @@
 import { Input, OnDestroy, OnInit } from "@angular/core";
-import { noop } from "lodash-es";
-
 import { bem } from "../utils";
 
 export class BaseWidget implements OnInit, OnDestroy {

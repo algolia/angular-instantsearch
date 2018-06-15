@@ -63,7 +63,7 @@ exports[`CurrentRefinedValues renders markup with state 1`] = `
             <span
               class="ais-CurrentRefinements-label"
             >
-              Hierarchicalcategories.lvl0:
+              HierarchicalCategories.lvl0:
             </span>
             
             <span
@@ -209,7 +209,7 @@ exports[`CurrentRefinedValues should apply \`transformItems\` if specified 1`] =
             <span
               class="ais-CurrentRefinements-label"
             >
-              Hierarchicalcategories.lvl0:
+              HierarchicalCategories.lvl0:
             </span>
             
             <span
