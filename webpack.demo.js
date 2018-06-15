@@ -24,10 +24,7 @@ module.exports = {
   entry: {
     polyfills: './examples/dev-novel/polyfill.ts',
     main: './examples/dev-novel/main.ts',
-    styles: [
-      './node_modules/instantsearch.css/themes/reset.css',
-      './node_modules/instantsearch.css/themes/algolia.css',
-    ],
+    styles: ['./node_modules/instantsearch.css/themes/algolia.css'],
   },
 
   output: {
