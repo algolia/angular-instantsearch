@@ -8,10 +8,9 @@ import {
 } from "@angular/core";
 
 import { connectInfiniteHits } from "instantsearch.js/es/connectors";
-import { noop, isFunction } from "lodash-es";
-
 import { BaseWidget } from "../base-widget";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
+import { noop } from "../utils";
 
 @Component({
   selector: "ais-infinite-hits",
@@ -82,9 +81,10 @@ export class NgAisInfiniteHits extends BaseWidget {
     this.state = {
       ...state,
       results: state.results,
-      hits: isFunction(this.transformItems)
-        ? this.transformItems(state.hits)
-        : state.hits
+      hits:
+        typeof this.transformItems === "function"
+          ? this.transformItems(state.hits)
+          : state.hits
     };
   };
 }

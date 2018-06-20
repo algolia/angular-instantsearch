@@ -1,9 +1,7 @@
 import { Input, OnDestroy, OnInit } from "@angular/core";
 import { isPlatformBrowser } from "@angular/common";
-import { noop } from "lodash-es";
-
 import { NgAisInstantSearch } from "./instantsearch/instantsearch";
-import { bem } from "./utils";
+import { bem, noop } from "./utils";
 
 export class Widget {
   public init: () => void;

@@ -1,11 +1,9 @@
+import range from "lodash-es/range";
 import { Component, Input, Inject, forwardRef } from "@angular/core";
-
 import { connectPagination } from "instantsearch.js/es/connectors";
-import { noop, range } from "lodash-es";
-
 import { BaseWidget } from "../base-widget";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
-import { parseNumberInput } from "../utils";
+import { parseNumberInput, noop } from "../utils";
 
 @Component({
   selector: "ais-pagination",

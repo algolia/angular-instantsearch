@@ -1,5 +1,5 @@
+import get from "lodash-es/get";
 import { Component, Input } from "@angular/core";
-import { isPlainObject, escape, get } from "lodash-es";
 import { bem } from "../utils";
 
 @Component({
@@ -28,7 +28,7 @@ export class NgAisHighlight {
 
       // check that the attributeHighlighted is a string
       if (
-        isPlainObject(attributeHighlighted) &&
+        attributeHighlighted !== undefined &&
         typeof attributeHighlighted.value === "string"
       ) {
         return this.replaceWithTagName(attributeHighlighted.value);

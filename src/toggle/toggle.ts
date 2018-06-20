@@ -1,10 +1,9 @@
 import { Component, Input, Inject, forwardRef } from "@angular/core";
 
 import { connectToggle } from "instantsearch.js/es/connectors";
-import { noop } from "lodash-es";
-
 import { BaseWidget } from "../base-widget";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
+import { noop } from "../utils";
 
 export type ToggleState = {
   createURL: Function;

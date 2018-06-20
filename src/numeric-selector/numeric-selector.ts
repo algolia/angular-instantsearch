@@ -1,10 +1,9 @@
 import { Component, Input, Inject, forwardRef } from "@angular/core";
 
 import { connectNumericSelector } from "instantsearch.js/es/connectors";
-import { noop } from "lodash-es";
-
 import { BaseWidget } from "../base-widget";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
+import { noop } from "../utils";
 
 export type NumericSelectorState = {
   currentRefinement?: string | null;

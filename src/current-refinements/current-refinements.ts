@@ -1,10 +1,9 @@
 import { Component, Input, Inject, forwardRef } from "@angular/core";
 
 import { connectCurrentRefinedValues } from "instantsearch.js/es/connectors";
-import { capitalize, noop, isFunction } from "lodash-es";
-
 import { BaseWidget } from "../base-widget";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
+import { noop, capitalize } from "../utils";
 
 export type CurrentRefinementsState = {
   attributes: {};
@@ -84,9 +83,10 @@ export class NgAisCurrentRefinements extends BaseWidget {
   }
 
   get refinements() {
-    const items = isFunction(this.transformItems)
-      ? this.transformItems(this.state.refinements)
-      : this.state.refinements;
+    const items =
+      typeof this.transformItems === "function"
+        ? this.transformItems(this.state.refinements)
+        : this.state.refinements;
 
     // group refinements by category? (attributeName && type)
     return items.reduce((res, { type, attributeName, ...refinement }) => {

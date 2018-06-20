@@ -8,8 +8,6 @@ import {
 } from "@angular/core";
 
 import { connectHits } from "instantsearch.js/es/connectors";
-import { isFunction } from "lodash-es";
-
 import { BaseWidget } from "../base-widget";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
 
@@ -57,9 +55,10 @@ export class NgAisHits extends BaseWidget {
     this.state = {
       ...state,
       results: state.results,
-      hits: isFunction(this.transformItems)
-        ? this.transformItems(state.hits)
-        : state.hits
+      hits:
+        typeof this.transformItems === "function"
+          ? this.transformItems(state.hits)
+          : state.hits
     };
   };
 }

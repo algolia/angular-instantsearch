@@ -24,6 +24,7 @@
   "scripts": {
     "build": "./scripts/build.sh",
     "lint": "tslint '{src,examples}/**/*.ts' -e '**/node_modules/**'",
+    "lint:fix": "tslint '{src,examples}/**/*.ts' -e '**/node_modules/**' --fix",
     "dev": "webpack-dev-server --config webpack.demo.js --inline --progress --host 0.0.0.0 --port 3000",
     "test": "jest",
     "test:ci": "yarn lint && jest --runInBand && yarn build",
@@ -68,7 +69,7 @@
     "algoliasearch-helper": "^2.26.0",
     "instantsearch.css": "^7.0.0",
     "instantsearch.js": "^2.8.0",
-    "lodash-es": "^4.17.4",
+    "lodash-es": "^4.17.10",
     "nouislider": "^10.0.0",
     "querystring-es3": "^0.2.1"
   },

@@ -1,11 +1,8 @@
 import { Component, Input, Inject, forwardRef } from "@angular/core";
-
 import { connectRefinementList } from "instantsearch.js/es/connectors";
-import { noop, isFunction } from "lodash-es";
-
 import { BaseWidget } from "../base-widget";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
-import { bem, parseNumberInput } from "../utils";
+import { parseNumberInput, noop } from "../utils";
 
 export type RefinementListState = {
   canRefine: boolean;
@@ -106,7 +103,7 @@ export class NgAisRefinementList extends BaseWidget {
   }
 
   get items() {
-    return isFunction(this.transformItems)
+    return typeof this.transformItems === "function"
       ? this.transformItems(this.state.items)
       : this.state.items;
   }

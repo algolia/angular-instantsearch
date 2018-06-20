@@ -1,12 +1,11 @@
 import { Component, Input, ViewChild, Inject, forwardRef } from "@angular/core";
 
 import { connectRange } from "instantsearch.js/es/connectors";
-import { isPlainObject, noop, omit } from "lodash-es";
 import * as noUiSlider from "nouislider";
 
 import { BaseWidget } from "../base-widget";
 import { NgAisInstantSearch } from "../instantsearch/instantsearch";
-import { parseNumberInput } from "../utils";
+import { parseNumberInput, noop } from "../utils";
 
 export type RangeSliderState = {
   range: { min: number; max: number };
@@ -94,7 +93,7 @@ export class NgAisRangeSlider extends BaseWidget {
             values: [0, 50, 100]
           }
         });
-      } else if (isPlainObject(this.pips)) {
+      } else if (this.pips !== undefined) {
         Object.assign(config, { pips: this.pips });
       }
 
