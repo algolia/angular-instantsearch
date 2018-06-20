@@ -21,6 +21,9 @@
   "bugs": {
     "url": "https://github.com/algolia/angular-instantsearch/issues"
   },
+  "renovate": {
+    "extends": ["config:js-lib", "algolia"]
+  },
   "scripts": {
     "build": "./scripts/build.sh",
     "lint": "tslint '{src,examples}/**/*.ts' -e '**/node_modules/**'",
