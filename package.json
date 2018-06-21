@@ -25,6 +25,15 @@
     "extends": [
       "config:js-lib",
       "algolia"
+    ],
+    "packageRules": [
+      {
+        "paths": ["community-website"],
+        "extends": [
+          "config:js-app",
+          "algolia"
+        ]
+      }
     ]
   },
   "scripts": {
