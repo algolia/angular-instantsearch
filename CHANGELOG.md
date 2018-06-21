@@ -1,3 +1,20 @@
+<a name="2.0.2-beta.0"></a>
+## [2.0.2-beta.0](https://github.com/algolia/angular-instantsearch/compare/2.0.1...2.0.2-beta.0) (2018-06-21)
+
+
+### Bug Fixes
+
+* **lodash:** switch to normal lodash package ([9d9153e](https://github.com/algolia/angular-instantsearch/commit/9d9153e))
+* ng-packagr configuration ([2f56bcf](https://github.com/algolia/angular-instantsearch/commit/2f56bcf))
+* remove unused variable ([ea8bc48](https://github.com/algolia/angular-instantsearch/commit/ea8bc48))
+
+
+### Features
+
+* **utils:** add noop ([1913b12](https://github.com/algolia/angular-instantsearch/commit/1913b12))
+
+
+
 <a name="2.0.1"></a>
 ## [2.0.1](https://github.com/algolia/angular-instantsearch/compare/2.0.0...2.0.1) (2018-05-30)
 
