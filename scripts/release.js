@@ -135,12 +135,7 @@ shell.echo('');
 shell.echo(`Bumping version to "${newVersion}"`.blue);
 
 //  replace package.json with next version
-shell.exec(`sed -i.bak "s/${currVersion}/${newVersion}/g" src/version.ts`);
-shell.exec(`sed -i.bak "s/${currVersion}/${newVersion}/g" dist/package.json`);
-shell.exec(`sed -i.bak "s/${currVersion}/${newVersion}/g" package.json`);
-
-// remove .bak files from sed
-shell.exec('rm -f package.json.bak dist/package.json.bak src/version.ts.bak');
+shell.exec(`VERSION=${newVersion} node bump-package-version.js`);
 
 // install dependencies
 shell.echo('');

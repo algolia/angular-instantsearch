@@ -28,7 +28,9 @@
     ],
     "packageRules": [
       {
-        "paths": ["community-website"],
+        "paths": [
+          "community-website"
+        ],
         "extends": [
           "config:js-app",
           "algolia"
@@ -124,7 +126,9 @@
     "prettier": "^1.13.5",
     "raw-loader": "^0.5.1",
     "readline-sync": "^1.4.9",
+    "replace-in-file": "3.4.0",
     "rxjs": "^5.4.3",
+    "semver": "5.5.0",
     "shelljs": "^0.8.1",
     "style-loader": "^0.21.0",
     "ts-loader": "^2.0.1",
