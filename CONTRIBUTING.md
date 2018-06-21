@@ -6,7 +6,7 @@ You can do code and documentation contributions.
 
 ### Setup
 
-You need latest NodeJS (^10.5.0) use [nvm](https://github.com/creationix/nvm) and [yarn](https://yarnpkg.com/en/docs/install#alternatives-stablen) (^1.7.0) as package manager.
+You need latest NodeJS (^10.5.0) use [nvm](https://github.com/creationix/nvm) and [yarn](https://yarnpkg.com/en/docs/install#alternatives-stable) (^1.7.0) as package manager.
 
 ```sh
 git clone https://github.com/algolia/angular-instantsearch.git
