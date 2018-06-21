@@ -13,8 +13,6 @@ export default {
     'instantsearch.js/es/connectors',
     'algoliasearch/index',
     'querystring-es3/encode',
-    'lodash-es/get',
-    'lodash-es/range',
     'nouislider',
   ],
   globals: {

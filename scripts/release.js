@@ -8,6 +8,8 @@ require('colors');
 const shell = require('shelljs');
 const readline = require('readline-sync');
 
+shell.set('-e');
+
 shell.echo('');
 
 // check if user can publish a new version
@@ -135,12 +137,7 @@ shell.echo('');
 shell.echo(`Bumping version to "${newVersion}"`.blue);
 
 //  replace package.json with next version
-shell.exec(`sed -i.bak "s/${currVersion}/${newVersion}/g" src/version.ts`);
-shell.exec(`sed -i.bak "s/${currVersion}/${newVersion}/g" dist/package.json`);
-shell.exec(`sed -i.bak "s/${currVersion}/${newVersion}/g" package.json`);
-
-// remove .bak files from sed
-shell.exec('rm -f package.json.bak dist/package.json.bak src/version.ts.bak');
+shell.exec(`VERSION=${newVersion} node scripts/bump-package-version.js`);
 
 // install dependencies
 shell.echo('');
@@ -160,9 +157,7 @@ shell.exec('conventional-changelog -p angular -i CHANGELOG.md -s');
 shell.exec('cp README.md CHANGELOG.md dist');
 
 // commit and tag
-shell.exec(
-  'git add src/version.ts package.json dist/package.json CHANGELOG.md'
-);
+shell.exec('git add src/version.ts package.json CHANGELOG.md');
 shell.exec(`git commit -m "chore(release): publish v${newVersion}"`);
 shell.exec(`git tag ${newVersion}`);
 
@@ -184,14 +179,14 @@ shell.echo('Push to github, publish on npm'.blue);
 if (strategy === 'stable') {
   shell.exec('git push origin master');
   shell.exec('git push origin --tags');
-  shell.exec('(cd dist && npm publish && cd ..)');
+  shell.exec('cd dist && npm publish');
   shell.exec('git checkout develop');
   shell.exec('git pull origin develop');
   shell.exec('git merge master');
   shell.exec('git push origin develop');
 } else {
   shell.exec(`git push origin ${currentBranch}`);
-  shell.exec('(cd dist && npm publish --tag beta && cd ..');
+  shell.exec('cd dist && npm publish --tag beta');
 }
 
 return process.exit(0);
