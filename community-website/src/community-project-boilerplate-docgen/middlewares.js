@@ -49,7 +49,7 @@ module.exports = {
     webpackEntryMetadata(webpackStartConfig),
     ...common,
     onlyChanged,
-    layouts('pug'),
+    layouts(),
   ],
   build: [
     msWebpack({
@@ -70,6 +70,6 @@ module.exports = {
         rebase: false,
       },
     }),
-    layouts('pug'),
+    layouts(),
   ],
 };

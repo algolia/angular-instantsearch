@@ -44,8 +44,8 @@
     "examples:ssr": "./scripts/run-example.sh server-side-rendering",
     "release": "./scripts/release.js",
     "netlify": "./scripts/netlify.sh",
-    "doc:dev": "(cd community-website && yarn && yarn start)",
-    "doc:build": "(cd community-website && yarn && yarn docs:build)",
+    "doc:dev": "cd community-website && yarn && yarn start",
+    "doc:build": "cd community-website && yarn && yarn docs:build",
     "doc:publish": "./scripts/publish-docs.sh"
   },
   "jest": {

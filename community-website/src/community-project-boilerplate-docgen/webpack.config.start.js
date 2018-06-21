@@ -5,14 +5,13 @@ const webpackConfig = require('./webpack.config.js');
 
 module.exports = {
   ...webpackConfig,
-  devtool: 'cheap-module-eval-source-map',
+  mode: 'development',
   entry: {
     ...Object.entries(webpackConfig.entry).reduce(
       (memo, [entryName, entryValue]) => ({
         ...memo,
         [entryName]: [
           'babel-polyfill',
-          'react-hot-loader/patch',
           'webpack-hot-middleware/client?reload=true',
           entryValue,
         ],
@@ -20,9 +19,5 @@ module.exports = {
       {}
     ),
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin(),
-    ...webpackConfig.plugins,
-  ],
+  plugins: [new webpack.HotModuleReplacementPlugin(), ...webpackConfig.plugins],
 };
