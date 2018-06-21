@@ -1,4 +1,4 @@
-import range from "lodash-es/range";
+import {range} from "lodash";
 import { Component, Input, Inject, forwardRef } from "@angular/core";
 import { connectPagination } from "instantsearch.js/es/connectors";
 import { BaseWidget } from "../base-widget";
