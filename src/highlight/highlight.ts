@@ -1,4 +1,4 @@
-import {get} from "lodash";
+import { get } from "lodash";
 import { Component, Input } from "@angular/core";
 import { bem } from "../utils";
 
