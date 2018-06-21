@@ -135,7 +135,7 @@ shell.echo('');
 shell.echo(`Bumping version to "${newVersion}"`.blue);
 
 //  replace package.json with next version
-shell.exec(`VERSION=${newVersion} node bump-package-version.js`);
+shell.exec(`VERSION=${newVersion} node scripts/bump-package-version.js`);
 
 // install dependencies
 shell.echo('');
