@@ -3,6 +3,8 @@
   "lib": {
     "entryFile": "src/index.ts",
     "umdModuleIds": {
+      "lodash-es/get": "lodashEs.get",
+      "lodash-es/range": "lodashEs.range",
       "algoliasearch": "algoliasearch",
       "algoliasearch/index": "algoliasearch",
       "instantsearch.js/es": "instantsearch",
