@@ -1,3 +1,8 @@
+<a name="2.0.2-beta.3"></a>
+## [2.0.2-beta.3](https://github.com/algolia/angular-instantsearch/compare/2.0.2-beta.1...2.0.2-beta.3) (2018-06-21)
+
+
+
 <a name="2.0.2-beta.1"></a>
 ## [2.0.2-beta.1](https://github.com/algolia/angular-instantsearch/compare/2.0.1...2.0.2-beta.1) (2018-06-21)
 
