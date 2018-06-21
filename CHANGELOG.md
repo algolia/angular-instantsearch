@@ -1,3 +1,13 @@
+<a name="2.0.2-beta.5"></a>
+## [2.0.2-beta.5](https://github.com/algolia/angular-instantsearch/compare/2.0.2-beta.4...2.0.2-beta.5) (2018-06-21)
+
+
+### Bug Fixes
+
+* **lodash:** let rollup do its job ([053c134](https://github.com/algolia/angular-instantsearch/commit/053c134))
+
+
+
 <a name="2.0.2-beta.4"></a>
 ## [2.0.2-beta.4](https://github.com/algolia/angular-instantsearch/compare/2.0.1...2.0.2-beta.4) (2018-06-21)
 
