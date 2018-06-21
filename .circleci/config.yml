@@ -24,6 +24,7 @@ jobs:
           - v1-dependencies-
 
       - run: yarn
+      - run: npm rebuild node-sass --force
 
       - save_cache:
           paths:
