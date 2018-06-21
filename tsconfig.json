@@ -20,6 +20,5 @@
     "**/*.spec.ts",
     "src/__mocks__/**/*"
   ],
-  "compileOnSave": false,
-  "allowSyntheticDefaultImports": true
+  "compileOnSave": false
 }
