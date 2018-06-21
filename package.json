@@ -134,7 +134,6 @@
     "style-loader": "^0.21.0",
     "ts-loader": "^2.0.1",
     "tsickle": "^0.29.0",
-    "tslib": "1.9.2",
     "tslint": "^5.8.0",
     "tslint-config-airbnb": "^5.3.0",
     "tslint-config-prettier": "^1.5.0",
