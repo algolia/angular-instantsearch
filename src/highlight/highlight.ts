@@ -1,4 +1,4 @@
-import { get } from "lodash";
+const get = require("lodash/get");
 import { Component, Input } from "@angular/core";
 import { bem } from "../utils";
 
