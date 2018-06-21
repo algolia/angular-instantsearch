@@ -6520,10 +6520,6 @@ remove-trailing-separator@^1.0.1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/remove-trailing-separator/-/remove-trailing-separator-1.1.0.tgz#c24bce2a283adad5bc3f58e0d48249b92379d8ef"
 
-renovate-config-algolia@2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/renovate-config-algolia/-/renovate-config-algolia-2.0.1.tgz#bda1774c8fe14a8a8dbc3d8f3a5ebeaeca9cb7b4"
-
 repeat-element@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/repeat-element/-/repeat-element-1.1.2.tgz#ef089a178d1483baae4d93eb98b4f9e4e11d990a"
