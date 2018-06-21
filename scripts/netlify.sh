@@ -6,7 +6,6 @@ mkdir -p ./netlify-dist/examples
 
 # build community website
 (cd community-website && yarn)
-(cd community-website/src/community-project-boilerplate-docgen && yarn)
 (cd community-website && ROOT_PATH=$ROOT_PATH yarn docs:build)
 mv ./community-website/docs/* ./netlify-dist/
 

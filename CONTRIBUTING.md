@@ -6,11 +6,12 @@ You can do code and documentation contributions.
 
 ### Setup
 
-You need latest LTS NodeJS (^8.6.0) use [nvm](https://github.com/creationix/nvm) and [yarn](https://github.com/yarnpkg/yarn) as package manager.
+You need latest NodeJS (^10.5.0) use [nvm](https://github.com/creationix/nvm) and [yarn](https://yarnpkg.com/en/docs/install#alternatives-stable) (^1.7.0) as package manager.
 
-* `> git clone https://github.com/algolia/angular-instantsearch.git`
-* `> npm i -g yarn`
-* `> cd angular-instantsearch && yarn`
+```sh
+git clone https://github.com/algolia/angular-instantsearch.git
+cd angular-instantsearch
+```
 
 ### Run
 

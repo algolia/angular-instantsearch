@@ -78,9 +78,9 @@ function rollback(newVersion) {
   shell.exec(`git tag -d ${newVersion}`);
 }
 
-shell.echo(`You are on "${currentBranch}" branch.`.yellow.underline);
 const shouldReleaseVersion = readline.keyInYN(
-  `Are you sure you want to release a new ${strategy} version?`.yellow.underline
+  `This script will release a new ${strategy} version, continue?`.yellow
+    .underline
 );
 
 // user started the script by mystake?
