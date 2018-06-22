@@ -11,7 +11,7 @@ import {
 } from "@angular/core";
 import { isPlatformBrowser } from "@angular/common";
 
-import * as algoliasearchProxy from "algoliasearch";
+import * as algoliasearchProxy from "algoliasearch/lite";
 import instantsearch from "instantsearch.js/es";
 
 import { Widget } from "../base-widget";
