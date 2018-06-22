@@ -67,7 +67,9 @@
       "<rootDir>/dist/",
       "<rootDir>/examples/"
     ],
-    "modulePathIgnorePatterns": ["<rootDir>/dist"],
+    "modulePathIgnorePatterns": [
+      "<rootDir>/dist"
+    ],
     "transform": {
       "^.+\\.(ts|html)$": "<rootDir>/node_modules/jest-preset-angular/preprocessor.js",
       "^.+\\.js$": "babel-jest"
@@ -124,6 +126,7 @@
     "jest": "^22.1.4",
     "jest-preset-angular": "^5.0.0",
     "ng-packagr": "^3.0.3",
+    "node-sass": "4.9.0",
     "prettier": "^1.13.5",
     "raw-loader": "^0.5.1",
     "readline-sync": "^1.4.9",
