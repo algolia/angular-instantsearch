@@ -8,7 +8,7 @@
       "instantsearch.js/es": "instantsearch",
       "instantsearch.js/es/connectors": "instantsearch.connectors",
       "nouislider": "noUiSlider",
-      "lodash": "_",
+      "lodash-es": "_",
       "querystring-es3/encode": "qs.encode",
       "algoliasearch-helper": "algoliasearchHelper"
     }
@@ -17,7 +17,7 @@
     "algoliasearch",
     "algoliasearch-helper",
     "instantsearch.js",
-    "lodash",
+    "lodash-es",
     "nouislider",
     "querystring-es3",
     "instantsearch.css"

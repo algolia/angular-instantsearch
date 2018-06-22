@@ -75,7 +75,7 @@
       "^.+\\.js$": "babel-jest"
     },
     "transformIgnorePatterns": [
-      "node_modules/(?!instantsearch)"
+      "node_modules/(?!instantsearch|lodash-es)"
     ],
     "globals": {
       "ts-jest": {
@@ -89,7 +89,7 @@
     "algoliasearch-helper": "^2.26.1",
     "instantsearch.css": "^7.0.0",
     "instantsearch.js": "^2.8.0",
-    "lodash": "4.17.10",
+    "lodash-es": "^4.17.10",
     "nouislider": "^10.0.0",
     "querystring-es3": "^0.2.1"
   },
@@ -102,7 +102,7 @@
     "@angular/platform-browser-dynamic": "^5.0.0",
     "@ngtools/webpack": "^1.7.4",
     "@types/jest": "^22.0.1",
-    "@types/lodash": "4.14.110",
+    "@types/lodash-es": "4.17.0",
     "@types/node": "^9.3.0",
     "@types/nouislider": "^9.0.3",
     "angular2-template-loader": "^0.6.2",
