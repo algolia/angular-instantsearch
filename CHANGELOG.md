@@ -1,3 +1,27 @@
+<a name="2.0.2"></a>
+## [2.0.2](https://github.com/algolia/angular-instantsearch/compare/2.0.1...2.0.2) (2018-06-22)
+
+
+### Bug Fixes
+
+* ng-packagr configuration ([2f56bcf](https://github.com/algolia/angular-instantsearch/commit/2f56bcf))
+* remove unused variable ([ea8bc48](https://github.com/algolia/angular-instantsearch/commit/ea8bc48))
+* **build:** correct lodash imports ([#140](https://github.com/algolia/angular-instantsearch/issues/140)) ([2651fb7](https://github.com/algolia/angular-instantsearch/commit/2651fb7))
+* **lodash:** switch to normal lodash package ([9d9153e](https://github.com/algolia/angular-instantsearch/commit/9d9153e))
+* **lodash:** use normal lodash as in instantsearch.js ([#141](https://github.com/algolia/angular-instantsearch/issues/141)) ([b871323](https://github.com/algolia/angular-instantsearch/commit/b871323))
+
+
+### Features
+
+* **utils:** add noop ([1913b12](https://github.com/algolia/angular-instantsearch/commit/1913b12))
+
+
+### Performance Improvements
+
+* **size:** use lite client ([#142](https://github.com/algolia/angular-instantsearch/issues/142)) ([73475c2](https://github.com/algolia/angular-instantsearch/commit/73475c2)), closes [#136](https://github.com/algolia/angular-instantsearch/issues/136)
+
+
+
 <a name="2.0.1"></a>
 ## [2.0.1](https://github.com/algolia/angular-instantsearch/compare/2.0.0...2.0.1) (2018-05-30)
 
