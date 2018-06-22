@@ -1,6 +1,6 @@
 import { enableProdMode } from "@angular/core";
 import { start, storiesOf } from "dev-novel";
-import * as algoliasearch from "algoliasearch";
+import * as algoliasearch from "algoliasearch/lite";
 
 import { wrapWithHits } from "./wrap-with-hits";
 import { MenuSelect } from "./custom-widgets";
