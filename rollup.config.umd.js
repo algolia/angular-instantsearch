@@ -14,6 +14,7 @@ export default {
     'algoliasearch/index',
     'querystring-es3/encode',
     'nouislider',
+    'lodash',
   ],
   globals: {
     '@angular/core': 'ng.core',
