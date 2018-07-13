@@ -102,7 +102,7 @@
     "@angular/platform-browser-dynamic": "5.2.11",
     "@ngtools/webpack": "1.10.2",
     "@types/jest": "22.2.3",
-    "@types/lodash": "4.14.110",
+    "@types/lodash": "4.14.111",
     "@types/node": "9.6.23",
     "@types/nouislider": "9.0.4",
     "angular2-template-loader": "0.6.2",
