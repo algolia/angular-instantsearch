@@ -32,3 +32,26 @@ export class MenuSelect extends BaseWidget {
     super.ngOnInit();
   }
 }
+
+@Component({
+  selector: "ais-refresh",
+  template: `
+    <button
+      class="refresh"
+      (click)="refresh()"
+    >
+      refresh
+    </button>
+  `
+})
+export class Refresh extends BaseWidget {
+  constructor(
+    @Inject(forwardRef(() => NgAisInstantSearch))
+    public instantSearchParent: any
+  ) {
+    super("Refresh");
+  }
+  refresh() {
+    this.instantSearchParent.refresh();
+  }
+}
