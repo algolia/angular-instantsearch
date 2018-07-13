@@ -1,3 +1,18 @@
+<a name="2.0.3"></a>
+## [2.0.3](https://github.com/algolia/angular-instantsearch/compare/2.0.2...2.0.3) (2018-07-13)
+
+
+### Bug Fixes
+
+* **webpack:** override default value for compress in uglifyjs-webpack-plugin ([#182](https://github.com/algolia/angular-instantsearch/issues/182)) ([7e3fa79](https://github.com/algolia/angular-instantsearch/commit/7e3fa79))
+
+
+### Features
+
+* **core:** add the refresh method to the InstantSearchInstance signature ([#186](https://github.com/algolia/angular-instantsearch/issues/186)) ([6986bbf](https://github.com/algolia/angular-instantsearch/commit/6986bbf)), closes [#185](https://github.com/algolia/angular-instantsearch/issues/185)
+
+
+
 <a name="2.0.2"></a>
 ## [2.0.2](https://github.com/algolia/angular-instantsearch/compare/2.0.1...2.0.2) (2018-06-22)
 
