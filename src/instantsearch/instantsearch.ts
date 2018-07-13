@@ -202,6 +202,7 @@ export class InstantSearchInstance {
     state: Object;
   };
 
+  public refresh: () => void;
   public dispose: () => void;
 }
 
@@ -270,6 +271,10 @@ export class NgAisInstantSearch implements AfterViewInit, OnInit, OnDestroy {
 
   public removeWidget(widget: Widget) {
     this.instantSearchInstance.removeWidget(widget);
+  }
+
+  public refresh() {
+    this.instantSearchInstance.refresh();
   }
 
   onRender = () => {

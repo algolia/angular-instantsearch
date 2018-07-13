@@ -3,7 +3,7 @@ import { start, storiesOf } from "dev-novel";
 import * as algoliasearch from "algoliasearch/lite";
 
 import { wrapWithHits } from "./wrap-with-hits";
-import { MenuSelect } from "./custom-widgets";
+import { MenuSelect, Refresh } from "./custom-widgets";
 
 // depending on the env mode, enable prod mode or add debugging modules
 if (process.env.ENV === "build") {
@@ -582,13 +582,21 @@ storiesOf("RangeInput").add(
   })
 );
 
-storiesOf("CustomWidgets").add(
-  "MenuSelect",
-  wrapWithHits({
-    template: `<ais-menu-select></ais-menu-select>`,
-    appDeclarations: [MenuSelect]
-  })
-);
+storiesOf("Custom widgets")
+  .add(
+    "MenuSelect",
+    wrapWithHits({
+      template: `<ais-menu-select></ais-menu-select>`,
+      appDeclarations: [MenuSelect]
+    })
+  )
+  .add(
+    "Refresh",
+    wrapWithHits({
+      template: `<ais-refresh></ais-refresh>`,
+      appDeclarations: [Refresh]
+    })
+  );
 
 storiesOf("RangeSlider").add(
   "default",
