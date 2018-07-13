@@ -27,3 +27,8 @@ Tests are ran with [jest](https://facebook.github.io/jest/) and [jest-preset-ang
 
 * `> yarn test` -> run all tests
 * `> yarn test:watch` -> run tests and watch for changes
+
+## Releasing
+
+1. release by `yarn release`
+2. update the docs by `yarn doc:publish`
