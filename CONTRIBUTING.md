@@ -30,6 +30,14 @@ Tests are ran with [jest](https://facebook.github.io/jest/) and [jest-preset-ang
 
 ## Releasing
 
-0. merge `develop` into `master`
-1. release by `npm run release`
-2. update the docs by `yarn doc:publish`
+1. go to the correct branch
+
+    `git checkout develop`
+
+2. release to the registry
+
+    `npm run release`
+
+3. update the docs
+
+    `yarn doc:publish`
