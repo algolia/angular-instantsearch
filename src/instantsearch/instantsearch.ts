@@ -202,6 +202,7 @@ export class InstantSearchInstance {
     state: Object;
   };
 
+  public refresh: () => void;
   public dispose: () => void;
 }
 
