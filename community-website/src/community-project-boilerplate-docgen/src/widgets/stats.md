@@ -19,7 +19,7 @@ You can use the directive `<ng-template></ng-template>` to customize the output:
   template: `
     <ais-stats>
       <ng-template let-state="state">
-        {{stats.nbHits}} results found in {{stats.processingTimeMS}}ms.
+        {{state.nbHits}} results found in {{stats.processingTimeMS}}ms.
       </ng-template>
     </ais-stats>
   `
