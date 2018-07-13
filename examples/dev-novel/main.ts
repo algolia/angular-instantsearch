@@ -596,7 +596,7 @@ storiesOf("Custom widgets")
       template: `<ais-refresh></ais-refresh>`,
       appDeclarations: [Refresh]
     })
-  )
+  );
 
 storiesOf("RangeSlider").add(
   "default",
