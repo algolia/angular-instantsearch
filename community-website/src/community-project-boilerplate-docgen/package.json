@@ -34,7 +34,7 @@
     "metalsmith-sass": "1.5.1",
     "ms-webpack": "2.0.0",
     "node-sass": "4.9.2",
-    "nodemon": "1.18.2",
+    "nodemon": "1.18.3",
     "postcss": "6.0.23",
     "postcss-loader": "2.1.6",
     "postcss-scss": "1.0.6",
