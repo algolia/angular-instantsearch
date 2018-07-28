@@ -5614,16 +5614,15 @@ next-tick@1:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
 
-ng-packagr@3.0.5:
-  version "3.0.5"
-  resolved "https://registry.yarnpkg.com/ng-packagr/-/ng-packagr-3.0.5.tgz#a33640cc71d3fa4c6fc6364193d0a452bb726497"
+ng-packagr@3.0.6:
+  version "3.0.6"
+  resolved "https://registry.yarnpkg.com/ng-packagr/-/ng-packagr-3.0.6.tgz#0257993244616e2a7ce8dabbc7f4e65cef6a137c"
   dependencies:
     "@ngtools/json-schema" "^1.1.0"
     autoprefixer "^8.0.0"
     browserslist "^3.0.0"
     chalk "^2.3.1"
     commander "^2.12.0"
-    cpx "^1.5.0"
     fs-extra "^6.0.0"
     glob "^7.1.2"
     injection-js "^2.2.1"
