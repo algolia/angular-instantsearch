@@ -1918,7 +1918,13 @@ clean-css-cli@^4.1.6:
     commander "2.x"
     glob "7.x"
 
-clean-css@4.1.11, clean-css@^4.1.11:
+clean-css@4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.2.0.tgz#0a9d62040cddc7904c5edaee9bdeca642d9b9c1c"
+  dependencies:
+    source-map "~0.6.0"
+
+clean-css@^4.1.11:
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.1.11.tgz#2ecdf145aba38f54740f26cefd0ff3e03e125d6a"
   dependencies:
@@ -7502,7 +7508,7 @@ source-map@^0.4.2:
   dependencies:
     amdefine ">=0.0.4"
 
-source-map@^0.6.1, source-map@~0.6.1:
+source-map@^0.6.1, source-map@~0.6.0, source-map@~0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
 
