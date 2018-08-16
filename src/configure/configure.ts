@@ -20,8 +20,8 @@ import { noop } from "../utils";
   template: ""
 })
 export class NgAisConfigure extends BaseWidget {
-  private internalSearchParameters!: SearchParameters;
-  private differ!: KeyValueDiffer<string, any>; // SearchParameters
+  private internalSearchParameters: SearchParameters;
+  private differ: KeyValueDiffer<string, any>; // SearchParameters
 
   public state: { refine: Function } = {
     refine: noop
