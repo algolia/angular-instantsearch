@@ -9,8 +9,7 @@
   "rules": {
     "prettier": true,
     "no-submodule-imports": false,
-    "import-name": false,
-    "quotemark": false,
+    "import-name": false
   },
   "cliOptions": {
     "exclude": [

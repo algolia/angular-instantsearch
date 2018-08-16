@@ -9,7 +9,10 @@ import {
 
 import { connectConfigure } from "instantsearch.js/es/connectors";
 import { BaseWidget } from "../base-widget";
-import { NgAisInstantSearch, SearchParameters } from "../instantsearch/instantsearch";
+import {
+  NgAisInstantSearch,
+  SearchParameters
+} from "../instantsearch/instantsearch";
 import { noop } from "../utils";
 
 @Component({
@@ -17,16 +20,15 @@ import { noop } from "../utils";
   template: ""
 })
 export class NgAisConfigure extends BaseWidget {
-
-  private _searchParameters !: SearchParameters;
-  private _differ !: KeyValueDiffer<string, any>; // SearchParameters
+  private internalSearchParameters!: SearchParameters;
+  private differ!: KeyValueDiffer<string, any>; // SearchParameters
 
   public state: { refine: Function } = {
     refine: noop
   };
 
   constructor(
-    private _differs: KeyValueDiffers,
+    private differs: KeyValueDiffers,
     @Inject(forwardRef(() => NgAisInstantSearch))
     public instantSearchParent: any
   ) {
@@ -35,24 +37,24 @@ export class NgAisConfigure extends BaseWidget {
 
   @Input()
   set searchParameters(values: SearchParameters) {
-    this._searchParameters = values;
-    if (!this._differ && values) {
-      this._differ = this._differs.find(values).create();
+    this.internalSearchParameters = values;
+    if (!this.differ && values) {
+      this.differ = this.differs.find(values).create();
     }
   }
 
   public ngOnInit() {
     this.createWidget(connectConfigure, {
-      searchParameters: this._searchParameters
+      searchParameters: this.internalSearchParameters
     });
     super.ngOnInit();
   }
 
   ngDoCheck() {
-    if (this._differ) {
-      const changes = this._differ.diff(this._searchParameters);
+    if (this.differ) {
+      const changes = this.differ.diff(this.internalSearchParameters);
       if (changes) {
-        this.state.refine(this._searchParameters);
+        this.state.refine(this.internalSearchParameters);
       }
     }
   }
