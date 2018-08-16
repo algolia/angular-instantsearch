@@ -608,16 +608,35 @@ storiesOf("RangeSlider").add(
   })
 );
 
-storiesOf("Configure").add(
-  "with 1 hit per page",
-  wrapWithHits({
-    template: `
+storiesOf("Configure")
+  .add(
+    "with 1 hit per page",
+    wrapWithHits({
+      template: `
       <p>This widget renders nothing, here we are forcing hitsPerPage to 1</p>
       <ais-configure [searchParameters]="{ hitsPerPage: 1 }">
       </ais-configure>
     `
-  })
-);
+    })
+  )
+  .add(
+    "Toggle between hitsPerPage",
+    wrapWithHits({
+      template: `
+      <p>Toggle <code>hitsPerPage</code></p>
+      <pre>{{searchParams | json}}</pre>
+      <button (click)="toggleSearchParams()">toggle</button>
+      <ais-configure [searchParameters]="searchParams"></ais-configure>
+    `,
+      methods: {
+        searchParams: { hitsPerPage: 1 },
+        toggleSearchParams() {
+          this.searchParams.hitsPerPage =
+            this.searchParams.hitsPerPage === 1 ? 10 : 1;
+        }
+      }
+    })
+  );
 
 start({
   projectName: "Angular InstantSearch",
