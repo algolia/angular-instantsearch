@@ -4,7 +4,8 @@ import {
   Inject,
   forwardRef,
   KeyValueDiffer,
-  KeyValueDiffers
+  KeyValueDiffers,
+  Testability
 } from "@angular/core";
 
 import { connectConfigure } from "instantsearch.js/es/connectors";
@@ -21,7 +22,7 @@ import { noop } from "../utils";
 })
 export class NgAisConfigure extends BaseWidget {
   private internalSearchParameters: SearchParameters;
-  private differ: KeyValueDiffer<string, any>; // SearchParameters
+  private differ: KeyValueDiffer<string, any>; // SearchParameters (I don't know how to get the values of the type)
 
   public state: { refine: Function } = {
     refine: noop
