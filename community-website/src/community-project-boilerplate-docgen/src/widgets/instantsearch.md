@@ -56,7 +56,7 @@ export class AppComponent {}
 `numberLocale?: string`
 > The locale used to display numbers. This will be passed to `Number.prototype.toLocaleString()`
 
-`searchFunction?: Function`
+`searchFunction?: (helper: AlgoliaSearchHelper) => void`
 > A hook that will be called each time a search needs to be done, with the helper as a parameter. It’s your responsibility to call `helper.search()`. This option allows you to avoid doing searches at page load for example.
 
 `createAlgoliaClient?: (algoliasearch: Function, appId: string, apiKey: string) => CustomClient`
