@@ -1,3 +1,13 @@
+<a name="2.0.4"></a>
+## [2.0.4](https://github.com/algolia/angular-instantsearch/compare/2.0.3...2.0.4) (2018-08-27)
+
+
+### Bug Fixes
+
+* **configure:** allow updates, and deep updates ([#231](https://github.com/algolia/angular-instantsearch/issues/231)) ([1132292](https://github.com/algolia/angular-instantsearch/commit/1132292)), closes [/github.com/angular/angular/blob/15cc85c54a9146c6d502cffad52a3c1a41fe4dcb/packages/common/src/directives/ng_class.ts#L44](https://github.com//github.com/angular/angular/blob/15cc85c54a9146c6d502cffad52a3c1a41fe4dcb/packages/common/src/directives/ng_class.ts/issues/L44) [#230](https://github.com/algolia/angular-instantsearch/issues/230)
+
+
+
 <a name="2.0.3"></a>
 ## [2.0.3](https://github.com/algolia/angular-instantsearch/compare/2.0.2...2.0.3) (2018-07-13)
 
