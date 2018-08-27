@@ -263,7 +263,7 @@
 <blockquote>
 <p>The locale used to display numbers. This will be passed to <code>Number.prototype.toLocaleString()</code></p>
 </blockquote>
-<p><code>searchFunction?: Function</code></p>
+<p><code>searchFunction?: (helper: AlgoliaSearchHelper) =&gt; void</code></p>
 <blockquote>
 <p>A hook that will be called each time a search needs to be done, with the helper as a parameter. It’s your responsibility to call <code>helper.search()</code>. This option allows you to avoid doing searches at page load for example.</p>
 </blockquote>
