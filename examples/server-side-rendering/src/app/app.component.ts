@@ -43,9 +43,9 @@ import {
                 header="Sort by"
                 [items]="
                   [
-                    {name: 'ikea', label: 'Featured'},
-                    {name: 'ikea_price_asc', label: 'Price asc.'},
-                    {name: 'ikea_price_desc', label: 'Price desc.'}
+                    {name: 'instant_search', label: 'Featured'},
+                    {name: 'instant_search_price_asc', label: 'Price asc.'},
+                    {name: 'instant_search_price_desc', label: 'Price desc.'}
                   ]
                 "
               >
@@ -78,7 +78,7 @@ export class AppComponent {
 
     this.instantsearchConfig = {
       searchParameters,
-      indexName: "ikea",
+      indexName: "instant_search",
       urlSync: true,
       searchClient: createSSRSearchClient({
         makeStateKey,
