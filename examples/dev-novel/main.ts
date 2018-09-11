@@ -55,7 +55,7 @@ storiesOf("InstantSearch").add(
                 {
                   objectID: "1",
                   image:
-                    "https://cdn-demo.algolia.com/bestbuy-0118/5477500_sb.jpg",
+                  "https://cdn-demo.algolia.com/bestbuy-0118/5477500_sb.jpg",
                   price: "99.99",
                   rating: 4,
                   description:
@@ -69,7 +69,7 @@ storiesOf("InstantSearch").add(
                 {
                   objectID: "2",
                   image:
-                    "https://cdn-demo.algolia.com/bestbuy-0118/4397400_sb.jpg",
+                  "https://cdn-demo.algolia.com/bestbuy-0118/4397400_sb.jpg",
                   price: "39.99",
                   rating: 3,
                   description:

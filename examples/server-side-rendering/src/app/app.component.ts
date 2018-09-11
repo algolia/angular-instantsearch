@@ -43,9 +43,9 @@ import {
                 header="Sort by"
                 [items]="
                   [
-                    {name: 'bestbuy', label: 'Featured'},
-                    {name: 'bestbuy_price_asc', label: 'Price asc.'},
-                    {name: 'bestbuy_price_desc', label: 'Price desc.'}
+                    {name: 'instant_search', label: 'Featured'},
+                    {name: 'instant_search_price_asc', label: 'Price asc.'},
+                    {name: 'instant_search_price_desc', label: 'Price desc.'}
                   ]
                 "
               >
@@ -78,7 +78,7 @@ export class AppComponent {
 
     this.instantsearchConfig = {
       searchParameters,
-      indexName: "bestbuy",
+      indexName: "instant_search",
       urlSync: true,
       searchClient: createSSRSearchClient({
         makeStateKey,
