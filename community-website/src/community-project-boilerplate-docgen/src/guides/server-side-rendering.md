@@ -233,7 +233,7 @@ constructor(
     searchParameters,
     indexName: "instant_search",
     urlSync: true,
-    createAlgoliaClient: createSSRSearchClient({
+    searchClient: createSSRSearchClient({
       makeStateKey,
       HttpHeaders,
       transferState: this.transferState,
