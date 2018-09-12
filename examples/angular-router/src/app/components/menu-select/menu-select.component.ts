@@ -6,7 +6,7 @@ import { connectMenu } from "instantsearch.js/es/connectors";
   selector: "ais-menu-select",
   template: `
     <select
-      class="menu-select"
+      class="ais-MenuSelect-select"
       (change)="state.refine($event.target.value)"
     >
       <option
