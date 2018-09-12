@@ -46,6 +46,8 @@
     "test": "jest",
     "test:ci": "yarn lint && jest --runInBand && yarn build",
     "test:watch": "jest --watch",
+    "examples:ecommerce": "./scripts/run-example.sh e-commerce",
+    "examples:ecommerce:build": "./scripts/build-example.sh e-commerce",
     "examples:router": "./scripts/run-example.sh angular-router",
     "examples:router:build": "./scripts/build-example.sh angular-router",
     "examples:media": "./scripts/run-example.sh media",

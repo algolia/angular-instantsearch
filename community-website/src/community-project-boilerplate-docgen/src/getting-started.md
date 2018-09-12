@@ -23,7 +23,7 @@ Therefore, you'll need the credentials to an Algolia index. To ease this getting
 
 * `appId: latency`
 * `searchKey: 3d9875e51fbd20c7754e65422f7ce5e1`
-* `indexName: bestbuy`
+* `indexName: instant_search`
 
 It contains sample data for an e-commerce website.
 
