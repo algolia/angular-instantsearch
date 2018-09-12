@@ -7,7 +7,7 @@ import { Component, OnDestroy } from "@angular/core";
       [config]="{
         appId: 'latency',
         apiKey: '6be0576ff61c053d5f9a3225e2a90f76',
-        indexName: 'ikea',
+        indexName: 'instant_search',
         routing: true
       }"
     >
@@ -43,9 +43,9 @@ import { Component, OnDestroy } from "@angular/core";
               <ais-sort-by
                 [items]="
                   [
-                    {name: 'ikea', label: 'Featured'},
-                    {name: 'ikea_price_asc', label: 'Price asc.'},
-                    {name: 'ikea_price_desc', label: 'Price desc.'}
+                    {name: 'instant_search', label: 'Featured'},
+                    {name: 'instant_search_price_asc', label: 'Price asc.'},
+                    {name: 'instant_search_price_desc', label: 'Price desc.'}
                   ]
                 "
               >
