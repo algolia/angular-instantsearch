@@ -45,7 +45,7 @@ You can use the directive `<ng-template></ng-template>` to customize the output.
     </div>
 
     <!-- Show more button template -->
-    <button (click)="refine($event)">
+    <button (click)="showMore()">
       Show more
     </button>
   </ng-template>
