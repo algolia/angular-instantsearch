@@ -170,4 +170,4 @@ In `app.module.ts`, make sure to add the component by doing `import { MenuSelect
 
 You can now use your directive `<ais-menu-select></ais-menu-select>` to display your custom MenuSelect widget!
 
-We have a live example of this newly created MenuSelect in our [widget showcase](http://angular-instantsearch.netlify.com/dev-novel/?selectedStory=CustomWidgets.MenuSelect).
+We have a live example of this newly created MenuSelect in our [widget showcase](/examples/dev-novel/?selectedStory=Custom%20widgets.MenuSelect).

@@ -149,7 +149,7 @@ export type SearchClient = {
   search: (requests: SearchRequest[]) => Promise<{ results: SearchResponse[] }>;
   searchForFacetValues?: (
     requests: SearchForFacetValuesRequest[]
-  ) => Promise<{ facetHits: SearchForFacetValuesResponse[] }>;
+  ) => Promise<{ facetHits: SearchForFacetValuesResponse[] }[]>;
 };
 
 export type InstantSearchConfig = {
