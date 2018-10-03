@@ -53,6 +53,7 @@
     "examples:media": "./scripts/run-example.sh media",
     "examples:media:build": "./scripts/build-example.sh media",
     "examples:ssr": "./scripts/run-example.sh server-side-rendering",
+    "examples:ssr:build": "./scripts/build-example.sh server-side-rendering",
     "release": "./scripts/release.js",
     "netlify": "./scripts/netlify.sh",
     "doc:dev": "cd community-website && yarn && yarn start",
