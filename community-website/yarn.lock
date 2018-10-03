@@ -2182,10 +2182,10 @@ clean-css-cli@^4.1.6:
     commander "2.x"
     glob "7.x"
 
-clean-css@4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.2.0.tgz#0a9d62040cddc7904c5edaee9bdeca642d9b9c1c"
-  integrity sha1-Cp1iBAzdx5BMXtrum97KZC2bnBw=
+clean-css@4.2.1:
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.2.1.tgz#2d411ef76b8569b6d0c84068dabe85b0aa5e5c17"
+  integrity sha512-4ZxI6dy4lrY6FHzfiy1aEOXgu4LIsW2MhwG0VBKdcoGoH/XLFgaHSdLTGr4O8Be6A8r3MOphEiI8Gc1n0ecf3g==
   dependencies:
     source-map "~0.6.0"
 
