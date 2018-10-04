@@ -20,7 +20,7 @@ import { Component, OnDestroy } from "@angular/core";
           <div class="col-4">
             <ais-panel header="Show results for">
               <ais-hierarchical-menu
-                [attributes]="['category', 'sub_category', 'sub_sub_category']"
+                [attributes]="['hierarchicalCategories.lvl0', 'hierarchicalCategories.lvl1', 'hierarchicalCategories.lvl2']"
                 [sortBy]="['name:asc']"
               >
               </ais-hierarchical-menu>
@@ -28,9 +28,9 @@ import { Component, OnDestroy } from "@angular/core";
           </div>
 
           <div class="col-4">
-            <ais-panel header="Colors">
+            <ais-panel header="Brands">
               <ais-refinement-list
-                attribute="colors"
+                attribute="brand"
                 operator="or"
                 limit="10"
               >
@@ -52,7 +52,7 @@ import { Component, OnDestroy } from "@angular/core";
               </ais-sort-by>
             </ais-panel>
             <hr />
-            <ais-menu-select>
+            <ais-menu-select attribute="price_range">
             </ais-menu-select>
           </div>
         </div>
