@@ -21,7 +21,7 @@ import { Component, OnDestroy } from "@angular/core";
             <ais-panel header="Show results for">
               <ais-hierarchical-menu
                 [attributes]="['hierarchicalCategories.lvl0', 'hierarchicalCategories.lvl1', 'hierarchicalCategories.lvl2']"
-                [sortBy]="['name:asc']"
+                [sortBy]="['isRefined', 'name:asc']"
               >
               </ais-hierarchical-menu>
             </ais-panel>
