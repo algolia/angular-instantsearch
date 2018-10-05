@@ -1,4 +1,4 @@
-import { Component, Inject, forwardRef } from "@angular/core";
+import { Component, Inject, forwardRef, Input } from "@angular/core";
 import { BaseWidget, NgAisInstantSearch } from "angular-instantsearch";
 import { connectMenu } from "instantsearch.js/es/connectors";
 
@@ -20,6 +20,7 @@ import { connectMenu } from "instantsearch.js/es/connectors";
   `
 })
 export class MenuSelect extends BaseWidget {
+  @Input() attribute: string;
   state: {
     items: { label: string; value: string }[];
     createURL: () => string;
@@ -38,7 +39,7 @@ export class MenuSelect extends BaseWidget {
   }
 
   public ngOnInit() {
-    this.createWidget(connectMenu, { attributeName: "materials" });
+    this.createWidget(connectMenu, { attributeName: this.attribute });
     super.ngOnInit();
   }
 }

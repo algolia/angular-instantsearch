@@ -22,7 +22,7 @@ import {
             <div class="col-4">
               <ais-hierarchical-menu
                 header="Show results for"
-                [attributes]="['category', 'sub_category', 'sub_sub_category']"
+                [attributes]="['hierarchicalCategories.lvl0', 'hierarchicalCategories.lvl1', 'hierarchicalCategories.lvl2']"
                 [sortBy]="['name:asc']"
               >
               </ais-hierarchical-menu>
@@ -30,8 +30,8 @@ import {
 
             <div class="col-4">
               <ais-refinement-list
-                header="Colors"
-                attribute="colors"
+                header="Brands"
+                attribute="brand"
                 operator="or"
                 limit="10"
               >

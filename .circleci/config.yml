@@ -25,6 +25,12 @@ jobs:
 
       - run: yarn
 
+      - run: yarn examples:ssr:build
+      - run: yarn examples:ecommerce:build
+      - run: yarn examples:router:build
+      - run: yarn examples:media:build
+      - run: yarn examples:ssr:build
+
       - save_cache:
           paths:
             - node_modules
