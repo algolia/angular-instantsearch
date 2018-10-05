@@ -32,6 +32,18 @@ The RefinementList component displays a list that let the end user choose multip
   attribute="brand"
   operator="or"
   [limit]="10"
+  [transformItems]="translate"
 >
 </ais-refinement-list>
+```
+```ts
+export class AppComponent {
+  // ...
+  translate(items) {
+    return items.map(item => ({
+      ...item,
+      highlighted: myTranslateFunc(item.highlighted)
+    }));
+  }
+}
 ```

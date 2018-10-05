@@ -34,6 +34,18 @@ It is commonly used for categories with subcategories.
     'hierarchicalCategories.lvl1',
     'hierarchicalCategories.lvl2'
   ]"
+  [transformItems]="translate"
 >
 </ais-hierarchical-menu>
+```
+```ts
+export class AppComponent {
+  // ...
+  translate(items) {
+    return items.map(item => ({
+      ...item,
+      highlighted: myTranslateFunc(item.highlighted)
+    }));
+  }
+}
 ```
