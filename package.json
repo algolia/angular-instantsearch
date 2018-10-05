@@ -125,7 +125,7 @@
     "file-loader": "1.1.11",
     "html-webpack-plugin": "2.30.1",
     "jest": "22.4.4",
-    "jest-preset-angular": "5.2.3",
+    "jest-preset-angular": "6.0.1",
     "ng-packagr": "3.0.6",
     "node-sass": "4.9.2",
     "prettier": "1.13.7",
