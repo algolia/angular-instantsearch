@@ -4,7 +4,9 @@ import {
   Output,
   EventEmitter,
   Inject,
-  forwardRef
+  forwardRef,
+  ViewChild,
+  AfterViewInit
 } from "@angular/core";
 
 import { connectSearchBox } from "instantsearch.js/es/connectors";
@@ -33,6 +35,7 @@ import { noop } from "../utils";
           (input)="handleChange($event.target.value)"
           (focus)="focus.emit($event)"
           (blur)="blur.emit($event)"
+          #searchBox
         />
 
         <button
@@ -70,11 +73,13 @@ import { noop } from "../utils";
     </div>
   `
 })
-export class NgAisSearchBox extends BaseWidget {
+export class NgAisSearchBox extends BaseWidget implements AfterViewInit {
+  @ViewChild("searchBox") searchBox: any;
   @Input() public placeholder: string = "Search";
   @Input() public submitTitle: string = "Submit";
   @Input() public resetTitle: string = "Reset";
   @Input() public searchAsYouType: boolean = true;
+  @Input() public setFocus: boolean = false;
 
   // Output events
   // form
@@ -97,6 +102,12 @@ export class NgAisSearchBox extends BaseWidget {
   ) {
     super("SearchBox");
     this.createWidget(connectSearchBox);
+  }
+
+  public ngAfterViewInit() {
+    if (this.setFocus) {
+      this.searchBox.nativeElement.focus();
+    }
   }
 
   public handleChange(query: string) {
