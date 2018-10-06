@@ -11,7 +11,7 @@ The SortBy component displays a list of indexes allowing a user to change the hi
 
 ## Options
 
-| Attributes  | Type                              | Description
+| Attribute   | Type                              | Description
 | -           | -                                 | -
 | `items`     | `{name: string, label: string}[]` | The list of indexes to search in
 

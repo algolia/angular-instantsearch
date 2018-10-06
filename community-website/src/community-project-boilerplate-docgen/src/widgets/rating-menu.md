@@ -11,7 +11,7 @@ RatingMenu is used for displaying grade like filters. The values are normalized 
 
 ## Options
 
-| Attributes           | Type       | Description
+| Attribute            | Type       | Description
 | -                    | -          | -
 | `attribute`          | `string`   | Name of the attribute for faceting
 | `andUpLabel?`        | `string`   | Label to display after the stars

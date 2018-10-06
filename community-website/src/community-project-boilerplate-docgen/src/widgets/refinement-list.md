@@ -11,7 +11,7 @@ The RefinementList component displays a list that let the end user choose multip
 
 ## Options
 
-| Attributes           | Type                     | Description
+| Attribute            | Type                     | Description
 | -                    | -                        | -
 | `attribute`          | `string`                 | Name of the attribute for faceting (eg. "categories")
 | `operator?`          | `"and" / "or"`           | How to apply the refinements

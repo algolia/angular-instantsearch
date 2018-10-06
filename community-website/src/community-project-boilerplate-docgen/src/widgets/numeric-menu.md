@@ -11,7 +11,7 @@ The Numeric Menu is a component that displays a list of numeric filters in a lis
 
 ## Options
 
-| Attributes           | Type                                             | Description
+| Attribute            | Type                                             | Description
 | -                    | -                                                | -
 | `attribute         ` | `string`                                         | Name of the numeric attribute to use
 | `items`              | `{name: string, start?: number, end?: number}[]` | The list of indexes to search in
