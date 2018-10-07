@@ -104,7 +104,7 @@
     "@ngtools/webpack": "1.10.2",
     "@types/jest": "23.3.3",
     "@types/lodash": "4.14.116",
-    "@types/node": "9.6.32",
+    "@types/node": "9.6.34",
     "@types/nouislider": "9.0.4",
     "angular2-template-loader": "0.6.2",
     "babel-cli": "6.26.0",
