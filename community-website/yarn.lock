@@ -5910,10 +5910,10 @@ metalsmith-headings@0.2.0:
   dependencies:
     cheerio "^0.14.0"
 
-metalsmith-layouts@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/metalsmith-layouts/-/metalsmith-layouts-2.1.0.tgz#523ce8778795a1fffd3390fa4a88e27911b47846"
-  integrity sha512-saRKs8tvvD2Wq0Ff0yoqDmWxQNn14rJRK9ayUBo02fG9Kpf6cEEgRbwsE5//zZ52JhadBMM33w5N5wjeKDSvLg==
+metalsmith-layouts@2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/metalsmith-layouts/-/metalsmith-layouts-2.2.0.tgz#6b3da481efba9d4c37cd477d10515a82ba942b83"
+  integrity sha512-8lSnPx65jWlsxvI6Pd40CCW7Ypz9kx3UmDei5YTx0QryVsigR0bjf1Ada/TDpMfdWVKOT87774fCYgYEDvjnPQ==
   dependencies:
     debug "^3.1.0"
     inputformat-to-jstransformer "^1.2.1"
