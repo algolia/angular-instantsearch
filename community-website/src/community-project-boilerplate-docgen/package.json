@@ -42,7 +42,7 @@
     "react": "16.4.2",
     "react-dom": "16.4.2",
     "recursive-readdir": "2.2.2",
-    "replace-in-file": "3.4.0",
+    "replace-in-file": "3.4.2",
     "sass-loader": "7.1.0",
     "stat-mode": "0.2.2",
     "style-loader": "0.21.0",
