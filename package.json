@@ -131,7 +131,7 @@
     "prettier": "1.13.7",
     "raw-loader": "0.5.1",
     "readline-sync": "1.4.9",
-    "replace-in-file": "3.4.0",
+    "replace-in-file": "3.4.2",
     "rxjs": "5.5.11",
     "semver": "5.5.0",
     "shelljs": "0.8.2",
