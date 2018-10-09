@@ -127,7 +127,7 @@
     "jest": "22.4.4",
     "jest-preset-angular": "6.0.1",
     "ng-packagr": "3.0.6",
-    "node-sass": "4.9.2",
+    "node-sass": "4.9.3",
     "prettier": "1.13.7",
     "raw-loader": "0.5.1",
     "readline-sync": "1.4.9",
