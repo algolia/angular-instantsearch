@@ -79,7 +79,7 @@ export class NgAisSearchBox extends BaseWidget implements AfterViewInit {
   @Input() public submitTitle: string = "Submit";
   @Input() public resetTitle: string = "Reset";
   @Input() public searchAsYouType: boolean = true;
-  @Input() public setFocus: boolean = false;
+  @Input() public autoFocus: boolean = false;
 
   // Output events
   // form
@@ -105,7 +105,7 @@ export class NgAisSearchBox extends BaseWidget implements AfterViewInit {
   }
 
   public ngAfterViewInit() {
-    if (this.setFocus) {
+    if (this.autoFocus) {
       this.searchBox.nativeElement.focus();
     }
   }
