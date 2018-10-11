@@ -28,20 +28,18 @@ const render = createRenderer({
   TestedWidget: NgAisRatingMenu
 });
 
-// FIXME: find a way to test when there's SVG
-
 describe("StarRating", () => {
-  it.skip("should render without state", () => {
+  it("should render without state", () => {
     const fixture = render();
     expect(fixture).toMatchSnapshot();
   });
 
-  it.skip("should render with state", () => {
+  it("should render with state", () => {
     const fixture = render({});
     expect(fixture).toMatchSnapshot();
   });
 
-  it.skip("should be hidden with autoHideContainer", () => {
+  it("should be hidden with autoHideContainer", () => {
     const fixture = render({ items: [] });
     fixture.componentInstance.testedWidget.autoHideContainer = true;
     fixture.detectChanges();
