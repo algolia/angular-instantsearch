@@ -29,6 +29,18 @@ This widget is usually in the top part of the search UI.
 ## Code example
 
 ```html
-<ais-current-refinements [clearsQuery]="true">
+<ais-current-refinements [clearsQuery]="true" [transformItems]="translate">
 </ais-current-refinements>
+```
+
+```ts
+export class AppComponent {
+  // ...
+  translate(items) {
+    return items.map(item => ({
+      ...item,
+      highlighted: myTranslateFunc(item.highlighted)
+    }));
+  }
+}
 ```

@@ -29,6 +29,18 @@ The Menu component displays a menu that lets the user choose a single value for 
   attribute="categories"
   [limit]="3"
   [showMoreLimit]="10"
+  [transformItems]="translate"
 >
 </ais-menu>
+```
+```ts
+export class AppComponent {
+  // ...
+  translate(items) {
+    return items.map(item => ({
+      ...item,
+      highlighted: myTranslateFunc(item.highlighted)
+    }));
+  }
+}
 ```
