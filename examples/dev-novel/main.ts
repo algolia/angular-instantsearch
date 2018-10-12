@@ -496,7 +496,7 @@ storiesOf("SearchBox")
     wrapWithHits({
       template: `
         <ais-search-box
-          [autoFocus]="true"
+          [autofocus]="true"
           placeholder="Search for products"
           [searchAsYouType]="false"
         >

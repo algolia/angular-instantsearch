@@ -6,7 +6,8 @@ import {
   Inject,
   forwardRef,
   ViewChild,
-  AfterViewInit
+  AfterViewInit,
+  ElementRef
 } from "@angular/core";
 
 import { connectSearchBox } from "instantsearch.js/es/connectors";
@@ -74,12 +75,12 @@ import { noop } from "../utils";
   `
 })
 export class NgAisSearchBox extends BaseWidget implements AfterViewInit {
-  @ViewChild("searchBox") searchBox: any;
+  @ViewChild("searchBox") searchBox: ElementRef;
   @Input() public placeholder: string = "Search";
   @Input() public submitTitle: string = "Submit";
   @Input() public resetTitle: string = "Reset";
   @Input() public searchAsYouType: boolean = true;
-  @Input() public autoFocus: boolean = false;
+  @Input() public autofocus: boolean = false;
 
   // Output events
   // form
@@ -105,7 +106,7 @@ export class NgAisSearchBox extends BaseWidget implements AfterViewInit {
   }
 
   public ngAfterViewInit() {
-    if (this.autoFocus) {
+    if (this.autofocus) {
       this.searchBox.nativeElement.focus();
     }
   }
