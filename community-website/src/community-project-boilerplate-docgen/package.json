@@ -24,7 +24,7 @@
     "hasha": "3.0.0",
     "jstransformer-markdown-it": "2.1.0",
     "jstransformer-pug": "0.3.0",
-    "lodash": "4.17.10",
+    "lodash": "4.17.11",
     "markdown-it": "8.4.2",
     "markdown-it-anchor": "5.0.2",
     "metalsmith": "2.3.0",
