@@ -40,11 +40,12 @@
   },
   "scripts": {
     "build": "./scripts/build.sh",
+    "build:tests": "./scripts/build-tests.sh",
     "lint": "tslint '{src,examples}/**/*.ts' -e '**/node_modules/**'",
     "lint:fix": "tslint '{src,examples}/**/*.ts' -e '**/node_modules/**' --fix",
     "dev": "webpack-dev-server --config webpack.demo.js --inline --progress --host 0.0.0.0 --port 3000",
     "test": "jest",
-    "test:ci": "yarn lint && jest --runInBand && yarn build",
+    "test:ci": "yarn lint && yarn build:tests && jest --runInBand",
     "test:watch": "jest --watch",
     "examples:ecommerce": "./scripts/run-example.sh e-commerce",
     "examples:ecommerce:build": "./scripts/build-example.sh e-commerce",
@@ -66,7 +67,8 @@
     "testPathIgnorePatterns": [
       "<rootDir>/node_modules/",
       "<rootDir>/dist/",
-      "<rootDir>/examples/"
+      "<rootDir>/examples/",
+      "<rootDir>/src/__tests__/tree-shaking/test-app/"
     ],
     "modulePathIgnorePatterns": [
       "<rootDir>/dist"

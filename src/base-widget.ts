@@ -1,6 +1,5 @@
 import { Input, OnDestroy, OnInit } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { NgAisInstantSearch } from './instantsearch/instantsearch';
 import { bem, noop } from './utils';
 
 export class Widget {
