@@ -66,7 +66,7 @@ export class NgAisHierarchicalMenuItem {
   public getListClass(item) {
     return `${this.cx("list")} ${this.cx("list", "child")} ${this.cx(
       "list",
-      "lvl" + this.lvl
+      `lvl${this.lvl}`
     )}`;
   }
 

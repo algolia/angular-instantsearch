@@ -80,7 +80,7 @@ describe("CurrentRefinedValues", () => {
     const clearAllClick = jest.fn();
     const fixture = render({ clearAllClick });
 
-    fixture.debugElement.nativeElement.querySelector("." + cx("reset")).click();
+    fixture.debugElement.nativeElement.querySelector(`.${cx("reset")}`).click();
 
     expect(clearAllClick).toHaveBeenCalled();
   });

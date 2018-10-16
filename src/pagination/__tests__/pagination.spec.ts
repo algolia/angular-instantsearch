@@ -33,7 +33,7 @@ describe("Pagination", () => {
   it("renders does not uses pagesPadding when nbPages < pagesPadding * 2 + 1", () => {
     const fixture = render({ nbPages: 5 });
     const pages = fixture.debugElement.nativeElement.querySelectorAll(
-      "." + cx("item", "page")
+      `.${cx("item", "page")}`
     );
 
     expect(pages.length).toBe(5);
@@ -45,7 +45,7 @@ describe("Pagination", () => {
     const fixture = render({ refine });
 
     const el = fixture.debugElement.nativeElement;
-    const [, secondPage] = el.querySelectorAll("." + cx("item", "page"));
+    const [, secondPage] = el.querySelectorAll(`.${cx("item", "page")}`);
     secondPage.click();
 
     expect(refine).toHaveBeenCalled();
@@ -54,12 +54,12 @@ describe("Pagination", () => {
     fixture.componentInstance.testedWidget.state.currentRefinement = 3;
     fixture.detectChanges();
 
-    const previous = el.querySelector("." + cx("item", "previousPage"));
+    const previous = el.querySelector(`.${cx("item", "previousPage")}`);
     previous.click();
 
     expect(refine).toHaveBeenLastCalledWith(2);
 
-    const next = el.querySelector("." + cx("item", "nextPage"));
+    const next = el.querySelector(`.${cx("item", "nextPage")}`);
     next.click();
 
     expect(refine).toHaveBeenLastCalledWith(4);
@@ -73,7 +73,7 @@ describe("Pagination", () => {
     fixture.detectChanges();
 
     const lastPage = fixture.debugElement.nativeElement.querySelector(
-      "." + cx("item", "lastPage")
+      `.${cx("item", "lastPage")}`
     );
 
     lastPage.click();
@@ -90,16 +90,16 @@ describe("Pagination", () => {
     fixture.detectChanges();
 
     const firstPage = fixture.debugElement.nativeElement.querySelector(
-      "." + cx("item", "firstPage")
+      `.${cx("item", "firstPage")}`
     );
     const previousPage = fixture.debugElement.nativeElement.querySelector(
-      "." + cx("item", "previousPage")
+      `.${cx("item", "previousPage")}`
     );
     const nextPage = fixture.debugElement.nativeElement.querySelector(
-      "." + cx("item", "nextPage")
+      `.${cx("item", "nextPage")}`
     );
     const lastPage = fixture.debugElement.nativeElement.querySelector(
-      "." + cx("item", "lastPage")
+      `.${cx("item", "lastPage")}`
     );
 
     firstPage.click();
