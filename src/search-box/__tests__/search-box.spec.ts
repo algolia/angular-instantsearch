@@ -30,8 +30,6 @@ describe("SearchBox", () => {
         template: "<ais-search-box [autofocus]='true'></ais-search-box>",
         TestedWidget: NgAisSearchBox
       })();
-      expect(fixture).toMatchSnapshot();
-
       const widget = fixture.componentInstance.testedWidget;
       expect(document.activeElement).toBe(widget.searchBox.nativeElement);
     });
@@ -41,8 +39,6 @@ describe("SearchBox", () => {
         template: "<ais-search-box [autofocus]='false'></ais-search-box>",
         TestedWidget: NgAisSearchBox
       })();
-      expect(fixture).toMatchSnapshot();
-
       const widget = fixture.componentInstance.testedWidget;
       expect(document.activeElement).not.toBe(widget.searchBox.nativeElement);
     });
