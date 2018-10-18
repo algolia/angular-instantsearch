@@ -101,7 +101,7 @@
     "@angular/core": "5.2.11",
     "@angular/platform-browser": "5.2.11",
     "@angular/platform-browser-dynamic": "5.2.11",
-    "@ngtools/webpack": "1.10.2",
+    "@ngtools/webpack": "6.2.5",
     "@types/jest": "23.3.5",
     "@types/lodash": "4.14.117",
     "@types/node": "9.6.35",
