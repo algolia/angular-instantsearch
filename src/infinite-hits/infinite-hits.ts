@@ -4,16 +4,16 @@ import {
   Input,
   TemplateRef,
   Inject,
-  forwardRef
-} from "@angular/core";
+  forwardRef,
+} from '@angular/core';
 
-import { connectInfiniteHits } from "instantsearch.js/es/connectors";
-import { BaseWidget } from "../base-widget";
-import { NgAisInstantSearch } from "../instantsearch/instantsearch";
-import { noop } from "../utils";
+import { connectInfiniteHits } from 'instantsearch.js/es/connectors';
+import { BaseWidget } from '../base-widget';
+import { NgAisInstantSearch } from '../instantsearch/instantsearch';
+import { noop } from '../utils';
 
 @Component({
-  selector: "ais-infinite-hits",
+  selector: 'ais-infinite-hits',
   template: `
     <div [class]="cx()">
       <ng-container *ngTemplateOutlet="template; context: state"></ng-container>
@@ -40,13 +40,13 @@ import { noop } from "../utils";
         {{showMoreLabel}}
       </button>
     </div>
-  `
+  `,
 })
 export class NgAisInfiniteHits extends BaseWidget {
   @ContentChild(TemplateRef) public template?: any;
 
   // render options
-  @Input() public showMoreLabel: string = "Show more results";
+  @Input() public showMoreLabel: string = 'Show more results';
   @Input() public transformItems?: Function;
 
   // inner widget state returned from connector
@@ -59,14 +59,14 @@ export class NgAisInfiniteHits extends BaseWidget {
     hits: [],
     isLastPage: false,
     showMore: noop,
-    results: {}
+    results: {},
   };
 
   constructor(
     @Inject(forwardRef(() => NgAisInstantSearch))
     public instantSearchParent: any
   ) {
-    super("InfiniteHits");
+    super('InfiniteHits');
     this.createWidget(connectInfiniteHits, { escapeHits: true });
   }
 
@@ -82,9 +82,9 @@ export class NgAisInfiniteHits extends BaseWidget {
       ...state,
       results: state.results,
       hits:
-        typeof this.transformItems === "function"
+        typeof this.transformItems === 'function'
           ? this.transformItems(state.hits)
-          : state.hits
+          : state.hits,
     };
   };
 }

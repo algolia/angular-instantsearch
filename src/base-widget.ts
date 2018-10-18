@@ -1,7 +1,7 @@
-import { Input, OnDestroy, OnInit } from "@angular/core";
-import { isPlatformBrowser } from "@angular/common";
-import { NgAisInstantSearch } from "./instantsearch/instantsearch";
-import { bem, noop } from "./utils";
+import { Input, OnDestroy, OnInit } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { NgAisInstantSearch } from './instantsearch/instantsearch';
+import { bem, noop } from './utils';
 
 export class Widget {
   public init: () => void;
@@ -71,10 +71,10 @@ export class BaseWidget implements OnInit, OnDestroy {
 
   // helper method for genering item list className
   public getItemClass(item: { isRefined?: boolean }) {
-    let className = this.cx("item");
+    let className = this.cx('item');
 
     if (item.isRefined) {
-      className = `${className} ${this.cx("item", "selected")}`;
+      className = `${className} ${this.cx('item', 'selected')}`;
     }
 
     return className;

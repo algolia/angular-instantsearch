@@ -1,12 +1,12 @@
-import { CommonModule } from "@angular/common";
-import { NgModule } from "@angular/core";
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
-import { NgAisSearchBox } from "./search-box";
+import { NgAisSearchBox } from './search-box';
 
 @NgModule({
   declarations: [NgAisSearchBox],
   entryComponents: [NgAisSearchBox],
   exports: [NgAisSearchBox],
-  imports: [CommonModule]
+  imports: [CommonModule],
 })
 export class NgAisSearchBoxModule {}

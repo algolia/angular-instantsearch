@@ -7,16 +7,16 @@ import {
   Output,
   EventEmitter,
   Inject,
-  PLATFORM_ID
-} from "@angular/core";
-import { isPlatformBrowser } from "@angular/common";
+  PLATFORM_ID,
+} from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
-import * as algoliasearchProxy from "algoliasearch/lite";
-import instantsearch from "instantsearch.js/es";
-import { AlgoliaSearchHelper } from "algoliasearch-helper";
+import * as algoliasearchProxy from 'algoliasearch/lite';
+import instantsearch from 'instantsearch.js/es';
+import { AlgoliaSearchHelper } from 'algoliasearch-helper';
 
-import { Widget } from "../base-widget";
-import { VERSION } from "../version";
+import { Widget } from '../base-widget';
+import { VERSION } from '../version';
 
 const algoliasearch = algoliasearchProxy.default || algoliasearchProxy;
 
@@ -74,7 +74,7 @@ export type SearchParameters = {
   // Geo-Search
   aroundLatLng?: string;
   aroundLatLngViaIP?: boolean;
-  aroundRadius?: number | "all";
+  aroundRadius?: number | 'all';
   aroundPrecision?: number;
   minimumAroundRadius?: number;
   insideBoundingBox?: GeoRectangle | GeoRectangle[];
@@ -208,12 +208,12 @@ export class InstantSearchInstance {
 }
 
 @Component({
-  selector: "ais-instantsearch",
-  template: `<ng-content></ng-content>`
+  selector: 'ais-instantsearch',
+  template: `<ng-content></ng-content>`,
 })
 export class NgAisInstantSearch implements AfterViewInit, OnInit, OnDestroy {
   @Input() public config: InstantSearchConfig;
-  @Input() public instanceName: string = "default";
+  @Input() public instanceName: string = 'default';
 
   @Output()
   change: EventEmitter<{ results: {}; state: {} }> = new EventEmitter<{
@@ -234,7 +234,7 @@ export class NgAisInstantSearch implements AfterViewInit, OnInit, OnDestroy {
   }
 
   public ngOnDestroy() {
-    this.instantSearchInstance.removeListener("render", this.onRender);
+    this.instantSearchInstance.removeListener('render', this.onRender);
     this.instantSearchInstance.dispose();
   }
 
@@ -242,14 +242,14 @@ export class NgAisInstantSearch implements AfterViewInit, OnInit, OnDestroy {
     // add default searchParameters with highlighting config
     if (!config.searchParameters) config.searchParameters = {};
     Object.assign(config.searchParameters, {
-      highlightPreTag: "__ais-highlight__",
-      highlightPostTag: "__/ais-highlight__"
+      highlightPreTag: '__ais-highlight__',
+      highlightPostTag: '__/ais-highlight__',
     });
 
     // remove URLSync widget if on SSR
     if (!isPlatformBrowser(this.platformId)) {
-      if (typeof config.urlSync !== "undefined") delete config.urlSync;
-      if (typeof config.routing !== "undefined") delete config.routing;
+      if (typeof config.urlSync !== 'undefined') delete config.urlSync;
+      if (typeof config.routing !== 'undefined') delete config.routing;
     }
 
     // custom algolia client agent
@@ -263,7 +263,7 @@ export class NgAisInstantSearch implements AfterViewInit, OnInit, OnDestroy {
     }
 
     this.instantSearchInstance = instantsearch(config);
-    this.instantSearchInstance.on("render", this.onRender);
+    this.instantSearchInstance.on('render', this.onRender);
   }
 
   public addWidget(widget: Widget) {
@@ -281,7 +281,7 @@ export class NgAisInstantSearch implements AfterViewInit, OnInit, OnDestroy {
   onRender = () => {
     this.change.emit({
       results: this.instantSearchInstance.helper.lastResults,
-      state: this.instantSearchInstance.helper.state
+      state: this.instantSearchInstance.helper.state,
     });
   };
 }

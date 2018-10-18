@@ -1,8 +1,8 @@
-import { Component, Input } from "@angular/core";
-import { bem } from "../utils";
+import { Component, Input } from '@angular/core';
+import { bem } from '../utils';
 
 @Component({
-  selector: "ais-facets-search",
+  selector: 'ais-facets-search',
   template: `
     <div [class]="cx()">
       <form
@@ -54,15 +54,15 @@ import { bem } from "../utils";
         </button>
       </form>
     </div>
-  `
+  `,
 })
 export class NgAisFacetsSearch {
   @Input() public searchPlaceholder: string;
   @Input() public search: Function;
 
-  public cx = bem("SearchBox");
+  public cx = bem('SearchBox');
 
-  public searchQuery = "";
+  public searchQuery = '';
 
   public handleChange(value: string) {
     this.searchQuery = value;

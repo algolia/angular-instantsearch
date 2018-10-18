@@ -1,7 +1,7 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 
 @Component({
-  selector: "app-index",
+  selector: 'app-index',
   template: `
     <div class="jumbotron">
       <p class="lead text-center">
@@ -9,6 +9,6 @@ import { Component } from "@angular/core";
       </p>
     </div>
   `,
-  styles: []
+  styles: [],
 })
 export class IndexComponent {}

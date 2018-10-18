@@ -1,9 +1,9 @@
-import { createRenderer } from "../../../helpers/test-renderer";
-import { NgAisStats } from "../stats";
+import { createRenderer } from '../../../helpers/test-renderer';
+import { NgAisStats } from '../stats';
 
-import { bem } from "../../utils";
+import { bem } from '../../utils';
 
-const cx = bem("Stats");
+const cx = bem('Stats');
 
 const render = createRenderer({
   defaultState: {
@@ -12,19 +12,19 @@ const render = createRenderer({
     nbPages: 5,
     page: 0,
     processingTimeMS: 123,
-    query: "foobar"
+    query: 'foobar',
   },
-  template: "<ais-stats></ais-stats>",
-  TestedWidget: NgAisStats
+  template: '<ais-stats></ais-stats>',
+  TestedWidget: NgAisStats,
 });
 
-describe("Stats", () => {
-  it("should render without state", () => {
+describe('Stats', () => {
+  it('should render without state', () => {
     const fixture = render();
     expect(fixture).toMatchSnapshot();
   });
 
-  it("should render with state", () => {
+  it('should render with state', () => {
     const fixture = render({});
     expect(fixture).toMatchSnapshot();
   });

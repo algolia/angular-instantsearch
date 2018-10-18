@@ -1,12 +1,12 @@
-const range = require("lodash/range");
-import { Component, Input, Inject, forwardRef } from "@angular/core";
-import { connectPagination } from "instantsearch.js/es/connectors";
-import { BaseWidget } from "../base-widget";
-import { NgAisInstantSearch } from "../instantsearch/instantsearch";
-import { parseNumberInput, noop } from "../utils";
+const range = require('lodash/range');
+import { Component, Input, Inject, forwardRef } from '@angular/core';
+import { connectPagination } from 'instantsearch.js/es/connectors';
+import { BaseWidget } from '../base-widget';
+import { NgAisInstantSearch } from '../instantsearch/instantsearch';
+import { parseNumberInput, noop } from '../utils';
 
 @Component({
-  selector: "ais-pagination",
+  selector: 'ais-pagination',
   template: `
     <div [class]="cx()">
       <ul [class]="cx('list')">
@@ -101,7 +101,7 @@ import { parseNumberInput, noop } from "../utils";
         </li>
       </ul>
     </div>
-  `
+  `,
 })
 export class NgAisPagination extends BaseWidget {
   // render options
@@ -119,7 +119,7 @@ export class NgAisPagination extends BaseWidget {
     currentRefinement: 0,
     nbHits: 0,
     nbPages: 0,
-    refine: noop
+    refine: noop,
   };
 
   get pages() {
@@ -131,7 +131,7 @@ export class NgAisPagination extends BaseWidget {
     );
 
     const pagesPadding =
-      typeof this.padding === "string"
+      typeof this.padding === 'string'
         ? parseInt(this.padding, 10)
         : this.padding;
 
@@ -168,12 +168,12 @@ export class NgAisPagination extends BaseWidget {
     @Inject(forwardRef(() => NgAisInstantSearch))
     public instantSearchParent: any
   ) {
-    super("Pagination");
+    super('Pagination');
   }
 
   public ngOnInit() {
     this.createWidget(connectPagination, {
-      maxPages: parseNumberInput(this.totalPages)
+      maxPages: parseNumberInput(this.totalPages),
     });
     super.ngOnInit();
   }

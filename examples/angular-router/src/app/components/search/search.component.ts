@@ -1,7 +1,7 @@
-import { Component, OnDestroy } from "@angular/core";
+import { Component, OnDestroy } from '@angular/core';
 
 @Component({
-  selector: "app-search",
+  selector: 'app-search',
   template: `
     <ais-instantsearch
       [config]="{
@@ -62,10 +62,10 @@ import { Component, OnDestroy } from "@angular/core";
       <ais-pagination></ais-pagination>
     </ais-instantsearch>
   `,
-  styles: []
+  styles: [],
 })
 export class SearchComponent implements OnDestroy {
   ngOnDestroy() {
-    console.log("SearchComponent::ngOnDestroy");
+    console.log('SearchComponent::ngOnDestroy');
   }
 }

@@ -1,5 +1,5 @@
-import { Component, Input } from "@angular/core";
-import { bem } from "../utils";
+import { Component, Input } from '@angular/core';
+import { bem } from '../utils';
 
 export type HierarchicalMenuItem = {
   value: string;
@@ -10,7 +10,7 @@ export type HierarchicalMenuItem = {
 };
 
 @Component({
-  selector: "ais-hierarchical-menu-item",
+  selector: 'ais-hierarchical-menu-item',
   template: `
     <li
       [class]="getItemClass(item)"
@@ -39,7 +39,7 @@ export type HierarchicalMenuItem = {
         </ais-hierarchical-menu-item>
       </ul>
     </li>
-  `
+  `,
 })
 export class NgAisHierarchicalMenuItem {
   @Input() public lvl: number = 1;
@@ -47,25 +47,25 @@ export class NgAisHierarchicalMenuItem {
   @Input() public createURL: (string) => string;
   @Input() public item: HierarchicalMenuItem;
 
-  public cx = bem("HierarchicalMenu");
+  public cx = bem('HierarchicalMenu');
 
   public getItemClass(item) {
-    let className = this.cx("item");
+    let className = this.cx('item');
 
     if (item.isRefined) {
-      className = `${className} ${this.cx("item", "selected")}`;
+      className = `${className} ${this.cx('item', 'selected')}`;
     }
 
     if (this.isArray(item.data) && item.data.length > 0) {
-      className = `${className} ${this.cx("item", "parent")}`;
+      className = `${className} ${this.cx('item', 'parent')}`;
     }
 
     return className;
   }
 
   public getListClass(item) {
-    return `${this.cx("list")} ${this.cx("list", "child")} ${this.cx(
-      "list",
+    return `${this.cx('list')} ${this.cx('list', 'child')} ${this.cx(
+      'list',
       `lvl${this.lvl}`
     )}`;
   }

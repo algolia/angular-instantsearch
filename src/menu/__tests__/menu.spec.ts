@@ -1,5 +1,5 @@
-import { createRenderer } from "../../../helpers/test-renderer";
-import { NgAisMenu } from "../menu";
+import { createRenderer } from '../../../helpers/test-renderer';
+import { NgAisMenu } from '../menu';
 
 const defaultState = {
   canRefine: true,
@@ -7,37 +7,37 @@ const defaultState = {
   createURL: jest.fn(),
   isShowingMore: false,
   items: [
-    { value: "foo", label: "foo", count: 2, isRefined: true },
-    { value: "bar", label: "bar", count: 3 },
-    { value: "foobar", label: "foobar", count: 4 }
+    { value: 'foo', label: 'foo', count: 2, isRefined: true },
+    { value: 'bar', label: 'bar', count: 3 },
+    { value: 'foobar', label: 'foobar', count: 4 },
   ],
   refine: jest.fn(),
-  toggleShowMore: jest.fn()
+  toggleShowMore: jest.fn(),
 };
 
 const render = createRenderer({
   defaultState,
-  template: "<ais-menu></ais-menu>",
-  TestedWidget: NgAisMenu
+  template: '<ais-menu></ais-menu>',
+  TestedWidget: NgAisMenu,
 });
 
-describe("Menu", () => {
-  it("renders markup without state", () => {
+describe('Menu', () => {
+  it('renders markup without state', () => {
     const fixture = render();
     expect(fixture).toMatchSnapshot();
   });
 
-  it("renders markup with state", () => {
+  it('renders markup with state', () => {
     const fixture = render({});
     expect(fixture).toMatchSnapshot();
   });
 
-  it("should call refine() when clicking on an element", () => {
+  it('should call refine() when clicking on an element', () => {
     const refine = jest.fn();
     const fixture = render({ refine });
 
     const [firstItem] = fixture.debugElement.nativeElement.querySelectorAll(
-      "li"
+      'li'
     );
     firstItem.click();
 
@@ -45,7 +45,7 @@ describe("Menu", () => {
     expect(refine).toHaveBeenCalledWith(defaultState.items[0].value);
   });
 
-  it("should call toggleShowMore() when possible", () => {
+  it('should call toggleShowMore() when possible', () => {
     const toggleShowMore = jest.fn();
     const fixture = render({ toggleShowMore, canToggleShowMore: true });
 
@@ -53,12 +53,12 @@ describe("Menu", () => {
     fixture.componentInstance.testedWidget.showMoreLimit = 4;
     fixture.detectChanges();
 
-    fixture.debugElement.nativeElement.querySelector("button").click();
+    fixture.debugElement.nativeElement.querySelector('button').click();
 
     expect(toggleShowMore).toHaveBeenCalled();
   });
 
-  it("should apply `transformItems` if specified", () => {
+  it('should apply `transformItems` if specified', () => {
     const fixture = render({});
     fixture.componentInstance.testedWidget.transformItems = items =>
       items.map(item => ({ ...item, label: `transformed - ${item.label}` }));
@@ -66,7 +66,7 @@ describe("Menu", () => {
     expect(fixture).toMatchSnapshot();
   });
 
-  it("should be hidden with `autoHideContainer`", () => {
+  it('should be hidden with `autoHideContainer`', () => {
     const fixture = render({ items: [] });
     fixture.componentInstance.testedWidget.autoHideContainer = true;
     fixture.detectChanges();

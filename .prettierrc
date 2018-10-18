@@ -1,4 +1,5 @@
 {
-  "singleQuote": false,
-  "trailingComma": "none"
+  "singleQuote": true,
+  "proseWrap": "never",
+  "trailingComma": "es5"
 }

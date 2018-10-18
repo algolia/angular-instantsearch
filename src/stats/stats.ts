@@ -3,16 +3,16 @@ import {
   ContentChild,
   TemplateRef,
   Inject,
-  forwardRef
-} from "@angular/core";
+  forwardRef,
+} from '@angular/core';
 
-import { connectStats } from "instantsearch.js/es/connectors";
+import { connectStats } from 'instantsearch.js/es/connectors';
 
-import { BaseWidget } from "../base-widget";
-import { NgAisInstantSearch } from "../instantsearch/instantsearch";
+import { BaseWidget } from '../base-widget';
+import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 
 @Component({
-  selector: "ais-stats",
+  selector: 'ais-stats',
   template: `
     <div [class]="cx()">
       <ng-container *ngTemplateOutlet="template; context: templateContext">
@@ -22,7 +22,7 @@ import { NgAisInstantSearch } from "../instantsearch/instantsearch";
         {{state.nbHits}} results found in {{state.processingTimeMS}}ms.
       </span>
     </div>
-  `
+  `,
 })
 export class NgAisStats extends BaseWidget {
   @ContentChild(TemplateRef) public template: any;
@@ -33,7 +33,7 @@ export class NgAisStats extends BaseWidget {
     nbPages: 0,
     page: 0,
     processingTimeMS: 0,
-    query: ""
+    query: '',
   };
 
   get templateContext() {
@@ -44,7 +44,7 @@ export class NgAisStats extends BaseWidget {
     @Inject(forwardRef(() => NgAisInstantSearch))
     public instantSearchParent: any
   ) {
-    super("Stats");
+    super('Stats');
     this.createWidget(connectStats);
   }
 }

@@ -4,15 +4,15 @@ import {
   Component,
   ContentChild,
   TemplateRef,
-  forwardRef
-} from "@angular/core";
+  forwardRef,
+} from '@angular/core';
 
-import { connectHits } from "instantsearch.js/es/connectors";
-import { BaseWidget } from "../base-widget";
-import { NgAisInstantSearch } from "../instantsearch/instantsearch";
+import { connectHits } from 'instantsearch.js/es/connectors';
+import { BaseWidget } from '../base-widget';
+import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 
 @Component({
-  selector: "ais-hits",
+  selector: 'ais-hits',
   template: `
     <div [class]="cx()">
       <ng-container *ngTemplateOutlet="template; context: state"></ng-container>
@@ -30,7 +30,7 @@ import { NgAisInstantSearch } from "../instantsearch/instantsearch";
         </ul>
       </div>
     </div>
-  `
+  `,
 })
 export class NgAisHits extends BaseWidget {
   @ContentChild(TemplateRef) public template?: TemplateRef<any>;
@@ -45,7 +45,7 @@ export class NgAisHits extends BaseWidget {
     @Inject(forwardRef(() => NgAisInstantSearch))
     public instantSearchParent: any
   ) {
-    super("Hits");
+    super('Hits');
     this.createWidget(connectHits, { escapeHits: true });
   }
 
@@ -56,9 +56,9 @@ export class NgAisHits extends BaseWidget {
       ...state,
       results: state.results,
       hits:
-        typeof this.transformItems === "function"
+        typeof this.transformItems === 'function'
           ? this.transformItems(state.hits)
-          : state.hits
+          : state.hits,
     };
   };
 }

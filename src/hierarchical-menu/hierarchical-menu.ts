@@ -1,9 +1,9 @@
-import { Component, Input, Inject, forwardRef } from "@angular/core";
+import { Component, Input, Inject, forwardRef } from '@angular/core';
 
-import { connectHierarchicalMenu } from "instantsearch.js/es/connectors";
-import { BaseWidget } from "../base-widget";
-import { NgAisInstantSearch } from "../instantsearch/instantsearch";
-import { parseNumberInput, noop } from "../utils";
+import { connectHierarchicalMenu } from 'instantsearch.js/es/connectors';
+import { BaseWidget } from '../base-widget';
+import { NgAisInstantSearch } from '../instantsearch/instantsearch';
+import { parseNumberInput, noop } from '../utils';
 
 export type HierarchicalMenuState = {
   createURL: Function;
@@ -12,7 +12,7 @@ export type HierarchicalMenuState = {
 };
 
 @Component({
-  selector: "ais-hierarchical-menu",
+  selector: 'ais-hierarchical-menu',
   template: `
     <div
       [class]="cx()"
@@ -28,7 +28,7 @@ export type HierarchicalMenuState = {
         </ais-hierarchical-menu-item>
       </ul>
     </div>
-  `
+  `,
 })
 export class NgAisHierarchicalMenu extends BaseWidget {
   // render option
@@ -36,7 +36,7 @@ export class NgAisHierarchicalMenu extends BaseWidget {
 
   // connector options
   @Input() public attributes: string[];
-  @Input() public separator?: string = " > ";
+  @Input() public separator?: string = ' > ';
   @Input() public rootPath?: string;
   @Input() public showParentLevel?: boolean;
   @Input() public limit?: number | string = 10;
@@ -45,7 +45,7 @@ export class NgAisHierarchicalMenu extends BaseWidget {
   public state: HierarchicalMenuState = {
     createURL: noop,
     items: [],
-    refine: noop
+    refine: noop,
   };
 
   get isHidden() {
@@ -53,7 +53,7 @@ export class NgAisHierarchicalMenu extends BaseWidget {
   }
 
   get items() {
-    return typeof this.transformItems === "function"
+    return typeof this.transformItems === 'function'
       ? this.transformItems(this.state.items)
       : this.state.items;
   }
@@ -62,7 +62,7 @@ export class NgAisHierarchicalMenu extends BaseWidget {
     @Inject(forwardRef(() => NgAisInstantSearch))
     public instantSearchParent: any
   ) {
-    super("HierarchicalMenu");
+    super('HierarchicalMenu');
   }
 
   public ngOnInit() {
@@ -72,7 +72,7 @@ export class NgAisHierarchicalMenu extends BaseWidget {
       rootPath: this.rootPath,
       separator: this.separator,
       showParentLevel: this.showParentLevel,
-      sortBy: this.sortBy
+      sortBy: this.sortBy,
     });
 
     super.ngOnInit();
