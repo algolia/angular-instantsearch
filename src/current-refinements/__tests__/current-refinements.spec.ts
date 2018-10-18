@@ -105,4 +105,29 @@ describe('CurrentRefinedValues', () => {
 
     expect(fixture).toMatchSnapshot();
   });
+
+  it('should support query refinenement', () => {
+    const fixture = render({
+      refinements: [
+        {
+          type: 'numeric',
+          attributeName: 'popularity',
+          name: '0',
+          numericValue: 0,
+          operator: '>=',
+          computedLabel: '≥ 0',
+        },
+        {
+          type: 'query',
+          name: 'my query',
+          query: 'my query',
+          computedLabel: 'my query',
+        },
+      ],
+    });
+    fixture.componentInstance.testedWidget.autoHideContainer = true;
+    fixture.detectChanges();
+
+    expect(fixture).toMatchSnapshot();
+  });
 });

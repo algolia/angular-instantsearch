@@ -279,3 +279,83 @@ exports[`CurrentRefinedValues should be hidden with \`autoHideContainer\` 1`] = 
   </ais-instantsearch>
 </ng-component>
 `;
+
+exports[`CurrentRefinedValues should support query refinenement 1`] = `
+<ng-component
+  testedWidget={[Function NgAisCurrentRefinements]}
+>
+  <ais-instantsearch>
+    <ais-current-refinements>
+      
+      <div
+        class="ais-CurrentRefinements"
+      >
+        
+        
+        <ul
+          class="ais-CurrentRefinements-list"
+        >
+          <li
+            class="ais-CurrentRefinements-item"
+          >
+            <span
+              class="ais-CurrentRefinements-label"
+            >
+              Popularity:
+            </span>
+            
+            <span
+              class="ais-CurrentRefinements-category"
+            >
+              <span
+                class="ais-CurrentRefinements-categoryLabel"
+              >
+                0
+              </span>
+              <button
+                class="ais-CurrentRefinements-delete"
+              >
+                ✕
+              </button>
+            </span>
+          </li>
+        </ul>
+        <ul
+          class="ais-CurrentRefinements-list"
+        >
+          <li
+            class="ais-CurrentRefinements-item"
+          >
+            <span
+              class="ais-CurrentRefinements-label"
+            >
+              Query:
+            </span>
+            
+            <span
+              class="ais-CurrentRefinements-category"
+            >
+              <span
+                class="ais-CurrentRefinements-categoryLabel"
+              >
+                my query
+              </span>
+              <button
+                class="ais-CurrentRefinements-delete"
+              >
+                ✕
+              </button>
+            </span>
+          </li>
+        </ul>
+        
+        <button
+          class="ais-CurrentRefinements-reset"
+        >
+           Clear refinements 
+        </button>
+      </div>
+    </ais-current-refinements>
+  </ais-instantsearch>
+</ng-component>
+`;

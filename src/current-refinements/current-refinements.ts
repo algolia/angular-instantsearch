@@ -89,7 +89,11 @@ export class NgAisCurrentRefinements extends BaseWidget {
         : this.state.refinements;
 
     // group refinements by category? (attributeName && type)
-    return items.reduce((res, { type, attributeName, ...refinement }) => {
+    return items.reduce((res, { type, attributeName: _attributeName, ...refinement }) => {
+      let attributeName = _attributeName;
+      if (type === 'query') {
+        attributeName = 'Query'
+      }
       const match = res.find(
         r => r.attributeName === attributeName && r.type === type
       );
