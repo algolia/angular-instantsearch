@@ -1,9 +1,9 @@
-import { Component, Input, Inject, forwardRef } from "@angular/core";
+import { Component, Input, Inject, forwardRef } from '@angular/core';
 
-import { connectNumericRefinementList } from "instantsearch.js/es/connectors";
-import { BaseWidget } from "../base-widget";
-import { NgAisInstantSearch } from "../instantsearch/instantsearch";
-import { noop } from "../utils";
+import { connectNumericRefinementList } from 'instantsearch.js/es/connectors';
+import { BaseWidget } from '../base-widget';
+import { NgAisInstantSearch } from '../instantsearch/instantsearch';
+import { noop } from '../utils';
 
 export type NumericRefinementListState = {
   createURL: Function;
@@ -12,7 +12,7 @@ export type NumericRefinementListState = {
 };
 
 @Component({
-  selector: "ais-numeric-menu",
+  selector: 'ais-numeric-menu',
   template: `
     <div
       [class]="cx()"
@@ -36,7 +36,7 @@ export type NumericRefinementListState = {
         </li>
       </ul>
     </div>
-  `
+  `,
 })
 export class NgAisNumericMenu extends BaseWidget {
   @Input() public attribute: string;
@@ -50,7 +50,7 @@ export class NgAisNumericMenu extends BaseWidget {
   public state: NumericRefinementListState = {
     createURL: noop,
     items: [],
-    refine: noop
+    refine: noop,
   };
 
   get isHidden() {
@@ -61,13 +61,13 @@ export class NgAisNumericMenu extends BaseWidget {
     @Inject(forwardRef(() => NgAisInstantSearch))
     public instantSearchParent: any
   ) {
-    super("NumericMenu");
+    super('NumericMenu');
   }
 
   public ngOnInit() {
     this.createWidget(connectNumericRefinementList, {
       attributeName: this.attribute,
-      options: this.items
+      options: this.items,
     });
     super.ngOnInit();
   }

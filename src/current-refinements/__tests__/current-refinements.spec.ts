@@ -1,9 +1,9 @@
-import { createRenderer } from "../../../helpers/test-renderer";
-import { NgAisCurrentRefinements } from "../current-refinements";
+import { createRenderer } from '../../../helpers/test-renderer';
+import { NgAisCurrentRefinements } from '../current-refinements';
 
-import { bem } from "../../utils";
+import { bem } from '../../utils';
 
-const cx = bem("CurrentRefinements");
+const cx = bem('CurrentRefinements');
 
 const defaultState = {
   attributes: {},
@@ -13,62 +13,62 @@ const defaultState = {
   refined: jest.fn(),
   refinements: [
     {
-      type: "disjunctive",
-      attributeName: "brand",
-      name: "Canon",
+      type: 'disjunctive',
+      attributeName: 'brand',
+      name: 'Canon',
       count: 27,
       exhaustive: true,
-      computedLabel: "Canon"
+      computedLabel: 'Canon',
     },
     {
-      type: "disjunctive",
-      attributeName: "brand",
-      name: "Sony",
+      type: 'disjunctive',
+      attributeName: 'brand',
+      name: 'Sony',
       count: 28,
       exhaustive: true,
-      computedLabel: "Sony"
+      computedLabel: 'Sony',
     },
     {
-      type: "hierarchical",
-      attributeName: "hierarchicalCategories.lvl0",
-      name: "Cameras & Camcorders",
+      type: 'hierarchical',
+      attributeName: 'hierarchicalCategories.lvl0',
+      name: 'Cameras & Camcorders',
       count: 55,
-      computedLabel: "Cameras & Camcorders"
+      computedLabel: 'Cameras & Camcorders',
     },
     {
-      type: "numeric",
-      attributeName: "popularity",
-      name: "0",
+      type: 'numeric',
+      attributeName: 'popularity',
+      name: '0',
       numericValue: 0,
-      operator: ">=",
-      computedLabel: "≥ 0"
-    }
-  ]
+      operator: '>=',
+      computedLabel: '≥ 0',
+    },
+  ],
 };
 
 const render = createRenderer({
   defaultState,
-  template: "<ais-current-refinements></ais-current-refinements>",
-  TestedWidget: NgAisCurrentRefinements
+  template: '<ais-current-refinements></ais-current-refinements>',
+  TestedWidget: NgAisCurrentRefinements,
 });
 
-describe("CurrentRefinedValues", () => {
-  it("renders markup without state", () => {
+describe('CurrentRefinedValues', () => {
+  it('renders markup without state', () => {
     const fixture = render();
     expect(fixture).toMatchSnapshot();
   });
 
-  it("renders markup with state", () => {
+  it('renders markup with state', () => {
     const fixture = render({});
     expect(fixture).toMatchSnapshot();
   });
 
-  it("should call refine() when clicking on an refined element", () => {
+  it('should call refine() when clicking on an refined element', () => {
     const refine = jest.fn();
     const fixture = render({ refine });
 
     const [firstEl] = fixture.debugElement.nativeElement.querySelectorAll(
-      "span > button"
+      'span > button'
     );
     firstEl.click();
 
@@ -76,29 +76,29 @@ describe("CurrentRefinedValues", () => {
     expect(refine).toHaveBeenCalledWith(defaultState.refinements[0]);
   });
 
-  it("should call clearAllClick() when clicking on clear all", () => {
+  it('should call clearAllClick() when clicking on clear all', () => {
     const clearAllClick = jest.fn();
     const fixture = render({ clearAllClick });
 
-    fixture.debugElement.nativeElement.querySelector(`.${cx("reset")}`).click();
+    fixture.debugElement.nativeElement.querySelector(`.${cx('reset')}`).click();
 
     expect(clearAllClick).toHaveBeenCalled();
   });
 
-  it("should apply `transformItems` if specified", () => {
+  it('should apply `transformItems` if specified', () => {
     const fixture = render({});
 
     fixture.componentInstance.testedWidget.transformItems = items =>
       items.map(item => ({
         ...item,
-        computedLabel: `foo - ${item.computedLabel}`
+        computedLabel: `foo - ${item.computedLabel}`,
       }));
     fixture.detectChanges();
 
     expect(fixture).toMatchSnapshot();
   });
 
-  it("should be hidden with `autoHideContainer`", () => {
+  it('should be hidden with `autoHideContainer`', () => {
     const fixture = render({ refinements: [] });
     fixture.componentInstance.testedWidget.autoHideContainer = true;
     fixture.detectChanges();

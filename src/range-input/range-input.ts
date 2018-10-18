@@ -1,9 +1,9 @@
-import { Inject, Component, Input, forwardRef } from "@angular/core";
+import { Inject, Component, Input, forwardRef } from '@angular/core';
 
-import { connectRange } from "instantsearch.js/es/connectors";
-import { BaseWidget } from "../base-widget";
-import { NgAisInstantSearch } from "../instantsearch/instantsearch";
-import { parseNumberInput, noop } from "../utils";
+import { connectRange } from 'instantsearch.js/es/connectors';
+import { BaseWidget } from '../base-widget';
+import { NgAisInstantSearch } from '../instantsearch/instantsearch';
+import { parseNumberInput, noop } from '../utils';
 
 export type NumericRangeState = {
   range: { min?: number; max?: number };
@@ -12,7 +12,7 @@ export type NumericRangeState = {
 };
 
 @Component({
-  selector: "ais-range-input",
+  selector: 'ais-range-input',
   template: `
     <div [class]="cx()">
       <form
@@ -58,13 +58,13 @@ export type NumericRangeState = {
         </button>
       </form>
     </div>
-  `
+  `,
 })
 export class NgAisRangeInput extends BaseWidget {
   // render options
-  @Input() public currency: string = "$";
-  @Input() public separator: string = "to";
-  @Input() public submitLabel: string = "Go";
+  @Input() public currency: string = '$';
+  @Input() public separator: string = 'to';
+  @Input() public submitLabel: string = 'Go';
 
   // connector options
   @Input() public attribute: string;
@@ -73,8 +73,8 @@ export class NgAisRangeInput extends BaseWidget {
   @Input() public precision: number | string = 2;
 
   // inner state
-  public minInputValue?: number | string = "";
-  public maxInputValue?: number | string = "";
+  public minInputValue?: number | string = '';
+  public maxInputValue?: number | string = '';
 
   get step() {
     const precision = parseNumberInput(this.precision) || 2;
@@ -84,14 +84,14 @@ export class NgAisRangeInput extends BaseWidget {
   public state: NumericRangeState = {
     range: { min: undefined, max: undefined },
     refine: noop,
-    start: [0, 0]
+    start: [0, 0],
   };
 
   constructor(
     @Inject(forwardRef(() => NgAisInstantSearch))
     public instantSearchParent: any
   ) {
-    super("RangeInput");
+    super('RangeInput');
   }
 
   public ngOnInit() {
@@ -99,7 +99,7 @@ export class NgAisRangeInput extends BaseWidget {
       attributeName: this.attribute,
       max: parseNumberInput(this.max),
       min: parseNumberInput(this.min),
-      precision: parseNumberInput(this.precision)
+      precision: parseNumberInput(this.precision),
     });
 
     super.ngOnInit();
@@ -108,7 +108,7 @@ export class NgAisRangeInput extends BaseWidget {
   public handleChange(event: any, type: string) {
     const value = parseNumberInput(event.target.value);
 
-    if (type === "min") {
+    if (type === 'min') {
       this.minInputValue = value;
     } else {
       this.maxInputValue = value;

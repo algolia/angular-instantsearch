@@ -1,9 +1,9 @@
-import { Component, Input, Inject, forwardRef } from "@angular/core";
+import { Component, Input, Inject, forwardRef } from '@angular/core';
 
-import { connectNumericSelector } from "instantsearch.js/es/connectors";
-import { BaseWidget } from "../base-widget";
-import { NgAisInstantSearch } from "../instantsearch/instantsearch";
-import { noop } from "../utils";
+import { connectNumericSelector } from 'instantsearch.js/es/connectors';
+import { BaseWidget } from '../base-widget';
+import { NgAisInstantSearch } from '../instantsearch/instantsearch';
+import { noop } from '../utils';
 
 export type NumericSelectorState = {
   currentRefinement?: string | null;
@@ -12,7 +12,7 @@ export type NumericSelectorState = {
 };
 
 @Component({
-  selector: "ais-numeric-selector",
+  selector: 'ais-numeric-selector',
   template: `
     <div [class]="cx('')">
       <select
@@ -29,12 +29,12 @@ export type NumericSelectorState = {
         </option>
       </select>
     </div>
-  `
+  `,
 })
 export class NgAisNumericSelector extends BaseWidget {
   // connector options
   @Input() public attribute: string;
-  @Input() public operator: "<" | "<=" | "=" | ">=" | ">" | "!=" = "=";
+  @Input() public operator: '<' | '<=' | '=' | '>=' | '>' | '!=' = '=';
   @Input()
   public items: {
     value: number;
@@ -44,21 +44,21 @@ export class NgAisNumericSelector extends BaseWidget {
   public state: NumericSelectorState = {
     currentRefinement: null,
     options: [],
-    refine: noop
+    refine: noop,
   };
 
   constructor(
     @Inject(forwardRef(() => NgAisInstantSearch))
     public instantSearchParent: any
   ) {
-    super("NumericSelector");
+    super('NumericSelector');
   }
 
   public ngOnInit() {
     this.createWidget(connectNumericSelector, {
       attributeName: this.attribute,
       operator: this.operator,
-      options: this.items
+      options: this.items,
     });
     super.ngOnInit();
   }

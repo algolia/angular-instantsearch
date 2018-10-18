@@ -1,9 +1,9 @@
-import { Component, Inject, forwardRef } from "@angular/core";
-import { BaseWidget, NgAisInstantSearch } from "angular-instantsearch";
-import { connectMenu } from "instantsearch.js/es/connectors";
+import { Component, Inject, forwardRef } from '@angular/core';
+import { BaseWidget, NgAisInstantSearch } from 'angular-instantsearch';
+import { connectMenu } from 'instantsearch.js/es/connectors';
 
 @Component({
-  selector: "ais-menu-select",
+  selector: 'ais-menu-select',
   template: `
     <select
       class="menu-select"
@@ -17,24 +17,24 @@ import { connectMenu } from "instantsearch.js/es/connectors";
         {{item.label}}
       </option>
     </select>
-  `
+  `,
 })
 export class MenuSelect extends BaseWidget {
   constructor(
     @Inject(forwardRef(() => NgAisInstantSearch))
     public instantSearchParent
   ) {
-    super("MenuSelect");
+    super('MenuSelect');
   }
 
   public ngOnInit() {
-    this.createWidget(connectMenu, { attributeName: "categories" });
+    this.createWidget(connectMenu, { attributeName: 'categories' });
     super.ngOnInit();
   }
 }
 
 @Component({
-  selector: "ais-refresh",
+  selector: 'ais-refresh',
   template: `
     <button
       class="refresh"
@@ -42,14 +42,14 @@ export class MenuSelect extends BaseWidget {
     >
       refresh
     </button>
-  `
+  `,
 })
 export class Refresh extends BaseWidget {
   constructor(
     @Inject(forwardRef(() => NgAisInstantSearch))
     public instantSearchParent: any
   ) {
-    super("Refresh");
+    super('Refresh');
   }
   refresh() {
     this.instantSearchParent.refresh();

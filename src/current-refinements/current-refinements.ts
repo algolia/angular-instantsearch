@@ -1,9 +1,9 @@
-import { Component, Input, Inject, forwardRef } from "@angular/core";
+import { Component, Input, Inject, forwardRef } from '@angular/core';
 
-import { connectCurrentRefinedValues } from "instantsearch.js/es/connectors";
-import { BaseWidget } from "../base-widget";
-import { NgAisInstantSearch } from "../instantsearch/instantsearch";
-import { noop, capitalize } from "../utils";
+import { connectCurrentRefinedValues } from 'instantsearch.js/es/connectors';
+import { BaseWidget } from '../base-widget';
+import { NgAisInstantSearch } from '../instantsearch/instantsearch';
+import { noop, capitalize } from '../utils';
 
 export type CurrentRefinementsState = {
   attributes: {};
@@ -15,7 +15,7 @@ export type CurrentRefinementsState = {
 };
 
 @Component({
-  selector: "ais-current-refinements",
+  selector: 'ais-current-refinements',
   template: `
     <div
       [class]="cx()"
@@ -52,12 +52,12 @@ export type CurrentRefinementsState = {
         {{clearRefinementsLabel}}
       </button>
     </div>
-  `
+  `,
 })
 export class NgAisCurrentRefinements extends BaseWidget {
   // render options
-  @Input() public clearRefinements: "before" | "after" | boolean = "after";
-  @Input() public clearRefinementsLabel: string = "Clear refinements";
+  @Input() public clearRefinements: 'before' | 'after' | boolean = 'after';
+  @Input() public clearRefinementsLabel: string = 'Clear refinements';
   @Input() public transformItems?: Function;
 
   // connector options
@@ -75,7 +75,7 @@ export class NgAisCurrentRefinements extends BaseWidget {
     clearAllURL: noop,
     createURL: noop,
     refine: noop,
-    refinements: []
+    refinements: [],
   };
 
   get isHidden() {
@@ -84,7 +84,7 @@ export class NgAisCurrentRefinements extends BaseWidget {
 
   get refinements() {
     const items =
-      typeof this.transformItems === "function"
+      typeof this.transformItems === 'function'
         ? this.transformItems(this.state.refinements)
         : this.state.refinements;
 
@@ -100,7 +100,7 @@ export class NgAisCurrentRefinements extends BaseWidget {
           type,
           attributeName,
           label: capitalize(attributeName),
-          items: [{ type, attributeName, ...refinement }]
+          items: [{ type, attributeName, ...refinement }],
         });
       }
       return res;
@@ -115,14 +115,14 @@ export class NgAisCurrentRefinements extends BaseWidget {
     @Inject(forwardRef(() => NgAisInstantSearch))
     public instantSearchParent: any
   ) {
-    super("CurrentRefinements");
+    super('CurrentRefinements');
   }
 
   public ngOnInit() {
     this.createWidget(connectCurrentRefinedValues, {
       attributes: this.attributes,
       clearsQuery: this.clearsQuery,
-      onlyListedAttributes: this.onlyListedAttributes
+      onlyListedAttributes: this.onlyListedAttributes,
     });
     super.ngOnInit();
   }

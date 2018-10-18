@@ -1,11 +1,11 @@
-import { Component, Input, ViewChild, Inject, forwardRef } from "@angular/core";
+import { Component, Input, ViewChild, Inject, forwardRef } from '@angular/core';
 
-import { connectRange } from "instantsearch.js/es/connectors";
-import * as noUiSlider from "nouislider";
+import { connectRange } from 'instantsearch.js/es/connectors';
+import * as noUiSlider from 'nouislider';
 
-import { BaseWidget } from "../base-widget";
-import { NgAisInstantSearch } from "../instantsearch/instantsearch";
-import { parseNumberInput, noop } from "../utils";
+import { BaseWidget } from '../base-widget';
+import { NgAisInstantSearch } from '../instantsearch/instantsearch';
+import { parseNumberInput, noop } from '../utils';
 
 export type RangeSliderState = {
   range: { min: number; max: number };
@@ -14,17 +14,17 @@ export type RangeSliderState = {
 };
 
 @Component({
-  selector: "ais-range-slider",
+  selector: 'ais-range-slider',
   template: `
     <div [class]="cx()">
       <div [class]="cx('body')">
         <div #sliderContainer></div>
       </div>
     </div>
-  `
+  `,
 })
 export class NgAisRangeSlider extends BaseWidget {
-  @ViewChild("sliderContainer") public sliderContainer: any;
+  @ViewChild('sliderContainer') public sliderContainer: any;
 
   // render options
   @Input() public pips: boolean = true;
@@ -39,7 +39,7 @@ export class NgAisRangeSlider extends BaseWidget {
   public state: RangeSliderState = {
     range: { min: 0, max: 1 },
     refine: noop,
-    start: [0, 1]
+    start: [0, 1],
   };
 
   private slider: any;
@@ -54,7 +54,7 @@ export class NgAisRangeSlider extends BaseWidget {
     @Inject(forwardRef(() => NgAisInstantSearch))
     public instantSearchParent: any
   ) {
-    super("RangeSlider");
+    super('RangeSlider');
   }
 
   public ngOnInit() {
@@ -62,7 +62,7 @@ export class NgAisRangeSlider extends BaseWidget {
       attributeName: this.attribute,
       max: parseNumberInput(this.max),
       min: parseNumberInput(this.min),
-      precision: parseNumberInput(this.precision)
+      precision: parseNumberInput(this.precision),
     });
 
     super.ngOnInit();
@@ -73,25 +73,25 @@ export class NgAisRangeSlider extends BaseWidget {
       // create slider
       const config = {
         animate: false,
-        behaviour: "snap",
+        behaviour: 'snap',
         connect: true,
         range: { min: 0, max: 1 },
         start: [0, 1],
         step: this.step,
         tooltips: this.tooltips && [
           { to: this.formatTooltip },
-          { to: this.formatTooltip }
-        ]
+          { to: this.formatTooltip },
+        ],
       };
 
-      if (this.pips === true || typeof this.pips === "undefined") {
+      if (this.pips === true || typeof this.pips === 'undefined') {
         Object.assign(config, {
           pips: {
             density: 3,
-            mode: "positions",
+            mode: 'positions',
             stepped: true,
-            values: [0, 50, 100]
-          }
+            values: [0, 50, 100],
+          },
         });
       } else if (this.pips !== undefined) {
         Object.assign(config, { pips: this.pips });
@@ -104,7 +104,7 @@ export class NgAisRangeSlider extends BaseWidget {
 
       // register listen events
       this.sliderContainer.nativeElement.noUiSlider.on(
-        "change",
+        'change',
         this.handleChange
       );
     }
@@ -115,7 +115,7 @@ export class NgAisRangeSlider extends BaseWidget {
     // update the slider state
     const {
       range: { min, max },
-      start
+      start,
     } = state;
 
     const disabled = min === max;

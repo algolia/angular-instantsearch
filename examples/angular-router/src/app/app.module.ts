@@ -1,17 +1,17 @@
-import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
-import { NgAisModule } from "angular-instantsearch";
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { NgAisModule } from 'angular-instantsearch';
 
-import { AppComponent } from "./app.component";
+import { AppComponent } from './app.component';
 
-import { IndexComponent } from "./components/index/index.component";
-import { SearchComponent } from "./components/search/search.component";
-import { MenuSelect } from "./components/menu-select/menu-select.component";
+import { IndexComponent } from './components/index/index.component';
+import { SearchComponent } from './components/search/search.component';
+import { MenuSelect } from './components/menu-select/menu-select.component';
 
 const appRoutes: Routes = [
-  { path: "search", component: SearchComponent },
-  { path: "", component: IndexComponent }
+  { path: 'search', component: SearchComponent },
+  { path: '', component: IndexComponent },
 ];
 
 @NgModule({
@@ -19,9 +19,9 @@ const appRoutes: Routes = [
   imports: [
     RouterModule.forRoot(appRoutes),
     BrowserModule,
-    NgAisModule.forRoot()
+    NgAisModule.forRoot(),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,9 +1,9 @@
-import { Component, Input, Inject, forwardRef } from "@angular/core";
+import { Component, Input, Inject, forwardRef } from '@angular/core';
 
-import { connectHitsPerPage } from "instantsearch.js/es/connectors";
-import { BaseWidget } from "../base-widget";
-import { NgAisInstantSearch } from "../instantsearch/instantsearch";
-import { noop } from "../utils";
+import { connectHitsPerPage } from 'instantsearch.js/es/connectors';
+import { BaseWidget } from '../base-widget';
+import { NgAisInstantSearch } from '../instantsearch/instantsearch';
+import { noop } from '../utils';
 
 export type ResultsPerPageState = {
   items: {}[];
@@ -11,7 +11,7 @@ export type ResultsPerPageState = {
 };
 
 @Component({
-  selector: "ais-hits-per-page",
+  selector: 'ais-hits-per-page',
   template: `
     <div
       [class]="cx()"
@@ -31,7 +31,7 @@ export type ResultsPerPageState = {
         </option>
       </select>
     </div>
-  `
+  `,
 })
 export class NgAisHitsPerPage extends BaseWidget {
   @Input()
@@ -43,7 +43,7 @@ export class NgAisHitsPerPage extends BaseWidget {
 
   public state: ResultsPerPageState = {
     items: [],
-    refine: noop
+    refine: noop,
   };
 
   get isHidden() {
@@ -54,7 +54,7 @@ export class NgAisHitsPerPage extends BaseWidget {
     @Inject(forwardRef(() => NgAisInstantSearch))
     public instantSearchParent: any
   ) {
-    super("HitsPerPage");
+    super('HitsPerPage');
   }
 
   public ngOnInit() {

@@ -1,7 +1,7 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: "ais-panel",
+  selector: 'ais-panel',
   template: `
     <div class="ais-Panel">
       <div *ngIf="header" class="ais-Panel-header">
@@ -16,7 +16,7 @@ import { Component, Input } from "@angular/core";
         {{footer}}
       </div>
     </div>
-  `
+  `,
 })
 export class NgAisPanel {
   @Input() public header?: string;

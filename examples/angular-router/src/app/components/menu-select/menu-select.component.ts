@@ -1,9 +1,9 @@
-import { Component, Inject, forwardRef, Input } from "@angular/core";
-import { BaseWidget, NgAisInstantSearch } from "angular-instantsearch";
-import { connectMenu } from "instantsearch.js/es/connectors";
+import { Component, Inject, forwardRef, Input } from '@angular/core';
+import { BaseWidget, NgAisInstantSearch } from 'angular-instantsearch';
+import { connectMenu } from 'instantsearch.js/es/connectors';
 
 @Component({
-  selector: "ais-menu-select",
+  selector: 'ais-menu-select',
   template: `
     <select
       class="menu-select"
@@ -17,7 +17,7 @@ import { connectMenu } from "instantsearch.js/es/connectors";
         {{item.label}}
       </option>
     </select>
-  `
+  `,
 })
 export class MenuSelect extends BaseWidget {
   @Input() attribute: string;
@@ -35,7 +35,7 @@ export class MenuSelect extends BaseWidget {
     @Inject(forwardRef(() => NgAisInstantSearch))
     public instantSearchParent: any
   ) {
-    super("MenuSelect");
+    super('MenuSelect');
   }
 
   public ngOnInit() {

@@ -7,16 +7,16 @@ import {
   forwardRef,
   ViewChild,
   AfterViewInit,
-  ElementRef
-} from "@angular/core";
+  ElementRef,
+} from '@angular/core';
 
-import { connectSearchBox } from "instantsearch.js/es/connectors";
-import { BaseWidget } from "../base-widget";
-import { NgAisInstantSearch } from "../instantsearch/instantsearch";
-import { noop } from "../utils";
+import { connectSearchBox } from 'instantsearch.js/es/connectors';
+import { BaseWidget } from '../base-widget';
+import { NgAisInstantSearch } from '../instantsearch/instantsearch';
+import { noop } from '../utils';
 
 @Component({
-  selector: "ais-search-box",
+  selector: 'ais-search-box',
   template: `
     <div [class]="cx()">
       <form
@@ -72,13 +72,13 @@ import { noop } from "../utils";
         </button>
       </form>
     </div>
-  `
+  `,
 })
 export class NgAisSearchBox extends BaseWidget implements AfterViewInit {
-  @ViewChild("searchBox") searchBox: ElementRef;
-  @Input() public placeholder: string = "Search";
-  @Input() public submitTitle: string = "Submit";
-  @Input() public resetTitle: string = "Reset";
+  @ViewChild('searchBox') searchBox: ElementRef;
+  @Input() public placeholder: string = 'Search';
+  @Input() public submitTitle: string = 'Submit';
+  @Input() public resetTitle: string = 'Reset';
   @Input() public searchAsYouType: boolean = true;
   @Input() public autofocus: boolean = false;
 
@@ -93,15 +93,15 @@ export class NgAisSearchBox extends BaseWidget implements AfterViewInit {
   @Output() blur = new EventEmitter();
 
   public state = {
-    query: "",
-    refine: noop
+    query: '',
+    refine: noop,
   };
 
   constructor(
     @Inject(forwardRef(() => NgAisInstantSearch))
     public instantSearchParent: any
   ) {
-    super("SearchBox");
+    super('SearchBox');
     this.createWidget(connectSearchBox);
   }
 
@@ -135,6 +135,6 @@ export class NgAisSearchBox extends BaseWidget implements AfterViewInit {
     this.reset.emit(event);
 
     // reset search
-    this.state.refine("");
+    this.state.refine('');
   }
 }

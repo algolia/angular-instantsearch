@@ -1,17 +1,17 @@
-import { enableProdMode } from "@angular/core";
-import { start, storiesOf } from "dev-novel";
-import * as algoliasearch from "algoliasearch/lite";
+import { enableProdMode } from '@angular/core';
+import { start, storiesOf } from 'dev-novel';
+import * as algoliasearch from 'algoliasearch/lite';
 
-import { wrapWithHits } from "./wrap-with-hits";
-import { MenuSelect, Refresh } from "./custom-widgets";
+import { wrapWithHits } from './wrap-with-hits';
+import { MenuSelect, Refresh } from './custom-widgets';
 
 // depending on the env mode, enable prod mode or add debugging modules
-if (process.env.ENV === "build") {
+if (process.env.ENV === 'build') {
   enableProdMode();
 }
 
-storiesOf("InstantSearch").add(
-  "searchFunction with forced refinement",
+storiesOf('InstantSearch').add(
+  'searchFunction with forced refinement',
   wrapWithHits({
     template: `
       <ais-panel header="Brand">
@@ -24,28 +24,28 @@ storiesOf("InstantSearch").add(
       </ais-panel>
     `,
     searchParameters: {
-      disjunctiveFacetsRefinements: { brand: ["Apple"] },
-      disjunctiveFacets: ["brand"]
+      disjunctiveFacetsRefinements: { brand: ['Apple'] },
+      disjunctiveFacets: ['brand'],
     },
     searchFunction: helper => {
-      helper.addDisjunctiveFacetRefinement("brand", "Apple");
+      helper.addDisjunctiveFacetRefinement('brand', 'Apple');
       helper.search();
-    }
+    },
   })
 );
 
-storiesOf("InstantSearch").add(
-  "with algoliasearch search client",
+storiesOf('InstantSearch').add(
+  'with algoliasearch search client',
   wrapWithHits({
-    template: "",
-    searchClient: algoliasearch("latency", "6be0576ff61c053d5f9a3225e2a90f76")
+    template: '',
+    searchClient: algoliasearch('latency', '6be0576ff61c053d5f9a3225e2a90f76'),
   })
 );
 
-storiesOf("InstantSearch").add(
-  "with custom search client",
+storiesOf('InstantSearch').add(
+  'with custom search client',
   wrapWithHits({
-    template: "",
+    template: '',
     searchClient: {
       search(requests) {
         return Promise.resolve({
@@ -53,44 +53,44 @@ storiesOf("InstantSearch").add(
             {
               hits: [
                 {
-                  objectID: "1",
+                  objectID: '1',
                   image:
-                    "https://cdn-demo.algolia.com/bestbuy-0118/5477500_sb.jpg",
-                  price: "99.99",
+                    'https://cdn-demo.algolia.com/bestbuy-0118/5477500_sb.jpg',
+                  price: '99.99',
                   rating: 4,
                   description:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nunc lacus, vestibulum non rutrum a, dapibus interdum magna. Quisque semper orci erat, id placerat nunc convallis at. Praesent commodo, elit non fermentum blandit, augue dolor cursus metus, eu auctor leo erat sit amet ante. Interdum et malesuada fames ac ante ipsum primis in faucibus.",
+                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nunc lacus, vestibulum non rutrum a, dapibus interdum magna. Quisque semper orci erat, id placerat nunc convallis at. Praesent commodo, elit non fermentum blandit, augue dolor cursus metus, eu auctor leo erat sit amet ante. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
                   _highlightResult: {
                     name: {
-                      value: "Fake Result 1"
-                    }
-                  }
+                      value: 'Fake Result 1',
+                    },
+                  },
                 },
                 {
-                  objectID: "2",
+                  objectID: '2',
                   image:
-                    "https://cdn-demo.algolia.com/bestbuy-0118/4397400_sb.jpg",
-                  price: "39.99",
+                    'https://cdn-demo.algolia.com/bestbuy-0118/4397400_sb.jpg',
+                  price: '39.99',
                   rating: 3,
                   description:
-                    "Morbi pretium urna et massa maximus maximus. Nunc risus lectus, mattis non malesuada quis, pretium eget ligula. Sed vulputate mauris congue, tempor velit et, pretium felis. Ut ullamcorper et ligula et congue. Nunc consequat massa massa. Etiam eu purus lorem. Ut bibendum nisi nec sapien imperdiet, vel laoreet velit porttitor.",
+                    'Morbi pretium urna et massa maximus maximus. Nunc risus lectus, mattis non malesuada quis, pretium eget ligula. Sed vulputate mauris congue, tempor velit et, pretium felis. Ut ullamcorper et ligula et congue. Nunc consequat massa massa. Etiam eu purus lorem. Ut bibendum nisi nec sapien imperdiet, vel laoreet velit porttitor.',
                   _highlightResult: {
                     name: {
-                      value: "Fake Result 2"
-                    }
-                  }
-                }
-              ]
-            }
-          ]
+                      value: 'Fake Result 2',
+                    },
+                  },
+                },
+              ],
+            },
+          ],
         });
-      }
-    }
+      },
+    },
   })
 );
 
-storiesOf("Breadcrumb").add(
-  "default",
+storiesOf('Breadcrumb').add(
+  'default',
   wrapWithHits({
     template: `
       <ais-breadcrumb
@@ -104,57 +104,57 @@ storiesOf("Breadcrumb").add(
     `,
     searchParameters: {
       hierarchicalFacetsRefinements: {
-        "hierarchicalCategories.lvl0": [
-          "Cameras & Camcorders > Digital Cameras"
-        ]
-      }
-    }
+        'hierarchicalCategories.lvl0': [
+          'Cameras & Camcorders > Digital Cameras',
+        ],
+      },
+    },
   })
 );
 
-storiesOf("ClearRefinements")
+storiesOf('ClearRefinements')
   .add(
-    "default",
+    'default',
     wrapWithHits({
-      template: "<ais-clear-refinements></ais-clear-refinements>",
+      template: '<ais-clear-refinements></ais-clear-refinements>',
       searchParameters: {
-        disjunctiveFacetsRefinements: { brand: ["Apple"] },
-        disjunctiveFacets: ["brand"]
-      }
+        disjunctiveFacetsRefinements: { brand: ['Apple'] },
+        disjunctiveFacets: ['brand'],
+      },
     })
   )
   .add(
-    "with nothing to clear",
+    'with nothing to clear',
     wrapWithHits({
-      template: "<ais-clear-refinements></ais-clear-refinements>"
+      template: '<ais-clear-refinements></ais-clear-refinements>',
     })
   )
   .add(
-    "with clear refinements and query",
+    'with clear refinements and query',
     wrapWithHits({
       template:
         "<ais-clear-refinements [clearsQuery]='true'></ais-clear-refinements>",
       searchParameters: {
-        disjunctiveFacetsRefinements: { brand: ["Apple"] },
-        disjunctiveFacets: ["brand"]
-      }
+        disjunctiveFacetsRefinements: { brand: ['Apple'] },
+        disjunctiveFacets: ['brand'],
+      },
     })
   );
 
-storiesOf("CurrentRefinements")
+storiesOf('CurrentRefinements')
   .add(
-    "default",
+    'default',
     wrapWithHits({
-      template: "<ais-current-refinements></ais-current-refinements>",
+      template: '<ais-current-refinements></ais-current-refinements>',
       searchParameters: {
-        disjunctiveFacetsRefinements: { brand: ["Apple", "Samsung"] },
-        disjunctiveFacets: ["brand"],
-        numericRefinements: { price: { ">=": [100] } }
-      }
+        disjunctiveFacetsRefinements: { brand: ['Apple', 'Samsung'] },
+        disjunctiveFacets: ['brand'],
+        numericRefinements: { price: { '>=': [100] } },
+      },
     })
   )
   .add(
-    "with panel header",
+    'with panel header',
     wrapWithHits({
       template: `
         <ais-panel header='Current refinements'>
@@ -162,25 +162,25 @@ storiesOf("CurrentRefinements")
         </ais-panel>
       `,
       searchParameters: {
-        disjunctiveFacetsRefinements: { brand: ["Apple", "Samsung"] },
-        disjunctiveFacets: ["brand"],
-        numericRefinements: { price: { ">=": [100] } }
-      }
+        disjunctiveFacetsRefinements: { brand: ['Apple', 'Samsung'] },
+        disjunctiveFacets: ['brand'],
+        numericRefinements: { price: { '>=': [100] } },
+      },
     })
   )
   .add(
-    "with panel header but no refinements",
+    'with panel header but no refinements',
     wrapWithHits({
       template: `
         <ais-panel header='Current refinements'>
           <ais-current-refinements>
           </ais-current-refinements>
         </ais-panel>
-      `
+      `,
     })
   )
   .add(
-    "with clearsQuery",
+    'with clearsQuery',
     wrapWithHits({
       template: `
         <ais-panel header='Current refinements'>
@@ -189,16 +189,16 @@ storiesOf("CurrentRefinements")
         </ais-panel>
       `,
       searchParameters: {
-        disjunctiveFacetsRefinements: { brand: ["Apple", "Samsung"] },
-        disjunctiveFacets: ["brand"],
-        numericRefinements: { price: { ">=": [100] } }
-      }
+        disjunctiveFacetsRefinements: { brand: ['Apple', 'Samsung'] },
+        disjunctiveFacets: ['brand'],
+        numericRefinements: { price: { '>=': [100] } },
+      },
     })
   );
 
-storiesOf("HierarchicalMenu")
+storiesOf('HierarchicalMenu')
   .add(
-    "default",
+    'default',
     wrapWithHits({
       template: `
     <ais-hierarchical-menu
@@ -209,11 +209,11 @@ storiesOf("HierarchicalMenu")
       ]"
     >
     </ais-hierarchical-menu>
-  `
+  `,
     })
   )
   .add(
-    "hide parent level",
+    'hide parent level',
     wrapWithHits({
       template: `
         <ais-hierarchical-menu
@@ -225,11 +225,11 @@ storiesOf("HierarchicalMenu")
           ]"
         >
         </ais-hierarchical-menu>
-      `
+      `,
     })
   )
   .add(
-    "with default selected item",
+    'with default selected item',
     wrapWithHits({
       template: `
         <ais-hierarchical-menu
@@ -243,24 +243,24 @@ storiesOf("HierarchicalMenu")
       `,
       searchParameters: {
         hierarchicalFacetsRefinements: {
-          "hierarchicalCategories.lvl0": [
-            "Cameras & Camcorders > Digital Cameras"
-          ]
-        }
-      }
+          'hierarchicalCategories.lvl0': [
+            'Cameras & Camcorders > Digital Cameras',
+          ],
+        },
+      },
     })
   );
 
-storiesOf("Hits").add(
-  "default",
+storiesOf('Hits').add(
+  'default',
   wrapWithHits({
-    template: "<ais-hits></ais-hits>"
+    template: '<ais-hits></ais-hits>',
   })
 );
 
-storiesOf("HitsPerPage")
+storiesOf('HitsPerPage')
   .add(
-    "default",
+    'default',
     wrapWithHits({
       template: `
       <ais-hits-per-page
@@ -271,11 +271,11 @@ storiesOf("HitsPerPage")
         ]"
       >
       </ais-hits-per-page>
-    `
+    `,
     })
   )
   .add(
-    "with default to 5",
+    'with default to 5',
     wrapWithHits({
       template: `
         <ais-hits-per-page
@@ -286,19 +286,19 @@ storiesOf("HitsPerPage")
           ]"
         >
         </ais-hits-per-page>
-      `
+      `,
     })
   );
 
-storiesOf("InfiniteHits")
+storiesOf('InfiniteHits')
   .add(
-    "default",
+    'default',
     wrapWithHits({
-      template: "<ais-infinite-hits></ais-infinite-hits>"
+      template: '<ais-infinite-hits></ais-infinite-hits>',
     })
   )
   .add(
-    "with custom template",
+    'with custom template',
     wrapWithHits({
       template: `
         <ais-infinite-hits>
@@ -312,19 +312,19 @@ storiesOf("InfiniteHits")
             <button (click)="showMore()">Load more</button>
           </ng-template>
         </ais-infinite-hits>
-      `
+      `,
     })
   );
 
-storiesOf("Menu")
+storiesOf('Menu')
   .add(
-    "default",
+    'default',
     wrapWithHits({
-      template: '<ais-menu attribute="categories"></ais-menu>'
+      template: '<ais-menu attribute="categories"></ais-menu>',
     })
   )
   .add(
-    "with showMore and panel header",
+    'with showMore and panel header',
     wrapWithHits({
       template: `
         <ais-panel header="Categories">
@@ -335,12 +335,12 @@ storiesOf("Menu")
           >
           </ais-menu>
         </ais-panel>
-      `
+      `,
     })
   );
 
-storiesOf("NumericMenu").add(
-  "default with panel header",
+storiesOf('NumericMenu').add(
+  'default with panel header',
   wrapWithHits({
     template: `
       <ais-panel header="Numeric menu (price)">
@@ -357,13 +357,13 @@ storiesOf("NumericMenu").add(
         >
         </ais-numeric-menu>
       </ais-panel>
-    `
+    `,
   })
 );
 
-storiesOf("NumericSelector")
+storiesOf('NumericSelector')
   .add(
-    "default",
+    'default',
     wrapWithHits({
       template: `
         <ais-numeric-selector
@@ -377,11 +377,11 @@ storiesOf("NumericSelector")
           ]"
         >
         </ais-numeric-selector>
-      `
+      `,
     })
   )
   .add(
-    "with default value",
+    'with default value',
     wrapWithHits({
       template: `
         <ais-numeric-selector
@@ -397,20 +397,20 @@ storiesOf("NumericSelector")
           ]"
         >
         </ais-numeric-selector>
-      `
+      `,
     })
   );
 
-storiesOf("Pagination").add(
-  "default",
+storiesOf('Pagination').add(
+  'default',
   wrapWithHits({
-    template: "<ais-pagination></ais-pagination>"
+    template: '<ais-pagination></ais-pagination>',
   })
 );
 
-storiesOf("RefinementList")
+storiesOf('RefinementList')
   .add(
-    "default with panel header",
+    'default with panel header',
     wrapWithHits({
       template: `
         <ais-panel header="Brand">
@@ -421,11 +421,11 @@ storiesOf("RefinementList")
           >
           </ais-refinement-list>
         </ais-panel>
-      `
+      `,
     })
   )
   .add(
-    "panel header with showMore",
+    'panel header with showMore',
     wrapWithHits({
       template: `
         <ais-panel header="Brand with show more">
@@ -437,11 +437,11 @@ storiesOf("RefinementList")
           >
           </ais-refinement-list>
         </ais-panel>
-      `
+      `,
     })
   )
   .add(
-    "panel header with search inside the items",
+    'panel header with search inside the items',
     wrapWithHits({
       template: `
         <ais-panel header="Searchable brands">
@@ -454,11 +454,11 @@ storiesOf("RefinementList")
           >
           </ais-refinement-list>
         </ais-panel>
-      `
+      `,
     })
   )
   .add(
-    "panel header with operator `and`",
+    'panel header with operator `and`',
     wrapWithHits({
       template: `
         <ais-panel header="Price ranges">
@@ -475,24 +475,24 @@ storiesOf("RefinementList")
         transformItems: items =>
           items.map(item => {
             item.highlighted = item.highlighted
-              .replace(/(\d+) - (\d+)/, "$$$1 - $$$2")
-              .replace(/> (\d+)/, "> $$$1");
+              .replace(/(\d+) - (\d+)/, '$$$1 - $$$2')
+              .replace(/> (\d+)/, '> $$$1');
             return item;
-          })
-      }
+          }),
+      },
     })
   );
 
-storiesOf("SearchBox")
+storiesOf('SearchBox')
   .add(
-    "default",
+    'default',
     wrapWithHits({
       template:
-        "<ais-search-box placeholder='Search for products'></ais-search-box>"
+        "<ais-search-box placeholder='Search for products'></ais-search-box>",
     })
   )
   .add(
-    "search on enter",
+    'search on enter',
     wrapWithHits({
       template: `
         <ais-search-box
@@ -501,12 +501,12 @@ storiesOf("SearchBox")
           [searchAsYouType]="false"
         >
         </ais-search-box>
-      `
+      `,
     })
   );
 
-storiesOf("SortBy").add(
-  "default",
+storiesOf('SortBy').add(
+  'default',
   wrapWithHits({
     template: `
       <ais-sort-by
@@ -517,12 +517,12 @@ storiesOf("SortBy").add(
         ]"
       >
       </ais-sort-by>
-    `
+    `,
   })
 );
 
-storiesOf("RatingMenu").add(
-  "default with panel header",
+storiesOf('RatingMenu').add(
+  'default with panel header',
   wrapWithHits({
     template: `
       <ais-panel header="Rating">
@@ -532,20 +532,20 @@ storiesOf("RatingMenu").add(
         >
         </ais-rating-menu>
       </ais-panel>
-    `
+    `,
   })
 );
 
-storiesOf("Stats").add(
-  "default",
+storiesOf('Stats').add(
+  'default',
   wrapWithHits({
-    template: "<ais-stats></ais-stats>"
+    template: '<ais-stats></ais-stats>',
   })
 );
 
-storiesOf("Toggle")
+storiesOf('Toggle')
   .add(
-    "with single value",
+    'with single value',
     wrapWithHits({
       template: `
         <ais-toggle
@@ -553,11 +553,11 @@ storiesOf("Toggle")
           attribute="free_shipping"
         >
         </ais-toggle>
-      `
+      `,
     })
   )
   .add(
-    "with on & off values",
+    'with on & off values',
     wrapWithHits({
       template: `
         <ais-toggle
@@ -569,59 +569,59 @@ storiesOf("Toggle")
           }"
         >
         </ais-toggle>
-      `
+      `,
     })
   );
 
-storiesOf("RangeInput").add(
-  "default",
+storiesOf('RangeInput').add(
+  'default',
   wrapWithHits({
     template: `
       <ais-range-input attribute="price">
       </ais-range-input>
-    `
+    `,
   })
 );
 
-storiesOf("Custom widgets")
+storiesOf('Custom widgets')
   .add(
-    "MenuSelect",
+    'MenuSelect',
     wrapWithHits({
       template: `<ais-menu-select></ais-menu-select>`,
-      appDeclarations: [MenuSelect]
+      appDeclarations: [MenuSelect],
     })
   )
   .add(
-    "Refresh",
+    'Refresh',
     wrapWithHits({
       template: `<ais-refresh></ais-refresh>`,
-      appDeclarations: [Refresh]
+      appDeclarations: [Refresh],
     })
   );
 
-storiesOf("RangeSlider").add(
-  "default",
+storiesOf('RangeSlider').add(
+  'default',
   wrapWithHits({
     template: `
       <ais-range-slider attribute="price">
       </ais-range-slider>
-    `
+    `,
   })
 );
 
-storiesOf("Configure")
+storiesOf('Configure')
   .add(
-    "with 1 hit per page",
+    'with 1 hit per page',
     wrapWithHits({
       template: `
       <p>This widget renders nothing, here we are forcing hitsPerPage to 1</p>
       <ais-configure [searchParameters]="{ hitsPerPage: 1 }">
       </ais-configure>
-    `
+    `,
     })
   )
   .add(
-    "Toggle between hitsPerPage",
+    'Toggle between hitsPerPage',
     wrapWithHits({
       template: `
       <p>Toggle <code>hitsPerPage</code></p>
@@ -634,12 +634,12 @@ storiesOf("Configure")
         toggleSearchParams() {
           this.searchParams.hitsPerPage =
             this.searchParams.hitsPerPage === 1 ? 10 : 1;
-        }
-      }
+        },
+      },
     })
   );
 
 start({
-  projectName: "Angular InstantSearch",
-  projectLink: "https://github.com/algolia/angular-instantsearch"
+  projectName: 'Angular InstantSearch',
+  projectLink: 'https://github.com/algolia/angular-instantsearch',
 });

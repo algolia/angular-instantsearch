@@ -1,9 +1,9 @@
-import { Component, Input, Inject, forwardRef } from "@angular/core";
+import { Component, Input, Inject, forwardRef } from '@angular/core';
 
-import { connectStarRating } from "instantsearch.js/es/connectors";
-import { BaseWidget } from "../base-widget";
-import { NgAisInstantSearch } from "../instantsearch/instantsearch";
-import { noop } from "../utils";
+import { connectStarRating } from 'instantsearch.js/es/connectors';
+import { BaseWidget } from '../base-widget';
+import { NgAisInstantSearch } from '../instantsearch/instantsearch';
+import { noop } from '../utils';
 
 export type RatingMenuState = {
   createURL: Function;
@@ -13,7 +13,7 @@ export type RatingMenuState = {
 };
 
 @Component({
-  selector: "ais-rating-menu",
+  selector: 'ais-rating-menu',
   template: `
     <div
       [class]="cx()"
@@ -73,11 +73,11 @@ export type RatingMenuState = {
         </li>
       </ul>
     </div>
-  `
+  `,
 })
 export class NgAisRatingMenu extends BaseWidget {
   // render options
-  @Input() public andUpLabel: string = "& Up";
+  @Input() public andUpLabel: string = '& Up';
 
   // connectors options
   @Input() public attribute: string;
@@ -87,7 +87,7 @@ export class NgAisRatingMenu extends BaseWidget {
     createURL: noop,
     hasNoResults: false,
     items: [],
-    refine: noop
+    refine: noop,
   };
 
   get isHidden() {
@@ -98,13 +98,13 @@ export class NgAisRatingMenu extends BaseWidget {
     @Inject(forwardRef(() => NgAisInstantSearch))
     public instantSearchParent: any
   ) {
-    super("RatingMenu");
+    super('RatingMenu');
   }
 
   public ngOnInit() {
     this.createWidget(connectStarRating, {
       attributeName: this.attribute,
-      max: this.max
+      max: this.max,
     });
     super.ngOnInit();
   }

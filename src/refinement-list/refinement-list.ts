@@ -1,8 +1,8 @@
-import { Component, Input, Inject, forwardRef } from "@angular/core";
-import { connectRefinementList } from "instantsearch.js/es/connectors";
-import { BaseWidget } from "../base-widget";
-import { NgAisInstantSearch } from "../instantsearch/instantsearch";
-import { parseNumberInput, noop } from "../utils";
+import { Component, Input, Inject, forwardRef } from '@angular/core';
+import { connectRefinementList } from 'instantsearch.js/es/connectors';
+import { BaseWidget } from '../base-widget';
+import { NgAisInstantSearch } from '../instantsearch/instantsearch';
+import { parseNumberInput, noop } from '../utils';
 
 export type RefinementListState = {
   canRefine: boolean;
@@ -17,7 +17,7 @@ export type RefinementListState = {
 };
 
 @Component({
-  selector: "ais-refinement-list",
+  selector: 'ais-refinement-list',
   template: `
     <div
       [class]="cx()"
@@ -62,19 +62,19 @@ export type RefinementListState = {
         {{state.isShowingMore ? showLessLabel : showMoreLabel}}
       </button>
     </div>
-  `
+  `,
 })
 export class NgAisRefinementList extends BaseWidget {
   // render options
-  @Input() public showMoreLabel: string = "Show more";
-  @Input() public showLessLabel: string = "Show less";
+  @Input() public showMoreLabel: string = 'Show more';
+  @Input() public showLessLabel: string = 'Show less';
   @Input() public transformItems?: Function;
   @Input() public searchable?: boolean;
-  @Input() public searchPlaceholder: string = "Search here...";
+  @Input() public searchPlaceholder: string = 'Search here...';
 
   // connectors options
   @Input() public attribute: string;
-  @Input() public operator: "or" | "and" = "or";
+  @Input() public operator: 'or' | 'and' = 'or';
   @Input() public limit: number | string = 10;
   @Input() public showMoreLimit: number | string;
   @Input() public sortBy: string[] | ((item: object) => number);
@@ -88,7 +88,7 @@ export class NgAisRefinementList extends BaseWidget {
     refine: noop,
     toggleShowMore: noop,
     searchForItems: noop,
-    isFormSearch: false
+    isFormSearch: false,
   };
 
   get isHidden() {
@@ -99,11 +99,11 @@ export class NgAisRefinementList extends BaseWidget {
     @Inject(forwardRef(() => NgAisInstantSearch))
     public instantSearchParent: any
   ) {
-    super("RefinementList");
+    super('RefinementList');
   }
 
   get items() {
-    return typeof this.transformItems === "function"
+    return typeof this.transformItems === 'function'
       ? this.transformItems(this.state.items)
       : this.state.items;
   }
@@ -114,7 +114,7 @@ export class NgAisRefinementList extends BaseWidget {
       showMoreLimit: parseNumberInput(this.showMoreLimit),
       attributeName: this.attribute,
       sortBy: this.sortBy,
-      escapeFacetValues: true
+      escapeFacetValues: true,
     });
 
     super.ngOnInit();

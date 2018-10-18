@@ -1,8 +1,8 @@
-import { NgModule, Component } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
-import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
+import { NgModule, Component } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-import { NgAisModule } from "angular-instantsearch";
+import { NgAisModule } from 'angular-instantsearch';
 
 type Helper = {
   search: Function;
@@ -11,12 +11,12 @@ type Helper = {
 
 export function wrapWithHits({
   template,
-  styles = "",
+  styles = '',
   searchParameters = {},
   methods = {},
   searchFunction,
   searchClient,
-  appDeclarations = []
+  appDeclarations = [],
 }: {
   template: string;
   styles?: string;
@@ -28,7 +28,7 @@ export function wrapWithHits({
 }) {
   return (container: Element) => {
     @Component({
-      selector: "ais-app",
+      selector: 'ais-app',
       template: `
       <ais-instantsearch [config]="config">
         <div id="widget-display">
@@ -114,22 +114,22 @@ export function wrapWithHits({
           #results-display .hit .hit-content {
             padding: 0 10px;
           }
-        `
-      ]
+        `,
+      ],
     })
     class AppComponent {
       config = {
         ...(!searchClient && {
-          appId: "latency",
-          apiKey: "6be0576ff61c053d5f9a3225e2a90f76"
+          appId: 'latency',
+          apiKey: '6be0576ff61c053d5f9a3225e2a90f76',
         }),
         searchFunction,
         searchClient,
-        indexName: "instant_search",
+        indexName: 'instant_search',
         searchParameters: {
           hitsPerPage: 3,
-          ...searchParameters
-        }
+          ...searchParameters,
+        },
       };
 
       constructor() {
@@ -143,11 +143,11 @@ export function wrapWithHits({
       bootstrap: [AppComponent],
       declarations: [AppComponent, ...appDeclarations],
       imports: [BrowserModule, NgAisModule.forRoot()],
-      providers: []
+      providers: [],
     })
     class NgApp {}
 
-    container.innerHTML = "<ais-app></ais-app>";
+    container.innerHTML = '<ais-app></ais-app>';
     platformBrowserDynamic().bootstrapModule(NgApp);
   };
 }

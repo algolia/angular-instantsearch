@@ -1,51 +1,51 @@
-import { createRenderer } from "../../../helpers/test-renderer";
-import { NgAisPagination } from "../pagination";
+import { createRenderer } from '../../../helpers/test-renderer';
+import { NgAisPagination } from '../pagination';
 
-import { bem } from "../../utils";
+import { bem } from '../../utils';
 
-const cx = bem("Pagination");
+const cx = bem('Pagination');
 
 const defaultState = {
   createURL: jest.fn(),
   currentRefinement: 0,
   nbHits: 100,
   nbPages: 20,
-  refine: jest.fn()
+  refine: jest.fn(),
 };
 
 const render = createRenderer({
   defaultState,
-  template: "<ais-pagination></ais-pagination>",
-  TestedWidget: NgAisPagination
+  template: '<ais-pagination></ais-pagination>',
+  TestedWidget: NgAisPagination,
 });
 
-describe("Pagination", () => {
-  it("renders markup without state", () => {
+describe('Pagination', () => {
+  it('renders markup without state', () => {
     const fixture = render();
     expect(fixture).toMatchSnapshot();
   });
 
-  it("renders with pages in state", () => {
+  it('renders with pages in state', () => {
     const fixture = render({});
     expect(fixture).toMatchSnapshot();
   });
 
-  it("renders does not uses pagesPadding when nbPages < pagesPadding * 2 + 1", () => {
+  it('renders does not uses pagesPadding when nbPages < pagesPadding * 2 + 1', () => {
     const fixture = render({ nbPages: 5 });
     const pages = fixture.debugElement.nativeElement.querySelectorAll(
-      `.${cx("item", "page")}`
+      `.${cx('item', 'page')}`
     );
 
     expect(pages.length).toBe(5);
     expect(fixture).toMatchSnapshot();
   });
 
-  it("should refine when clicking a page", () => {
+  it('should refine when clicking a page', () => {
     const refine = jest.fn();
     const fixture = render({ refine });
 
     const el = fixture.debugElement.nativeElement;
-    const [, secondPage] = el.querySelectorAll(`.${cx("item", "page")}`);
+    const [, secondPage] = el.querySelectorAll(`.${cx('item', 'page')}`);
     secondPage.click();
 
     expect(refine).toHaveBeenCalled();
@@ -54,18 +54,18 @@ describe("Pagination", () => {
     fixture.componentInstance.testedWidget.state.currentRefinement = 3;
     fixture.detectChanges();
 
-    const previous = el.querySelector(`.${cx("item", "previousPage")}`);
+    const previous = el.querySelector(`.${cx('item', 'previousPage')}`);
     previous.click();
 
     expect(refine).toHaveBeenLastCalledWith(2);
 
-    const next = el.querySelector(`.${cx("item", "nextPage")}`);
+    const next = el.querySelector(`.${cx('item', 'nextPage')}`);
     next.click();
 
     expect(refine).toHaveBeenLastCalledWith(4);
   });
 
-  it("should display last page button", () => {
+  it('should display last page button', () => {
     const refine = jest.fn();
     const fixture = render({ refine });
 
@@ -73,7 +73,7 @@ describe("Pagination", () => {
     fixture.detectChanges();
 
     const lastPage = fixture.debugElement.nativeElement.querySelector(
-      `.${cx("item", "lastPage")}`
+      `.${cx('item', 'lastPage')}`
     );
 
     lastPage.click();
@@ -90,16 +90,16 @@ describe("Pagination", () => {
     fixture.detectChanges();
 
     const firstPage = fixture.debugElement.nativeElement.querySelector(
-      `.${cx("item", "firstPage")}`
+      `.${cx('item', 'firstPage')}`
     );
     const previousPage = fixture.debugElement.nativeElement.querySelector(
-      `.${cx("item", "previousPage")}`
+      `.${cx('item', 'previousPage')}`
     );
     const nextPage = fixture.debugElement.nativeElement.querySelector(
-      `.${cx("item", "nextPage")}`
+      `.${cx('item', 'nextPage')}`
     );
     const lastPage = fixture.debugElement.nativeElement.querySelector(
-      `.${cx("item", "lastPage")}`
+      `.${cx('item', 'lastPage')}`
     );
 
     firstPage.click();
