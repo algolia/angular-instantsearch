@@ -12,7 +12,7 @@ You can use the directive `<ng-template></ng-template>` to customize the output.
 
 ## Options
 
-| Attribures            | Type               | Description
+| Attribute             | Type               | Description
 | -                     | -                  | -
 | `showMoreLabel?`      | `string`           | Label used on the show more button.
 | `transformItems?`     | `(items) => items` | Function to modify the items being displayed, e.g. for filtering or sorting them

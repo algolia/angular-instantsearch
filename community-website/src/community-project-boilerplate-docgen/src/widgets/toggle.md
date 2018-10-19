@@ -16,7 +16,7 @@ This widget is particularly useful if you have a boolean value in the records.
 
 ## Options
 
-| Props           | Type                            | Description
+| Attribute       | Type                            | Description
 | -               | -                               | -
 | `attribute`     | `string`                        | Name of the attribute for faceting (eg. “free_shipping”)
 | `label`         | `string`                        | Human-readable name of the filter (eg. “Free Shipping”)

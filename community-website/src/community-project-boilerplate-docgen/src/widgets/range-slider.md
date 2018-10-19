@@ -16,7 +16,7 @@ You will need to import by yourself the external CSS in order to make the range 
 
 ## Options
 
-| Attributes       | Type       | Description
+| Attribute       | Type       | Description
 | -                | -          | -
 | `attribute`      | `string`   | Name of the attribute for faceting
 | `pips?`          | `boolean`  | Show slider pips

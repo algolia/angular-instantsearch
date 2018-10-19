@@ -11,7 +11,7 @@ Is the root component of all Angular InstantSearch implementations.
 
 ## Options
 
-| Attributes    | Type            | Description
+| Attribute     | Type            | Description
 | -             | -               | -
 | `config`      | `ConfigOptions` | The config object to pass to the instantsearch instance
 

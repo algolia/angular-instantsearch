@@ -11,7 +11,7 @@ The ClearRefinements widget displays a button that lets the user clean every ref
 
 ## Options
 
-| Attributes           | Type       | Description
+| Attribute            | Type       | Description
 | -                    | -          | -
 | `clearsQuery?`       | `boolean`  | Pass true to also clear the search query
 | `excludeAttributes?` | `string[]` | Every attributes that should not be removed on clears

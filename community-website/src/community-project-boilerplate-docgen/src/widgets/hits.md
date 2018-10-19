@@ -12,7 +12,7 @@ You can use the directive `<ng-template></ng-template>` to customize.
 
 ## Options
 
-| Attributes        | Type               | Description
+| Attribute         | Type               | Description
 | -                 | -                  | -
 | `transformItems?` | `(items) => items` | Function to modify the items being displayed, e.g. for filtering or sorting them
 

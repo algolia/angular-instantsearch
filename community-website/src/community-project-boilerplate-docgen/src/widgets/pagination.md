@@ -11,7 +11,7 @@ The Pagination widget displays a simple pagination system allowing the user to c
 
 ## Options
 
-| Attributes      | Type      | Description
+| Attribute       | Type      | Description
 | -               | -         | -
 | `totalPages?`   | `number`  | Maximum number of pages to display
 | `showFirst?`    | `boolean` | Display the first page link
