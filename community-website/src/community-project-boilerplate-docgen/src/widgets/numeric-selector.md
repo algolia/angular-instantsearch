@@ -11,7 +11,7 @@ The Numeric Selector component lets the user choose between numerical refinement
 
 ## Options
 
-| Attributes  | Type                                   | Description
+| Attribute   | Type                                   | Description
 | -           | -                                      | -
 | `attribute` | `string`                               | Name of the numeric attribute to use
 | `items`     | `{value: number, label: string}[]`     | The list of indexes to search in

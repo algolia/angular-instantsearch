@@ -11,7 +11,7 @@ The Menu component displays a menu that lets the user choose a single value for 
 
 ## Options
 
-| Attributes           | Type                  | Description
+| Attribute            | Type                  | Description
 | -                    | -                     | -
 | `attribute`          | `string`              | Name of the attribute for faceting (eg. "free_shipping")
 | `limit?`             | `number`              | How many facets values to retrieve

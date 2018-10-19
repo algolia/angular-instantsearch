@@ -13,7 +13,7 @@ It is commonly used for categories with subcategories.
 
 ## Options
 
-| Attributes           | Type                | Description
+| Attribute            | Type                | Description
 | -                    | -                   | -
 | `attributes`         | `string[]`          | Array of attributes to use to generate the hierarchy of the menu
 | `limit?`             | `number`            | How much facet values to get
@@ -22,7 +22,7 @@ It is commonly used for categories with subcategories.
 | `showParentLevel?`   | `boolean`           | Show the parent level of the current refined value
 | `sortBy?`            | `string[]/Function` | How to sort facet values
 | `autoHideContainer?` | `boolean`           | Hides the widget if there's no item to display
-| `transformItems?` | `(items) => items` | Function to modify the items being displayed, e.g. for filtering or sorting them
+| `transformItems?`    | `(items) => items` | Function to modify the items being displayed, e.g. for filtering or sorting them
 
 ## Code example
 

@@ -11,7 +11,7 @@ Numeric range widget allows a user to select a numeric range using a minimum and
 
 ## Options
 
-| Attributes       | Type       | Description
+| Attribute        | Type       | Description
 | -                | -          | -
 | `attribute`      | `string`   | Name of the attribute for faceting
 | `min?`           | `number`   | Minimal value, default to automatically computed

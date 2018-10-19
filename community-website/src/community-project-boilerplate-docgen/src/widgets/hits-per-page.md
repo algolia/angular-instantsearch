@@ -11,7 +11,7 @@ The Hits per page widget displays a dropdown menu to let the user change the num
 
 ## Options
 
-| Attributes     | Type                                                  | Description
+| Attribute      | Type                                                  | Description
 | -              | -                                                     | -
 | `items`        | `{value: number, label: string, default?: boolean}[]` | List of available options
 | `autoHideContainer?` | `boolean`  | Hides the results per pages if there's no item to display

@@ -11,7 +11,7 @@ Renders any attribute from an hit into its highlighted form when relevant.
 
 ## Options
 
-| Attributes  | Type     | Description
+| Attribute   | Type     | Description
 | -           | -        | -
 | `attribute` | `string` | The location of the highlighted attribute in the hit
 | `hit`       | `{}`     | The hit object containing the highlighted attribute

@@ -16,7 +16,7 @@ This widget is usually in the top part of the search UI.
 
 ## Options
 
-| Attributes       | Type                            | Description
+| Attribute        | Type                            | Description
 | -                | -                               | -
 | `attributes?`    | `{name: string, label: string}` | Label definitions for the different filters
 | `onlyListedAttributes?` | `boolean` | Only use the declared attributes. By default, the widget displays the refinements for the whole search state. If true, the list of `attributes` in attributes is used

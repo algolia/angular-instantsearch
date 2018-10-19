@@ -15,7 +15,7 @@ You can dynamically update the `searchParameters` Object and a new search will b
 
 ## Options
 
-| Attributes           | Type       | Description
+| Attribute            | Type       | Description
 | -                    | -          | -
 | `searchParameters`   | `Object`   | Search parameters to forward to Algolia
 
