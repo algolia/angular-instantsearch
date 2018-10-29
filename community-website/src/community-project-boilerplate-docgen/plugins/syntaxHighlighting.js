@@ -18,6 +18,9 @@ module.exports = function highlight(source, lang) {
   if (newLang === 'shell') {
     newLang = 'shell';
   }
+  if (newLang === 'ts') {
+    newLang = 'text/typescript';
+  }
   // eslint-disable-next-line no-unused-var
   const codeType = newLang === 'shell' ? 'Command' : 'Code';
 
