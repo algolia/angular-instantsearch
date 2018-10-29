@@ -25,7 +25,7 @@ Those parameters can be found in your [Algolia dashboard](https://www.algolia.co
 
 ## Code example
 
-```js
+```ts
 @Component({
   selector: 'ais-app',
   template: `
@@ -104,7 +104,7 @@ You can register to the `(change)` event on the `<ais-instantsearch>` which will
 </ais-instantsearch>
 ```
 
-```js
+```ts
 onSearchChange({ results, state }: { results: {}, state: {} }) {
   // Do what ever you need with the results or the state of search
 }
