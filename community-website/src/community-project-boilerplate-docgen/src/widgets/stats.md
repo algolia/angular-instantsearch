@@ -13,7 +13,7 @@ The Stats component displays the total number of matching hits and the time it t
 
 You can use the directive `<ng-template></ng-template>` to customize the output:
 
-```js
+```ts
 @Component({
   selector: 'my-app',
   template: `

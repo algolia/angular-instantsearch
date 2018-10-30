@@ -50,7 +50,7 @@ First install `angular-instantsearch` via npm:
 Once installed you need to import our main module into your Angular application,
 so for example if you generated an app with the Angular cli, it would be in `src/app/app.module.ts`:
 
-```js
+```ts
 import { NgAisModule } from 'angular-instantsearch';
 ```
 
@@ -61,7 +61,7 @@ When done at the root level of your app, the syntax is a bit different.
 
 * At the root module:
 
-```js
+```ts
 import { NgAisModule } from 'angular-instantsearch';
 
 @NgModule({
@@ -74,7 +74,7 @@ export class AppModule {}
 
 * In another module, like a search module:
 
-```js
+```ts
 import { NgAisModule } from 'angular-instantsearch';
 
 @NgModule({
@@ -99,7 +99,7 @@ your `angular.json` file, in the `apps > styles` array:
 
 Then you need to update the file named `polyfills.ts` to add, at the bottom of the file:
 
-```js
+```ts
 (window as any).process = {
   env: { DEBUG: undefined },
 };

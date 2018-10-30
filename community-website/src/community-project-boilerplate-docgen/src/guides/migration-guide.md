@@ -10,7 +10,7 @@ You can update your Angular 4 application pretty easily by following this guide:
 
 If you are using Angular v6 you will need an extra step, polyfill `process.env` by adding in your `src/polyfill.ts`:
 
-```js
+```ts
 (window as any).process = {env: {}};
 ```
 
