@@ -5,13 +5,11 @@
 const path = require('path');
 const webpack = require('webpack');
 
-const CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const ENV = process.env.MODE;
 const isProd = ENV === 'build';
 const nodeModules = path.join(process.cwd(), 'node_modules');
-
 // Helper functions
 function root(args) {
   args = Array.prototype.slice.call(arguments, 0);
@@ -20,7 +18,7 @@ function root(args) {
 
 module.exports = {
   devtool: isProd ? 'cheap-module-source-map' : 'eval-source-map',
-
+  mode: 'development',
   entry: {
     polyfills: './examples/dev-novel/polyfill.ts',
     main: './examples/dev-novel/main.ts',
@@ -67,25 +65,20 @@ module.exports = {
     ],
   },
 
-  plugins: [
-    new webpack.DefinePlugin({
-      // Environment helpers
-      'process.env': {
-        ENV: JSON.stringify(ENV),
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: nodeModules,
+          chunks: 'initial',
+          name: 'vendor',
+          enforce: true,
+        },
       },
-    }),
+    },
+  },
 
-    new CommonsChunkPlugin({
-      name: 'vendor',
-      minChunks: module =>
-        module.resource && module.resource.startsWith(nodeModules),
-      chunks: ['main'],
-    }),
-
-    new CommonsChunkPlugin({
-      names: ['vendor', 'polyfills', 'inline'],
-    }),
-
+  plugins: [
     // Inject script and link tags into html files
     // Reference: https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
