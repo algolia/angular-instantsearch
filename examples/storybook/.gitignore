@@ -3,6 +3,7 @@
 # compiled output
 /dist
 /tmp
+/.cache
 /out-tsc
 
 # dependencies
