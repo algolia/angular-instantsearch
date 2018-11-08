@@ -29,7 +29,7 @@ The default menu widget renders a list of links, but we would like to render it 
 
 First of all, you will need to write some boilerplate code in order to initialize correctly the `BaseWidget` class. This happens in the `constructor()` of your class extending the `BaseWidget` class.
 
-```js
+```ts
 import { Component, Inject, forwardRef } from '@angular/core';
 import { BaseWidget, NgAisInstantSearch } from 'angular-instantsearch';
 
@@ -62,7 +62,7 @@ In our case, we will use the `connectMenu` which accepts multiple options but fo
 
 (The `attributeName` is the name of the attribute for faceting)
 
-```js
+```ts
 import { Component, Inject, forwardRef } from '@angular/core';
 import { BaseWidget, NgAisInstantSearch } from 'angular-instantsearch';
 import { connectMenu } from 'instantsearch.js/es/connectors';
@@ -106,7 +106,7 @@ For instance if you want to access the items, you will need to use `this.state.i
 
 If you compile your Angular application with [AOT](https://angular.io/guide/aot-compiler) you will need to define the typings of the `state` class property. In this example it will look like this:
 
-```js
+```ts
 state: {
   items: { label: string; value: string }[];
   createURL: () => string;
@@ -120,7 +120,7 @@ state: {
 
 Last step, let's write together the component template:
 
-```js
+```ts
 import { Component, Inject, forwardRef } from '@angular/core';
 import { BaseWidget, NgAisInstantSearch } from 'angular-instantsearch';
 import { connectMenu } from 'instantsearch.js/es/connectors';

@@ -1,3 +1,25 @@
+<a name="2.1.0"></a>
+# [2.1.0](https://github.com/algolia/angular-instantsearch/compare/2.0.4...2.1.0) (2018-10-31)
+
+
+### Bug Fixes
+
+* Remove unused HttpClientModule import in InstantSearch module ([#252](https://github.com/algolia/angular-instantsearch/issues/252)) ([faa8251](https://github.com/algolia/angular-instantsearch/commit/faa8251)), closes [#246](https://github.com/algolia/angular-instantsearch/issues/246)
+* **CI:** make various changes to circleci config ([#266](https://github.com/algolia/angular-instantsearch/issues/266)) ([6f98298](https://github.com/algolia/angular-instantsearch/commit/6f98298))
+* **community:** fix DocSearch config ([#243](https://github.com/algolia/angular-instantsearch/issues/243)) ([cb2dc67](https://github.com/algolia/angular-instantsearch/commit/cb2dc67))
+* **examples:** update angular-instantsearch versions ([#258](https://github.com/algolia/angular-instantsearch/issues/258)) ([#260](https://github.com/algolia/angular-instantsearch/issues/260)) ([068e2ac](https://github.com/algolia/angular-instantsearch/commit/068e2ac))
+* **examples:** use ts highlighting instead of js ([#331](https://github.com/algolia/angular-instantsearch/issues/331)) ([f932f17](https://github.com/algolia/angular-instantsearch/commit/f932f17))
+* **peerDependencies:** allow peer dependencies >=5.0.0 <8.0.0 ([#330](https://github.com/algolia/angular-instantsearch/issues/330)) ([3bfea08](https://github.com/algolia/angular-instantsearch/commit/3bfea08)), closes [#320](https://github.com/algolia/angular-instantsearch/issues/320) [#306](https://github.com/algolia/angular-instantsearch/issues/306)
+* **prettier:** updated prettier config :sparkles: ([#300](https://github.com/algolia/angular-instantsearch/issues/300)) ([f17506e](https://github.com/algolia/angular-instantsearch/commit/f17506e))
+* **types:** return array in search client SFFV ([#253](https://github.com/algolia/angular-instantsearch/issues/253)) ([871adb9](https://github.com/algolia/angular-instantsearch/commit/871adb9)), closes [#249](https://github.com/algolia/angular-instantsearch/issues/249)
+
+
+### Features
+
+* **Tree-shaking:** allow use of individual component modules ([#299](https://github.com/algolia/angular-instantsearch/issues/299)) ([a0d5159](https://github.com/algolia/angular-instantsearch/commit/a0d5159)), closes [#250](https://github.com/algolia/angular-instantsearch/issues/250)
+
+
+
 <a name="2.0.4"></a>
 ## [2.0.4](https://github.com/algolia/angular-instantsearch/compare/2.0.3...2.0.4) (2018-08-27)
 
