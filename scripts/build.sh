@@ -16,3 +16,6 @@ mv dist/bundles/reset-min.css dist/bundles/instantsearch.min.css
 
 mv dist/bundles/algolia.css dist/bundles/instantsearch-theme-algolia.css
 mv dist/bundles/algolia-min.css dist/bundles/instantsearch-theme-algolia.min.css
+
+# build dev-novel
+MODE=build webpack --config webpack.demo.js
