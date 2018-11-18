@@ -1,4 +1,4 @@
-import { Component, Input, Inject, forwardRef } from '@angular/core';
+import { Component, Input, Inject, forwardRef, ContentChild, TemplateRef } from '@angular/core';
 import { connectBreadcrumb } from 'instantsearch.js/es/connectors';
 import { BaseWidget } from '../base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
@@ -22,6 +22,7 @@ export type BreadcrumbItem = {
       [class]="cx()"
       *ngIf="!isHidden"
     >
+      <ng-container *ngTemplateOutlet="template; context: state"></ng-container>
       <ul [class]="cx('list')">
         <li
           *ngFor="let item of items"
@@ -53,6 +54,7 @@ export type BreadcrumbItem = {
   `,
 })
 export class NgAisBreadcrumb extends BaseWidget {
+  @ContentChild(TemplateRef) public template?: TemplateRef<any>;
   // connector options
   @Input() public attributes: string[];
   @Input() public rootPath?: string;
