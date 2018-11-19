@@ -105,7 +105,61 @@ describe('RefinementList', () => {
     });
   });
 
-  it('should call `toggleShowMore()` on click', () => {
+  it('should not show [show more] button when canToggleShowMore === false ', () => {
+    const fixture = render({
+      toggleShowMore: jest.fn(),
+      canToggleShowMore: false,
+    });
+    fixture.componentInstance.testedWidget.limit = 5;
+    fixture.componentInstance.testedWidget.showMoreLimit = 10;
+    fixture.detectChanges();
+
+    const showMoreBtn = fixture.debugElement.nativeElement.querySelector(
+      'button'
+    );
+    expect(showMoreBtn).toBe(null);
+  });
+
+  it('should show [show more] button when canToggleShowMore === true ', () => {
+    const fixture = render({
+      toggleShowMore: jest.fn(),
+      canToggleShowMore: true,
+    });
+    fixture.componentInstance.testedWidget.limit = 5;
+    fixture.componentInstance.testedWidget.showMoreLabel = 'Please more';
+    fixture.componentInstance.testedWidget.showMoreLimit = 10;
+    fixture.detectChanges();
+
+    const showMoreBtn = fixture.debugElement.nativeElement.querySelector(
+      'button'
+    );
+    expect(showMoreBtn.innerHTML.trim()).toEqual('Please more');
+    expect(showMoreBtn.classList.contains('ais-RefinementList-showMore')).toBe(
+      true
+    );
+  });
+
+  it('should show [show less] button when canToggleShowMore === true and isShowingMore === true', () => {
+    const fixture = render({
+      toggleShowMore: jest.fn(),
+      canToggleShowMore: true,
+      isShowingMore: true,
+    });
+    fixture.componentInstance.testedWidget.limit = 5;
+    fixture.componentInstance.testedWidget.showLessLabel = 'Please less';
+    fixture.componentInstance.testedWidget.showMoreLimit = 10;
+    fixture.detectChanges();
+
+    const showMoreBtn = fixture.debugElement.nativeElement.querySelector(
+      'button'
+    );
+    expect(showMoreBtn.innerHTML.trim()).toEqual('Please less');
+    expect(showMoreBtn.classList.contains('ais-RefinementList-showMore')).toBe(
+      true
+    );
+  });
+
+  it('should call `toggleShowMore()` on [show more] click', () => {
     const toggleShowMore = jest.fn();
     const fixture = render({ toggleShowMore, canToggleShowMore: true });
     fixture.componentInstance.testedWidget.limit = 5;
