@@ -1,3 +1,4 @@
+import { connectRefinementList } from 'instantsearch.js/es/connectors';
 import { createRenderer } from '../../../helpers/test-renderer';
 import { NgAisRefinementList } from '../refinement-list';
 import { NgAisFacetsSearch } from '../facets-search';
@@ -34,6 +35,34 @@ describe('RefinementList', () => {
   it('renders markup with state', () => {
     const fixture = render({});
     expect(fixture).toMatchSnapshot();
+  });
+
+  it('should pass attribute, limit, showMoreLimit, operator sortBy to connector', () => {
+    const createWidget = jest.spyOn(
+      NgAisRefinementList.prototype,
+      'createWidget'
+    );
+    const fixture = createRenderer({
+      defaultState,
+      template: `<ais-refinement-list 
+          attribute="brands"
+          [limit]="20"
+          [showMoreLimit]="30"
+          operator="and"
+          sortBy="name"
+          ></ais-refinement-list>`,
+      TestedWidget: NgAisRefinementList,
+      additionalDeclarations: [NgAisHighlight, NgAisFacetsSearch],
+    })({});
+    expect(createWidget).toHaveBeenCalledWith(connectRefinementList, {
+      attributeName: 'brands',
+      limit: 20,
+      showMoreLimit: 30,
+      operator: 'and',
+      sortBy: 'name',
+      escapeFacetValues: true,
+    });
+    createWidget.mockRestore();
   });
 
   it('should call `toggleShowMore()` on click', () => {
