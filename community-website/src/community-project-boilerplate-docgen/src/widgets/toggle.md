@@ -9,8 +9,8 @@ layout: widget.pug
 
 The toggle widget lets the user either:
 
-* switch between two values for a single facetted attribute (`free_shipping / not_free_shipping`)
-* toggle a faceted value on and off (only `canon` for brands)
+* switch between two values for a single facetted attribute (e.g. `free_shipping` / `not_free_shipping`)
+* toggle a faceted value on and off (e.g. only `canon` for brands)
 
 This widget is particularly useful if you have a boolean value in the records.
 
