@@ -37,32 +37,72 @@ describe('RefinementList', () => {
     expect(fixture).toMatchSnapshot();
   });
 
-  it('should pass attribute, limit, showMoreLimit, operator sortBy to connector', () => {
-    const createWidget = jest.spyOn(
-      NgAisRefinementList.prototype,
-      'createWidget'
-    );
-    const fixture = createRenderer({
-      defaultState,
-      template: `<ais-refinement-list 
-          attribute="brands"
-          [limit]="20"
-          [showMoreLimit]="30"
-          operator="and"
-          sortBy="name"
-          ></ais-refinement-list>`,
-      TestedWidget: NgAisRefinementList,
-      additionalDeclarations: [NgAisHighlight, NgAisFacetsSearch],
-    })({});
-    expect(createWidget).toHaveBeenCalledWith(connectRefinementList, {
-      attributeName: 'brands',
-      limit: 20,
-      showMoreLimit: 30,
-      operator: 'and',
-      sortBy: 'name',
-      escapeFacetValues: true,
+  describe('connector init', () => {
+    let render;
+    let createWidget;
+    beforeEach(() => {
+      createWidget = jest.spyOn(NgAisRefinementList.prototype, 'createWidget');
+      render = template =>
+        createRenderer({
+          defaultState,
+          template,
+          TestedWidget: NgAisRefinementList,
+          additionalDeclarations: [NgAisHighlight, NgAisFacetsSearch],
+        })({});
     });
-    createWidget.mockRestore();
+    it('should be called with connectRefinementList', () => {
+      render(`<ais-refinement-list></ais-refinement-list>`);
+      expect(createWidget.mock.calls[0][0]).toEqual(connectRefinementList);
+    });
+    it('should be called with attributeName undefined by default', () => {
+      render(`<ais-refinement-list></ais-refinement-list>\``);
+      expect(createWidget.mock.calls[0][1].attributeName).toBeUndefined();
+    });
+    it('should be called with attributeName passed down by attribute prop', () => {
+      render(`<ais-refinement-list attribute="brands"></ais-refinement-list>`);
+      expect(createWidget.mock.calls[0][1].attributeName).toEqual('brands');
+    });
+    it('should be called with limit 10 by default', () => {
+      render(`<ais-refinement-list></ais-refinement-list>`);
+      expect(createWidget.mock.calls[0][1].limit).toEqual(10);
+    });
+    it('should be called with limit passed down as prop', () => {
+      render(`<ais-refinement-list [limit]="30"></ais-refinement-list>`);
+      expect(createWidget.mock.calls[0][1].limit).toEqual(30);
+    });
+    it('should be called with showMoreLimit undefined by default', () => {
+      render(`<ais-refinement-list></ais-refinement-list>`);
+      expect(createWidget.mock.calls[0][1].showMoreLimit).toBeUndefined();
+    });
+    it('should be called with showMoreLimit passed down as prop', () => {
+      render(
+        `<ais-refinement-list [showMoreLimit]="30"></ais-refinement-list>`
+      );
+      expect(createWidget.mock.calls[0][1].showMoreLimit).toEqual(30);
+    });
+    it('should be called with operator "or" by default', () => {
+      render(`<ais-refinement-list></ais-refinement-list>`);
+      expect(createWidget.mock.calls[0][1].operator).toEqual('or');
+    });
+    it('should be called with operator passed down as prop', () => {
+      render(`<ais-refinement-list operator="and"></ais-refinement-list>`);
+      expect(createWidget.mock.calls[0][1].operator).toEqual('and');
+    });
+    it('should be called with sortBy undefined by default', () => {
+      render(`<ais-refinement-list></ais-refinement-list>`);
+      expect(createWidget.mock.calls[0][1].sortBy).toBeUndefined();
+    });
+    it('should be called with sortBy passed down as prop', () => {
+      render(`<ais-refinement-list sortBy="name"></ais-refinement-list>`);
+      expect(createWidget.mock.calls[0][1].sortBy).toEqual('name');
+    });
+    it('should be called with escapeFacetValues true by default', () => {
+      render(`<ais-refinement-list></ais-refinement-list>`);
+      expect(createWidget.mock.calls[0][1].escapeFacetValues).toEqual(true);
+    });
+    afterEach(() => {
+      createWidget.mockRestore();
+    });
   });
 
   it('should call `toggleShowMore()` on click', () => {
