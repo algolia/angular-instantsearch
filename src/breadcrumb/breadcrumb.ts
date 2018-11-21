@@ -1,4 +1,11 @@
-import { Component, Input, Inject, forwardRef, ContentChild, TemplateRef } from '@angular/core';
+import {
+  Component,
+  Input,
+  Inject,
+  forwardRef,
+  ContentChild,
+  TemplateRef,
+} from '@angular/core';
 import { connectBreadcrumb } from 'instantsearch.js/es/connectors';
 import { BaseWidget } from '../base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
@@ -18,10 +25,7 @@ export type BreadcrumbItem = {
 @Component({
   selector: 'ais-breadcrumb',
   template: `
-    <div
-      [class]="cx()"
-      *ngIf="!isHidden"
-    >
+    <div [class]="cx()" *ngIf="!isHidden">
       <ng-container *ngTemplateOutlet="template; context: state"></ng-container>
       <ul [class]="cx('list')">
         <li
@@ -42,12 +46,10 @@ export type BreadcrumbItem = {
             *ngIf="!item.isLast"
             (click)="handleClick($event, item)"
           >
-            {{item.name}}
+            {{ item.name }}
           </a>
 
-          <span *ngIf="item.isLast">
-            {{item.name}}
-          </span>
+          <span *ngIf="item.isLast"> {{ item.name }} </span>
         </li>
       </ul>
     </div>
