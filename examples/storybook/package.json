@@ -1,0 +1,41 @@
+{
+  "name": "storybook",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "start-storybook -p 9001 -c .storybook",
+    "build": "build-storybook -c .storybook -o dist/"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/common": "7.0.0",
+    "@angular/compiler": "7.0.0",
+    "@angular/core": "7.0.0",
+    "@angular/forms": "7.0.0",
+    "@angular/http": "7.0.0",
+    "@angular/platform-browser": "7.0.0",
+    "@angular/platform-browser-dynamic": "7.0.0",
+    "@angular/router": "7.0.0",
+    "angular-instantsearch": "2.1.0",
+    "core-js": "2.5.4",
+    "rxjs": "6.3.3",
+    "zone.js": "0.8.26"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.10.0",
+    "@angular/cli": "~7.0.4",
+    "@angular/compiler-cli": "~7.0.0",
+    "@angular/language-service": "~7.0.0",
+    "@babel/core": "^7.1.2",
+    "@storybook/angular": "^4.0.2",
+    "@types/node": "~8.9.4",
+    "babel-loader": "^8.0.4",
+    "codelyzer": "~4.5.0",
+    "css-loader": "^1.0.1",
+    "jasmine-core": "~2.99.1",
+    "jasmine-spec-reporter": "~4.2.1",
+    "style-loader": "^0.23.1",
+    "ts-node": "~7.0.0",
+    "tslint": "~5.11.0",
+    "typescript": "~3.1.1"
+  }
+}
