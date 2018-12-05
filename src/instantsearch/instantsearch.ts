@@ -178,6 +178,13 @@ export type InstantSearchConfig = {
   routing?:
     | boolean
     | {
+        router?: {
+          onUpdate?: Function;
+          read?: Function;
+          write?: Function;
+          createURL?: Function;
+          dispose?: Function;
+        };
         stateMapping?: {
           stateToRoute(object): object;
           routeToState(object): object;
