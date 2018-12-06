@@ -64,8 +64,8 @@ import { Component, OnDestroy } from '@angular/core';
   `,
   styles: [],
 })
-export class SearchComponent implements OnDestroy {
+export class SearchDefaultRoutingComponent implements OnDestroy {
   ngOnDestroy() {
-    console.log('SearchComponent::ngOnDestroy');
+    console.log('SearchDefaultRoutingComponent::ngOnDestroy');
   }
 }
