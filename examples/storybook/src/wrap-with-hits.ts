@@ -5,6 +5,17 @@ type Helper = {
   addDisjunctiveFacetRefinement: Function;
 };
 
+type WrapWithHitsParams = {
+  template: string;
+  styles?: string;
+  searchParameters?: {};
+  methods?: {};
+  searchFunction?: (helper: Helper) => void;
+  searchClient?: {};
+  filters?: string;
+  indexName?: string;
+};
+
 export function wrapWithHits({
   template,
   styles = '',
@@ -12,14 +23,9 @@ export function wrapWithHits({
   methods = {},
   searchFunction,
   searchClient,
-}: {
-  template: string;
-  styles?: string;
-  searchParameters?: {};
-  methods?: {};
-  searchFunction?: (helper: Helper) => void;
-  searchClient?: {};
-}) {
+  indexName = 'instant_search',
+  filters = `<ais-refinement-list attribute="brand"></ais-refinement-list>`,
+}: WrapWithHitsParams) {
   @Component({
     selector: 'ais-app',
     template: `
@@ -29,8 +35,7 @@ export function wrapWithHits({
         </div>
         <div class="ais-container ais-container-playground">
           <div class="panel-left">
-            <ais-hierarchical-menu [attributes]="[ 'hierarchicalCategories.lvl0', 'hierarchicalCategories.lvl1', 'hierarchicalCategories.lvl2' ]">
-            </ais-hierarchical-menu>
+            ${filters}
           </div>
           <div class="panel-right">
             <ais-search-box placeholder="Search into furniture"></ais-search-box>
@@ -72,7 +77,7 @@ export function wrapWithHits({
       }),
       searchFunction,
       searchClient,
-      indexName: 'instant_search',
+      indexName,
       searchParameters: {
         hitsPerPage: 3,
         ...searchParameters,

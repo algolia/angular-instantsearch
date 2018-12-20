@@ -14,5 +14,6 @@ storiesOf('Breadcrumb', module)
           ],
         },
       },
+      filters: ` <ais-hierarchical-menu [attributes]="[ 'hierarchicalCategories.lvl0', 'hierarchicalCategories.lvl1', 'hierarchicalCategories.lvl2' ]"> </ais-hierarchical-menu> `,
     }),
   }));
