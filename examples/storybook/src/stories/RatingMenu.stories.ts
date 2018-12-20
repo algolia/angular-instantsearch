@@ -15,5 +15,6 @@ storiesOf('RatingMenu', module)
         </ais-rating-menu>
       </ais-panel>
     `,
+      indexName: 'instant_search_rating_asc',
     }),
   }));
