@@ -28,7 +28,7 @@ body {
 
 .ais-container-preview {
   border: solid 1px #e4e4e4;
-  border-radius: 5px 5px 0px 0px;
+  border-radius: 5px 5px 0 0;
 }
 
 .ais-container-preview::after {
@@ -49,6 +49,11 @@ body {
 
 .ais-container-playground::after {
   content: 'Playground';
+}
+
+.panel-left {
+  width: 200px;
+  margin-right: 50px;
 }
 
 .panel-right {

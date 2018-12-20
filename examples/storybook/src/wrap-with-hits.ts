@@ -28,6 +28,10 @@ export function wrapWithHits({
           ${template}
         </div>
         <div class="ais-container ais-container-playground">
+          <div class="panel-left">
+            <ais-hierarchical-menu [attributes]="[ 'hierarchicalCategories.lvl0', 'hierarchicalCategories.lvl1', 'hierarchicalCategories.lvl2' ]">
+            </ais-hierarchical-menu>
+          </div>
           <div class="panel-right">
             <ais-search-box placeholder="Search into furniture"></ais-search-box>
             <ais-stats></ais-stats>
