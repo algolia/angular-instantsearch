@@ -113,6 +113,7 @@ export class NgAisRefinementList extends BaseWidget {
       limit: parseNumberInput(this.limit),
       showMoreLimit: parseNumberInput(this.showMoreLimit),
       attributeName: this.attribute,
+      operator: this.operator,
       sortBy: this.sortBy,
       escapeFacetValues: true,
     });
