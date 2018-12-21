@@ -3,7 +3,7 @@ import { start, storiesOf } from 'dev-novel';
 import * as algoliasearch from 'algoliasearch/lite';
 
 import { wrapWithHits } from './wrap-with-hits';
-import { MenuSelect, Refresh } from './custom-widgets';
+import { MenuSelect, Refresh } from '../storybook/src/custom-widgets';
 
 // depending on the env mode, enable prod mode or add debugging modules
 if (process.env.ENV === 'build') {
