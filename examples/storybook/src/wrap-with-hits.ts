@@ -5,6 +5,17 @@ type Helper = {
   addDisjunctiveFacetRefinement: Function;
 };
 
+type WrapWithHitsParams = {
+  template: string;
+  styles?: string;
+  searchParameters?: {};
+  methods?: {};
+  searchFunction?: (helper: Helper) => void;
+  searchClient?: {};
+  filters?: string;
+  indexName?: string;
+};
+
 export function wrapWithHits({
   template,
   styles = '',
@@ -12,106 +23,51 @@ export function wrapWithHits({
   methods = {},
   searchFunction,
   searchClient,
-}: {
-  template: string;
-  styles?: string;
-  searchParameters?: {};
-  methods?: {};
-  searchFunction?: (helper: Helper) => void;
-  searchClient?: {};
-}) {
+  indexName = 'instant_search',
+  filters = `<ais-refinement-list attribute="brand"></ais-refinement-list>`,
+}: WrapWithHitsParams) {
   @Component({
     selector: 'ais-app',
     template: `
       <ais-instantsearch [config]="config">
-        <div id="widget-display">
+        <div class="ais-container ais-container-preview">
           ${template}
         </div>
-        <div id="results-display">
-          <div id="results-search-box-container">
-            <ais-search-box
-              placeholder="Search into furnitures"
-            >
-            </ais-search-box>
+        <div class="ais-container ais-container-playground">
+          <div class="panel-left">
+            ${filters}
           </div>
-          <div id="results-hits-container">
+          <div class="panel-right">
+            <ais-search-box placeholder="Search into furniture"></ais-search-box>
+            <ais-stats></ais-stats>
             <ais-hits>
               <ng-template let-hits="hits">
-                <div
-                  *ngFor="let hit of hits"
-                  class="hit"
-                  id="hit-{{hit.objectID}}"
-                >
-                  <div class="hit-picture">
-                    <img [src]="hit.image" />
-                  </div>
+                <ol class="playground-hits">
 
-                  <div class="hit-content">
-                    <div>
-                      <ais-highlight [hit]="hit" attribute="name"></ais-highlight>
-                      <span>\${{hit.price}}</span>
-                      <span>{{hit.rating}} stars</span>
+                  <li
+                    *ngFor="let hit of hits"
+                    class="hit playground-hits-item"
+                    id="hit-{{hit.objectID}}"
+                  >
+                    <div class="playground-hits-image" [ngStyle]="{'background-image': 'url(' + hit.image + ')' }">
                     </div>
 
-                    <div class="hit-description">
-                      <ais-highlight
-                        [hit]="hit"
-                        attribute="description"
-                      >
-                      </ais-highlight>
+                    <div class="playground-hits-desc">
+                      <p>
+                        <ais-highlight [hit]="hit" attribute="name"></ais-highlight>
+                      </p>
+                      <p>Rating: {{hit.rating}} ✭</p>
+                      <p>Price: \${{hit.price}}</p>
                     </div>
-                  </div>
-                </div>
+                  </li>
+                </ol>
               </ng-template>
             </ais-hits>
-          </div>
-          <div id="results-pagination-container">
             <ais-pagination [totalPages]="20"></ais-pagination>
           </div>
         </div>
       </ais-instantsearch>
     `,
-    styles: [
-      styles,
-      `
-        h1 {
-          background: red;
-        }
-        #widget-display {
-          border: solid 1px #e4e4e4;
-          border-radius: 5px 5px 0 0;
-          border-bottom: none;
-          margin: 5px 5px 0 5px;
-          min-height: 200px;
-          padding: 50px 40px 40px;
-        }
-
-        #results-display {
-          border: solid 1px #e4e4e4;
-          border-radius: 0 0 5px 5px;
-          display: flex;
-          flex-direction: column;
-          margin: 0 5px 5px 5px;
-          min-height: 200px;
-          padding: 50px 40px 40px;
-        }
-
-        #results-display .hit {
-          align-items: center;
-          display: flex;
-          margin: 10px 10px;
-        }
-
-        #results-display .hit .hit-picture img {
-          height: auto;
-          width: 80px;
-        }
-
-        #results-display .hit .hit-content {
-          padding: 0 10px;
-        }
-      `,
-    ],
   })
   class AppComponent {
     config = {
@@ -121,7 +77,7 @@ export function wrapWithHits({
       }),
       searchFunction,
       searchClient,
-      indexName: 'instant_search',
+      indexName,
       searchParameters: {
         hitsPerPage: 3,
         ...searchParameters,
