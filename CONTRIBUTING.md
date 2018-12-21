@@ -15,7 +15,7 @@ cd angular-instantsearch
 
 ### Run
 
-You can watch & reload library using `> yarn dev` and then open http://localhost:3000 to access stories of Angular InstantSearch components rendered into [dev-novel](https://github.com/algolia/dev-novel).
+You can access stories of Angular InstantSearch component by running the storybook with `yarn example:storybook`
 
 There is also an e-commerce example consuming the builded library and compliant to [AOT (compiles your app at build time)](https://angular.io/guide/aot-compiler) compiler. It must be run to test the library in production before any PRs.
 
