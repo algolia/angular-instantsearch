@@ -79,7 +79,7 @@ export class Refresh extends BaseWidget implements OnInit {
     super('Refresh');
   }
   public ngOnInit() {
-    this.createWidget(connectNoop as any);
+    this.createWidget(connectNoop);
     super.ngOnInit();
   }
   refresh() {
