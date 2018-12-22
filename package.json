@@ -136,7 +136,7 @@
     "semver": "5.6.0",
     "shelljs": "0.8.3",
     "style-loader": "0.23.1",
-    "ts-loader": "4.0.0",
+    "ts-loader": "4.5.0",
     "tsickle": "0.33.1",
     "tslint": "5.11.0",
     "tslint-config-airbnb": "5.11.0",
