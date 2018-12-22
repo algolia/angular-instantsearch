@@ -33,6 +33,7 @@ jobs:
             yarn examples:router:build
             yarn examples:media:build
             yarn examples:ssr:build
+            yarn examples:storybook:build
 
       - save_cache:
           name: Save Yarn Package Cache
