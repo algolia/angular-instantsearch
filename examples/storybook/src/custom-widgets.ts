@@ -1,5 +1,10 @@
 import { Component, OnInit, Inject, forwardRef } from '@angular/core';
-import { BaseWidget, NgAisInstantSearch } from 'angular-instantsearch';
+import {
+  BaseWidget,
+  NgAisInstantSearch,
+  Widget,
+  Connector,
+} from 'angular-instantsearch';
 import { connectMenu } from 'instantsearch.js/es/connectors';
 
 @Component({
@@ -33,11 +38,11 @@ export class MenuSelect extends BaseWidget implements OnInit {
   }
 }
 
-const connectNoop = function(
+const connectNoop: Connector = function(
   renderFn: (state: object, isFirstRendering: boolean) => void,
   unmountFn: () => void
 ) {
-  return function(widgetParams?: object) {
+  return function(widgetParams?: object): Widget {
     const render = ({ instantSearchInstance }) => {
       renderFn(
         {
@@ -74,7 +79,7 @@ export class Refresh extends BaseWidget implements OnInit {
     super('Refresh');
   }
   public ngOnInit() {
-    this.createWidget(connectNoop);
+    this.createWidget(connectNoop as any);
     super.ngOnInit();
   }
   refresh() {
