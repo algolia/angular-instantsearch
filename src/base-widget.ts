@@ -3,8 +3,16 @@ import { isPlatformBrowser } from '@angular/common';
 import { bem, noop } from './utils';
 
 export class Widget {
-  public init: () => void;
-  public getConfiguration: () => object;
+  public init: (
+    params: {
+      templatesConfig: object;
+      state: object;
+      results: {}[];
+      createURL: (value: any) => string;
+      instantSearchInstance: object;
+    }
+  ) => void;
+  public getConfiguration?: () => object;
   public render: (
     params: {
       templatesConfig: object;

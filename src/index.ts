@@ -59,8 +59,8 @@ import { parseServerRequest } from './parse-server-request';
 export { parseServerRequest };
 
 // Custom widget with BaseWidget class
-import { BaseWidget } from './base-widget';
-export { BaseWidget };
+import { BaseWidget, Widget, Connector } from './base-widget';
+export { BaseWidget, Widget, Connector };
 
 import { NgAisInstantSearch } from './instantsearch/instantsearch';
 export { NgAisInstantSearch };
