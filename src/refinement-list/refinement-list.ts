@@ -56,6 +56,7 @@ export type RefinementListState = {
       </ul>
 
       <button
+        [class]="cx('showMore')"
         *ngIf="showMoreLimit && state.canToggleShowMore"
         (click)="state.toggleShowMore()"
       >

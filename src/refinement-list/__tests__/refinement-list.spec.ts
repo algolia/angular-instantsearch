@@ -105,21 +105,52 @@ describe('RefinementList', () => {
     });
   });
 
-  it('should call `toggleShowMore()` on click', () => {
-    const toggleShowMore = jest.fn();
-    const fixture = render({ toggleShowMore, canToggleShowMore: true });
-    fixture.componentInstance.testedWidget.limit = 5;
-    fixture.componentInstance.testedWidget.showMoreLimit = 10;
-    fixture.detectChanges();
+  describe('[show more]/[show less] button', () => {
+    const createFixture = (state, props) => {
+      const fixture = render(state);
+      Object.assign(fixture.componentInstance.testedWidget, props);
+      fixture.detectChanges();
+      return fixture;
+    };
+    it('should have ais-RefinementList-showMore CSS class', () => {
+      const fixture = createFixture(
+        {
+          toggleShowMore: jest.fn(),
+          canToggleShowMore: true,
+        },
+        {
+          limit: 5,
+          showMoreLimit: 10,
+        }
+      );
 
-    const showMoreBtn = fixture.debugElement.nativeElement.querySelector(
-      'button'
-    );
-    showMoreBtn.click();
+      const showMoreBtn = fixture.debugElement.nativeElement.querySelector(
+        'button'
+      );
+      expect(
+        showMoreBtn.classList.contains('ais-RefinementList-showMore')
+      ).toBe(true);
+    });
 
-    expect(toggleShowMore).toHaveBeenCalled();
+    it('should call `toggleShowMore()` on [show more] click', () => {
+      const toggleShowMore = jest.fn();
+      const fixture = createFixture(
+        {
+          toggleShowMore,
+          canToggleShowMore: true,
+        },
+        {
+          limit: 5,
+          showMoreLimit: 10,
+        }
+      );
+      const showMoreBtn = fixture.debugElement.nativeElement.querySelector(
+        'button'
+      );
+      showMoreBtn.click();
+      expect(toggleShowMore).toHaveBeenCalledTimes(1);
+    });
   });
-
   it('should call `refine()` on item click', () => {
     const refine = jest.fn();
     const fixture = render({ refine });
