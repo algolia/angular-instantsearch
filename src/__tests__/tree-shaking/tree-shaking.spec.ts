@@ -27,7 +27,6 @@ describe('tree-shaking 🎄', () => {
               <ais-infinite-hits></ais-infinite-hits>
               <ais-menu></ais-menu>
               <ais-numeric-menu></ais-numeric-menu>
-              <ais-numeric-selector></ais-numeric-selector>
               <ais-pagination></ais-pagination>
               <ais-panel></ais-panel>
               <ais-range-input></ais-range-input>
@@ -89,7 +88,6 @@ describe('tree-shaking 🎄', () => {
     expect(bundle).toContain('ais-infinite-hits');
     expect(bundle).toContain('ais-menu');
     expect(bundle).toContain('ais-numeric-menu');
-    expect(bundle).toContain('ais-numeric-selector');
     expect(bundle).toContain('ais-pagination');
     expect(bundle).toContain('ais-panel');
     expect(bundle).toContain('ais-range-input');
@@ -119,7 +117,6 @@ describe('tree-shaking 🎄', () => {
     expect(bundle).not.toContain('ais-infinite-hits');
     expect(bundle).not.toContain('ais-menu');
     expect(bundle).not.toContain('ais-numeric-menu');
-    expect(bundle).not.toContain('ais-numeric-selector');
     expect(bundle).not.toContain('ais-pagination');
     expect(bundle).not.toContain('ais-panel');
     expect(bundle).not.toContain('ais-range-input');

@@ -21,8 +21,6 @@ import { NgAisMenuModule } from './menu/menu.module';
 export { NgAisMenuModule };
 import { NgAisNumericMenuModule } from './numeric-menu/numeric-menu.module';
 export { NgAisNumericMenuModule };
-import { NgAisNumericSelectorModule } from './numeric-selector/numeric-selector.module';
-export { NgAisNumericSelectorModule };
 import { NgAisPaginationModule } from './pagination/pagination.module';
 export { NgAisPaginationModule };
 import { NgAisRangeSliderModule } from './range-slider/range-slider.module';
@@ -75,7 +73,6 @@ const NGIS_MODULES = [
   NgAisRefinementListModule,
   NgAisHitsPerPageModule,
   NgAisSortByModule,
-  NgAisNumericSelectorModule,
   NgAisNumericMenuModule,
   NgAisStatsModule,
   NgAisToggleModule,
