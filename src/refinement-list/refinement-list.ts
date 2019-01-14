@@ -57,8 +57,9 @@ export type RefinementListState = {
 
       <button
         [class]="cx('showMore')"
-        *ngIf="showMoreLimit && state.canToggleShowMore"
+        *ngIf="showMore"
         (click)="state.toggleShowMore()"
+        [disabled]="!state.canToggleShowMore"
       >
         {{state.isShowingMore ? showLessLabel : showMoreLabel}}
       </button>
@@ -78,6 +79,7 @@ export class NgAisRefinementList extends BaseWidget {
   @Input() public operator: 'or' | 'and' = 'or';
   @Input() public limit: number | string = 10;
   @Input() public showMoreLimit: number | string;
+  @Input() public showMore: boolean = false;
   @Input() public sortBy: string[] | ((item: object) => number);
 
   public state: RefinementListState = {
