@@ -10,6 +10,7 @@ exports[`Breadcrumb renders markup with two items 1`] = `
       <div
         class="ais-Breadcrumb"
       >
+        
         <ul
           class="ais-Breadcrumb-list"
         >
@@ -60,6 +61,7 @@ exports[`Breadcrumb renders markup without state 1`] = `
       <div
         class="ais-Breadcrumb"
       >
+        
         <ul
           class="ais-Breadcrumb-list"
         >
