@@ -51,5 +51,6 @@ describe('InfiniteHits', () => {
 
     expect(button.disabled).toBeTruthy();
     expect(showMore).not.toHaveBeenCalled();
+    expect(fixture).toMatchSnapshot();
   });
 });

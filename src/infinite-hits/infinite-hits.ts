@@ -32,7 +32,7 @@ import { noop } from '../utils';
       </div>
 
       <button
-        [class]="cx('loadMore')"
+        [class]="showMoreClass"
         (click)="showMore($event)"
         [disabled]="state.isLastPage"
         *ngIf="!template"
@@ -73,6 +73,16 @@ export class NgAisInfiniteHits extends BaseWidget {
   public showMore(event: MouseEvent) {
     event.preventDefault();
     this.state.showMore();
+  }
+
+  get showMoreClass() {
+    let className = this.cx('loadMore');
+
+    if (this.state.isLastPage) {
+      className = `${className} ${this.cx('loadMore', 'disabled')}`;
+    }
+
+    return className;
   }
 
   updateState = (state, isFirstRendering: boolean) => {
