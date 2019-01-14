@@ -148,7 +148,7 @@ describe('RefinementList', () => {
         'button'
       );
       showMoreBtn.click();
-      expect(toggleShowMore).toHaveBeenCalled();
+      expect(toggleShowMore).toHaveBeenCalledTimes(1);
     });
   });
   it('should call `refine()` on item click', () => {
