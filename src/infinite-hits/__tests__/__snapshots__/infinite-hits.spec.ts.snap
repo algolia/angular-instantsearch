@@ -80,7 +80,7 @@ exports[`InfiniteHits renders markup with state 1`] = `
         </div>
         
         <button
-          class="ais-InfiniteHits-loadMore"
+          class="ais-InfiniteHits-loadMore "
         >
            Show more results 
         </button>
@@ -110,7 +110,7 @@ exports[`InfiniteHits renders markup without state 1`] = `
         </div>
         
         <button
-          class="ais-InfiniteHits-loadMore"
+          class="ais-InfiniteHits-loadMore "
         >
            Show more results 
         </button>
