@@ -80,7 +80,8 @@ exports[`InfiniteHits renders markup with state 1`] = `
         </div>
         
         <button
-          class="ais-InfiniteHits-loadMore "
+          class="ais-InfiniteHits-loadMore"
+          ng-reflect-ng-class="ais-InfiniteHits-loadMore,"
         >
            Show more results 
         </button>
@@ -110,7 +111,8 @@ exports[`InfiniteHits renders markup without state 1`] = `
         </div>
         
         <button
-          class="ais-InfiniteHits-loadMore "
+          class="ais-InfiniteHits-loadMore"
+          ng-reflect-ng-class="ais-InfiniteHits-loadMore,"
         >
            Show more results 
         </button>
@@ -202,6 +204,7 @@ exports[`InfiniteHits should disable \`showMore\` button 1`] = `
         <button
           class="ais-InfiniteHits-loadMore ais-InfiniteHits-loadMore--disabled"
           disabled=""
+          ng-reflect-ng-class="ais-InfiniteHits-loadMore,ais-"
         >
            Show more results 
         </button>
