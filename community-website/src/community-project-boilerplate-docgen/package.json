@@ -35,7 +35,7 @@
     "ms-webpack": "2.0.0",
     "node-sass": "4.11.0",
     "nodemon": "1.18.5",
-    "postcss": "7.0.7",
+    "postcss": "7.0.13",
     "postcss-loader": "2.1.6",
     "postcss-scss": "2.0.0",
     "pug": "2.0.3",
