@@ -30,12 +30,12 @@
     "metalsmith": "2.3.0",
     "metalsmith-clean-css": "6.0.0",
     "metalsmith-headings": "0.2.0",
-    "metalsmith-layouts": "2.2.0",
+    "metalsmith-layouts": "2.3.0",
     "metalsmith-sass": "1.5.1",
     "ms-webpack": "2.0.0",
     "node-sass": "4.11.0",
     "nodemon": "1.18.5",
-    "postcss": "7.0.5",
+    "postcss": "7.0.7",
     "postcss-loader": "2.1.6",
     "postcss-scss": "2.0.0",
     "pug": "2.0.3",
@@ -47,7 +47,7 @@
     "stat-mode": "0.2.2",
     "style-loader": "0.23.1",
     "uglifyjs-webpack-plugin": "1.3.0",
-    "webpack": "4.23.1",
+    "webpack": "4.28.4",
     "webpack-dev-middleware": "3.4.0",
     "webpack-hot-middleware": "2.24.3"
   }
