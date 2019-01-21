@@ -43,18 +43,25 @@ const connectNoop: Connector = function(
   unmountFn: () => void
 ) {
   return function(widgetParams?: object): Widget {
-    const render = ({ instantSearchInstance }) => {
-      renderFn(
-        {
-          instantSearchInstance,
-          widgetParams,
-        },
-        false
-      );
-    };
     return {
-      render,
-      init: render,
+      init: ({ instantSearchInstance }) => {
+        renderFn(
+          {
+            instantSearchInstance,
+            widgetParams,
+          },
+          true
+        );
+      },
+      render: ({ instantSearchInstance }) => {
+        renderFn(
+          {
+            instantSearchInstance,
+            widgetParams,
+          },
+          false
+        );
+      },
       dispose: () => unmountFn(),
     };
   };
