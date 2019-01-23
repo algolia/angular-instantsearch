@@ -1,5 +1,10 @@
-import { Component, Inject, forwardRef } from '@angular/core';
-import { BaseWidget, NgAisInstantSearch } from 'angular-instantsearch';
+import { Component, OnInit, Inject, forwardRef } from '@angular/core';
+import {
+  BaseWidget,
+  NgAisInstantSearch,
+  Widget,
+  Connector,
+} from 'angular-instantsearch';
 import { connectMenu } from 'instantsearch.js/es/connectors';
 
 @Component({
@@ -19,7 +24,7 @@ import { connectMenu } from 'instantsearch.js/es/connectors';
     </select>
   `,
 })
-export class MenuSelect extends BaseWidget {
+export class MenuSelect extends BaseWidget implements OnInit {
   constructor(
     @Inject(forwardRef(() => NgAisInstantSearch))
     public instantSearchParent
@@ -33,6 +38,35 @@ export class MenuSelect extends BaseWidget {
   }
 }
 
+const connectNoop: Connector = function(
+  renderFn: (state: object, isFirstRendering: boolean) => void,
+  unmountFn: () => void
+) {
+  return function(widgetParams?: object): Widget {
+    return {
+      init: ({ instantSearchInstance }) => {
+        renderFn(
+          {
+            instantSearchInstance,
+            widgetParams,
+          },
+          true
+        );
+      },
+      render: ({ instantSearchInstance }) => {
+        renderFn(
+          {
+            instantSearchInstance,
+            widgetParams,
+          },
+          false
+        );
+      },
+      dispose: () => unmountFn(),
+    };
+  };
+};
+
 @Component({
   selector: 'ais-refresh',
   template: `
@@ -44,12 +78,16 @@ export class MenuSelect extends BaseWidget {
     </button>
   `,
 })
-export class Refresh extends BaseWidget {
+export class Refresh extends BaseWidget implements OnInit {
   constructor(
     @Inject(forwardRef(() => NgAisInstantSearch))
     public instantSearchParent: any
   ) {
     super('Refresh');
+  }
+  public ngOnInit() {
+    this.createWidget(connectNoop);
+    super.ngOnInit();
   }
   refresh() {
     this.instantSearchParent.refresh();
