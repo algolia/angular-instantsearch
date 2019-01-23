@@ -7,7 +7,7 @@ export class Widget {
     params: {
       templatesConfig: object;
       state: object;
-      results: {}[];
+      results: object[];
       createURL: (value: any) => string;
       instantSearchInstance: object;
     }
