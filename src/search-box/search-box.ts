@@ -43,7 +43,6 @@ import { noop } from '../utils';
           [class]="cx('submit')"
           type="submit"
           title="{{submitTitle}}"
-          (click)="handleSubmit($event)"
         >
           <svg
             [ngClass]="cx('submitIcon')"
@@ -113,7 +112,6 @@ export class NgAisSearchBox extends BaseWidget implements AfterViewInit {
 
   public handleChange(query: string) {
     this.change.emit(query);
-
     if (this.searchAsYouType) {
       this.state.refine(query);
     }
@@ -126,7 +124,7 @@ export class NgAisSearchBox extends BaseWidget implements AfterViewInit {
     event.preventDefault();
 
     if (!this.searchAsYouType) {
-      this.state.refine(this.state.query);
+      this.state.refine(this.searchBox.nativeElement.value);
     }
   }
 
