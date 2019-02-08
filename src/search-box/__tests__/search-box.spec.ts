@@ -47,7 +47,7 @@ describe('SearchBox', () => {
 
   describe('[searchAsYouType]', () => {
     describe('default behaviour', () => {
-      it('should call refine as your type by default', () => {
+      it('should call refine as you type by default', () => {
         const fixture = createRenderer({
           defaultState,
           template: '<ais-search-box></ais-search-box>',
