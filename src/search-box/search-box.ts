@@ -117,7 +117,7 @@ export class NgAisSearchBox extends BaseWidget implements AfterViewInit {
     }
   }
 
-  public handleSubmit(event: MouseEvent) {
+  public handleSubmit(event: Event) {
     // send submit event to parent component
     this.submit.emit(event);
 
