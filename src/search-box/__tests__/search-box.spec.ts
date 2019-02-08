@@ -98,7 +98,7 @@ describe('SearchBox', () => {
         expect(refine).toHaveBeenCalledWith('the query');
       });
 
-      it('should call refine when Form has been submit', () => {
+      it('should call refine when the form is submitted', () => {
         const form = fixture.debugElement.query(By.css('form'));
         form.nativeElement.dispatchEvent(new Event('submit'));
 
