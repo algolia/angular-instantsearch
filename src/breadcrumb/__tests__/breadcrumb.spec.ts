@@ -3,7 +3,7 @@ import { NgAisBreadcrumb } from '../breadcrumb';
 
 const defaultState = {
   createURL: jest.fn(),
-  items: [{ name: 'foo', value: 'foo' }, { name: 'bar', value: 'bar' }],
+  items: [{ label: 'foo', value: 'foo' }, { label: 'bar', value: 'bar' }],
   refine: jest.fn(),
 };
 
