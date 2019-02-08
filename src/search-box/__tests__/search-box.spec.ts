@@ -84,7 +84,7 @@ describe('SearchBox', () => {
         searchBox.dispatchEvent(new Event('input'));
       });
 
-      it('should not call refine as you user is typing', () => {
+      it('should not call refine on each keystroke', () => {
         expect(refine).toHaveBeenCalledTimes(0);
       });
 
