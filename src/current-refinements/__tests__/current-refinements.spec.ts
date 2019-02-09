@@ -6,42 +6,51 @@ import { bem } from '../../utils';
 const cx = bem('CurrentRefinements');
 
 const defaultState = {
-  attributes: {},
-  clearAllClick: jest.fn(),
-  clearAllURL: jest.fn(),
   createURL: jest.fn(),
-  refined: jest.fn(),
-  refinements: [
+  refine: jest.fn(),
+  items: [
     {
-      type: 'disjunctive',
-      attributeName: 'brand',
-      name: 'Canon',
-      count: 27,
-      exhaustive: true,
-      computedLabel: 'Canon',
+      attribute: 'brand',
+      refine: jest.fn(),
+      refinements: [
+        {
+          type: 'disjunctive',
+          count: 27,
+          exhaustive: true,
+          label: 'Canon',
+        },
+        {
+          type: 'disjunctive',
+          count: 28,
+          exhaustive: true,
+          label: 'Sony',
+        },
+      ],
     },
     {
-      type: 'disjunctive',
-      attributeName: 'brand',
-      name: 'Sony',
-      count: 28,
-      exhaustive: true,
-      computedLabel: 'Sony',
+      attribute: 'hierarchicalCategories.lvl0',
+      refine: jest.fn(),
+      refinements: [
+        {
+          type: 'hierarchical',
+          attribute: 'hierarchicalCategories.lvl0',
+          count: 55,
+          label: 'Cameras & Camcorders',
+        },
+      ],
     },
     {
-      type: 'hierarchical',
-      attributeName: 'hierarchicalCategories.lvl0',
-      name: 'Cameras & Camcorders',
-      count: 55,
-      computedLabel: 'Cameras & Camcorders',
-    },
-    {
-      type: 'numeric',
-      attributeName: 'popularity',
-      name: '0',
-      numericValue: 0,
-      operator: '>=',
-      computedLabel: '≥ 0',
+      attribute: 'popularity',
+      refine: jest.fn(),
+      refinements: [
+        {
+          attribute: 'popularity',
+          type: 'numeric',
+          numericValue: 0,
+          operator: '>=',
+          label: '≥ 0',
+        },
+      ],
     },
   ],
 };
@@ -73,16 +82,7 @@ describe('CurrentRefinedValues', () => {
     firstEl.click();
 
     expect(refine).toHaveBeenCalled();
-    expect(refine).toHaveBeenCalledWith(defaultState.refinements[0]);
-  });
-
-  it('should call clearAllClick() when clicking on clear all', () => {
-    const clearAllClick = jest.fn();
-    const fixture = render({ clearAllClick });
-
-    fixture.debugElement.nativeElement.querySelector(`.${cx('reset')}`).click();
-
-    expect(clearAllClick).toHaveBeenCalled();
+    expect(refine).toHaveBeenCalledWith(defaultState.items[0].refinements[0]);
   });
 
   it('should apply `transformItems` if specified', () => {
@@ -97,12 +97,12 @@ describe('CurrentRefinedValues', () => {
 
     expect(fixture).toMatchSnapshot();
   });
-
-  it('should be hidden with `autoHideContainer`', () => {
-    const fixture = render({ refinements: [] });
-    fixture.componentInstance.testedWidget.autoHideContainer = true;
-    fixture.detectChanges();
-
-    expect(fixture).toMatchSnapshot();
-  });
+  //
+  // it('should be hidden with `autoHideContainer`', () => {
+  //   const fixture = render({ refinements: [] });
+  //   fixture.componentInstance.testedWidget.autoHideContainer = true;
+  //   fixture.detectChanges();
+  //
+  //   expect(fixture).toMatchSnapshot();
+  // });
 });

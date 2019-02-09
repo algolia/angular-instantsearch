@@ -38,11 +38,11 @@ storiesOf('CurrentRefinements', module)
       `,
     }),
   }))
-  .add('with clearsQuery', () => ({
+  .add("with [includedAttributes]=\"['query', 'brand']", () => ({
     component: wrapWithHits({
       template: `
         <ais-panel header='Current refinements'>
-          <ais-current-refinements [clearsQuery]="true">
+          <ais-current-refinements [includedAttributes]="['query', 'brand']">
           </ais-current-refinements>
         </ais-panel>
       `,
