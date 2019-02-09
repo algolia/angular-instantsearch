@@ -21,7 +21,7 @@ storiesOf('ClearRefinements', module)
   .add('with clear refinements and query', () => ({
     component: wrapWithHits({
       template:
-        "<ais-clear-refinements [clearsQuery]='true'></ais-clear-refinements>",
+        "<ais-clear-refinements [includedAttributes]=\"['query', 'brand']\"></ais-clear-refinements>",
       searchParameters: {
         disjunctiveFacetsRefinements: { brand: ['Apple'] },
         disjunctiveFacets: ['brand'],
