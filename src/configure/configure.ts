@@ -5,7 +5,6 @@ import {
   forwardRef,
   KeyValueDiffer,
   KeyValueDiffers,
-  Testability,
 } from '@angular/core';
 
 import { connectConfigure } from 'instantsearch.js/es/connectors';
