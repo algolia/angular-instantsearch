@@ -25,6 +25,7 @@ storiesOf('RefinementList', module)
           <ais-refinement-list
             attribute="brand"
             operator="or"
+            [showMore]="true"
             [limit]="3"
             [showMoreLimit]="10"
           >
