@@ -112,6 +112,99 @@ describe('RefinementList', () => {
       fixture.detectChanges();
       return fixture;
     };
+    it('should not show [show more] button when showMore === false', () => {
+      const fixture = createFixture(
+        {},
+        {
+          limit: 5,
+        }
+      );
+
+      const showMoreBtn = fixture.debugElement.nativeElement.querySelector(
+        'button'
+      );
+      expect(showMoreBtn).toBe(null);
+    });
+
+    it('should show [show more] button when showMore === true', () => {
+      const fixture = createFixture(
+        {
+          toggleShowMore: jest.fn(),
+        },
+        {
+          showMore: true,
+          limit: 5,
+          showMoreLabel: 'Please more',
+          showLessLabel: 'Please less',
+        }
+      );
+
+      const showMoreBtn = fixture.debugElement.nativeElement.querySelector(
+        'button'
+      );
+      expect(showMoreBtn.innerHTML.trim()).toEqual('Please more');
+    });
+
+    it('should show [show more] button as disabled when canToggleShowMore === false', () => {
+      const fixture = createFixture(
+        {
+          toggleShowMore: jest.fn(),
+          canToggleShowMore: false,
+        },
+        {
+          showMore: true,
+          limit: 5,
+          showMoreLabel: 'Please more',
+          showLessLabel: 'Please less',
+        }
+      );
+
+      const showMoreBtn = fixture.debugElement.nativeElement.querySelector(
+        'button'
+      );
+      expect(showMoreBtn.disabled).toEqual(true);
+    });
+
+    it('should show [show more] button as enabled when canToggleShowMore === true', () => {
+      const fixture = createFixture(
+        {
+          toggleShowMore: jest.fn(),
+          canToggleShowMore: true,
+        },
+        {
+          showMore: true,
+          limit: 5,
+          showMoreLabel: 'Please more',
+          showLessLabel: 'Please less',
+        }
+      );
+
+      const showMoreBtn = fixture.debugElement.nativeElement.querySelector(
+        'button'
+      );
+      expect(showMoreBtn.disabled).toEqual(false);
+    });
+
+    it('should show [show less] button when isShowingMore === true', () => {
+      const fixture = createFixture(
+        {
+          toggleShowMore: jest.fn(),
+          isShowingMore: true,
+        },
+        {
+          showMore: true,
+          limit: 5,
+          showMoreLabel: 'Please more',
+          showLessLabel: 'Please less',
+        }
+      );
+
+      const showMoreBtn = fixture.debugElement.nativeElement.querySelector(
+        'button'
+      );
+      expect(showMoreBtn.innerHTML.trim()).toEqual('Please less');
+    });
+
     it('should have ais-RefinementList-showMore CSS class', () => {
       const fixture = createFixture(
         {
@@ -119,6 +212,7 @@ describe('RefinementList', () => {
           canToggleShowMore: true,
         },
         {
+          showMore: true,
           limit: 5,
           showMoreLimit: 10,
         }
@@ -140,6 +234,7 @@ describe('RefinementList', () => {
           canToggleShowMore: true,
         },
         {
+          showMore: true,
           limit: 5,
           showMoreLimit: 10,
         }
