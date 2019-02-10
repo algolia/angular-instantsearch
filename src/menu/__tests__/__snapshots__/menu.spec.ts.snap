@@ -101,7 +101,19 @@ exports[`Menu renders markup without state 1`] = `
 </ng-component>
 `;
 
-exports[`Menu should apply \`transformItems\` if specified 1`] = `
+exports[`Menu should be hidden with \`autoHideContainer\` 1`] = `
+<ng-component
+  testedWidget={[Function NgAisMenu]}
+>
+  <ais-instantsearch>
+    <ais-menu>
+      
+    </ais-menu>
+  </ais-instantsearch>
+</ng-component>
+`;
+
+exports[`Menu should show showMore button when [showMore]="true" 1`] = `
 <ng-component
   testedWidget={[Function NgAisMenu]}
 >
@@ -125,7 +137,7 @@ exports[`Menu should apply \`transformItems\` if specified 1`] = `
               <span
                 class="ais-Menu-label"
               >
-                transformed - foo
+                foo
               </span>
               <span
                 class="ais-Menu-count"
@@ -144,7 +156,7 @@ exports[`Menu should apply \`transformItems\` if specified 1`] = `
               <span
                 class="ais-Menu-label"
               >
-                transformed - bar
+                bar
               </span>
               <span
                 class="ais-Menu-count"
@@ -163,7 +175,7 @@ exports[`Menu should apply \`transformItems\` if specified 1`] = `
               <span
                 class="ais-Menu-label"
               >
-                transformed - foobar
+                foobar
               </span>
               <span
                 class="ais-Menu-count"
@@ -174,19 +186,12 @@ exports[`Menu should apply \`transformItems\` if specified 1`] = `
           </li>
         </ul>
         
+        <button
+          class="ais-Menu-showMore"
+        >
+           Show more 
+        </button>
       </div>
-    </ais-menu>
-  </ais-instantsearch>
-</ng-component>
-`;
-
-exports[`Menu should be hidden with \`autoHideContainer\` 1`] = `
-<ng-component
-  testedWidget={[Function NgAisMenu]}
->
-  <ais-instantsearch>
-    <ais-menu>
-      
     </ais-menu>
   </ais-instantsearch>
 </ng-component>

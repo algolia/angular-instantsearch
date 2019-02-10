@@ -3,15 +3,21 @@ import { Component, Input, Inject, forwardRef } from '@angular/core';
 import { connectMenu } from 'instantsearch.js/es/connectors';
 import { BaseWidget } from '../base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
-import { parseNumberInput, noop } from '../utils';
+import { noop } from '../utils';
+
+export type MenuItem = {
+  value: string;
+  label: string;
+  count: number;
+  isRefined: boolean;
+};
 
 export type MenuState = {
-  canRefine: boolean;
-  canToggleShowMore: boolean;
+  items: MenuItem[];
+  refine: Function;
   createURL: Function;
   isShowingMore: boolean;
-  items: {}[];
-  refine: Function;
+  canToggleShowMore: boolean;
   toggleShowMore: Function;
 };
 
@@ -25,7 +31,7 @@ export type MenuState = {
       <ul [class]="cx('list')">
         <li
           [class]="getItemClass(item)"
-          *ngFor="let item of items"
+          *ngFor="let item of state.items"
           (click)="handleClick($event, item.value)"
         >
           <a
@@ -40,9 +46,10 @@ export type MenuState = {
       </ul>
 
       <button
-        *ngIf="showMoreLimit && state.canToggleShowMore"
+        *ngIf="showMore"
         (click)="state.toggleShowMore()"
         [class]="showMoreClass"
+        [disabled]="!state.canToggleShowMore"
       >
         {{state.isShowingMore ? showLessLabel : showMoreLabel}}
       </button>
@@ -53,21 +60,21 @@ export class NgAisMenu extends BaseWidget {
   // render options
   @Input() public showMoreLabel: string = 'Show more';
   @Input() public showLessLabel: string = 'Show less';
-  @Input() public transformItems?: Function;
 
   // connector options
   @Input() public attribute: string;
-  @Input() public limit?: number | string = 10;
-  @Input() public showMoreLimit?: number | string;
+  @Input() public showMore?: boolean;
+  @Input() public limit?: number;
+  @Input() public showMoreLimit?: number;
   @Input() public sortBy?: string[] | ((item: object) => number);
+  @Input() public transformItems?: (items: MenuItem[]) => MenuItem[];
 
   public state: MenuState = {
-    canRefine: false,
-    canToggleShowMore: false,
-    createURL: noop,
-    isShowingMore: false,
     items: [],
     refine: noop,
+    createURL: noop,
+    isShowingMore: false,
+    canToggleShowMore: false,
     toggleShowMore: noop,
   };
 
@@ -85,12 +92,6 @@ export class NgAisMenu extends BaseWidget {
     return className;
   }
 
-  get items() {
-    return typeof this.transformItems === 'function'
-      ? this.transformItems(this.state.items)
-      : this.state.items;
-  }
-
   constructor(
     @Inject(forwardRef(() => NgAisInstantSearch))
     public instantSearchParent: any
@@ -100,10 +101,12 @@ export class NgAisMenu extends BaseWidget {
 
   public ngOnInit() {
     this.createWidget(connectMenu, {
-      limit: parseNumberInput(this.limit),
-      showMoreLimit: parseNumberInput(this.showMoreLimit),
-      attributeName: this.attribute,
+      attribute: this.attribute,
+      showMore: this.showMore,
+      limit: this.limit,
+      showMoreLimit: this.showMoreLimit,
       sortBy: this.sortBy,
+      transformItems: this.transformItems,
     });
 
     super.ngOnInit();

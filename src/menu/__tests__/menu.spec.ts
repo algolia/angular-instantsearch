@@ -45,25 +45,36 @@ describe('Menu', () => {
     expect(refine).toHaveBeenCalledWith(defaultState.items[0].value);
   });
 
+  it('should show showMore button when [showMore]="true"', () => {
+    const fixture = render({ canToggleShowMore: true });
+
+    fixture.componentInstance.testedWidget.showMore = true;
+    fixture.detectChanges();
+    expect(fixture).toMatchSnapshot();
+  });
+
+  it('should show disabled showMore button when !state.canToggleShowMore', () => {
+    const fixture = render({ canToggleShowMore: false });
+
+    fixture.componentInstance.testedWidget.showMore = true;
+    fixture.detectChanges();
+    expect(
+      fixture.debugElement.nativeElement.querySelector('button').disabled
+    ).toBe(true);
+  });
+
   it('should call toggleShowMore() when possible', () => {
     const toggleShowMore = jest.fn();
     const fixture = render({ toggleShowMore, canToggleShowMore: true });
 
+    fixture.componentInstance.testedWidget.showMore = true;
     fixture.componentInstance.testedWidget.limit = 3;
     fixture.componentInstance.testedWidget.showMoreLimit = 4;
     fixture.detectChanges();
 
     fixture.debugElement.nativeElement.querySelector('button').click();
 
-    expect(toggleShowMore).toHaveBeenCalled();
-  });
-
-  it('should apply `transformItems` if specified', () => {
-    const fixture = render({});
-    fixture.componentInstance.testedWidget.transformItems = items =>
-      items.map(item => ({ ...item, label: `transformed - ${item.label}` }));
-    fixture.detectChanges();
-    expect(fixture).toMatchSnapshot();
+    expect(toggleShowMore).toHaveBeenCalledTimes(1);
   });
 
   it('should be hidden with `autoHideContainer`', () => {
