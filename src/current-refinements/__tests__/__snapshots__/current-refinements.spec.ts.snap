@@ -20,7 +20,7 @@ exports[`CurrentRefinedValues renders markup with state 1`] = `
             <span
               class="ais-CurrentRefinements-label"
             >
-              brand:
+              Brand:
             </span>
             
             <span
@@ -62,7 +62,7 @@ exports[`CurrentRefinedValues renders markup with state 1`] = `
             <span
               class="ais-CurrentRefinements-label"
             >
-              hierarchicalCategories.lvl0:
+              Hierarchicalcategories.Lvl0:
             </span>
             
             <span
@@ -90,7 +90,7 @@ exports[`CurrentRefinedValues renders markup with state 1`] = `
             <span
               class="ais-CurrentRefinements-label"
             >
-              popularity:
+              Popularity:
             </span>
             
             <span
@@ -132,7 +132,7 @@ exports[`CurrentRefinedValues renders markup without state 1`] = `
 </ng-component>
 `;
 
-exports[`CurrentRefinedValues should apply \`transformItems\` if specified 1`] = `
+exports[`CurrentRefinedValues should be hidden with \`autoHideContainer\` 1`] = `
 <ng-component
   testedWidget={[Function NgAisCurrentRefinements]}
 >
@@ -152,7 +152,7 @@ exports[`CurrentRefinedValues should apply \`transformItems\` if specified 1`] =
             <span
               class="ais-CurrentRefinements-label"
             >
-              brand:
+              Brand:
             </span>
             
             <span
@@ -194,7 +194,7 @@ exports[`CurrentRefinedValues should apply \`transformItems\` if specified 1`] =
             <span
               class="ais-CurrentRefinements-label"
             >
-              hierarchicalCategories.lvl0:
+              Hierarchicalcategories.Lvl0:
             </span>
             
             <span
@@ -222,7 +222,7 @@ exports[`CurrentRefinedValues should apply \`transformItems\` if specified 1`] =
             <span
               class="ais-CurrentRefinements-label"
             >
-              popularity:
+              Popularity:
             </span>
             
             <span

@@ -3,24 +3,26 @@ import { Component, Input, Inject, forwardRef } from '@angular/core';
 import { connectCurrentRefinements } from 'instantsearch.js/es/connectors';
 import { BaseWidget } from '../base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
-import { noop, capitalize } from '../utils';
+import { noop } from '../utils';
+
+export type CurrentRefinementsItem = {
+  attribute: string;
+  refine: Function;
+  refinements: {
+    type: string;
+    attribute: string;
+    label: string;
+    value: string;
+    operator?: string;
+    exhaustive?: boolean;
+    count?: number;
+  }[];
+};
 
 export type CurrentRefinementsState = {
   createURL: Function;
   refine: Function;
-  items: {
-    attribute: string;
-    refine: Function;
-    refinements: {
-      type: string;
-      attribute: string;
-      label: string;
-      value: string;
-      operator?: string;
-      exhaustive?: boolean;
-      count?: number;
-    }[];
-  }[];
+  items: CurrentRefinementsItem[];
 };
 
 @Component({
@@ -35,7 +37,7 @@ export type CurrentRefinementsState = {
         *ngFor="let item of state.items"
       >
         <li [class]="cx('item')">
-          <span [class]="cx('label')">{{item.attribute}}:</span>
+          <span [class]="cx('label')">{{item.attribute | titlecase}}:</span>
 
           <span
             [class]="cx('category')"
@@ -51,9 +53,12 @@ export type CurrentRefinementsState = {
 })
 export class NgAisCurrentRefinements extends BaseWidget {
   // connector options
-  @Input() public includedAttributes: string[];
-  @Input() public excludeAttributes: string[];
-  @Input() public transformItems?: Function;
+  @Input() public includedAttributes?: string[];
+  @Input() public excludeAttributes?: string[];
+  @Input()
+  public transformItems?: (
+    items: CurrentRefinementsItem[]
+  ) => CurrentRefinementsItem[];
 
   public state: CurrentRefinementsState = {
     createURL: noop,
@@ -76,7 +81,7 @@ export class NgAisCurrentRefinements extends BaseWidget {
     this.createWidget(connectCurrentRefinements, {
       includedAttributes: this.includedAttributes,
       excludeAttributes: this.excludeAttributes,
-      transformItems: this.transformItems
+      transformItems: this.transformItems,
     });
     super.ngOnInit();
   }
