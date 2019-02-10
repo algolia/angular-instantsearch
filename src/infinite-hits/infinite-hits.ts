@@ -32,7 +32,7 @@ import { noop } from '../utils';
       </div>
 
       <button
-        [class]="cx('showMore')"
+        [ngClass]="[cx('loadMore'), this.state.isLastPage ? cx('loadMore', 'disabled') : '']"
         (click)="showMore($event)"
         [disabled]="state.isLastPage"
         *ngIf="!template"
