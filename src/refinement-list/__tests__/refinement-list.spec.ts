@@ -56,11 +56,11 @@ describe('RefinementList', () => {
     });
     it('should be called with attributeName undefined by default', () => {
       render(`<ais-refinement-list></ais-refinement-list>\``);
-      expect(createWidget.mock.calls[0][1].attributeName).toBeUndefined();
+      expect(createWidget.mock.calls[0][1].attribute).toBeUndefined();
     });
     it('should be called with attributeName passed down by attribute prop', () => {
       render(`<ais-refinement-list attribute="brands"></ais-refinement-list>`);
-      expect(createWidget.mock.calls[0][1].attributeName).toEqual('brands');
+      expect(createWidget.mock.calls[0][1].attribute).toEqual('brands');
     });
     it('should be called with limit 10 by default', () => {
       render(`<ais-refinement-list></ais-refinement-list>`);
@@ -95,6 +95,12 @@ describe('RefinementList', () => {
     it('should be called with sortBy passed down as prop', () => {
       render(`<ais-refinement-list sortBy="name"></ais-refinement-list>`);
       expect(createWidget.mock.calls[0][1].sortBy).toEqual('name');
+    });
+    it('should be called with sortBy passed down as prop', () => {
+      render(
+        `<ais-refinement-list [transformItems]="'func'"></ais-refinement-list>`
+      );
+      expect(createWidget.mock.calls[0][1].transformItems).toEqual('func');
     });
     it('should be called with escapeFacetValues true by default', () => {
       render(`<ais-refinement-list></ais-refinement-list>`);
