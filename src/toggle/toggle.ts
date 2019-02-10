@@ -1,6 +1,6 @@
 import { Component, Input, Inject, forwardRef } from '@angular/core';
 
-import { connectToggle } from 'instantsearch.js/es/connectors';
+import { connectToggleRefinement } from 'instantsearch.js/es/connectors';
 import { BaseWidget } from '../base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { noop } from '../utils';
@@ -12,6 +12,14 @@ export type ToggleState = {
     name?: string;
     count?: number;
     isRefined?: boolean;
+    onFacetValue?: {
+      isRefined: boolean;
+      count: number;
+    };
+    offFacetValue?: {
+      isRefined: boolean;
+      count: number;
+    };
   };
 };
 
@@ -43,11 +51,12 @@ export type ToggleState = {
   `,
 })
 export class NgAisToggle extends BaseWidget {
+  @Input() public label: string;
+
   // connector options
   @Input() public attribute: string;
-  @Input() public label: string;
-  @Input()
-  public values: { on?: boolean; off?: boolean } = { on: true, off: undefined };
+  @Input() on: boolean | number | string = true;
+  @Input() off: boolean | number | string = undefined;
 
   public state: ToggleState = {
     createURL: noop,
@@ -63,10 +72,10 @@ export class NgAisToggle extends BaseWidget {
   }
 
   public ngOnInit() {
-    this.createWidget(connectToggle, {
-      attributeName: this.attribute,
-      label: this.label,
-      values: this.values,
+    this.createWidget(connectToggleRefinement, {
+      attribute: this.attribute,
+      on: this.on,
+      off: this.off,
     });
     super.ngOnInit();
   }
