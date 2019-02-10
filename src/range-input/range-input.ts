@@ -105,7 +105,7 @@ export class NgAisRangeInput extends BaseWidget {
     super.ngOnInit();
   }
 
-  public handleChange(event: any, type: 'max' | 'min') {
+  public handleChange(event: any, type: string) {
     const value = parseNumberInput(event.target.value);
 
     if (type === 'min') {

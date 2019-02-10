@@ -32,9 +32,9 @@ export class NgAisRangeSlider extends BaseWidget {
 
   // connector options
   @Input() public attribute: string;
-  @Input() public min?: number | string;
-  @Input() public max?: number | string;
-  @Input() public precision: number | string = 2;
+  @Input() public min?: number;
+  @Input() public max?: number;
+  @Input() public precision?: number = 2;
 
   public state: RangeSliderState = {
     range: { min: 0, max: 1 },
@@ -59,7 +59,7 @@ export class NgAisRangeSlider extends BaseWidget {
 
   public ngOnInit() {
     this.createWidget(connectRange, {
-      attributeName: this.attribute,
+      attribute: this.attribute,
       max: parseNumberInput(this.max),
       min: parseNumberInput(this.min),
       precision: parseNumberInput(this.precision),
