@@ -107,20 +107,20 @@ describe('CurrentRefinedValues', () => {
     createWidget.mockRestore();
   });
 
-  it('should be pass over [excludeAttributes]', () => {
+  it('should be pass over [excludedAttributes]', () => {
     const createWidget = jest.spyOn(
       NgAisCurrentRefinements.prototype,
       'createWidget'
     );
 
     render(
-      `<ais-current-refinements [excludeAttributes]="['brands']"></ais-current-refinements>`
+      `<ais-current-refinements [excludedAttributes]="['brands']"></ais-current-refinements>`
     )({});
 
     expect(createWidget).toHaveBeenCalledTimes(1);
     expect(createWidget).toHaveBeenLastCalledWith(
       connectCurrentRefinements,
-      expect.objectContaining({ excludeAttributes: ['brands'] })
+      expect.objectContaining({ excludedAttributes: ['brands'] })
     );
     createWidget.mockRestore();
   });

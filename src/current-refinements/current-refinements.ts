@@ -54,7 +54,7 @@ export type CurrentRefinementsState = {
 export class NgAisCurrentRefinements extends BaseWidget {
   // connector options
   @Input() public includedAttributes?: string[];
-  @Input() public excludeAttributes?: string[];
+  @Input() public excludedAttributes?: string[];
   @Input()
   public transformItems?: (
     items: CurrentRefinementsItem[]
@@ -80,7 +80,7 @@ export class NgAisCurrentRefinements extends BaseWidget {
   public ngOnInit() {
     this.createWidget(connectCurrentRefinements, {
       includedAttributes: this.includedAttributes,
-      excludeAttributes: this.excludeAttributes,
+      excludedAttributes: this.excludedAttributes,
       transformItems: this.transformItems,
     });
     super.ngOnInit();

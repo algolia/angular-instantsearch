@@ -24,7 +24,7 @@ import { noop } from '../utils';
 export class NgAisClearRefinements extends BaseWidget {
   @Input() public resetLabel: string = 'Clear refinements';
   @Input() public includedAttributes: string[] = [];
-  @Input() public excludeAttributes: string[] = [];
+  @Input() public excludedAttributes: string[] = [];
   // TODO: add transformItems
 
   public state = {
@@ -47,7 +47,7 @@ export class NgAisClearRefinements extends BaseWidget {
   public ngOnInit() {
     this.createWidget(connectClearRefinements, {
       includedAttributes: this.includedAttributes,
-      excludeAttributes: this.excludeAttributes,
+      excludedAttributes: this.excludedAttributes,
     });
 
     super.ngOnInit();
