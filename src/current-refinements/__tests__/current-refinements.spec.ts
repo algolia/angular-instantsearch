@@ -89,7 +89,7 @@ describe('CurrentRefinedValues', () => {
     expect(refine).toHaveBeenCalledWith(defaultState.items[0].refinements[0]);
   });
 
-  it('should be pass over [includedAttributes]', () => {
+  it('should pass over [includedAttributes]', () => {
     const createWidget = jest.spyOn(
       NgAisCurrentRefinements.prototype,
       'createWidget'
@@ -107,7 +107,7 @@ describe('CurrentRefinedValues', () => {
     createWidget.mockRestore();
   });
 
-  it('should be pass over [excludedAttributes]', () => {
+  it('should pass over [excludedAttributes]', () => {
     const createWidget = jest.spyOn(
       NgAisCurrentRefinements.prototype,
       'createWidget'

@@ -67,7 +67,8 @@ export class NgAisMenu extends BaseWidget {
   @Input() public limit?: number;
   @Input() public showMoreLimit?: number;
   @Input() public sortBy?: string[] | ((item: object) => number);
-  @Input() public transformItems?: (items: MenuItem[]) => MenuItem[];
+  @Input()
+  public transformItems?: <U extends MenuItem>(items: MenuItem[]) => U[];
 
   public state: MenuState = {
     items: [],

@@ -88,7 +88,9 @@ export class NgAisRefinementList extends BaseWidget {
   @Input() public showMoreLimit: number;
   @Input() public sortBy: string[] | ((item: object) => number);
   @Input()
-  public transformItems?: (items: RefinementListItem[]) => RefinementListItem[];
+  public transformItems?: <U extends RefinementListItem>(
+    items: RefinementListItem[]
+  ) => U[];
 
   public state: RefinementListState = {
     canRefine: false,

@@ -56,9 +56,9 @@ export class NgAisCurrentRefinements extends BaseWidget {
   @Input() public includedAttributes?: string[];
   @Input() public excludedAttributes?: string[];
   @Input()
-  public transformItems?: (
+  public transformItems?: <U extends CurrentRefinementsItem>(
     items: CurrentRefinementsItem[]
-  ) => CurrentRefinementsItem[];
+  ) => U[];
 
   public state: CurrentRefinementsState = {
     createURL: noop,
