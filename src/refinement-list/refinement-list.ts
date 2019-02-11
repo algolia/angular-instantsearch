@@ -84,7 +84,7 @@ export class NgAisRefinementList extends BaseWidget {
   @Input() public attribute: string;
   @Input() public operator: 'or' | 'and' = 'or';
   @Input() public limit: number = 10;
-  @Input() public showMore?: boolean;
+  @Input() public showMore: boolean;
   @Input() public showMoreLimit: number;
   @Input() public sortBy: string[] | ((item: object) => number);
   @Input()
