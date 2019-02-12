@@ -22,9 +22,12 @@ import { noop } from '../utils';
   `,
 })
 export class NgAisClearRefinements extends BaseWidget {
+  // rendering options
   @Input() public resetLabel: string = 'Clear refinements';
-  @Input() public includedAttributes: string[] = [];
-  @Input() public excludedAttributes: string[] = [];
+
+  // instance options
+  @Input() public includedAttributes: string[];
+  @Input() public excludedAttributes: string[];
   // TODO: add transformItems
 
   public state = {

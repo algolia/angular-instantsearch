@@ -34,12 +34,12 @@ export class NgAisHierarchicalMenu extends BaseWidget {
   // render option
   @Input() public transformItems?: Function;
 
-  // connector options
+  // instance options
   @Input() public attributes: string[];
-  @Input() public separator?: string = ' > ';
+  @Input() public separator?: string;
   @Input() public rootPath?: string;
   @Input() public showParentLevel?: boolean;
-  @Input() public limit?: number | string = 10;
+  @Input() public limit?: number | string;
   @Input() public sortBy?: string[] | ((item: object) => number);
 
   public state: HierarchicalMenuState = {

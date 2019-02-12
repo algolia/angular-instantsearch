@@ -26,15 +26,15 @@ export type RangeSliderState = {
 export class NgAisRangeSlider extends BaseWidget {
   @ViewChild('sliderContainer') public sliderContainer: any;
 
-  // render options
+  // rendering options
   @Input() public pips: boolean = true;
   @Input() public tooltips: boolean = true;
 
-  // connector options
+  // instance options
   @Input() public attribute: string;
   @Input() public min?: number;
   @Input() public max?: number;
-  @Input() public precision?: number = 2;
+  @Input() public precision?: number;
 
   public state: RangeSliderState = {
     range: { min: 0, max: 1 },

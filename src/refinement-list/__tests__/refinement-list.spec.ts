@@ -62,9 +62,9 @@ describe('RefinementList', () => {
       render(`<ais-refinement-list attribute="brands"></ais-refinement-list>`);
       expect(createWidget.mock.calls[0][1].attribute).toEqual('brands');
     });
-    it('should be called with limit 10 by default', () => {
+    it('should be called with limit undefined by default', () => {
       render(`<ais-refinement-list></ais-refinement-list>`);
-      expect(createWidget.mock.calls[0][1].limit).toEqual(10);
+      expect(createWidget.mock.calls[0][1].limit).toEqual(undefined);
     });
     it('should be called with limit passed down as prop', () => {
       render(`<ais-refinement-list [limit]="30"></ais-refinement-list>`);
@@ -79,10 +79,6 @@ describe('RefinementList', () => {
         `<ais-refinement-list [showMoreLimit]="30"></ais-refinement-list>`
       );
       expect(createWidget.mock.calls[0][1].showMoreLimit).toEqual(30);
-    });
-    it('should be called with operator "or" by default', () => {
-      render(`<ais-refinement-list></ais-refinement-list>`);
-      expect(createWidget.mock.calls[0][1].operator).toEqual('or');
     });
     it('should be called with operator passed down as prop', () => {
       render(`<ais-refinement-list operator="and"></ais-refinement-list>`);

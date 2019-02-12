@@ -5,7 +5,7 @@ import { BaseWidget } from '../base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { noop } from '../utils';
 
-export type ResultsPerPageState = {
+export type HitsPerPageState = {
   items: {}[];
   refine: Function;
 };
@@ -41,7 +41,7 @@ export class NgAisHitsPerPage extends BaseWidget {
     default?: boolean;
   }[];
 
-  public state: ResultsPerPageState = {
+  public state: HitsPerPageState = {
     items: [],
     refine: noop,
   };

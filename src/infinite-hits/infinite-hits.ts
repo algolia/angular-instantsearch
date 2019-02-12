@@ -45,7 +45,7 @@ import { noop } from '../utils';
 export class NgAisInfiniteHits extends BaseWidget {
   @ContentChild(TemplateRef) public template?: any;
 
-  // render options
+  // rendering options
   @Input() public showMoreLabel: string = 'Show more results';
   @Input() public transformItems?: Function;
 

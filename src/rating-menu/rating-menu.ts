@@ -3,7 +3,7 @@ import { Component, Input, Inject, forwardRef } from '@angular/core';
 import { connectRatingMenu } from 'instantsearch.js/es/connectors';
 import { BaseWidget } from '../base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
-import { noop } from '../utils';
+import { noop, parseNumberInput } from "../utils";
 
 export type RatingMenuItem = {
   count: number;
@@ -84,10 +84,10 @@ export type RatingMenuState = {
   `,
 })
 export class NgAisRatingMenu extends BaseWidget {
-  // render options
+  // rendering options
   @Input() public andUpLabel: string = '& Up';
 
-  // connectors options
+  // instance options
   @Input() public attribute: string;
   @Input() public max?: number;
 
@@ -112,7 +112,7 @@ export class NgAisRatingMenu extends BaseWidget {
   public ngOnInit() {
     this.createWidget(connectRatingMenu, {
       attribute: this.attribute,
-      max: this.max,
+      max: parseNumberInput(this.max),
     });
     super.ngOnInit();
   }

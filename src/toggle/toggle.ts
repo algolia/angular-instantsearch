@@ -51,12 +51,13 @@ export type ToggleState = {
   `,
 })
 export class NgAisToggle extends BaseWidget {
+  // rendering options
   @Input() public label: string;
 
-  // connector options
+  // instance options
   @Input() public attribute: string;
-  @Input() on: boolean | number | string = true;
-  @Input() off: boolean | number | string = undefined;
+  @Input() on: boolean | number | string;
+  @Input() off: boolean | number | string;
 
   public state: ToggleState = {
     createURL: noop,

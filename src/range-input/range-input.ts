@@ -61,20 +61,20 @@ export type NumericRangeState = {
   `,
 })
 export class NgAisRangeInput extends BaseWidget {
-  // render options
+  // rendering options
   @Input() public currency: string = '$';
   @Input() public separator: string = 'to';
   @Input() public submitLabel: string = 'Go';
 
-  // connector options
+  // instance options
   @Input() public attribute: string;
   @Input() public min?: number;
   @Input() public max?: number;
-  @Input() public precision?: number = 2;
+  @Input() public precision?: number;
 
   // inner state
-  public minInputValue?: number | string = '';
-  public maxInputValue?: number | string = '';
+  private minInputValue?: number | string = '';
+  private maxInputValue?: number | string = '';
 
   get step() {
     const precision = parseNumberInput(this.precision) || 2;
@@ -97,9 +97,9 @@ export class NgAisRangeInput extends BaseWidget {
   public ngOnInit() {
     this.createWidget(connectRange, {
       attribute: this.attribute,
-      max: this.max,
-      min: this.min,
-      precision: this.precision,
+      max: parseNumberInput(this.max),
+      min: parseNumberInput(this.min),
+      precision: parseNumberInput(this.precision),
     });
 
     super.ngOnInit();

@@ -53,11 +53,11 @@ export type BreadcrumbItem = {
   `,
 })
 export class NgAisBreadcrumb extends BaseWidget {
-  // connector options
+  // instance options
   @Input() public attributes: string[];
   @Input() public rootPath?: string;
-  // TODO: add separator
-  // TODO: add transformItems
+  // TODO: add separator?
+  // TODO: add transformItems?
 
   get isHidden() {
     return this.state.items.length === 0 && this.autoHideContainer;

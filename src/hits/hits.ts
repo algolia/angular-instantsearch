@@ -35,7 +35,7 @@ import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 export class NgAisHits extends BaseWidget {
   @ContentChild(TemplateRef) public template?: TemplateRef<any>;
 
-  // render options
+  // rendering options
   @Input() transformItems?: Function;
 
   // inner widget state returned from connector

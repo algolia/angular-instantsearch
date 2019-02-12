@@ -57,11 +57,11 @@ export type MenuState = {
   `,
 })
 export class NgAisMenu extends BaseWidget {
-  // render options
+  // rendering options
   @Input() public showMoreLabel: string = 'Show more';
   @Input() public showLessLabel: string = 'Show less';
 
-  // connector options
+  // instance options
   @Input() public attribute: string;
   @Input() public showMore?: boolean;
   @Input() public limit?: number;

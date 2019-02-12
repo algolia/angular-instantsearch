@@ -52,7 +52,7 @@ export type CurrentRefinementsState = {
   `,
 })
 export class NgAisCurrentRefinements extends BaseWidget {
-  // connector options
+  // instance options
   @Input() public includedAttributes?: string[];
   @Input() public excludedAttributes?: string[];
   @Input()

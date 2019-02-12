@@ -104,14 +104,14 @@ import { parseNumberInput, noop } from '../utils';
   `,
 })
 export class NgAisPagination extends BaseWidget {
-  // render options
+  // rendering options
   @Input() public showFirst: boolean = true;
   @Input() public showLast: boolean = false;
   @Input() public showPrevious: boolean = true;
   @Input() public showNext: boolean = true;
   @Input() public padding: number | string = 3;
 
-  // connector optionsw
+  // instance options
   @Input() public totalPages?: number | string;
 
   public state = {

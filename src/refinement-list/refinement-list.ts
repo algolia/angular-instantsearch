@@ -2,7 +2,7 @@ import { Component, Input, Inject, forwardRef } from '@angular/core';
 import { connectRefinementList } from 'instantsearch.js/es/connectors';
 import { BaseWidget } from '../base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
-import { noop } from '../utils';
+import { noop, parseNumberInput } from "../utils";
 
 export type RefinementListItem = {
   value: string;
@@ -74,16 +74,16 @@ export type RefinementListState = {
   `,
 })
 export class NgAisRefinementList extends BaseWidget {
-  // render options
+  // rendering options
   @Input() public showMoreLabel: string = 'Show more';
   @Input() public showLessLabel: string = 'Show less';
   @Input() public searchable?: boolean;
   @Input() public searchPlaceholder: string = 'Search here...';
 
-  // connectors options
+  // instance options
   @Input() public attribute: string;
-  @Input() public operator: 'or' | 'and' = 'or';
-  @Input() public limit: number = 10;
+  @Input() public operator: 'or' | 'and';
+  @Input() public limit: number;
   @Input() public showMore: boolean;
   @Input() public showMoreLimit: number;
   @Input() public sortBy: string[] | ((item: object) => number);
@@ -118,8 +118,8 @@ export class NgAisRefinementList extends BaseWidget {
   public ngOnInit() {
     this.createWidget(connectRefinementList, {
       showMore: this.showMore,
-      limit: this.limit,
-      showMoreLimit: this.showMoreLimit,
+      limit: parseNumberInput(this.limit),
+      showMoreLimit: parseNumberInput(this.showMoreLimit),
       attribute: this.attribute,
       operator: this.operator,
       sortBy: this.sortBy,

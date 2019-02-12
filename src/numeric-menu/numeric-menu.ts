@@ -11,7 +11,7 @@ export type NumericMenuItem = {
   isRefined: boolean;
 };
 
-export type NumericRefinementListState = {
+export type NumericMenuState = {
   createURL: Function;
   items: NumericMenuItem[];
   refine: Function;
@@ -50,7 +50,7 @@ export class NgAisNumericMenu extends BaseWidget {
   @Input() public items: { label: string; start?: number; end?: number }[];
   // TODO: add prop transformItem
 
-  public state: NumericRefinementListState = {
+  public state: NumericMenuState = {
     items: [],
     refine: noop,
     createURL: noop,
