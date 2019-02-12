@@ -1,4 +1,4 @@
-# [2.2.0](https://github.com/algolia/angular-instantsearch/compare/2.1.0...2.2.0) (2019-02-11)
+## [2.2.1](https://github.com/algolia/angular-instantsearch/compare/2.2.0...2.2.1) (2019-02-12)
 
 
 ### Bug Fixes
