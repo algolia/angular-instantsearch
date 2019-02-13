@@ -10,6 +10,8 @@ export type CurrentRefinementsItem = {
   refine: Function;
   refinements: {
     type: string;
+    // TODO: create multiple types for each of the available refinement
+    // https://github.com/algolia/angular-instantsearch/pull/463#discussion_r255911232
     attribute: string;
     label: string;
     value: string;
