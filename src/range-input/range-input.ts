@@ -73,8 +73,8 @@ export class NgAisRangeInput extends BaseWidget {
   @Input() public precision?: number;
 
   // inner state
-  private minInputValue?: number | string = '';
-  private maxInputValue?: number | string = '';
+  public minInputValue?: number | string = '';
+  public maxInputValue?: number | string = '';
 
   get step() {
     const precision = parseNumberInput(this.precision) || 2;
