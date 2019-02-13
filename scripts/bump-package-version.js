@@ -30,7 +30,7 @@ console.log(`Bumping ${newVersion}`);
 console.log('..Updating src/version.ts');
 
 const versionFile = path.join(__dirname, '../src/version.ts');
-const newContent = `export const VERSION = "${newVersion}";\n`;
+const newContent = `export const VERSION = '${newVersion}';\n`;
 fs.writeFileSync(versionFile, newContent);
 
 console.log('..Updating package.json');
