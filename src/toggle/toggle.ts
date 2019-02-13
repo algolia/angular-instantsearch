@@ -56,8 +56,8 @@ export class NgAisToggle extends BaseWidget {
 
   // instance options
   @Input() public attribute: string;
-  @Input() on: boolean | number | string;
-  @Input() off: boolean | number | string;
+  @Input() public on?: boolean | number | string;
+  @Input() public off?: boolean | number | string;
 
   public state: ToggleState = {
     createURL: noop,
