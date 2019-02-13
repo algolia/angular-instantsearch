@@ -2,7 +2,7 @@ import { Component, Input, Inject, forwardRef } from '@angular/core';
 import { connectRefinementList } from 'instantsearch.js/es/connectors';
 import { BaseWidget } from '../base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
-import { noop, parseNumberInput } from "../utils";
+import { noop, parseNumberInput } from '../utils';
 
 export type RefinementListItem = {
   value: string;
