@@ -1,14 +1,22 @@
 import { Component, Input, Inject, forwardRef } from '@angular/core';
 
-import { connectStarRating } from 'instantsearch.js/es/connectors';
+import { connectRatingMenu } from 'instantsearch.js/es/connectors';
 import { BaseWidget } from '../base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
-import { noop } from '../utils';
+import { noop, parseNumberInput } from '../utils';
+
+export type RatingMenuItem = {
+  count: number;
+  isRefined: boolean;
+  name: string;
+  value: string;
+  stars: boolean[];
+};
 
 export type RatingMenuState = {
   createURL: Function;
   hasNoResults: boolean;
-  items: {}[];
+  items: RatingMenuItem[];
   refine: Function;
 };
 
@@ -76,12 +84,12 @@ export type RatingMenuState = {
   `,
 })
 export class NgAisRatingMenu extends BaseWidget {
-  // render options
+  // rendering options
   @Input() public andUpLabel: string = '& Up';
 
-  // connectors options
+  // instance options
   @Input() public attribute: string;
-  @Input() public max?: number = 5;
+  @Input() public max?: number;
 
   public state: RatingMenuState = {
     createURL: noop,
@@ -102,9 +110,9 @@ export class NgAisRatingMenu extends BaseWidget {
   }
 
   public ngOnInit() {
-    this.createWidget(connectStarRating, {
-      attributeName: this.attribute,
-      max: this.max,
+    this.createWidget(connectRatingMenu, {
+      attribute: this.attribute,
+      max: parseNumberInput(this.max),
     });
     super.ngOnInit();
   }

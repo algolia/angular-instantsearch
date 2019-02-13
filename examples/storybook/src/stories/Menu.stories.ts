@@ -16,7 +16,9 @@ storiesOf('Menu', module)
           <ais-menu
             attribute="categories"
             [limit]="3"
+            [showMore]="true"
             [showMoreLimit]="10"
+            
           >
           </ais-menu>
         </ais-panel>

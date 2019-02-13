@@ -15,7 +15,7 @@
     "@angular/platform-browser-dynamic": "7.0.2",
     "angular-instantsearch": "2.1.0",
     "core-js": "2.5.4",
-    "instantsearch.js": "2.10.4",
+    "instantsearch.js": "^3.1.0",
     "rxjs": "6.3.3",
     "zone.js": "0.8.26"
   },

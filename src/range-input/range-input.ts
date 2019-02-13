@@ -6,9 +6,9 @@ import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { parseNumberInput, noop } from '../utils';
 
 export type NumericRangeState = {
+  start: number[];
   range: { min?: number; max?: number };
   refine: Function;
-  start: number[];
 };
 
 @Component({
@@ -61,16 +61,16 @@ export type NumericRangeState = {
   `,
 })
 export class NgAisRangeInput extends BaseWidget {
-  // render options
+  // rendering options
   @Input() public currency: string = '$';
   @Input() public separator: string = 'to';
   @Input() public submitLabel: string = 'Go';
 
-  // connector options
+  // instance options
   @Input() public attribute: string;
-  @Input() public min?: number | string;
-  @Input() public max?: number | string;
-  @Input() public precision: number | string = 2;
+  @Input() public min?: number;
+  @Input() public max?: number;
+  @Input() public precision?: number;
 
   // inner state
   public minInputValue?: number | string = '';
@@ -96,7 +96,7 @@ export class NgAisRangeInput extends BaseWidget {
 
   public ngOnInit() {
     this.createWidget(connectRange, {
-      attributeName: this.attribute,
+      attribute: this.attribute,
       max: parseNumberInput(this.max),
       min: parseNumberInput(this.min),
       precision: parseNumberInput(this.precision),

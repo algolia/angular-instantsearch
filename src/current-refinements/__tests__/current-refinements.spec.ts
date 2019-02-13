@@ -1,105 +1,155 @@
 import { createRenderer } from '../../../helpers/test-renderer';
+import { connectCurrentRefinements } from 'instantsearch.js/es/connectors';
 import { NgAisCurrentRefinements } from '../current-refinements';
 
-import { bem } from '../../utils';
-
-const cx = bem('CurrentRefinements');
-
 const defaultState = {
-  attributes: {},
-  clearAllClick: jest.fn(),
-  clearAllURL: jest.fn(),
   createURL: jest.fn(),
-  refined: jest.fn(),
-  refinements: [
+  refine: jest.fn(),
+  items: [
     {
-      type: 'disjunctive',
-      attributeName: 'brand',
-      name: 'Canon',
-      count: 27,
-      exhaustive: true,
-      computedLabel: 'Canon',
+      attribute: 'brand',
+      label: 'brand',
+      refine: jest.fn(),
+      refinements: [
+        {
+          type: 'disjunctive',
+          count: 27,
+          exhaustive: true,
+          label: 'Canon',
+        },
+        {
+          type: 'disjunctive',
+          count: 28,
+          exhaustive: true,
+          label: 'Sony',
+        },
+      ],
     },
     {
-      type: 'disjunctive',
-      attributeName: 'brand',
-      name: 'Sony',
-      count: 28,
-      exhaustive: true,
-      computedLabel: 'Sony',
+      attribute: 'hierarchicalCategories.lvl0',
+      label: 'hierarchicalCategories.lvl0',
+      refine: jest.fn(),
+      refinements: [
+        {
+          type: 'hierarchical',
+          attribute: 'hierarchicalCategories.lvl0',
+          count: 55,
+          label: 'Cameras & Camcorders',
+        },
+      ],
     },
     {
-      type: 'hierarchical',
-      attributeName: 'hierarchicalCategories.lvl0',
-      name: 'Cameras & Camcorders',
-      count: 55,
-      computedLabel: 'Cameras & Camcorders',
-    },
-    {
-      type: 'numeric',
-      attributeName: 'popularity',
-      name: '0',
-      numericValue: 0,
-      operator: '>=',
-      computedLabel: '≥ 0',
+      attribute: 'popularity',
+      label: 'popularity',
+      refine: jest.fn(),
+      refinements: [
+        {
+          attribute: 'popularity',
+          type: 'numeric',
+          numericValue: 0,
+          operator: '>=',
+          label: '≥ 0',
+        },
+      ],
     },
   ],
 };
 
-const render = createRenderer({
-  defaultState,
-  template: '<ais-current-refinements></ais-current-refinements>',
-  TestedWidget: NgAisCurrentRefinements,
-});
+const render = template =>
+  createRenderer({
+    defaultState,
+    template,
+    TestedWidget: NgAisCurrentRefinements,
+  });
 
 describe('CurrentRefinedValues', () => {
   it('renders markup without state', () => {
-    const fixture = render();
+    const fixture = render(
+      '<ais-current-refinements></ais-current-refinements>'
+    )();
     expect(fixture).toMatchSnapshot();
   });
 
   it('renders markup with state', () => {
-    const fixture = render({});
+    const fixture = render(
+      '<ais-current-refinements></ais-current-refinements>'
+    )({});
     expect(fixture).toMatchSnapshot();
   });
 
   it('should call refine() when clicking on an refined element', () => {
     const refine = jest.fn();
-    const fixture = render({ refine });
+    const fixture = render(
+      '<ais-current-refinements></ais-current-refinements>'
+    )({ refine });
 
     const [firstEl] = fixture.debugElement.nativeElement.querySelectorAll(
       'span > button'
     );
     firstEl.click();
 
-    expect(refine).toHaveBeenCalled();
-    expect(refine).toHaveBeenCalledWith(defaultState.refinements[0]);
+    expect(refine).toHaveBeenCalledTimes(1);
+    expect(refine).toHaveBeenCalledWith(defaultState.items[0].refinements[0]);
   });
 
-  it('should call clearAllClick() when clicking on clear all', () => {
-    const clearAllClick = jest.fn();
-    const fixture = render({ clearAllClick });
+  it('should pass over [includedAttributes]', () => {
+    const createWidget = jest.spyOn(
+      NgAisCurrentRefinements.prototype,
+      'createWidget'
+    );
 
-    fixture.debugElement.nativeElement.querySelector(`.${cx('reset')}`).click();
+    render(
+      `<ais-current-refinements [includedAttributes]="['query']"></ais-current-refinements>`
+    )({});
 
-    expect(clearAllClick).toHaveBeenCalled();
+    expect(createWidget).toHaveBeenCalledTimes(1);
+    expect(createWidget).toHaveBeenLastCalledWith(
+      connectCurrentRefinements,
+      expect.objectContaining({ includedAttributes: ['query'] })
+    );
+    createWidget.mockRestore();
   });
 
-  it('should apply `transformItems` if specified', () => {
-    const fixture = render({});
+  it('should pass over [excludedAttributes]', () => {
+    const createWidget = jest.spyOn(
+      NgAisCurrentRefinements.prototype,
+      'createWidget'
+    );
 
-    fixture.componentInstance.testedWidget.transformItems = items =>
-      items.map(item => ({
-        ...item,
-        computedLabel: `foo - ${item.computedLabel}`,
-      }));
-    fixture.detectChanges();
+    render(
+      `<ais-current-refinements [excludedAttributes]="['brands']"></ais-current-refinements>`
+    )({});
 
-    expect(fixture).toMatchSnapshot();
+    expect(createWidget).toHaveBeenCalledTimes(1);
+    expect(createWidget).toHaveBeenLastCalledWith(
+      connectCurrentRefinements,
+      expect.objectContaining({ excludedAttributes: ['brands'] })
+    );
+    createWidget.mockRestore();
+  });
+
+  it('should pass over [transformItems] if specified', () => {
+    const createWidget = jest.spyOn(
+      NgAisCurrentRefinements.prototype,
+      'createWidget'
+    );
+
+    render(
+      `<ais-current-refinements [transformItems]="'func'"></ais-current-refinements>`
+    )({});
+
+    expect(createWidget).toHaveBeenCalledTimes(1);
+    expect(createWidget).toHaveBeenLastCalledWith(
+      connectCurrentRefinements,
+      expect.objectContaining({ transformItems: 'func' })
+    );
+    createWidget.mockRestore();
   });
 
   it('should be hidden with `autoHideContainer`', () => {
-    const fixture = render({ refinements: [] });
+    const fixture = render(
+      '<ais-current-refinements></ais-current-refinements>'
+    )({});
     fixture.componentInstance.testedWidget.autoHideContainer = true;
     fixture.detectChanges();
 

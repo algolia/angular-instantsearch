@@ -11,7 +11,6 @@ exports[`CurrentRefinedValues renders markup with state 1`] = `
         class="ais-CurrentRefinements"
       >
         
-        
         <ul
           class="ais-CurrentRefinements-list"
         >
@@ -63,7 +62,7 @@ exports[`CurrentRefinedValues renders markup with state 1`] = `
             <span
               class="ais-CurrentRefinements-label"
             >
-              HierarchicalCategories.lvl0:
+              Hierarchicalcategories.Lvl0:
             </span>
             
             <span
@@ -100,7 +99,7 @@ exports[`CurrentRefinedValues renders markup with state 1`] = `
               <span
                 class="ais-CurrentRefinements-categoryLabel"
               >
-                0
+                ≥ 0
               </span>
               <button
                 class="ais-CurrentRefinements-delete"
@@ -110,12 +109,6 @@ exports[`CurrentRefinedValues renders markup with state 1`] = `
             </span>
           </li>
         </ul>
-        
-        <button
-          class="ais-CurrentRefinements-reset"
-        >
-           Clear refinements 
-        </button>
       </div>
     </ais-current-refinements>
   </ais-instantsearch>
@@ -133,20 +126,13 @@ exports[`CurrentRefinedValues renders markup without state 1`] = `
         class="ais-CurrentRefinements"
       >
         
-        
-        
-        <button
-          class="ais-CurrentRefinements-reset"
-        >
-           Clear refinements 
-        </button>
       </div>
     </ais-current-refinements>
   </ais-instantsearch>
 </ng-component>
 `;
 
-exports[`CurrentRefinedValues should apply \`transformItems\` if specified 1`] = `
+exports[`CurrentRefinedValues should be hidden with \`autoHideContainer\` 1`] = `
 <ng-component
   testedWidget={[Function NgAisCurrentRefinements]}
 >
@@ -156,7 +142,6 @@ exports[`CurrentRefinedValues should apply \`transformItems\` if specified 1`] =
       <div
         class="ais-CurrentRefinements"
       >
-        
         
         <ul
           class="ais-CurrentRefinements-list"
@@ -209,7 +194,7 @@ exports[`CurrentRefinedValues should apply \`transformItems\` if specified 1`] =
             <span
               class="ais-CurrentRefinements-label"
             >
-              HierarchicalCategories.lvl0:
+              Hierarchicalcategories.Lvl0:
             </span>
             
             <span
@@ -246,7 +231,7 @@ exports[`CurrentRefinedValues should apply \`transformItems\` if specified 1`] =
               <span
                 class="ais-CurrentRefinements-categoryLabel"
               >
-                0
+                ≥ 0
               </span>
               <button
                 class="ais-CurrentRefinements-delete"
@@ -256,25 +241,7 @@ exports[`CurrentRefinedValues should apply \`transformItems\` if specified 1`] =
             </span>
           </li>
         </ul>
-        
-        <button
-          class="ais-CurrentRefinements-reset"
-        >
-           Clear refinements 
-        </button>
       </div>
-    </ais-current-refinements>
-  </ais-instantsearch>
-</ng-component>
-`;
-
-exports[`CurrentRefinedValues should be hidden with \`autoHideContainer\` 1`] = `
-<ng-component
-  testedWidget={[Function NgAisCurrentRefinements]}
->
-  <ais-instantsearch>
-    <ais-current-refinements>
-      
     </ais-current-refinements>
   </ais-instantsearch>
 </ng-component>

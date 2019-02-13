@@ -26,15 +26,15 @@ export type RangeSliderState = {
 export class NgAisRangeSlider extends BaseWidget {
   @ViewChild('sliderContainer') public sliderContainer: any;
 
-  // render options
+  // rendering options
   @Input() public pips: boolean = true;
   @Input() public tooltips: boolean = true;
 
-  // connector options
+  // instance options
   @Input() public attribute: string;
-  @Input() public min?: number | string;
-  @Input() public max?: number | string;
-  @Input() public precision: number | string = 2;
+  @Input() public min?: number;
+  @Input() public max?: number;
+  @Input() public precision?: number;
 
   public state: RangeSliderState = {
     range: { min: 0, max: 1 },
@@ -59,7 +59,7 @@ export class NgAisRangeSlider extends BaseWidget {
 
   public ngOnInit() {
     this.createWidget(connectRange, {
-      attributeName: this.attribute,
+      attribute: this.attribute,
       max: parseNumberInput(this.max),
       min: parseNumberInput(this.min),
       precision: parseNumberInput(this.precision),

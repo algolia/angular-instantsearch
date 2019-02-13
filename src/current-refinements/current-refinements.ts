@@ -1,17 +1,31 @@
 import { Component, Input, Inject, forwardRef } from '@angular/core';
 
-import { connectCurrentRefinedValues } from 'instantsearch.js/es/connectors';
+import { connectCurrentRefinements } from 'instantsearch.js/es/connectors';
 import { BaseWidget } from '../base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
-import { noop, capitalize } from '../utils';
+import { noop } from '../utils';
+
+export type CurrentRefinementsItem = {
+  attribute: string;
+  label: string;
+  refine: Function;
+  refinements: {
+    type: string;
+    // TODO: create multiple types for each of the available refinement
+    // https://github.com/algolia/angular-instantsearch/pull/463#discussion_r255911232
+    attribute: string;
+    label: string;
+    value: string;
+    operator?: string;
+    exhaustive?: boolean;
+    count?: number;
+  }[];
+};
 
 export type CurrentRefinementsState = {
-  attributes: {};
-  clearAllClick: Function;
-  clearAllURL: Function;
   createURL: Function;
   refine: Function;
-  refinements: {}[];
+  items: CurrentRefinementsItem[];
 };
 
 @Component({
@@ -21,94 +35,42 @@ export type CurrentRefinementsState = {
       [class]="cx()"
       *ngIf="!isHidden"
     >
-      <button
-        [class]="cx('reset')"
-        (click)="handleClearAllClick($event)"
-        *ngIf="clearRefinements === 'before' || clearRefinements === true">
-        {{clearRefinementsLabel}}
-      </button>
-
       <ul
         [class]="cx('list')"
-        *ngFor="let refinement of refinements"
+        *ngFor="let item of state.items"
       >
         <li [class]="cx('item')">
-          <span [class]="cx('label')">{{refinement.label}}:</span>
+          <span [class]="cx('label')">{{item.label | titlecase}}:</span>
 
           <span
             [class]="cx('category')"
-            *ngFor="let item of refinement.items"
+            *ngFor="let refinement of item.refinements"
           >
-            <span [class]="cx('categoryLabel')">{{item.name}}</span>
-            <button [class]="cx('delete')" (click)="handleClick($event, item)">✕</button>
+            <span [class]="cx('categoryLabel')">{{refinement.label}}</span>
+            <button [class]="cx('delete')" (click)="handleClick($event, refinement)">✕</button>
           </span>
         </li>
       </ul>
-
-      <button
-        [class]="cx('reset')"
-        (click)="handleClearAllClick($event)"
-        *ngIf="clearRefinements === 'after'">
-        {{clearRefinementsLabel}}
-      </button>
     </div>
   `,
 })
 export class NgAisCurrentRefinements extends BaseWidget {
-  // render options
-  @Input() public clearRefinements: 'before' | 'after' | boolean = 'after';
-  @Input() public clearRefinementsLabel: string = 'Clear refinements';
-  @Input() public transformItems?: Function;
-
-  // connector options
-  @Input() public onlyListedAttributes: boolean = false;
-  @Input() public clearsQuery: boolean = false;
+  // instance options
+  @Input() public includedAttributes?: string[];
+  @Input() public excludedAttributes?: string[];
   @Input()
-  public attributes: {
-    name: string;
-    label: string;
-  }[] = [];
+  public transformItems?: <U extends CurrentRefinementsItem>(
+    items: CurrentRefinementsItem[]
+  ) => U[];
 
   public state: CurrentRefinementsState = {
-    attributes: {},
-    clearAllClick: noop,
-    clearAllURL: noop,
     createURL: noop,
     refine: noop,
-    refinements: [],
+    items: [],
   };
 
   get isHidden() {
-    return this.state.refinements.length === 0 && this.autoHideContainer;
-  }
-
-  get refinements() {
-    const items =
-      typeof this.transformItems === 'function'
-        ? this.transformItems(this.state.refinements)
-        : this.state.refinements;
-
-    // group refinements by category? (attributeName && type)
-    return items.reduce((res, { type, attributeName, ...refinement }) => {
-      const match = res.find(
-        r => r.attributeName === attributeName && r.type === type
-      );
-      if (match) {
-        match.items.push({ type, attributeName, ...refinement });
-      } else {
-        res.push({
-          type,
-          attributeName,
-          label: capitalize(attributeName),
-          items: [{ type, attributeName, ...refinement }],
-        });
-      }
-      return res;
-    }, []);
-  }
-
-  get json() {
-    return JSON.stringify(this.refinements, null, 4);
+    return this.state.items.length === 0 && this.autoHideContainer;
   }
 
   constructor(
@@ -119,10 +81,10 @@ export class NgAisCurrentRefinements extends BaseWidget {
   }
 
   public ngOnInit() {
-    this.createWidget(connectCurrentRefinedValues, {
-      attributes: this.attributes,
-      clearsQuery: this.clearsQuery,
-      onlyListedAttributes: this.onlyListedAttributes,
+    this.createWidget(connectCurrentRefinements, {
+      includedAttributes: this.includedAttributes,
+      excludedAttributes: this.excludedAttributes,
+      transformItems: this.transformItems,
     });
     super.ngOnInit();
   }
@@ -130,10 +92,5 @@ export class NgAisCurrentRefinements extends BaseWidget {
   public handleClick(event: MouseEvent, refinement: {}) {
     event.preventDefault();
     this.state.refine(refinement);
-  }
-
-  public handleClearAllClick(event: MouseEvent) {
-    event.preventDefault();
-    this.state.clearAllClick();
   }
 }

@@ -215,7 +215,7 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
                   <span
                     class="ais-Highlight"
                   >
-                    transformed - foo
+                    foo
                   </span>
                 </ais-highlight>
               </span>
@@ -248,7 +248,7 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
                   <span
                     class="ais-Highlight"
                   >
-                    transformed - bar
+                    bar
                   </span>
                 </ais-highlight>
               </span>
@@ -281,7 +281,7 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
                   <span
                     class="ais-Highlight"
                   >
-                    transformed - foobar
+                    foobar
                   </span>
                 </ais-highlight>
               </span>
@@ -314,7 +314,7 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
                   <span
                     class="ais-Highlight"
                   >
-                    transformed - barfoo
+                    barfoo
                   </span>
                 </ais-highlight>
               </span>

@@ -1,9 +1,20 @@
 import { Component, Input, Inject, forwardRef } from '@angular/core';
 
-import { connectSortBySelector } from 'instantsearch.js/es/connectors';
+import { connectSortBy } from 'instantsearch.js/es/connectors';
 import { BaseWidget } from '../base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { noop } from '../utils';
+
+export type SortByItem = {
+  value: string;
+  label: string;
+};
+
+export type SortByState = {
+  currentRefinement: string | null;
+  options: SortByItem[];
+  refine: Function;
+};
 
 @Component({
   selector: 'ais-sort-by',
@@ -26,17 +37,10 @@ import { noop } from '../utils';
   `,
 })
 export class NgAisSortBy extends BaseWidget {
-  @Input()
-  public items: {
-    name: string;
-    label: string;
-  }[];
+  @Input() public items: SortByItem[];
+  // TODO: add transformItems
 
-  public state: {
-    currentRefinement: string | null;
-    options: {}[];
-    refine: Function;
-  } = {
+  public state: SortByState = {
     currentRefinement: null,
     options: [],
     refine: noop,
@@ -50,7 +54,7 @@ export class NgAisSortBy extends BaseWidget {
   }
 
   public ngOnInit() {
-    this.createWidget(connectSortBySelector, { indices: this.items });
+    this.createWidget(connectSortBy, { items: this.items });
     super.ngOnInit();
   }
 }

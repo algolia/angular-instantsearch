@@ -26,7 +26,7 @@ export type HierarchicalMenuItem = {
       </a>
 
       <ul
-        [class]="getListClass(item)"
+        [class]="getListClass()"
         *ngIf="item.isRefined && isArray(item.data) && item.data.length > 0"
       >
         <ais-hierarchical-menu-item
@@ -63,7 +63,7 @@ export class NgAisHierarchicalMenuItem {
     return className;
   }
 
-  public getListClass(item) {
+  public getListClass() {
     return `${this.cx('list')} ${this.cx('list', 'child')} ${this.cx(
       'list',
       `lvl${this.lvl}`

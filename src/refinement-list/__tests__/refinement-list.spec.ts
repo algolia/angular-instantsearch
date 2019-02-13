@@ -56,15 +56,15 @@ describe('RefinementList', () => {
     });
     it('should be called with attributeName undefined by default', () => {
       render(`<ais-refinement-list></ais-refinement-list>\``);
-      expect(createWidget.mock.calls[0][1].attributeName).toBeUndefined();
+      expect(createWidget.mock.calls[0][1].attribute).toBeUndefined();
     });
     it('should be called with attributeName passed down by attribute prop', () => {
       render(`<ais-refinement-list attribute="brands"></ais-refinement-list>`);
-      expect(createWidget.mock.calls[0][1].attributeName).toEqual('brands');
+      expect(createWidget.mock.calls[0][1].attribute).toEqual('brands');
     });
-    it('should be called with limit 10 by default', () => {
+    it('should be called with limit undefined by default', () => {
       render(`<ais-refinement-list></ais-refinement-list>`);
-      expect(createWidget.mock.calls[0][1].limit).toEqual(10);
+      expect(createWidget.mock.calls[0][1].limit).toEqual(undefined);
     });
     it('should be called with limit passed down as prop', () => {
       render(`<ais-refinement-list [limit]="30"></ais-refinement-list>`);
@@ -80,10 +80,6 @@ describe('RefinementList', () => {
       );
       expect(createWidget.mock.calls[0][1].showMoreLimit).toEqual(30);
     });
-    it('should be called with operator "or" by default', () => {
-      render(`<ais-refinement-list></ais-refinement-list>`);
-      expect(createWidget.mock.calls[0][1].operator).toEqual('or');
-    });
     it('should be called with operator passed down as prop', () => {
       render(`<ais-refinement-list operator="and"></ais-refinement-list>`);
       expect(createWidget.mock.calls[0][1].operator).toEqual('and');
@@ -95,6 +91,12 @@ describe('RefinementList', () => {
     it('should be called with sortBy passed down as prop', () => {
       render(`<ais-refinement-list sortBy="name"></ais-refinement-list>`);
       expect(createWidget.mock.calls[0][1].sortBy).toEqual('name');
+    });
+    it('should be called with sortBy passed down as prop', () => {
+      render(
+        `<ais-refinement-list [transformItems]="'func'"></ais-refinement-list>`
+      );
+      expect(createWidget.mock.calls[0][1].transformItems).toEqual('func');
     });
     it('should be called with escapeFacetValues true by default', () => {
       render(`<ais-refinement-list></ais-refinement-list>`);

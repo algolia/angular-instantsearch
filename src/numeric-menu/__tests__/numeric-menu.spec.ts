@@ -34,7 +34,7 @@ describe('NumericRefinementList', () => {
     const [, item] = fixture.debugElement.nativeElement.querySelectorAll('li');
     item.click();
 
-    expect(refine).toHaveBeenCalled();
+    expect(refine).toHaveBeenCalledTimes(1);
     expect(refine).toHaveBeenCalledWith(defaultState.items[1].value);
   });
 
@@ -45,8 +45,8 @@ describe('NumericRefinementList', () => {
       secondInput,
     ] = fixture.debugElement.nativeElement.querySelectorAll('input');
 
-    expect(firstInput.checked).toBeTruthy();
-    expect(secondInput.checked).toBeFalsy();
+    expect(firstInput.checked).toBe(true);
+    expect(secondInput.checked).toBe(false);
   });
 
   it('should be hidden with autoHideContainer', () => {

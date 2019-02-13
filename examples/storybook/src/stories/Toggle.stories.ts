@@ -21,10 +21,8 @@ storiesOf('Toggle', module)
         <ais-toggle
           label="Canon (not checked) or Sony (checked)"
           attribute="brand"
-          [values]="{
-            on: 'Sony',
-            off: 'Canon'
-          }"
+          on="Sony"
+          off="Canon"
         >
         </ais-toggle>
       `,

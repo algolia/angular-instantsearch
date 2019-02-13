@@ -5,7 +5,6 @@ import {
   forwardRef,
   KeyValueDiffer,
   KeyValueDiffers,
-  Testability,
 } from '@angular/core';
 
 import { connectConfigure } from 'instantsearch.js/es/connectors';
@@ -16,15 +15,21 @@ import {
 } from '../instantsearch/instantsearch';
 import { noop } from '../utils';
 
+export type ConfigureState = {
+  refine: Function;
+};
+
 @Component({
   selector: 'ais-configure',
   template: '',
 })
 export class NgAisConfigure extends BaseWidget {
+  // instance options
   private internalSearchParameters: SearchParameters;
+
   private differ: KeyValueDiffer<string, any>; // SearchParameters (I don't know how to get the values of the type)
 
-  public state: { refine: Function } = {
+  public state: ConfigureState = {
     refine: noop,
   };
 

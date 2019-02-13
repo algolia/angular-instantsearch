@@ -1,5 +1,5 @@
 import { Component, Input, Inject, forwardRef } from '@angular/core';
-import { connectClearAll } from 'instantsearch.js/es/connectors';
+import { connectClearRefinements } from 'instantsearch.js/es/connectors';
 import { BaseWidget } from '../base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { noop } from '../utils';
@@ -16,19 +16,24 @@ import { noop } from '../utils';
         (click)="handleClick($event)"
         [disabled]="!state.hasRefinements"
       >
-        {{buttonLabel}}
+        {{resetLabel}}
       </button>
     </div>
   `,
 })
 export class NgAisClearRefinements extends BaseWidget {
-  @Input() public buttonLabel: string = 'Clear refinements';
-  @Input() public clearsQuery: boolean = false;
-  @Input() public excludeAttributes: string[] = [];
+  // rendering options
+  @Input() public resetLabel: string = 'Clear refinements';
+
+  // instance options
+  @Input() public includedAttributes: string[];
+  @Input() public excludedAttributes: string[];
+  // TODO: add transformItems
 
   public state = {
     hasRefinements: false,
     refine: noop,
+    // add createURL
   };
 
   get isHidden() {
@@ -43,10 +48,9 @@ export class NgAisClearRefinements extends BaseWidget {
   }
 
   public ngOnInit() {
-    // we need to `createWidget` from `ngOnInit` to have `@Input()` intialized
-    this.createWidget(connectClearAll, {
-      clearsQuery: this.clearsQuery,
-      excludeAttributes: this.excludeAttributes,
+    this.createWidget(connectClearRefinements, {
+      includedAttributes: this.includedAttributes,
+      excludedAttributes: this.excludedAttributes,
     });
 
     super.ngOnInit();

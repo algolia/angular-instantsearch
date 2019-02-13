@@ -4974,7 +4974,7 @@ instantsearch.css@^7.0.0:
   resolved "https://registry.yarnpkg.com/instantsearch.css/-/instantsearch.css-7.1.0.tgz#49264d2bdc3d6c1f6395812ce9422ed1e987fccb"
   integrity sha512-QL3iJTYG5NAP4LiZCojPg/m3dOELTNipq2FZ1IHFNZBTOsZCYQpFdI1UFB70oLijsHoq5WMBIG3ETbIzhcoDPQ==
 
-instantsearch.js@2.10.4, instantsearch.js@^2.8.0:
+instantsearch.js@^2.8.0:
   version "2.10.4"
   resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-2.10.4.tgz#446b1ce06eff52c86f195e761087950020cc7fee"
   integrity sha512-hhGdYQJBejN4Xm1ElirNenD1BUsP6HE9HOoAII13psn1vXnKE89oQ7/3Z/fpVRBKM0P2KopXJZ5WVn2JFp7ZDQ==
@@ -4991,6 +4991,22 @@ instantsearch.js@2.10.4, instantsearch.js@^2.8.0:
     prop-types "^15.5.10"
     qs "^6.5.1"
     to-factory "^1.0.0"
+
+instantsearch.js@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-3.1.0.tgz#e6335a110b4ca6741c84d1f20b4acd183239540f"
+  integrity sha512-HS5UB90aLEloar0mX/ZfkJ2/cwEOZDSE+N4jliB3pjSFHduLtiRvYKlvifYu8MdmPU9QAmDnlVlixFo2ZW7ETw==
+  dependencies:
+    algoliasearch-helper "^2.26.0"
+    classnames "^2.2.5"
+    events "^1.1.0"
+    hogan.js "^3.0.2"
+    lodash "^4.17.5"
+    preact "^8.2.7"
+    preact-compat "^3.18.0"
+    preact-rheostat "^2.1.1"
+    prop-types "^15.5.10"
+    qs "^6.5.1"
 
 internal-ip@^3.0.1:
   version "3.0.1"
