@@ -1,3 +1,19 @@
+# [3.0.0-beta.0](https://github.com/algolia/angular-instantsearch/compare/2.2.0...3.0.0-beta.0) (2019-02-13)
+
+
+### Bug Fixes
+
+* **InfiniteHits:** fix showMore button class to ([152da2f](https://github.com/algolia/angular-instantsearch/commit/152da2f))
+* **NumericSelector:** remove NumericSelector as no longer part of the spec ([8c5edd9](https://github.com/algolia/angular-instantsearch/commit/8c5edd9)), closes [#408](https://github.com/algolia/angular-instantsearch/issues/408)
+* **RefinementList:** introduce showMore prop to hide button ([f3e769c](https://github.com/algolia/angular-instantsearch/commit/f3e769c))
+
+
+### Features
+
+* **deps:** migrate to InstantSearch V3 ([#463](https://github.com/algolia/angular-instantsearch/issues/463)) ([81136b1](https://github.com/algolia/angular-instantsearch/commit/81136b1))
+
+
+
 ## [2.2.1](https://github.com/algolia/angular-instantsearch/compare/2.2.0...2.2.1) (2019-02-12)
 
 
