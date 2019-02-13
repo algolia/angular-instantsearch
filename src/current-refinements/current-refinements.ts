@@ -7,6 +7,7 @@ import { noop } from '../utils';
 
 export type CurrentRefinementsItem = {
   attribute: string;
+  label: string;
   refine: Function;
   refinements: {
     type: string;
@@ -39,7 +40,7 @@ export type CurrentRefinementsState = {
         *ngFor="let item of state.items"
       >
         <li [class]="cx('item')">
-          <span [class]="cx('label')">{{item.attribute | titlecase}}:</span>
+          <span [class]="cx('label')">{{item.label | titlecase}}:</span>
 
           <span
             [class]="cx('category')"

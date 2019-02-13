@@ -8,6 +8,7 @@ const defaultState = {
   items: [
     {
       attribute: 'brand',
+      label: 'brand',
       refine: jest.fn(),
       refinements: [
         {
@@ -26,6 +27,7 @@ const defaultState = {
     },
     {
       attribute: 'hierarchicalCategories.lvl0',
+      label: 'hierarchicalCategories.lvl0',
       refine: jest.fn(),
       refinements: [
         {
@@ -38,6 +40,7 @@ const defaultState = {
     },
     {
       attribute: 'popularity',
+      label: 'popularity',
       refine: jest.fn(),
       refinements: [
         {
