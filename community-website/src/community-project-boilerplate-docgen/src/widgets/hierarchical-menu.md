@@ -1,6 +1,7 @@
 ---
 title: Widgets - HierarchicalMenu
 layout: widget.pug
+canonical: https://www.algolia.com/doc/api-reference/widgets/hierarchical-menu/angular/
 ---
 
 # Hierarchical Menu

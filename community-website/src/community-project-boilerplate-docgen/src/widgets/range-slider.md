@@ -1,6 +1,7 @@
 ---
 title: Widgets - Range Slider
 layout: widget.pug
+canonical: https://www.algolia.com/doc/api-reference/widgets/range-input/angular/
 ---
 
 # Range Slider

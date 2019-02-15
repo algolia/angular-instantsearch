@@ -1,6 +1,7 @@
 ---
 title: Guide - Migrate from v1
 layout: guide.pug
+canonical: https://www.algolia.com/doc/guides/building-search-ui/upgrade-guides/angular/
 ---
 
 # Angular 2 and 4 support drop

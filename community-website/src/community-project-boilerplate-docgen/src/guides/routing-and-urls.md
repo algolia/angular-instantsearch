@@ -1,6 +1,7 @@
 ---
 title: Guide - Routing and URLs
 layout: guide.pug
+canonical: https://www.algolia.com/doc/guides/building-search-ui/going-further/routing-urls/angular/
 ---
 
 # Routing and URLs

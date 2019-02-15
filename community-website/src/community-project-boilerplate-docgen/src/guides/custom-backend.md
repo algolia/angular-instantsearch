@@ -1,6 +1,7 @@
 ---
 title: Guide - Use your own backend
 layout: guide.pug
+canonical: https://www.algolia.com/doc/guides/building-search-ui/going-further/backend-search/angular
 ---
 
 > This guide is compatible with Angular InstantSearch ≥ 2.0.0.

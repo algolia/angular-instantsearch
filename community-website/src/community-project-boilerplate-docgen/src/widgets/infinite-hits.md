@@ -1,6 +1,7 @@
 ---
 title: Widgets - Infinite hits
 layout: widget.pug
+canonical: https://www.algolia.com/doc/api-reference/widgets/infinite-hits/angular/
 ---
 
 # Infinite Hits

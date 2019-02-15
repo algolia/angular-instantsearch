@@ -1,6 +1,7 @@
 ---
 title: Widgets - Sort By
 layout: widget.pug
+canonical: https://www.algolia.com/doc/api-reference/widgets/sort-by/angular/
 ---
 
 # Sort by

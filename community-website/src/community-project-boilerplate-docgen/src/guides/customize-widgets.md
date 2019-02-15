@@ -1,6 +1,7 @@
 ---
 title: Guide - Customize widgets
 layout: guide.pug
+canonical: https://www.algolia.com/doc/guides/building-search-ui/widgets/customize-an-existing-widget/angular
 ---
 
 # Customize widgets
