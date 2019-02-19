@@ -12,7 +12,7 @@ Angular InstantSearch is **compatible with Angular 5 and above**. If you need a 
 
 ## Documentation
 
-There's a dedicated documentation available at [website].
+There's a dedicated documentation available on the [Algolia website][website].
 
 ## Contributing
 
