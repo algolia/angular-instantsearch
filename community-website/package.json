@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "NODE_ENV=development node src/community-project-boilerplate-docgen/start.js",
-    "docs:build": "NODE_ENV=production node src/community-project-boilerplate-docgen/build.js",
+    "docs:build": "NODE_ENV=production node src/community-project-boilerplate-docgen/build.js && cp _redirects docs",
     "docs:update": "ROOT_PATH=/community-project-boilerplate/ yarn docs:build && doctoc --maxlevel 2 README.md CONTRIBUTING.md",
     "docs:test-build": "ROOT_PATH=/ yarn docs:build && http-server docs/",
     "lint": "eslint .",

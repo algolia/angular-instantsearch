@@ -1,6 +1,7 @@
 ---
 title: Guide - Designing the no results page
 layout: guide.pug
+canonical: https://www.algolia.com/doc/guides/building-search-ui/going-further/conditional-display/angular/
 ---
 
 # Designing the no results page

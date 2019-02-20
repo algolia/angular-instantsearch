@@ -1,6 +1,7 @@
 ---
 title: Guide - Tree shaking
 layout: guide.pug
+canonical: https://www.algolia.com/doc/guides/building-search-ui/going-further/improve-performance/angular/
 ---
 
 # Leveraging Tree-Shaking

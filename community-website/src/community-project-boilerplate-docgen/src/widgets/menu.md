@@ -1,6 +1,7 @@
 ---
 title: Widgets - Menu
 layout: widget.pug
+canonical: https://www.algolia.com/doc/api-reference/widgets/menu/angular/
 ---
 
 # Menu

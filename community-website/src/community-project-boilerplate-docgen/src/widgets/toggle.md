@@ -1,6 +1,7 @@
 ---
 title: Widgets - Toggle
 layout: widget.pug
+canonical: https://www.algolia.com/doc/api-reference/widgets/toggle-refinement/angular/
 ---
 
 # Toggle

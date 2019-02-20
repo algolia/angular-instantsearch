@@ -1,6 +1,7 @@
 ---
 title: Widgets - Highlight
 layout: widget.pug
+canonical: https://www.algolia.com/doc/api-reference/widgets/highlight/angular/
 ---
 
 # Highlight

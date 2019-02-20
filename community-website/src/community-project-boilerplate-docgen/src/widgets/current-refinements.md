@@ -1,6 +1,7 @@
 ---
 title: Widgets - CurrentRefinements
 layout: widget.pug
+canonical: https://www.algolia.com/doc/api-reference/widgets/current-refinements/angular/
 ---
 
 # Current Refinements

@@ -1,6 +1,7 @@
 ---
 title: Widgets - Numeric Selector
 layout: widget.pug
+# no canonical widget because this is not replaced
 ---
 
 # Numeric Selector
