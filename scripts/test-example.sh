@@ -19,5 +19,12 @@ yarn build --no-progress
   mkdir -p ./node_modules/instantsearch.js
   cp -R ../../node_modules/instantsearch.js/* ./node_modules/instantsearch.js
 
-  yarn build
+  if [ $1 = "server-side-rendering" ]
+  then
+    yarn build:ssr
+    yarn test
+  else
+    yarn build --no-progress
+    yarn test
+  fi
 )

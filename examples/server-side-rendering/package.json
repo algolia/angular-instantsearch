@@ -25,7 +25,9 @@
     "generate:prerender": "cd dist && node prerender",
     "webpack:server": "webpack --config webpack.server.config.js --progress --colors",
     "serve:prerender": "cd dist/browser && http-server",
-    "serve:ssr": "node dist/server"
+    "serve:ssr": "node dist/server",
+    "jest": "./node_modules/jest-cli/bin/jest.js __tests__",
+    "test": "start-server-and-test serve:ssr http://localhost:4000 jest"
   },
   "private": true,
   "dependencies": {
@@ -55,14 +57,35 @@
     "@angular/cli": "7.3.2",
     "@angular/compiler-cli": "7.2.5",
     "@angular/language-service": "7.2.5",
+    "@types/jest": "24.0.6",
     "@types/node": "11.9.4",
     "cpy-cli": "2.0.0",
     "express": "4.16.4",
     "http-server": "0.11.1",
+    "jest": "24.1.0",
+    "jsdom": "13.2.0",
+    "node-fetch": "2.3.0",
     "reflect-metadata": "0.1.9",
+    "start-server-and-test": "1.7.11",
+    "ts-jest": "24.0.0",
     "ts-loader": "5.3.3",
     "typescript": "3.2.4",
     "webpack": "^4.29.5",
     "webpack-cli": "^3.2.3"
+  },
+  "jest": {
+    "setupFiles": [],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "transformIgnorePatterns": [
+      "<rootDir>/lib/polyfills/*.js"
+    ],
+    "testRegex": "(/lib/__tests__/.*|(\\.|/)(test|spec))\\.(js?|ts?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json"
+    ]
   }
 }

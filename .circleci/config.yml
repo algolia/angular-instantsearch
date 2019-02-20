@@ -27,12 +27,13 @@ jobs:
           command: yarn build
 
       - run:
-          name: Build examples
+          name: Build and test examples
           command: |
             yarn examples:ecommerce:build
             yarn examples:router:build
             yarn examples:media:build
             yarn examples:ssr:build
+            yarn examples:ssr:test
             yarn examples:storybook:build
 
       - save_cache:
