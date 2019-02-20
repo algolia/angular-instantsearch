@@ -1,3 +1,19 @@
+## [2.2.1](https://github.com/algolia/angular-instantsearch/compare/2.2.0...2.2.1) (2019-02-12)
+
+
+### Bug Fixes
+
+* **build:** include dev-novel build as part of the global build command ([#338](https://github.com/algolia/angular-instantsearch/issues/338)) ([d7f3894](https://github.com/algolia/angular-instantsearch/commit/d7f3894))
+* **dev-novel:** update webpack demo config to support v4 ([#336](https://github.com/algolia/angular-instantsearch/issues/336)) ([439093d](https://github.com/algolia/angular-instantsearch/commit/439093d))
+* **doc:** update version compatibility in README.md ([f22a848](https://github.com/algolia/angular-instantsearch/commit/f22a848))
+* **RefinementList:** fix showMore button styling ([#381](https://github.com/algolia/angular-instantsearch/issues/381)) ([01e2d5a](https://github.com/algolia/angular-instantsearch/commit/01e2d5a))
+* **RefinementList:** pass operator to connector ([#382](https://github.com/algolia/angular-instantsearch/issues/382)) ([1bb701c](https://github.com/algolia/angular-instantsearch/commit/1bb701c))
+* **SearchBox:** searchAsYouType doesn't work ([#462](https://github.com/algolia/angular-instantsearch/issues/462)) ([f0ba193](https://github.com/algolia/angular-instantsearch/commit/f0ba193))
+* **storybook:** nuke dev-novel ([#410](https://github.com/algolia/angular-instantsearch/issues/410)) ([b851cc8](https://github.com/algolia/angular-instantsearch/commit/b851cc8))
+* **types:** allow usage of router option in InstantSearchConfig.routing ([#393](https://github.com/algolia/angular-instantsearch/issues/393)) ([48502f7](https://github.com/algolia/angular-instantsearch/commit/48502f7)), closes [#390](https://github.com/algolia/angular-instantsearch/issues/390) [/github.com/algolia/instantsearch.js/blob/develop/src/lib/routers/history.js#L18](https://github.com//github.com/algolia/instantsearch.js/blob/develop/src/lib/routers/history.js/issues/L18)
+
+
+
 <a name="2.1.0"></a>
 # [2.1.0](https://github.com/algolia/angular-instantsearch/compare/2.0.4...2.1.0) (2018-10-31)
 
