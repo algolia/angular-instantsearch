@@ -1,6 +1,7 @@
 ---
 title: Widgets - Pagination
 layout: widget.pug
+canonical: https://www.algolia.com/doc/api-reference/widgets/pagination/angular/
 ---
 
 # Pagination

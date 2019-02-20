@@ -1,6 +1,7 @@
 ---
 title: Widgets - Configure
 layout: widget.pug
+canonical: https://www.algolia.com/doc/api-reference/widgets/configure/angular/
 ---
 
 # Configure

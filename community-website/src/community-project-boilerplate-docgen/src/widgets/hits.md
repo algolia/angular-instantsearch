@@ -1,6 +1,7 @@
 ---
 title: Widgets - Hits
 layout: widget.pug
+canonical: https://www.algolia.com/doc/api-reference/widgets/hits/angular/
 ---
 
 # Hits
