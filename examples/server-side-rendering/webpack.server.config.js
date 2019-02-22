@@ -4,7 +4,7 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-  mode: 'development',
+  mode: 'development', // this is needed as a workaround for this angular-cli issue: https://github.com/angular/angular-cli/issues/8616
   entry: {
     // This is our Express server for Dynamic universal
     server: './server.ts',
@@ -14,7 +14,7 @@ module.exports = {
   target: 'node',
   resolve: { extensions: ['.ts', '.js'] },
   // Make sure we include all node_modules etc
-  externals: [/(node_modules|main\..*\.js)/,],
+  externals: [/(node_modules|main\..*\.js)/],
   output: {
     // Puts the output at the root of the dist folder
     path: path.join(__dirname, 'dist'),
