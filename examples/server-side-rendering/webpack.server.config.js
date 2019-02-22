@@ -4,25 +4,24 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
+  mode: 'development',
   entry: {
     // This is our Express server for Dynamic universal
     server: './server.ts',
     // This is an example of Static prerendering (generative)
-    prerender: './prerender.ts'
+    prerender: './prerender.ts',
   },
   target: 'node',
   resolve: { extensions: ['.ts', '.js'] },
   // Make sure we include all node_modules etc
-  externals: [/(node_modules|main\..*\.js)/,],
+  externals: [/node_modules/],
   output: {
     // Puts the output at the root of the dist folder
     path: path.join(__dirname, 'dist'),
-    filename: '[name].js'
+    filename: '[name].js',
   },
   module: {
-    rules: [
-      { test: /\.ts$/, loader: 'ts-loader' }
-    ]
+    rules: [{ test: /\.ts$/, loader: 'ts-loader' }],
   },
   plugins: [
     new webpack.ContextReplacementPlugin(
@@ -36,7 +35,6 @@ module.exports = {
       /(.+)?express(\\|\/)(.+)?/,
       path.join(__dirname, 'src'),
       {}
-    )
-  ]
-}
-  
+    ),
+  ],
+};
