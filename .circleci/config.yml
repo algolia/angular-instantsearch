@@ -27,12 +27,28 @@ jobs:
           command: yarn build
 
       - run:
-          name: Build examples
+          name: Build ecommerce example
           command: |
             yarn examples:ecommerce:build
+      - run:
+          name: Build router example
+          command: |
             yarn examples:router:build
+      - run:
+          name: Build media example
+          command: |
             yarn examples:media:build
+      - run:
+          name: Build ssr example
+          command: |
             yarn examples:ssr:build
+      - run:
+          name: Test ssr example
+          command: |
+            yarn examples:ssr:test
+      - run:
+          name: Build storybook
+          command: |
             yarn examples:storybook:build
 
       - save_cache:
