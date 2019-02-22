@@ -54,6 +54,7 @@
     "examples:media:build": "./scripts/build-example.sh media",
     "examples:ssr": "./scripts/run-example.sh server-side-rendering",
     "examples:ssr:build": "./scripts/build-example.sh server-side-rendering",
+    "examples:ssr:test": "./scripts/test-example.sh server-side-rendering",
     "examples:storybook": "./scripts/run-example.sh storybook",
     "examples:storybook:build": "./scripts/build-example.sh storybook",
     "release": "./scripts/release.js",
