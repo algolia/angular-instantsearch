@@ -1,0 +1,103 @@
+<div class="container-fluid">
+  <ais-instantsearch
+    [config]="{
+      appId: 'latency',
+      apiKey: '6be0576ff61c053d5f9a3225e2a90f76',
+      indexName: 'instant_search'
+    }"
+  >
+    <header class="content-wrapper">
+      <a href="./" class="logo">amazing</a>
+      <ais-search-box placeholder="Search a product"></ais-search-box>
+    </header>
+
+    <div class="content-wrapper">
+      <aside>
+        <ais-clear-refinements
+          buttonLabel="Clear all filters"
+        >
+        </ais-clear-refinements>
+
+
+        <section class="facet-wrapper">
+          <div class="facet-category-title">Refine by</div>
+          <ais-panel header="Materials">
+            <ais-refinement-list
+              attribute="type"
+              operator="or"
+              limit="10"
+            >
+            </ais-refinement-list>
+          </ais-panel>
+
+        </section>
+      </aside>
+
+      <div class="results-wrapper">
+      <section id="results-topbar">
+        <ais-panel header="Sort by">
+          <ais-sort-by
+            [items]="
+              [
+                {name: 'instant_search', label: 'Featured'},
+                {name: 'instant_search_price_asc', label: 'Price asc.'},
+                {name: 'instant_search_price_desc', label: 'Price desc.'}
+              ]
+            "
+          >
+          </ais-sort-by>
+        </ais-panel>
+        <ais-stats></ais-stats>
+      </section>
+
+      <main>
+        <ais-hits
+          [transformItems]="transformHits"
+        >
+          <ng-template
+            let-hits="hits"
+            let-results="results"
+            let-analytics="analytics"
+          >
+            <div
+              *ngIf="hits.length === 0"
+              class="text-center"
+            >
+              No results found matching <strong>{{results.query}}</strong>.
+            </div>
+
+            <article
+              *ngFor="let hit of hits; trackBy: trackByObjectID"
+              class="hit"
+            >
+              <div class="product-picture-wrapper">
+                <div class="product-picture">
+                  <app-product-image [src]="hit.image"></app-product-image>
+                </div>
+              </div>
+
+              <div class="product-desc-wrapper">
+                <div class="product-name">
+                  <ais-highlight
+                    attribute="name"
+                    [hit]="hit"
+                  >
+                  </ais-highlight>
+                </div>
+
+                <div>
+                  <button (click)="analytics.clickedObjectIDsAfterSearch(hit.objectID, {eventName: 'Add to cart'})">
+                    Add to cart
+                  </button>
+                </div>
+              </div>
+            </article>
+          </ng-template>
+        </ais-hits>
+      </main>
+
+      <ais-pagination></ais-pagination>
+    </div>
+    </div>
+  </ais-instantsearch>
+</div>

@@ -39,7 +39,7 @@ export class NgAisHits extends BaseWidget {
   @Input() transformItems?: Function;
 
   // inner widget state returned from connector
-  public state: { hits: {}[]; results: {} } = { hits: [], results: {} };
+  public state: { hits: {}[]; results: {}, analytics: {} } = { hits: [], results: {}, analytics: {} };
 
   constructor(
     @Inject(forwardRef(() => NgAisInstantSearch))
@@ -55,10 +55,11 @@ export class NgAisHits extends BaseWidget {
     this.state = {
       ...state,
       results: state.results,
+      analytics: state.analytics,
       hits:
         typeof this.transformItems === 'function'
-          ? this.transformItems(state.hits)
-          : state.hits,
+          ? this.transformItems(hits)
+          : hits,
     };
   };
 }
