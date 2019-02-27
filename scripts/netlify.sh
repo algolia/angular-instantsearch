@@ -10,12 +10,6 @@ mkdir -p ./netlify-dist/examples
 mv ./community-website/docs/* ./netlify-dist/
 
 # build examples
-yarn examples:ecommerce:build
-yarn examples:router:build
-yarn examples:media:build
-yarn examples:storybook:build
+yarn examples:click-analytics:build
 
-mv ./examples/e-commerce/dist ./netlify-dist/examples/e-commerce
-mv ./examples/angular-router/dist ./netlify-dist/examples/angular-router
-mv ./examples/media/dist ./netlify-dist/examples/media
-mv ./examples/storybook/dist ./netlify-dist/examples/storybook
+mv ./examples/click-analytics/dist ./netlify-dist/examples/click-analytics
