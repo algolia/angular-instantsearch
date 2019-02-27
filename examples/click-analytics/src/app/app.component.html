@@ -37,6 +37,7 @@
           <ng-template
             let-hits="hits"
             let-results="results"
+            let-analytics="analytics"
           >
             <article
               *ngFor="let hit of hits"
@@ -57,7 +58,9 @@
                 </div>
               </div>
               <div class="product-actions">
-                <button>Add to cart</button>
+                <button (click)="analytics.clickedObjectIDsAfterSearch(hit.objectID, { eventName: 'Add to cart'})">
+                  Add to cart
+                </button>
               </div>
             </article>
           </ng-template>

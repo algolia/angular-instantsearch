@@ -18,5 +18,17 @@
 </head>
 <body>
   <app-root></app-root>
+  <script>
+    !function(e,a,t,n,s,i,c){e.AlgoliaAnalyticsObject=s,e.aa=e.aa||function(){(e.aa.queue=e.aa.queue||[]).push(arguments)},i=a.createElement(t),c=a.getElementsByTagName(t)[0],i.async=1,i.src="https://cdn.jsdelivr.net/npm/search-insights@1.0.0",c.parentNode.insertBefore(i,c)}(window,document,"script",0,"aa");
+
+    // Initialize library
+    aa('init', {
+      appId: 'latency',
+      apiKey: '6be0576ff61c053d5f9a3225e2a90f76',
+    });
+
+    // optional
+    aa('setUserToken', 'id-of-user');
+  </script>
 </body>
 </html>
