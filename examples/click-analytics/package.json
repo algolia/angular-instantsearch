@@ -1,0 +1,38 @@
+{
+  "name": "e-commerce",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "ng serve",
+    "build": "ng build --prod --base-href '.'"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "7.0.1",
+    "@angular/common": "7.0.1",
+    "@angular/compiler": "7.0.1",
+    "@angular/core": "7.0.1",
+    "@angular/forms": "7.0.1",
+    "@angular/http": "7.0.1",
+    "@angular/platform-browser": "7.0.1",
+    "@angular/platform-browser-dynamic": "7.0.1",
+    "@angular/router": "7.0.1",
+    "angular-instantsearch": "3.0.0-beta.0",
+    "core-js": "2.4.1",
+    "instantsearch.js": "file:../../instantsearch.js-v3.1.1-analytics.tgz",
+    "nouislider": "10.1.0",
+    "rxjs": "6.3.3",
+    "zone.js": "0.8.26"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.10.3",
+    "@angular/cli": "7.0.3",
+    "@angular/compiler-cli": "^7.0.1",
+    "@angular/language-service": "^7.0.1",
+    "@types/node": "~6.0.60",
+    "codelyzer": "~4.5.0",
+    "ts-node": "~3.2.0",
+    "tslint": "~5.0.0",
+    "typescript": ">=2.7.0 <3.3.0"
+  }
+}

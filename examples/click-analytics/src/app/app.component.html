@@ -1,0 +1,71 @@
+<div class="container-fluid">
+  <ais-instantsearch
+    [config]="config"
+  >
+    <header class="content-wrapper">
+      <a href="./" class="logo">amazing</a>
+      <ais-search-box placeholder="Search a product"></ais-search-box>
+    </header>
+
+    <ais-configure
+      [searchParameters]="{ clickAnalytics: true }"
+    ></ais-configure>
+
+    <div class="content-wrapper">
+      <aside>
+
+        <section class="facet-wrapper">
+          <div class="facet-category-title">Refine by</div>
+          <ais-panel header="Materials">
+            <ais-refinement-list
+              attribute="type"
+              operator="or"
+              limit="10"
+            >
+            </ais-refinement-list>
+          </ais-panel>
+        </section>
+
+        <div class="thank-you">
+          Data courtesy of <a href="https://developer.bestbuy.com/">Best Buy</a>
+        </div>
+      </aside>
+
+      <div class="results-wrapper">
+      <main>
+        <ais-hits>
+          <ng-template
+            let-hits="hits"
+            let-results="results"
+          >
+            <article
+              *ngFor="let hit of hits"
+              class="hit"
+            >
+              <div class="product-picture">
+                <img src="{{hit.image}}" alt="{{hit.name}}"/>
+              </div>
+              <div class="product-desc-wrapper">
+                <div class="product-name">
+                  <a href="/product/?objectID={{hit.objectID}}">
+                  <ais-highlight
+                    attribute="name"
+                    [hit]="hit"
+                  >
+                  </ais-highlight>
+                  </a>
+                </div>
+              </div>
+              <div class="product-actions">
+                <button>Add to cart</button>
+              </div>
+            </article>
+          </ng-template>
+        </ais-hits>
+      </main>
+
+      <ais-pagination></ais-pagination>
+    </div>
+    </div>
+  </ais-instantsearch>
+</div>
