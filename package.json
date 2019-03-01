@@ -38,6 +38,17 @@
       }
     ]
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,css,md,ts,html}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
   "scripts": {
     "build": "./scripts/build.sh",
     "build:tests": "./scripts/build-tests.sh",
@@ -125,8 +136,10 @@
     "eslint-plugin-import": "2.14.0",
     "eslint-plugin-prettier": "3.0.1",
     "file-loader": "1.1.11",
+    "husky": "^1.3.1",
     "jest": "23.6.0",
     "jest-preset-angular": "6.0.2",
+    "lint-staged": "^8.1.4",
     "ng-packagr": "3.0.6",
     "node-sass": "4.11.0",
     "prettier": "1.13.7",
