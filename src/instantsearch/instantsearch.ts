@@ -263,7 +263,7 @@ export class NgAisInstantSearch implements AfterViewInit, OnInit, OnDestroy {
     // custom algolia client agent
     if (!config.searchClient && !config.createAlgoliaClient) {
       const client = algoliasearch(config.appId, config.apiKey);
-      client.addAlgoliaAgent(`angular (${AngularVersion})`);
+      client.addAlgoliaAgent(`angular (${AngularVersion.full})`);
       client.addAlgoliaAgent(`angular-instantsearch (${VERSION})`);
 
       config.searchClient = client;
