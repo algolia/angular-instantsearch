@@ -8,7 +8,7 @@ import {
   EventEmitter,
   Inject,
   PLATFORM_ID,
-  VERSION as AngularVersion
+  VERSION as AngularVersion,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
