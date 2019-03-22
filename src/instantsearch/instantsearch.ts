@@ -8,6 +8,7 @@ import {
   EventEmitter,
   Inject,
   PLATFORM_ID,
+  VERSION as AngularVersion
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
@@ -262,7 +263,8 @@ export class NgAisInstantSearch implements AfterViewInit, OnInit, OnDestroy {
     // custom algolia client agent
     if (!config.searchClient && !config.createAlgoliaClient) {
       const client = algoliasearch(config.appId, config.apiKey);
-      client.addAlgoliaAgent(`angular-instantsearch ${VERSION}`);
+      client.addAlgoliaAgent(`angular (${AngularVersion})`);
+      client.addAlgoliaAgent(`angular-instantsearch (${VERSION})`);
 
       config.searchClient = client;
       config.appId = undefined;
