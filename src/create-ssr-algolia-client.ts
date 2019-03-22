@@ -40,6 +40,7 @@ export function createSSRSearchClient({
 }) {
   const client = algoliasearch(appId, apiKey, {});
   client.addAlgoliaAgent(`angular-instantsearch (${VERSION})`);
+  client.addAlgoliaAgent(`angular-instantsearch-server (${VERSION})`);
 
   client._request = (rawUrl, opts) => {
     let headers = new HttpHeaders();
