@@ -1,8 +1,6 @@
 import * as algoliasearchProxy from 'algoliasearch/index';
 import * as encodeProxy from 'querystring-es3/encode';
-import {
-  VERSION as AngularVersion,
-} from '@angular/core';
+import { VERSION as AngularVersion } from '@angular/core';
 import { VERSION } from './version';
 
 // AOT + Rollup workaround
