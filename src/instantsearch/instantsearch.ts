@@ -147,7 +147,7 @@ export type SearchForFacetValuesResponse = {
 };
 
 export type SearchClient = {
-  addAlgoliaAgent: (agent: string) => void;
+  addAlgoliaAgent?: (agent: string) => void;
   search: (requests: SearchRequest[]) => Promise<{ results: SearchResponse[] }>;
   searchForFacetValues?: (
     requests: SearchForFacetValuesRequest[]
@@ -262,15 +262,14 @@ export class NgAisInstantSearch implements AfterViewInit, OnInit, OnDestroy {
     }
 
     // custom algolia client agent
-    if (!config.searchClient && !config.createAlgoliaClient) {
-      const client = algoliasearch(config.appId, config.apiKey);
-      config.searchClient = client;
-      config.appId = undefined;
-      config.apiKey = undefined;
-    }
-    config.searchClient.addAlgoliaAgent(`angular (${AngularVersion.full})`);
-    config.searchClient.addAlgoliaAgent(`angular-instantsearch (${VERSION})`);
+    config.searchClient =
+      config.searchClient || algoliasearch(config.appId, config.apiKey);
 
+    if (typeof config.searchClient.addAlgoliaAgent === 'function') {
+      // add user agents
+      config.searchClient.addAlgoliaAgent(`angular (${AngularVersion.full})`);
+      config.searchClient.addAlgoliaAgent(`angular-instantsearch (${VERSION})`);
+    }
     this.instantSearchInstance = instantsearch(config);
     this.instantSearchInstance.on('render', this.onRender);
   }
