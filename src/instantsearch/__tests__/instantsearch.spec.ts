@@ -4,7 +4,12 @@ import { VERSION } from '../../version';
 import { TestBed } from '@angular/core/testing';
 jest.mock('instantsearch.js/es', () => ({
   default: () => {
-    return { on: jest.fn(), start: jest.fn(), removeListener: jest.fn(), dispose: jest.fn() };
+    return {
+      on: jest.fn(),
+      start: jest.fn(),
+      removeListener: jest.fn(),
+      dispose: jest.fn(),
+    };
   },
 }));
 
