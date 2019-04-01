@@ -8,4 +8,19 @@ storiesOf('Hits', module)
     component: wrapWithHits({
       template: '<ais-hits></ais-hits>',
     }),
+  }))
+  .add('customized hits', () => ({
+    component: wrapWithHits({
+      template: `
+      <ais-hits>
+        <ng-template let-hits="hits">
+          <div *ngFor="let hit of hits">
+            Hit {{hit.objectID}}:
+            <ais-highlight attribute="name" [hit]="hit">
+            </ais-highlight>
+          </div>
+        </ng-template>
+      </ais-hits>
+      `,
+    }),
   }));

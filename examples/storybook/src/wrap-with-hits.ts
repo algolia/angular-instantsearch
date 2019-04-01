@@ -14,7 +14,32 @@ type WrapWithHitsParams = {
   searchClient?: {};
   filters?: string;
   indexName?: string;
+  hits?: string;
 };
+
+const defaultHits = `
+<ng-template let-hits="hits">
+  <ol class="playground-hits">
+
+    <li
+      *ngFor="let hit of hits"
+      class="hit playground-hits-item"
+      id="hit-{{hit.objectID}}"
+    >
+      <div class="playground-hits-image" [ngStyle]="{'background-image': 'url(' + hit.image + ')' }">
+      </div>
+
+      <div class="playground-hits-desc">
+        <p>
+          <ais-highlight [hit]="hit" attribute="name"></ais-highlight>
+        </p>
+        <p>Rating: {{hit.rating}} ✭</p>
+        <p>Price: \${{hit.price}}</p>
+      </div>
+    </li>
+  </ol>
+</ng-template>
+`;
 
 export function wrapWithHits({
   template,
@@ -25,6 +50,7 @@ export function wrapWithHits({
   searchClient,
   indexName = 'instant_search',
   filters = `<ais-refinement-list attribute="brand"></ais-refinement-list>`,
+  hits = defaultHits,
 }: WrapWithHitsParams) {
   @Component({
     selector: 'ais-app',
@@ -41,27 +67,7 @@ export function wrapWithHits({
             <ais-search-box placeholder="Search into furniture"></ais-search-box>
             <ais-stats></ais-stats>
             <ais-hits>
-              <ng-template let-hits="hits">
-                <ol class="playground-hits">
-
-                  <li
-                    *ngFor="let hit of hits"
-                    class="hit playground-hits-item"
-                    id="hit-{{hit.objectID}}"
-                  >
-                    <div class="playground-hits-image" [ngStyle]="{'background-image': 'url(' + hit.image + ')' }">
-                    </div>
-
-                    <div class="playground-hits-desc">
-                      <p>
-                        <ais-highlight [hit]="hit" attribute="name"></ais-highlight>
-                      </p>
-                      <p>Rating: {{hit.rating}} ✭</p>
-                      <p>Price: \${{hit.price}}</p>
-                    </div>
-                  </li>
-                </ol>
-              </ng-template>
+              ${hits}
             </ais-hits>
             <ais-pagination [totalPages]="20"></ais-pagination>
           </div>

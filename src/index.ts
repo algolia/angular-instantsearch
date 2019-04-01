@@ -45,6 +45,8 @@ import { NgAisPanelModule } from './panel/panel.module';
 export { NgAisPanelModule };
 import { NgAisConfigureModule } from './configure/configure.module';
 export { NgAisConfigureModule };
+import { NgAisQueryRuleCustomDataModule } from './query-rule-custom-data/query-rule-custom-data.module';
+export { NgAisQueryRuleCustomDataModule };
 
 // Custom SSR algoliasearchClient
 import {
@@ -86,6 +88,7 @@ const NGIS_MODULES = [
   NgAisRangeInputModule,
   NgAisPanelModule,
   NgAisConfigureModule,
+  NgAisQueryRuleCustomDataModule,
 ];
 
 @NgModule({
