@@ -8,20 +8,21 @@ const moviesConfig = {
   hits: `
   <ng-template let-hits="hits">
     <ol class="playground-hits">
-
       <li
         *ngFor="let hit of hits"
         class="hit playground-hits-item"
-        id="hit-{{hit.objectID}}"
+        id="hit-{{ hit.objectID }}"
       >
-        <div class="playground-hits-image" [ngStyle]="{'background-image': 'url(' + hit.image + ')' }">
-        </div>
+        <div
+          class="playground-hits-image"
+          [ngStyle]="{ 'background-image': 'url(' + hit.image + ')' }"
+        ></div>
 
         <div class="playground-hits-desc">
           <p>
             <ais-highlight [hit]="hit" attribute="title"></ais-highlight>
           </p>
-          <p>Genre: {{hit.genre.join(', ')}}</p>
+          <p>Genre: {{ hit.genre.join(", ") }}</p>
         </div>
       </li>
     </ol>
