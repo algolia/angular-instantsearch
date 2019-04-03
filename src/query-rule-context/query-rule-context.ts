@@ -12,7 +12,7 @@ type FacetValue = string | number | boolean;
 })
 export class NgAisQueryRuleContext extends BaseWidget {
   @Input() public trackedFilters?: {
-    [facetName: string]: (facetValues: FacetValue[]) => FacetValue[];
+    [facetName: string]: (facetValues?: FacetValue[]) => FacetValue[];
   };
   @Input() public transformRuleContexts?: (items: string[]) => string[];
 
