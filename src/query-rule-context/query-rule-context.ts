@@ -4,7 +4,7 @@ import { connectQueryRules } from 'instantsearch.js/es/connectors';
 import { BaseWidget } from '../base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 
-type FacetValue = string | number;
+type FacetValue = string | number | boolean;
 
 @Component({
   selector: 'ais-query-rule-context',
