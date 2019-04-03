@@ -85,7 +85,6 @@ storiesOf('QueryRuleCustomData', module)
       </ais-query-rule-custom-data>`,
       methods: {
         transformItems: items => {
-          console.log('hi', items);
           if (items.length > 0) {
             return [items[0]];
           }
