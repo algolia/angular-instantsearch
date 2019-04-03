@@ -124,7 +124,7 @@ storiesOf('QueryRuleCustomData', module)
       <ais-query-rule-custom-data [transformItems]="transformItems">
       </ais-query-rule-custom-data>`,
       methods: {
-        transformItems: (items) =>
+        transformItems: items =>
           items.filter(item => item.banner !== undefined),
       },
     }),
