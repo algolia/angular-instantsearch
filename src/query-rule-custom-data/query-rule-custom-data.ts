@@ -30,14 +30,16 @@ import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 export class NgAisQueryRuleCustomData extends BaseWidget {
   @ContentChild(TemplateRef) public template: any;
 
-  @Input() public transformItems?: <U extends {}>(items: {}[]) => U[];
+  @Input() public transformItems?: (items: any[]) => any[];
 
   public state = {
     items: [],
   };
 
   get templateContext() {
-    return { items: this.state.items };
+    return {
+      items: this.state.items,
+    };
   }
 
   constructor(

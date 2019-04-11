@@ -2,6 +2,12 @@ import { storiesOf } from '@storybook/angular';
 import { wrapWithHits } from '../wrap-with-hits';
 import meta from '../meta';
 
+type CustomDataItem = {
+  title: string;
+  banner: string;
+  link: string;
+};
+
 const moviesConfig = {
   indexName: 'instant_search_movies',
   filters: `<ais-refinement-list attribute="genre"></ais-refinement-list>`,
@@ -35,7 +41,12 @@ storiesOf('QueryRuleCustomData', module)
   .add('default', () => ({
     component: wrapWithHits({
       ...moviesConfig,
-      template: '<ais-query-rule-custom-data></ais-query-rule-custom-data>',
+      template: `
+      <p>
+        Type <q>music</q> and a banner will appear.
+      </p>
+
+      <ais-query-rule-custom-data></ais-query-rule-custom-data>`,
     }),
   }))
   .add('custom items template', () => ({
@@ -45,6 +56,7 @@ storiesOf('QueryRuleCustomData', module)
       <p>
         Type <q>music</q> and a banner will appear.
       </p>
+
       <ais-query-rule-custom-data>
         <ng-template let-items="items">
           <div *ngFor="let item of items">
@@ -69,6 +81,7 @@ storiesOf('QueryRuleCustomData', module)
         Kill Bill appears whenever no other results are promoted. Type
         <q>music</q> to see another movie promoted.
       </p>
+
       <ais-query-rule-custom-data [transformItems]="transformItems">
         <ng-template let-items="items">
           <div *ngFor="let item of items">
@@ -84,7 +97,7 @@ storiesOf('QueryRuleCustomData', module)
         </ng-template>
       </ais-query-rule-custom-data>`,
       methods: {
-        transformItems: items => {
+        transformItems: (items: CustomDataItem[]) => {
           if (items.length > 0) {
             return [items[0]];
           }
@@ -97,35 +110,6 @@ storiesOf('QueryRuleCustomData', module)
             },
           ];
         },
-      },
-    }),
-  }))
-  .add('picking first with transform', () => ({
-    component: wrapWithHits({
-      ...moviesConfig,
-      template: `
-      <p>
-        Type <q>music</q> and a banner will appear.
-      </p>
-      <ais-query-rule-custom-data [transformItems]="transformItems">
-      </ais-query-rule-custom-data>`,
-      methods: {
-        transformItems: items => [items[0]],
-      },
-    }),
-  }))
-  .add('keeping only banners with transform', () => ({
-    component: wrapWithHits({
-      ...moviesConfig,
-      template: `
-      <p>
-        Type <q>not a banner</q> and nothing will appear.
-      </p>
-      <ais-query-rule-custom-data [transformItems]="transformItems">
-      </ais-query-rule-custom-data>`,
-      methods: {
-        transformItems: items =>
-          items.filter(item => item.banner !== undefined),
       },
     }),
   }));

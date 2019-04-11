@@ -1,5 +1,67 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`QueryRuleCustomData should render with custom template 1`] = `
+<ng-component
+  testedWidget={[Function NgAisQueryRuleCustomData]}
+>
+  <ais-instantsearch>
+    <ais-query-rule-custom-data>
+      <div
+        class="ais-QueryRuleCustomData"
+      >
+        
+        
+        <div>
+          <img
+            alt="Banner 1"
+            src="1.jpg"
+          />
+        </div>
+        <div>
+          <img
+            alt="Banner 1"
+            src="2.jpg"
+          />
+        </div>
+        
+        
+      </div>
+    </ais-query-rule-custom-data>
+  </ais-instantsearch>
+</ng-component>
+`;
+
+exports[`QueryRuleCustomData should render with custom templates 1`] = `
+<ng-component
+  testedWidget={[Function NgAisQueryRuleCustomData]}
+>
+  <ais-instantsearch>
+    <ais-query-rule-custom-data>
+      <div
+        class="ais-QueryRuleCustomData"
+      >
+        
+        
+        <div>
+          <img
+            alt="Banner 1"
+            src="1.jpg"
+          />
+        </div>
+        <div>
+          <img
+            alt="Banner 1"
+            src="2.jpg"
+          />
+        </div>
+        
+        
+      </div>
+    </ais-query-rule-custom-data>
+  </ais-instantsearch>
+</ng-component>
+`;
+
 exports[`QueryRuleCustomData should render with state 1`] = `
 <ng-component
   testedWidget={[Function NgAisQueryRuleCustomData]}
@@ -16,7 +78,14 @@ exports[`QueryRuleCustomData should render with state 1`] = `
           <div>
             <pre>
               {
-    "banner": "lol yes it is a banner"
+    "banner": "1.jpg"
+  }
+            </pre>
+          </div>
+          <div>
+            <pre>
+              {
+    "banner": "2.jpg"
   }
             </pre>
           </div>
