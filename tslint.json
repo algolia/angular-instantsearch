@@ -9,7 +9,8 @@
   "rules": {
     "prettier": true,
     "no-submodule-imports": false,
-    "import-name": false
+    "import-name": false,
+    "object-shorthand-properties-first": false
   },
   "cliOptions": {
     "exclude": [
