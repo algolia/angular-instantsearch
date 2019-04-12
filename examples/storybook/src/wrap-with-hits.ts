@@ -20,7 +20,6 @@ type WrapWithHitsParams = {
 const defaultHits = `
 <ng-template let-hits="hits">
   <ol class="playground-hits">
-
     <li
       *ngFor="let hit of hits"
       class="hit playground-hits-item"
