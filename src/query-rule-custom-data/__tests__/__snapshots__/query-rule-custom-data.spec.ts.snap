@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`QueryRuleCustomData should render with custom template 1`] = `
+exports[`QueryRuleCustomData should render with custom templates 1`] = `
 <ng-component
   testedWidget={[Function NgAisQueryRuleCustomData]}
 >
@@ -31,7 +31,7 @@ exports[`QueryRuleCustomData should render with custom template 1`] = `
 </ng-component>
 `;
 
-exports[`QueryRuleCustomData should render with custom templates 1`] = `
+exports[`QueryRuleCustomData should render with empty state 1`] = `
 <ng-component
   testedWidget={[Function NgAisQueryRuleCustomData]}
 >
@@ -43,19 +43,8 @@ exports[`QueryRuleCustomData should render with custom templates 1`] = `
         
         
         <div>
-          <img
-            alt="Banner 1"
-            src="1.jpg"
-          />
+          
         </div>
-        <div>
-          <img
-            alt="Banner 1"
-            src="2.jpg"
-          />
-        </div>
-        
-        
       </div>
     </ais-query-rule-custom-data>
   </ais-instantsearch>

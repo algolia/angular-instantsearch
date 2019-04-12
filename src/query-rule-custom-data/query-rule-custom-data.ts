@@ -53,6 +53,7 @@ export class NgAisQueryRuleCustomData extends BaseWidget {
     this.createWidget(connectQueryRules, {
       transformItems: this.transformItems,
     });
+
     super.ngOnInit();
   }
 }

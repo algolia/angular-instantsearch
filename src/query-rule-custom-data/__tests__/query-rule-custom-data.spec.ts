@@ -12,7 +12,7 @@ describe('QueryRuleCustomData', () => {
       'createWidget'
     );
 
-    render = (template: string, state: object = {}) =>
+    render = (template: string, state?: object) =>
       createRenderer({
         defaultState: state,
         template,
@@ -22,8 +22,18 @@ describe('QueryRuleCustomData', () => {
 
   it('should render without state', () => {
     const template = `<ais-query-rule-custom-data></ais-query-rule-custom-data>`;
+    const state = undefined;
 
-    const fixture = render(template);
+    const fixture = render(template, state);
+
+    expect(fixture).toMatchSnapshot();
+  });
+
+  it('should render with empty state', () => {
+    const template = `<ais-query-rule-custom-data></ais-query-rule-custom-data>`;
+    const state = {};
+
+    const fixture = render(template, state);
 
     expect(fixture).toMatchSnapshot();
   });
