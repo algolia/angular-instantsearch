@@ -114,7 +114,7 @@ storiesOf('QueryRuleContext', module)
       },
     }),
   }))
-  .add('with initial context rule', () => ({
+  .add('with initial rule context', () => ({
     component: wrapWithHits({
       ...moviesConfig,
       template: `
