@@ -112,4 +112,35 @@ storiesOf('QueryRuleCustomData', module)
         },
       },
     }),
+  }))
+  .add('picking first item with transformItems', () => ({
+    component: wrapWithHits({
+      ...moviesConfig,
+      template: `
+      <p>
+        Type <q>music</q> and a banner will appear.
+      </p>
+
+      <ais-query-rule-custom-data [transformItems]="transformItems">
+      </ais-query-rule-custom-data>`,
+      methods: {
+        transformItems: (items: CustomDataItem[]) => [items[0]],
+      },
+    }),
+  }))
+  .add('keeping only banners with transformItems', () => ({
+    component: wrapWithHits({
+      ...moviesConfig,
+      template: `
+      <p>
+        Type <q>not a banner</q> and nothing will appear.
+      </p>
+
+      <ais-query-rule-custom-data [transformItems]="transformItems">
+      </ais-query-rule-custom-data>`,
+      methods: {
+        transformItems: (items: CustomDataItem[]) =>
+          items.filter(item => item.banner !== undefined),
+      },
+    }),
   }));
