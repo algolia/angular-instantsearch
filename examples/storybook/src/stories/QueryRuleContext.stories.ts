@@ -68,7 +68,7 @@ storiesOf('QueryRuleContext', module)
       },
     }),
   }))
-  .add('with initial filter applied', () => ({
+  .add('with initial filter', () => ({
     component: wrapWithHits({
       ...moviesConfig,
       template: `
@@ -114,7 +114,7 @@ storiesOf('QueryRuleContext', module)
       },
     }),
   }))
-  .add('with filter out "thriller" in generated rules', () => ({
+  .add('with initial context rule', () => ({
     component: wrapWithHits({
       ...moviesConfig,
       template: `
@@ -125,14 +125,6 @@ storiesOf('QueryRuleContext', module)
       <li>Select the "Thriller" category and Pulp Fiction does not appear</li>
       <li>Type <q>music</q> and a banner will appear.</li>
     </ul>
-
-    <ais-configure
-      [searchParameters]="{
-        disjunctiveFacetsRefinements: {
-          genre: ['Drama']
-        }
-      }"
-    ></ais-configure>
 
     <ais-query-rule-context
       [trackedFilters]="trackedFilters"
@@ -158,8 +150,13 @@ storiesOf('QueryRuleContext', module)
         trackedFilters: {
           genre: values => values,
         },
-        transformRuleContexts: rules =>
-          rules.filter(rule => rule.indexOf('Thriller') < 0),
+        transformRuleContexts: ruleContexts => {
+          if (ruleContexts.length === 0) {
+            return ['ais-genre-Drama'];
+          }
+
+          return ruleContexts;
+        },
       },
     }),
   }));
