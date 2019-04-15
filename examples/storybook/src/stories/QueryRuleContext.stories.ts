@@ -2,6 +2,12 @@ import { storiesOf } from '@storybook/angular';
 import { wrapWithHits } from '../wrap-with-hits';
 import meta from '../meta';
 
+type CustomDataItem = {
+  title: string;
+  banner: string;
+  link: string;
+};
+
 const moviesConfig = {
   indexName: 'instant_search_movies',
   filters: `<ais-refinement-list attribute="genre"></ais-refinement-list>`,
@@ -37,9 +43,9 @@ storiesOf('QueryRuleContext', module)
       ...moviesConfig,
       template: `
       <ul>
-        <li>Select the "Drama" category and The Shawshank Redemption appears</li>
-        <li>Select the "Thriller" category and Pulp Fiction appears</li>
-        <li>Type <q>music</q> and a banner will appear.</li>
+        <li>On empty query, select the "Drama" category and The Shawshank Redemption appears</li>
+        <li>On empty query, select the "Thriller" category and Pulp Fiction appears</li>
+        <li>Type <q>music</q> and This Is It appears.</li>
       </ul>
 
       <ais-query-rule-context
@@ -74,10 +80,13 @@ storiesOf('QueryRuleContext', module)
       template: `
     <ul>
       <li>
-        Select the "Drama" category and The Shawshank Redemption appears
+        "Drama" is filetered by default and The Shawshank Redemption appears
       </li>
-      <li>Select the "Thriller" category and Pulp Fiction appears</li>
-      <li>Type <q>music</q> and a banner will appear.</li>
+      <li>
+        On empty query, select the "Drama" category and The Shawshank Redemption appears
+      </li>
+      <li>On empty query, select the "Thriller" category and Pulp Fiction appears</li>
+      <li>Type <q>music</q> and This Is It appears.</li>
     </ul>
 
     <ais-configure
@@ -120,10 +129,10 @@ storiesOf('QueryRuleContext', module)
       template: `
     <ul>
       <li>
-        Select the "Drama" category and The Shawshank Redemption appears
+        The Shawshank Redemption appears by default when no other Query Rules match
       </li>
-      <li>Select the "Thriller" category and Pulp Fiction does not appear</li>
-      <li>Type <q>music</q> and a banner will appear.</li>
+      <li>On empty query, select the "Thriller" category and Pulp Fiction appears</li>
+      <li>Type <q>music</q> and This Is It appears.</li>
     </ul>
 
     <ais-query-rule-context
@@ -148,9 +157,9 @@ storiesOf('QueryRuleContext', module)
     `,
       methods: {
         trackedFilters: {
-          genre: values => values,
+          genre: (values: string[]) => values,
         },
-        transformRuleContexts: ruleContexts => {
+        transformRuleContexts: (ruleContexts: string[]) => {
           if (ruleContexts.length === 0) {
             return ['ais-genre-Drama'];
           }
