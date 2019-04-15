@@ -80,7 +80,7 @@ storiesOf('QueryRuleContext', module)
       template: `
     <ul>
       <li>
-        "Drama" is filetered by default and The Shawshank Redemption appears
+        "Drama" is filtered by default and The Shawshank Redemption appears
       </li>
       <li>
         On empty query, select the "Drama" category and The Shawshank Redemption appears
