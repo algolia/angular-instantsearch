@@ -43,7 +43,7 @@ storiesOf('QueryRuleCustomData', module)
       ...moviesConfig,
       template: `
       <p>
-        Type <q>music</q> and a banner will appear.
+        Type <q>music</q> and a banner appears.
       </p>
 
       <ais-query-rule-custom-data></ais-query-rule-custom-data>`,
@@ -54,7 +54,7 @@ storiesOf('QueryRuleCustomData', module)
       ...moviesConfig,
       template: `
       <p>
-        Type <q>music</q> and a banner will appear.
+        Type <q>music</q> and a banner appears.
       </p>
 
       <ais-query-rule-custom-data>
@@ -118,7 +118,7 @@ storiesOf('QueryRuleCustomData', module)
       ...moviesConfig,
       template: `
       <p>
-        Type <q>music</q> and a banner will appear.
+        Type <q>music</q> and a banner appears.
       </p>
 
       <ais-query-rule-custom-data [transformItems]="transformItems">
@@ -140,7 +140,7 @@ storiesOf('QueryRuleCustomData', module)
       </ais-query-rule-custom-data>`,
       methods: {
         transformItems: (items: CustomDataItem[]) =>
-          items.filter(item => item.banner !== undefined),
+          items.filter(item => Boolean(item.banner)),
       },
     }),
   }));
