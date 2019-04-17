@@ -40,7 +40,7 @@ describe('InfiniteHits', () => {
     );
     button.click();
 
-    expect(button.disabled).toBeFalsy();
+    expect(button.disabled).toEqual(false);
     expect(showMore).toHaveBeenCalled();
   });
 
@@ -53,7 +53,7 @@ describe('InfiniteHits', () => {
     );
     button.click();
 
-    expect(button.disabled).toBeTruthy();
+    expect(button.disabled).toEqual(true);
     expect(showMore).not.toHaveBeenCalled();
     expect(fixture).toMatchSnapshot();
   });
@@ -108,7 +108,7 @@ describe('InfiniteHits', () => {
     );
     button.click();
 
-    expect(button.disabled).toBeFalsy();
+    expect(button.disabled).toEqual(false);
     expect(showPrevious).toHaveBeenCalled();
   });
 
@@ -130,7 +130,7 @@ describe('InfiniteHits', () => {
     expect(button.className).toMatchInlineSnapshot(
       `"ais-InfiniteHits-loadPrevious ais-InfiniteHits-loadPrevious--disabled"`
     );
-    expect(button.disabled).toBeTruthy();
+    expect(button.disabled).toEqual(true);
     expect(showPrevious).not.toHaveBeenCalled();
     expect(fixture).toMatchSnapshot();
   });
