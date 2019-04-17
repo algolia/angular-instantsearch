@@ -72,7 +72,7 @@ describe('InfiniteHits', () => {
       '.ais-InfiniteHits-loadPrevious'
     );
 
-    expect(button).not.toBeFalsy();
+    expect(button).toBeTruthy();
   });
 
   it('should display `showPrevious()` button with custom label', () => {
