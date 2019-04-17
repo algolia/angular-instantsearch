@@ -109,7 +109,7 @@ describe('InfiniteHits', () => {
     button.click();
 
     expect(button.disabled).toEqual(false);
-    expect(showPrevious).toHaveBeenCalled();
+    expect(showPrevious).toHaveBeenCalledTimes(1);
   });
 
   it('should disable `showPrevious` button', () => {
