@@ -217,7 +217,7 @@ exports[`InfiniteHits should disable \`showMore\` button 1`] = `
 </ng-component>
 `;
 
-exports[`InfiniteHits should disable \`showPrevious\` button 2`] = `
+exports[`InfiniteHits should disable \`showPrevious\` button on first page 2`] = `
 <ng-component
   testedWidget={[Function NgAisInfiniteHits]}
 >

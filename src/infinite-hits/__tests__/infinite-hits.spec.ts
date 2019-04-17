@@ -112,7 +112,7 @@ describe('InfiniteHits', () => {
     expect(showPrevious).toHaveBeenCalledTimes(1);
   });
 
-  it('should disable `showPrevious` button', () => {
+  it('should disable `showPrevious` button on first page', () => {
     const showPrevious = jest.fn();
     const renderWithPrevious = createRenderer({
       defaultState,
