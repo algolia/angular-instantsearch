@@ -317,3 +317,49 @@ exports[`InfiniteHits should disable \`showPrevious\` button on first page 2`] =
   </ais-instantsearch>
 </ng-component>
 `;
+
+exports[`InfiniteHits should render with custom templates 1`] = `
+<ng-component
+  testedWidget={[Function NgAisInfiniteHits]}
+>
+  <ais-instantsearch>
+    <ais-infinite-hits>
+      <div
+        class="ais-InfiniteHits"
+      >
+        
+        <button>
+          Load previous
+        </button>
+        
+        <div>
+          <strong>
+            foo
+          </strong>
+        </div>
+        <div>
+          <strong>
+            bar
+          </strong>
+        </div>
+        <div>
+          <strong>
+            foobar
+          </strong>
+        </div>
+        <div>
+          <strong>
+            barfoo
+          </strong>
+        </div>
+        <button>
+          Load more
+        </button>
+        
+        
+        
+      </div>
+    </ais-infinite-hits>
+  </ais-instantsearch>
+</ng-component>
+`;

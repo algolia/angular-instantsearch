@@ -133,4 +133,32 @@ describe('InfiniteHits', () => {
     expect(showPrevious).toHaveBeenCalledTimes(0);
     expect(fixture).toMatchSnapshot();
   });
+
+  it('should render with custom templates', () => {
+    const renderWithCustomTemplate = createRenderer({
+      defaultState,
+      template: `
+        <ais-infinite-hits>
+          <ng-template
+            let-hits="hits"
+            let-showMore="showMore"
+            let-showPrevious="showPrevious"
+            let-isFirstPage="isFirstPage"
+            let-isLastPage="isLastPage"
+          >
+            <button (click)="showPrevious()" [disabled]="isFirstPage">Load previous</button>
+            <div *ngFor="let hit of hits">
+              <strong>{{hit.name}}</strong>
+            </div>
+            <button (click)="showMore()" [disabled]="isLastPage">Load more</button>
+          </ng-template>
+        </ais-infinite-hits>
+      `,
+      TestedWidget: NgAisInfiniteHits,
+      additionalDeclarations: [NgAisHighlight],
+    });
+    const fixture = renderWithCustomTemplate({});
+
+    expect(fixture).toMatchSnapshot();
+  });
 });
