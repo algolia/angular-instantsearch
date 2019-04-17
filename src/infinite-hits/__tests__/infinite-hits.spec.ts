@@ -125,7 +125,6 @@ describe('InfiniteHits', () => {
     const button = fixture.debugElement.nativeElement.querySelector(
       '.ais-InfiniteHits-loadPrevious'
     );
-    button.click();
 
     expect(button.className).toMatchInlineSnapshot(
       `"ais-InfiniteHits-loadPrevious ais-InfiniteHits-loadPrevious--disabled"`
