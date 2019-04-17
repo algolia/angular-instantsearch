@@ -55,7 +55,7 @@ describe('RefinementList', () => {
       expect(createWidget.mock.calls[0][0]).toEqual(connectRefinementList);
     });
     it('should be called with attributeName undefined by default', () => {
-      render(`<ais-refinement-list></ais-refinement-list>\``);
+      render(`<ais-refinement-list></ais-refinement-list>`);
       expect(createWidget.mock.calls[0][1].attribute).toBeUndefined();
     });
     it('should be called with attributeName passed down by attribute prop', () => {

@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QueryRuleContext renders nothing with state 1`] = `
+<ng-component
+  testedWidget={[Function NgAisQueryRuleContext]}
+>
+  <ais-instantsearch>
+    <ais-query-rule-context />
+  </ais-instantsearch>
+</ng-component>
+`;
+
+exports[`QueryRuleContext renders nothing without state 1`] = `
+<ng-component
+  testedWidget={[Function NgAisQueryRuleContext]}
+>
+  <ais-instantsearch>
+    <ais-query-rule-context />
+  </ais-instantsearch>
+</ng-component>
+`;

@@ -62,7 +62,7 @@ exports[`CurrentRefinedValues renders markup with state 1`] = `
             <span
               class="ais-CurrentRefinements-label"
             >
-              Hierarchicalcategories.Lvl0:
+              Hierarchicalcategories.lvl0:
             </span>
             
             <span
@@ -194,7 +194,7 @@ exports[`CurrentRefinedValues should be hidden with \`autoHideContainer\` 1`] = 
             <span
               class="ais-CurrentRefinements-label"
             >
-              Hierarchicalcategories.Lvl0:
+              Hierarchicalcategories.lvl0:
             </span>
             
             <span
