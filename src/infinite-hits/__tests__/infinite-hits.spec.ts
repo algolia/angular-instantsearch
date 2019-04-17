@@ -35,7 +35,9 @@ describe('InfiniteHits', () => {
     const showMore = jest.fn();
     const fixture = render({ showMore });
 
-    const button = fixture.debugElement.nativeElement.querySelector('button');
+    const button = fixture.debugElement.nativeElement.querySelector(
+      '.ais-InfiniteHits-loadMore'
+    );
     button.click();
 
     expect(button.disabled).toBeFalsy();
@@ -46,11 +48,87 @@ describe('InfiniteHits', () => {
     const showMore = jest.fn();
     const fixture = render({ showMore, isLastPage: true });
 
-    const button = fixture.debugElement.nativeElement.querySelector('button');
+    const button = fixture.debugElement.nativeElement.querySelector(
+      '.ais-InfiniteHits-loadMore'
+    );
     button.click();
 
     expect(button.disabled).toBeTruthy();
     expect(showMore).not.toHaveBeenCalled();
+    expect(fixture).toMatchSnapshot();
+  });
+
+  it('should display `showPrevious()` button', () => {
+    const showPrevious = jest.fn();
+    const renderWithPrevious = createRenderer({
+      defaultState,
+      template: '<ais-infinite-hits [showPrevious]=true></ais-infinite-hits>',
+      TestedWidget: NgAisInfiniteHits,
+      additionalDeclarations: [NgAisHighlight],
+    });
+    const fixture = renderWithPrevious({ showPrevious });
+
+    const button = fixture.debugElement.nativeElement.querySelector(
+      '.ais-InfiniteHits-loadPrevious'
+    );
+
+    expect(button).not.toBeFalsy();
+  });
+
+  it('should display `showPrevious()` button with custom label', () => {
+    const showPrevious = jest.fn();
+    const renderWithPrevious = createRenderer({
+      defaultState,
+      template:
+        '<ais-infinite-hits [showPrevious]=true showPreviousLabel="Load previous"></ais-infinite-hits>',
+      TestedWidget: NgAisInfiniteHits,
+      additionalDeclarations: [NgAisHighlight],
+    });
+    const fixture = renderWithPrevious({ showPrevious });
+
+    const button = fixture.debugElement.nativeElement.querySelector(
+      '.ais-InfiniteHits-loadPrevious'
+    );
+
+    expect(button.innerHTML).toMatchInlineSnapshot(`" Load previous "`);
+  });
+
+  it('should call `showPrevious()` on button click', () => {
+    const showPrevious = jest.fn();
+    const renderWithPrevious = createRenderer({
+      defaultState,
+      template: '<ais-infinite-hits [showPrevious]=true></ais-infinite-hits>',
+      TestedWidget: NgAisInfiniteHits,
+      additionalDeclarations: [NgAisHighlight],
+    });
+    const fixture = renderWithPrevious({ showPrevious });
+
+    const button = fixture.debugElement.nativeElement.querySelector(
+      '.ais-InfiniteHits-loadPrevious'
+    );
+    button.click();
+
+    expect(button.disabled).toBeFalsy();
+    expect(showPrevious).toHaveBeenCalled();
+  });
+
+  it('should disable `showPrevious` button', () => {
+    const showPrevious = jest.fn();
+    const renderWithPrevious = createRenderer({
+      defaultState,
+      template: '<ais-infinite-hits [showPrevious]=true></ais-infinite-hits>',
+      TestedWidget: NgAisInfiniteHits,
+      additionalDeclarations: [NgAisHighlight],
+    });
+    const fixture = renderWithPrevious({ showPrevious, isFirstPage: true });
+
+    const button = fixture.debugElement.nativeElement.querySelector(
+      '.ais-InfiniteHits-loadPrevious'
+    );
+    button.click();
+
+    expect(button.disabled).toBeTruthy();
+    expect(showPrevious).not.toHaveBeenCalled();
     expect(fixture).toMatchSnapshot();
   });
 });
