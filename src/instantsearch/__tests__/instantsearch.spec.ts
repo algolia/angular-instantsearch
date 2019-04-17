@@ -49,7 +49,7 @@ describe('InstantSearch', () => {
     );
   });
 
-  it('should not add a user agent when the client is not provided to the config', () => {
+  it('should not add a user agent when addAlgoliaAgent is not provided in the client', () => {
     @Component({
       template: `<ais-instantsearch [config]="config"> </ais-instantsearch>`,
     })
