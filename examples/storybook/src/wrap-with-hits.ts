@@ -15,7 +15,7 @@ type WrapWithHitsParams = {
   filters?: string;
   indexName?: string;
   hits?: string;
-  routing?: {};
+  routing?: boolean | {};
 };
 
 const defaultHits = `
