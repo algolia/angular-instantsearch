@@ -7,7 +7,7 @@ import {
   forwardRef,
 } from '@angular/core';
 
-import { connectHits } from 'instantsearch.js/es/connectors';
+import { connectHitsWithInsights } from 'instantsearch.js/es/connectors';
 import { BaseWidget } from '../base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 
@@ -46,7 +46,7 @@ export class NgAisHits extends BaseWidget {
     public instantSearchParent: any
   ) {
     super('Hits');
-    this.createWidget(connectHits, { escapeHits: true });
+    this.createWidget(connectHitsWithInsights, { escapeHits: true });
   }
 
   updateState = (state, isFirstRendering: boolean) => {
