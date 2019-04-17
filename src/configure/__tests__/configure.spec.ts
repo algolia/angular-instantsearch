@@ -25,7 +25,7 @@ describe('Configure', () => {
     fixture.detectChanges();
     // does not work because `searchParameters` is undefined, but works in real life
     // fixture.componentInstance.testedWidget.searchParameters.hi = "where?";
-    const searchParams: {} = {};
+    const searchParams: any = {};
     fixture.componentInstance.testedWidget.searchParameters = searchParams;
     searchParams.hi = 'where?';
     fixture.detectChanges();
