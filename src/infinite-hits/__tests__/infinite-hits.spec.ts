@@ -127,6 +127,9 @@ describe('InfiniteHits', () => {
     );
     button.click();
 
+    expect(button.className).toMatchInlineSnapshot(
+      `"ais-InfiniteHits-loadPrevious ais-InfiniteHits-loadPrevious--disabled"`
+    );
     expect(button.disabled).toBeTruthy();
     expect(showPrevious).not.toHaveBeenCalled();
     expect(fixture).toMatchSnapshot();

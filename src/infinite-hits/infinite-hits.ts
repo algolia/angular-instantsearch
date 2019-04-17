@@ -20,7 +20,7 @@ import { noop } from '../utils';
 
       <!-- default rendering if no template specified -->
       <button
-        [class]="cx('loadPrevious')"
+        [ngClass]="[cx('loadPrevious'), this.state.isFirstPage ? cx('loadPrevious', 'disabled') : '']"
         (click)="showPreviousHandler($event)"
         [disabled]="state.isFirstPage"
         *ngIf="showPrevious && !template"

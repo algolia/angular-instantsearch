@@ -217,7 +217,7 @@ exports[`InfiniteHits should disable \`showMore\` button 1`] = `
 </ng-component>
 `;
 
-exports[`InfiniteHits should disable \`showPrevious\` button 1`] = `
+exports[`InfiniteHits should disable \`showPrevious\` button 2`] = `
 <ng-component
   testedWidget={[Function NgAisInfiniteHits]}
 >
@@ -231,8 +231,9 @@ exports[`InfiniteHits should disable \`showPrevious\` button 1`] = `
         
         
         <button
-          class="ais-InfiniteHits-loadPrevious"
+          class="ais-InfiniteHits-loadPrevious ais-InfiniteHits-loadPrevious--disabled"
           disabled=""
+          ng-reflect-ng-class="ais-InfiniteHits-loadPrevious,"
         >
            Show previous results 
         </button>
