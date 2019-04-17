@@ -131,7 +131,7 @@ describe('InfiniteHits', () => {
       `"ais-InfiniteHits-loadPrevious ais-InfiniteHits-loadPrevious--disabled"`
     );
     expect(button.disabled).toEqual(true);
-    expect(showPrevious).not.toHaveBeenCalled();
+    expect(showPrevious).toHaveBeenCalledTimes(0);
     expect(fixture).toMatchSnapshot();
   });
 });
