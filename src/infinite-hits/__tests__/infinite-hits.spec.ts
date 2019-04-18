@@ -4,10 +4,10 @@ import { NgAisHighlight } from '../../highlight/highlight';
 
 const defaultState = {
   hits: [
-    { name: 'foo', description: 'foo' },
-    { name: 'bar', description: 'bar' },
-    { name: 'foobar', description: 'foobar' },
-    { name: 'barfoo', description: 'barfoo' },
+    { objectID: '1', name: 'foo', description: 'foo' },
+    { objectID: '2', name: 'bar', description: 'bar' },
+    { objectID: '3', name: 'foobar', description: 'foobar' },
+    { objectID: '4', name: 'barfoo', description: 'barfoo' },
   ],
   showMore: jest.fn(),
   isLastPage: false,
@@ -160,5 +160,44 @@ describe('InfiniteHits', () => {
     const fixture = renderWithCustomTemplate({});
 
     expect(fixture).toMatchSnapshot();
+  });
+
+  it('should allow calling insightsClient', () => {
+    const renderWithCustomTemplate = createRenderer({
+      defaultState,
+      template: `
+        <ais-infinite-hits>
+          <ng-template
+            let-hits="hits"
+            let-insights="insights"
+          >
+            <ul>
+              <li *ngFor="let hit of hits">
+                <button 
+                  id="add-to-cart-{{hit.objectID}}" 
+                  (click)="insights('clickedObjectIDsAfterSearch', { eventName: 'Add to cart', objectIDs: [hit.objectID] })">
+                  
+                </button>
+              </li>
+            </ul>
+          </ng-template>
+        </ais-infinite-hits>
+      `,
+      TestedWidget: NgAisInfiniteHits,
+      additionalDeclarations: [NgAisHighlight],
+    });
+    const insights = jest.fn();
+    const fixture = renderWithCustomTemplate({ insights });
+    expect(fixture).toMatchSnapshot();
+
+    const button = fixture.debugElement.nativeElement.querySelector(
+      '#add-to-cart-2'
+    );
+    button.click();
+
+    expect(insights).toHaveBeenCalledWith('clickedObjectIDsAfterSearch', {
+      eventName: 'Add to cart',
+      objectIDs: ['2'],
+    });
   });
 });
