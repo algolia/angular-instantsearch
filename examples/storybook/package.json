@@ -26,6 +26,7 @@
     "@angular/compiler-cli": "~7.0.0",
     "@angular/language-service": "~7.0.0",
     "@babel/core": "~7.1.2",
+    "@storybook/addon-actions": "~5.0.10",
     "@storybook/angular": "~5.0.10",
     "@types/node": "~8.9.4",
     "babel-loader": "~8.0.4",
