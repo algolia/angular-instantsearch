@@ -1,3 +1,14 @@
+## [2.2.2](https://github.com/algolia/angular-instantsearch/compare/2.2.0...2.2.2) (2019-04-18)
+
+
+### Bug Fixes
+
+* **docs:** add missing prefix ([861b42d](https://github.com/algolia/angular-instantsearch/commit/861b42d))
+* **docs:** fix header nav position ([bbe2f1e](https://github.com/algolia/angular-instantsearch/commit/bbe2f1e))
+* **ua:** change the User-Agent to use the new specs lib (version) ([#481](https://github.com/algolia/angular-instantsearch/issues/481)) ([9046bf3](https://github.com/algolia/angular-instantsearch/commit/9046bf3))
+
+
+
 ## [2.2.1](https://github.com/algolia/angular-instantsearch/compare/2.2.0...2.2.1) (2019-02-12)
 
 
