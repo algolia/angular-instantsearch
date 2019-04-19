@@ -191,3 +191,57 @@ exports[`Hits should apply \`transformItems\` if specified 1`] = `
   </ais-instantsearch>
 </ng-component>
 `;
+
+exports[`Hits should expose hits to the passed template 1`] = `
+<ng-component
+  testedWidget={[Function NgAisHits]}
+>
+  <ais-instantsearch>
+    <ais-hits>
+      <div
+        class="ais-Hits"
+      >
+        
+        <ul>
+          
+          <li>
+             foo 
+          </li>
+          <li>
+             bar 
+          </li>
+          <li>
+             foobar 
+          </li>
+          <li>
+             barfoo 
+          </li>
+        </ul>
+        
+      </div>
+    </ais-hits>
+  </ais-instantsearch>
+</ng-component>
+`;
+
+exports[`Hits should expose results to the passed template 1`] = `
+<ng-component
+  testedWidget={[Function NgAisHits]}
+>
+  <ais-instantsearch>
+    <ais-hits>
+      <div
+        class="ais-Hits"
+      >
+        
+         {
+    "nbPages": 50,
+    "page": 0,
+    "hitsPerPage": 20
+  } 
+        
+      </div>
+    </ais-hits>
+  </ais-instantsearch>
+</ng-component>
+`;
