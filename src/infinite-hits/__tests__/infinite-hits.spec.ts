@@ -35,10 +35,12 @@ describe('InfiniteHits', () => {
     const showMore = jest.fn();
     const fixture = render({ showMore });
 
-    const button = fixture.debugElement.nativeElement.querySelector('button');
+    const button = fixture.debugElement.nativeElement.querySelector(
+      '.ais-InfiniteHits-loadMore'
+    );
     button.click();
 
-    expect(button.disabled).toBeFalsy();
+    expect(button.disabled).toEqual(false);
     expect(showMore).toHaveBeenCalled();
   });
 
@@ -46,11 +48,117 @@ describe('InfiniteHits', () => {
     const showMore = jest.fn();
     const fixture = render({ showMore, isLastPage: true });
 
-    const button = fixture.debugElement.nativeElement.querySelector('button');
+    const button = fixture.debugElement.nativeElement.querySelector(
+      '.ais-InfiniteHits-loadMore'
+    );
     button.click();
 
-    expect(button.disabled).toBeTruthy();
+    expect(button.disabled).toEqual(true);
     expect(showMore).not.toHaveBeenCalled();
+    expect(fixture).toMatchSnapshot();
+  });
+
+  it('should display `showPrevious()` button', () => {
+    const showPrevious = jest.fn();
+    const renderWithPrevious = createRenderer({
+      defaultState,
+      template: '<ais-infinite-hits [showPrevious]=true></ais-infinite-hits>',
+      TestedWidget: NgAisInfiniteHits,
+      additionalDeclarations: [NgAisHighlight],
+    });
+    const fixture = renderWithPrevious({ showPrevious });
+
+    const button = fixture.debugElement.nativeElement.querySelector(
+      '.ais-InfiniteHits-loadPrevious'
+    );
+
+    expect(button).toBeTruthy();
+  });
+
+  it('should display `showPrevious()` button with custom label', () => {
+    const showPrevious = jest.fn();
+    const renderWithPrevious = createRenderer({
+      defaultState,
+      template:
+        '<ais-infinite-hits [showPrevious]=true showPreviousLabel="Load previous"></ais-infinite-hits>',
+      TestedWidget: NgAisInfiniteHits,
+      additionalDeclarations: [NgAisHighlight],
+    });
+    const fixture = renderWithPrevious({ showPrevious });
+
+    const button = fixture.debugElement.nativeElement.querySelector(
+      '.ais-InfiniteHits-loadPrevious'
+    );
+
+    expect(button.innerHTML).toMatchInlineSnapshot(`" Load previous "`);
+  });
+
+  it('should call `showPrevious()` on button click', () => {
+    const showPrevious = jest.fn();
+    const renderWithPrevious = createRenderer({
+      defaultState,
+      template: '<ais-infinite-hits [showPrevious]=true></ais-infinite-hits>',
+      TestedWidget: NgAisInfiniteHits,
+      additionalDeclarations: [NgAisHighlight],
+    });
+    const fixture = renderWithPrevious({ showPrevious });
+
+    const button = fixture.debugElement.nativeElement.querySelector(
+      '.ais-InfiniteHits-loadPrevious'
+    );
+    button.click();
+
+    expect(button.disabled).toEqual(false);
+    expect(showPrevious).toHaveBeenCalledTimes(1);
+  });
+
+  it('should disable `showPrevious` button on first page', () => {
+    const showPrevious = jest.fn();
+    const renderWithPrevious = createRenderer({
+      defaultState,
+      template: '<ais-infinite-hits [showPrevious]=true></ais-infinite-hits>',
+      TestedWidget: NgAisInfiniteHits,
+      additionalDeclarations: [NgAisHighlight],
+    });
+    const fixture = renderWithPrevious({ showPrevious, isFirstPage: true });
+
+    const button = fixture.debugElement.nativeElement.querySelector(
+      '.ais-InfiniteHits-loadPrevious'
+    );
+
+    expect(button.className).toMatchInlineSnapshot(
+      `"ais-InfiniteHits-loadPrevious ais-InfiniteHits-loadPrevious--disabled"`
+    );
+    expect(button.disabled).toEqual(true);
+    expect(showPrevious).toHaveBeenCalledTimes(0);
+    expect(fixture).toMatchSnapshot();
+  });
+
+  it('should render with custom templates', () => {
+    const renderWithCustomTemplate = createRenderer({
+      defaultState,
+      template: `
+        <ais-infinite-hits>
+          <ng-template
+            let-hits="hits"
+            let-showMore="showMore"
+            let-showPrevious="showPrevious"
+            let-isFirstPage="isFirstPage"
+            let-isLastPage="isLastPage"
+          >
+            <button (click)="showPrevious()" [disabled]="isFirstPage">Load previous</button>
+            <div *ngFor="let hit of hits">
+              <strong>{{hit.name}}</strong>
+            </div>
+            <button (click)="showMore()" [disabled]="isLastPage">Load more</button>
+          </ng-template>
+        </ais-infinite-hits>
+      `,
+      TestedWidget: NgAisInfiniteHits,
+      additionalDeclarations: [NgAisHighlight],
+    });
+    const fixture = renderWithCustomTemplate({});
+
     expect(fixture).toMatchSnapshot();
   });
 });

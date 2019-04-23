@@ -15,6 +15,7 @@ type WrapWithHitsParams = {
   filters?: string;
   indexName?: string;
   hits?: string;
+  routing?: boolean | {};
 };
 
 const defaultHits = `
@@ -50,6 +51,7 @@ export function wrapWithHits({
   indexName = 'instant_search',
   filters = `<ais-refinement-list attribute="brand"></ais-refinement-list>`,
   hits = defaultHits,
+  routing,
 }: WrapWithHitsParams) {
   @Component({
     selector: 'ais-app',
@@ -87,6 +89,7 @@ export function wrapWithHits({
         hitsPerPage: 3,
         ...searchParameters,
       },
+      routing,
     };
 
     constructor() {
