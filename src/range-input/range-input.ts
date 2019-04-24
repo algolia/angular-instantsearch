@@ -77,7 +77,10 @@ export class NgAisRangeInput extends BaseWidget {
   public maxInputValue?: number | string = '';
 
   get step() {
-    const precision = parseNumberInput(this.precision) || 2;
+    const precision =
+      typeof this.precision !== 'undefined'
+        ? parseNumberInput(this.precision)
+        : 2;
     return 1 / Math.pow(10, precision);
   }
 
