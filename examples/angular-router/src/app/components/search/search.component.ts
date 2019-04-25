@@ -1,16 +1,10 @@
 import { Component, OnDestroy } from '@angular/core';
+import algoliasearch from 'algoliasearch/lite';
 
 @Component({
   selector: 'app-search',
   template: `
-    <ais-instantsearch
-      [config]="{
-        appId: 'latency',
-        apiKey: '6be0576ff61c053d5f9a3225e2a90f76',
-        indexName: 'instant_search',
-        routing: true
-      }"
-    >
+    <ais-instantsearch [config]="config">
       <div class="jumbotron">
         <p class="text-center">
           <ais-search-box placeholder="Search a product"></ais-search-box>
@@ -65,6 +59,12 @@ import { Component, OnDestroy } from '@angular/core';
   styles: [],
 })
 export class SearchComponent implements OnDestroy {
+  config = {
+    searchClient: algoliasearch('latency', '6be0576ff61c053d5f9a3225e2a90f76'),
+    indexName: 'instant_search',
+    routing: true,
+  };
+
   ngOnDestroy() {
     console.log('SearchComponent::ngOnDestroy');
   }

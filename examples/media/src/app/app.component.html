@@ -1,15 +1,7 @@
-<ais-instantsearch
-  [config]="{
-    appId: 'latency',
-    apiKey: '6be0576ff61c053d5f9a3225e2a90f76',
-    indexName: 'movies'
-  }"
->
+<ais-instantsearch [config]="config">
   <header class="row">
     <div>
-      <a href="#" class="logo">
-        You <i class="fa fa-youtube-play"></i>
-      </a>
+      <a href="#" class="logo"> You <i class="fa fa-youtube-play"></i> </a>
     </div>
 
     <div class="searchbox-container">
@@ -23,9 +15,7 @@
     <aside>
       <ul class="nav nav-list">
         <li>
-          <a href="#">
-            <i class="fa fa-home"></i> Home
-          </a>
+          <a href="#"> <i class="fa fa-home"></i> Home </a>
         </li>
         <li class="separator"></li>
       </ul>
@@ -53,7 +43,7 @@
         <ais-stats></ais-stats>
       </div>
 
-      <hr>
+      <hr />
 
       <!-- Hits -->
       <ais-hits [transformItems]="transformHits">
@@ -69,7 +59,7 @@
                 <i
                   *ngFor="let star of hit.stars"
                   [ngClass]="{
-                    'fa': true,
+                    fa: true,
                     'fa-star': star,
                     'fa-star-o': !star
                   }"
@@ -77,14 +67,14 @@
                 </i>
               </h4>
 
-              <p class="year">{{hit.year}}</p>
+              <p class="year">{{ hit.year }}</p>
               <div class="genre">
                 <span
                   class="badge"
                   *ngFor="let genre of hit.genre"
                   style="margin-right: 5px;"
                 >
-                  {{genre}}
+                  {{ genre }}
                 </span>
               </div>
             </div>
