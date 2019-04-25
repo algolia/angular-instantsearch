@@ -83,14 +83,14 @@ describe('RangeInput', () => {
     expect(refine).toHaveBeenCalledWith([20, 50]);
   });
 
-  it('should apply precision of 2 by default', () => {
+  it('should apply precision of 0 by default', () => {
     const render = createRenderer({
       defaultState,
       template: '<ais-range-input></ais-range-input>',
       TestedWidget: NgAisRangeInput,
     });
     const fixture = render();
-    expect(fixture.componentInstance.testedWidget.step).toEqual(0.01);
+    expect(fixture.componentInstance.testedWidget.step).toEqual(1);
   });
 
   it('should allow precision of 0', () => {

@@ -70,7 +70,7 @@ export class NgAisRangeInput extends BaseWidget {
   @Input() public attribute: string;
   @Input() public min?: number;
   @Input() public max?: number;
-  @Input() public precision?: number = 2;
+  @Input() public precision?: number = 0;
 
   // inner state
   public minInputValue?: number | string = '';
