@@ -11,4 +11,20 @@ storiesOf('RangeInput', module)
       </ais-range-input>
     `,
     }),
+  }))
+  .add('precision 0', () => ({
+    component: wrapWithHits({
+      template: `
+      <ais-range-input attribute="price" precision="0">
+      </ais-range-input>
+    `,
+    }),
+  }))
+  .add('precision -2', () => ({
+    component: wrapWithHits({
+      template: `
+        <ais-range-input attribute="price" precision="-2">
+        </ais-range-input>
+      `,
+    }),
   }));
