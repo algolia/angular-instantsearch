@@ -155,11 +155,11 @@ export type SearchClient = {
 };
 
 export type InstantSearchConfig = {
+  searchClient: SearchClient;
   indexName: string;
 
   numberLocale?: string;
   searchFunction?: (helper: AlgoliaSearchHelper) => void;
-  searchClient: SearchClient;
   searchParameters?: SearchParameters | void;
   urlSync?:
     | boolean
