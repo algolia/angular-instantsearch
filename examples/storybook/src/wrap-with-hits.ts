@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import algoliasearch from 'algoliasearch/lite';
 
 type Helper = {
   search: Function;
@@ -12,8 +13,10 @@ type WrapWithHitsParams = {
   methods?: {};
   searchFunction?: (helper: Helper) => void;
   searchClient?: {};
-  filters?: string;
   indexName?: string;
+  appId?: string;
+  apiKey?: string;
+  filters?: string;
   hits?: string;
   routing?: boolean | {};
 };
@@ -47,8 +50,9 @@ export function wrapWithHits({
   searchParameters = {},
   methods = {},
   searchFunction,
-  searchClient,
   indexName = 'instant_search',
+  appId = 'latency',
+  apiKey = '6be0576ff61c053d5f9a3225e2a90f76',
   filters = `<ais-refinement-list attribute="brand"></ais-refinement-list>`,
   hits = defaultHits,
   routing,
@@ -78,13 +82,9 @@ export function wrapWithHits({
   })
   class AppComponent {
     config = {
-      ...(!searchClient && {
-        appId: 'latency',
-        apiKey: '6be0576ff61c053d5f9a3225e2a90f76',
-      }),
-      searchFunction,
-      searchClient,
+      searchClient: algoliasearch(appId, apiKey),
       indexName,
+      searchFunction,
       searchParameters: {
         hitsPerPage: 3,
         ...searchParameters,
