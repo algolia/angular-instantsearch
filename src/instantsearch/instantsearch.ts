@@ -155,18 +155,11 @@ export type SearchClient = {
 };
 
 export type InstantSearchConfig = {
-  appId?: string;
-  apiKey?: string;
+  searchClient: SearchClient;
   indexName: string;
 
   numberLocale?: string;
   searchFunction?: (helper: AlgoliaSearchHelper) => void;
-  createAlgoliaClient?: (
-    algoliasearch: Function,
-    appId: string,
-    apiKey: string
-  ) => object;
-  searchClient?: SearchClient;
   searchParameters?: SearchParameters | void;
   urlSync?:
     | boolean
@@ -261,19 +254,11 @@ export class NgAisInstantSearch implements AfterViewInit, OnInit, OnDestroy {
       if (typeof config.routing !== 'undefined') delete config.routing;
     }
 
-    if (!config.searchClient && !config.createAlgoliaClient) {
-      const client = algoliasearch(config.appId, config.apiKey);
-      config.searchClient = client;
-      config.appId = undefined;
-      config.apiKey = undefined;
-    }
-
-    // custom algolia client agent
     if (typeof config.searchClient.addAlgoliaAgent === 'function') {
-      // add user agents
       config.searchClient.addAlgoliaAgent(`angular (${AngularVersion.full})`);
       config.searchClient.addAlgoliaAgent(`angular-instantsearch (${VERSION})`);
     }
+
     this.instantSearchInstance = instantsearch(config);
     this.instantSearchInstance.on('render', this.onRender);
   }
