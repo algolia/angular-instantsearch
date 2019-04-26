@@ -7,7 +7,7 @@ import {
   forwardRef,
 } from '@angular/core';
 
-import { connectInfiniteHits } from 'instantsearch.js/es/connectors';
+import { connectInfiniteHitsWithInsights } from 'instantsearch.js/es/connectors';
 import { BaseWidget } from '../base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { noop } from '../utils';
@@ -82,7 +82,7 @@ export class NgAisInfiniteHits extends BaseWidget {
     public instantSearchParent: any
   ) {
     super('InfiniteHits');
-    this.createWidget(connectInfiniteHits, { escapeHits: true });
+    this.createWidget(connectInfiniteHitsWithInsights, { escapeHits: true });
   }
 
   public showMoreHandler(event: MouseEvent) {
