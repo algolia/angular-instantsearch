@@ -1,5 +1,5 @@
 import { createSSRSearchClient } from '../create-ssr-search-client';
-import * as algoliasearch from 'algoliasearch/index';
+import * as algoliasearch from 'algoliasearch';
 import { VERSION } from '../version';
 import { VERSION as AngularVersion } from '@angular/core';
 

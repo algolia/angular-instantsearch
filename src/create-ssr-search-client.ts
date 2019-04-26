@@ -67,7 +67,9 @@ export function createSSRSearchClient({
     const transferStateKey = makeStateKey(`ngais(${options.body})`);
 
     if (transferState.hasKey(transferStateKey)) {
-      const response = JSON.parse(transferState.get(transferStateKey, ''));
+      const response = JSON.parse(
+        transferState.get(transferStateKey, {} as string)
+      );
 
       return Promise.resolve({
         statusCode: response.status,
