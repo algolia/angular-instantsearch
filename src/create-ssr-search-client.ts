@@ -68,7 +68,7 @@ export function createSSRSearchClient({
 
     if (transferState.hasKey(transferStateKey)) {
       const response = JSON.parse(
-        transferState.get(transferStateKey, {} as string)
+        transferState.get(transferStateKey, JSON.stringify({}))
       );
 
       return Promise.resolve({
