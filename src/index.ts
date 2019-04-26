@@ -50,12 +50,9 @@ export { NgAisQueryRuleCustomDataModule };
 import { NgAisQueryRuleContextModule } from './query-rule-context/query-rule-context.module';
 export { NgAisQueryRuleContextModule };
 
-// Custom SSR algoliasearchClient
-import {
-  createSSRAlgoliaClient,
-  createSSRSearchClient,
-} from './create-ssr-algolia-client';
-export { createSSRAlgoliaClient, createSSRSearchClient };
+// Server-side rendering search client
+import { createSSRSearchClient } from './create-ssr-search-client';
+export { createSSRSearchClient };
 
 import { parseServerRequest } from './parse-server-request';
 export { parseServerRequest };
