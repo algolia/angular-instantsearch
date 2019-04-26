@@ -41,8 +41,8 @@
   "scripts": {
     "build": "./scripts/build.sh",
     "build:tests": "./scripts/build-tests.sh",
-    "lint": "tslint '{src,examples}/**/*.ts' -e '**/node_modules/**'",
-    "lint:fix": "tslint '{src,examples}/**/*.ts' -e '**/node_modules/**' --fix",
+    "lint": "tslint '{helpers,src,examples}/**/*.ts' -e '**/node_modules/**'",
+    "lint:fix": "tslint '{helpers,src,examples}/**/*.ts' -e '**/node_modules/**' --fix",
     "test": "jest",
     "test:ci": "yarn lint && yarn build:tests && jest --runInBand",
     "test:watch": "jest --watch",

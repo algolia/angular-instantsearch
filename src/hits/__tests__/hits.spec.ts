@@ -87,4 +87,39 @@ describe('Hits', () => {
     const fixture = render({});
     expect(fixture).toMatchSnapshot();
   });
+  it('should allow calling insightsClient', () => {
+    const render = createRenderer({
+      defaultState,
+      template: `
+          <ais-hits>
+            <ng-template let-hits="hits" let-insights="insights">
+              <ul>
+                <li *ngFor="let hit of hits">
+                  <button 
+                    id="add-to-cart-{{hit.objectID}}" 
+                    (click)="insights('clickedObjectIDsAfterSearch', { eventName: 'Add to cart', objectIDs: [hit.objectID] })">
+                    
+                  </button>
+                </li>
+              </ul>
+            </ng-template>
+          </ais-hits>
+        `,
+      TestedWidget: NgAisHits,
+      additionalDeclarations: [NgAisHighlight],
+    });
+
+    const insights = jest.fn();
+    const fixture = render({ insights });
+
+    const button = fixture.debugElement.nativeElement.querySelector(
+      '#add-to-cart-2'
+    );
+    button.click();
+
+    expect(insights).toHaveBeenCalledWith('clickedObjectIDsAfterSearch', {
+      eventName: 'Add to cart',
+      objectIDs: ['2'],
+    });
+  });
 });
