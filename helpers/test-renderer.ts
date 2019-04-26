@@ -13,12 +13,14 @@ export function createRenderer({
   defaultState,
   additionalImports,
   additionalDeclarations,
+  methods = {},
 }: {
   template: string;
   TestedWidget: any;
   additionalImports?: any[];
   additionalDeclarations?: any[];
   defaultState?: {};
+  methods?: {};
 }) {
   return function(state?: {}, firstRender = false) {
     return render(
@@ -28,6 +30,7 @@ export function createRenderer({
         additionalImports,
         additionalDeclarations,
         state: state ? { ...(defaultState || {}), ...state } : undefined,
+        methods,
       },
       firstRender
     );
@@ -41,12 +44,14 @@ function render(
     additionalImports,
     additionalDeclarations,
     state,
+    methods,
   }: {
     template: string;
     TestedWidget: any;
     additionalImports?: any[];
     additionalDeclarations?: any[];
     state?: {};
+    methods?: {};
   },
   firstRender = false
 ) {
@@ -59,6 +64,11 @@ function render(
   })
   class TestContainer {
     @ViewChild(TestedWidget) testedWidget;
+    constructor() {
+      Object.keys(methods).forEach(methodName => {
+        this[methodName] = methods[methodName];
+      });
+    }
   }
 
   TestBed.configureCompiler({
