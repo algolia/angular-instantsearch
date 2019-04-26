@@ -11,6 +11,7 @@ exports[`InfiniteHits renders markup with state 1`] = `
       >
         
         
+        
         <div>
           <ul
             class="ais-InfiniteHits-list"
@@ -102,6 +103,7 @@ exports[`InfiniteHits renders markup without state 1`] = `
       >
         
         
+        
         <div>
           <ul
             class="ais-InfiniteHits-list"
@@ -122,6 +124,48 @@ exports[`InfiniteHits renders markup without state 1`] = `
 </ng-component>
 `;
 
+exports[`InfiniteHits should allow calling insightsClient 1`] = `
+<ng-component
+  testedWidget={[Function NgAisInfiniteHits]}
+>
+  <ais-instantsearch>
+    <ais-infinite-hits>
+      <div
+        class="ais-InfiniteHits"
+      >
+        
+        <ul>
+          
+          <li>
+            <button
+              id="add-to-cart-1"
+            />
+          </li>
+          <li>
+            <button
+              id="add-to-cart-2"
+            />
+          </li>
+          <li>
+            <button
+              id="add-to-cart-3"
+            />
+          </li>
+          <li>
+            <button
+              id="add-to-cart-4"
+            />
+          </li>
+        </ul>
+        
+        
+        
+      </div>
+    </ais-infinite-hits>
+  </ais-instantsearch>
+</ng-component>
+`;
+
 exports[`InfiniteHits should disable \`showMore\` button 1`] = `
 <ng-component
   testedWidget={[Function NgAisInfiniteHits]}
@@ -131,6 +175,7 @@ exports[`InfiniteHits should disable \`showMore\` button 1`] = `
       <div
         class="ais-InfiniteHits"
       >
+        
         
         
         <div>
@@ -208,6 +253,153 @@ exports[`InfiniteHits should disable \`showMore\` button 1`] = `
         >
            Show more results 
         </button>
+      </div>
+    </ais-infinite-hits>
+  </ais-instantsearch>
+</ng-component>
+`;
+
+exports[`InfiniteHits should disable \`showPrevious\` button on first page 2`] = `
+<ng-component
+  testedWidget={[Function NgAisInfiniteHits]}
+>
+  <ais-instantsearch>
+    <ais-infinite-hits
+      ng-reflect-show-previous="true"
+    >
+      <div
+        class="ais-InfiniteHits"
+      >
+        
+        
+        <button
+          class="ais-InfiniteHits-loadPrevious ais-InfiniteHits-loadPrevious--disabled"
+          disabled=""
+          ng-reflect-ng-class="ais-InfiniteHits-loadPrevious,"
+        >
+           Show previous results 
+        </button>
+        
+        <div>
+          <ul
+            class="ais-InfiniteHits-list"
+          >
+            
+            <li
+              class="ais-InfiniteHits-item"
+            >
+              <ais-highlight
+                attribute="name"
+                ng-reflect-attribute="name"
+                ng-reflect-hit="[object Object]"
+              >
+                <span
+                  class="ais-Highlight"
+                >
+                  foo
+                </span>
+              </ais-highlight>
+            </li>
+            <li
+              class="ais-InfiniteHits-item"
+            >
+              <ais-highlight
+                attribute="name"
+                ng-reflect-attribute="name"
+                ng-reflect-hit="[object Object]"
+              >
+                <span
+                  class="ais-Highlight"
+                >
+                  bar
+                </span>
+              </ais-highlight>
+            </li>
+            <li
+              class="ais-InfiniteHits-item"
+            >
+              <ais-highlight
+                attribute="name"
+                ng-reflect-attribute="name"
+                ng-reflect-hit="[object Object]"
+              >
+                <span
+                  class="ais-Highlight"
+                >
+                  foobar
+                </span>
+              </ais-highlight>
+            </li>
+            <li
+              class="ais-InfiniteHits-item"
+            >
+              <ais-highlight
+                attribute="name"
+                ng-reflect-attribute="name"
+                ng-reflect-hit="[object Object]"
+              >
+                <span
+                  class="ais-Highlight"
+                >
+                  barfoo
+                </span>
+              </ais-highlight>
+            </li>
+          </ul>
+        </div>
+        
+        <button
+          class="ais-InfiniteHits-loadMore"
+          ng-reflect-ng-class="ais-InfiniteHits-loadMore,"
+        >
+           Show more results 
+        </button>
+      </div>
+    </ais-infinite-hits>
+  </ais-instantsearch>
+</ng-component>
+`;
+
+exports[`InfiniteHits should render with custom templates 1`] = `
+<ng-component
+  testedWidget={[Function NgAisInfiniteHits]}
+>
+  <ais-instantsearch>
+    <ais-infinite-hits>
+      <div
+        class="ais-InfiniteHits"
+      >
+        
+        <button>
+          Load previous
+        </button>
+        
+        <div>
+          <strong>
+            foo
+          </strong>
+        </div>
+        <div>
+          <strong>
+            bar
+          </strong>
+        </div>
+        <div>
+          <strong>
+            foobar
+          </strong>
+        </div>
+        <div>
+          <strong>
+            barfoo
+          </strong>
+        </div>
+        <button>
+          Load more
+        </button>
+        
+        
+        
       </div>
     </ais-infinite-hits>
   </ais-instantsearch>

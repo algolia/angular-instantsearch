@@ -1,8 +1,8 @@
-import "jest-preset-angular";
+import 'jest-preset-angular';
 
 // stupid workaround for TS
-import * as helper from "algoliasearch-helper";
-require("algoliasearch-helper").default = helper;
+import * as helper from 'algoliasearch-helper';
+require('algoliasearch-helper').default = helper;
 
 const mock = () => {
   let storage = {};
@@ -18,12 +18,12 @@ const mock = () => {
     },
     clear() {
       storage = {};
-    }
+    },
   };
 };
 
-Object.defineProperty(window, "localStorage", { value: mock() });
-Object.defineProperty(window, "sessionStorage", { value: mock() });
-Object.defineProperty(window, "getComputedStyle", {
-  value: () => ["-webkit-appearance"]
+Object.defineProperty(window, 'localStorage', { value: mock() });
+Object.defineProperty(window, 'sessionStorage', { value: mock() });
+Object.defineProperty(window, 'getComputedStyle', {
+  value: () => ['-webkit-appearance'],
 });

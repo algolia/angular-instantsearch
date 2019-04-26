@@ -1,24 +1,26 @@
-import { Component, ViewChild } from "@angular/core";
-import { TestBed } from "@angular/core/testing";
+import { Component, ViewChild } from '@angular/core';
+import { TestBed } from '@angular/core/testing';
 
-import { NgAisInstantSearchModule } from "../src/instantsearch/instantsearch.module";
+import { NgAisInstantSearchModule } from '../src/instantsearch/instantsearch.module';
 
 // mock component, dont create a real instantearch instance
-jest.mock("../src/base-widget");
-jest.mock("../src/instantsearch/instantsearch");
+jest.mock('../src/base-widget');
+jest.mock('../src/instantsearch/instantsearch');
 
 export function createRenderer({
   template,
   TestedWidget,
   defaultState,
   additionalImports,
-  additionalDeclarations
+  additionalDeclarations,
+  methods = {},
 }: {
   template: string;
   TestedWidget: any;
   additionalImports?: any[];
   additionalDeclarations?: any[];
   defaultState?: {};
+  methods?: {};
 }) {
   return function(state?: {}, firstRender = false) {
     return render(
@@ -27,7 +29,8 @@ export function createRenderer({
         TestedWidget,
         additionalImports,
         additionalDeclarations,
-        state: state ? { ...(defaultState || {}), ...state } : undefined
+        state: state ? { ...(defaultState || {}), ...state } : undefined,
+        methods,
       },
       firstRender
     );
@@ -40,13 +43,15 @@ function render(
     TestedWidget,
     additionalImports,
     additionalDeclarations,
-    state
+    state,
+    methods,
   }: {
     template: string;
     TestedWidget: any;
     additionalImports?: any[];
     additionalDeclarations?: any[];
     state?: {};
+    methods?: {};
   },
   firstRender = false
 ) {
@@ -55,21 +60,26 @@ function render(
       <ais-instantsearch>
         ${template}
       </ais-instantsearch>
-    `
+    `,
   })
   class TestContainer {
     @ViewChild(TestedWidget) testedWidget;
+    constructor() {
+      Object.keys(methods).forEach(methodName => {
+        this[methodName] = methods[methodName];
+      });
+    }
   }
 
   TestBed.configureCompiler({
-    preserveWhitespaces: false
+    preserveWhitespaces: false,
   } as any).configureTestingModule({
     declarations: [
       TestContainer,
       TestedWidget,
-      ...(additionalDeclarations || [])
+      ...(additionalDeclarations || []),
     ],
-    imports: [NgAisInstantSearchModule.forRoot(), ...(additionalImports || [])]
+    imports: [NgAisInstantSearchModule.forRoot(), ...(additionalImports || [])],
   });
 
   const fixture = TestBed.createComponent(TestContainer);

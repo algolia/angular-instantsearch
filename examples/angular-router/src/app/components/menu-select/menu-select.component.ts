@@ -39,7 +39,7 @@ export class MenuSelect extends BaseWidget {
   }
 
   public ngOnInit() {
-    this.createWidget(connectMenu, { attributeName: this.attribute });
+    this.createWidget(connectMenu, { attribute: this.attribute });
     super.ngOnInit();
   }
 }

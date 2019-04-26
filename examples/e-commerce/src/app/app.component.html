@@ -1,11 +1,5 @@
 <div class="container-fluid">
-  <ais-instantsearch
-    [config]="{
-      appId: 'latency',
-      apiKey: '6be0576ff61c053d5f9a3225e2a90f76',
-      indexName: 'instant_search'
-    }"
-  >
+  <ais-instantsearch [config]="config">
     <header class="content-wrapper">
       <a href="./" class="logo">amazing</a>
       <ais-search-box placeholder="Search a product"></ais-search-box>
@@ -13,15 +7,17 @@
 
     <div class="content-wrapper">
       <aside>
-        <ais-clear-refinements
-          buttonLabel="Clear all filters"
-        >
+        <ais-clear-refinements buttonLabel="Clear all filters">
         </ais-clear-refinements>
 
         <section class="facet-wrapper">
           <div class="facet-category-title">Show results for</div>
           <ais-hierarchical-menu
-            [attributes]="['hierarchicalCategories.lvl0', 'hierarchicalCategories.lvl1', 'hierarchicalCategories.lvl2']"
+            [attributes]="[
+              'hierarchicalCategories.lvl0',
+              'hierarchicalCategories.lvl1',
+              'hierarchicalCategories.lvl2'
+            ]"
             [sortBy]="['name:asc']"
           >
           </ais-hierarchical-menu>
@@ -30,20 +26,12 @@
         <section class="facet-wrapper">
           <div class="facet-category-title">Refine by</div>
           <ais-panel header="Materials">
-            <ais-refinement-list
-              attribute="type"
-              operator="or"
-              limit="10"
-            >
+            <ais-refinement-list attribute="type" operator="or" limit="10">
             </ais-refinement-list>
           </ais-panel>
 
           <ais-panel header="Colors">
-            <ais-refinement-list
-              attribute="brand"
-              operator="or"
-              limit="10"
-            >
+            <ais-refinement-list attribute="brand" operator="or" limit="10">
             </ais-refinement-list>
           </ais-panel>
 
@@ -52,10 +40,7 @@
           </ais-panel>
 
           <ais-panel header="Prices">
-            <ais-range-input
-              header="Prices"
-              attribute="price"
-            >
+            <ais-range-input header="Prices" attribute="price">
             </ais-range-input>
           </ais-panel>
         </section>
@@ -66,84 +51,69 @@
       </aside>
 
       <div class="results-wrapper">
-      <section id="results-topbar">
-        <ais-panel header="Sort by">
-          <ais-sort-by
-            [items]="
-              [
-                {value: 'instant_search', label: 'Featured'},
-                {value: 'instant_search_price_asc', label: 'Price asc.'},
-                {value: 'instant_search_price_desc', label: 'Price desc.'}
-              ]
-            "
-          >
-          </ais-sort-by>
-        </ais-panel>
-        <ais-stats></ais-stats>
-      </section>
-
-      <main>
-        <ais-hits
-          [transformItems]="transformHits"
-        >
-          <ng-template
-            let-hits="hits"
-            let-results="results"
-          >
-            <div
-              *ngIf="hits.length === 0"
-              class="text-center"
+        <section id="results-topbar">
+          <ais-panel header="Sort by">
+            <ais-sort-by
+              [items]="[
+                { value: 'instant_search', label: 'Featured' },
+                { value: 'instant_search_price_asc', label: 'Price asc.' },
+                { value: 'instant_search_price_desc', label: 'Price desc.' }
+              ]"
             >
-              No results found matching <strong>{{results.query}}</strong>.
-            </div>
+            </ais-sort-by>
+          </ais-panel>
+          <ais-stats></ais-stats>
+        </section>
 
-            <article
-              *ngFor="let hit of hits; trackBy: trackByObjectID"
-              class="hit"
-            >
-              <div class="product-picture-wrapper">
-                <div class="product-picture">
-                  <app-product-image [src]="hit.image"></app-product-image>
-                </div>
+        <main>
+          <ais-hits [transformItems]="transformHits">
+            <ng-template let-hits="hits" let-results="results">
+              <div *ngIf="hits.length === 0" class="text-center">
+                No results found matching <strong>{{ results.query }}</strong
+                >.
               </div>
 
-              <div class="product-desc-wrapper">
-                <div class="product-name">
-                  <ais-highlight
-                    attribute="name"
-                    [hit]="hit"
-                  >
-                  </ais-highlight>
+              <article
+                *ngFor="let hit of hits; trackBy: trackByObjectID"
+                class="hit"
+              >
+                <div class="product-picture-wrapper">
+                  <div class="product-picture">
+                    <app-product-image [src]="hit.image"></app-product-image>
+                  </div>
                 </div>
 
-                <div class="product-type">
-                  <ais-highlight
-                    attribute="type"
-                    [hit]="hit"
-                  >
-                  </ais-highlight>
-                </div>
+                <div class="product-desc-wrapper">
+                  <div class="product-name">
+                    <ais-highlight attribute="name" [hit]="hit">
+                    </ais-highlight>
+                  </div>
 
-                <div class="product-price">${{hit.price}}</div>
-                <div class="product-rating">
-                  <i
-                    *ngFor="let star of hit.stars"
-                    [ngClass]="{
-                      'fa': true,
-                      'fa-star': star,
-                      'fa-star-o': !star
-                    }"
-                  >
-                  </i>
-                </div>
-              </div>
-            </article>
-          </ng-template>
-        </ais-hits>
-      </main>
+                  <div class="product-type">
+                    <ais-highlight attribute="type" [hit]="hit">
+                    </ais-highlight>
+                  </div>
 
-      <ais-pagination></ais-pagination>
-    </div>
+                  <div class="product-price">${{ hit.price }}</div>
+                  <div class="product-rating">
+                    <i
+                      *ngFor="let star of hit.stars"
+                      [ngClass]="{
+                        fa: true,
+                        'fa-star': star,
+                        'fa-star-o': !star
+                      }"
+                    >
+                    </i>
+                  </div>
+                </div>
+              </article>
+            </ng-template>
+          </ais-hits>
+        </main>
+
+        <ais-pagination></ais-pagination>
+      </div>
     </div>
   </ais-instantsearch>
 </div>

@@ -8,6 +8,7 @@ import {
   EventEmitter,
   Inject,
   PLATFORM_ID,
+  VERSION as AngularVersion,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
@@ -146,6 +147,7 @@ export type SearchForFacetValuesResponse = {
 };
 
 export type SearchClient = {
+  addAlgoliaAgent?: (agent: string) => void;
   search: (requests: SearchRequest[]) => Promise<{ results: SearchResponse[] }>;
   searchForFacetValues?: (
     requests: SearchForFacetValuesRequest[]
@@ -153,18 +155,11 @@ export type SearchClient = {
 };
 
 export type InstantSearchConfig = {
-  appId?: string;
-  apiKey?: string;
+  searchClient: SearchClient;
   indexName: string;
 
   numberLocale?: string;
   searchFunction?: (helper: AlgoliaSearchHelper) => void;
-  createAlgoliaClient?: (
-    algoliasearch: Function,
-    appId: string,
-    apiKey: string
-  ) => object;
-  searchClient?: SearchClient;
   searchParameters?: SearchParameters | void;
   urlSync?:
     | boolean
@@ -259,14 +254,9 @@ export class NgAisInstantSearch implements AfterViewInit, OnInit, OnDestroy {
       if (typeof config.routing !== 'undefined') delete config.routing;
     }
 
-    // custom algolia client agent
-    if (!config.searchClient && !config.createAlgoliaClient) {
-      const client = algoliasearch(config.appId, config.apiKey);
-      client.addAlgoliaAgent(`angular-instantsearch ${VERSION}`);
-
-      config.searchClient = client;
-      config.appId = undefined;
-      config.apiKey = undefined;
+    if (typeof config.searchClient.addAlgoliaAgent === 'function') {
+      config.searchClient.addAlgoliaAgent(`angular (${AngularVersion.full})`);
+      config.searchClient.addAlgoliaAgent(`angular-instantsearch (${VERSION})`);
     }
 
     this.instantSearchInstance = instantsearch(config);

@@ -1,6 +1,6 @@
 {
   "name": "angular-instantsearch",
-  "version": "3.0.0-beta.0",
+  "version": "3.0.0-beta.1",
   "description": "Lightning-fast search for Angular apps, by Algolia.",
   "license": "MIT",
   "keywords": [
@@ -41,8 +41,8 @@
   "scripts": {
     "build": "./scripts/build.sh",
     "build:tests": "./scripts/build-tests.sh",
-    "lint": "tslint '{src,examples}/**/*.ts' -e '**/node_modules/**'",
-    "lint:fix": "tslint '{src,examples}/**/*.ts' -e '**/node_modules/**' --fix",
+    "lint": "tslint '{helpers,src,examples}/**/*.ts' -e '**/node_modules/**'",
+    "lint:fix": "tslint '{helpers,src,examples}/**/*.ts' -e '**/node_modules/**' --fix",
     "test": "jest",
     "test:ci": "yarn lint && yarn build:tests && jest --runInBand",
     "test:watch": "jest --watch",
@@ -91,7 +91,7 @@
   "dependencies": {
     "algoliasearch": "^3.29.0",
     "algoliasearch-helper": "^2.26.1",
-    "instantsearch.css": "^7.0.0",
+    "instantsearch.css": "^7.3.1",
     "lodash": "^4.17.10",
     "nouislider": "^10.0.0",
     "querystring-es3": "^0.2.1"

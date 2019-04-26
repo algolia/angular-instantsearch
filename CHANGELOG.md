@@ -1,3 +1,24 @@
+# [3.0.0-beta.1](https://github.com/algolia/angular-instantsearch/compare/3.0.0-beta.0...3.0.0-beta.1) (2019-04-26)
+
+
+### Bug Fixes
+
+* **Hits:** add test for template support ([#490](https://github.com/algolia/angular-instantsearch/issues/490)) ([9a6a41e](https://github.com/algolia/angular-instantsearch/commit/9a6a41e))
+* **RangeInput:** allow precision of 0 ([#495](https://github.com/algolia/angular-instantsearch/issues/495)) ([d1d9a26](https://github.com/algolia/angular-instantsearch/commit/d1d9a26))
+* **stories:** update Query Rules stories ([#484](https://github.com/algolia/angular-instantsearch/issues/484)) ([62c5903](https://github.com/algolia/angular-instantsearch/commit/62c5903))
+* **ua:** change the User-Agent to use the new specs lib (version) ([#481](https://github.com/algolia/angular-instantsearch/issues/481)) ([6fab272](https://github.com/algolia/angular-instantsearch/commit/6fab272))
+
+
+### Features
+
+* **infiniteHits:** add previous button ([#486](https://github.com/algolia/angular-instantsearch/issues/486)) ([2c13674](https://github.com/algolia/angular-instantsearch/commit/2c13674))
+* **insights:** add insights support to Hits widget ([#492](https://github.com/algolia/angular-instantsearch/issues/492)) ([cdb9cae](https://github.com/algolia/angular-instantsearch/commit/cdb9cae))
+* **insights:** add insights support to InfiniteHits widget ([#493](https://github.com/algolia/angular-instantsearch/issues/493)) ([1ae9625](https://github.com/algolia/angular-instantsearch/commit/1ae9625))
+* **queryRules:** add ais-query-rule-custom-data widget ([#482](https://github.com/algolia/angular-instantsearch/issues/482)) ([7cba8d8](https://github.com/algolia/angular-instantsearch/commit/7cba8d8)), closes [#483](https://github.com/algolia/angular-instantsearch/issues/483)
+* **searchClient:** enforce search client ([#496](https://github.com/algolia/angular-instantsearch/issues/496)) ([f552d9f](https://github.com/algolia/angular-instantsearch/commit/f552d9f))
+
+
+
 # [3.0.0-beta.0](https://github.com/algolia/angular-instantsearch/compare/2.2.0...3.0.0-beta.0) (2019-02-13)
 
 

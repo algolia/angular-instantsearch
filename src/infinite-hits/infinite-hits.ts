@@ -7,7 +7,7 @@ import {
   forwardRef,
 } from '@angular/core';
 
-import { connectInfiniteHits } from 'instantsearch.js/es/connectors';
+import { connectInfiniteHitsWithInsights } from 'instantsearch.js/es/connectors';
 import { BaseWidget } from '../base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { noop } from '../utils';
@@ -19,6 +19,15 @@ import { noop } from '../utils';
       <ng-container *ngTemplateOutlet="template; context: state"></ng-container>
 
       <!-- default rendering if no template specified -->
+      <button
+        [ngClass]="[cx('loadPrevious'), this.state.isFirstPage ? cx('loadPrevious', 'disabled') : '']"
+        (click)="showPreviousHandler($event)"
+        [disabled]="state.isFirstPage"
+        *ngIf="showPrevious && !template"
+      >
+        {{showPreviousLabel}}
+      </button>
+
       <div *ngIf="!template">
         <ul [class]="cx('list')">
           <li
@@ -33,7 +42,7 @@ import { noop } from '../utils';
 
       <button
         [ngClass]="[cx('loadMore'), this.state.isLastPage ? cx('loadMore', 'disabled') : '']"
-        (click)="showMore($event)"
+        (click)="showMoreHandler($event)"
         [disabled]="state.isLastPage"
         *ngIf="!template"
       >
@@ -46,19 +55,25 @@ export class NgAisInfiniteHits extends BaseWidget {
   @ContentChild(TemplateRef) public template?: any;
 
   // rendering options
+  @Input() public showPrevious: boolean = false;
+  @Input() public showPreviousLabel: string = 'Show previous results';
   @Input() public showMoreLabel: string = 'Show more results';
   @Input() public transformItems?: Function;
 
   // inner widget state returned from connector
   public state: {
     hits: {}[];
+    isFirstPage: boolean;
     isLastPage: boolean;
     showMore: Function;
+    showPrevious: Function;
     results: {};
   } = {
     hits: [],
+    isFirstPage: false,
     isLastPage: false,
     showMore: noop,
+    showPrevious: noop,
     results: {},
   };
 
@@ -67,12 +82,17 @@ export class NgAisInfiniteHits extends BaseWidget {
     public instantSearchParent: any
   ) {
     super('InfiniteHits');
-    this.createWidget(connectInfiniteHits, { escapeHits: true });
+    this.createWidget(connectInfiniteHitsWithInsights, { escapeHits: true });
   }
 
-  public showMore(event: MouseEvent) {
+  public showMoreHandler(event: MouseEvent) {
     event.preventDefault();
     this.state.showMore();
+  }
+
+  public showPreviousHandler(event: MouseEvent) {
+    event.preventDefault();
+    this.state.showPrevious();
   }
 
   updateState = (state, isFirstRendering: boolean) => {
