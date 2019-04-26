@@ -27,11 +27,13 @@ describe('NumericRefinementList', () => {
     expect(fixture).toMatchSnapshot();
   });
 
-  it('should refine() when item click', () => {
+  it('should refine() when label click', () => {
     const refine = jest.fn();
     const fixture = render({ refine });
 
-    const [, item] = fixture.debugElement.nativeElement.querySelectorAll('li');
+    const [, item] = fixture.debugElement.nativeElement.querySelectorAll(
+      'label'
+    );
     item.click();
 
     expect(refine).toHaveBeenCalledTimes(1);
