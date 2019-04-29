@@ -56,8 +56,11 @@ export class NgAisBreadcrumb extends BaseWidget {
   // instance options
   @Input() public attributes: string[];
   @Input() public rootPath?: string;
-  // TODO: add separator?
-  // TODO: add transformItems?
+  @Input() public separator?: string;
+  @Input()
+  public transformItems?: <U extends BreadcrumbItem>(
+    items: BreadcrumbItem[]
+  ) => U[];
 
   get isHidden() {
     return this.state.items.length === 0 && this.autoHideContainer;
@@ -90,6 +93,8 @@ export class NgAisBreadcrumb extends BaseWidget {
     this.createWidget(connectBreadcrumb, {
       attributes: this.attributes,
       rootPath: this.rootPath,
+      separator: this.separator,
+      transformItems: this.transformItems,
     });
 
     super.ngOnInit();
