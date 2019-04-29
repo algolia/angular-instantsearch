@@ -3,7 +3,7 @@ import * as algoliasearch from 'algoliasearch';
 import { VERSION } from '../version';
 import { VERSION as AngularVersion } from '@angular/core';
 
-jest.mock('algoliasearch/index');
+jest.mock('algoliasearch');
 
 describe('createSSRSearchClient', () => {
   it('passes user agents', () => {
