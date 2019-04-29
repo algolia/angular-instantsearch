@@ -29,7 +29,6 @@ export type NumericMenuState = {
         <li
           [class]="getItemClass(item)"
           *ngFor="let item of state.items"
-          (click)="refine($event, item)"
         >
           <label [class]="cx('label')">
             <input
@@ -37,6 +36,7 @@ export type NumericMenuState = {
               type="radio"
               name="NumericMenu"
               [checked]="item.isRefined"
+              (change)="refine($event, item)"
             />
             <span [class]="cx('labelText')">{{item.label}}</span>
           </label>

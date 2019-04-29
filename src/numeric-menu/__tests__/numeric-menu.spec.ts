@@ -27,15 +27,45 @@ describe('NumericRefinementList', () => {
     expect(fixture).toMatchSnapshot();
   });
 
-  it('should refine() when item click', () => {
+  it('should refine() when label click', () => {
     const refine = jest.fn();
     const fixture = render({ refine });
 
-    const [, item] = fixture.debugElement.nativeElement.querySelectorAll('li');
+    const [, item] = fixture.debugElement.nativeElement.querySelectorAll(
+      'label'
+    );
     item.click();
 
     expect(refine).toHaveBeenCalledTimes(1);
     expect(refine).toHaveBeenCalledWith(defaultState.items[1].value);
+  });
+
+  it('should not refine() on 2nd label click', () => {
+    const refine = jest.fn();
+    const fixture = render({ refine });
+
+    const [, label] = fixture.debugElement.nativeElement.querySelectorAll(
+      'label'
+    );
+    const [, input] = fixture.debugElement.nativeElement.querySelectorAll(
+      'input'
+    );
+
+    // Initial state
+    expect(refine).not.toHaveBeenCalled();
+    expect(input.checked).toEqual(false);
+
+    // 1st click
+    label.click();
+
+    expect(refine).toHaveBeenCalledTimes(1);
+    expect(input.checked).toEqual(true);
+
+    // 2nd click
+    label.click();
+
+    expect(refine).toHaveBeenCalledTimes(1);
+    expect(input.checked).toEqual(true);
   });
 
   it('should check the input of item.isRefined', () => {
