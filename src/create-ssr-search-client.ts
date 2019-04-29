@@ -15,16 +15,9 @@ type SSRSearchClientOptions = {
 };
 
 type RequestOptions = {
-  method:
-    | 'GET'
-    | 'HEAD'
-    | 'POST'
-    | 'PUT'
-    | 'DELETE'
-    | 'CONNECT'
-    | 'OPTIONS'
-    | 'TRACE'
-    | 'PATCH';
+  // Algolia only uses GET and POST methods for searching.
+  // See: https://www.algolia.com/doc/rest-api/search/#search-endpoints
+  method: 'GET' | 'POST';
   headers: string;
   body: string;
 };
