@@ -5,9 +5,9 @@ import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { noop } from '../utils';
 
 export type BreadcrumbState = {
-  createURL: Function;
+  createURL: (value: string) => string;
   items: BreadcrumbItem[];
-  refine: Function;
+  refine: (value: string) => void;
 };
 
 export type BreadcrumbItem = {
@@ -77,7 +77,7 @@ export class NgAisBreadcrumb extends BaseWidget {
   }
 
   public state: BreadcrumbState = {
-    createURL: noop,
+    createURL: () => '',
     items: [],
     refine: noop,
   };
@@ -100,7 +100,7 @@ export class NgAisBreadcrumb extends BaseWidget {
     super.ngOnInit();
   }
 
-  public handleClick(event: MouseEvent, item: BreadcrumbItem) {
+  public handleClick(event: MouseEvent, item: BreadcrumbItem): void {
     event.preventDefault();
     event.stopPropagation();
 
