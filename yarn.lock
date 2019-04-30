@@ -205,10 +205,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-9.6.48.tgz#06e765bda1fef91b075c58d540207e8b37dbdc1f"
   integrity sha512-velR2CyDrHC1WFheHr5Jm25mdCMs0BXJRp6u0zf8PF9yeOy4Xff5sJeusWS7xOmhAoezlSq8LJ0+9M5H7YkTdw==
 
-"@types/nouislider@9.0.4":
-  version "9.0.4"
-  resolved "https://registry.yarnpkg.com/@types/nouislider/-/nouislider-9.0.4.tgz#5a79a22c5cd25a012b782829c331b46c8bec8947"
-  integrity sha512-ilaxERkAK7mRkkv0RLb1jZ5Gn0BsXk+jfWXjCk5DuV84AxArhPOq12XJ0eUa6TLTHSmegrfs8Rj4ZAs2hOyT3w==
+"@types/nouislider@9.0.5":
+  version "9.0.5"
+  resolved "https://registry.yarnpkg.com/@types/nouislider/-/nouislider-9.0.5.tgz#51eecadfc0636be944237b8433c66e5dd265688b"
+  integrity sha512-aLBm0j0y2mjblIJMcVgxPEmILBqlctCPs5FAsW01SawzXDBRZ0dHiOdbElQclui0tQjZokN0L1GnuyPRiXty0g==
   dependencies:
     "@types/wnumb" "*"
 
