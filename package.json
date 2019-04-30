@@ -144,7 +144,7 @@
     "tslint-config-prettier": "1.17.0",
     "tslint-plugin-prettier": "2.0.1",
     "typescript": "3.2.4",
-    "zone.js": "0.8.28"
+    "zone.js": "0.9.0"
   },
   "peerDependencies": {
     "@angular/common": ">=5.0.0 <8.0.0",
