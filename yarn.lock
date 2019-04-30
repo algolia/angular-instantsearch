@@ -200,10 +200,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.3.4.tgz#c74e8aec19e555df44609b8057311052a2c84d9e"
   integrity sha512-YMLlzdeNnAyLrQew39IFRkMacAR5BqKGIEei9ZjdHsIZtv+ZWKYTu1i7QJhetxQ9ReXx8w5f+cixdHZG3zgMQA==
 
-"@types/node@9.6.41":
-  version "9.6.41"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-9.6.41.tgz#e57c3152eb2e7ec748c733cebd0c095b437c5d37"
-  integrity sha512-sPZWEbFMz6qAy9SLY7jh5cgepmsiwqUUHjvEm8lpU6kug2hmmcyuTnwhoGw/GWpI5Npue4EqvsiQQI0eWjW/ZA==
+"@types/node@9.6.48":
+  version "9.6.48"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-9.6.48.tgz#06e765bda1fef91b075c58d540207e8b37dbdc1f"
+  integrity sha512-velR2CyDrHC1WFheHr5Jm25mdCMs0BXJRp6u0zf8PF9yeOy4Xff5sJeusWS7xOmhAoezlSq8LJ0+9M5H7YkTdw==
 
 "@types/nouislider@9.0.4":
   version "9.0.4"
