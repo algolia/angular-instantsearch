@@ -36,7 +36,7 @@
     "node-sass": "4.11.0",
     "nodemon": "1.18.5",
     "postcss": "7.0.14",
-    "postcss-loader": "2.1.6",
+    "postcss-loader": "3.0.0",
     "postcss-scss": "2.0.0",
     "pug": "2.0.3",
     "react": "16.6.0",
