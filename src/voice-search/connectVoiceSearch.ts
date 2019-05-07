@@ -61,6 +61,7 @@ const connectVoiceSearch: VoiceSearchConnector = (
         toggleListening,
         getState,
       },
+      refine,
     }): void => {
       renderFn(
         {
@@ -70,12 +71,13 @@ const connectVoiceSearch: VoiceSearchConnector = (
           voiceListeningState: getState(),
           widgetParams,
           instantSearchInstance,
+          refine,
         },
         isFirstRendering
       );
     };
 
-    const { searchAsYouSpeak } = widgetParams;
+    const { searchAsYouSpeak, onQueryChange } = widgetParams;
 
     return {
       init({ helper, instantSearchInstance }) {
@@ -97,12 +99,13 @@ const connectVoiceSearch: VoiceSearchConnector = (
         })();
         (this as any)._voiceSearchHelper = voiceSearchHelper({
           searchAsYouSpeak,
-          onQueryChange: query => (this as any)._refine(query),
+          onQueryChange: onQueryChange || (this as any)._refine,
           onStateChange: () => {
             render({
               isFirstRendering: false,
               instantSearchInstance,
               voiceSearchHelper: (this as any)._voiceSearchHelper,
+              refine: this._refine,
             });
           },
         });
@@ -110,6 +113,7 @@ const connectVoiceSearch: VoiceSearchConnector = (
           isFirstRendering: true,
           instantSearchInstance,
           voiceSearchHelper: (this as any)._voiceSearchHelper,
+          refine: this._refine,
         });
       },
       render({ instantSearchInstance }) {
@@ -117,6 +121,7 @@ const connectVoiceSearch: VoiceSearchConnector = (
           isFirstRendering: false,
           instantSearchInstance,
           voiceSearchHelper: (this as any)._voiceSearchHelper,
+          refine: this._refine,
         });
       },
       dispose({ state }) {

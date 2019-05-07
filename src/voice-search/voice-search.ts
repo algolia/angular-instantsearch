@@ -1,10 +1,4 @@
-import {
-  Component,
-  Input,
-  Inject,
-  forwardRef,
-  ChangeDetectorRef,
-} from '@angular/core';
+import { Component, Input, Inject, forwardRef, NgZone } from '@angular/core';
 
 import connectVoiceSearch from './connectVoiceSearch';
 import { BaseWidget } from '../base-widget';
@@ -89,16 +83,22 @@ export class NgAisVoiceSearch extends BaseWidget {
       isListening: undefined,
       isBrowserSupported: undefined,
     },
+    refine: noop,
   };
 
   constructor(
     @Inject(forwardRef(() => NgAisInstantSearch))
     public instantSearchParent: any,
-    private changeDetector: ChangeDetectorRef
+    private zone: NgZone
   ) {
     super('VoiceSearch');
     this.createWidget(connectVoiceSearch, {
       searchAsYouSpeak: this.searchAsYouSpeak,
+      onQueryChange: query => {
+        this.zone.run(() => {
+          this.state.refine(query);
+        });
+      },
     });
   }
 
@@ -111,23 +111,25 @@ export class NgAisVoiceSearch extends BaseWidget {
     this.state.status === 'error' && this.state.errorCode === 'not-allowed';
 
   public updateState = (state, isFirstRendering: boolean) => {
-    this.state = {
-      isBrowserSupported: state.isBrowserSupported,
-      isListening: state.isListening,
-      toggleListening: state.toggleListening,
-      status: state.voiceListeningState.status,
-      transcript: state.voiceListeningState.transcript,
-      isSpeechFinal: state.voiceListeningState.isSpeechFinal,
-      errorCode: state.voiceListeningState.errorCode,
-      templateContext: {
+    this.zone.run(() => {
+      this.state = {
+        isBrowserSupported: state.isBrowserSupported,
+        isListening: state.isListening,
+        toggleListening: state.toggleListening,
         status: state.voiceListeningState.status,
-        errorCode: state.voiceListeningState.errorCode,
         transcript: state.voiceListeningState.transcript,
         isSpeechFinal: state.voiceListeningState.isSpeechFinal,
-        isListening: state.isListening,
-        isBrowserSupported: state.isBrowserSupported,
-      },
-    };
-    this.changeDetector.detectChanges();
+        errorCode: state.voiceListeningState.errorCode,
+        templateContext: {
+          status: state.voiceListeningState.status,
+          errorCode: state.voiceListeningState.errorCode,
+          transcript: state.voiceListeningState.transcript,
+          isSpeechFinal: state.voiceListeningState.isSpeechFinal,
+          isListening: state.isListening,
+          isBrowserSupported: state.isBrowserSupported,
+        },
+        refine: state.refine,
+      };
+    });
   };
 }
