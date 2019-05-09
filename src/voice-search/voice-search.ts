@@ -1,4 +1,14 @@
-import { Component, Input, Inject, forwardRef, NgZone } from '@angular/core';
+import {
+  Component,
+  Input,
+  Inject,
+  forwardRef,
+  NgZone,
+  ContentChild,
+  ElementRef,
+  TemplateRef,
+  OnInit,
+} from '@angular/core';
 
 import connectVoiceSearch from './connectVoiceSearch';
 import { BaseWidget } from '../base-widget';
@@ -16,14 +26,14 @@ import { noop } from '../utils';
         [disabled]="!state.isBrowserSupported"
         (click)="handleClick($event)"
       >
-        <ng-container *ngTemplateOutlet="button; context: state.templateContext"></ng-container>
+        <ng-container *ngTemplateOutlet="button ? button : defaultButton; context: state.templateContext"></ng-container>
       </button>
       <div [class]="cx('status')">
-        <ng-container *ngTemplateOutlet="status; context: state.templateContext"></ng-container>
+        <ng-container *ngTemplateOutlet="status ? status : defaultStatus; context: state.templateContext"></ng-container>
       </div>
     </div>
 
-    <ng-template #button let-status="status" let-errorCode="errorCode" let-isListening="isListening">
+    <ng-template #defaultButton let-status="status" let-errorCode="errorCode" let-isListening="isListening">
       <svg
         xmlns='http://www.w3.org/2000/svg'
         width='16'
@@ -55,12 +65,15 @@ import { noop } from '../utils';
         </ng-template>
       </svg>
     </ng-template>
-    <ng-template #status let-transcript="transcript">
+    <ng-template #defaultStatus let-transcript="transcript">
       <p>{{transcript}}</p>
     </ng-template>
   `,
 })
-export class NgAisVoiceSearch extends BaseWidget {
+export class NgAisVoiceSearch extends BaseWidget implements OnInit {
+  @ContentChild('button') button: TemplateRef<ElementRef>;
+  @ContentChild('status') status: TemplateRef<ElementRef>;
+
   @Input() public searchAsYouSpeak: boolean = false;
   @Input() public buttonTitle: string = 'Search by voice';
   @Input()
@@ -92,6 +105,9 @@ export class NgAisVoiceSearch extends BaseWidget {
     private zone: NgZone
   ) {
     super('VoiceSearch');
+  }
+
+  ngOnInit() {
     this.createWidget(connectVoiceSearch, {
       searchAsYouSpeak: this.searchAsYouSpeak,
       onQueryChange: query => {
@@ -100,6 +116,7 @@ export class NgAisVoiceSearch extends BaseWidget {
         });
       },
     });
+    super.ngOnInit();
   }
 
   public handleClick = (event: MouseEvent) => {
