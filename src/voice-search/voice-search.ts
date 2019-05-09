@@ -10,10 +10,25 @@ import {
   OnInit,
 } from '@angular/core';
 
-import connectVoiceSearch from './connectVoiceSearch';
+import connectVoiceSearch from './connectVoiceSearch'; // tmp
+import { VoiceListeningState } from './voiceSearchHelper'; // tmp
 import { BaseWidget } from '../base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { noop } from '../utils';
+
+interface TemplateContext extends VoiceListeningState {
+  isBrowserSupported: boolean;
+  isListening: boolean;
+}
+
+type State = {
+  isBrowserSupported: boolean;
+  isListening: boolean;
+  toggleListening: () => void;
+  refine: (query: string) => void;
+  voiceListeningState: VoiceListeningState;
+  templateContext: TemplateContext;
+};
 
 @Component({
   selector: 'ais-voice-search',
@@ -80,14 +95,17 @@ export class NgAisVoiceSearch extends BaseWidget implements OnInit {
   public disabledButtonTitle: string =
     'Search by voice (not supported on this browser)';
 
-  public state = {
-    status: undefined,
+  public state: State = {
     isBrowserSupported: undefined,
     isListening: undefined,
     toggleListening: noop,
-    transcript: undefined,
-    isSpeechFinal: undefined,
-    errorCode: undefined,
+    refine: noop,
+    voiceListeningState: {
+      status: undefined,
+      transcript: undefined,
+      isSpeechFinal: undefined,
+      errorCode: undefined,
+    },
     templateContext: {
       status: undefined,
       errorCode: undefined,
@@ -96,7 +114,6 @@ export class NgAisVoiceSearch extends BaseWidget implements OnInit {
       isListening: undefined,
       isBrowserSupported: undefined,
     },
-    refine: noop,
   };
 
   constructor(
@@ -110,7 +127,7 @@ export class NgAisVoiceSearch extends BaseWidget implements OnInit {
   ngOnInit() {
     this.createWidget(connectVoiceSearch, {
       searchAsYouSpeak: this.searchAsYouSpeak,
-      onQueryChange: query => {
+      onQueryChange: (query: string) => {
         this.zone.run(() => {
           this.state.refine(query);
         });
@@ -125,18 +142,13 @@ export class NgAisVoiceSearch extends BaseWidget implements OnInit {
   };
 
   public isNotAllowedError = () =>
-    this.state.status === 'error' && this.state.errorCode === 'not-allowed';
+    this.state.voiceListeningState.status === 'error' &&
+    this.state.voiceListeningState.errorCode === 'not-allowed';
 
-  public updateState = (state, isFirstRendering: boolean) => {
+  public updateState = (state: State, isFirstRendering: boolean) => {
     this.zone.run(() => {
       this.state = {
-        isBrowserSupported: state.isBrowserSupported,
-        isListening: state.isListening,
-        toggleListening: state.toggleListening,
-        status: state.voiceListeningState.status,
-        transcript: state.voiceListeningState.transcript,
-        isSpeechFinal: state.voiceListeningState.isSpeechFinal,
-        errorCode: state.voiceListeningState.errorCode,
+        ...state,
         templateContext: {
           status: state.voiceListeningState.status,
           errorCode: state.voiceListeningState.errorCode,
@@ -145,7 +157,6 @@ export class NgAisVoiceSearch extends BaseWidget implements OnInit {
           isListening: state.isListening,
           isBrowserSupported: state.isBrowserSupported,
         },
-        refine: state.refine,
       };
     });
   };
