@@ -77,7 +77,7 @@ const connectVoiceSearch: VoiceSearchConnector = (
       );
     };
 
-    const { searchAsYouSpeak, onQueryChange } = widgetParams;
+    const { searchAsYouSpeak } = widgetParams;
 
     return {
       init({ helper, instantSearchInstance }) {
@@ -99,7 +99,7 @@ const connectVoiceSearch: VoiceSearchConnector = (
         })();
         (this as any)._voiceSearchHelper = voiceSearchHelper({
           searchAsYouSpeak,
-          onQueryChange: onQueryChange || (this as any)._refine,
+          onQueryChange: (this as any)._refine,
           onStateChange: () => {
             render({
               isFirstRendering: false,

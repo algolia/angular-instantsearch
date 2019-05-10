@@ -127,11 +127,6 @@ export class NgAisVoiceSearch extends BaseWidget implements OnInit {
   ngOnInit() {
     this.createWidget(connectVoiceSearch, {
       searchAsYouSpeak: this.searchAsYouSpeak,
-      onQueryChange: (query: string) => {
-        this.zone.run(() => {
-          this.state.refine(query);
-        });
-      },
     });
     super.ngOnInit();
   }
