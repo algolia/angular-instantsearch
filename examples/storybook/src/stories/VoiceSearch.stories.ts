@@ -77,8 +77,8 @@ storiesOf('VoiceSearch', module)
     component: wrapWithHits({
       template: `
         <ais-voice-search
-          [buttonTitle]="'Voice Search'"
-          [disabledButtonTitle]="'Disabled. Chrome Only.'"
+          buttonTitle="Voice Search"
+          disabledButtonTitle="Disabled. Chrome Only."
         >
         </ais-voice-search>
       `,
