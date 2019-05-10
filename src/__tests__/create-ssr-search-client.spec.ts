@@ -1,20 +1,21 @@
-import { createSSRSearchClient } from '../create-ssr-algolia-client';
-import * as algoliasearchProxy from 'algoliasearch/index';
+import { createSSRSearchClient } from '../create-ssr-search-client';
+import * as algoliasearch from 'algoliasearch';
 import { VERSION } from '../version';
 import { VERSION as AngularVersion } from '@angular/core';
 
-jest.mock('algoliasearch/index');
+jest.mock('algoliasearch');
 
-describe('Create SSR', () => {
-  it('passes the User-Agent', () => {
+describe('createSSRSearchClient', () => {
+  it('passes user agents', () => {
     const addAlgoliaAgent = jest.fn();
-    algoliasearchProxy.mockImplementation(() => {
+
+    algoliasearch.mockImplementation(() => {
       return {
         addAlgoliaAgent,
       };
     });
 
-    const ssrClient = createSSRSearchClient({
+    const ssrSearchClient = createSSRSearchClient({
       appId: 'test',
       apiKey: 'test',
       httpClient: null,
@@ -22,6 +23,7 @@ describe('Create SSR', () => {
       makeStateKey: null,
       transferState: null,
     });
+
     expect(addAlgoliaAgent).toHaveBeenCalledTimes(3);
     expect(addAlgoliaAgent).toHaveBeenCalledWith(
       `angular (${AngularVersion.full})`

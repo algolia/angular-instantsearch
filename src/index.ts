@@ -52,12 +52,9 @@ export { NgAisQueryRuleContextModule };
 import { NgAisVoiceSearchModule } from './voice-search/voice-search.module';
 export { NgAisVoiceSearchModule };
 
-// Custom SSR algoliasearchClient
-import {
-  createSSRAlgoliaClient,
-  createSSRSearchClient,
-} from './create-ssr-algolia-client';
-export { createSSRAlgoliaClient, createSSRSearchClient };
+// Server-side rendering search client
+import { createSSRSearchClient } from './create-ssr-search-client';
+export { createSSRSearchClient };
 
 import { parseServerRequest } from './parse-server-request';
 export { parseServerRequest };
