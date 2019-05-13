@@ -1,6 +1,7 @@
 ---
 title: Getting started
 layout: getting-started.pug
+canonical: https://www.algolia.com/doc/guides/building-search-ui/getting-started/angular/
 ---
 
 > If you are comming from Angular InstantSearch v1 and you want to upgrade to v2, you can simply use the [migration guide](guides/migration-guide.html).

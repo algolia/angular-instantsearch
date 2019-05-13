@@ -111,7 +111,7 @@ export class NgAisPagination extends BaseWidget {
   @Input() public showNext: boolean = true;
   @Input() public padding: number | string = 3;
 
-  // connector optionsw
+  // connector options
   @Input() public totalPages?: number | string;
 
   public state = {

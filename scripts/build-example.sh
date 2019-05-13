@@ -3,7 +3,7 @@
 set -e # exit when error
 
 yarn
-yarn build
+yarn build --no-progress
 
 (
   cd examples/$1

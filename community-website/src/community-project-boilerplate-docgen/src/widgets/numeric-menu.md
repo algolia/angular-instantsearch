@@ -1,6 +1,7 @@
 ---
 title: Widgets - Numeric Menu
 layout: widget.pug
+canonical: https://www.algolia.com/doc/api-reference/widgets/numeric-menu/angular/
 ---
 
 # Numeric Menu

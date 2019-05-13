@@ -1,6 +1,6 @@
 # Angular InstantSearch
 
-> ⚡ Lightning-fast search for Angular app apps, by [Algolia][algolia-website].
+> ⚡ Lightning-fast search for Angular apps, by [Algolia][algolia-website].
 
 [![Version][version-svg]][package-url] [![Build Status][ci-badge]][ci-url] [![License][license-image]][license-url] [![Downloads][downloads-image]][downloads-url]
 

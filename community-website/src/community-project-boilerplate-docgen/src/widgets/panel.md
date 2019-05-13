@@ -1,6 +1,8 @@
 ---
 title: Widgets - Panel
 layout: widget.pug
+# not in the doc yet
+# canonical: https://www.algolia.com/doc/api-reference/widgets/panel/angular/
 ---
 
 # Panel
