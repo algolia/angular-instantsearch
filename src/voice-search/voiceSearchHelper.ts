@@ -32,6 +32,7 @@ export default function voiceSearchHelper({
   onQueryChange,
   onStateChange,
 }: VoiceSearchHelperParams): VoiceSearchHelper {
+  // tslint:disable-next-line
   const SpeechRecognitionAPI: new () => SpeechRecognition =
     (window as any).webkitSpeechRecognition ||
     (window as any).SpeechRecognition;
