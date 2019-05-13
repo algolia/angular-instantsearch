@@ -46,19 +46,18 @@ export class NgAisHits extends BaseWidget {
     public instantSearchParent: any
   ) {
     super('Hits');
-    this.createWidget(connectHitsWithInsights, { escapeHits: true });
+  }
+
+  ngOnInit() {
+    this.createWidget(connectHitsWithInsights, {
+      escapeHits: true,
+      transformItems: this.transformItems,
+    });
+    super.ngOnInit();
   }
 
   updateState = (state, isFirstRendering: boolean) => {
     if (isFirstRendering) return;
-
-    this.state = {
-      ...state,
-      results: state.results,
-      hits:
-        typeof this.transformItems === 'function'
-          ? this.transformItems(state.hits)
-          : state.hits,
-    };
+    this.state = state;
   };
 }
