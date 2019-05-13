@@ -25,6 +25,23 @@ storiesOf('Hits', module)
       `,
     }),
   }))
+  .add('with transformItems', () => ({
+    component: wrapWithHits({
+      template: `
+      <ais-hits [transformItems]="transformItems"> 
+        <ng-template let-hits="hits">
+          <div *ngFor="let hit of hits">
+            Hit {{hit.name}}
+          </div>
+        </ng-template>
+      </ais-hits>
+      `,
+      methods: {
+        transformItems: items =>
+          items.map(item => ({ ...item, name: item.name + ' (transformed)' })),
+      },
+    }),
+  }))
   .add('with insights', () => ({
     component: wrapWithHits({
       template: `
