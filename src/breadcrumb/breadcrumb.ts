@@ -77,7 +77,7 @@ export class NgAisBreadcrumb extends BaseWidget {
   }
 
   public state: BreadcrumbState = {
-    createURL: () => '',
+    createURL: () => '#',
     items: [],
     refine: noop,
   };
