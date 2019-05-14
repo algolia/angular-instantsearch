@@ -64,7 +64,6 @@ export class NgAisHits extends BaseWidget {
 
   ngOnInit() {
     this.createWidget(connectHitsWithInsights, {
-      escapeHits: true,
       transformItems: this.transformItems,
     });
     super.ngOnInit();

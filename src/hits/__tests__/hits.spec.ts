@@ -51,7 +51,6 @@ describe('Hits', () => {
     render({});
 
     expect(createWidget).toHaveBeenCalledWith(connectHitsWithInsights, {
-      escapeHits: true,
       transformItems,
     });
     createWidget.mockRestore();
