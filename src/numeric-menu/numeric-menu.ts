@@ -48,7 +48,10 @@ export type NumericMenuState = {
 export class NgAisNumericMenu extends BaseWidget {
   @Input() public attribute: string;
   @Input() public items: { label: string; start?: number; end?: number }[];
-  // TODO: add prop transformItem
+  @Input()
+  public transformItems?: <U extends NumericMenuItem>(
+    items: NumericMenuItem[]
+  ) => U[];
 
   public state: NumericMenuState = {
     items: [],
@@ -71,6 +74,7 @@ export class NgAisNumericMenu extends BaseWidget {
     this.createWidget(connectNumericMenu, {
       attribute: this.attribute,
       items: this.items,
+      transformItems: this.transformItems,
     });
     super.ngOnInit();
   }
