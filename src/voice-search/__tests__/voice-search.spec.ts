@@ -22,6 +22,9 @@ describe('VoiceSearch', () => {
       const button = fixture.debugElement.nativeElement.querySelector('button');
       button.click();
       expect(toggleListening).toHaveBeenCalledTimes(1);
+
+      button.click(); // see if still clickable when listening
+      expect(toggleListening).toHaveBeenCalledTimes(2);
     });
   });
 
