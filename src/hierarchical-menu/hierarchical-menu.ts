@@ -5,10 +5,25 @@ import { BaseWidget } from '../base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { parseNumberInput, noop } from '../utils';
 
+export type HierarchicalMenuSortByStringOptions =
+  | 'count:asc'
+  | 'count:desc'
+  | 'name:asc'
+  | 'name:desc'
+  | 'isRefined';
+
 export type HierarchicalMenuState = {
-  createURL: Function;
-  items: {}[];
-  refine: Function;
+  createURL: (value: string) => string;
+  items: HierarchicalMenuItem[];
+  refine: (value: string) => void;
+};
+
+export type HierarchicalMenuItem = {
+  value: string;
+  label: string;
+  count: number;
+  isRefined: boolean;
+  data: HierarchicalMenuItem[] | null;
 };
 
 @Component({
@@ -31,24 +46,28 @@ export type HierarchicalMenuState = {
   `,
 })
 export class NgAisHierarchicalMenu extends BaseWidget {
-  // render option
-  @Input() public transformItems?: Function;
-
-  // instance options
   @Input() public attributes: string[];
   @Input() public separator?: string;
   @Input() public rootPath?: string;
   @Input() public showParentLevel?: boolean;
   @Input() public limit?: number | string;
-  @Input() public sortBy?: string[] | ((item: object) => number);
+  @Input()
+  public sortBy?:
+    | HierarchicalMenuSortByStringOptions[]
+    | ((a: HierarchicalMenuItem, b: HierarchicalMenuItem) => number);
+
+  @Input()
+  public transformItems?: <U extends HierarchicalMenuItem>(
+    items: HierarchicalMenuItem[]
+  ) => U[];
 
   public state: HierarchicalMenuState = {
-    createURL: noop,
+    createURL: () => '#',
     items: [],
     refine: noop,
   };
 
-  get isHidden() {
+  get isHidden(): boolean {
     return this.state.items.length === 0 && this.autoHideContainer;
   }
 
