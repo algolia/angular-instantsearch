@@ -16,14 +16,14 @@ import { BaseWidget } from '../base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { noop } from '../utils';
 
-interface TemplateContext {
+type TemplateContext = {
   status: string;
   transcript?: string;
   isSpeechFinal?: boolean;
   errorCode?: string;
   isBrowserSupported: boolean;
   isListening: boolean;
-}
+};
 
 type State = {
   isBrowserSupported: boolean;
