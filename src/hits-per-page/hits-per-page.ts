@@ -6,8 +6,14 @@ import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { noop } from '../utils';
 
 export type HitsPerPageState = {
-  items: {}[];
-  refine: Function;
+  items: HitsPerPageItem[];
+  refine: (value: number) => void;
+};
+
+export type HitsPerPageItem = {
+  value: number;
+  label: string;
+  isRefined?: boolean;
 };
 
 @Component({
@@ -34,19 +40,19 @@ export type HitsPerPageState = {
   `,
 })
 export class NgAisHitsPerPage extends BaseWidget {
+  @Input() public items: HitsPerPageItem[];
   @Input()
-  public items: {
-    value: number;
-    label: string;
-    default?: boolean;
-  }[];
+  public transformItems?: <U extends HitsPerPageItem>(
+    items: HitsPerPageItem[]
+  ) => U[];
 
   public state: HitsPerPageState = {
     items: [],
     refine: noop,
+    // TODO: add hasNoResults and disable <select> when true
   };
 
-  get isHidden() {
+  get isHidden(): boolean {
     return this.state.items.length === 0 && this.autoHideContainer;
   }
 
@@ -58,7 +64,10 @@ export class NgAisHitsPerPage extends BaseWidget {
   }
 
   public ngOnInit() {
-    this.createWidget(connectHitsPerPage, { items: this.items });
+    this.createWidget(connectHitsPerPage, {
+      items: this.items,
+      transformItems: this.transformItems,
+    });
     super.ngOnInit();
   }
 }
