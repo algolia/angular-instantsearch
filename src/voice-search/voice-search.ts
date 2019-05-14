@@ -10,8 +10,8 @@ import {
   OnInit,
 } from '@angular/core';
 
-import connectVoiceSearch from './connectVoiceSearch'; // tmp
-import { VoiceListeningState } from './voiceSearchHelper'; // tmp
+import { connectVoiceSearch } from 'instantsearch.js/es/connectors';
+import { VoiceListeningState } from 'instantsearch.js/es/lib/voiceSearchHelper';
 import { BaseWidget } from '../base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { noop } from '../utils';
