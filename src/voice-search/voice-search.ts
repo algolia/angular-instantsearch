@@ -136,7 +136,7 @@ export class NgAisVoiceSearch extends BaseWidget implements OnInit {
   }
 
   public handleClick = (event: MouseEvent) => {
-    (<HTMLElement>event.currentTarget).blur();
+    (event.currentTarget as HTMLElement).blur();
     this.state.toggleListening();
   };
 
