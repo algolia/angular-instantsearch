@@ -25,25 +25,36 @@ const defaultState = {
   createURL: jest.fn(),
 };
 
-const render = createRenderer({
-  defaultState,
-  template: '<ais-hierarchical-menu></ais-hierarchical-menu>',
-  TestedWidget: NgAisHierarchicalMenu,
-  additionalDeclarations: [NgAisHierarchicalMenuItem],
-});
-
 describe('HierarchicalMenu', () => {
   it('renders markup without state', () => {
+    const render = createRenderer({
+      defaultState,
+      template: '<ais-hierarchical-menu></ais-hierarchical-menu>',
+      TestedWidget: NgAisHierarchicalMenu,
+      additionalDeclarations: [NgAisHierarchicalMenuItem],
+    });
     const fixture = render();
     expect(fixture).toMatchSnapshot();
   });
 
   it('renders markup with state', () => {
+    const render = createRenderer({
+      defaultState,
+      template: '<ais-hierarchical-menu></ais-hierarchical-menu>',
+      TestedWidget: NgAisHierarchicalMenu,
+      additionalDeclarations: [NgAisHierarchicalMenuItem],
+    });
     const fixture = render({});
     expect(fixture).toMatchSnapshot();
   });
 
   it('should call refine() on item click', () => {
+    const render = createRenderer({
+      defaultState,
+      template: '<ais-hierarchical-menu></ais-hierarchical-menu>',
+      TestedWidget: NgAisHierarchicalMenu,
+      additionalDeclarations: [NgAisHierarchicalMenuItem],
+    });
     const refine = jest.fn();
     const fixture = render({ refine });
 
@@ -73,6 +84,12 @@ describe('HierarchicalMenu', () => {
   });
 
   it('should be hidden with `autoHideContainer`', () => {
+    const render = createRenderer({
+      defaultState,
+      template: '<ais-hierarchical-menu></ais-hierarchical-menu>',
+      TestedWidget: NgAisHierarchicalMenu,
+      additionalDeclarations: [NgAisHierarchicalMenuItem],
+    });
     const fixture = render({ items: [] });
     fixture.componentInstance.testedWidget.autoHideContainer = true;
     fixture.detectChanges();
