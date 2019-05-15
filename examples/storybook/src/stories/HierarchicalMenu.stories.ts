@@ -53,4 +53,29 @@ storiesOf('HierarchicalMenu', module)
         },
       },
     }),
-  }));
+  }))
+  .add('with transformItems', () => {
+    const transformItems = items =>
+      items.map(item => ({
+        ...item,
+        label: `${item.label} (transformed)`,
+        data: item.data ? transformItems(item.data) : null,
+      }));
+
+    return {
+      component: wrapWithHits({
+        template: `
+        <ais-hierarchical-menu
+          [attributes]="[
+            'hierarchicalCategories.lvl0',
+            'hierarchicalCategories.lvl1',
+            'hierarchicalCategories.lvl2'
+          ]"
+          [transformItems]="transformItems"
+        >
+        </ais-hierarchical-menu>
+        `,
+        methods: { transformItems },
+      }),
+    };
+  });
