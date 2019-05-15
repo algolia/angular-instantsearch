@@ -68,6 +68,12 @@ describe('HierarchicalMenu', () => {
   });
 
   it('should apply `transformItems` if specified', () => {
+    const render = createRenderer({
+      defaultState,
+      template: '<ais-hierarchical-menu></ais-hierarchical-menu>',
+      TestedWidget: NgAisHierarchicalMenu,
+      additionalDeclarations: [NgAisHierarchicalMenuItem],
+    });
     const fixture = render({});
 
     const mapItems = items =>
