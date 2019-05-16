@@ -6,14 +6,20 @@ import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { noop } from '../utils';
 
 export type HitsPerPageState = {
-  items: HitsPerPageItem[];
+  items: HitsPerPageRenderingItem[];
   refine: (value: number) => void;
 };
 
-export type HitsPerPageItem = {
+export type HitsPerPageInstanceItem = {
   value: number;
   label: string;
-  isRefined?: boolean;
+  default?: boolean;
+};
+
+export type HitsPerPageRenderingItem = {
+  value: number;
+  label: string;
+  isRefined: boolean;
 };
 
 @Component({
@@ -40,10 +46,10 @@ export type HitsPerPageItem = {
   `,
 })
 export class NgAisHitsPerPage extends BaseWidget {
-  @Input() public items: HitsPerPageItem[];
+  @Input() public items: HitsPerPageInstanceItem[];
   @Input()
-  public transformItems?: <U extends HitsPerPageItem>(
-    items: HitsPerPageItem[]
+  public transformItems?: <U extends HitsPerPageRenderingItem>(
+    items: HitsPerPageRenderingItem[]
   ) => U[];
 
   public state: HitsPerPageState = {
