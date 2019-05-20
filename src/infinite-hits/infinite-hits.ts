@@ -14,7 +14,7 @@ import { noop } from '../utils';
 
 export type InfiniteHitsState = {
   hits: InfiniteHitsItem[];
-  results: {};
+  results: any;
   isFirstPage: boolean;
   isLastPage: boolean;
   showMore: Function;
