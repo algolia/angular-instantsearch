@@ -34,7 +34,7 @@ export class NgAisClearRefinements extends BaseWidget {
   // instance options
   @Input() public includedAttributes: string[];
   @Input() public excludedAttributes: string[];
-  @Input() public transformItems?: <U extends string>(items: string[]) => U[];
+  @Input() public transformItems?: (items: string[]) => string[];
 
   public state: ClearRefinementsState = {
     hasRefinements: false,
