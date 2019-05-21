@@ -9,18 +9,11 @@ import {
 
 import { connectHitsWithInsights } from 'instantsearch.js/es/connectors';
 import { BaseWidget } from '../base-widget';
-import { NgAisInstantSearch } from '../instantsearch/instantsearch';
+import { NgAisInstantSearch, Hit } from '../instantsearch/instantsearch';
 
 export type HitsState = {
-  hits: HitsItem[];
+  hits: Hit[];
   results: {};
-};
-
-export type HitsItem = {
-  [attribute: string]: any;
-  objectID: string;
-  __position: number;
-  __queryID?: string;
 };
 
 @Component({
@@ -48,7 +41,7 @@ export class NgAisHits extends BaseWidget {
   @ContentChild(TemplateRef) public template?: TemplateRef<any>;
 
   @Input()
-  public transformItems?: <U extends HitsItem>(items: HitsItem[]) => U[];
+  public transformItems?: <U extends Hit>(items: Hit[]) => U[];
 
   public state: HitsState = {
     hits: [],
