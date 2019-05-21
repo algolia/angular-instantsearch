@@ -5,9 +5,9 @@ import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { noop } from '../utils';
 
 export type BreadcrumbState = {
-  createURL: Function;
+  createURL: (value: string) => string;
   items: BreadcrumbItem[];
-  refine: Function;
+  refine: (value: string) => void;
 };
 
 export type BreadcrumbItem = {
@@ -56,8 +56,11 @@ export class NgAisBreadcrumb extends BaseWidget {
   // instance options
   @Input() public attributes: string[];
   @Input() public rootPath?: string;
-  // TODO: add separator?
-  // TODO: add transformItems?
+  @Input() public separator?: string;
+  @Input()
+  public transformItems?: <U extends BreadcrumbItem>(
+    items: BreadcrumbItem[]
+  ) => U[];
 
   get isHidden() {
     return this.state.items.length === 0 && this.autoHideContainer;
@@ -74,7 +77,7 @@ export class NgAisBreadcrumb extends BaseWidget {
   }
 
   public state: BreadcrumbState = {
-    createURL: noop,
+    createURL: () => '#',
     items: [],
     refine: noop,
   };
@@ -90,12 +93,14 @@ export class NgAisBreadcrumb extends BaseWidget {
     this.createWidget(connectBreadcrumb, {
       attributes: this.attributes,
       rootPath: this.rootPath,
+      separator: this.separator,
+      transformItems: this.transformItems,
     });
 
     super.ngOnInit();
   }
 
-  public handleClick(event: MouseEvent, item: BreadcrumbItem) {
+  public handleClick(event: MouseEvent, item: BreadcrumbItem): void {
     event.preventDefault();
     event.stopPropagation();
 
