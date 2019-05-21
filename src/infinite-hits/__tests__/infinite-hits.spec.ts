@@ -47,7 +47,7 @@ describe('InfiniteHits', () => {
     const render = createRenderer({
       defaultState,
       template:
-        '<ais-infinite-hits [transformItems]="transformItems"></ais-infinite-hits>',
+        '<ais-infinite-hits [escapeHTML]="false" [transformItems]="transformItems"></ais-infinite-hits>',
       TestedWidget: NgAisInfiniteHits,
       additionalDeclarations: [NgAisHighlight],
       methods: { transformItems },
@@ -56,6 +56,7 @@ describe('InfiniteHits', () => {
     render({});
 
     expect(createWidget).toHaveBeenCalledWith(connectInfiniteHitsWithInsights, {
+      escapeHTML: false,
       transformItems,
     });
     createWidget.mockRestore();

@@ -55,6 +55,7 @@ export class NgAisInfiniteHits extends BaseWidget {
   @ContentChild(TemplateRef) public template?: any;
 
   // rendering options
+  @Input() public escapeHTML: boolean;
   @Input() public showPrevious: boolean = false;
   @Input() public showPreviousLabel: string = 'Show previous results';
   @Input() public showMoreLabel: string = 'Show more results';
@@ -86,6 +87,7 @@ export class NgAisInfiniteHits extends BaseWidget {
 
   ngOnInit() {
     this.createWidget(connectInfiniteHitsWithInsights, {
+      escapeHTML: this.escapeHTML,
       transformItems: this.transformItems,
     });
     super.ngOnInit();
