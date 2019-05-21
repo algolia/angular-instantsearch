@@ -22,4 +22,31 @@ storiesOf('NumericMenu', module)
       </ais-panel>
     `,
     }),
-  }));
+  }))
+  .add('with transformItems', () => {
+    const transformItems = items => {
+      return items.map(item => ({
+        ...item,
+        label: `${item.label} (transformed)`,
+      }));
+    };
+    return {
+      component: wrapWithHits({
+        template: `
+        <ais-numeric-menu
+          attribute="price"
+          [items]="[
+            { label: 'All' },
+            { end: 4, label: 'less than 4' },
+            { start: 4, end: 4, label: '4' },
+            { start: 5, end: 10, label: 'between 5 and 10' },
+            { start: 10, label: 'more than 10' }
+          ]"
+          [transformItems]="transformItems"
+        >
+        </ais-numeric-menu>
+        `,
+        methods: { transformItems },
+      }),
+    };
+  });
