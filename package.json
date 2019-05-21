@@ -134,7 +134,7 @@
     "readline-sync": "1.4.9",
     "replace-in-file": "3.4.4",
     "rxjs": "5.5.12",
-    "semver": "5.7.0",
+    "semver": "6.0.0",
     "shelljs": "0.8.3",
     "style-loader": "0.23.1",
     "ts-loader": "5.4.5",
