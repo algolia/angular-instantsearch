@@ -18,8 +18,8 @@ import { noop } from '../utils';
 
 type TemplateContext = {
   status: string;
-  transcript?: string;
-  isSpeechFinal?: boolean;
+  transcript: string;
+  isSpeechFinal: boolean;
   errorCode?: string;
   isBrowserSupported: boolean;
   isListening: boolean;
@@ -105,18 +105,18 @@ export class NgAisVoiceSearch extends BaseWidget implements OnInit {
     toggleListening: noop,
     refine: noop,
     voiceListeningState: {
-      status: undefined,
-      transcript: undefined,
-      isSpeechFinal: undefined,
+      status: '',
+      transcript: '',
+      isSpeechFinal: false,
       errorCode: undefined,
     },
     templateContext: {
       status: '',
       errorCode: undefined,
-      transcript: undefined,
-      isSpeechFinal: undefined,
-      isListening: undefined,
-      isBrowserSupported: undefined,
+      transcript: '',
+      isSpeechFinal: false,
+      isListening: false,
+      isBrowserSupported: false,
     },
   };
 
