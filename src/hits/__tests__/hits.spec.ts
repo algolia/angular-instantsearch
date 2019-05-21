@@ -1,3 +1,4 @@
+import { connectHitsWithInsights } from 'instantsearch.js/es/connectors';
 import { createRenderer } from '../../../helpers/test-renderer';
 import { NgAisHits } from '../hits';
 import { NgAisHighlight } from '../../highlight/highlight';
@@ -35,19 +36,24 @@ describe('Hits', () => {
     expect(fixture).toMatchSnapshot();
   });
 
-  it('should apply `transformItems` if specified', () => {
+  it('should create widget with connectHits and pass instance options', () => {
+    const createWidget = jest.spyOn(NgAisHits.prototype, 'createWidget');
+
+    const transformItems = jest.fn(x => x);
     const render = createRenderer({
       defaultState,
-      template: '<ais-hits></ais-hits>',
+      template: '<ais-hits [transformItems]="transformItems"></ais-hits>',
       TestedWidget: NgAisHits,
       additionalDeclarations: [NgAisHighlight],
+      methods: { transformItems },
     });
-    const fixture = render({});
-    fixture.componentInstance.testedWidget.transformItems = items =>
-      items.map(item => ({ ...item, name: `transformed - ${item.name}` }));
-    fixture.componentInstance.testedWidget.updateState(defaultState, false);
-    fixture.detectChanges();
-    expect(fixture).toMatchSnapshot();
+
+    render({});
+
+    expect(createWidget).toHaveBeenCalledWith(connectHitsWithInsights, {
+      transformItems,
+    });
+    createWidget.mockRestore();
   });
 
   it('should expose hits to the passed template', () => {
