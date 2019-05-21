@@ -29,18 +29,9 @@ storiesOf('VoiceSearch', module)
       `,
     }),
   }))
-  .add('with a custom button text', () => {
-    const style = window.document.createElement('style');
-    window.document.head.appendChild(style);
-    [
-      `.custom-button .ais-VoiceSearch-button:hover {
-        background: inherit;
-      }`,
-    ].forEach(rule => (style.sheet as CSSStyleSheet).insertRule(rule));
-
-    return {
-      component: wrapWithHits({
-        template: `
+  .add('with a custom button text', () => ({
+    component: wrapWithHits({
+      template: `
         <div class="custom-button">
           <ais-voice-search>
             <ng-template #button let-isListening="isListening">
@@ -49,9 +40,8 @@ storiesOf('VoiceSearch', module)
           </ais-voice-search>
         </div>
       `,
-      }),
-    };
-  })
+    }),
+  }))
   .add('with full status', () => ({
     component: wrapWithHits({
       template: `
@@ -107,40 +97,9 @@ storiesOf('VoiceSearch', module)
       `,
     }),
   }))
-  .add('example of dynamic UI working with SearchBox', () => {
-    const style = window.document.createElement('style');
-    window.document.head.appendChild(style);
-    [
-      `.custom-ui .ais-VoiceSearch-button {
-          position: absolute;
-          right: 43px;
-          top: 52px;
-          z-index: 3;
-        }`,
-      `.custom-ui .ais-VoiceSearch-status .layer {
-          position: absolute;
-          background: rgba(255, 255, 255, 0.95);
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          z-index: 2;
-          align-items: center;
-          justify-content: center;
-          display: none;
-        }`,
-      `.custom-ui .ais-VoiceSearch-status .layer.listening-true {
-          display: flex;
-        }`,
-      `.custom-ui .ais-VoiceSearch-status .layer span {
-          font-size: 2rem;
-          color: #555;
-        }`,
-    ].forEach(rule => (style.sheet as CSSStyleSheet).insertRule(rule));
-
-    return {
-      component: wrapWithHits({
-        template: `
+  .add('example of dynamic UI working with SearchBox', () => ({
+    component: wrapWithHits({
+      template: `
         <div class="custom-ui">
           <ais-voice-search>
             <ng-template #status let-isListening="isListening"
@@ -153,6 +112,5 @@ storiesOf('VoiceSearch', module)
           <ais-search-box></ais-search-box>
         </div>
       `,
-      }),
-    };
-  });
+    }),
+  }));
