@@ -21,7 +21,7 @@
     "css-loader": "2.1.1",
     "escape-html": "1.0.3",
     "glob": "7.1.4",
-    "hasha": "3.0.0",
+    "hasha": "5.0.0",
     "jstransformer-markdown-it": "2.1.0",
     "jstransformer-pug": "0.3.0",
     "lodash": "4.17.11",
