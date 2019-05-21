@@ -40,6 +40,7 @@ export type HitsState = {
 export class NgAisHits extends BaseWidget {
   @ContentChild(TemplateRef) public template?: TemplateRef<any>;
 
+  @Input() public escapeHTML?: boolean;
   @Input() public transformItems?: <U extends Hit>(items: Hit[]) => U[];
 
   public state: HitsState = {
@@ -56,6 +57,7 @@ export class NgAisHits extends BaseWidget {
 
   ngOnInit() {
     this.createWidget(connectHitsWithInsights, {
+      escapeHTML: this.escapeHTML,
       transformItems: this.transformItems,
     });
     super.ngOnInit();

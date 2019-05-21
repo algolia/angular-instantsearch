@@ -42,7 +42,8 @@ describe('Hits', () => {
     const transformItems = jest.fn(x => x);
     const render = createRenderer({
       defaultState,
-      template: '<ais-hits [transformItems]="transformItems"></ais-hits>',
+      template:
+        '<ais-hits [escapeHTML]="false" [transformItems]="transformItems"></ais-hits>',
       TestedWidget: NgAisHits,
       additionalDeclarations: [NgAisHighlight],
       methods: { transformItems },
@@ -51,6 +52,7 @@ describe('Hits', () => {
     render({});
 
     expect(createWidget).toHaveBeenCalledWith(connectHitsWithInsights, {
+      escapeHTML: false,
       transformItems,
     });
     createWidget.mockRestore();
