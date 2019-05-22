@@ -11,7 +11,6 @@ import {
 } from '@angular/core';
 
 import { connectVoiceSearch } from 'instantsearch.js/es/connectors';
-import { VoiceListeningState } from 'instantsearch.js/es/lib/voiceSearchHelper';
 import { BaseWidget } from '../base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { noop } from '../utils';
@@ -23,6 +22,13 @@ type TemplateContext = {
   errorCode?: string;
   isBrowserSupported: boolean;
   isListening: boolean;
+};
+
+type VoiceListeningState = {
+  status: string;
+  transcript: string;
+  isSpeechFinal: boolean;
+  errorCode?: string;
 };
 
 type State = {
