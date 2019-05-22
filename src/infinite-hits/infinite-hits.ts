@@ -64,6 +64,7 @@ export class NgAisInfiniteHits extends BaseWidget {
   @ContentChild(TemplateRef) public template?: any;
 
   // rendering options
+  @Input() public escapeHTML: boolean;
   @Input() public showPrevious: boolean = false;
   @Input() public showPreviousLabel: string = 'Show previous results';
   @Input() public showMoreLabel: string = 'Show more results';
@@ -84,7 +85,14 @@ export class NgAisInfiniteHits extends BaseWidget {
     public instantSearchParent: any
   ) {
     super('InfiniteHits');
-    this.createWidget(connectInfiniteHitsWithInsights, { escapeHits: true });
+  }
+
+  ngOnInit() {
+    this.createWidget(connectInfiniteHitsWithInsights, {
+      escapeHTML: this.escapeHTML,
+      transformItems: this.transformItems,
+    });
+    super.ngOnInit();
   }
 
   public showMoreHandler(event: MouseEvent) {
@@ -99,14 +107,6 @@ export class NgAisInfiniteHits extends BaseWidget {
 
   updateState = (state, isFirstRendering: boolean) => {
     if (isFirstRendering) return;
-
-    this.state = {
-      ...state,
-      results: state.results,
-      hits:
-        typeof this.transformItems === 'function'
-          ? this.transformItems(state.hits)
-          : state.hits,
-    };
+    this.state = state;
   };
 }
