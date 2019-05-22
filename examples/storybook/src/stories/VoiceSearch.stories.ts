@@ -31,6 +31,11 @@ storiesOf('VoiceSearch', module)
   }))
   .add('with a custom button text', () => ({
     component: wrapWithHits({
+      styles: [
+        `.custom-button /deep/ .ais-VoiceSearch-button:hover {
+           background: inherit;
+         }`,
+      ],
       template: `
         <div class="custom-button">
           <ais-voice-search>
@@ -112,5 +117,35 @@ storiesOf('VoiceSearch', module)
           <ais-search-box></ais-search-box>
         </div>
       `,
+      styles: [
+        `.custom-ui /deep/ .ais-VoiceSearch-button {
+           position: absolute;
+           right: 43px;
+           top: 52px;
+           z-index: 3;
+        }`,
+        `.custom-ui /deep/ .ais-VoiceSearch-status .layer {
+           position: absolute;
+           background: rgba(255, 255, 255, 0.95);
+           top: 0;
+           bottom: 0;
+           left: 0;
+           right: 0;
+           z-index: 2;
+           align-items: center;
+           justify-content: center;
+           display: none;
+        }`,
+        `.custom-ui /deep/ .ais-VoiceSearch-status .layer.listening-true {
+           display: flex;
+        }`,
+        `.custom-ui /deep/ .ais-VoiceSearch-status .layer span {
+           font-size: 2rem;
+           color: #555;
+        }`,
+        `.custom-ui /deep/ .ais-SearchBox-reset {
+           display: none;
+        }`,
+      ],
     }),
   }));
