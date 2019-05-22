@@ -70,7 +70,9 @@ export class NgAisMenu extends BaseWidget {
   @Input() public limit?: number;
   @Input() public showMoreLimit?: number;
   @Input()
-  public sortBy?: FacetSortByStringOptions[] | ((item: object) => number);
+  public sortBy?:
+    | FacetSortByStringOptions[]
+    | ((a: MenuItem, b: MenuItem) => number);
   @Input()
   public transformItems?: <U extends MenuItem>(items: MenuItem[]) => U[];
 
