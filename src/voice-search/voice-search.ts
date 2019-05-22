@@ -35,7 +35,6 @@ type State = {
   isBrowserSupported: boolean;
   isListening: boolean;
   toggleListening: () => void;
-  refine: (query: string) => void;
   voiceListeningState: VoiceListeningState;
   templateContext: TemplateContext;
 };
@@ -109,7 +108,6 @@ export class NgAisVoiceSearch extends BaseWidget implements OnInit {
     isBrowserSupported: undefined,
     isListening: undefined,
     toggleListening: noop,
-    refine: noop,
     voiceListeningState: {
       status: '',
       transcript: '',
