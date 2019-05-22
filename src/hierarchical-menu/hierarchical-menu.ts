@@ -2,15 +2,11 @@ import { Component, Input, Inject, forwardRef } from '@angular/core';
 
 import { connectHierarchicalMenu } from 'instantsearch.js/es/connectors';
 import { BaseWidget } from '../base-widget';
-import { NgAisInstantSearch } from '../instantsearch/instantsearch';
+import {
+  NgAisInstantSearch,
+  FacetSortByStringOptions,
+} from '../instantsearch/instantsearch';
 import { parseNumberInput, noop } from '../utils';
-
-export type HierarchicalMenuSortByStringOptions =
-  | 'count:asc'
-  | 'count:desc'
-  | 'name:asc'
-  | 'name:desc'
-  | 'isRefined';
 
 export type HierarchicalMenuState = {
   createURL: (value: string) => string;
@@ -53,7 +49,7 @@ export class NgAisHierarchicalMenu extends BaseWidget {
   @Input() public limit?: number | string;
   @Input()
   public sortBy?:
-    | HierarchicalMenuSortByStringOptions[]
+    | FacetSortByStringOptions[]
     | ((a: HierarchicalMenuItem, b: HierarchicalMenuItem) => number);
 
   @Input()
