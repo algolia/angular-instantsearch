@@ -150,7 +150,7 @@ export class NgAisVoiceSearch extends BaseWidget implements OnInit {
     this.state.voiceListeningState.status === 'error' &&
     this.state.voiceListeningState.errorCode === 'not-allowed';
 
-  public updateState = (state: State, isFirstRendering: boolean): void => {
+  public updateState = (state: State): void => {
     this.zone.run(() => {
       this.state = {
         ...state,
