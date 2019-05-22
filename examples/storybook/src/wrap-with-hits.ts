@@ -8,7 +8,7 @@ type Helper = {
 
 type WrapWithHitsParams = {
   template: string;
-  styles?: string;
+  styles?: string[];
   searchParameters?: {};
   methods?: {};
   searchFunction?: (helper: Helper) => void;
@@ -48,7 +48,7 @@ const defaultHits = `
 
 export function wrapWithHits({
   template,
-  styles = '',
+  styles = [],
   searchParameters = {},
   methods = {},
   searchFunction,
@@ -62,6 +62,7 @@ export function wrapWithHits({
 }: WrapWithHitsParams) {
   @Component({
     selector: 'ais-app',
+    styles,
     template: `
       <ais-instantsearch [config]="config">
         <div class="ais-container ais-container-preview">
