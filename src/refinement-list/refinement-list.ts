@@ -90,7 +90,9 @@ export class NgAisRefinementList extends BaseWidget {
   @Input() public showMore: boolean;
   @Input() public showMoreLimit: number;
   @Input()
-  public sortBy: FacetSortByStringOptions[] | ((item: object) => number);
+  public sortBy:
+    | FacetSortByStringOptions[]
+    | ((a: RefinementListItem, b: RefinementListItem) => number);
   @Input()
   public transformItems?: <U extends RefinementListItem>(
     items: RefinementListItem[]
