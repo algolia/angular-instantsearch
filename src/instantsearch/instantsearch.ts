@@ -122,6 +122,13 @@ export interface SearchForFacetValuesRequestParameters
 export type GeoRectangle = [number, number, number, number];
 export type GeoPolygon = [number, number, number, number, number, number];
 
+export type FacetSortByStringOptions =
+  | 'count:asc'
+  | 'count:desc'
+  | 'name:asc'
+  | 'name:desc'
+  | 'isRefined';
+
 // Documentation: https://www.algolia.com/doc/rest-api/search/?language=javascript#search-multiple-indexes
 export type SearchResponse = {
   hits: Hit[];
