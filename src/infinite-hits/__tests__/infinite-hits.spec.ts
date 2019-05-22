@@ -1,3 +1,4 @@
+import { connectInfiniteHitsWithInsights } from 'instantsearch.js/es/connectors';
 import { createRenderer } from '../../../helpers/test-renderer';
 import { NgAisInfiniteHits } from '../infinite-hits';
 import { NgAisHighlight } from '../../highlight/highlight';
@@ -13,25 +14,61 @@ const defaultState = {
   isLastPage: false,
 };
 
-const render = createRenderer({
-  defaultState,
-  template: '<ais-infinite-hits></ais-infinite-hits>',
-  TestedWidget: NgAisInfiniteHits,
-  additionalDeclarations: [NgAisHighlight],
-});
-
 describe('InfiniteHits', () => {
   it('renders markup without state', () => {
+    const render = createRenderer({
+      defaultState,
+      template: '<ais-infinite-hits></ais-infinite-hits>',
+      TestedWidget: NgAisInfiniteHits,
+      additionalDeclarations: [NgAisHighlight],
+    });
     const fixture = render();
     expect(fixture).toMatchSnapshot();
   });
 
   it('renders markup with state', () => {
+    const render = createRenderer({
+      defaultState,
+      template: '<ais-infinite-hits></ais-infinite-hits>',
+      TestedWidget: NgAisInfiniteHits,
+      additionalDeclarations: [NgAisHighlight],
+    });
     const fixture = render({});
     expect(fixture).toMatchSnapshot();
   });
 
+  it('should create widget with connectInfiniteHitsWithInsights and pass instance options', () => {
+    const createWidget = jest.spyOn(
+      NgAisInfiniteHits.prototype,
+      'createWidget'
+    );
+
+    const transformItems = jest.fn(x => x);
+    const render = createRenderer({
+      defaultState,
+      template:
+        '<ais-infinite-hits [escapeHTML]="false" [transformItems]="transformItems"></ais-infinite-hits>',
+      TestedWidget: NgAisInfiniteHits,
+      additionalDeclarations: [NgAisHighlight],
+      methods: { transformItems },
+    });
+
+    render({});
+
+    expect(createWidget).toHaveBeenCalledWith(connectInfiniteHitsWithInsights, {
+      escapeHTML: false,
+      transformItems,
+    });
+    createWidget.mockRestore();
+  });
+
   it('should call `showMore()` on button click', () => {
+    const render = createRenderer({
+      defaultState,
+      template: '<ais-infinite-hits></ais-infinite-hits>',
+      TestedWidget: NgAisInfiniteHits,
+      additionalDeclarations: [NgAisHighlight],
+    });
     const showMore = jest.fn();
     const fixture = render({ showMore });
 
@@ -45,6 +82,13 @@ describe('InfiniteHits', () => {
   });
 
   it('should disable `showMore` button', () => {
+    const render = createRenderer({
+      defaultState,
+      template: '<ais-infinite-hits></ais-infinite-hits>',
+      TestedWidget: NgAisInfiniteHits,
+      additionalDeclarations: [NgAisHighlight],
+    });
+
     const showMore = jest.fn();
     const fixture = render({ showMore, isLastPage: true });
 
@@ -60,13 +104,13 @@ describe('InfiniteHits', () => {
 
   it('should display `showPrevious()` button', () => {
     const showPrevious = jest.fn();
-    const renderWithPrevious = createRenderer({
+    const render = createRenderer({
       defaultState,
       template: '<ais-infinite-hits [showPrevious]=true></ais-infinite-hits>',
       TestedWidget: NgAisInfiniteHits,
       additionalDeclarations: [NgAisHighlight],
     });
-    const fixture = renderWithPrevious({ showPrevious });
+    const fixture = render({ showPrevious });
 
     const button = fixture.debugElement.nativeElement.querySelector(
       '.ais-InfiniteHits-loadPrevious'
@@ -77,14 +121,14 @@ describe('InfiniteHits', () => {
 
   it('should display `showPrevious()` button with custom label', () => {
     const showPrevious = jest.fn();
-    const renderWithPrevious = createRenderer({
+    const render = createRenderer({
       defaultState,
       template:
         '<ais-infinite-hits [showPrevious]=true showPreviousLabel="Load previous"></ais-infinite-hits>',
       TestedWidget: NgAisInfiniteHits,
       additionalDeclarations: [NgAisHighlight],
     });
-    const fixture = renderWithPrevious({ showPrevious });
+    const fixture = render({ showPrevious });
 
     const button = fixture.debugElement.nativeElement.querySelector(
       '.ais-InfiniteHits-loadPrevious'
@@ -95,13 +139,13 @@ describe('InfiniteHits', () => {
 
   it('should call `showPrevious()` on button click', () => {
     const showPrevious = jest.fn();
-    const renderWithPrevious = createRenderer({
+    const render = createRenderer({
       defaultState,
       template: '<ais-infinite-hits [showPrevious]=true></ais-infinite-hits>',
       TestedWidget: NgAisInfiniteHits,
       additionalDeclarations: [NgAisHighlight],
     });
-    const fixture = renderWithPrevious({ showPrevious });
+    const fixture = render({ showPrevious });
 
     const button = fixture.debugElement.nativeElement.querySelector(
       '.ais-InfiniteHits-loadPrevious'
@@ -114,13 +158,13 @@ describe('InfiniteHits', () => {
 
   it('should disable `showPrevious` button on first page', () => {
     const showPrevious = jest.fn();
-    const renderWithPrevious = createRenderer({
+    const render = createRenderer({
       defaultState,
       template: '<ais-infinite-hits [showPrevious]=true></ais-infinite-hits>',
       TestedWidget: NgAisInfiniteHits,
       additionalDeclarations: [NgAisHighlight],
     });
-    const fixture = renderWithPrevious({ showPrevious, isFirstPage: true });
+    const fixture = render({ showPrevious, isFirstPage: true });
 
     const button = fixture.debugElement.nativeElement.querySelector(
       '.ais-InfiniteHits-loadPrevious'
@@ -135,7 +179,7 @@ describe('InfiniteHits', () => {
   });
 
   it('should render with custom templates', () => {
-    const renderWithCustomTemplate = createRenderer({
+    const render = createRenderer({
       defaultState,
       template: `
         <ais-infinite-hits>
@@ -157,13 +201,13 @@ describe('InfiniteHits', () => {
       TestedWidget: NgAisInfiniteHits,
       additionalDeclarations: [NgAisHighlight],
     });
-    const fixture = renderWithCustomTemplate({});
+    const fixture = render({});
 
     expect(fixture).toMatchSnapshot();
   });
 
   it('should allow calling insightsClient', () => {
-    const renderWithCustomTemplate = createRenderer({
+    const render = createRenderer({
       defaultState,
       template: `
         <ais-infinite-hits>
@@ -187,7 +231,7 @@ describe('InfiniteHits', () => {
       additionalDeclarations: [NgAisHighlight],
     });
     const insights = jest.fn();
-    const fixture = renderWithCustomTemplate({ insights });
+    const fixture = render({ insights });
     expect(fixture).toMatchSnapshot();
 
     const button = fixture.debugElement.nativeElement.querySelector(
