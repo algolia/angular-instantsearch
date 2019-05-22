@@ -135,8 +135,57 @@ export type SearchResponse = {
   index?: string;
 };
 
+type HitAttributeHighlightResult = {
+  value: string;
+  matchLevel: 'none' | 'partial' | 'full';
+  matchedWords: string[];
+  fullyHighlighted?: boolean;
+};
+
+type HitHighlightResult = {
+  [attribute: string]:
+    | HitAttributeHighlightResult
+    | HitAttributeHighlightResult[]
+    | HitHighlightResult;
+};
+
+type HitAttributeSnippetResult = Pick<
+  HitAttributeHighlightResult,
+  'value' | 'matchLevel'
+>;
+
+type HitSnippetResult = {
+  [attribute: string]:
+    | HitAttributeSnippetResult
+    | HitAttributeSnippetResult[]
+    | HitSnippetResult;
+};
+
 export type Hit = {
-  _highlightResult?: object;
+  [attribute: string]: any;
+  objectID: string;
+  _highlightResult?: HitHighlightResult;
+  _snippetResult?: HitSnippetResult;
+  _rankingInfo?: {
+    promoted: boolean;
+    nbTypos: number;
+    firstMatchedWord: number;
+    proximityDistance?: number;
+    geoDistance: number;
+    geoPrecision?: number;
+    nbExactWords: number;
+    words: number;
+    filters: number;
+    userScore: number;
+    matchedGeoLocation?: {
+      lat: number;
+      lng: number;
+      distance: number;
+    };
+  };
+  _distinctSeqID?: number;
+  __position: number;
+  __queryID?: string;
 };
 
 // Documentation: https://www.algolia.com/doc/rest-api/search/?language=javascript#search-for-facet-values
