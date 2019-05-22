@@ -20,7 +20,7 @@ export type HierarchicalMenuState = {
     >
       <ul [class]="cx('list') + ' ' + cx('list', 'lvl0')">
         <ais-hierarchical-menu-item
-          *ngFor="let item of items"
+          *ngFor="let item of state.items"
           [item]="item"
           [createURL]="state.createURL"
           [refine]="state.refine"
@@ -52,12 +52,6 @@ export class NgAisHierarchicalMenu extends BaseWidget {
     return this.state.items.length === 0 && this.autoHideContainer;
   }
 
-  get items() {
-    return typeof this.transformItems === 'function'
-      ? this.transformItems(this.state.items)
-      : this.state.items;
-  }
-
   constructor(
     @Inject(forwardRef(() => NgAisInstantSearch))
     public instantSearchParent: any
@@ -73,6 +67,7 @@ export class NgAisHierarchicalMenu extends BaseWidget {
       separator: this.separator,
       showParentLevel: this.showParentLevel,
       sortBy: this.sortBy,
+      transformItems: this.transformItems,
     });
 
     super.ngOnInit();

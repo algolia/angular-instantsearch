@@ -9,8 +9,17 @@ import {
 
 import { connectInfiniteHitsWithInsights } from 'instantsearch.js/es/connectors';
 import { BaseWidget } from '../base-widget';
-import { NgAisInstantSearch } from '../instantsearch/instantsearch';
+import { NgAisInstantSearch, Hit } from '../instantsearch/instantsearch';
 import { noop } from '../utils';
+
+export type InfiniteHitsState = {
+  hits: Hit[];
+  results: any;
+  isFirstPage: boolean;
+  isLastPage: boolean;
+  showMore: Function;
+  showPrevious: Function;
+};
 
 @Component({
   selector: 'ais-infinite-hits',
@@ -55,20 +64,14 @@ export class NgAisInfiniteHits extends BaseWidget {
   @ContentChild(TemplateRef) public template?: any;
 
   // rendering options
+  @Input() public escapeHTML: boolean;
   @Input() public showPrevious: boolean = false;
   @Input() public showPreviousLabel: string = 'Show previous results';
   @Input() public showMoreLabel: string = 'Show more results';
-  @Input() public transformItems?: Function;
+  @Input() public transformItems?: <U extends Hit>(items: Hit[]) => U[];
 
   // inner widget state returned from connector
-  public state: {
-    hits: {}[];
-    isFirstPage: boolean;
-    isLastPage: boolean;
-    showMore: Function;
-    showPrevious: Function;
-    results: {};
-  } = {
+  public state: InfiniteHitsState = {
     hits: [],
     isFirstPage: false,
     isLastPage: false,
@@ -82,7 +85,14 @@ export class NgAisInfiniteHits extends BaseWidget {
     public instantSearchParent: any
   ) {
     super('InfiniteHits');
-    this.createWidget(connectInfiniteHitsWithInsights, { escapeHits: true });
+  }
+
+  ngOnInit() {
+    this.createWidget(connectInfiniteHitsWithInsights, {
+      escapeHTML: this.escapeHTML,
+      transformItems: this.transformItems,
+    });
+    super.ngOnInit();
   }
 
   public showMoreHandler(event: MouseEvent) {
@@ -97,14 +107,6 @@ export class NgAisInfiniteHits extends BaseWidget {
 
   updateState = (state, isFirstRendering: boolean) => {
     if (isFirstRendering) return;
-
-    this.state = {
-      ...state,
-      results: state.results,
-      hits:
-        typeof this.transformItems === 'function'
-          ? this.transformItems(state.hits)
-          : state.hits,
-    };
+    this.state = state;
   };
 }
