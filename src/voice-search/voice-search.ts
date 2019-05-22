@@ -141,16 +141,16 @@ export class NgAisVoiceSearch extends BaseWidget implements OnInit {
     super.ngOnInit();
   }
 
-  public handleClick = (event: MouseEvent) => {
+  public handleClick = (event: MouseEvent): void => {
     (event.currentTarget as HTMLElement).blur();
     this.state.toggleListening();
   };
 
-  public isNotAllowedError = () =>
+  public isNotAllowedError = (): boolean =>
     this.state.voiceListeningState.status === 'error' &&
     this.state.voiceListeningState.errorCode === 'not-allowed';
 
-  public updateState = (state: State, isFirstRendering: boolean) => {
+  public updateState = (state: State, isFirstRendering: boolean): void => {
     this.zone.run(() => {
       this.state = {
         ...state,
