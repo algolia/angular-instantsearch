@@ -9,8 +9,17 @@ import {
 
 import { connectInfiniteHitsWithInsights } from 'instantsearch.js/es/connectors';
 import { BaseWidget } from '../base-widget';
-import { NgAisInstantSearch } from '../instantsearch/instantsearch';
+import { NgAisInstantSearch, Hit } from '../instantsearch/instantsearch';
 import { noop } from '../utils';
+
+export type InfiniteHitsState = {
+  hits: Hit[];
+  results: any;
+  isFirstPage: boolean;
+  isLastPage: boolean;
+  showMore: Function;
+  showPrevious: Function;
+};
 
 @Component({
   selector: 'ais-infinite-hits',
@@ -59,17 +68,10 @@ export class NgAisInfiniteHits extends BaseWidget {
   @Input() public showPrevious: boolean = false;
   @Input() public showPreviousLabel: string = 'Show previous results';
   @Input() public showMoreLabel: string = 'Show more results';
-  @Input() public transformItems?: Function;
+  @Input() public transformItems?: <U extends Hit>(items: Hit[]) => U[];
 
   // inner widget state returned from connector
-  public state: {
-    hits: {}[];
-    isFirstPage: boolean;
-    isLastPage: boolean;
-    showMore: Function;
-    showPrevious: Function;
-    results: {};
-  } = {
+  public state: InfiniteHitsState = {
     hits: [],
     isFirstPage: false,
     isLastPage: false,

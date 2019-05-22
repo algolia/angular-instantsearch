@@ -4,6 +4,12 @@ import { BaseWidget } from '../base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { noop } from '../utils';
 
+type ClearRefinementsState = {
+  hasRefinements: boolean;
+  refine: () => void;
+  createURL: () => string;
+};
+
 @Component({
   selector: 'ais-clear-refinements',
   template: `
@@ -28,15 +34,15 @@ export class NgAisClearRefinements extends BaseWidget {
   // instance options
   @Input() public includedAttributes: string[];
   @Input() public excludedAttributes: string[];
-  // TODO: add transformItems
+  @Input() public transformItems?: (items: string[]) => string[];
 
-  public state = {
+  public state: ClearRefinementsState = {
     hasRefinements: false,
     refine: noop,
-    // add createURL
+    createURL: () => '#',
   };
 
-  get isHidden() {
+  get isHidden(): boolean {
     return !this.state.hasRefinements && this.autoHideContainer;
   }
 
@@ -51,6 +57,7 @@ export class NgAisClearRefinements extends BaseWidget {
     this.createWidget(connectClearRefinements, {
       includedAttributes: this.includedAttributes,
       excludedAttributes: this.excludedAttributes,
+      transformItems: this.transformItems,
     });
 
     super.ngOnInit();
