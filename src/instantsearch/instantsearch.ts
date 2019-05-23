@@ -123,8 +123,10 @@ export type GeoRectangle = [number, number, number, number];
 export type GeoPolygon = [number, number, number, number, number, number];
 
 export type FacetSortByStringOptions =
+  | 'count'
   | 'count:asc'
   | 'count:desc'
+  | 'name'
   | 'name:asc'
   | 'name:desc'
   | 'isRefined';
