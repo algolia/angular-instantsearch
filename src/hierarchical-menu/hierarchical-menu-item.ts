@@ -1,13 +1,9 @@
 import { Component, Input } from '@angular/core';
 import { bem } from '../utils';
-
-export type HierarchicalMenuItem = {
-  value: string;
-  label: string;
-  count: number;
-  isRefined: boolean;
-  data: HierarchicalMenuItem[];
-};
+import {
+  HierarchicalMenuItem,
+  HierarchicalMenuState,
+} from './hierarchical-menu';
 
 @Component({
   selector: 'ais-hierarchical-menu-item',
@@ -43,13 +39,13 @@ export type HierarchicalMenuItem = {
 })
 export class NgAisHierarchicalMenuItem {
   @Input() public lvl: number = 1;
-  @Input() public refine: (string) => void;
-  @Input() public createURL: (string) => string;
+  @Input() public refine: HierarchicalMenuState['refine'];
+  @Input() public createURL: HierarchicalMenuState['createURL'];
   @Input() public item: HierarchicalMenuItem;
 
   public cx = bem('HierarchicalMenu');
 
-  public getItemClass(item) {
+  public getItemClass(item): string {
     let className = this.cx('item');
 
     if (item.isRefined) {
@@ -63,18 +59,18 @@ export class NgAisHierarchicalMenuItem {
     return className;
   }
 
-  public getListClass() {
+  public getListClass(): string {
     return `${this.cx('list')} ${this.cx('list', 'child')} ${this.cx(
       'list',
       `lvl${this.lvl}`
     )}`;
   }
 
-  public isArray(potentialArray: any) {
+  public isArray(potentialArray: any): boolean {
     return Array.isArray(potentialArray);
   }
 
-  public handleClick(event: MouseEvent, item: HierarchicalMenuItem) {
+  public handleClick(event: MouseEvent, item: HierarchicalMenuItem): void {
     event.preventDefault();
     event.stopPropagation();
 
