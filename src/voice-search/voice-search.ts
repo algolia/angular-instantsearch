@@ -15,20 +15,38 @@ import { BaseWidget } from '../base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { noop } from '../utils';
 
+type Status =
+  | 'initial'
+  | 'askingPermission'
+  | 'waiting'
+  | 'recognizing'
+  | 'finished'
+  | 'error';
+
+type ErrorCode =
+  | 'no-speech'
+  | 'aborted'
+  | 'audio-capture'
+  | 'network'
+  | 'not-allowed'
+  | 'service-not-allowed'
+  | 'bad-grammar'
+  | 'language-not-supported';
+
 type TemplateContext = {
-  status: string;
+  status: Status;
   transcript: string;
   isSpeechFinal: boolean;
-  errorCode?: string;
+  errorCode?: ErrorCode;
   isBrowserSupported: boolean;
   isListening: boolean;
 };
 
 type VoiceListeningState = {
-  status: string;
+  status: Status;
   transcript: string;
   isSpeechFinal: boolean;
-  errorCode?: string;
+  errorCode?: ErrorCode;
 };
 
 type State = {
@@ -109,13 +127,13 @@ export class NgAisVoiceSearch extends BaseWidget implements OnInit {
     isListening: undefined,
     toggleListening: noop,
     voiceListeningState: {
-      status: '',
+      status: 'initial',
       transcript: '',
       isSpeechFinal: false,
       errorCode: undefined,
     },
     templateContext: {
-      status: '',
+      status: 'initial',
       errorCode: undefined,
       transcript: '',
       isSpeechFinal: false,
