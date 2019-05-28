@@ -116,7 +116,7 @@ export class NgAisVoiceSearch extends BaseWidget implements OnInit {
   @ContentChild('button') button: TemplateRef<ElementRef>;
   @ContentChild('status') status: TemplateRef<ElementRef>;
 
-  @Input() public searchAsYouSpeak: boolean = false;
+  @Input() public searchAsYouSpeak?: boolean;
   @Input() public buttonTitle: string = 'Search by voice';
   @Input()
   public disabledButtonTitle: string =
