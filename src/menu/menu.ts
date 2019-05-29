@@ -2,7 +2,10 @@ import { Component, Input, Inject, forwardRef } from '@angular/core';
 
 import { connectMenu } from 'instantsearch.js/es/connectors';
 import { BaseWidget } from '../base-widget';
-import { NgAisInstantSearch } from '../instantsearch/instantsearch';
+import {
+  NgAisInstantSearch,
+  FacetSortByStringOptions,
+} from '../instantsearch/instantsearch';
 import { noop } from '../utils';
 
 export type MenuItem = {
@@ -66,7 +69,10 @@ export class NgAisMenu extends BaseWidget {
   @Input() public showMore?: boolean;
   @Input() public limit?: number;
   @Input() public showMoreLimit?: number;
-  @Input() public sortBy?: string[] | ((item: object) => number);
+  @Input()
+  public sortBy?:
+    | FacetSortByStringOptions[]
+    | ((a: MenuItem, b: MenuItem) => number);
   @Input()
   public transformItems?: <U extends MenuItem>(items: MenuItem[]) => U[];
 

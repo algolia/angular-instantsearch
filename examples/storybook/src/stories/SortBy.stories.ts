@@ -17,4 +17,27 @@ storiesOf('SortBy', module)
       </ais-sort-by>
     `,
     }),
+  }))
+  .add('with transformItems', () => ({
+    component: wrapWithHits({
+      template: `
+      <ais-sort-by
+        [items]="[
+          { value: 'instant_search', label: 'Most relevant' },
+          { value: 'instant_search_price_asc', label: 'Lowest price' },
+          { value: 'instant_search_price_desc', label: 'Highest price' }
+        ]"
+        [transformItems]="transformItems"
+      >
+      </ais-sort-by>
+    `,
+      methods: {
+        transformItems: items => {
+          return items.map(item => ({
+            ...item,
+            label: `${item.label} (transformed)`,
+          }));
+        },
+      },
+    }),
   }));

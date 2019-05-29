@@ -14,6 +14,7 @@ export type SortByState = {
   currentRefinement: string | null;
   options: SortByItem[];
   refine: Function;
+  // TODO: add hasNoResults: boolean;
 };
 
 @Component({
@@ -38,12 +39,14 @@ export type SortByState = {
 })
 export class NgAisSortBy extends BaseWidget {
   @Input() public items: SortByItem[];
-  // TODO: add transformItems
+  @Input()
+  public transformItems?: <U extends SortByItem>(items: SortByItem[]) => U[];
 
   public state: SortByState = {
     currentRefinement: null,
     options: [],
     refine: noop,
+    // TODO: Add hasNoResults: null,
   };
 
   constructor(
@@ -54,7 +57,10 @@ export class NgAisSortBy extends BaseWidget {
   }
 
   public ngOnInit() {
-    this.createWidget(connectSortBy, { items: this.items });
+    this.createWidget(connectSortBy, {
+      items: this.items,
+      transformItems: this.transformItems,
+    });
     super.ngOnInit();
   }
 }
