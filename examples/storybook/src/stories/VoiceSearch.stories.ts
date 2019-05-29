@@ -21,7 +21,7 @@ storiesOf('VoiceSearch', module)
       `,
     }),
   }))
-  .add('with a ais-search-box', () => ({
+  .add('with a search box', () => ({
     component: wrapWithHits({
       template: `
         <ais-voice-search></ais-voice-search>
