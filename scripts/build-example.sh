@@ -2,8 +2,13 @@
 
 set -e # exit when error
 
-yarn
-yarn build
+if [ "$SKIP_PACKAGE_BUILD" == "true" ]; then
+  echo "Skipping package build..."
+else
+  echo "Building package first..."
+  yarn
+  yarn build
+fi
 
 (
   cd examples/$1
