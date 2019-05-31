@@ -107,7 +107,7 @@
     "@angular/platform-browser-dynamic": "5.2.11",
     "@types/jest": "24.0.13",
     "@types/lodash": "4.14.130",
-    "@types/node": "9.6.48",
+    "@types/node": "9.6.49",
     "@types/nouislider": "9.0.5",
     "angular2-template-loader": "0.6.2",
     "babel-cli": "6.26.0",
