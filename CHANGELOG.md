@@ -1,3 +1,29 @@
+# [3.0.0-beta.2](https://github.com/algolia/angular-instantsearch/compare/3.0.0-beta.1...3.0.0-beta.2) (2019-06-05)
+
+
+### Bug Fixes
+
+* **Breadcrumb:** add missing instance options and types ([#515](https://github.com/algolia/angular-instantsearch/issues/515)) ([735c2a1](https://github.com/algolia/angular-instantsearch/commit/735c2a1))
+* **ClearRefinements:** use connector transformItems ([#561](https://github.com/algolia/angular-instantsearch/issues/561)) ([cbd0d30](https://github.com/algolia/angular-instantsearch/commit/cbd0d30))
+* **HierarchicalMenu:** improve types ([#557](https://github.com/algolia/angular-instantsearch/issues/557)) ([869def1](https://github.com/algolia/angular-instantsearch/commit/869def1))
+* **HierarchicalMenu:** use connector transformItems ([#558](https://github.com/algolia/angular-instantsearch/issues/558)) ([1b1ff8d](https://github.com/algolia/angular-instantsearch/commit/1b1ff8d))
+* **Hits:** add Hits story showcasing transformItems ([#552](https://github.com/algolia/angular-instantsearch/issues/552)) ([5cf44e1](https://github.com/algolia/angular-instantsearch/commit/5cf44e1))
+* **HitsPerPage:** use connector transformItems ([#562](https://github.com/algolia/angular-instantsearch/issues/562)) ([05b4f96](https://github.com/algolia/angular-instantsearch/commit/05b4f96)), closes [#372](https://github.com/algolia/angular-instantsearch/issues/372)
+* **InfiniteHits:** improve typing ([#553](https://github.com/algolia/angular-instantsearch/issues/553)) ([39c67e9](https://github.com/algolia/angular-instantsearch/commit/39c67e9))
+* **InfiniteHits:** update connector instances options ([#554](https://github.com/algolia/angular-instantsearch/issues/554)) ([a81894c](https://github.com/algolia/angular-instantsearch/commit/a81894c))
+* **numeric-menu:** prevent refinement reset on checked radio click ([#501](https://github.com/algolia/angular-instantsearch/issues/501)) ([b20117a](https://github.com/algolia/angular-instantsearch/commit/b20117a))
+* **NumericMenu:** use connector transformItems  ([#560](https://github.com/algolia/angular-instantsearch/issues/560)) ([3c8b434](https://github.com/algolia/angular-instantsearch/commit/3c8b434))
+* **types:** update Hit type ([#579](https://github.com/algolia/angular-instantsearch/issues/579)) ([3526015](https://github.com/algolia/angular-instantsearch/commit/3526015)), closes [/github.com/algolia/instantsearch.js/blob/65911504b9ae0e2596c75f0ae74133985dc79850/src/types/instantsearch.ts#L20-L71](https://github.com//github.com/algolia/instantsearch.js/blob/65911504b9ae0e2596c75f0ae74133985dc79850/src/types/instantsearch.ts/issues/L20-L71) [/github.com/algolia/angular-instantsearch/pull/553/files#r284135258](https://github.com//github.com/algolia/angular-instantsearch/pull/553/files/issues/r284135258)
+
+
+### Features
+
+* **Hits:** expose escapeHTML instance option ([#578](https://github.com/algolia/angular-instantsearch/issues/578)) ([9bb1fb3](https://github.com/algolia/angular-instantsearch/commit/9bb1fb3))
+* **ssr:** update createSSRSearchClient() ([#500](https://github.com/algolia/angular-instantsearch/issues/500)) ([db9e597](https://github.com/algolia/angular-instantsearch/commit/db9e597))
+* **voiceSearch:** add voice search component ([#530](https://github.com/algolia/angular-instantsearch/issues/530)) ([865cf5c](https://github.com/algolia/angular-instantsearch/commit/865cf5c))
+
+
+
 # [3.0.0-beta.1](https://github.com/algolia/angular-instantsearch/compare/3.0.0-beta.0...3.0.0-beta.1) (2019-04-26)
 
 
