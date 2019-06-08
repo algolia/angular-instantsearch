@@ -13,7 +13,7 @@
     "babel-preset-env": "1.7.0",
     "babel-preset-react": "6.24.1",
     "browser-sync": "2.26.7",
-    "chokidar": "3.0.0",
+    "chokidar": "3.0.1",
     "clean-css": "4.2.1",
     "clipboard": "2.0.1",
     "codemirror": "5.46.0",
