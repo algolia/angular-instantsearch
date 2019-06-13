@@ -3,12 +3,6 @@ export function bem(widgetName: string) {
     if (element) {
       const scoppedWidgetName = `ais-${widgetName}-${element}`;
 
-      // output `ais-Widget-Header|Body|Footer ais-Header|Body|Footer`
-      if (element === 'header' || element === 'body' || element === 'footer') {
-        const nonScoppedWidgetName = `ais-${element}`;
-        return `${scoppedWidgetName} ${nonScoppedWidgetName}`;
-      }
-
       // output `ais-Widget-Xyz--abc`
       if (subElement) {
         return `${scoppedWidgetName}--${subElement}`;
