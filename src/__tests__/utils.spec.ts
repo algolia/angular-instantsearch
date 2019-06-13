@@ -6,6 +6,7 @@ describe('Utils', () => {
   describe('bem', () => {
     it('generates className for root', () => {
       expect(cx()).toBe('ais-testWidget');
+      expect(cx('')).toBe('ais-testWidget');
     });
 
     it('generates className for an element', () => {
