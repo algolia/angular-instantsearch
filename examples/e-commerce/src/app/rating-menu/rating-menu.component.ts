@@ -40,7 +40,7 @@ export type RatingMenuState = {
       <ul [class]="cx('list')">
         <li
           *ngFor="let item of state.items"
-          [class]="getItemClass(item)"
+          [class]="getRatingItemClass(item, state.items)"
           (click)="handleClick($event, item.value)"
         >
           <a
@@ -116,5 +116,15 @@ export class RatingMenu extends BaseWidget {
     event.stopPropagation();
 
     this.state.refine(value);
+  }
+
+  public getRatingItemClass(item: { isRefined?: boolean }, items) {
+    let className = this.cx('item');
+
+    if (item.isRefined || items.every(item => !item.isRefined)) {
+      className = `${className} ${this.cx('item', 'selected')}`;
+    }
+
+    return className;
   }
 }
