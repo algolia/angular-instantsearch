@@ -59,7 +59,7 @@ export type RatingMenuState = {
           >
             <svg
               *ngFor="let star of item.stars"
-              [ngClass]="cx('starIcon')"
+              [ngClass]="cx('starIcon') + ' ' + (star ? cx('starIcon', 'full') : cx('starIcon', 'empty'))"
               aria-hidden="true"
             >
               <use
