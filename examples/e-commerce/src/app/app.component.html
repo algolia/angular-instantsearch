@@ -62,7 +62,13 @@
         </ais-panel>
 
         <ais-panel header="Price">
-          <app-price-slider></app-price-slider>
+          <ais-range-slider
+            attribute="price"
+            [pips]="false"
+            [tooltips]="true"
+            [precision]="0"
+          >
+          </ais-range-slider>
         </ais-panel>
 
         <ais-panel header="Free shipping">
