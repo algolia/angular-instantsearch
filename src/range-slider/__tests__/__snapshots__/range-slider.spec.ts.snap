@@ -10,7 +10,7 @@ exports[`RangeSlider renders markup with state 1`] = `
         class="ais-RangeSlider"
       >
         <div
-          class="ais-RangeSlider-body ais-body"
+          class="ais-RangeSlider-body"
         >
           <div
             class="noUi-target noUi-ltr noUi-horizontal"
@@ -240,7 +240,7 @@ exports[`RangeSlider renders markup without state 1`] = `
         class="ais-RangeSlider"
       >
         <div
-          class="ais-RangeSlider-body ais-body"
+          class="ais-RangeSlider-body"
         >
           <div />
         </div>

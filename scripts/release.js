@@ -185,7 +185,7 @@ if (strategy === 'stable') {
   shell.exec('git merge master');
   shell.exec('git push origin develop');
 } else {
-  shell.exec(`git push origin ${currentBranch}`);
+  shell.exec(`git push origin ${currentBranch} --tags`);
   shell.exec('cd dist && npm publish --tag beta');
 }
 
