@@ -60,8 +60,8 @@ exports[`StarRating should render with state 1`] = `
               
               <svg
                 aria-hidden="true"
-                class="ais-RatingMenu-starIcon"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon"
+                class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--full"
+                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
               >
                 
                 <use
@@ -71,8 +71,8 @@ exports[`StarRating should render with state 1`] = `
               </svg>
               <svg
                 aria-hidden="true"
-                class="ais-RatingMenu-starIcon"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon"
+                class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--full"
+                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
               >
                 
                 <use
@@ -82,8 +82,8 @@ exports[`StarRating should render with state 1`] = `
               </svg>
               <svg
                 aria-hidden="true"
-                class="ais-RatingMenu-starIcon"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon"
+                class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--full"
+                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
               >
                 
                 <use
@@ -93,8 +93,8 @@ exports[`StarRating should render with state 1`] = `
               </svg>
               <svg
                 aria-hidden="true"
-                class="ais-RatingMenu-starIcon"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon"
+                class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--full"
+                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
               >
                 
                 <use
@@ -104,8 +104,8 @@ exports[`StarRating should render with state 1`] = `
               </svg>
               <svg
                 aria-hidden="true"
-                class="ais-RatingMenu-starIcon"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon"
+                class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--empty"
+                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
               >
                 
                 
@@ -136,8 +136,8 @@ exports[`StarRating should render with state 1`] = `
               
               <svg
                 aria-hidden="true"
-                class="ais-RatingMenu-starIcon"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon"
+                class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--full"
+                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
               >
                 
                 <use
@@ -147,8 +147,8 @@ exports[`StarRating should render with state 1`] = `
               </svg>
               <svg
                 aria-hidden="true"
-                class="ais-RatingMenu-starIcon"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon"
+                class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--full"
+                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
               >
                 
                 <use
@@ -158,8 +158,8 @@ exports[`StarRating should render with state 1`] = `
               </svg>
               <svg
                 aria-hidden="true"
-                class="ais-RatingMenu-starIcon"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon"
+                class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--full"
+                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
               >
                 
                 <use
@@ -169,8 +169,8 @@ exports[`StarRating should render with state 1`] = `
               </svg>
               <svg
                 aria-hidden="true"
-                class="ais-RatingMenu-starIcon"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon"
+                class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--empty"
+                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
               >
                 
                 
@@ -180,8 +180,8 @@ exports[`StarRating should render with state 1`] = `
               </svg>
               <svg
                 aria-hidden="true"
-                class="ais-RatingMenu-starIcon"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon"
+                class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--empty"
+                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
               >
                 
                 
@@ -212,8 +212,8 @@ exports[`StarRating should render with state 1`] = `
               
               <svg
                 aria-hidden="true"
-                class="ais-RatingMenu-starIcon"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon"
+                class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--full"
+                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
               >
                 
                 <use
@@ -223,8 +223,8 @@ exports[`StarRating should render with state 1`] = `
               </svg>
               <svg
                 aria-hidden="true"
-                class="ais-RatingMenu-starIcon"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon"
+                class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--full"
+                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
               >
                 
                 <use
@@ -234,8 +234,8 @@ exports[`StarRating should render with state 1`] = `
               </svg>
               <svg
                 aria-hidden="true"
-                class="ais-RatingMenu-starIcon"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon"
+                class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--empty"
+                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
               >
                 
                 
@@ -245,8 +245,8 @@ exports[`StarRating should render with state 1`] = `
               </svg>
               <svg
                 aria-hidden="true"
-                class="ais-RatingMenu-starIcon"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon"
+                class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--empty"
+                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
               >
                 
                 
@@ -256,8 +256,8 @@ exports[`StarRating should render with state 1`] = `
               </svg>
               <svg
                 aria-hidden="true"
-                class="ais-RatingMenu-starIcon"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon"
+                class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--empty"
+                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
               >
                 
                 
@@ -288,8 +288,8 @@ exports[`StarRating should render with state 1`] = `
               
               <svg
                 aria-hidden="true"
-                class="ais-RatingMenu-starIcon"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon"
+                class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--full"
+                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
               >
                 
                 <use
@@ -299,8 +299,8 @@ exports[`StarRating should render with state 1`] = `
               </svg>
               <svg
                 aria-hidden="true"
-                class="ais-RatingMenu-starIcon"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon"
+                class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--empty"
+                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
               >
                 
                 
@@ -310,8 +310,8 @@ exports[`StarRating should render with state 1`] = `
               </svg>
               <svg
                 aria-hidden="true"
-                class="ais-RatingMenu-starIcon"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon"
+                class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--empty"
+                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
               >
                 
                 
@@ -321,8 +321,8 @@ exports[`StarRating should render with state 1`] = `
               </svg>
               <svg
                 aria-hidden="true"
-                class="ais-RatingMenu-starIcon"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon"
+                class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--empty"
+                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
               >
                 
                 
@@ -332,8 +332,8 @@ exports[`StarRating should render with state 1`] = `
               </svg>
               <svg
                 aria-hidden="true"
-                class="ais-RatingMenu-starIcon"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon"
+                class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--empty"
+                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
               >
                 
                 
