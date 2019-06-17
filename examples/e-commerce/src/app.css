@@ -125,6 +125,10 @@ mark {
   margin-right: 5px;
 }
 
+.ais-ClearRefinements-button:disabled {
+  cursor: not-allowed;
+}
+
 /* Panel */
 
 .ais-Panel-header {
@@ -176,6 +180,10 @@ mark {
 .header-searchbox .ais-SearchBox-submit {
   color: #e2a400;
   height: 16px;
+}
+
+.header-searchbox .ais-SearchBox-resetIcon {
+  display: none;
 }
 
 .ais-RefinementList-searchBox .ais-SearchBox-input {
@@ -265,6 +273,7 @@ mark {
   width: 100%;
   height: 100%;
   z-index: 1;
+  cursor: pointer;
 }
 
 .ais-RangeSlider .noUi-origin,
