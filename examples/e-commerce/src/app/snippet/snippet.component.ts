@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import get from 'lodash/get';
 
 @Component({
   selector: 'app-snippet',
@@ -12,7 +11,7 @@ export class Snippet {
 
   get content() {
     if (this.hit.hasOwnProperty('_snippetResult')) {
-      const attributeHighlighted = get(this.hit._snippetResult, this.attribute);
+      const attributeHighlighted = this.hit._snippetResult[this.attribute];
 
       // check that the attributeHighlighted is a string
       if (
@@ -23,7 +22,7 @@ export class Snippet {
       }
     }
 
-    const fallback = get(this.hit, this.attribute);
+    const fallback = this.hit[this.attribute];
     if (!fallback) {
       console.warn(
         `Could not find attribute [${

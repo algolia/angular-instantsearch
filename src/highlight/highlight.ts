@@ -1,4 +1,3 @@
-const get = require('lodash/get');
 import { Component, Input } from '@angular/core';
 import { bem } from '../utils';
 
@@ -21,10 +20,7 @@ export class NgAisHighlight {
     }
 
     if (this.hit.hasOwnProperty('_highlightResult')) {
-      const attributeHighlighted = get(
-        this.hit._highlightResult,
-        this.attribute
-      );
+      const attributeHighlighted = this.hit._highlightResult[this.attribute];
 
       // check that the attributeHighlighted is a string
       if (
@@ -35,7 +31,7 @@ export class NgAisHighlight {
       }
     }
 
-    const fallback = get(this.hit, this.attribute);
+    const fallback = this.hit[this.attribute];
     if (!fallback) {
       console.warn(
         `Could not find attribute [${
