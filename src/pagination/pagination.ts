@@ -106,7 +106,7 @@ import { parseNumberInput, noop } from '../utils';
 export class NgAisPagination extends BaseWidget {
   // rendering options
   @Input() public showFirst: boolean = true;
-  @Input() public showLast: boolean = false;
+  @Input() public showLast: boolean = true;
   @Input() public showPrevious: boolean = true;
   @Input() public showNext: boolean = true;
   @Input() public padding: number | string = 3;
