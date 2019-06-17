@@ -125,10 +125,6 @@ mark {
   margin-right: 5px;
 }
 
-.ais-ClearRefinements-button:disabled {
-  cursor: not-allowed;
-}
-
 /* Panel */
 
 .ais-Panel-header {

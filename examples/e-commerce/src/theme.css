@@ -10,6 +10,7 @@ a[class^='ais-'] {
   text-decoration: none;
 }
 
+[class^='ais-'][class$='--disabled'],
 [class^='ais-'][class$='--disabled'] * {
   cursor: not-allowed;
 }
