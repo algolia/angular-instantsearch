@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start": "ng serve",
-    "build": "ng build --prod --base-href '.'"
+    "build": "ng build --prod --base-href '.' --no-progress"
   },
   "private": true,
   "dependencies": {
