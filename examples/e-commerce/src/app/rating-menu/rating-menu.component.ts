@@ -116,7 +116,10 @@ export class RatingMenu extends BaseWidget {
     this.state.refine(value);
   }
 
-  public getRatingItemClass(item: { isRefined?: boolean }, items) {
+  public getRatingItemClass(
+    item: { isRefined: boolean },
+    items: RatingMenuItem[]
+  ) {
     let className = this.cx('item');
 
     if (item.isRefined || items.every(item => !item.isRefined)) {
