@@ -55,7 +55,6 @@ export type RatingMenuState = {
               </ng-container>
             </ng-container>
 
-            <span [class]="cx('label')" aria-hidden="true">{{andUpLabel}}</span>
             <span [class]="cx('count')">{{item.count}}</span>
           </a>
         </li>
@@ -78,7 +77,6 @@ export type RatingMenuState = {
 })
 export class RatingMenu extends BaseWidget {
   // rendering options
-  @Input() public andUpLabel: string = '& Up';
   @ContentChild('starSvg') starSvg: TemplateRef<ElementRef>;
 
   // instance options
