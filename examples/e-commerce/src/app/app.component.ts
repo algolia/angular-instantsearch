@@ -10,19 +10,4 @@ export class AppComponent {
     searchClient: algoliasearch('latency', '6be0576ff61c053d5f9a3225e2a90f76'),
     indexName: 'instant_search',
   };
-
-  trackByObjectID(index, hit) {
-    return hit.objectID;
-  }
-
-  transformHits(hits) {
-    hits.forEach(hit => {
-      hit.stars = [];
-      for (let i = 1; i <= 5; i) {
-        hit.stars.push(i <= hit.rating);
-        i += 1;
-      }
-    });
-    return hits;
-  }
 }
