@@ -97,6 +97,16 @@ exports[`Pagination renders does not uses pagesPadding when nbPages < pagesPaddi
             </a>
           </li>
           
+          <li
+            class="ais-Pagination-item ais-Pagination-item--lastPage"
+          >
+            <a
+              class="ais-Pagination-link"
+              href="null"
+            >
+               ›› 
+            </a>
+          </li>
         </ul>
       </div>
     </ais-pagination>
@@ -151,6 +161,16 @@ exports[`Pagination renders markup without state 1`] = `
             </a>
           </li>
           
+          <li
+            class="ais-Pagination-item ais-Pagination-item--lastPage"
+          >
+            <a
+              class="ais-Pagination-link"
+              href="null"
+            >
+               ›› 
+            </a>
+          </li>
         </ul>
       </div>
     </ais-pagination>
@@ -275,6 +295,16 @@ exports[`Pagination renders with pages in state 1`] = `
             </a>
           </li>
           
+          <li
+            class="ais-Pagination-item ais-Pagination-item--lastPage"
+          >
+            <a
+              class="ais-Pagination-link"
+              href="null"
+            >
+               ›› 
+            </a>
+          </li>
         </ul>
       </div>
     </ais-pagination>
