@@ -10,10 +10,10 @@ h2 {
 }
 
 body {
+  -webkit-font-smoothing: antialiased;
   font-family: Open Sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol';
-  -webkit-font-smoothing: antialiased;
 }
 
 h2 {
@@ -119,11 +119,11 @@ em {
 
 .ais-ClearRefinements-button::before {
   content: url('./images/clear-filters.svg');
-  width: 10px;
   height: 10px;
+  margin-right: 5px;
   position: relative;
   top: 1px;
-  margin-right: 5px;
+  width: 10px;
 }
 
 /* Panel */
@@ -219,10 +219,10 @@ em {
 }
 
 .hit-description .ais-Highlight {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
   display: -webkit-box;
   height: 100px;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -259,18 +259,18 @@ em {
 .ais-RangeSlider .noUi-target {
   background-color: rgba(65, 66, 71, 0.08);
   border-radius: 3px;
-  height: 3px;
-  width: calc(100% - 10px);
-  position: relative;
   direction: ltr;
+  height: 3px;
   margin-top: 35px;
+  position: relative;
+  width: calc(100% - 10px);
 }
 
 .ais-RangeSlider .noUi-base {
-  width: 100%;
-  height: 100%;
-  z-index: 1;
   cursor: pointer;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
 }
 
 .ais-RangeSlider .noUi-origin,
@@ -297,9 +297,9 @@ em {
   cursor: -webkit-grabbing;
   cursor: -moz-grabbing;
   height: 14px;
-  width: 14px;
-  top: -6px;
   position: relative;
+  top: -6px;
+  width: 14px;
 }
 
 .ais-RangeSlider .noUi-handle .noUi-tooltip::before {
@@ -315,9 +315,9 @@ em {
   display: flex;
   font-size: 0.75rem;
   font-weight: bold;
+  left: 50%;
   position: absolute;
   top: -23px;
-  left: 50%;
   transform: translate(-50%, 0);
 }
 
@@ -372,11 +372,11 @@ em {
 }
 
 .ais-Pagination-item--previousPage .ais-Pagination-link::after {
-  visibility: visible;
   content: url('./images/prev-page.svg');
+  visibility: visible;
 }
 
 .ais-Pagination-item--nextPage .ais-Pagination-link::after {
-  visibility: visible;
   content: url('./images/next-page.svg');
+  visibility: visible;
 }
