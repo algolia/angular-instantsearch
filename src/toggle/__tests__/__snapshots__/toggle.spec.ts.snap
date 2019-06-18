@@ -9,33 +9,25 @@ exports[`Toggle should render with a label 1`] = `
       <div
         class="ais-ToggleRefinement"
       >
-        <ul
-          class="ais-ToggleRefinement-list"
+        <label
+          class="ais-ToggleRefinement-label"
         >
-          <li
-            class="ais-ToggleRefinement-item"
+          <input
+            class="ais-ToggleRefinement-checkbox"
+            type="checkbox"
+            value="foobar"
+          />
+          <span
+            class="ais-ToggleRefinement-labelText"
           >
-            <label
-              class="ais-ToggleRefinement-label"
-            >
-              <input
-                class="ais-ToggleRefinement-checkbox"
-                type="checkbox"
-                value="foobar"
-              />
-              <span
-                class="ais-ToggleRefinement-labelText"
-              >
-                 Foo Label 
-              </span>
-              <span
-                class="ais-ToggleRefinement-count"
-              >
-                666
-              </span>
-            </label>
-          </li>
-        </ul>
+             Foo Label 
+          </span>
+          <span
+            class="ais-ToggleRefinement-count"
+          >
+            666
+          </span>
+        </label>
       </div>
     </ais-toggle>
   </ais-instantsearch>
@@ -51,33 +43,25 @@ exports[`Toggle should render with state 1`] = `
       <div
         class="ais-ToggleRefinement"
       >
-        <ul
-          class="ais-ToggleRefinement-list"
+        <label
+          class="ais-ToggleRefinement-label"
         >
-          <li
-            class="ais-ToggleRefinement-item"
+          <input
+            class="ais-ToggleRefinement-checkbox"
+            type="checkbox"
+            value="foobar"
+          />
+          <span
+            class="ais-ToggleRefinement-labelText"
           >
-            <label
-              class="ais-ToggleRefinement-label"
-            >
-              <input
-                class="ais-ToggleRefinement-checkbox"
-                type="checkbox"
-                value="foobar"
-              />
-              <span
-                class="ais-ToggleRefinement-labelText"
-              >
-                 foobar 
-              </span>
-              <span
-                class="ais-ToggleRefinement-count"
-              >
-                666
-              </span>
-            </label>
-          </li>
-        </ul>
+             foobar 
+          </span>
+          <span
+            class="ais-ToggleRefinement-count"
+          >
+            666
+          </span>
+        </label>
       </div>
     </ais-toggle>
   </ais-instantsearch>
@@ -93,33 +77,25 @@ exports[`Toggle should render without state 1`] = `
       <div
         class="ais-ToggleRefinement"
       >
-        <ul
-          class="ais-ToggleRefinement-list"
+        <label
+          class="ais-ToggleRefinement-label"
         >
-          <li
-            class="ais-ToggleRefinement-item"
+          <input
+            class="ais-ToggleRefinement-checkbox"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="ais-ToggleRefinement-labelText"
           >
-            <label
-              class="ais-ToggleRefinement-label"
-            >
-              <input
-                class="ais-ToggleRefinement-checkbox"
-                type="checkbox"
-                value=""
-              />
-              <span
-                class="ais-ToggleRefinement-labelText"
-              >
-                  
-              </span>
-              <span
-                class="ais-ToggleRefinement-count"
-              >
-                
-              </span>
-            </label>
-          </li>
-        </ul>
+              
+          </span>
+          <span
+            class="ais-ToggleRefinement-count"
+          >
+            
+          </span>
+        </label>
       </div>
     </ais-toggle>
   </ais-instantsearch>

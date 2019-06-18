@@ -39,10 +39,10 @@ describe('Toggle', () => {
     const refine = jest.fn();
     const fixture = render({ refine });
 
-    const toggle = fixture.debugElement.nativeElement.querySelector('li');
+    const toggle = fixture.debugElement.nativeElement.querySelector('label');
     toggle.click();
 
-    expect(refine).toHaveBeenCalled();
+    expect(refine).toHaveBeenCalledTimes(1);
     expect(refine).toHaveBeenCalledWith(defaultState.value);
   });
 });
