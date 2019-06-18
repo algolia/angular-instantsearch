@@ -27,26 +27,21 @@ export type ToggleState = {
   selector: 'ais-toggle',
   template: `
     <div [class]="cx()">
-      <ul [class]="cx('list')">
-        <li
-          [class]="cx('item')"
-          (click)="handleClick($event)">
-          <label [class]="cx('label')">
-            <input
-              [class]="cx('checkbox')"
-              type="checkbox"
-              value="{{state.value.name}}"
-              [checked]="state.value.isRefined"
-            />
+      <label [class]="cx('label')">
+        <input
+          [class]="cx('checkbox')"
+          type="checkbox"
+          value="{{state.value.name}}"
+          [checked]="state.value.isRefined"
+          (change)="handleChange($event)"
+        />
 
-            <span [class]="cx('labelText')">
-              {{label || state.value.name}}
-            </span>
+        <span [class]="cx('labelText')">
+          {{label || state.value.name}}
+        </span>
 
-            <span [class]="cx('count')">{{state.value.count}}</span>
-          </label>
-        </li>
-      </ul>
+        <span [class]="cx('count')">{{state.value.count}}</span>
+      </label>
     </div>
   `,
 })
@@ -81,7 +76,7 @@ export class NgAisToggle extends BaseWidget {
     super.ngOnInit();
   }
 
-  public handleClick(event: MouseEvent) {
+  public handleChange(event: MouseEvent) {
     event.preventDefault();
     event.stopPropagation();
     this.state.refine(this.state.value);
