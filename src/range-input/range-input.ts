@@ -23,7 +23,10 @@ export type NumericRangeState = {
         <label [class]="cx('label')">
           <span [class]="cx('currency')">{{currency}}</span>
           <input
-            [class]="cx('input', 'min')"
+            [ngClass]="[
+              cx('input'),
+              cx('input', 'min')
+            ]"
             type="number"
             [min]="state.range.min"
             [max]="state.range.max"
@@ -39,7 +42,10 @@ export type NumericRangeState = {
         <label [class]="cx('label')">
           <span [class]="cx('currency')">{{currency}}</span>
           <input
-            [class]="cx('input', 'max')"
+            [ngClass]="[
+              cx('input'),
+              cx('input', 'max')
+            ]"
             type="number"
             [min]="state.range.min"
             [max]="state.range.max"

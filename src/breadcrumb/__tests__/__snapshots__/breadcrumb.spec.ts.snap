@@ -16,6 +16,7 @@ exports[`Breadcrumb renders markup with two items 1`] = `
           
           <li
             class="ais-Breadcrumb-item"
+            ng-reflect-ng-class="ais-Breadcrumb-item,"
           >
             
             
@@ -28,7 +29,8 @@ exports[`Breadcrumb renders markup with two items 1`] = `
             
           </li>
           <li
-            class="ais-Breadcrumb-item--selected"
+            class="ais-Breadcrumb-item ais-Breadcrumb-item--selected"
+            ng-reflect-ng-class="ais-Breadcrumb-item,ais-Breadc"
           >
             
             <span
