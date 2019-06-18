@@ -103,12 +103,6 @@ h2 {
   margin: 4rem 0;
 }
 
-/* Styles the SFFV highlightings */
-
-mark {
-  background: rgba(226, 164, 0, 0.4);
-}
-
 /* Clear refinements container */
 
 .ais-ClearRefinements {
