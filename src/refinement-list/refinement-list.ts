@@ -12,6 +12,7 @@ export type RefinementListItem = {
   label: string;
   count: number;
   isRefined: boolean;
+  highlighted: string;
 };
 
 export type RefinementListState = {
@@ -58,7 +59,7 @@ export type RefinementListState = {
               [checked]="item.isRefined"
             />
             <span [class]="cx('labelText')">
-              <ais-highlight attribute="highlighted" [hit]="item"></ais-highlight>
+              <ais-highlight attribute="item" [hit]="item"></ais-highlight>
             </span>
             <span [class]="cx('count')">{{item.count}}</span>
           </label>
@@ -151,4 +152,19 @@ export class NgAisRefinementList extends BaseWidget {
       this.state.refine(item.value);
     }
   }
+
+  public updateState = (state: RefinementListState): void => {
+    this.state = {
+      ...state,
+      items: state.items.map(item =>
+        Object.assign({}, item, {
+          _highlightResult: {
+            item: {
+              value: item.highlighted,
+            },
+          },
+        })
+      ),
+    };
+  };
 }

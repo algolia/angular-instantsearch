@@ -1,6 +1,7 @@
 const get = require('lodash/get');
 import { Component, Input } from '@angular/core';
 import { bem } from '../utils';
+import { highlight } from 'instantsearch.js/es/helpers';
 
 @Component({
   selector: 'ais-highlight',
@@ -9,30 +10,17 @@ import { bem } from '../utils';
 export class NgAisHighlight {
   @Input() attribute: string;
   @Input() hit: { _highlightResult?: {}; label?: string; highlighted?: string };
-  @Input() tagName: string = 'em';
+  @Input() tagName: string = 'mark';
 
   cx = bem('Highlight');
 
   get content() {
-    if (this.attribute === 'highlighted') {
-      return this.hit.highlighted
-        ? this.replaceWithTagName(this.hit.highlighted)
-        : this.hit.label;
-    }
-
     if (this.hit.hasOwnProperty('_highlightResult')) {
-      const attributeHighlighted = get(
-        this.hit._highlightResult,
-        this.attribute
-      );
-
-      // check that the attributeHighlighted is a string
-      if (
-        attributeHighlighted !== undefined &&
-        typeof attributeHighlighted.value === 'string'
-      ) {
-        return this.replaceWithTagName(attributeHighlighted.value);
-      }
+      return highlight({
+        attribute: this.attribute,
+        highlightedTagName: this.tagName,
+        hit: this.hit,
+      });
     }
 
     const fallback = get(this.hit, this.attribute);
@@ -47,14 +35,5 @@ export class NgAisHighlight {
     }
 
     return fallback;
-  }
-
-  replaceWithTagName(value: string) {
-    return value
-      .replace(
-        new RegExp('<em>', 'g'),
-        `<${this.tagName} class="${this.cx('highlighted')}">`
-      )
-      .replace(new RegExp('</em>', 'g'), `</${this.tagName}>`);
   }
 }
