@@ -25,7 +25,7 @@ export type BreadcrumbItem = {
       <ul [class]="cx('list')">
         <li
           *ngFor="let item of items"
-          [class]="cx('item', item.isLast ? 'selected' : undefined)"
+          [ngClass]="[cx('item'), item.isLast ? cx('item', 'selected') : '']"
           (click)="handleClick($event, item)"
         >
           <span
