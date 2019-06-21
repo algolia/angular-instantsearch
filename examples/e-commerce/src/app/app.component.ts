@@ -11,4 +11,24 @@ export class AppComponent {
     indexName: 'instant_search',
     routing: true,
   };
+
+  onKeyUp = event => {
+    if (event.key !== 'Escape') {
+      return;
+    }
+    this.closeFilters();
+  };
+
+  public openFilters() {
+    document.body.classList.add('filtering');
+    window.scrollTo(0, 0);
+    window.addEventListener('keyup', this.onKeyUp);
+  }
+
+  public closeFilters() {
+    document.body.classList.remove('filtering');
+    const resultsContainer = document.querySelector('.container-results');
+    resultsContainer.scrollIntoView();
+    window.removeEventListener('keyup', this.onKeyUp);
+  }
 }

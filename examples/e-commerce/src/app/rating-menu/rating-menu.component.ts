@@ -63,14 +63,18 @@ export type RatingMenuState = {
 
     <ng-template #defaultStarSvg let-star="star">
       <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
+        [ngClass]="{
+          'ais-RatingMenu-starIcon': true,
+          'ais-RatingMenu-starIcon--full': star,
+          'ais-RatingMenu-starIcon--empty': !star
+        }"
         aria-hidden="true"
+        viewbox="0 0 16 16"
       >
-        <path *ngIf="star" d="M12 .288l2.833 8.718h9.167l-7.417 5.389 2.833 8.718-7.416-5.388-7.417 5.388 2.833-8.718-7.416-5.389h9.167z"/>
-        <path *ngIf="!star" d="M12 6.76l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246zm0-6.472l-2.833 8.718h-9.167l7.416 5.389-2.833 8.718 7.417-5.388 7.416 5.388-2.833-8.718 7.417-5.389h-9.167l-2.833-8.718z"/>
+        <path
+          fill-rule="evenodd"
+          d="M10.472 5.008L16 5.816l-4 3.896.944 5.504L8 12.616l-4.944 2.6L4 9.712 0 5.816l5.528-.808L8 0z"
+        ></path>
       </svg>
     </ng-template>
   `,

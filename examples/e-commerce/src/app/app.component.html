@@ -9,12 +9,7 @@
   <header class="header">
     <p class="header-logo">
       <a href="https://algolia.com" aria-label="Go to the Algolia website">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="93"
-          height="24"
-          viewBox="0 0 93 24"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 93 24">
           <path
             fill="#fff"
             fill-rule="nonzero"
@@ -38,8 +33,15 @@
       <div class="container-header">
         <h2>Filters</h2>
         <ais-clear-refinements
+          data-layout="desktop"
           resetLabel="Clear filters"
         ></ais-clear-refinements>
+
+        <ais-stats data-layout="mobile">
+          <ng-template let-state="state">
+            <strong>{{ state.nbHits }}</strong> results
+          </ng-template>
+        </ais-stats>
       </div>
 
       <div class="container-body">
@@ -79,27 +81,26 @@
         </ais-panel>
 
         <ais-panel header="Rating">
-          <app-rating-menu attribute="rating">
-            <ng-template #starSvg let-star="star">
-              <svg
-                [ngClass]="{
-                  'ais-RatingMenu-starIcon': true,
-                  'ais-RatingMenu-starIcon--full': star,
-                  'ais-RatingMenu-starIcon--empty': !star
-                }"
-                aria-hidden="true"
-                width="16"
-                height="16"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10.472 5.008L16 5.816l-4 3.896.944 5.504L8 12.616l-4.944 2.6L4 9.712 0 5.816l5.528-.808L8 0z"
-                ></path>
-              </svg>
-            </ng-template>
-          </app-rating-menu>
+          <app-rating-menu attribute="rating"></app-rating-menu>
         </ais-panel>
       </div>
+
+      <footer class="container-filters-footer" data-layout="mobile">
+        <app-clear-filters-mobile
+          class="container-filters-footer-button-wrapper"
+        ></app-clear-filters-mobile>
+
+        <ais-stats
+          class="container-filters-footer-button-wrapper"
+          (click)="closeFilters()"
+        >
+          <ng-template let-state="state">
+            <button class="button button-primary">
+              See {{ state.nbHits }} results
+            </button>
+          </ng-template>
+        </ais-stats>
+      </footer>
     </section>
 
     <section class="container-results">
@@ -141,38 +142,41 @@
                   <img [src]="item.image" [alt]="item.name" class="hit-image" />
                 </header>
 
-                <p class="hit-category">{{ item.categories[0] }}</p>
-                <h1>
-                  <ais-highlight attribute="name" [hit]="item"></ais-highlight>
-                </h1>
-                <p class="hit-description">
-                  <app-snippet
-                    attribute="description"
-                    [hit]="item"
-                  ></app-snippet>
-                </p>
-
-                <footer>
-                  <p>
-                    <span class="hit-em">$&nbsp;</span>
-                    <strong>{{ item.price }}&nbsp;</strong>
-                    <span class="hit-em hit-rating">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="8"
-                        height="8"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          fill="#e2a400"
-                          fill-rule="evenodd"
-                          d="M10.472 5.008L16 5.816l-4 3.896.944 5.504L8 12.616l-4.944 2.6L4 9.712 0 5.816l5.528-.808L8 0z"
-                        ></path>
-                      </svg>
-                      {{ item.rating }}
-                    </span>
+                <main class="hit-info-container">
+                  <p class="hit-category">{{ item.categories[0] }}</p>
+                  <h1>
+                    <ais-highlight
+                      attribute="name"
+                      [hit]="item"
+                    ></ais-highlight>
+                  </h1>
+                  <p class="hit-description">
+                    <app-snippet
+                      attribute="description"
+                      [hit]="item"
+                    ></app-snippet>
                   </p>
-                </footer>
+
+                  <footer>
+                    <p>
+                      <span class="hit-em">$&nbsp;</span>
+                      <strong>{{ item.price }}</strong>
+                      <span class="hit-em hit-rating">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            fill="#e2a400"
+                            fill-rule="evenodd"
+                            d="M10.472 5.008L16 5.816l-4 3.896.944 5.504L8 12.616l-4.944 2.6L4 9.712 0 5.816l5.528-.808L8 0z"
+                          />
+                        </svg>
+                        {{ item.rating }}
+                      </span>
+                    </p>
+                  </footer>
+                </main>
               </article>
             </li>
           </ol>
@@ -188,4 +192,22 @@
       </footer>
     </section>
   </main>
+
+  <aside data-layout="mobile">
+    <button class="filters-button" (click)="openFilters()">
+      <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 14">
+        <path
+          d="M15 1H1l5.6 6.3v4.37L9.4 13V7.3z"
+          stroke="#fff"
+          stroke-width="1.29"
+          fill="none"
+          fill-rule="evenodd"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+
+      Filters
+    </button>
+  </aside>
 </ais-instantsearch>
