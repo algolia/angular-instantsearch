@@ -45,15 +45,6 @@
       </div>
 
       <div class="container-body">
-        <ais-panel header="Brands">
-          <ais-refinement-list
-            attribute="brand"
-            [searchable]="true"
-            searchPlaceholder="Search for brands…"
-          >
-          </ais-refinement-list>
-        </ais-panel>
-
         <ais-panel header="Category">
           <ais-hierarchical-menu
             [attributes]="[
@@ -61,6 +52,15 @@
               'hierarchicalCategories.lvl1'
             ]"
           ></ais-hierarchical-menu>
+        </ais-panel>
+
+        <ais-panel header="Brands">
+          <ais-refinement-list
+            attribute="brand"
+            [searchable]="true"
+            searchPlaceholder="Search for brands…"
+          >
+          </ais-refinement-list>
         </ais-panel>
 
         <ais-panel header="Price">
