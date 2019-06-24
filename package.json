@@ -147,9 +147,9 @@
     "zone.js": "0.8.28"
   },
   "peerDependencies": {
-    "@angular/common": ">=5.0.0 <8.0.0",
-    "@angular/core": ">=5.0.0 <8.0.0",
-    "@angular/platform-browser": ">=5.0.0 <8.0.0",
-    "@angular/platform-browser-dynamic": ">=5.0.0 <8.0.0"
+    "@angular/common": ">=5.0.0 <9.0.0",
+    "@angular/core": ">=5.0.0 <9.0.0",
+    "@angular/platform-browser": ">=5.0.0 <9.0.0",
+    "@angular/platform-browser-dynamic": ">=5.0.0 <9.0.0"
   }
 }
