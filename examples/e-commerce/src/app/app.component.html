@@ -39,7 +39,9 @@
 
         <ais-stats data-layout="mobile">
           <ng-template let-state="state">
-            <strong>{{ state.nbHits | number }}</strong> results
+            <span class="ais-Stats-text">
+              <strong>{{ state.nbHits | number }}</strong> results
+            </span>
           </ng-template>
         </ais-stats>
       </div>
