@@ -69,7 +69,7 @@ export type RatingMenuState = {
           'ais-RatingMenu-starIcon--empty': !star
         }"
         aria-hidden="true"
-        viewbox="0 0 16 16"
+        viewBox="0 0 16 16"
       >
         <path
           fill-rule="evenodd"
