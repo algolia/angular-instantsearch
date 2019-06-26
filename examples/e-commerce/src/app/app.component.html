@@ -39,7 +39,7 @@
 
         <ais-stats data-layout="mobile">
           <ng-template let-state="state">
-            <strong>{{ state.nbHits }}</strong> results
+            <strong>{{ state.nbHits | number }}</strong> results
           </ng-template>
         </ais-stats>
       </div>
@@ -80,7 +80,7 @@
           ></ais-toggle>
         </ais-panel>
 
-         <ais-panel header="Ratings">
+        <ais-panel header="Ratings">
           <app-rating-menu attribute="rating"></app-rating-menu>
         </ais-panel>
       </div>
@@ -96,7 +96,7 @@
         >
           <ng-template let-state="state">
             <button class="button button-primary">
-              See {{ state.nbHits }} results
+              See {{ state.nbHits | number }} results
             </button>
           </ng-template>
         </ais-stats>
@@ -160,7 +160,7 @@
                   <footer>
                     <p>
                       <span class="hit-em">$&nbsp;</span>
-                      <strong>{{ item.price }}</strong>
+                      <strong>{{ item.price | currency: 'USD':'' }}</strong>
                       <span class="hit-em hit-rating">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
