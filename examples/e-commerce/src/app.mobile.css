@@ -235,6 +235,11 @@
     width: 1.5rem;
   }
 
+  /* Reset filters */
+  .ais-ClearRefinements-button::before {
+    display: none;
+  }
+
   /* Hits */
 
   .ais-Hits-list {

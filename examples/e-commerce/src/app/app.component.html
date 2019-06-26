@@ -88,9 +88,10 @@
       </div>
 
       <footer class="container-filters-footer" data-layout="mobile">
-        <app-clear-filters-mobile
+        <app-reset-filters-mobile
           class="container-filters-footer-button-wrapper"
-        ></app-clear-filters-mobile>
+          (click)="closeFilters()"
+        ></app-reset-filters-mobile>
 
         <ais-stats
           class="container-filters-footer-button-wrapper"
