@@ -199,10 +199,11 @@
 
   /* RangeSlider */
 
-  .ais-RangeSlider .rheostat-handle {
-    height: 1.5rem;
+  .ais-RangeSlider .noUi-handle {
+    height: 24px;
+    left: -12px;
     top: -12px;
-    width: 1.5rem;
+    width: 24px;
   }
 
   /* ToggleRefinement */
