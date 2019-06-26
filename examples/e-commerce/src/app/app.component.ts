@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
     routing: true,
   };
   resultsContainer = undefined;
+  header = undefined;
 
   onKeyUp = event => {
     if (event.key !== 'Escape') {
@@ -20,19 +21,29 @@ export class AppComponent implements OnInit {
     this.closeFilters();
   };
 
+  onClick = event => {
+    if (event.target !== this.header) {
+      return;
+    }
+    this.closeFilters();
+  };
+
   ngOnInit() {
     this.resultsContainer = document.querySelector('.container-results');
+    this.header = document.querySelector('#header');
   }
 
   public openFilters() {
     document.body.classList.add('filtering');
     window.scrollTo(0, 0);
     window.addEventListener('keyup', this.onKeyUp);
+    window.addEventListener('click', this.onClick);
   }
 
   public closeFilters() {
     document.body.classList.remove('filtering');
     this.resultsContainer.scrollIntoView();
     window.removeEventListener('keyup', this.onKeyUp);
+    window.removeEventListener('click', this.onClick);
   }
 }
