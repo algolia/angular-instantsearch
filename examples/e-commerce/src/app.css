@@ -190,10 +190,6 @@ mark {
   color: #e2a400;
 }
 
-.header-searchbox .ais-SearchBox-resetIcon {
-  display: none;
-}
-
 .ais-RefinementList .ais-SearchBox-input {
   font-family: Hind, sans-serif;
   /*
