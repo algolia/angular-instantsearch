@@ -59,14 +59,14 @@
     padding: 1rem;
     position: fixed;
     width: 100%;
-    z-index: 5; /* to avoid collision with noUiSlider */
+    z-index: 5; /* avoid collision with slider UI */
   }
 
   .container-filters-footer-button-wrapper {
     width: calc(50% - 0.5rem);
   }
 
-  .ais-ClearRefinements-button,
+  .container-filters-footer .ais-ClearRefinements-button,
   .container-filters-footer .button {
     background-color: rgba(65, 66, 71, 0.08);
     border: none;
@@ -204,15 +204,6 @@
     padding: 8px;
   }
 
-  /* RangeSlider */
-
-  .ais-RangeSlider .noUi-handle {
-    height: 24px;
-    left: -12px;
-    top: -12px;
-    width: 24px;
-  }
-
   /* ToggleRefinement */
 
   .ais-ToggleRefinement-checkbox {
@@ -242,11 +233,6 @@
     width: 1.5rem;
   }
 
-  /* Reset filters */
-  .ais-ClearRefinements-button::before {
-    display: none;
-  }
-
   /* Hits */
 
   .ais-Hits-list {
@@ -264,6 +250,10 @@
 
   .hit-info-container {
     flex: 2;
+  }
+
+  .hits-empty-state-image {
+    display: none;
   }
 
   /* Hide all desktop-specific design on mobile */

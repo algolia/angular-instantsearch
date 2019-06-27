@@ -32,6 +32,7 @@
         <div class="container-header">
           <h2>Filters</h2>
           <ais-clear-refinements
+            class="clear-filters"
             data-layout="desktop"
             resetLabel="Clear filters"
           ></ais-clear-refinements>
@@ -109,6 +110,7 @@
     <section class="container-results">
       <header class="container-header container-options">
         <ais-sort-by
+          class="container-option"
           [items]="[
             { value: 'instant_search', label: 'Featured' },
             { value: 'instant_search_price_asc', label: 'Price asc.' },
@@ -117,6 +119,7 @@
         ></ais-sort-by>
 
         <ais-hits-per-page
+          class="container-option"
           [items]="[
             {
               label: '16 hits per page',
@@ -170,6 +173,8 @@
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 16 16"
+                          width="8"
+                          height="8"
                         >
                           <path
                             fill="#e2a400"
