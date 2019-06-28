@@ -17,7 +17,16 @@
             "tsConfig": "src/tsconfig.app.json",
             "polyfills": "src/polyfills.ts",
             "assets": ["src/assets", "src/favicon.png", "src/manifest.json"],
-            "styles": ["src/theme.css", "src/app.css"],
+            "styles": [
+              "src/theme.css",
+              "src/app.css",
+              "src/app.mobile.css",
+              "src/app/clear-filters.css",
+              "src/app/header-search-box.css",
+              "src/app/range-slider.css",
+              "src/app/pagination.css",
+              "src/app/no-results.css"
+            ],
             "scripts": []
           },
           "configurations": {

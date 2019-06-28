@@ -1,0 +1,20 @@
+.ais-ClearRefinements {
+  align-items: center;
+  display: flex;
+}
+
+.ais-ClearRefinements-button::before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 11'%0A%3E%3Cg fill='none' fill-rule='evenodd' opacity='.4'%3E%3Cpath d='M0 0h11v11H0z'%3E%3C/path%3E%3Cpath fill='%23000' fill-rule='nonzero' d='M8.26 2.75a3.896 3.896 0 1 0 1.102 3.262l.007-.056a.49.49 0 0 1 .485-.456c.253 0 .451.206.437.457 0 0 .012-.109-.006.061a4.813 4.813 0 1 1-1.348-3.887v-.987a.458.458 0 1 1 .917.002v2.062a.459.459 0 0 1-.459.459H7.334a.458.458 0 1 1-.002-.917h.928z' %3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+  display: inline-block;
+  height: 10px;
+  margin-right: 5px;
+  position: relative;
+  top: 1px;
+  width: 10px;
+}
+
+@media (max-width: 899px) {
+  .ais-ClearRefinements-button::before {
+    display: none;
+  }
+}

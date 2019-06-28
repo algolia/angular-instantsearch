@@ -1,0 +1,21 @@
+/* Pagination */
+
+.ais-Pagination-item--previousPage .ais-Pagination-link,
+.ais-Pagination-item--nextPage .ais-Pagination-link {
+  visibility: hidden;
+}
+
+.ais-Pagination-item--previousPage .ais-Pagination-link::after,
+.ais-Pagination-item--nextPage .ais-Pagination-link::after {
+  height: 10px;
+  visibility: visible;
+  width: 10px;
+}
+
+.ais-Pagination-item--previousPage .ais-Pagination-link::after {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%0A%3E%3Cg fill='none' fill-rule='evenodd' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.143' %3E%3Cpath d='M9 5H1M5 9L1 5l4-4'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+}
+
+.ais-Pagination-item--nextPage .ais-Pagination-link::after {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%0A%3E%3Cg fill='none' fill-rule='evenodd' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.143' %3E%3Cpath d='M1 5h8M5 9l4-4-4-4'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+}

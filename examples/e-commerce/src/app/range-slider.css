@@ -1,0 +1,73 @@
+.ais-RangeSlider .noUi-target {
+  background-color: rgba(65, 66, 71, 0.08);
+  border-radius: 3px;
+  direction: ltr;
+  height: 3px;
+  margin-top: 35px;
+  position: relative;
+  width: calc(100% - 10px);
+}
+
+.ais-RangeSlider .noUi-base {
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+.ais-RangeSlider .noUi-origin,
+.ais-RangeSlider .noUi-origin * {
+  outline: none;
+}
+
+.ais-RangeSlider .noUi-origin,
+.ais-RangeSlider .noUi-connect {
+  position: absolute;
+}
+
+.ais-RangeSlider .noUi-connect {
+  background-color: #e2a400;
+  border-radius: 3px;
+  height: 3px;
+}
+
+.ais-RangeSlider .noUi-handle {
+  background-image: linear-gradient(to top, #f5f5fa, #fff);
+  border-radius: 50%;
+  box-shadow: 0 4px 11px 0 rgba(37, 44, 97, 0.15),
+    0 2px 3px 0 rgba(93, 100, 148, 0.2);
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
+  height: 14px;
+  position: relative;
+  top: -6px;
+  width: 14px;
+}
+
+.ais-RangeSlider .noUi-handle .noUi-tooltip::before {
+  color: #e2a400;
+  content: '$';
+  font-size: 0.6;
+  margin-right: 4px;
+  position: relative;
+}
+
+.ais-RangeSlider .noUi-handle .noUi-tooltip {
+  cursor: grab;
+  display: flex;
+  font-size: 0.75rem;
+  font-weight: bold;
+  left: 50%;
+  position: absolute;
+  top: -23px;
+  transform: translate(-50%, 0);
+}
+
+@media (max-width: 899px) {
+  .ais-RangeSlider .noUi-handle {
+    height: 24px;
+    left: -12px;
+    top: -12px;
+    width: 24px;
+  }
+}
