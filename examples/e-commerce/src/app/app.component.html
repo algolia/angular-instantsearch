@@ -2,7 +2,8 @@
   <ais-configure
     [searchParameters]="{
       attributesToSnippet: ['description:10'],
-      snippetEllipsisText: '…'
+      snippetEllipsisText: '…',
+      removeWordsIfNoResults: 'allOptional'
     }"
   >
   </ais-configure>
@@ -192,6 +193,8 @@
           </ol>
         </ng-template>
       </ais-hits>
+
+      <app-no-results></app-no-results>
 
       <footer class="container-footer">
         <ais-pagination

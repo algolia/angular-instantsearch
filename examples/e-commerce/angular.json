@@ -24,7 +24,8 @@
               "src/app/clear-filters.css",
               "src/app/header-search-box.css",
               "src/app/range-slider.css",
-              "src/app/pagination.css"
+              "src/app/pagination.css",
+              "src/app/no-results.css"
             ],
             "scripts": []
           },
