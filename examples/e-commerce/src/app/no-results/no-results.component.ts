@@ -3,7 +3,12 @@ import { Inject, Component, forwardRef } from '@angular/core';
 import { BaseWidget, NgAisInstantSearch } from 'angular-instantsearch';
 import { connectHits } from 'instantsearch.js/es/connectors';
 
-export type HitsState = {};
+export type NoResultsState = {
+  results?: {
+    nbHits: number;
+    getRefinements: () => any[];
+  };
+};
 
 @Component({
   selector: 'app-no-results',
@@ -106,7 +111,7 @@ export type HitsState = {};
   `,
 })
 export class NoResults extends BaseWidget {
-  public state: HitsState = {};
+  public state: NoResultsState = {};
 
   constructor(
     @Inject(forwardRef(() => NgAisInstantSearch))
