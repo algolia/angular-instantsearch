@@ -8,6 +8,7 @@ exports[`Pagination renders does not uses pagesPadding when nbPages < pagesPaddi
     <ais-pagination>
       <div
         class="ais-Pagination"
+        ng-reflect-ng-class="ais-Pagination"
       >
         <ul
           class="ais-Pagination-list"
@@ -122,6 +123,7 @@ exports[`Pagination renders markup without state 1`] = `
     <ais-pagination>
       <div
         class="ais-Pagination"
+        ng-reflect-ng-class="ais-Pagination"
       >
         <ul
           class="ais-Pagination-list"
@@ -186,6 +188,7 @@ exports[`Pagination renders with pages in state 1`] = `
     <ais-pagination>
       <div
         class="ais-Pagination"
+        ng-reflect-ng-class="ais-Pagination"
       >
         <ul
           class="ais-Pagination-list"
