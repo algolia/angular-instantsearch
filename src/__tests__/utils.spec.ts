@@ -15,6 +15,7 @@ describe('Utils', () => {
 
     it('generates className for subElement', () => {
       expect(cx('input', 'min')).toBe('ais-testWidget-input--min');
+      expect(cx('', 'min')).toBe('ais-testWidget--min');
     });
   });
 });
