@@ -1,19 +1,13 @@
 export function bem(widgetName: string) {
   const cx = function(element?: string, subElement?: string) {
+    let cssClass = `ais-${widgetName}`;
     if (element) {
-      const scoppedWidgetName = `ais-${widgetName}-${element}`;
-
-      // output `ais-Widget-Xyz--abc`
-      if (subElement) {
-        return `${scoppedWidgetName}--${subElement}`;
-      }
-
-      // output `ais-Widget-Xyz`
-      return scoppedWidgetName;
+      cssClass += `-${element}`;
     }
-
-    // output `ais-Widget`
-    return `ais-${widgetName}`;
+    if (subElement) {
+      cssClass += `--${subElement}`;
+    }
+    return cssClass;
   };
   return cx;
 }
