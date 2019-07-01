@@ -8,6 +8,7 @@ exports[`RangeInput renders markup with state 1`] = `
     <ais-range-input>
       <div
         class="ais-RangeInput"
+        ng-reflect-ng-class="ais-RangeInput"
       >
         <form
           class="ais-RangeInput-form"
@@ -74,6 +75,7 @@ exports[`RangeInput renders markup without state 1`] = `
     <ais-range-input>
       <div
         class="ais-RangeInput"
+        ng-reflect-ng-class="ais-RangeInput"
       >
         <form
           class="ais-RangeInput-form"
