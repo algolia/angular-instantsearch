@@ -9,6 +9,7 @@ exports[`RefinementList renders markup with state 1`] = `
       
       <div
         class="ais-RefinementList"
+        ng-reflect-ng-class="ais-RefinementList,"
       >
         
         <ul
@@ -163,7 +164,8 @@ exports[`RefinementList renders markup without state 1`] = `
     <ais-refinement-list>
       
       <div
-        class="ais-RefinementList"
+        class="ais-RefinementList ais-RefinementList--noRefinement"
+        ng-reflect-ng-class="ais-RefinementList,ais-Refinem"
       >
         
         <ul
@@ -187,6 +189,7 @@ exports[`RefinementList should apply \`transformItems\` if specified 1`] = `
       
       <div
         class="ais-RefinementList"
+        ng-reflect-ng-class="ais-RefinementList,"
       >
         
         <ul
@@ -340,6 +343,87 @@ exports[`RefinementList should be hidden with autoHideContainer 1`] = `
   <ais-instantsearch>
     <ais-refinement-list>
       
+    </ais-refinement-list>
+  </ais-instantsearch>
+</ng-component>
+`;
+
+exports[`RefinementList should not use ais-RefinementList--noRefinement when items is not empty 1`] = `
+<ng-component
+  testedWidget={[Function NgAisRefinementList]}
+>
+  <ais-instantsearch>
+    <ais-refinement-list>
+      
+      <div
+        class="ais-RefinementList"
+        ng-reflect-ng-class="ais-RefinementList,"
+      >
+        
+        <ul
+          class="ais-RefinementList-list"
+        >
+          
+          <li
+            class="ais-RefinementList-item"
+          >
+            <label
+              class="ais-RefinementList-label"
+            >
+              <input
+                class="ais-RefinementList-checkbox"
+                type="checkbox"
+                value="foo"
+              />
+              <span
+                class="ais-RefinementList-labelText"
+              >
+                <ais-highlight
+                  attribute="highlighted"
+                  ng-reflect-attribute="highlighted"
+                  ng-reflect-hit="[object Object]"
+                >
+                  <span
+                    class="ais-Highlight"
+                  >
+                    foo
+                  </span>
+                </ais-highlight>
+              </span>
+              <span
+                class="ais-RefinementList-count"
+              >
+                100
+              </span>
+            </label>
+          </li>
+        </ul>
+        
+      </div>
+    </ais-refinement-list>
+  </ais-instantsearch>
+</ng-component>
+`;
+
+exports[`RefinementList should use ais-RefinementList--noRefinement when items is empty 1`] = `
+<ng-component
+  testedWidget={[Function NgAisRefinementList]}
+>
+  <ais-instantsearch>
+    <ais-refinement-list>
+      
+      <div
+        class="ais-RefinementList ais-RefinementList--noRefinement"
+        ng-reflect-ng-class="ais-RefinementList,ais-Refinem"
+      >
+        
+        <ul
+          class="ais-RefinementList-list"
+        >
+          
+        </ul>
+        
+      </div>
     </ais-refinement-list>
   </ais-instantsearch>
 </ng-component>

@@ -289,7 +289,33 @@ describe('RefinementList', () => {
     const fixture = render({ items: [] });
     fixture.componentInstance.testedWidget.autoHideContainer = true;
     fixture.detectChanges();
+    expect(
+      fixture.debugElement.nativeElement.querySelector(
+        'ais-refinement-list > .ais-RefinementList'
+      )
+    ).toBeFalsy();
+    expect(fixture).toMatchSnapshot();
+  });
 
+  it('should use ais-RefinementList--noRefinement when items is empty', () => {
+    const fixture = render({ items: [] });
+    expect(
+      fixture.debugElement.nativeElement.querySelector(
+        'ais-refinement-list > .ais-RefinementList--noRefinement'
+      )
+    ).toBeTruthy();
+    expect(fixture).toMatchSnapshot();
+  });
+
+  it('should not use ais-RefinementList--noRefinement when items is not empty', () => {
+    const fixture = render({
+      items: [{ label: 'foo', count: 100, value: 'foo', isRefined: false }],
+    });
+    expect(
+      fixture.debugElement.nativeElement.querySelector(
+        'ais-refinement-list > .ais-RefinementList--noRefinement'
+      )
+    ).toBeFalsy();
     expect(fixture).toMatchSnapshot();
   });
 });

@@ -30,7 +30,10 @@ export type RefinementListState = {
   selector: 'ais-refinement-list',
   template: `
     <div
-      [class]="cx()"
+      [ngClass]="[
+        cx(),
+        state.items.length === 0 ? cx('', 'noRefinement') : ''
+      ]"
       *ngIf="!isHidden"
     >
       <div
