@@ -314,3 +314,228 @@ exports[`Pagination renders with pages in state 1`] = `
   </ais-instantsearch>
 </ng-component>
 `;
+
+exports[`Pagination should add ais-Pagination--noRefinement CSS class on root when nbPages === 0 1`] = `
+<ng-component
+  testedWidget={[Function NgAisPagination]}
+>
+  <ais-instantsearch>
+    <ais-pagination>
+      <div
+        class="ais-Pagination ais-Pagination--noRefinement"
+        ng-reflect-ng-class="ais-Pagination,ais-Pagination-"
+      >
+        <ul
+          class="ais-Pagination-list"
+        >
+          
+          <li
+            class="ais-Pagination-item ais-Pagination-item--firstPage ais-Pagination-item--disabled"
+          >
+            <a
+              class="ais-Pagination-link"
+              href="null"
+            >
+               ‹‹ 
+            </a>
+          </li>
+          
+          <li
+            class="ais-Pagination-item ais-Pagination-item--previousPage ais-Pagination-item--disabled"
+          >
+            <a
+              class="ais-Pagination-link"
+              href="null"
+            >
+               ‹ 
+            </a>
+          </li>
+          
+          
+          <li
+            class="ais-Pagination-item ais-Pagination-item--nextPage"
+          >
+            <a
+              class="ais-Pagination-link"
+              href="null"
+            >
+               › 
+            </a>
+          </li>
+          
+          <li
+            class="ais-Pagination-item ais-Pagination-item--lastPage"
+          >
+            <a
+              class="ais-Pagination-link"
+              href="null"
+            >
+               ›› 
+            </a>
+          </li>
+        </ul>
+      </div>
+    </ais-pagination>
+  </ais-instantsearch>
+</ng-component>
+`;
+
+exports[`Pagination should add ais-Pagination--noRefinement CSS class on root when nbPages === 1 1`] = `
+<ng-component
+  testedWidget={[Function NgAisPagination]}
+>
+  <ais-instantsearch>
+    <ais-pagination>
+      <div
+        class="ais-Pagination ais-Pagination--noRefinement"
+        ng-reflect-ng-class="ais-Pagination,ais-Pagination-"
+      >
+        <ul
+          class="ais-Pagination-list"
+        >
+          
+          <li
+            class="ais-Pagination-item ais-Pagination-item--firstPage ais-Pagination-item--disabled"
+          >
+            <a
+              class="ais-Pagination-link"
+              href="null"
+            >
+               ‹‹ 
+            </a>
+          </li>
+          
+          <li
+            class="ais-Pagination-item ais-Pagination-item--previousPage ais-Pagination-item--disabled"
+          >
+            <a
+              class="ais-Pagination-link"
+              href="null"
+            >
+               ‹ 
+            </a>
+          </li>
+          
+          <li
+            class="ais-Pagination-item ais-Pagination-item--page ais-Pagination-item--selected"
+          >
+            <a
+              class="ais-Pagination-link"
+              href="null"
+            >
+               1 
+            </a>
+          </li>
+          
+          <li
+            class="ais-Pagination-item ais-Pagination-item--nextPage ais-Pagination-item--disabled"
+          >
+            <a
+              class="ais-Pagination-link"
+              href="null"
+            >
+               › 
+            </a>
+          </li>
+          
+          <li
+            class="ais-Pagination-item ais-Pagination-item--lastPage ais-Pagination-item--disabled"
+          >
+            <a
+              class="ais-Pagination-link"
+              href="null"
+            >
+               ›› 
+            </a>
+          </li>
+        </ul>
+      </div>
+    </ais-pagination>
+  </ais-instantsearch>
+</ng-component>
+`;
+
+exports[`Pagination should not add ais-Pagination--noRefinement CSS class on root when nbPages > 1 1`] = `
+<ng-component
+  testedWidget={[Function NgAisPagination]}
+>
+  <ais-instantsearch>
+    <ais-pagination>
+      <div
+        class="ais-Pagination"
+        ng-reflect-ng-class="ais-Pagination,"
+      >
+        <ul
+          class="ais-Pagination-list"
+        >
+          
+          <li
+            class="ais-Pagination-item ais-Pagination-item--firstPage ais-Pagination-item--disabled"
+          >
+            <a
+              class="ais-Pagination-link"
+              href="null"
+            >
+               ‹‹ 
+            </a>
+          </li>
+          
+          <li
+            class="ais-Pagination-item ais-Pagination-item--previousPage ais-Pagination-item--disabled"
+          >
+            <a
+              class="ais-Pagination-link"
+              href="null"
+            >
+               ‹ 
+            </a>
+          </li>
+          
+          <li
+            class="ais-Pagination-item ais-Pagination-item--page ais-Pagination-item--selected"
+          >
+            <a
+              class="ais-Pagination-link"
+              href="null"
+            >
+               1 
+            </a>
+          </li>
+          <li
+            class="ais-Pagination-item ais-Pagination-item--page"
+          >
+            <a
+              class="ais-Pagination-link"
+              href="null"
+            >
+               2 
+            </a>
+          </li>
+          
+          <li
+            class="ais-Pagination-item ais-Pagination-item--nextPage"
+          >
+            <a
+              class="ais-Pagination-link"
+              href="null"
+            >
+               › 
+            </a>
+          </li>
+          
+          <li
+            class="ais-Pagination-item ais-Pagination-item--lastPage"
+          >
+            <a
+              class="ais-Pagination-link"
+              href="null"
+            >
+               ›› 
+            </a>
+          </li>
+        </ul>
+      </div>
+    </ais-pagination>
+  </ais-instantsearch>
+</ng-component>
+`;

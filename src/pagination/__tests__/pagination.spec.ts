@@ -109,4 +109,16 @@ describe('Pagination', () => {
 
     expect(refine).not.toHaveBeenCalled();
   });
+  it('should not add ais-Pagination--noRefinement CSS class on root when nbPages > 1', () => {
+    const fixture = render({ nbPages: 2 });
+    expect(fixture).toMatchSnapshot();
+  });
+  it('should add ais-Pagination--noRefinement CSS class on root when nbPages === 1', () => {
+    const fixture = render({ nbPages: 1 });
+    expect(fixture).toMatchSnapshot();
+  });
+  it('should add ais-Pagination--noRefinement CSS class on root when nbPages === 0', () => {
+    const fixture = render({ nbPages: 0 });
+    expect(fixture).toMatchSnapshot();
+  });
 });
