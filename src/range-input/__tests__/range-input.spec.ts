@@ -122,4 +122,42 @@ describe('RangeInput', () => {
     const fixture = render();
     expect(fixture.componentInstance.testedWidget.step).toEqual(100);
   });
+
+  it('should use ais-RangeInput--noRefinement when min === max', () => {
+    const render = createRenderer({
+      defaultState,
+      template: '<ais-range-input></ais-range-input>',
+      TestedWidget: NgAisRangeInput,
+    });
+    const fixture = render({
+      range: { min: 0, max: 0 },
+      start: [0, 100],
+      refine: jest.fn(),
+    });
+    expect(fixture).toMatchSnapshot();
+    expect(
+      fixture.debugElement.nativeElement.querySelector(
+        'ais-range-input > .ais-RangeInput--noRefinement'
+      )
+    ).toBeTruthy();
+  });
+
+  it('should not use ais-RangeInput--noRefinement when min < max', () => {
+    const render = createRenderer({
+      defaultState,
+      template: '<ais-range-input></ais-range-input>',
+      TestedWidget: NgAisRangeInput,
+    });
+    const fixture = render({
+      range: { min: 0, max: 100 },
+      start: [0, 100],
+      refine: jest.fn(),
+    });
+    expect(fixture).toMatchSnapshot();
+    expect(
+      fixture.debugElement.nativeElement.querySelector(
+        'ais-range-input > .ais-RangeInput--noRefinement'
+      )
+    ).toBeFalsy();
+  });
 });
