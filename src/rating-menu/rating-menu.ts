@@ -24,7 +24,10 @@ export type RatingMenuState = {
   selector: 'ais-rating-menu',
   template: `
     <div
-      [class]="cx()"
+      [ngClass]="[
+        cx(),
+        state.items.length === 0 ? cx('', 'noRefinement') : ''
+      ]"
       *ngIf="!isHidden"
     >
       <svg style="display:none;">
