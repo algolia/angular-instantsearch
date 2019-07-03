@@ -12,6 +12,128 @@ exports[`StarRating should be hidden with autoHideContainer 1`] = `
 </ng-component>
 `;
 
+exports[`StarRating should not use ais-RatingMenu--noRefinement when items is not empty 1`] = `
+<ng-component
+  testedWidget={[Function NgAisRatingMenu]}
+>
+  <ais-instantsearch>
+    <ais-rating-menu>
+      
+      <div
+        class="ais-RatingMenu"
+        ng-reflect-ng-class="ais-RatingMenu,"
+      >
+        <svg
+          style="display:none;"
+        >
+          <symbol
+            height="24"
+            id="ais-StarRating-starSymbol"
+            viewBox="0 0 24 24"
+            width="24"
+          >
+            <path
+              d="M12 .288l2.833 8.718h9.167l-7.417 5.389 2.833 8.718-7.416-5.388-7.417 5.388 2.833-8.718-7.416-5.389h9.167z"
+            />
+          </symbol>
+          <symbol
+            height="24"
+            id="ais-StarRating-starEmptySymbol"
+            viewBox="0 0 24 24"
+            width="24"
+          >
+            <path
+              d="M12 6.76l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246zm0-6.472l-2.833 8.718h-9.167l7.416 5.389-2.833 8.718 7.417-5.388 7.416 5.388-2.833-8.718 7.417-5.389h-9.167l-2.833-8.718z"
+            />
+          </symbol>
+        </svg>
+        <ul
+          class="ais-RatingMenu-list"
+        >
+          
+          <li
+            class="ais-RatingMenu-item"
+          >
+            <a
+              class="ais-RatingMenu-link"
+              href=""
+            >
+              
+              <svg
+                aria-hidden="true"
+                class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--full"
+                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
+              >
+                
+                <use
+                  xlink:href="#ais-StarRating-starSymbol"
+                />
+                
+              </svg>
+              <svg
+                aria-hidden="true"
+                class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--empty"
+                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
+              >
+                
+                
+                <use
+                  xlink:href="#ais-StarRating-starEmptySymbol"
+                />
+              </svg>
+              <svg
+                aria-hidden="true"
+                class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--empty"
+                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
+              >
+                
+                
+                <use
+                  xlink:href="#ais-StarRating-starEmptySymbol"
+                />
+              </svg>
+              <svg
+                aria-hidden="true"
+                class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--empty"
+                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
+              >
+                
+                
+                <use
+                  xlink:href="#ais-StarRating-starEmptySymbol"
+                />
+              </svg>
+              <svg
+                aria-hidden="true"
+                class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--empty"
+                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
+              >
+                
+                
+                <use
+                  xlink:href="#ais-StarRating-starEmptySymbol"
+                />
+              </svg>
+              <span
+                aria-hidden="true"
+                class="ais-RatingMenu-label"
+              >
+                & Up
+              </span>
+              <span
+                class="ais-RatingMenu-count"
+              >
+                100
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </ais-rating-menu>
+  </ais-instantsearch>
+</ng-component>
+`;
+
 exports[`StarRating should render with state 1`] = `
 <ng-component
   testedWidget={[Function NgAisRatingMenu]}
@@ -21,6 +143,7 @@ exports[`StarRating should render with state 1`] = `
       
       <div
         class="ais-RatingMenu"
+        ng-reflect-ng-class="ais-RatingMenu,"
       >
         <svg
           style="display:none;"
@@ -369,7 +492,54 @@ exports[`StarRating should render without state 1`] = `
     <ais-rating-menu>
       
       <div
-        class="ais-RatingMenu"
+        class="ais-RatingMenu ais-RatingMenu--noRefinement"
+        ng-reflect-ng-class="ais-RatingMenu,ais-RatingMenu-"
+      >
+        <svg
+          style="display:none;"
+        >
+          <symbol
+            height="24"
+            id="ais-StarRating-starSymbol"
+            viewBox="0 0 24 24"
+            width="24"
+          >
+            <path
+              d="M12 .288l2.833 8.718h9.167l-7.417 5.389 2.833 8.718-7.416-5.388-7.417 5.388 2.833-8.718-7.416-5.389h9.167z"
+            />
+          </symbol>
+          <symbol
+            height="24"
+            id="ais-StarRating-starEmptySymbol"
+            viewBox="0 0 24 24"
+            width="24"
+          >
+            <path
+              d="M12 6.76l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246zm0-6.472l-2.833 8.718h-9.167l7.416 5.389-2.833 8.718 7.417-5.388 7.416 5.388-2.833-8.718 7.417-5.389h-9.167l-2.833-8.718z"
+            />
+          </symbol>
+        </svg>
+        <ul
+          class="ais-RatingMenu-list"
+        >
+          
+        </ul>
+      </div>
+    </ais-rating-menu>
+  </ais-instantsearch>
+</ng-component>
+`;
+
+exports[`StarRating should use ais-RatingMenu--noRefinement when items is empty 1`] = `
+<ng-component
+  testedWidget={[Function NgAisRatingMenu]}
+>
+  <ais-instantsearch>
+    <ais-rating-menu>
+      
+      <div
+        class="ais-RatingMenu ais-RatingMenu--noRefinement"
+        ng-reflect-ng-class="ais-RatingMenu,ais-RatingMenu-"
       >
         <svg
           style="display:none;"
