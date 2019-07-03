@@ -46,4 +46,28 @@ describe('StarRating', () => {
 
     expect(fixture).toMatchSnapshot();
   });
+
+  it('should use ais-RatingMenu--noRefinement when items is empty', () => {
+    const fixture = render({ items: [] });
+    expect(
+      fixture.debugElement.nativeElement.querySelector(
+        'ais-rating-menu > .ais-RatingMenu--noRefinement'
+      )
+    ).toBeTruthy();
+    expect(fixture).toMatchSnapshot();
+  });
+
+  it('should not use ais-RatingMenu--noRefinement when items is not empty', () => {
+    const fixture = render({
+      items: [
+        { name: '1', stars: [true, false, false, false, false], count: 100 },
+      ],
+    });
+    expect(
+      fixture.debugElement.nativeElement.querySelector(
+        'ais-rating-menu > .ais-RatingMenu--noRefinement'
+      )
+    ).toBeFalsy();
+    expect(fixture).toMatchSnapshot();
+  });
 });
