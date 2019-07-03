@@ -91,7 +91,7 @@ export class NgAisRangeInput extends BaseWidget {
   }
 
   get canRefine() {
-    return this.state.range && this.state.range.min !== this.state.range.max;
+    return this.state.range.min !== this.state.range.max;
   }
 
   public state: NumericRangeState = {
