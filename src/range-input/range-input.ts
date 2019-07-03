@@ -14,7 +14,10 @@ export type NumericRangeState = {
 @Component({
   selector: 'ais-range-input',
   template: `
-    <div [class]="cx()">
+    <div [ngClass]="[
+        cx(), 
+        !canRefine ? cx('', 'noRefinement') : ''
+      ]">
       <form
         [class]="cx('form')"
         (submit)="handleSubmit($event)"
@@ -85,6 +88,10 @@ export class NgAisRangeInput extends BaseWidget {
   get step() {
     const precision = parseNumberInput(this.precision);
     return 1 / Math.pow(10, precision);
+  }
+
+  get canRefine() {
+    return this.state.range.min !== this.state.range.max;
   }
 
   public state: NumericRangeState = {
