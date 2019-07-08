@@ -8,6 +8,7 @@ exports[`RangeInput renders markup with state 1`] = `
     <ais-range-input>
       <div
         class="ais-RangeInput"
+        ng-reflect-ng-class="ais-RangeInput,"
       >
         <form
           class="ais-RangeInput-form"
@@ -73,7 +74,8 @@ exports[`RangeInput renders markup without state 1`] = `
   <ais-instantsearch>
     <ais-range-input>
       <div
-        class="ais-RangeInput"
+        class="ais-RangeInput ais-RangeInput--noRefinement"
+        ng-reflect-ng-class="ais-RangeInput,ais-RangeInput-"
       >
         <form
           class="ais-RangeInput-form"
@@ -116,6 +118,140 @@ exports[`RangeInput renders markup without state 1`] = `
               min="undefined"
               ng-reflect-ng-class="ais-RangeInput-input,ais-Range"
               placeholder="undefined"
+              step="1"
+              type="number"
+            />
+          </label>
+          <button
+            class="ais-RangeInput-submit"
+          >
+             Go 
+          </button>
+        </form>
+      </div>
+    </ais-range-input>
+  </ais-instantsearch>
+</ng-component>
+`;
+
+exports[`RangeInput should not use ais-RangeInput--noRefinement when min < max 1`] = `
+<ng-component
+  testedWidget={[Function NgAisRangeInput]}
+>
+  <ais-instantsearch>
+    <ais-range-input>
+      <div
+        class="ais-RangeInput"
+        ng-reflect-ng-class="ais-RangeInput,"
+      >
+        <form
+          class="ais-RangeInput-form"
+          novalidate=""
+        >
+          <label
+            class="ais-RangeInput-label"
+          >
+            <span
+              class="ais-RangeInput-currency"
+            >
+              $
+            </span>
+            <input
+              class="ais-RangeInput-input ais-RangeInput-input--min"
+              max="100"
+              min="0"
+              ng-reflect-ng-class="ais-RangeInput-input,ais-Range"
+              placeholder="0"
+              step="1"
+              type="number"
+            />
+          </label>
+          <span
+            class="ais-RangeInput-separator"
+          >
+            to
+          </span>
+          <label
+            class="ais-RangeInput-label"
+          >
+            <span
+              class="ais-RangeInput-currency"
+            >
+              $
+            </span>
+            <input
+              class="ais-RangeInput-input ais-RangeInput-input--max"
+              max="100"
+              min="0"
+              ng-reflect-ng-class="ais-RangeInput-input,ais-Range"
+              placeholder="100"
+              step="1"
+              type="number"
+            />
+          </label>
+          <button
+            class="ais-RangeInput-submit"
+          >
+             Go 
+          </button>
+        </form>
+      </div>
+    </ais-range-input>
+  </ais-instantsearch>
+</ng-component>
+`;
+
+exports[`RangeInput should use ais-RangeInput--noRefinement when min === max 1`] = `
+<ng-component
+  testedWidget={[Function NgAisRangeInput]}
+>
+  <ais-instantsearch>
+    <ais-range-input>
+      <div
+        class="ais-RangeInput ais-RangeInput--noRefinement"
+        ng-reflect-ng-class="ais-RangeInput,ais-RangeInput-"
+      >
+        <form
+          class="ais-RangeInput-form"
+          novalidate=""
+        >
+          <label
+            class="ais-RangeInput-label"
+          >
+            <span
+              class="ais-RangeInput-currency"
+            >
+              $
+            </span>
+            <input
+              class="ais-RangeInput-input ais-RangeInput-input--min"
+              max="0"
+              min="0"
+              ng-reflect-ng-class="ais-RangeInput-input,ais-Range"
+              placeholder="0"
+              step="1"
+              type="number"
+            />
+          </label>
+          <span
+            class="ais-RangeInput-separator"
+          >
+            to
+          </span>
+          <label
+            class="ais-RangeInput-label"
+          >
+            <span
+              class="ais-RangeInput-currency"
+            >
+              $
+            </span>
+            <input
+              class="ais-RangeInput-input ais-RangeInput-input--max"
+              max="0"
+              min="0"
+              ng-reflect-ng-class="ais-RangeInput-input,ais-Range"
+              placeholder="0"
               step="1"
               type="number"
             />
