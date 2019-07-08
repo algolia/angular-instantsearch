@@ -8,7 +8,7 @@ import { parseNumberInput, noop } from '../utils';
 @Component({
   selector: 'ais-pagination',
   template: `
-    <div [class]="cx()">
+    <div [ngClass]="[cx(), state.nbPages <= 1 ? cx('', 'noRefinement') : '']">
       <ul [class]="cx('list')">
         <li
           *ngIf="showFirst"
