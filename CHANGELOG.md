@@ -1,3 +1,29 @@
+# [3.0.0-beta.3](https://github.com/algolia/angular-instantsearch/compare/3.0.0-beta.2...3.0.0-beta.3) (2019-07-22)
+
+
+### Bug Fixes
+
+* **pagination:** set showLast as true by default ([#623](https://github.com/algolia/angular-instantsearch/issues/623)) ([f79951a](https://github.com/algolia/angular-instantsearch/commit/f79951a))
+* **toggle:** update checkbox when clicking the checkbox itself ([#624](https://github.com/algolia/angular-instantsearch/issues/624)) ([dffaedd](https://github.com/algolia/angular-instantsearch/commit/dffaedd))
+* add `ais-Pagination--noRefinement` CSS class on root when nbPages <= 1 ([#641](https://github.com/algolia/angular-instantsearch/issues/641)) ([fa3ea60](https://github.com/algolia/angular-instantsearch/commit/fa3ea60)), closes [/github.com/algolia/react-instantsearch/blob/99ed761dc0536fafb884727ed593ee0906b80b7a/packages/react-instantsearch-core/src/connectors/connectPagination.js#L67](https://github.com//github.com/algolia/react-instantsearch/blob/99ed761dc0536fafb884727ed593ee0906b80b7a/packages/react-instantsearch-core/src/connectors/connectPagination.js/issues/L67)
+* add ais-StarRating--noRefinement CSS class on root when items === [] ([#647](https://github.com/algolia/angular-instantsearch/issues/647)) ([a7bc8c0](https://github.com/algolia/angular-instantsearch/commit/a7bc8c0)), closes [/github.com/algolia/instantsearch.js/blob/b6ee2596d353ea692d91929759bc2b2fe34945c7/src/components/RefinementList/RefinementList.js#L226-L228](https://github.com//github.com/algolia/instantsearch.js/blob/b6ee2596d353ea692d91929759bc2b2fe34945c7/src/components/RefinementList/RefinementList.js/issues/L226-L228) [/github.com/algolia/vue-instantsearch/blob/aa7ba065d897b9a5654b04f6bbd23818eaf83baa/src/components/RatingMenu.vue#L4](https://github.com//github.com/algolia/vue-instantsearch/blob/aa7ba065d897b9a5654b04f6bbd23818eaf83baa/src/components/RatingMenu.vue/issues/L4) [/github.com/algolia/react-instantsearch/blob/05a85b61d6e3e3e946c07d05f26fe38289c9920a/packages/react-instantsearch-core/src/connectors/connectRange.js#L247](https://github.com//github.com/algolia/react-instantsearch/blob/05a85b61d6e3e3e946c07d05f26fe38289c9920a/packages/react-instantsearch-core/src/connectors/connectRange.js/issues/L247)
+* add missing class names (Breadcrumb & RangeInput) ([#626](https://github.com/algolia/angular-instantsearch/issues/626)) ([0fe926e](https://github.com/algolia/angular-instantsearch/commit/0fe926e))
+
+
+### Tests
+
+* **utils:** add tests for bem ([#614](https://github.com/algolia/angular-instantsearch/issues/614)) ([497d714](https://github.com/algolia/angular-instantsearch/commit/497d714))
+* test(utils): add test for root element
+
+
+### BREAKING CHANGES
+
+* **pagination:** The default value used to be `false`. According to the InstantSearch specs, it should be `true`.
+* **utils:** `ais-body` class has been removed from `ais-range-slide` component
+
+
+
+
 # [3.0.0-beta.2](https://github.com/algolia/angular-instantsearch/compare/3.0.0-beta.1...3.0.0-beta.2) (2019-06-05)
 
 
