@@ -57,6 +57,8 @@ export type RatingMenuState = {
             (click)="handleClick($event, item.value)"
           >
             <svg
+              width="24"
+              height="24"
               *ngFor="let star of item.stars"
               [ngClass]="cx('starIcon') + ' ' + (star ? cx('starIcon', 'full') : cx('starIcon', 'empty'))"
               aria-hidden="true"
