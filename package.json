@@ -48,8 +48,6 @@
     "test:watch": "jest --watch",
     "examples:ecommerce": "./scripts/run-example.sh e-commerce",
     "examples:ecommerce:build": "./scripts/build-example.sh e-commerce",
-    "examples:router": "./scripts/run-example.sh angular-router",
-    "examples:router:build": "./scripts/build-example.sh angular-router",
     "examples:media": "./scripts/run-example.sh media",
     "examples:media:build": "./scripts/build-example.sh media",
     "examples:ssr": "./scripts/run-example.sh server-side-rendering",
