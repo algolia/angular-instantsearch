@@ -18,7 +18,7 @@
     "clipboard": "2.0.1",
     "codemirror": "5.48.2",
     "compression": "1.7.4",
-    "css-loader": "3.0.0",
+    "css-loader": "3.2.0",
     "escape-html": "1.0.3",
     "glob": "7.1.4",
     "hasha": "5.0.0",
