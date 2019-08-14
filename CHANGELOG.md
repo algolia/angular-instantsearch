@@ -1,3 +1,12 @@
+# [3.0.0-beta.4](https://github.com/algolia/angular-instantsearch/compare/3.0.0-beta.3...3.0.0-beta.4) (2019-07-29)
+
+
+### Bug Fixes
+
+* **StarRating:** fix overflowing symbols ([#659](https://github.com/algolia/angular-instantsearch/issues/659)) ([ce98a2b](https://github.com/algolia/angular-instantsearch/commit/ce98a2b))
+
+
+
 # [3.0.0-beta.3](https://github.com/algolia/angular-instantsearch/compare/3.0.0-beta.2...3.0.0-beta.3) (2019-07-22)
 
 

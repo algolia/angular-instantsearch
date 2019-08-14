@@ -16,11 +16,9 @@ yarn build
 
 # build examples
 SKIP_PACKAGE_BUILD=true yarn examples:ecommerce:build
-SKIP_PACKAGE_BUILD=true yarn examples:router:build
 SKIP_PACKAGE_BUILD=true yarn examples:media:build
 SKIP_PACKAGE_BUILD=true yarn examples:storybook:build
 
 mv ./examples/e-commerce/dist ./netlify-dist/examples/e-commerce
-mv ./examples/angular-router/dist ./netlify-dist/examples/angular-router
 mv ./examples/media/dist ./netlify-dist/examples/media
 mv ./examples/storybook/dist ./netlify-dist/examples/storybook

@@ -30,7 +30,6 @@ jobs:
           name: Build examples
           command: |
             yarn examples:ecommerce:build
-            yarn examples:router:build
             yarn examples:media:build
             yarn examples:ssr:build
             yarn examples:storybook:build
