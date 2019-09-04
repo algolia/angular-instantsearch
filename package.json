@@ -99,12 +99,12 @@
     "querystring-es3": "^0.2.1"
   },
   "devDependencies": {
-    "@angular/common": "5.2.11",
-    "@angular/compiler": "5.2.11",
-    "@angular/compiler-cli": "5.2.11",
-    "@angular/core": "5.2.11",
-    "@angular/platform-browser": "5.2.11",
-    "@angular/platform-browser-dynamic": "5.2.11",
+    "@angular/common": "8.2.5",
+    "@angular/compiler": "8.2.5",
+    "@angular/compiler-cli": "8.2.5",
+    "@angular/core": "8.2.5",
+    "@angular/platform-browser": "8.2.5",
+    "@angular/platform-browser-dynamic": "8.2.5",
     "@types/jest": "24.0.15",
     "@types/lodash": "4.14.135",
     "@types/node": "9.6.51",
