@@ -1,10 +1,18 @@
-import { Component, Input, ViewChild, Inject, forwardRef } from '@angular/core';
+import {
+  Component,
+  Input,
+  ViewChild,
+  Inject,
+  forwardRef,
+  Optional,
+} from '@angular/core';
 
 import { connectRange } from 'instantsearch.js/es/connectors';
 import * as noUiSlider from 'nouislider';
 
 import { BaseWidget } from '../base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
+import { NgAisIndex } from '../index-widget/index-widget';
 import { parseNumberInput, noop } from '../utils';
 
 export type RangeSliderState = {
@@ -51,8 +59,11 @@ export class NgAisRangeSlider extends BaseWidget {
   }
 
   constructor(
+    @Inject(forwardRef(() => NgAisIndex))
+    @Optional()
+    public parentIndex: NgAisIndex,
     @Inject(forwardRef(() => NgAisInstantSearch))
-    public instantSearchParent: NgAisInstantSearch
+    public instantSearchInstance: NgAisInstantSearch
   ) {
     super('RangeSlider');
   }

@@ -1,6 +1,10 @@
-import { Inject, Component, forwardRef } from '@angular/core';
+import { Inject, Component, forwardRef, Optional } from '@angular/core';
 
-import { BaseWidget, NgAisInstantSearch } from 'angular-instantsearch';
+import {
+  BaseWidget,
+  NgAisInstantSearch,
+  NgAisIndex,
+} from 'angular-instantsearch';
 import { connectHits } from 'instantsearch.js/es/connectors';
 
 export type NoResultsState = {
@@ -114,8 +118,11 @@ export class NoResults extends BaseWidget {
   public state: NoResultsState = {};
 
   constructor(
+    @Inject(forwardRef(() => NgAisIndex))
+    @Optional()
+    public parentIndex: NgAisIndex,
     @Inject(forwardRef(() => NgAisInstantSearch))
-    public instantSearchParent: NgAisInstantSearch
+    public instantSearchInstance: NgAisInstantSearch
   ) {
     super('NoResults');
   }
