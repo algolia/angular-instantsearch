@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { NgAisInstantSearchModule } from '../src/instantsearch/instantsearch.module';
 
-// mock component, dont create a real instantearch instance
+// mock component, don't create a real instantsearch instance
 jest.mock('../src/base-widget');
 jest.mock('../src/instantsearch/instantsearch');
 
