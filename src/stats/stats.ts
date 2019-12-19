@@ -42,9 +42,9 @@ export class NgAisStats extends BaseWidget {
 
   constructor(
     @Inject(forwardRef(() => NgAisInstantSearch))
-    public instantSearchParent: any
+    public instantSearchParent: NgAisInstantSearch
   ) {
     super('Stats');
-    this.createWidget(connectStats);
+    this.createWidget(connectStats as Connector);
   }
 }

@@ -14,13 +14,15 @@ import { isPlatformBrowser } from '@angular/common';
 
 import * as algoliasearchProxy from 'algoliasearch/lite';
 import instantsearch from 'instantsearch.js/es';
-import { AlgoliaSearchHelper } from 'algoliasearch-helper';
 
 import { Widget } from '../base-widget';
 import { VERSION } from '../version';
+import { InstantSearchOptions, InstantSearch } from 'instantsearch.js/es/types';
 
+// TODO: do we need this?
 const algoliasearch = algoliasearchProxy.default || algoliasearchProxy;
 
+// TODO: alias these types
 export type SearchRequest = {
   indexName: string;
   params: SearchRequestParameters;
@@ -212,64 +214,13 @@ export type SearchClient = {
   ) => Promise<{ facetHits: SearchForFacetValuesResponse[] }[]>;
 };
 
-export type InstantSearchConfig = {
-  searchClient: SearchClient;
-  indexName: string;
+export type InstantSearchConfig = InstantSearchOptions;
 
-  numberLocale?: string;
-  searchFunction?: (helper: AlgoliaSearchHelper) => void;
-  searchParameters?: SearchParameters | void;
-  urlSync?:
-    | boolean
-    | {
-        mapping?: object;
-        threshold?: number;
-        trackedParameters?: string[];
-        useHash?: boolean;
-        getHistoryState?: () => object;
-      };
-  routing?:
-    | boolean
-    | {
-        router?: {
-          onUpdate: (cb: (object) => void) => void;
-          read: () => object;
-          write: (routeState: object) => void;
-          createURL: (routeState: object) => string;
-          dispose: () => void;
-        };
-        stateMapping?: {
-          stateToRoute(object): object;
-          routeToState(object): object;
-        };
-      };
-};
-
-export class InstantSearchInstance {
-  public start: () => void;
-
-  public addWidget: (widget: Widget) => void;
-  public addWidgets: (widgets: Widget[]) => void;
-
-  public removeWidget: (widget: Widget) => void;
-  public removeWidgets: (widgets: Widget[]) => void;
-
-  // EventEmmiter
-  public on: (eventName: string, callback: Function) => void;
-  public removeListener: (eventName: string, callback: Function) => void;
-
-  public helper: {
-    lastResults: Object;
-    state: Object;
-  };
-
-  public refresh: () => void;
-  public dispose: () => void;
-}
+export type InstantSearchInstance = InstantSearch;
 
 @Component({
   selector: 'ais-instantsearch',
-  template: `<ng-content></ng-content>`,
+  template: '<ng-content></ng-content>',
 })
 export class NgAisInstantSearch implements AfterViewInit, OnInit, OnDestroy {
   @Input() public config: InstantSearchConfig;
@@ -283,7 +234,7 @@ export class NgAisInstantSearch implements AfterViewInit, OnInit, OnDestroy {
 
   public instantSearchInstance: InstantSearchInstance;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(@Inject(PLATFORM_ID) public platformId: Object) {}
 
   public ngOnInit() {
     this.createInstantSearchInstance(this.config);
@@ -299,16 +250,8 @@ export class NgAisInstantSearch implements AfterViewInit, OnInit, OnDestroy {
   }
 
   public createInstantSearchInstance(config: InstantSearchConfig) {
-    // add default searchParameters with highlighting config
-    if (!config.searchParameters) config.searchParameters = {};
-    Object.assign(config.searchParameters, {
-      highlightPreTag: '__ais-highlight__',
-      highlightPostTag: '__/ais-highlight__',
-    });
-
     // remove URLSync widget if on SSR
     if (!isPlatformBrowser(this.platformId)) {
-      if (typeof config.urlSync !== 'undefined') delete config.urlSync;
       if (typeof config.routing !== 'undefined') delete config.routing;
     }
 
@@ -321,12 +264,12 @@ export class NgAisInstantSearch implements AfterViewInit, OnInit, OnDestroy {
     this.instantSearchInstance.on('render', this.onRender);
   }
 
-  public addWidget(widget: Widget) {
-    this.instantSearchInstance.addWidget(widget);
+  public addWidgets(widgets: Widget[]) {
+    this.instantSearchInstance.addWidgets(widgets);
   }
 
-  public removeWidget(widget: Widget) {
-    this.instantSearchInstance.removeWidget(widget);
+  public removeWidgets(widgets: Widget[]) {
+    this.instantSearchInstance.removeWidgets(widgets);
   }
 
   public refresh() {

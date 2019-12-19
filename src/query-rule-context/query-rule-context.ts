@@ -19,7 +19,7 @@ export class NgAisQueryRuleContext extends BaseWidget {
 
   constructor(
     @Inject(forwardRef(() => NgAisInstantSearch))
-    public instantSearchParent: any
+    public instantSearchParent: NgAisInstantSearch
   ) {
     super('QueryRuleContext');
   }

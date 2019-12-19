@@ -52,7 +52,7 @@ export class NgAisRangeSlider extends BaseWidget {
 
   constructor(
     @Inject(forwardRef(() => NgAisInstantSearch))
-    public instantSearchParent: any
+    public instantSearchParent: NgAisInstantSearch
   ) {
     super('RangeSlider');
   }
@@ -84,7 +84,7 @@ export class NgAisRangeSlider extends BaseWidget {
         ],
       };
 
-      if (this.pips === true || typeof this.pips === 'undefined') {
+      if (this.pips || typeof this.pips === 'undefined') {
         Object.assign(config, {
           pips: {
             density: 3,

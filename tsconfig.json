@@ -5,6 +5,7 @@
     "module": "commonjs",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "esModuleInterop": true,
     "noEmitOnError": true,
     "outDir": "temp",
     "sourceMap": true,

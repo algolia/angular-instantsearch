@@ -51,7 +51,7 @@ export class NgAisSortBy extends BaseWidget {
 
   constructor(
     @Inject(forwardRef(() => NgAisInstantSearch))
-    public instantSearchParent: any
+    public instantSearchParent: NgAisInstantSearch
   ) {
     super('SortBy');
   }

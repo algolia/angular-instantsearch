@@ -1,51 +1,29 @@
 import { Input, OnDestroy, OnInit } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { bem, noop } from './utils';
-
-export class Widget {
-  public init: (
-    params: {
-      templatesConfig: object;
-      state: object;
-      results: object[];
-      createURL: (value: any) => string;
-      instantSearchInstance: object;
-    }
-  ) => void;
-  public getConfiguration?: () => object;
-  public render: (
-    params: {
-      templatesConfig: object;
-      state: object;
-      results: {}[];
-      createURL: (value: any) => string;
-      instantSearchInstance: object;
-    }
-  ) => void;
-  public dispose: (
-    params: {
-      helper: object;
-      state: object;
-    }
-  ) => object | void;
-}
+import { NgAisInstantSearch } from './instantsearch/instantsearch';
+import { Widget } from 'instantsearch.js/es/types';
+export { Widget };
 
 export type Connector = (
   renderFn: (state: object, isFirstRendering: boolean) => void,
   unmountFn: () => void
 ) => (widgetOptions?: object) => Widget;
 
-export class BaseWidget implements OnInit, OnDestroy {
-  public instantSearchParent: any;
-
+export abstract class BaseWidget implements OnInit, OnDestroy {
   @Input() public autoHideContainer?: boolean;
 
   public widget?: Widget;
   public state?: object = {};
-  public cx: Function;
+  public cx: ReturnType<typeof bem>;
+  public abstract instantSearchParent: NgAisInstantSearch;
 
   constructor(widgetName: string) {
     this.cx = bem(widgetName);
+  }
+
+  get parent() {
+    return this.instantSearchParent;
   }
 
   public createWidget(connector: Connector, options: object = {}) {
@@ -53,13 +31,12 @@ export class BaseWidget implements OnInit, OnDestroy {
   }
 
   public ngOnInit() {
-    // add widget to the InstantSearch Instance
-    this.instantSearchParent.addWidget(this.widget);
+    this.parent.addWidgets([this.widget]);
   }
 
   public ngOnDestroy() {
     if (isPlatformBrowser(this.instantSearchParent.platformId)) {
-      this.instantSearchParent.removeWidget(this.widget);
+      this.parent.removeWidgets([this.widget]);
     }
   }
 
@@ -76,7 +53,10 @@ export class BaseWidget implements OnInit, OnDestroy {
     this.state = state;
   };
 
-  // helper method for genering item list className
+  /**
+   * Helper to generate class names for an item
+   * @param item element to generate a class name for
+   */
   public getItemClass(item: { isRefined?: boolean }) {
     let className = this.cx('item');
 

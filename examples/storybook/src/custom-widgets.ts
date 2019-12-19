@@ -27,7 +27,7 @@ import { connectMenu } from 'instantsearch.js/es/connectors';
 export class MenuSelect extends BaseWidget implements OnInit {
   constructor(
     @Inject(forwardRef(() => NgAisInstantSearch))
-    public instantSearchParent
+    public instantSearchParent: NgAisInstantSearch
   ) {
     super('MenuSelect');
   }
@@ -81,7 +81,7 @@ const connectNoop: Connector = function(
 export class Refresh extends BaseWidget implements OnInit {
   constructor(
     @Inject(forwardRef(() => NgAisInstantSearch))
-    public instantSearchParent: any
+    public instantSearchParent: NgAisInstantSearch
   ) {
     super('Refresh');
   }

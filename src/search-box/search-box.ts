@@ -98,7 +98,7 @@ export class NgAisSearchBox extends BaseWidget implements AfterViewInit {
 
   constructor(
     @Inject(forwardRef(() => NgAisInstantSearch))
-    public instantSearchParent: any
+    public instantSearchParent: NgAisInstantSearch
   ) {
     super('SearchBox');
     this.createWidget(connectSearchBox);

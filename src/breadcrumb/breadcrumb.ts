@@ -84,7 +84,7 @@ export class NgAisBreadcrumb extends BaseWidget {
 
   constructor(
     @Inject(forwardRef(() => NgAisInstantSearch))
-    public instantSearchParent: any
+    public instantSearchParent: NgAisInstantSearch
   ) {
     super('Breadcrumb');
   }

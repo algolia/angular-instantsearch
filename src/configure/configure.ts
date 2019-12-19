@@ -36,7 +36,7 @@ export class NgAisConfigure extends BaseWidget {
   constructor(
     private differs: KeyValueDiffers,
     @Inject(forwardRef(() => NgAisInstantSearch))
-    public instantSearchParent: any
+    public instantSearchParent: NgAisInstantSearch
   ) {
     super('Configure');
   }
