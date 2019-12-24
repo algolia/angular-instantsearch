@@ -58,10 +58,10 @@ export abstract class BaseWidget implements OnInit, OnDestroy {
    * @param item element to generate a class name for
    */
   public getItemClass(item: { isRefined?: boolean }) {
-    let className = this.cx('item');
+    const className = this.cx('item');
 
     if (item.isRefined) {
-      className = `${className} ${this.cx('item', 'selected')}`;
+      return `${className} ${this.cx('item', 'selected')}`;
     }
 
     return className;

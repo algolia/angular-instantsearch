@@ -56,12 +56,10 @@ export { NgAisVoiceSearchModule };
 import { createSSRSearchClient } from './create-ssr-search-client';
 export { createSSRSearchClient };
 
-import { parseServerRequest } from './parse-server-request';
-export { parseServerRequest };
+export { parseServerRequest } from './parse-server-request';
 
 // Custom widget with BaseWidget class
-import { BaseWidget, Widget, Connector } from './base-widget';
-export { BaseWidget, Widget, Connector };
+export { BaseWidget, Widget, Connector } from './base-widget';
 
 import { NgAisInstantSearch } from './instantsearch/instantsearch';
 export { NgAisInstantSearch };
