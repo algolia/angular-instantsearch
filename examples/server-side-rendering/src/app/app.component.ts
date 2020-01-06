@@ -2,10 +2,30 @@ import { Component, Injector, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformServer } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { TransferState, makeStateKey } from '@angular/platform-browser';
-import {
-  createSSRSearchClient,
-  parseServerRequest,
-} from 'angular-instantsearch';
+import { history } from 'instantsearch.js/es/lib/routers';
+import { simple } from 'instantsearch.js/es/lib/stateMappings';
+import { createSSRSearchClient } from 'angular-instantsearch';
+import * as qs from 'qs';
+import { Routing } from 'instantsearch.js/es/lib/InstantSearch';
+
+// TODO: put this inside the library, maybe inside InstantSearch.js?
+function parseServerRequest(
+  req: { url: string } | undefined,
+  { router, stateMapping }: Routing
+) {
+  if (!req) {
+    return undefined;
+  }
+
+  // this is for faking the browser API used by the router.
+  const location = { search: `?${req.url.split('?')[1]}` };
+  // TODO: this is "private" in IS.js, but since you can change the parseURL
+  // in historyRouter, we need to use it directly
+  // we can't call .read here, since that uses browser globals, unless it can be injected
+  const routeState = router.parseURL({ qsModule: qs, location });
+
+  return stateMapping.routeToState(routeState);
+}
 
 @Component({
   selector: 'app-root',
@@ -69,16 +89,18 @@ export class AppComponent {
     private injector: Injector,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
+    const routing = { router: history(), stateMapping: simple() };
+
     const req = isPlatformServer(this.platformId)
       ? this.injector.get('request')
       : undefined;
 
-    const searchParameters = parseServerRequest(req);
+    const initialUiState = parseServerRequest(req, routing);
 
     this.instantsearchConfig = {
-      searchParameters,
       indexName: 'instant_search',
-      routing: true,
+      routing,
+      initialUiState,
       searchClient: createSSRSearchClient({
         appId: 'latency',
         apiKey: '6be0576ff61c053d5f9a3225e2a90f76',
