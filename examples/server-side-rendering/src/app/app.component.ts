@@ -18,7 +18,9 @@ function parseServerRequest(
 
   // Transform the URL into RouteState, this is likely the same
   // implementation as router.read(), but without reading from the environment.
-  const routeState = qs.parse(req.url.split('?')[1], { arrayLimit: 99 });
+  const routeState = qs.parse(req.url.slice(req.url.lastIndexOf('?') + 1), {
+    arrayLimit: 99,
+  });
 
   // Transform from RouteState into UiState using the stateMapping
   return stateMapping.routeToState(routeState);
