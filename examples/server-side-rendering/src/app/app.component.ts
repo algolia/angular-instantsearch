@@ -4,10 +4,25 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { TransferState, makeStateKey } from '@angular/platform-browser';
 import { history } from 'instantsearch.js/es/lib/routers';
 import { simple } from 'instantsearch.js/es/lib/stateMappings';
-import {
-  createSSRSearchClient,
-  parseServerRequest,
-} from 'angular-instantsearch';
+import { StateMapping } from 'instantsearch.js/es/types';
+import { createSSRSearchClient } from 'angular-instantsearch';
+import * as qs from 'qs';
+
+function parseServerRequest(
+  req: { url: string } | undefined,
+  stateMapping: StateMapping
+) {
+  if (!req || !req.url) {
+    return undefined;
+  }
+
+  // Transform the URL into RouteState, this is likely the same
+  // implementation as router.read(), but without reading from the environment.
+  const routeState = qs.parse(req.url.split('?')[1], { arrayLimit: 99 });
+
+  // Transform from RouteState into UiState using the stateMapping
+  return stateMapping.routeToState(routeState);
+}
 
 @Component({
   selector: 'app-root',
@@ -77,7 +92,7 @@ export class AppComponent {
       ? this.injector.get('request')
       : undefined;
 
-    const initialUiState = parseServerRequest(req, routing);
+    const initialUiState = parseServerRequest(req, routing.stateMapping);
 
     this.instantsearchConfig = {
       indexName: 'instant_search',

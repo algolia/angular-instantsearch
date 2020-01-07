@@ -56,8 +56,6 @@ export { NgAisVoiceSearchModule };
 import { createSSRSearchClient } from './create-ssr-search-client';
 export { createSSRSearchClient };
 
-export { parseServerRequest } from './parse-server-request';
-
 // Custom widget with BaseWidget class
 export { BaseWidget, Widget, Connector } from './base-widget';
 
