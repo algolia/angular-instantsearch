@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "module": "es6",
+    "esModuleInterop": true
+  },
+  "angularCompilerOptions": {
+    "disableTypeScriptVersionCheck": true
+  }
+}
