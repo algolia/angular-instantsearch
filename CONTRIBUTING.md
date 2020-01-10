@@ -15,7 +15,7 @@ cd angular-instantsearch
 
 ### Run
 
-You can access stories of Angular InstantSearch components by running the storybook with `yarn example:storybook`.
+You can access stories of Angular InstantSearch components by running the storybook with `yarn examples:storybook`.
 
 There is also an e-commerce example consuming the built library and compliant to [AOT (compiles your app at build time)](https://angular.io/guide/aot-compiler) compiler. It must be run to test the library in production before any PRs.
 

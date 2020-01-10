@@ -1886,18 +1886,18 @@ amdefine@>=0.0.4:
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
   integrity sha1-SlKCrBZHKek2Gbz9OtFR+BfOkfU=
 
-angular-instantsearch@3.0.0-beta.0:
-  version "3.0.0-beta.0"
-  resolved "https://registry.yarnpkg.com/angular-instantsearch/-/angular-instantsearch-3.0.0-beta.0.tgz#766266506c25e535364236b156262103872da0ff"
-  integrity sha512-gvL9ykCseqBwb6rr9i0aEP2WT5xpxQrW4QT3dZf6xXahum9Mf+v18Exc4iwQvf4YY8i/zksZfhs32wmCBu2U0g==
+angular-instantsearch@3.0.0-beta.4:
+  version "3.0.0-beta.4"
+  resolved "https://registry.yarnpkg.com/angular-instantsearch/-/angular-instantsearch-3.0.0-beta.4.tgz#8a84cc9ba85d6dd20a75efd44337736ce9952569"
+  integrity sha512-4+rRMc7mp0tytIG7bsL4LcSFf3mMX8VL+jNkqhnd5KHOrKwqvG3GDK9ZBHlgHEa+vVGj0f4gkueAOMCqhx0oxw==
   dependencies:
     algoliasearch "^3.29.0"
     algoliasearch-helper "^2.26.1"
-    instantsearch.css "^7.0.0"
+    instantsearch.css "^7.3.1"
     lodash "^4.17.10"
     nouislider "^10.0.0"
     querystring-es3 "^0.2.1"
-    tslib "^1.7.1"
+    tslib "^1.9.0"
 
 angular2-template-loader@^0.6.2:
   version "0.6.2"
@@ -5505,21 +5505,20 @@ inquirer@6.2.1, inquirer@^6.2.0:
     strip-ansi "^5.0.0"
     through "^2.3.6"
 
-instantsearch.css@^7.0.0:
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/instantsearch.css/-/instantsearch.css-7.1.0.tgz#49264d2bdc3d6c1f6395812ce9422ed1e987fccb"
-  integrity sha512-QL3iJTYG5NAP4LiZCojPg/m3dOELTNipq2FZ1IHFNZBTOsZCYQpFdI1UFB70oLijsHoq5WMBIG3ETbIzhcoDPQ==
+instantsearch.css@^7.3.1:
+  version "7.3.1"
+  resolved "https://registry.yarnpkg.com/instantsearch.css/-/instantsearch.css-7.3.1.tgz#7ab74a8f355091ae040947a9cf5438f379026622"
+  integrity sha512-/kaMDna5D+Q9mImNBHEhb9HgHATDOFKYii7N1Iwvrj+lmD9gBJLqVhUw67gftq2O0QI330pFza+CRscIwB1wQQ==
 
-instantsearch.js@3.4.0:
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-3.4.0.tgz#8dd687789747d17e60c2335b50a15b4a3e20a3b5"
-  integrity sha512-lEZqEZP6fppKBFnE0S4dnA0NN4ytKADtktLZsVD5fhbgH15+VDsK4JST1UjpM/bMLcmpoCRYzIehitp7l8SNAg==
+instantsearch.js@3.7.0:
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-3.7.0.tgz#6768c7270415867f7777fc9a4e7231791d015079"
+  integrity sha512-Hkj72CP/Du7uR6R8N2IXo/JHiGU9Z/DwDbQcvRaLKWGd3fc4WjQpl1QPB2OUsoM0Ym0Zv1xjyYTmuU1VvGdySw==
   dependencies:
     algoliasearch-helper "^2.26.0"
     classnames "^2.2.5"
     events "^1.1.0"
     hogan.js "^3.0.2"
-    lodash "^4.17.5"
     preact "^8.3.0"
     preact-compat "^3.18.0"
     preact-rheostat "^2.1.1"
@@ -9889,7 +9888,7 @@ tsconfig-paths@^3.4.0:
     minimist "^1.2.0"
     strip-bom "^3.0.0"
 
-tslib@^1.7.1, tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0:
+tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0:
   version "1.9.3"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
   integrity sha512-4krF8scpejhaOgqzBEcGM7yDIEfi0/8+8zDRZhNZZ2kjmHJ4hv3zCbQWxoJGz1iw5U0Jl0nma13xzHXcncMavQ==

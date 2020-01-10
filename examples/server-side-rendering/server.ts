@@ -1,6 +1,6 @@
 import 'zone.js/dist/zone-node';
 import 'reflect-metadata';
-import { renderModuleFactory } from '@angular/platform-server';
+
 import { enableProdMode } from '@angular/core';
 
 import * as express from 'express';
@@ -25,7 +25,7 @@ const template = readFileSync(
 const {
   AppServerModuleNgFactory,
   LAZY_MODULE_MAP,
-} = require('./dist/server/main.bundle');
+} = require('./dist/server/main');
 
 // Express Engine
 import { ngExpressEngine } from '@nguniversal/express-engine';

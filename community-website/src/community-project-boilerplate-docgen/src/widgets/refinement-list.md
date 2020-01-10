@@ -1,6 +1,7 @@
 ---
 title: Widgets - Refinement List
 layout: widget.pug
+canonical: https://www.algolia.com/doc/api-reference/widgets/refinement-list/angular/
 ---
 
 # Refinement List

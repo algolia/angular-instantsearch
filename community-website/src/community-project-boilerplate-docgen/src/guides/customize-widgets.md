@@ -1,6 +1,7 @@
 ---
 title: Guide - Customize widgets
 layout: guide.pug
+canonical: https://www.algolia.com/doc/guides/building-search-ui/widgets/customize-an-existing-widget/angular
 ---
 
 # Customize widgets
@@ -170,4 +171,4 @@ In `app.module.ts`, make sure to add the component by doing `import { MenuSelect
 
 You can now use your directive `<ais-menu-select></ais-menu-select>` to display your custom MenuSelect widget!
 
-We have a live example of this newly created MenuSelect in our [widget showcase](/examples/storybook/src/stories/CustomWidgets.stories.ts).
+We have a live example of this newly created MenuSelect in our [widget showcase](/angular-instantsearch/examples/storybook/?selectedKind=Custom%20widgets&selectedStory=MenuSelect).
