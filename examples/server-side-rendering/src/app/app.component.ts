@@ -17,7 +17,6 @@ import {
   template: `
     <div class="container">
       <ais-instantsearch [config]="instantsearchConfig">
-        <ais-configure [searchParameters]="searchParameters"></ais-configure>
         <div class="jumbotron">
           <p class="text-center">
             <ais-search-box placeholder="Search a product"></ais-search-box>
@@ -80,9 +79,10 @@ export class AppComponent {
       ? this.injector.get('request')
       : undefined;
 
-    this.searchParameters = parseServerRequest(req);
+    const searchParameters = parseServerRequest(req);
 
     this.instantsearchConfig = {
+      searchParameters,
       indexName: 'instant_search',
       routing: true,
       searchClient: createSSRSearchClient({
