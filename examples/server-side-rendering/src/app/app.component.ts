@@ -2,29 +2,8 @@ import { Component, Injector, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformServer } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { TransferState, makeStateKey } from '@angular/platform-browser';
-import { history } from 'instantsearch.js/es/lib/routers';
 import { simple } from 'instantsearch.js/es/lib/stateMappings';
-import { StateMapping } from 'instantsearch.js/es/types';
-import { createSSRSearchClient } from 'angular-instantsearch';
-import * as qs from 'qs';
-
-function parseServerRequest(
-  req: { url: string } | undefined,
-  stateMapping: StateMapping
-) {
-  if (!req || !req.url) {
-    return undefined;
-  }
-
-  // Transform the URL into RouteState, this is likely the same
-  // implementation as router.read(), but without reading from the environment.
-  const routeState = qs.parse(req.url.slice(req.url.lastIndexOf('?') + 1), {
-    arrayLimit: 99,
-  });
-
-  // Transform from RouteState into UiState using the stateMapping
-  return stateMapping.routeToState(routeState);
-}
+import { createSSRSearchClient, ssrRouter } from 'angular-instantsearch';
 
 @Component({
   selector: 'app-root',
@@ -88,13 +67,19 @@ export class AppComponent {
     private injector: Injector,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
-    const routing = { router: history(), stateMapping: simple() };
+    const routing = { router: ssrRouter(), stateMapping: simple() };
 
-    const req = isPlatformServer(this.platformId)
-      ? this.injector.get('request')
-      : undefined;
+    let initialUiState = undefined;
+    if (isPlatformServer(this.platformId)) {
+      // get the server (express) request object
+      const req = this.injector.get('request');
 
-    const initialUiState = parseServerRequest(req, routing.stateMapping);
+      // Transform the URL into RouteState, this is likely the same
+      const routeState = routing.router.readServer(req);
+
+      // Transform from RouteState into UiState using the stateMapping
+      initialUiState = routing.stateMapping.routeToState(routeState);
+    }
 
     this.instantsearchConfig = {
       indexName: 'instant_search',

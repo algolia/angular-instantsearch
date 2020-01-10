@@ -52,9 +52,9 @@ export { NgAisQueryRuleContextModule };
 import { NgAisVoiceSearchModule } from './voice-search/voice-search.module';
 export { NgAisVoiceSearchModule };
 
-// Server-side rendering search client
-import { createSSRSearchClient } from './create-ssr-search-client';
-export { createSSRSearchClient };
+// Server-side rendering
+export { createSSRSearchClient } from './create-ssr-search-client';
+export { ssrRouter } from './ssr-router'
 
 // Custom widget with BaseWidget class
 export { BaseWidget, Widget, Connector } from './base-widget';
