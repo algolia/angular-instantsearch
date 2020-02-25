@@ -18,6 +18,7 @@ import { AlgoliaSearchHelper } from 'algoliasearch-helper';
 
 import { Widget } from '../base-widget';
 import { VERSION } from '../version';
+import { ClientOptions } from 'algoliasearch';
 
 const algoliasearch = algoliasearchProxy.default || algoliasearchProxy;
 
@@ -158,13 +159,15 @@ export type InstantSearchConfig = {
   appId?: string;
   apiKey?: string;
   indexName: string;
+  options?: ClientOptions;
 
   numberLocale?: string;
   searchFunction?: (helper: AlgoliaSearchHelper) => void;
   createAlgoliaClient?: (
     algoliasearch: Function,
     appId: string,
-    apiKey: string
+    apiKey: string,
+    options?: ClientOptions
   ) => object;
   searchClient?: SearchClient;
   searchParameters?: SearchParameters | void;
@@ -262,10 +265,11 @@ export class NgAisInstantSearch implements AfterViewInit, OnInit, OnDestroy {
     }
 
     if (!config.searchClient && !config.createAlgoliaClient) {
-      const client = algoliasearch(config.appId, config.apiKey);
+      const client = algoliasearch(config.appId, config.apiKey, config.options);
       config.searchClient = client;
       config.appId = undefined;
       config.apiKey = undefined;
+      config.options = undefined;
     }
 
     // custom algolia client agent
