@@ -105,7 +105,6 @@
     "@angular/core": "5.2.11",
     "@angular/platform-browser": "5.2.11",
     "@angular/platform-browser-dynamic": "5.2.11",
-    "@types/algoliasearch": "^3.34.10",
     "@types/jest": "24.0.18",
     "@types/lodash": "4.14.135",
     "@types/node": "9.6.53",

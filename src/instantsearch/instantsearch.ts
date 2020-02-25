@@ -12,15 +12,13 @@ import {
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
-import * as algoliasearchProxy from 'algoliasearch/lite';
+import * as algoliasearch from 'algoliasearch/lite';
 import instantsearch from 'instantsearch.js/es';
 import { AlgoliaSearchHelper } from 'algoliasearch-helper';
 
 import { Widget } from '../base-widget';
 import { VERSION } from '../version';
 import { ClientOptions } from 'algoliasearch';
-
-const algoliasearch = algoliasearchProxy.default || algoliasearchProxy;
 
 export type SearchRequest = {
   indexName: string;
