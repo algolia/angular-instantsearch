@@ -8,7 +8,7 @@ InstantSearch projects: **Angular InstantSearch** | [React InstantSearch][react-
 
 ## Angular compatibility
 
-Angular InstantSearch is **compatible with Angular 5 and above**. If you need a different version of Angular, please [open an issue](https://github.com/algolia/react-instantsearch/issues/new) or come [chat with us](https://gitter.im/angular-instantsearch).
+Angular InstantSearch is **compatible with Angular 5 and above**. If you need a different version of Angular, please [open an issue](https://github.com/algolia/angular-instantsearch/issues/new).
 
 ## Documentation
 
