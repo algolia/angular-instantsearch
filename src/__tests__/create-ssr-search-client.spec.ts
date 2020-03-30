@@ -53,7 +53,7 @@ describe('createSSRSearchClient', () => {
       transferState: null,
     });
 
-    expect(ssrSearchClient).toHaveBeenCalledWith('appId', 'apiKey', {});
+    expect(addAlgoliaAgent).toHaveBeenCalledWith('appId', 'apiKey', {});
   });
 
   it('forwards the options to the search client', () => {
@@ -76,7 +76,7 @@ describe('createSSRSearchClient', () => {
       transferState: null,
     });
 
-    expect(ssrSearchClient).toHaveBeenCalledWith('appId', 'apiKey', {
+    expect(addAlgoliaAgent).toHaveBeenCalledWith('appId', 'apiKey', {
       queryParameters: {},
     });
   });
