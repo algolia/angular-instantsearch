@@ -35,4 +35,49 @@ describe('createSSRSearchClient', () => {
       `angular-instantsearch-server (${VERSION})`
     );
   });
+
+  it('forwards the default options to the search client', () => {
+    const addAlgoliaAgent = jest.fn();
+    algoliasearch.mockImplementation(() => {
+      return {
+        addAlgoliaAgent,
+      };
+    });
+
+    const ssrSearchClient = createSSRSearchClient({
+      appId: 'appId',
+      apiKey: 'apiKey',
+      httpClient: null,
+      HttpHeaders: null,
+      makeStateKey: null,
+      transferState: null,
+    });
+
+    expect(ssrSearchClient).toHaveBeenCalledWith('appId', 'apiKey', {});
+  });
+
+  it('forwards the options to the search client', () => {
+    const addAlgoliaAgent = jest.fn();
+    algoliasearch.mockImplementation(() => {
+      return {
+        addAlgoliaAgent,
+      };
+    });
+
+    const ssrSearchClient = createSSRSearchClient({
+      appId: 'appId',
+      apiKey: 'apiKey',
+      options: {
+        queryParameters: {},
+      },
+      httpClient: null,
+      HttpHeaders: null,
+      makeStateKey: null,
+      transferState: null,
+    });
+
+    expect(ssrSearchClient).toHaveBeenCalledWith('appId', 'apiKey', {
+      queryParameters: {},
+    });
+  });
 });

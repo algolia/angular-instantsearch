@@ -11,6 +11,7 @@ type SSRSearchClientOptions = {
   httpClient: HttpClient;
   HttpHeaders: typeof HttpHeaders;
   transferState: TransferState;
+  options?: object;
   makeStateKey<T = void>(key: string): StateKey<T>;
 };
 
@@ -32,8 +33,9 @@ export function createSSRSearchClient({
   HttpHeaders,
   transferState,
   makeStateKey,
+  options = {},
 }: SSRSearchClientOptions) {
-  const searchClient = algoliasearch(appId, apiKey);
+  const searchClient = algoliasearch(appId, apiKey, options);
 
   searchClient.addAlgoliaAgent(`angular (${AngularVersion.full})`);
   searchClient.addAlgoliaAgent(`angular-instantsearch (${VERSION})`);
