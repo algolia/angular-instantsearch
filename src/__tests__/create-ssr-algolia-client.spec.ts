@@ -6,32 +6,48 @@ import { VERSION as AngularVersion } from '@angular/core';
 jest.mock('algoliasearch/index');
 
 describe('Create SSR', () => {
-  it('passes the User-Agent', () => {
+  it('forwards the default options to the search client', () => {
     const addAlgoliaAgent = jest.fn();
     algoliasearchProxy.mockImplementation(() => {
       return {
         addAlgoliaAgent,
       };
     });
-
-    const ssrClient = createSSRSearchClient({
-      appId: 'test',
-      apiKey: 'test',
+  
+    createSSRSearchClient({
+      appId: 'appId',
+      apiKey: 'apiKey',
       httpClient: null,
       HttpHeaders: null,
       makeStateKey: null,
       transferState: null,
-      options: {},
     });
-    expect(addAlgoliaAgent).toHaveBeenCalledTimes(3);
-    expect(addAlgoliaAgent).toHaveBeenCalledWith(
-      `angular (${AngularVersion.full})`
-    );
-    expect(addAlgoliaAgent).toHaveBeenCalledWith(
-      `angular-instantsearch (${VERSION})`
-    );
-    expect(addAlgoliaAgent).toHaveBeenCalledWith(
-      `angular-instantsearch-server (${VERSION})`
-    );
+  
+    expect(algoliasearchProxy).toHaveBeenCalledWith('appId', 'apiKey', {});
+  });
+  
+  it('forwards the options to the search client', () => {
+    const addAlgoliaAgent = jest.fn();
+    algoliasearchProxy.mockImplementation(() => {
+      return {
+        addAlgoliaAgent,
+      };
+    });
+  
+    createSSRSearchClient({
+      appId: 'appId',
+      apiKey: 'apiKey',
+      options: {
+        queryParameters: {},
+      },
+      httpClient: null,
+      HttpHeaders: null,
+      makeStateKey: null,
+      transferState: null,
+    });
+  
+    expect(algoliasearchProxy).toHaveBeenCalledWith('appId', 'apiKey', {
+      queryParameters: {},
+    });
   });
 });
