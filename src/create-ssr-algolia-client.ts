@@ -14,6 +14,7 @@ export function createSSRAlgoliaClient({
   HttpHeaders,
   transferState,
   makeStateKey,
+  options = {},
 }) {
   console.warn(
     '`createSSRAlgoliaClient` is deprecated in favor of `createSSRSearchClient` to be plugged to `searchClient`.'
@@ -27,6 +28,7 @@ export function createSSRAlgoliaClient({
       HttpHeaders,
       transferState,
       makeStateKey,
+      options,
     });
 }
 
@@ -37,8 +39,9 @@ export function createSSRSearchClient({
   HttpHeaders,
   transferState,
   makeStateKey,
+  options = {},
 }) {
-  const client = algoliasearch(appId, apiKey, {});
+  const client = algoliasearch(appId, apiKey, options);
   client.addAlgoliaAgent(`angular (${AngularVersion.full})`);
   client.addAlgoliaAgent(`angular-instantsearch (${VERSION})`);
   client.addAlgoliaAgent(`angular-instantsearch-server (${VERSION})`);

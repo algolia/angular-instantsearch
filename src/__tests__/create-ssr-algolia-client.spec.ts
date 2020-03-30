@@ -21,6 +21,7 @@ describe('Create SSR', () => {
       HttpHeaders: null,
       makeStateKey: null,
       transferState: null,
+      options: {},
     });
     expect(addAlgoliaAgent).toHaveBeenCalledTimes(3);
     expect(addAlgoliaAgent).toHaveBeenCalledWith(
