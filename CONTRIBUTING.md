@@ -25,19 +25,15 @@ You can use `> yarn examples:ecommerce` and open http://localhost:4200 to access
 
 Tests are ran with [jest](https://facebook.github.io/jest/) and [jest-preset-angular](https://github.com/thymikee/jest-preset-angular).
 
-* `> yarn test` -> run all tests
-* `> yarn test:watch` -> run tests and watch for changes
+- `> yarn test` -> run all tests
+- `> yarn test:watch` -> run tests and watch for changes
 
 ## Releasing
 
-1. go to the correct branch
+To release a stable version, go on master (`git checkout master`) and use:
 
-    `git checkout develop`
+```sh
+yarn run release:prepare
+```
 
-2. release to the registry
-
-    `npm run release`
-
-3. update the docs
-
-    `yarn doc:publish`
+It will create a pull request for the next release. When it's reviewed, approved and merged, then CircleCI will automatically publish it to npm.
