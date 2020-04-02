@@ -17,13 +17,11 @@ module.exports = {
       `export const VERSION = '${version}';\n`
     );
   },
-  pullRequestTeamReviewer: ['instantsearch-for-websites'],
-  buildCommand: ({ version }) =>
-    `NODE_ENV=production VERSION=${version} yarn build`,
+  pullRequestTeamReviewers: ['instantsearch-for-websites'],
+  buildCommand: ({ version }) => `VERSION=${version} yarn build`,
   slack: {
     // We send Slack messages only for `releaseSuccess`.
     prepared: null,
-    releaseStart: null,
     releaseSuccess: ({
       appName,
       version,
