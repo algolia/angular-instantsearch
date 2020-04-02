@@ -19,6 +19,10 @@ module.exports = {
   },
   pullRequestTeamReviewers: ['instantsearch-for-websites'],
   buildCommand: ({ version }) => `VERSION=${version} yarn build`,
+  beforePublish: ({ exec }) => {
+    exec('cp README.md CHANGELOG.md dist');
+  },
+  publishCommand: ({ defaultCommand }) => `cd dist && ${defaultCommand}`,
   slack: {
     // We send Slack messages only for `releaseSuccess`.
     prepared: null,
