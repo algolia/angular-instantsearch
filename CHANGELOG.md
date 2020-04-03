@@ -1,3 +1,28 @@
+# [3.0.0-beta.5](https://github.com/algolia/angular-instantsearch/compare/3.0.0-beta.4...3.0.0-beta.5) (2020-04-03)
+
+
+### Bug Fixes
+
+* **deps:** update dependency lodash to v4.17.13 [security] ([#656](https://github.com/algolia/angular-instantsearch/issues/656)) ([401a22e](https://github.com/algolia/angular-instantsearch/commit/401a22e530115e60de49101fc102c32cf344ce1a))
+
+
+### Features
+
+* **ssr:** forward options to search client ([#715](https://github.com/algolia/angular-instantsearch/issues/715)) ([8355c97](https://github.com/algolia/angular-instantsearch/commit/8355c971709b2aae7e4feef6c8ba61709fc43699))
+
+
+
+## [2.2.2](https://github.com/algolia/angular-instantsearch/compare/3.0.0-beta.0...2.2.2) (2019-04-18)
+
+
+### Bug Fixes
+
+* **docs:** add missing prefix ([861b42d](https://github.com/algolia/angular-instantsearch/commit/861b42d2c479cb85b6a40e779df7902fb2275bab))
+* **docs:** fix header nav position ([bbe2f1e](https://github.com/algolia/angular-instantsearch/commit/bbe2f1e98225ed6e906ce94494d3da55fd217411))
+* **ua:** change the User-Agent to use the new specs lib (version) ([#481](https://github.com/algolia/angular-instantsearch/issues/481)) ([9046bf3](https://github.com/algolia/angular-instantsearch/commit/9046bf3db37a6e1c292588c289af0a4863c699ce))
+
+
+
 # [3.0.0-beta.4](https://github.com/algolia/angular-instantsearch/compare/3.0.0-beta.3...3.0.0-beta.4) (2019-07-29)
 
 
