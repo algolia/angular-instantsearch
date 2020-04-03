@@ -1,3 +1,12 @@
+# [2.3.0](https://github.com/algolia/angular-instantsearch/compare/2.2.2...2.3.0) (2020-04-03)
+
+
+### Features
+
+* add possibility to set params for the client ([#714](https://github.com/algolia/angular-instantsearch/issues/714)) ([9ea22d0](https://github.com/algolia/angular-instantsearch/commit/9ea22d03ac8056ed6a349c1f1613e3a715679620))
+
+
+
 ## [2.2.2](https://github.com/algolia/angular-instantsearch/compare/2.2.0...2.2.2) (2019-04-18)
 
 
