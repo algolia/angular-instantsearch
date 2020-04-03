@@ -11,6 +11,7 @@ module.exports = {
     }
     return true;
   },
+  getTagName: ({ version }) => version,
   versionUpdated: ({ version, dir }) => {
     fs.writeFileSync(
       path.resolve(dir, 'src', 'version.ts'),
