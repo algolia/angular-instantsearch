@@ -6962,10 +6962,10 @@ prettier@1.13.7:
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.13.7.tgz#850f3b8af784a49a6ea2d2eaa7ed1428a34b7281"
   integrity sha512-KIU72UmYPGk4MujZGYMFwinB7lOf2LsDNGSOC8ufevsrPLISrZbNJlWstRi3m0AMuszbH+EFSQ/r6w56RSPK6w==
 
-prettier@^1.18.2:
-  version "1.19.1"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.19.1.tgz#f7d7f5ff8a9cd872a7be4ca142095956a60797cb"
-  integrity sha512-s7PoyDv/II1ObgQunCbB9PdLmUcBZcnWOcxDh7O0N/UwDEsHyqkW+Qh28jW+mVuCdx7gLB0BotYI1Y6uI9iyew==
+prettier@^2.0.0:
+  version "2.0.2"
+  resolved "https://registry.npmjs.org/prettier/-/prettier-2.0.2.tgz#1ba8f3eb92231e769b7fcd7cb73ae1b6b74ade08"
+  integrity sha512-5xJQIPT8BraI7ZnaDwSbu5zLrB6vvi8hVV58yHQ+QK64qrY40dULy0HSRlQ2/2IdzeBpjhDkqdcFBnFeDEMVdg==
 
 pretty-format@^23.6.0:
   version "23.6.0"
@@ -7845,10 +7845,10 @@ shellwords@^0.1.1:
   resolved "https://registry.yarnpkg.com/shellwords/-/shellwords-0.1.1.tgz#d6b9181c1a48d397324c84871efbcfc73fc0654b"
   integrity sha512-vFwSUfQvqybiICwZY5+DAWIPLKsWO31Q91JSKl3UYv+K5c2QRPzn0qzec6QPu1Qc9eHYItiP3NdJqNVqetYAww==
 
-shipjs-lib@0.18.0:
-  version "0.18.0"
-  resolved "https://registry.yarnpkg.com/shipjs-lib/-/shipjs-lib-0.18.0.tgz#df6282395179621e06dc67b40bdd8ccb5cefca21"
-  integrity sha512-X2rtkLeOlTjZjfZC3NHAYXC5JaMTWnJFMwTNC+T5NJFdHMnNrLuR7ZVXS3mh//ku/1AU7AOka8UuhfH8UBsYBg==
+shipjs-lib@0.18.1:
+  version "0.18.1"
+  resolved "https://registry.npmjs.org/shipjs-lib/-/shipjs-lib-0.18.1.tgz#d8f40057ba22c9d49c66447285ee75665dda272e"
+  integrity sha512-f9zfNsCCU89djpvgsUtqGcA8g5WB48UZEk3Cq+YY0YzREq3lfPv37K98+biYNv2H/thm63knlu0iLTEn4x3exw==
   dependencies:
     deepmerge "^4.2.2"
     dotenv "^8.1.0"
@@ -7856,10 +7856,10 @@ shipjs-lib@0.18.0:
     semver "6.3.0"
     shelljs "0.8.3"
 
-shipjs@0.18.0:
-  version "0.18.0"
-  resolved "https://registry.yarnpkg.com/shipjs/-/shipjs-0.18.0.tgz#c05fc30558f5d315b8e1a2482775e1f0260dcf6c"
-  integrity sha512-Rs07yBSygKvvLiRQQA4hqZHEySibuAOiP30UGLraBY0/XevD66XjCZliyVwck6zSBRUromy+4BIQ191n2unJkA==
+shipjs@0.18.1:
+  version "0.18.1"
+  resolved "https://registry.npmjs.org/shipjs/-/shipjs-0.18.1.tgz#052b5912101e2eca6b66adbd9b7fa018dd78157b"
+  integrity sha512-PvJowZUiRbLGlUFXX5TS71LtmIBeC/FhhWL34BuBcuyUh5AZ2y5za3ZiREbLpDfa8c2SSZJEGAowCziqCvuhhw==
   dependencies:
     "@babel/runtime" "^7.6.3"
     "@octokit/rest" "^17.0.0"
@@ -7877,10 +7877,10 @@ shipjs@0.18.0:
     mime-types "^2.1.25"
     mkdirp "^1.0.0"
     open "^7.0.0"
-    prettier "^1.18.2"
+    prettier "^2.0.0"
     serialize-javascript "^3.0.0"
     shell-quote "^1.7.2"
-    shipjs-lib "0.18.0"
+    shipjs-lib "0.18.1"
     temp-write "4.0.0"
     tempfile "^3.0.0"
 
