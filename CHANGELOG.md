@@ -1,11 +1,6 @@
 # [2.3.0](https://github.com/algolia/angular-instantsearch/compare/2.2.2...2.3.0) (2020-04-03)
 
 
-### Bug Fixes
-
-* **deps:** update dependency lodash to v4.17.13 [security] ([#656](https://github.com/algolia/angular-instantsearch/issues/656)) ([401a22e](https://github.com/algolia/angular-instantsearch/commit/401a22e530115e60de49101fc102c32cf344ce1a))
-
-
 ### Features
 
 * add possibility to set params for the client ([#714](https://github.com/algolia/angular-instantsearch/issues/714)) ([9ea22d0](https://github.com/algolia/angular-instantsearch/commit/9ea22d03ac8056ed6a349c1f1613e3a715679620))
