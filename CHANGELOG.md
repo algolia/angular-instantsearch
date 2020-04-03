@@ -3,7 +3,7 @@
 
 ### Features
 
-* add possibility to set params for the client ([#714](https://github.com/algolia/angular-instantsearch/issues/714)) ([9ea22d0](https://github.com/algolia/angular-instantsearch/commit/9ea22d03ac8056ed6a349c1f1613e3a715679620))
+* **ssr**: forward options to search client ([#714](https://github.com/algolia/angular-instantsearch/issues/714)) ([9ea22d0](https://github.com/algolia/angular-instantsearch/commit/9ea22d03ac8056ed6a349c1f1613e3a715679620))
 
 
 
