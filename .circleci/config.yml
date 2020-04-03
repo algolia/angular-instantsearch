@@ -61,3 +61,7 @@ jobs:
       - run:
           name: run CI
           command: yarn test:ci
+
+      - run:
+          name: Trigger a release if the latest commit is a release commit
+          command: yarn release:trigger
