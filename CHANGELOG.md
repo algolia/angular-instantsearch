@@ -1,3 +1,12 @@
+# [3.0.0-beta.5](https://github.com/algolia/angular-instantsearch/compare/3.0.0-beta.4...3.0.0-beta.5) (2020-04-03)
+
+
+### Features
+
+* **ssr:** forward options to search client ([#715](https://github.com/algolia/angular-instantsearch/issues/715)) ([8355c97](https://github.com/algolia/angular-instantsearch/commit/8355c971709b2aae7e4feef6c8ba61709fc43699))
+
+
+
 # [3.0.0-beta.4](https://github.com/algolia/angular-instantsearch/compare/3.0.0-beta.3...3.0.0-beta.4) (2019-07-29)
 
 
