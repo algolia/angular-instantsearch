@@ -33,7 +33,7 @@ Tests are ran with [jest](https://facebook.github.io/jest/) and [jest-preset-ang
 To release a stable version, go on master (`git checkout master`) and use:
 
 ```sh
-yarn run release:prepare
+yarn run release
 ```
 
 It will create a pull request for the next release. When it's reviewed, approved and merged, then CircleCI will automatically publish it to npm.
