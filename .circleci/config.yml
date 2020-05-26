@@ -64,4 +64,4 @@ jobs:
 
       - run:
           name: Trigger a release if the latest commit is a release commit
-          command: yarn release:trigger
+          command: yarn shipjs trigger
