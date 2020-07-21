@@ -14,6 +14,10 @@ Angular InstantSearch is **compatible with Angular 5 and above**. If you need a 
 
 There's a dedicated documentation available at <https://community.algolia.com/angular-instantsearch/>.
 
+## Troubleshooting
+
+Encountering an issue? Before reaching out to support, we recommend heading to our [FAQ](https://www.algolia.com/doc/guides/building-search-ui/troubleshooting/faq/angular/) where you will find answers for the most common issues and gotchas with the library.
+
 ## Contributing
 
 To contribute to the library (code and documentation), [read our contribution guide](./CONTRIBUTING.md).
