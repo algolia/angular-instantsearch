@@ -110,15 +110,15 @@
   dependencies:
     tslib "^1.7.1"
 
-"@angular/compiler-cli@^5.0.0":
-  version "5.2.11"
-  resolved "https://registry.yarnpkg.com/@angular/compiler-cli/-/compiler-cli-5.2.11.tgz#71a2885ac394a3c7a407c6ba0b920b52d73add99"
-  integrity sha512-dwrQ0yxoCM/XzKzlm7pTsyg4/6ECjT9emZufGj8t12bLMO8NDn1IJOsqXJA1+onEgQKhlr0Ziwi+96TvDTb1Cg==
+"@angular/compiler-cli@5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@angular/compiler-cli/-/compiler-cli-5.0.0.tgz#0ecbb937d84a4f8dd94f0c2a47b07d2e4694c853"
+  integrity sha1-Dsu5N9hKT43ZTwwqR7B9LkaUyFM=
   dependencies:
     chokidar "^1.4.2"
     minimist "^1.2.0"
     reflect-metadata "^0.1.2"
-    tsickle "^0.27.2"
+    tsickle "^0.24.0"
 
 "@angular/compiler@5.0.0":
   version "5.0.0"
@@ -233,6 +233,11 @@
     semver "^5.3.0"
     semver-intersect "^1.1.2"
 
+"@types/googlemaps@^3.39.6":
+  version "3.39.11"
+  resolved "https://registry.yarnpkg.com/@types/googlemaps/-/googlemaps-3.39.11.tgz#5b075b7708276b788fd424e48fb3e34670eddab8"
+  integrity sha512-GRgIICsibETwIC3IiK1U7dluJ/+vpdhIrySiyhTgZhe6Jqwz24GZePWqSvWepZer0NafmILEGe2U4CNAuwCpbw==
+
 "@types/node@^10.17.11":
   version "10.17.13"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.17.13.tgz#ccebcdb990bd6139cd16e84c39dc2fb1023ca90c"
@@ -316,10 +321,10 @@ algoliasearch-helper@^2.26.1:
     qs "^6.5.1"
     util "^0.10.3"
 
-algoliasearch-helper@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/algoliasearch-helper/-/algoliasearch-helper-3.0.0.tgz#830f0017408df16d47618400bed9eed00930b27b"
-  integrity sha512-urO9Yq6gMj93qfuCK5wFK250LfRSVFanJrSyOevJWgN6o6H3Km3wl04er0NaiHGZorqOyEAEU1us1aqFLO3YSA==
+algoliasearch-helper@^3.1.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/algoliasearch-helper/-/algoliasearch-helper-3.2.1.tgz#8082b4bd9d0966318926b9bafd63d46e6460e02e"
+  integrity sha512-qf/1HVsx24JQUxMz5djeBPDc4Zmnf23VrC2FT8PrZEclcBmZqD9ZGv7mhOVUr8pTo1hWU6knl7KM+WnorzIxag==
   dependencies:
     events "^1.1.1"
 
@@ -3043,12 +3048,13 @@ instantsearch.css@^7.0.0:
   resolved "https://registry.yarnpkg.com/instantsearch.css/-/instantsearch.css-7.1.0.tgz#49264d2bdc3d6c1f6395812ce9422ed1e987fccb"
   integrity sha512-QL3iJTYG5NAP4LiZCojPg/m3dOELTNipq2FZ1IHFNZBTOsZCYQpFdI1UFB70oLijsHoq5WMBIG3ETbIzhcoDPQ==
 
-instantsearch.js@4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-4.0.1.tgz#be6b8b915324eb87c269277a550d353351e12682"
-  integrity sha512-ZGzfVKH8ly1LbOBzzEWYJp0BFExGGNqaq+Fhxrnv3sYw3yEc4OY1v40OTMY1y+DDnwZXiIrG3H1UdnovzZrAPg==
+instantsearch.js@4.7.0:
+  version "4.7.0"
+  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-4.7.0.tgz#4062b98daf7278e51028d1453dc5d629cb708702"
+  integrity sha512-OkTcyHLcSu6eymWmVXsu2Tt0GRtkoRQXM+SCxj+nyvBY3y3hmGDjcb8bzkrACrhfR8SDbpEUiBGI1IUHjtvOGA==
   dependencies:
-    algoliasearch-helper "^3.0.0"
+    "@types/googlemaps" "^3.39.6"
+    algoliasearch-helper "^3.1.1"
     classnames "^2.2.5"
     events "^1.1.0"
     hogan.js "^3.0.2"
@@ -5554,14 +5560,14 @@ source-map-resolve@^0.5.0:
     source-map-url "^0.4.0"
     urix "^0.1.0"
 
-source-map-support@^0.4.1:
+source-map-support@^0.4.1, source-map-support@^0.4.2:
   version "0.4.18"
   resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.4.18.tgz#0286a6de8be42641338594e97ccea75f0a2c585f"
   integrity sha512-try0/JqxPLF9nOjvSta7tVondkP5dwgyLDjVoyMDlmjugT2lRZ1OfsrYTkCd2hkDnJTKRbO/Rl3orm8vlsUzbA==
   dependencies:
     source-map "^0.5.6"
 
-source-map-support@^0.5.0, source-map-support@^0.5.5:
+source-map-support@^0.5.5:
   version "0.5.9"
   resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.9.tgz#41bc953b2534267ea2d605bccfa7bfa3111ced5f"
   integrity sha512-gR6Rw4MvUlYy83vP0vxoVNzM6t8MUXqNuRsuBmBHQDu1Fh6X015FrLdgoDKcNdkwGubozq0P4N0Q37UyFVr1EA==
@@ -6020,15 +6026,15 @@ ts-loader@^2.3.7:
     loader-utils "^1.0.2"
     semver "^5.0.1"
 
-tsickle@^0.27.2:
-  version "0.27.5"
-  resolved "https://registry.yarnpkg.com/tsickle/-/tsickle-0.27.5.tgz#41e1a41a5acf971cbb2b0558a9590779234d591f"
-  integrity sha512-NP+CjM1EXza/M8mOXBLH3vkFEJiu1zfEAlC5WdJxHPn8l96QPz5eooP6uAgYtw1CcKfuSyIiheNUdKxtDWCNeg==
+tsickle@^0.24.0:
+  version "0.24.1"
+  resolved "https://registry.yarnpkg.com/tsickle/-/tsickle-0.24.1.tgz#039343b205bf517a333b0703978892f80a7d848e"
+  integrity sha512-XloFQZhVhgjpQsi3u2ORNRJvuID5sflOg6HfP093IqAbhE1+fIUXznULpdDwHgG4p+v8w78KdHruQtkWUKx5AQ==
   dependencies:
     minimist "^1.2.0"
     mkdirp "^0.5.1"
-    source-map "^0.6.0"
-    source-map-support "^0.5.0"
+    source-map "^0.5.6"
+    source-map-support "^0.4.2"
 
 tslib@^1.7.1:
   version "1.9.3"

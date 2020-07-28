@@ -33,6 +33,15 @@ export function createSSRSearchClient({
   transferState,
   makeStateKey,
 }: SSRSearchClientOptions) {
+  // A custom network request needs to be done, using TransferState of Angular.
+  // This is done to make sure the request done backend for SSR doesn't get
+  // made again frontend during hydration.
+  // For compatibility with both v3 and v4 of algoliasearch, we are overriding the
+  // network request function in two places:
+  // v4: custom "requester"
+  // v3: override "_request" on the prototype
+  // since neither v3 uses the requester argument, and v4 use the _request, we
+  // can safely do this without checking the version
   const searchClient = algoliasearch(appId, apiKey);
 
   searchClient.addAlgoliaAgent(`angular (${AngularVersion.full})`);

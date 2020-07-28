@@ -1,0 +1,26 @@
+diff --git a/node_modules/instantsearch.js/es/types/algoliasearch.d.ts b/node_modules/instantsearch.js/es/types/algoliasearch.d.ts
+index d1e8a36..bfcda46 100644
+--- a/node_modules/instantsearch.js/es/types/algoliasearch.d.ts
++++ b/node_modules/instantsearch.js/es/types/algoliasearch.d.ts
+@@ -1,5 +1,10 @@
+-import algoliasearch, { SearchClient as SearchClientV4, Client as SearchClientV3, Response as SearchResponseV3, SearchForFacetValues as SearchForFacetValuesV3 } from 'algoliasearch';
+-import { SearchResponse as SearchResponseV4, SearchForFacetValuesResponse as SearchForFacetValuesResponseV4 } from '@algolia/client-search';
++import algoliasearch, {
++  // @ts-ignore
++  SearchClient as SearchClientV4,
++  Client as SearchClientV3, Response as SearchResponseV3, SearchForFacetValues as SearchForFacetValuesV3 } from 'algoliasearch';
++import { SearchResponse as SearchResponseV4, SearchForFacetValuesResponse as SearchForFacetValuesResponseV4 }
++// @ts-ignore
++from '@algolia/client-search';
+ declare type DummySearchClientV4 = {
+     readonly addAlgoliaAgent: (segment: string, version?: string) => void;
+ };
+diff --git a/node_modules/instantsearch.js/es/widgets/places/places.d.ts b/node_modules/instantsearch.js/es/widgets/places/places.d.ts
+index 85185a2..8fada58 100644
+--- a/node_modules/instantsearch.js/es/widgets/places/places.d.ts
++++ b/node_modules/instantsearch.js/es/widgets/places/places.d.ts
+@@ -1,3 +1,4 @@
++// @ts-ignore
+ import { StaticOptions, PlacesInstance, ReconfigurableOptions } from 'places.js';
+ import { WidgetFactory } from '../../types';
+ declare type PlacesWidgetOptions = {

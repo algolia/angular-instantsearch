@@ -3,7 +3,69 @@ import { isPlatformServer } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { TransferState, makeStateKey } from '@angular/platform-browser';
 import { simple } from 'instantsearch.js/es/lib/stateMappings';
-import { createSSRSearchClient, ssrRouter } from 'angular-instantsearch';
+import { createSSRSearchClient } from 'angular-instantsearch';
+import * as qs from 'qs';
+
+function ssrRouter(readUrl) {
+  return {
+    read() {
+      const url = readUrl();
+      return qs.parse(url.slice(url.lastIndexOf('?') + 1), {
+        arrayLimit: 99,
+      });
+    },
+    write(routeState) {
+      if (typeof window === 'undefined') return;
+
+      const url = this.createURL(routeState);
+      const title = this.windowTitle && this.windowTitle(routeState);
+
+      if (this.writeTimer) {
+        window.clearTimeout(this.writeTimer);
+      }
+
+      this.writeTimer = window.setTimeout(() => {
+        if (window.location.href !== url) {
+          window.history.pushState(routeState, title || '', url);
+        }
+        this.writeTimer = undefined;
+      }, this.writeDelay);
+    },
+    createURL(routeState) {
+      const url = readUrl();
+
+      // TODO: polyfill
+      const urlO = new URL(url);
+
+      const queryString = qs.stringify(routeState, { arrayLimit: 99 });
+
+      urlO.search = queryString;
+
+      return urlO.toString();
+    },
+    onUpdate(cb) {
+      if (typeof window === 'undefined') return;
+
+      this._onPopState = event => {
+        const routeState = event.state;
+        // On initial load, the state is read from the URL without
+        // update. Therefore, the state object isn't present. In this
+        // case, we fallback and read the URL.
+        if (!routeState) {
+          cb(this.read());
+        } else {
+          cb(routeState);
+        }
+      };
+      window.addEventListener('popstate', this._onPopState);
+    },
+    dispose() {
+      if (typeof window === 'undefined') return;
+
+      window.removeEventListener('popstate', this._onPopState);
+    },
+  };
+}
 
 @Component({
   selector: 'app-root',
@@ -67,24 +129,20 @@ export class AppComponent {
     private injector: Injector,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
-    const routing = { router: ssrRouter(), stateMapping: simple() };
-
-    let initialUiState = undefined;
-    if (isPlatformServer(this.platformId)) {
-      // get the server (express) request object
-      const req = this.injector.get('request');
-
-      // Transform the URL into RouteState, this is likely the same
-      const routeState = routing.router.readServer(req);
-
-      // Transform from RouteState into UiState using the stateMapping
-      initialUiState = routing.stateMapping.routeToState(routeState);
-    }
+    const routing = {
+      router: ssrRouter(() => {
+        if (isPlatformServer(this.platformId)) {
+          const req = this.injector.get('request');
+          return req.url;
+        }
+        return window.location.href;
+      }),
+      stateMapping: simple(),
+    };
 
     this.instantsearchConfig = {
       indexName: 'instant_search',
       routing,
-      initialUiState,
       searchClient: createSSRSearchClient({
         appId: 'latency',
         apiKey: '6be0576ff61c053d5f9a3225e2a90f76',

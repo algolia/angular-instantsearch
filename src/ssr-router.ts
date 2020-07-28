@@ -1,13 +1,21 @@
-import { history as originalHistory } from 'instantsearch.js/es/lib/routers';
+import originalHistory, {
+  BrowserHistoryArgs,
+  BrowserHistory,
+} from 'instantsearch.js/es/lib/routers/history';
 import * as qs from 'qs';
 
-type BrowserHistoryProps = Parameters<typeof originalHistory>[0];
-type SsrHistoryProps = BrowserHistoryProps & {
-  // @MAJOR: avoid this indirection in InstantSearch.js, by having only one parseURL, which is the equivalent of createURL and accepts a string, not a whole environment object.
-  parseServerURL(args: {
+type Req = { url: string }; // @TODO: express req, what's its type?
+
+type ParseServerURL = (
+  args: {
     qsModule: typeof qs;
-    req: { url: string }; // express req, what's its type?
-  }): ReturnType<BrowserHistoryProps['parseURL']>;
+    req: Req;
+  }
+) => ReturnType<BrowserHistoryArgs['parseURL']>;
+
+type SsrHistoryProps = BrowserHistoryArgs & {
+  // @MAJOR: avoid this indirection in InstantSearch.js, by having only one parseURL, which is the equivalent of createURL and accepts a string, not a whole environment object.
+  parseServerURL: ParseServerURL;
 };
 
 const defaultParseServerURL = ({ qsModule, req }) => {
@@ -27,17 +35,18 @@ const defaultParseServerURL = ({ qsModule, req }) => {
   });
 };
 
+type SsrHistory = BrowserHistory & {
+  readServer: (req: Req) => ReturnType<ParseServerURL>;
+};
+
 export function ssrRouter(args: SsrHistoryProps = {} as SsrHistoryProps) {
   const historyRouter = originalHistory(args);
 
   const { parseServerURL = defaultParseServerURL } = args;
 
-  const router = {
-    ...historyRouter,
-    readServer: (req: { url: string }) => {
-      return parseServerURL({ qsModule: qs, req });
-    },
+  (historyRouter as SsrHistory).readServer = (req: Req) => {
+    return parseServerURL({ qsModule: qs, req });
   };
 
-  return router;
+  return historyRouter;
 }

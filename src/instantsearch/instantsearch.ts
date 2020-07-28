@@ -237,7 +237,17 @@ export class NgAisInstantSearch implements AfterViewInit, OnInit, OnDestroy {
   constructor(@Inject(PLATFORM_ID) public platformId: Object) {}
 
   public ngOnInit() {
-    this.createInstantSearchInstance(this.config);
+    if (typeof this.config.searchClient.addAlgoliaAgent === 'function') {
+      this.config.searchClient.addAlgoliaAgent(
+        `angular (${AngularVersion.full})`
+      );
+      this.config.searchClient.addAlgoliaAgent(
+        `angular-instantsearch (${VERSION})`
+      );
+    }
+
+    this.instantSearchInstance = instantsearch(this.config);
+    this.instantSearchInstance.on('render', this.onRender);
   }
 
   public ngAfterViewInit() {
@@ -245,23 +255,9 @@ export class NgAisInstantSearch implements AfterViewInit, OnInit, OnDestroy {
   }
 
   public ngOnDestroy() {
+    // TODO: i got this to throw at some point, can't reproduce!
     this.instantSearchInstance.removeListener('render', this.onRender);
     this.instantSearchInstance.dispose();
-  }
-
-  public createInstantSearchInstance(config: InstantSearchConfig) {
-    // remove URLSync widget if on SSR
-    if (!isPlatformBrowser(this.platformId)) {
-      if (typeof config.routing !== 'undefined') delete config.routing;
-    }
-
-    if (typeof config.searchClient.addAlgoliaAgent === 'function') {
-      config.searchClient.addAlgoliaAgent(`angular (${AngularVersion.full})`);
-      config.searchClient.addAlgoliaAgent(`angular-instantsearch (${VERSION})`);
-    }
-
-    this.instantSearchInstance = instantsearch(config);
-    this.instantSearchInstance.on('render', this.onRender);
   }
 
   public addWidgets(widgets: Widget[]) {
