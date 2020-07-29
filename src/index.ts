@@ -54,7 +54,6 @@ export { NgAisVoiceSearchModule };
 
 // Server-side rendering
 export { createSSRSearchClient } from './create-ssr-search-client';
-// export { ssrRouter } from './ssr-router';
 
 // Custom widget with BaseWidget class
 export { BaseWidget, Widget, Connector } from './base-widget';

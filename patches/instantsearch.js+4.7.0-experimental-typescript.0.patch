@@ -1,3 +1,21 @@
+diff --git a/node_modules/instantsearch.js/es/connectors/hierarchical-menu/connectHierarchicalMenu.d.ts b/node_modules/instantsearch.js/es/connectors/hierarchical-menu/connectHierarchicalMenu.d.ts
+index 0f1b38d..b3266e4 100644
+--- a/node_modules/instantsearch.js/es/connectors/hierarchical-menu/connectHierarchicalMenu.d.ts
++++ b/node_modules/instantsearch.js/es/connectors/hierarchical-menu/connectHierarchicalMenu.d.ts
+@@ -37,11 +37,11 @@
+  * levels deep.
+  *
+  * @type {Connector}
+- * @param {function(HierarchicalMenuRenderingOptions)} renderFn Rendering function for the custom **HierarchicalMenu** widget.
++ * @param {function(HierarchicalMenuRenderingOptions, boolean)} renderFn Rendering function for the custom **HierarchicalMenu** widget.
+  * @param {function} unmountFn Unmount function called when the widget is disposed.
+  * @return {function(CustomHierarchicalMenuWidgetOptions)} Re-usable widget factory for a custom **HierarchicalMenu** widget.
+  */
+-export default function connectHierarchicalMenu(renderFn: (arg0: HierarchicalMenuRenderingOptions) => any, unmountFn?: Function): (arg0: CustomHierarchicalMenuWidgetOptions) => any;
++export default function connectHierarchicalMenu(renderFn: (arg0: HierarchicalMenuRenderingOptions, arg1: boolean) => any, unmountFn?: Function): (arg0: CustomHierarchicalMenuWidgetOptions) => any;
+ export type HierarchicalMenuItem = {
+     /**
+      * Value of the menu item.
 diff --git a/node_modules/instantsearch.js/es/types/algoliasearch.d.ts b/node_modules/instantsearch.js/es/types/algoliasearch.d.ts
 index d1e8a36..bfcda46 100644
 --- a/node_modules/instantsearch.js/es/types/algoliasearch.d.ts
