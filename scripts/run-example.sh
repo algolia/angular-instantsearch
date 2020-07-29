@@ -24,8 +24,7 @@ yarn build
   mkdir -p ./node_modules/algoliasearch-helper
   cp -R ../../node_modules/algoliasearch-helper/* ./node_modules/algoliasearch-helper
 
-  if [ $1 = "server-side-rendering" ]
-  then
+  if [ $1 = "server-side-rendering" ]; then
     yarn build:ssr
     yarn serve:ssr
   else

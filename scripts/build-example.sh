@@ -29,9 +29,9 @@ fi
   mkdir -p ./node_modules/algoliasearch-helper
   cp -R ../../node_modules/algoliasearch-helper/* ./node_modules/algoliasearch-helper
 
-  if [[ "$name" != "server-side-rendering" ]]; then
-    yarn build
-  else
+  if [ $1 = "server-side-rendering" ]; then
     yarn build:ssr
+  else
+    yarn build
   fi
 )
