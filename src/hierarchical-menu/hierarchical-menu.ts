@@ -75,7 +75,6 @@ export class NgAisHierarchicalMenu extends BaseWidget {
   }
 
   public ngOnInit() {
-    // TODO: change definition of connectHierarchicalMenu to fit Connector
     this.createWidget(connectHierarchicalMenu, {
       limit: parseNumberInput(this.limit),
       attributes: this.attributes,
