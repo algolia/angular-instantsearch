@@ -34,14 +34,13 @@ function ssrRouter(readUrl) {
     createURL(routeState) {
       const url = readUrl();
 
-      // TODO: polyfill
-      const urlO = new URL(url);
+      const urlO = new URL(url, 'https://localhost');
 
       const queryString = qs.stringify(routeState, { arrayLimit: 99 });
 
       urlO.search = queryString;
 
-      return urlO.toString();
+      return urlO.pathname + urlO.search + urlO.hash;
     },
     onUpdate(cb) {
       if (typeof window === 'undefined') return;
@@ -61,6 +60,10 @@ function ssrRouter(readUrl) {
     },
     dispose() {
       if (typeof window === 'undefined') return;
+
+      if (this.writeTimer) {
+        window.clearTimeout(this.writeTimer);
+      }
 
       window.removeEventListener('popstate', this._onPopState);
     },
@@ -129,20 +132,18 @@ export class AppComponent {
     private injector: Injector,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
-    const routing = {
-      router: ssrRouter(() => {
-        if (isPlatformServer(this.platformId)) {
-          const req = this.injector.get('request');
-          return req.url;
-        }
-        return window.location.href;
-      }),
-      stateMapping: simple(),
-    };
-
     this.instantsearchConfig = {
       indexName: 'instant_search',
-      routing,
+      routing: {
+        router: ssrRouter(() => {
+          if (isPlatformServer(this.platformId)) {
+            const req = this.injector.get('request');
+            return req.url;
+          }
+          return window.location.href;
+        }),
+        stateMapping: simple(),
+      },
       searchClient: createSSRSearchClient({
         appId: 'latency',
         apiKey: '6be0576ff61c053d5f9a3225e2a90f76',

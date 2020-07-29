@@ -10,7 +10,6 @@ import {
   PLATFORM_ID,
   VERSION as AngularVersion,
 } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
 
 import * as algoliasearchProxy from 'algoliasearch/lite';
 import instantsearch from 'instantsearch.js/es';
@@ -255,7 +254,6 @@ export class NgAisInstantSearch implements AfterViewInit, OnInit, OnDestroy {
   }
 
   public ngOnDestroy() {
-    // TODO: i got this to throw at some point, can't reproduce!
     this.instantSearchInstance.removeListener('render', this.onRender);
     this.instantSearchInstance.dispose();
   }
