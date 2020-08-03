@@ -4,6 +4,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { TransferState, makeStateKey } from '@angular/platform-browser';
 import { simple } from 'instantsearch.js/es/lib/stateMappings';
 import { createSSRSearchClient } from 'angular-instantsearch';
+import {
+  InstantSearchConfig,
+  SearchParameters,
+} from 'angular-instantsearch/instantsearch/instantsearch';
 import { ssrRouter } from './ssrRouter';
 
 @Component({
@@ -60,7 +64,8 @@ import { ssrRouter } from './ssrRouter';
   styles: [],
 })
 export class AppComponent {
-  public instantsearchConfig: {};
+  public instantsearchConfig: InstantSearchConfig;
+  public searchParameters: SearchParameters;
 
   constructor(
     private httpClient: HttpClient,
@@ -81,10 +86,10 @@ export class AppComponent {
         stateMapping: simple(),
       },
       searchClient: createSSRSearchClient({
-        appId: 'latency',
-        apiKey: '6be0576ff61c053d5f9a3225e2a90f76',
         makeStateKey,
         HttpHeaders,
+        appId: 'latency',
+        apiKey: '6be0576ff61c053d5f9a3225e2a90f76',
         transferState: this.transferState,
         httpClient: this.httpClient,
       }),

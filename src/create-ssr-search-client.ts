@@ -11,6 +11,7 @@ type SSRSearchClientOptions = {
   httpClient: HttpClient;
   HttpHeaders: typeof HttpHeaders;
   transferState: TransferState;
+  options?: object;
   makeStateKey<T = void>(key: string): StateKey<T>;
 };
 
@@ -32,6 +33,7 @@ export function createSSRSearchClient({
   HttpHeaders,
   transferState,
   makeStateKey,
+  options = {},
 }: SSRSearchClientOptions) {
   // A custom network request needs to be done, using TransferState of Angular.
   // This is done to make sure the request done backend for SSR doesn't get
@@ -42,7 +44,7 @@ export function createSSRSearchClient({
   // v3: override "_request" on the prototype
   // since neither v3 uses the requester argument, and v4 use the _request, we
   // can safely do this without checking the version
-  const searchClient = algoliasearch(appId, apiKey);
+  const searchClient = algoliasearch(appId, apiKey, options);
 
   searchClient.addAlgoliaAgent(`angular (${AngularVersion.full})`);
   searchClient.addAlgoliaAgent(`angular-instantsearch (${VERSION})`);

@@ -305,9 +305,11 @@
       width: 20px; }
 
 .algc-navigation__menu {
-  float: right;
+  position: absolute;
+  right: 0;
   height: 56px;
   line-height: 56px;
+  background: white;
   font-weight: 300;
   z-index: 50; }
   .algc-navigation__menu .algc-menu__list {

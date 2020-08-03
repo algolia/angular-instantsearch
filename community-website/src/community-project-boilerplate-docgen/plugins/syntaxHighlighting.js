@@ -33,14 +33,11 @@ module.exports = function highlight(source, lang) {
       return;
     }
 
-    tokenizedSource += `<span class="cm-${style.replace(/ +/g, ' cm-')}">${
-      escapedText
-    }</span>`;
+    tokenizedSource += `<span class="cm-${style.replace(
+      / +/g,
+      ' cm-'
+    )}">${escapedText}</span>`;
   });
 
-  return `<pre class="code-sample cm-s-mdn-like codeMirror ${
-    newLang
-  }" data-code-type="${codeType}"><div class="code-wrap"><code>${
-    tokenizedSource
-  }</code></div></pre>`;
+  return `<pre class="code-sample cm-s-mdn-like codeMirror ${newLang}" data-code-type="${codeType}"><div class="code-wrap"><code>${tokenizedSource}</code></div></pre>`;
 };

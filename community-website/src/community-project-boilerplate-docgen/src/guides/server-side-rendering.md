@@ -1,6 +1,7 @@
 ---
 title: Guide - Server side rendering
 layout: guide.pug
+canonical: https://www.algolia.com/doc/guides/building-search-ui/going-further/server-side-rendering/angular/
 ---
 
 # Server Side Rendering

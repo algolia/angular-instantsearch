@@ -15,9 +15,9 @@ cd angular-instantsearch
 
 ### Run
 
-You can access stories of Angular InstantSearch components by running the storybook with `yarn example:storybook`.
+You can access stories of Angular InstantSearch components by running the storybook with `yarn examples:storybook`.
 
-There is also an e-commerce example consuming the builded library and compliant to [AOT (compiles your app at build time)](https://angular.io/guide/aot-compiler) compiler. It must be run to test the library in production before any PRs.
+There is also an e-commerce example consuming the built library and compliant to [AOT (compiles your app at build time)](https://angular.io/guide/aot-compiler) compiler. It must be run to test the library in production before any PRs.
 
 You can use `> yarn examples:ecommerce` and open http://localhost:4200 to access the e-commerce example.
 
@@ -25,19 +25,15 @@ You can use `> yarn examples:ecommerce` and open http://localhost:4200 to access
 
 Tests are ran with [jest](https://facebook.github.io/jest/) and [jest-preset-angular](https://github.com/thymikee/jest-preset-angular).
 
-* `> yarn test` -> run all tests
-* `> yarn test:watch` -> run tests and watch for changes
+- `> yarn test` -> run all tests
+- `> yarn test:watch` -> run tests and watch for changes
 
 ## Releasing
 
-1. go to the correct branch
+To release a version, go on `v3` (`git checkout v3`) and use:
 
-    `git checkout develop`
+```sh
+yarn run release:prepare
+```
 
-2. release to the registry
-
-    `npm run release`
-
-3. update the docs
-
-    `yarn doc:publish`
+It will create a pull request for the next release. When it's reviewed, approved and merged, then CircleCI will automatically publish it to npm.

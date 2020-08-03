@@ -1,6 +1,7 @@
 ---
 title: Widgets - ClearRefinements
 layout: widget.pug
+canonical: https://www.algolia.com/doc/api-reference/widgets/clear-refinements/angular/
 ---
 
 # Clear Refinements

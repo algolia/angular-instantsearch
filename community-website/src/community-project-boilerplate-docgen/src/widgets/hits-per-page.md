@@ -1,6 +1,7 @@
 ---
 title: Widgets - Hits Per Page
 layout: widget.pug
+canonical: https://www.algolia.com/doc/api-reference/widgets/hits-per-page/angular/
 ---
 
 # Hits per page

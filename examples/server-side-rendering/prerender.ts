@@ -19,7 +19,7 @@ import { ROUTES } from './static.paths';
 const {
   AppServerModuleNgFactory,
   LAZY_MODULE_MAP,
-} = require('./dist/server/main.bundle');
+} = require('./dist/server/main');
 
 const BROWSER_FOLDER = join(process.cwd(), 'browser');
 

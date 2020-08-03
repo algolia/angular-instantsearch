@@ -1,6 +1,7 @@
 ---
 title: Widgets - Search Box
 layout: widget.pug
+canonical: https://www.algolia.com/doc/api-reference/widgets/search-box/angular/
 ---
 
 # Search Box

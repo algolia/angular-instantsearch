@@ -52,6 +52,7 @@ export function fixSidebar({ sidebarContainer, topOffset }) {
  * @param {HTMLElement} parent the outer container of the sidebar
  * @param {HTMLElement} sidebar the sidebar
  * @param {number} topOffset an optional top offset for sticky menu
+ * @returns {Object} limits of the stickiness (has start & stop)
  */
 function getStartStopBoundaries(parent, sidebar, topOffset) {
   const bbox = parent.getBoundingClientRect();
@@ -83,7 +84,7 @@ export function followSidebarNavigation(sidebarLinks, contentHeaders) {
     links.forEach(item => {
       const currentHref = item.getAttribute('href');
       const anchorToFind = `#${header.getAttribute('id')}`;
-      const isCurrentHeader = currentHref.indexOf(anchorToFind) != -1;
+      const isCurrentHeader = currentHref.indexOf(anchorToFind) !== -1;
       if (isCurrentHeader) {
         item.classList.add('navItem-active');
       } else {

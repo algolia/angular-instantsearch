@@ -1,3 +1,12 @@
+# [3.0.0-beta.5](https://github.com/algolia/angular-instantsearch/compare/3.0.0-beta.4...3.0.0-beta.5) (2020-04-03)
+
+
+### Features
+
+* **ssr:** forward options to search client ([#715](https://github.com/algolia/angular-instantsearch/issues/715)) ([8355c97](https://github.com/algolia/angular-instantsearch/commit/8355c971709b2aae7e4feef6c8ba61709fc43699))
+
+
+
 # [3.0.0-beta.4](https://github.com/algolia/angular-instantsearch/compare/3.0.0-beta.3...3.0.0-beta.4) (2019-07-29)
 
 
@@ -93,6 +102,17 @@
 ### Features
 
 * **deps:** migrate to InstantSearch V3 ([#463](https://github.com/algolia/angular-instantsearch/issues/463)) ([81136b1](https://github.com/algolia/angular-instantsearch/commit/81136b1))
+
+
+
+## [2.2.2](https://github.com/algolia/angular-instantsearch/compare/2.2.0...2.2.2) (2019-04-18)
+
+
+### Bug Fixes
+
+* **docs:** add missing prefix ([861b42d](https://github.com/algolia/angular-instantsearch/commit/861b42d))
+* **docs:** fix header nav position ([bbe2f1e](https://github.com/algolia/angular-instantsearch/commit/bbe2f1e))
+* **ua:** change the User-Agent to use the new specs lib (version) ([#481](https://github.com/algolia/angular-instantsearch/issues/481)) ([9046bf3](https://github.com/algolia/angular-instantsearch/commit/9046bf3))
 
 
 
