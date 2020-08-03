@@ -45,6 +45,6 @@ export class NgAisStats extends BaseWidget {
     public instantSearchParent: NgAisInstantSearch
   ) {
     super('Stats');
-    this.createWidget(connectStats as Connector);
+    this.createWidget(connectStats);
   }
 }

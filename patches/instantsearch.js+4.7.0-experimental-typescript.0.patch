@@ -16,6 +16,40 @@ index 0f1b38d..b3266e4 100644
  export type HierarchicalMenuItem = {
      /**
       * Value of the menu item.
+diff --git a/node_modules/instantsearch.js/es/connectors/stats/connectStats.d.ts b/node_modules/instantsearch.js/es/connectors/stats/connectStats.d.ts
+index 8f25c2a..66b54d1 100644
+--- a/node_modules/instantsearch.js/es/connectors/stats/connectStats.d.ts
++++ b/node_modules/instantsearch.js/es/connectors/stats/connectStats.d.ts
+@@ -8,6 +8,11 @@
+  * @property {string} query The query used for the current search.
+  * @property {object} widgetParams All original `CustomStatsWidgetOptions` forwarded to the `renderFn`.
+  */
++
++/**
++ * @typedef {Object} CustomStatsWidgetOptions
++ */
++
+ /**
+  * **Stats** connector provides the logic to build a custom widget that will displays
+  * search statistics (hits number and processing time).
+@@ -15,7 +20,7 @@
+  * @type {Connector}
+  * @param {function(StatsRenderingOptions, boolean)} renderFn Rendering function for the custom **Stats** widget.
+  * @param {function} unmountFn Unmount function called when the widget is disposed.
+- * @return {function} Re-usable widget factory for a custom **Stats** widget.
++ * @return {function(CustomStatsWidgetOptions)} Re-usable widget factory for a custom **Stats** widget.
+  * @example
+  * // custom `renderFn` to render the custom Stats widget
+  * function renderFn(StatsRenderingOptions, isFirstRendering) {
+@@ -35,7 +40,7 @@
+  *   })
+  * ]);
+  */
+-export default function connectStats(renderFn: (arg0: StatsRenderingOptions, arg1: boolean) => any, unmountFn?: Function): Function;
++export default function connectStats(renderFn: (arg0: StatsRenderingOptions, arg1: boolean) => any, unmountFn?: Function): (arg0: any) => any;
+ export type StatsRenderingOptions = {
+     /**
+      * The maximum number of hits per page returned by Algolia.
 diff --git a/node_modules/instantsearch.js/es/types/algoliasearch.d.ts b/node_modules/instantsearch.js/es/types/algoliasearch.d.ts
 index d1e8a36..bfcda46 100644
 --- a/node_modules/instantsearch.js/es/types/algoliasearch.d.ts
