@@ -41,7 +41,7 @@
     "@angular/platform-server": "8.0.2",
     "@angular/router": "8.0.2",
     "@nguniversal/express-engine": "7.1.0",
-    "@nguniversal/module-map-ngfactory-loader": "7.1.0",
+    "@nguniversal/module-map-ngfactory-loader": "7.1.1",
     "angular-instantsearch": "2.2.1",
     "core-js": "2.6.5",
     "instantsearch.js": "2.10.4",
