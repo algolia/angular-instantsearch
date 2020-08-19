@@ -24,7 +24,7 @@
     "@angular-devkit/core": "^0.6.1",
     "@angular/cli": "~7.0.4",
     "@angular/compiler-cli": "~7.0.0",
-    "@angular/language-service": "~7.0.0",
+    "@angular/language-service": "~7.2.0",
     "@babel/core": "~7.1.2",
     "@storybook/angular": "~4.0.2",
     "@types/node": "~8.9.4",
