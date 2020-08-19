@@ -27,7 +27,7 @@
     "@angular/language-service": "~7.0.0",
     "@babel/core": "~7.1.2",
     "@storybook/angular": "~4.0.2",
-    "@types/node": "~8.9.4",
+    "@types/node": "~8.10.0",
     "babel-loader": "~8.0.4",
     "codelyzer": "~4.5.0",
     "css-loader": "~1.0.1",
