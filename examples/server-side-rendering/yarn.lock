@@ -10,7 +10,7 @@
     "@angular-devkit/core" "8.0.3"
     rxjs "6.4.0"
 
-"@angular-devkit/build-angular@~0.800.0":
+"@angular-devkit/build-angular@0.800.3":
   version "0.800.3"
   resolved "https://registry.yarnpkg.com/@angular-devkit/build-angular/-/build-angular-0.800.3.tgz#31b8d7a5063dd7cfbd6a0a288e8c16022b6e9306"
   integrity sha512-FcGQX108Io6w40De3XGyOc/SRALIGelHsPzJkFN+ubfnvKOfB5eBvZgz+qD2LQMUGnNiQDVLH76hhW9vERc80w==
@@ -913,10 +913,10 @@ amdefine@>=0.0.4:
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
   integrity sha1-SlKCrBZHKek2Gbz9OtFR+BfOkfU=
 
-angular-instantsearch@2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/angular-instantsearch/-/angular-instantsearch-2.2.1.tgz#dba0bde9786e957bf62272b00c02f4633c52a98e"
-  integrity sha512-ba0gJ9enVlhP8/gWAtvgPRdEBGfeT0keelw82yoTSstj55md0o0ek0eZv6K66VQQbK/frROwE3lfSOXrSIKdvg==
+angular-instantsearch@2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/angular-instantsearch/-/angular-instantsearch-2.3.0.tgz#72f47d326b4f3dd9617e3ec3c7be8a676745c82e"
+  integrity sha512-jmWgzQ6zxn+YDOjC7DPdt9ElfusSJYuyKJ42ae5z1uZ0T3N6iboCun7TxiYOVxYN/JX44g5gquFY437hNowIkQ==
   dependencies:
     algoliasearch "^3.29.0"
     algoliasearch-helper "^2.26.1"
@@ -1856,7 +1856,7 @@ code-point-at@^1.0.0:
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
   integrity sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=
 
-codelyzer@^5.0.1:
+codelyzer@5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/codelyzer/-/codelyzer-5.1.0.tgz#a0eb89497622679ea4c53b6974aa45598f06a4b5"
   integrity sha512-QiyY2/oDQnYx4mAVEDqr+z9MwrOto18tQFjExiuRChXCy0yvngS5fQpWIxvAGpbOmZFiR1PRTRLbEI71u10maA==
@@ -8621,7 +8621,7 @@ yargs@13.1.0:
     y18n "^4.0.0"
     yargs-parser "^13.0.0"
 
-zone.js@~0.9.1:
+zone.js@0.9.1:
   version "0.9.1"
   resolved "https://registry.yarnpkg.com/zone.js/-/zone.js-0.9.1.tgz#e37c6e5c54c13fae4de26b5ffe8d8e9212da6d9b"
   integrity sha512-GkPiJL8jifSrKReKaTZ5jkhrMEgXbXYC+IPo1iquBjayRa0q86w3Dipjn8b415jpitMExe9lV8iTsv8tk3DGag==

@@ -490,16 +490,16 @@ amdefine@>=0.0.4:
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
   integrity sha1-SlKCrBZHKek2Gbz9OtFR+BfOkfU=
 
-angular-instantsearch@2.0.4:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/angular-instantsearch/-/angular-instantsearch-2.0.4.tgz#d34b05343e8f173da08af8b283ca52909a734ca5"
-  integrity sha512-/DJOthP3ki49UeEsdPTHBv6L1GHYbSys3WePummKeuKiJ1OprJwS8EXqLEVSkO6lHOoDAZ7gitZXyS+ua1C3dw==
+angular-instantsearch@2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/angular-instantsearch/-/angular-instantsearch-2.3.0.tgz#72f47d326b4f3dd9617e3ec3c7be8a676745c82e"
+  integrity sha512-jmWgzQ6zxn+YDOjC7DPdt9ElfusSJYuyKJ42ae5z1uZ0T3N6iboCun7TxiYOVxYN/JX44g5gquFY437hNowIkQ==
   dependencies:
     algoliasearch "^3.29.0"
     algoliasearch-helper "^2.26.1"
     instantsearch.css "^7.0.0"
     instantsearch.js "^2.8.0"
-    lodash "4.17.10"
+    lodash "^4.17.10"
     nouislider "^10.0.0"
     querystring-es3 "^0.2.1"
     tslib "^1.7.1"
@@ -3754,11 +3754,6 @@ lodash.tail@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/lodash.tail/-/lodash.tail-4.1.1.tgz#d2333a36d9e7717c8ad2f7cacafec7c32b444664"
   integrity sha1-0jM6NtnncXyK0vfKyv7HwytERmQ=
-
-lodash@4.17.10:
-  version "4.17.10"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
-  integrity sha512-UejweD1pDoXu+AD825lWwp4ZGtSwgnpZxb3JDViD7StjQz+Nb/6l093lx4OQ0foGWNRoc19mWy7BzL+UAK2iVg==
 
 lodash@4.17.5:
   version "4.17.5"
