@@ -38,7 +38,7 @@
     "@angular/forms": "8.0.2",
     "@angular/platform-browser": "8.0.2",
     "@angular/platform-browser-dynamic": "8.0.2",
-    "@angular/platform-server": "8.0.2",
+    "@angular/platform-server": "8.2.14",
     "@angular/router": "8.0.2",
     "@nguniversal/express-engine": "7.1.0",
     "@nguniversal/module-map-ngfactory-loader": "7.1.0",
