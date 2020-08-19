@@ -37,7 +37,7 @@
     "@angular/core": "8.0.2",
     "@angular/forms": "8.0.2",
     "@angular/platform-browser": "8.0.2",
-    "@angular/platform-browser-dynamic": "8.0.2",
+    "@angular/platform-browser-dynamic": "8.2.14",
     "@angular/platform-server": "8.0.2",
     "@angular/router": "8.0.2",
     "@nguniversal/express-engine": "7.1.0",
