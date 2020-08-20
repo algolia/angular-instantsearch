@@ -84,7 +84,8 @@ export class NgAisRangeSlider extends BaseWidget {
         ],
       };
 
-      if (this.pips || typeof this.pips === 'undefined') {
+      // tslint:disable-next-line: no-boolean-literal-compare (pips is @Input, so could be not a boolean)
+      if (this.pips === true || typeof this.pips === 'undefined') {
         Object.assign(config, {
           pips: {
             density: 3,

@@ -1,7 +1,7 @@
 import { Component, Input, Inject, forwardRef } from '@angular/core';
 
 import { connectHierarchicalMenu } from 'instantsearch.js/es/connectors';
-import { BaseWidget, Connector } from '../base-widget';
+import { BaseWidget } from '../base-widget';
 import {
   NgAisInstantSearch,
   FacetSortByStringOptions,
