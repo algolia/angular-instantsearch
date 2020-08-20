@@ -26,13 +26,13 @@ jobs:
           name: Build
           command: yarn build
 
-      - run:
-          name: Build examples
-          command: |
-            yarn examples:ecommerce:build
-            yarn examples:media:build
-            yarn examples:ssr:build
-            yarn examples:storybook:build
+      # - run:
+      #     name: Build examples
+      #     command: |
+      #       yarn examples:ecommerce:build
+      #       yarn examples:media:build
+      #       yarn examples:ssr:build
+      #       yarn examples:storybook:build
 
       - save_cache:
           name: Save Yarn Package Cache
