@@ -29,7 +29,7 @@
     "@babel/core": "~7.1.2",
     "@storybook/addon-actions": "~5.0.10",
     "@storybook/angular": "~5.0.10",
-    "@types/node": "~8.10.59",
+    "@types/node": "9.6.53",
     "babel-loader": "~8.0.4",
     "codelyzer": "~4.5.0",
     "css-loader": "~1.0.1",
