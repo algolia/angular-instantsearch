@@ -8,7 +8,6 @@ exports[`Pagination renders does not uses pagesPadding when nbPages < pagesPaddi
     <ais-pagination>
       <div
         class="ais-Pagination"
-        ng-reflect-ng-class="ais-Pagination,"
       >
         <ul
           class="ais-Pagination-list"
@@ -123,7 +122,6 @@ exports[`Pagination renders markup without state 1`] = `
     <ais-pagination>
       <div
         class="ais-Pagination ais-Pagination--noRefinement"
-        ng-reflect-ng-class="ais-Pagination,ais-Pagination-"
       >
         <ul
           class="ais-Pagination-list"
@@ -188,7 +186,6 @@ exports[`Pagination renders with pages in state 1`] = `
     <ais-pagination>
       <div
         class="ais-Pagination"
-        ng-reflect-ng-class="ais-Pagination,"
       >
         <ul
           class="ais-Pagination-list"
@@ -323,7 +320,6 @@ exports[`Pagination should add ais-Pagination--noRefinement CSS class on root wh
     <ais-pagination>
       <div
         class="ais-Pagination ais-Pagination--noRefinement"
-        ng-reflect-ng-class="ais-Pagination,ais-Pagination-"
       >
         <ul
           class="ais-Pagination-list"
@@ -388,7 +384,6 @@ exports[`Pagination should add ais-Pagination--noRefinement CSS class on root wh
     <ais-pagination>
       <div
         class="ais-Pagination ais-Pagination--noRefinement"
-        ng-reflect-ng-class="ais-Pagination,ais-Pagination-"
       >
         <ul
           class="ais-Pagination-list"
@@ -463,7 +458,6 @@ exports[`Pagination should not add ais-Pagination--noRefinement CSS class on roo
     <ais-pagination>
       <div
         class="ais-Pagination"
-        ng-reflect-ng-class="ais-Pagination,"
       >
         <ul
           class="ais-Pagination-list"

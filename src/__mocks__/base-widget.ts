@@ -1,11 +1,13 @@
 import { Input, OnDestroy, OnInit } from '@angular/core';
 import { bem } from '../utils';
+import { Widget } from 'instantsearch.js';
+
+export type Connector = (
+  renderFn: (state: object, isFirstRendering: boolean) => void,
+  unmountFn: () => void
+) => (widgetOptions?: object) => Widget;
 
 export class BaseWidget implements OnInit, OnDestroy {
-  // header footer
-  @Input() public header?: string;
-  @Input() public footer?: string;
-
   public widget?: Widget;
   public state?: object;
   public cx?: Function;
@@ -15,15 +17,15 @@ export class BaseWidget implements OnInit, OnDestroy {
   }
 
   public createWidget(connector: Connector, options: object = {}) {
-    // nothind to do, test env
+    // nothing to do, test env
   }
 
   public ngOnInit() {
-    // nothind to do, test env
+    // nothing to do, test env
   }
 
   public ngOnDestroy() {
-    // nothind to do, test env
+    // nothing to do, test env
   }
 
   public updateState = (state, isFirstRendering): Promise<void> | void => {

@@ -254,8 +254,10 @@ export class NgAisInstantSearch implements AfterViewInit, OnInit, OnDestroy {
   }
 
   public ngOnDestroy() {
-    this.instantSearchInstance.removeListener('render', this.onRender);
-    this.instantSearchInstance.dispose();
+    if (this.instantSearchInstance) {
+      this.instantSearchInstance.removeListener('render', this.onRender);
+      this.instantSearchInstance.dispose();
+    }
   }
 
   public addWidgets(widgets: Widget[]) {

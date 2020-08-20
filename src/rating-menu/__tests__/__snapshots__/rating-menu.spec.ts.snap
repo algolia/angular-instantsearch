@@ -21,7 +21,6 @@ exports[`StarRating should not use ais-RatingMenu--noRefinement when items is no
       
       <div
         class="ais-RatingMenu"
-        ng-reflect-ng-class="ais-RatingMenu,"
       >
         <svg
           style="display:none;"
@@ -59,7 +58,6 @@ exports[`StarRating should not use ais-RatingMenu--noRefinement when items is no
                 aria-hidden="true"
                 class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--full"
                 height="24"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
                 width="24"
               >
                 
@@ -72,7 +70,6 @@ exports[`StarRating should not use ais-RatingMenu--noRefinement when items is no
                 aria-hidden="true"
                 class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--empty"
                 height="24"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
                 width="24"
               >
                 
@@ -85,7 +82,6 @@ exports[`StarRating should not use ais-RatingMenu--noRefinement when items is no
                 aria-hidden="true"
                 class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--empty"
                 height="24"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
                 width="24"
               >
                 
@@ -98,7 +94,6 @@ exports[`StarRating should not use ais-RatingMenu--noRefinement when items is no
                 aria-hidden="true"
                 class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--empty"
                 height="24"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
                 width="24"
               >
                 
@@ -111,7 +106,6 @@ exports[`StarRating should not use ais-RatingMenu--noRefinement when items is no
                 aria-hidden="true"
                 class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--empty"
                 height="24"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
                 width="24"
               >
                 
@@ -149,7 +143,6 @@ exports[`StarRating should render with state 1`] = `
       
       <div
         class="ais-RatingMenu"
-        ng-reflect-ng-class="ais-RatingMenu,"
       >
         <svg
           style="display:none;"
@@ -187,7 +180,6 @@ exports[`StarRating should render with state 1`] = `
                 aria-hidden="true"
                 class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--full"
                 height="24"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
                 width="24"
               >
                 
@@ -200,7 +192,6 @@ exports[`StarRating should render with state 1`] = `
                 aria-hidden="true"
                 class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--full"
                 height="24"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
                 width="24"
               >
                 
@@ -213,7 +204,6 @@ exports[`StarRating should render with state 1`] = `
                 aria-hidden="true"
                 class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--full"
                 height="24"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
                 width="24"
               >
                 
@@ -226,7 +216,6 @@ exports[`StarRating should render with state 1`] = `
                 aria-hidden="true"
                 class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--full"
                 height="24"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
                 width="24"
               >
                 
@@ -239,7 +228,6 @@ exports[`StarRating should render with state 1`] = `
                 aria-hidden="true"
                 class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--empty"
                 height="24"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
                 width="24"
               >
                 
@@ -273,7 +261,6 @@ exports[`StarRating should render with state 1`] = `
                 aria-hidden="true"
                 class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--full"
                 height="24"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
                 width="24"
               >
                 
@@ -286,7 +273,6 @@ exports[`StarRating should render with state 1`] = `
                 aria-hidden="true"
                 class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--full"
                 height="24"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
                 width="24"
               >
                 
@@ -299,7 +285,6 @@ exports[`StarRating should render with state 1`] = `
                 aria-hidden="true"
                 class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--full"
                 height="24"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
                 width="24"
               >
                 
@@ -312,7 +297,6 @@ exports[`StarRating should render with state 1`] = `
                 aria-hidden="true"
                 class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--empty"
                 height="24"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
                 width="24"
               >
                 
@@ -325,7 +309,6 @@ exports[`StarRating should render with state 1`] = `
                 aria-hidden="true"
                 class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--empty"
                 height="24"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
                 width="24"
               >
                 
@@ -359,7 +342,6 @@ exports[`StarRating should render with state 1`] = `
                 aria-hidden="true"
                 class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--full"
                 height="24"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
                 width="24"
               >
                 
@@ -372,7 +354,6 @@ exports[`StarRating should render with state 1`] = `
                 aria-hidden="true"
                 class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--full"
                 height="24"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
                 width="24"
               >
                 
@@ -385,7 +366,6 @@ exports[`StarRating should render with state 1`] = `
                 aria-hidden="true"
                 class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--empty"
                 height="24"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
                 width="24"
               >
                 
@@ -398,7 +378,6 @@ exports[`StarRating should render with state 1`] = `
                 aria-hidden="true"
                 class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--empty"
                 height="24"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
                 width="24"
               >
                 
@@ -411,7 +390,6 @@ exports[`StarRating should render with state 1`] = `
                 aria-hidden="true"
                 class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--empty"
                 height="24"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
                 width="24"
               >
                 
@@ -445,7 +423,6 @@ exports[`StarRating should render with state 1`] = `
                 aria-hidden="true"
                 class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--full"
                 height="24"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
                 width="24"
               >
                 
@@ -458,7 +435,6 @@ exports[`StarRating should render with state 1`] = `
                 aria-hidden="true"
                 class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--empty"
                 height="24"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
                 width="24"
               >
                 
@@ -471,7 +447,6 @@ exports[`StarRating should render with state 1`] = `
                 aria-hidden="true"
                 class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--empty"
                 height="24"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
                 width="24"
               >
                 
@@ -484,7 +459,6 @@ exports[`StarRating should render with state 1`] = `
                 aria-hidden="true"
                 class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--empty"
                 height="24"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
                 width="24"
               >
                 
@@ -497,7 +471,6 @@ exports[`StarRating should render with state 1`] = `
                 aria-hidden="true"
                 class="ais-RatingMenu-starIcon ais-RatingMenu-starIcon--empty"
                 height="24"
-                ng-reflect-ng-class="ais-RatingMenu-starIcon ais-Ra"
                 width="24"
               >
                 
@@ -535,7 +508,6 @@ exports[`StarRating should render without state 1`] = `
       
       <div
         class="ais-RatingMenu ais-RatingMenu--noRefinement"
-        ng-reflect-ng-class="ais-RatingMenu,ais-RatingMenu-"
       >
         <svg
           style="display:none;"
@@ -577,7 +549,6 @@ exports[`StarRating should use ais-RatingMenu--noRefinement when items is empty 
       
       <div
         class="ais-RatingMenu ais-RatingMenu--noRefinement"
-        ng-reflect-ng-class="ais-RatingMenu,ais-RatingMenu-"
       >
         <svg
           style="display:none;"

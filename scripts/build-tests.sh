@@ -20,6 +20,6 @@ yarn build --no-progress
   cp -R ../../../../node_modules/instantsearch.js/* ./node_modules/instantsearch.js
 
   rm -rf dist_*
-  yarn build -- --main=src/main_heavy.ts --output-path=dist_heavy --source-map --no-progress
-  yarn build -- --main=src/main_light.ts --output-path=dist_light --source-map --no-progress
+  yarn build --main=src/main_heavy.ts --output-path=dist_heavy --source-map --no-progress
+  yarn build --main=src/main_light.ts --output-path=dist_light --source-map --no-progress
 )

@@ -44,7 +44,7 @@
     "@nguniversal/module-map-ngfactory-loader": "7.1.0",
     "angular-instantsearch": "3.0.0-beta.4",
     "core-js": "2.6.5",
-    "instantsearch.js": "4.7.0",
+    "instantsearch.js": "4.7.1-experimental-typescript.0",
     "nouislider": "13.1.1",
     "preboot": "7.0.0",
     "rxjs": "6.5.2",
