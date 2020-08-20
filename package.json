@@ -65,7 +65,7 @@
   "jest": {
     "preset": "jest-preset-angular",
     "setupFilesAfterEnv": ["<rootDir>/helpers/setup-jest.ts"],
-    "testMatch": [ 
+    "testMatch": [
       "<rootDir>/**/__tests__/**/*.ts"
     ],
     "testPathIgnorePatterns": [
@@ -96,8 +96,7 @@
     "instantsearch.css": "^7.3.1",
     "lodash": "^4.17.10",
     "nouislider": "^10.0.0",
-    "querystring-es3": "^0.2.1",
-    "ts-jest": "^26.2.0"
+    "querystring-es3": "^0.2.1"
   },
   "devDependencies": {
     "@angular/common": "7.2.5",
@@ -140,6 +139,7 @@
     "shelljs": "0.8.3",
     "shipjs": "0.18.1",
     "style-loader": "0.23.1",
+    "ts-jest": "^26.2.0",
     "ts-loader": "6.1.2",
     "tsickle": "0.35.0",
     "tslib": "1.9.0",
