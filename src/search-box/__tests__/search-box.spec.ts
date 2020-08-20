@@ -88,16 +88,6 @@ describe('SearchBox', () => {
         expect(refine).toHaveBeenCalledTimes(0);
       });
 
-      it('should call refine when submit button has been clicked', () => {
-        const submitButton = fixture.debugElement.query(
-          By.css('button[type="submit"]')
-        );
-        submitButton.nativeElement.dispatchEvent(new Event('click'));
-
-        expect(refine).toHaveBeenCalledTimes(1);
-        expect(refine).toHaveBeenCalledWith('the query');
-      });
-
       it('should call refine when the form is submitted', () => {
         const form = fixture.debugElement.query(By.css('form'));
         form.nativeElement.dispatchEvent(new Event('submit'));
