@@ -3,7 +3,7 @@
   "compilerOptions": {
     "allowJs": true,
     "outDir": "../out-tsc/spec",
-    "module": "commonjs",
+    "module": "CommonJS",
     "types": ["jest"],
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
