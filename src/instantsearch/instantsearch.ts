@@ -18,7 +18,7 @@ import { Widget } from '../base-widget';
 import { VERSION } from '../version';
 import { InstantSearchOptions, InstantSearch } from 'instantsearch.js/es/types';
 
-// TODO: do we need this?
+// this is needed for different webpack/typescript configurations
 const algoliasearch = algoliasearchProxy.default || algoliasearchProxy;
 
 // TODO: alias these types
