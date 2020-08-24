@@ -901,11 +901,6 @@
     jest-diff "^25.2.1"
     pretty-format "^25.2.1"
 
-"@types/lodash@4.14.135":
-  version "4.14.135"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.135.tgz#d2607c35dd68f70c2b35ba020c667493dedd8447"
-  integrity sha512-Ed+tSZ9qM1oYpi5kzdsBuOzcAIn1wDW+e8TFJ50IMJMlSopGdJgKAbhHzN6h1E1OfjlGOr2JepzEWtg9NIfoNg==
-
 "@types/minimatch@*":
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
@@ -6117,22 +6112,7 @@ lodash.templatesettings@^4.0.0:
   dependencies:
     lodash._reinterpolate "~3.0.0"
 
-lodash@^4.0.0, lodash@^4.17.4, lodash@^4.2.1:
-  version "4.17.10"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
-  integrity sha512-UejweD1pDoXu+AD825lWwp4ZGtSwgnpZxb3JDViD7StjQz+Nb/6l093lx4OQ0foGWNRoc19mWy7BzL+UAK2iVg==
-
-lodash@^4.14.14, lodash@^4.17.10, lodash@^4.17.12, lodash@^4.17.14, lodash@^4.17.15:
-  version "4.17.15"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
-  integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
-
-lodash@^4.17.11, lodash@^4.3.0, lodash@~4.17.10:
-  version "4.17.11"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
-  integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
-
-lodash@^4.17.19:
+lodash@^4.0.0, lodash@^4.14.14, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.4, lodash@^4.2.1, lodash@^4.3.0, lodash@~4.17.10:
   version "4.17.20"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.20.tgz#b44a9b6297bcb698f1c51a3545a2b3b368d59c52"
   integrity sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
@@ -9167,7 +9147,7 @@ trim-right@^1.0.1:
   dependencies:
     glob "^7.1.2"
 
-ts-jest@26.2.0, ts-jest@^25.0.0:
+ts-jest@26.2.0:
   version "26.2.0"
   resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-26.2.0.tgz#7ec22faceb05ee1467fdb5265d1b33c27441f163"
   integrity sha512-9+y2qwzXdAImgLSYLXAb/Rhq9+K4rbt0417b8ai987V60g2uoNWBBmMkYgutI7D8Zhu+IbCSHbBtrHxB9d7xyA==
@@ -9182,6 +9162,22 @@ ts-jest@26.2.0, ts-jest@^25.0.0:
     make-error "1.x"
     mkdirp "1.x"
     semver "7.x"
+    yargs-parser "18.x"
+
+ts-jest@^25.0.0:
+  version "25.5.1"
+  resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-25.5.1.tgz#2913afd08f28385d54f2f4e828be4d261f4337c7"
+  integrity sha512-kHEUlZMK8fn8vkxDjwbHlxXRB9dHYpyzqKIGDNxbzs+Rz+ssNDSDNusEK8Fk/sDd4xE6iKoQLfFkFVaskmTJyw==
+  dependencies:
+    bs-logger "0.x"
+    buffer-from "1.x"
+    fast-json-stable-stringify "2.x"
+    json5 "2.x"
+    lodash.memoize "4.x"
+    make-error "1.x"
+    micromatch "4.x"
+    mkdirp "0.x"
+    semver "6.x"
     yargs-parser "18.x"
 
 ts-loader@6.1.2:
