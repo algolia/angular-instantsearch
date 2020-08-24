@@ -18,7 +18,7 @@ import { Widget } from '../base-widget';
 import { VERSION } from '../version';
 import { InstantSearchOptions, InstantSearch } from 'instantsearch.js/es/types';
 
-// TODO: do we need this?
+// this import is here and unused to make sure `algoliasearch` gets imported if it's present
 const algoliasearch = algoliasearchProxy.default || algoliasearchProxy;
 
 // TODO: alias these types
