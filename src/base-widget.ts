@@ -5,6 +5,9 @@ import { NgAisInstantSearch } from './instantsearch/instantsearch';
 import { Widget } from 'instantsearch.js/es/types';
 export { Widget };
 
+// TODO: use Connector type from InstantSearch. Not yet possible now,
+// since non-ts connectors can't have generics like Connector has,
+// as well as sometimes being not accurate enough / missing keys.
 export type Connector = (
   renderFn: (state: object, isFirstRendering: boolean) => void,
   unmountFn: () => void
