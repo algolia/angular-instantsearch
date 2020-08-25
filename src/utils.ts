@@ -22,7 +22,7 @@ export function capitalize(s) {
   return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
-// source: instantsearch.js
+// See https://github.com/algolia/instantsearch.js/blob/9296022fecadfbf82f15e837c215a1356eac4bc5/src/lib/utils/range.ts
 export function range({
   start = 0,
   end,
@@ -47,7 +47,7 @@ export function range({
   );
 }
 
-// source: react-instantsearch
+// See https://github.com/algolia/react-instantsearch/blob/86dfe8674d566124af55a8f044051d0062786c1a/packages/react-instantsearch-core/src/core/utils.ts#L138-L142
 export function getPropertyByPath(object: object, path: string): any {
   return path
     .replace(/\[(\d+)]/g, '.$1')
