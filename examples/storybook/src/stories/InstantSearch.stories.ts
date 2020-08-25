@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/angular';
-import * as algoliasearch from 'algoliasearch/lite';
+import algoliasearch from 'algoliasearch/lite';
 import { wrapWithHits } from '../wrap-with-hits';
 import meta from '../meta';
 
