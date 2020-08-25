@@ -1,12 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { bem } from '../utils';
-
-function getPropertyByPath(object: object, path: string): any {
-  return path
-    .replace(/\[(\d+)]/g, '.$1')
-    .split('.')
-    .reduce((current, key) => (current ? current[key] : undefined), object);
-}
+import { bem, getPropertyByPath } from '../utils';
 
 @Component({
   selector: 'ais-highlight',
