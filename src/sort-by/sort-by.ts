@@ -1,8 +1,9 @@
-import { Component, Input, Inject, forwardRef } from '@angular/core';
+import { Component, Input, Inject, forwardRef, Optional } from '@angular/core';
 
 import { connectSortBy } from 'instantsearch.js/es/connectors';
 import { BaseWidget } from '../base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
+import { NgAisIndex } from '../index-widget/index-widget';
 import { noop } from '../utils';
 
 export type SortByItem = {
@@ -50,8 +51,11 @@ export class NgAisSortBy extends BaseWidget {
   };
 
   constructor(
+    @Inject(forwardRef(() => NgAisIndex))
+    @Optional()
+    public parentIndex: NgAisIndex,
     @Inject(forwardRef(() => NgAisInstantSearch))
-    public instantSearchParent: NgAisInstantSearch
+    public instantSearchInstance: NgAisInstantSearch
   ) {
     super('SortBy');
   }
