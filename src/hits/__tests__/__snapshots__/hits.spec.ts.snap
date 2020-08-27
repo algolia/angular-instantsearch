@@ -21,8 +21,6 @@ exports[`Hits renders markup with state 1`] = `
             >
               <ais-highlight
                 attribute="name"
-                ng-reflect-attribute="name"
-                ng-reflect-hit="[object Object]"
               >
                 <span
                   class="ais-Highlight"
@@ -36,8 +34,6 @@ exports[`Hits renders markup with state 1`] = `
             >
               <ais-highlight
                 attribute="name"
-                ng-reflect-attribute="name"
-                ng-reflect-hit="[object Object]"
               >
                 <span
                   class="ais-Highlight"
@@ -51,8 +47,6 @@ exports[`Hits renders markup with state 1`] = `
             >
               <ais-highlight
                 attribute="name"
-                ng-reflect-attribute="name"
-                ng-reflect-hit="[object Object]"
               >
                 <span
                   class="ais-Highlight"
@@ -66,8 +60,6 @@ exports[`Hits renders markup with state 1`] = `
             >
               <ais-highlight
                 attribute="name"
-                ng-reflect-attribute="name"
-                ng-reflect-hit="[object Object]"
               >
                 <span
                   class="ais-Highlight"

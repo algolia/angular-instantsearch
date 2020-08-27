@@ -6,10 +6,12 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "noEmitOnError": true,
     "outDir": "temp",
     "sourceMap": true,
     "baseUrl": "./node_modules",
+    "moduleResolution": "node",
     "paths": {
       "angular-instantsearch": ["../src/index"]
     }

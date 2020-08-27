@@ -16,7 +16,7 @@
     "algoliasearch": "3.32.1",
     "angular-instantsearch": "3.0.0-beta.4",
     "core-js": "2.5.4",
-    "instantsearch.js": "4.7.0",
+    "instantsearch.js": "4.7.1-experimental-typescript.0",
     "rxjs": "6.3.3",
     "zone.js": "0.8.26"
   },
@@ -29,7 +29,7 @@
     "@babel/core": "~7.1.2",
     "@storybook/addon-actions": "~5.0.10",
     "@storybook/angular": "~5.0.10",
-    "@types/node": "~8.10.59",
+    "@types/node": "9.6.53",
     "babel-loader": "~8.0.4",
     "codelyzer": "~4.5.0",
     "css-loader": "~1.0.1",

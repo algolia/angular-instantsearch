@@ -1400,10 +1400,10 @@
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
   integrity sha1-7ihweulOEdK4J7y+UnC86n8+ce4=
 
-"@types/node@~8.10.59":
-  version "8.10.59"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.10.59.tgz#9e34261f30183f9777017a13d185dfac6b899e04"
-  integrity sha512-8RkBivJrDCyPpBXhVZcjh7cQxVBSmRk9QM7hOketZzp6Tg79c0N8kkpAIito9bnJ3HCVCHVYz+KHTEbfQNfeVQ==
+"@types/node@9.6.53":
+  version "9.6.53"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-9.6.53.tgz#dce152f939cc626dca9248ae8a84b93139a73183"
+  integrity sha512-I8M/wFHTVi2BBNENbm5rizhYdgaXMdJPWjGDB55ON2q8FTMOL6lIoYODDl0PyRZey42yesbvs0IbdHSHePtOLQ==
 
 "@webassemblyjs/ast@1.7.6":
   version "1.7.6"
@@ -1844,7 +1844,7 @@ algoliasearch-helper@^2.26.1:
     qs "^6.5.1"
     util "^0.10.3"
 
-algoliasearch-helper@^3.1.1:
+algoliasearch-helper@^3.2.2:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/algoliasearch-helper/-/algoliasearch-helper-3.2.2.tgz#12451c8e368935348453c8879785b20e1788c33c"
   integrity sha512-/3XvE33R+gQKaiPdy3nmHYqhF8hqIu8xnlOicVxb1fD6uMFmxW8rGLzzrRfsPfxgAfm+c1NslLb3TzQVIB8aVA==
@@ -5515,13 +5515,13 @@ instantsearch.css@^7.3.1:
   resolved "https://registry.yarnpkg.com/instantsearch.css/-/instantsearch.css-7.3.1.tgz#7ab74a8f355091ae040947a9cf5438f379026622"
   integrity sha512-/kaMDna5D+Q9mImNBHEhb9HgHATDOFKYii7N1Iwvrj+lmD9gBJLqVhUw67gftq2O0QI330pFza+CRscIwB1wQQ==
 
-instantsearch.js@4.7.0:
-  version "4.7.0"
-  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-4.7.0.tgz#4062b98daf7278e51028d1453dc5d629cb708702"
-  integrity sha512-OkTcyHLcSu6eymWmVXsu2Tt0GRtkoRQXM+SCxj+nyvBY3y3hmGDjcb8bzkrACrhfR8SDbpEUiBGI1IUHjtvOGA==
+instantsearch.js@4.7.1-experimental-typescript.0:
+  version "4.7.1-experimental-typescript.0"
+  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-4.7.1-experimental-typescript.0.tgz#f576e9bf6f684d6d9fe943ca900a35c4f608cb7c"
+  integrity sha512-f70Sq++qW5duIILxh9ZEMmpQQJS75h4t18inHcgkxpe7bv95tBJwD8GsaJ5mwgMzY6G/BF/d04hJth2MzDYbNQ==
   dependencies:
     "@types/googlemaps" "^3.39.6"
-    algoliasearch-helper "^3.1.1"
+    algoliasearch-helper "^3.2.2"
     classnames "^2.2.5"
     events "^1.1.0"
     hogan.js "^3.0.2"

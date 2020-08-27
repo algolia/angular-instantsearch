@@ -8,7 +8,6 @@ exports[`RangeInput renders markup with state 1`] = `
     <ais-range-input>
       <div
         class="ais-RangeInput"
-        ng-reflect-ng-class="ais-RangeInput,"
       >
         <form
           class="ais-RangeInput-form"
@@ -26,7 +25,6 @@ exports[`RangeInput renders markup with state 1`] = `
               class="ais-RangeInput-input ais-RangeInput-input--min"
               max="100"
               min="0"
-              ng-reflect-ng-class="ais-RangeInput-input,ais-Range"
               placeholder="0"
               step="1"
               type="number"
@@ -49,7 +47,6 @@ exports[`RangeInput renders markup with state 1`] = `
               class="ais-RangeInput-input ais-RangeInput-input--max"
               max="100"
               min="0"
-              ng-reflect-ng-class="ais-RangeInput-input,ais-Range"
               placeholder="100"
               step="1"
               type="number"
@@ -75,7 +72,6 @@ exports[`RangeInput renders markup without state 1`] = `
     <ais-range-input>
       <div
         class="ais-RangeInput ais-RangeInput--noRefinement"
-        ng-reflect-ng-class="ais-RangeInput,ais-RangeInput-"
       >
         <form
           class="ais-RangeInput-form"
@@ -93,7 +89,6 @@ exports[`RangeInput renders markup without state 1`] = `
               class="ais-RangeInput-input ais-RangeInput-input--min"
               max="undefined"
               min="undefined"
-              ng-reflect-ng-class="ais-RangeInput-input,ais-Range"
               placeholder="undefined"
               step="1"
               type="number"
@@ -116,7 +111,6 @@ exports[`RangeInput renders markup without state 1`] = `
               class="ais-RangeInput-input ais-RangeInput-input--max"
               max="undefined"
               min="undefined"
-              ng-reflect-ng-class="ais-RangeInput-input,ais-Range"
               placeholder="undefined"
               step="1"
               type="number"
@@ -142,7 +136,6 @@ exports[`RangeInput should not use ais-RangeInput--noRefinement when min < max 1
     <ais-range-input>
       <div
         class="ais-RangeInput"
-        ng-reflect-ng-class="ais-RangeInput,"
       >
         <form
           class="ais-RangeInput-form"
@@ -160,7 +153,6 @@ exports[`RangeInput should not use ais-RangeInput--noRefinement when min < max 1
               class="ais-RangeInput-input ais-RangeInput-input--min"
               max="100"
               min="0"
-              ng-reflect-ng-class="ais-RangeInput-input,ais-Range"
               placeholder="0"
               step="1"
               type="number"
@@ -183,7 +175,6 @@ exports[`RangeInput should not use ais-RangeInput--noRefinement when min < max 1
               class="ais-RangeInput-input ais-RangeInput-input--max"
               max="100"
               min="0"
-              ng-reflect-ng-class="ais-RangeInput-input,ais-Range"
               placeholder="100"
               step="1"
               type="number"
@@ -209,7 +200,6 @@ exports[`RangeInput should use ais-RangeInput--noRefinement when min === max 1`]
     <ais-range-input>
       <div
         class="ais-RangeInput ais-RangeInput--noRefinement"
-        ng-reflect-ng-class="ais-RangeInput,ais-RangeInput-"
       >
         <form
           class="ais-RangeInput-form"
@@ -227,7 +217,6 @@ exports[`RangeInput should use ais-RangeInput--noRefinement when min === max 1`]
               class="ais-RangeInput-input ais-RangeInput-input--min"
               max="0"
               min="0"
-              ng-reflect-ng-class="ais-RangeInput-input,ais-Range"
               placeholder="0"
               step="1"
               type="number"
@@ -250,7 +239,6 @@ exports[`RangeInput should use ais-RangeInput--noRefinement when min === max 1`]
               class="ais-RangeInput-input ais-RangeInput-input--max"
               max="0"
               min="0"
-              ng-reflect-ng-class="ais-RangeInput-input,ais-Range"
               placeholder="0"
               step="1"
               type="number"

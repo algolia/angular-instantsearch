@@ -5,12 +5,38 @@ import {
 } from '../../index';
 import { Component } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
-import * as fs from 'fs';
-import * as path from 'path';
-import * as glob from 'glob';
+import { readFile } from 'fs';
+import { join } from 'path';
+import glob from 'glob';
 
 jest.mock('../../../src/base-widget');
 jest.mock('../../../src/instantsearch/instantsearch');
+
+function readFileGlob(globPath: string): Promise<string> {
+  return new Promise((resolve, reject) => {
+    glob(globPath, null, (err, files) => {
+      if (err) return reject(err);
+      readFile(files[0], 'utf8', (err, content) => {
+        if (err) return reject(err);
+        resolve(content);
+      });
+    });
+  });
+}
+
+function compile({ template, imports }) {
+  @Component({
+    template,
+  })
+  class TestContainer {}
+
+  TestBed.configureCompiler({ preserveWhitespaces: true } as any)
+    .configureTestingModule({
+      imports,
+      declarations: [TestContainer],
+    })
+    .compileComponents();
+}
 
 describe('tree-shaking 🎄', () => {
   it('should compile and run any component module even if not specifically imported', () => {
@@ -71,7 +97,7 @@ describe('tree-shaking 🎄', () => {
 
   it('should include all components in heavy build', async () => {
     const bundle = await readFileGlob(
-      path.join(__dirname, './test-app/dist_heavy/main.*.js')
+      join(__dirname, './test-app/dist_heavy/main.*.js')
     );
 
     expect(bundle).toContain('ais-hits');
@@ -100,7 +126,7 @@ describe('tree-shaking 🎄', () => {
 
   it('should include only imported components in light build', async () => {
     const bundle = await readFileGlob(
-      path.join(__dirname, './test-app/dist_light/main.*.js')
+      join(__dirname, './test-app/dist_light/main.*.js')
     );
 
     expect(bundle).toContain('ais-hits');
@@ -126,30 +152,4 @@ describe('tree-shaking 🎄', () => {
     expect(bundle).not.toContain('ais-sort-by');
     expect(bundle).not.toContain('ais-toggle');
   });
-
-  function readFileGlob(globPath) {
-    return new Promise((resolve, reject) => {
-      glob(globPath, null, (err, files) => {
-        if (err) return reject(err);
-        fs.readFile(files[0], 'utf8', (err, content) => {
-          if (err) return reject(err);
-          resolve(content);
-        });
-      });
-    });
-  }
-
-  function compile({ template, imports }) {
-    @Component({
-      template,
-    })
-    class TestContainer {}
-
-    TestBed.configureCompiler({ preserveWhitespaces: true } as any)
-      .configureTestingModule({
-        imports,
-        declarations: [TestContainer],
-      })
-      .compileComponents();
-  }
 });
