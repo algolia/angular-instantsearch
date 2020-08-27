@@ -8,7 +8,7 @@ import {
 
 import { connectStats } from 'instantsearch.js/es/connectors';
 
-import { BaseWidget } from '../base-widget';
+import { BaseWidget, Connector } from '../base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 
 @Component({
