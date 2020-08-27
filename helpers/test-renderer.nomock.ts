@@ -3,9 +3,8 @@ import { TestBed } from '@angular/core/testing';
 
 import { NgAisInstantSearchModule } from '../src/instantsearch/instantsearch.module';
 
-// mock component, don't create a real instantsearch instance
-jest.mock('../src/base-widget');
-jest.mock('../src/instantsearch/instantsearch');
+// same as test-renderer, but without mocking InstantSearch
+// In the future, we want to migrate all tests to this
 
 export function createRenderer({
   template,
@@ -57,12 +56,22 @@ function render(
 ) {
   @Component({
     template: `
-      <ais-instantsearch>
+      <ais-instantsearch [config]="config">
         ${template}
       </ais-instantsearch>
     `,
   })
   class TestContainer {
+    config = {
+      searchClient: {
+        search(requests) {
+          return Promise.resolve({
+            results: requests.map(() => ({ hits: [] })),
+          });
+        },
+      },
+      indexName: 'instant_search',
+    };
     @ViewChild(TestedWidget) testedWidget;
     constructor() {
       Object.keys(methods).forEach(methodName => {

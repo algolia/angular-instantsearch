@@ -1,4 +1,4 @@
-import { Component, Input, Inject, forwardRef } from '@angular/core';
+import { Component, Input, Inject, forwardRef, Optional } from '@angular/core';
 
 import { connectMenu } from 'instantsearch.js/es/connectors';
 import { BaseWidget } from '../base-widget';
@@ -6,6 +6,7 @@ import {
   NgAisInstantSearch,
   FacetSortByStringOptions,
 } from '../instantsearch/instantsearch';
+import { NgAisIndex } from '../index-widget/index-widget';
 import { noop } from '../utils';
 
 export type MenuItem = {
@@ -100,8 +101,11 @@ export class NgAisMenu extends BaseWidget {
   }
 
   constructor(
+    @Inject(forwardRef(() => NgAisIndex))
+    @Optional()
+    public parentIndex: NgAisIndex,
     @Inject(forwardRef(() => NgAisInstantSearch))
-    public instantSearchParent: NgAisInstantSearch
+    public instantSearchInstance: NgAisInstantSearch
   ) {
     super('Menu');
   }

@@ -1,7 +1,8 @@
-import { Input, OnDestroy, OnInit } from '@angular/core';
+import { Input, OnDestroy, OnInit, forwardRef } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { bem, noop } from './utils';
 import { NgAisInstantSearch } from './instantsearch/instantsearch';
+import { NgAisIndex } from './index-widget/index-widget';
 import { Widget } from 'instantsearch.js/es/types';
 export { Widget };
 
@@ -19,14 +20,18 @@ export abstract class BaseWidget implements OnInit, OnDestroy {
   public widget?: Widget;
   public state?: object = {};
   public cx: ReturnType<typeof bem>;
-  public abstract instantSearchParent: NgAisInstantSearch;
+  public abstract instantSearchInstance: NgAisInstantSearch;
+  public abstract parentIndex?: NgAisIndex;
 
   constructor(widgetName: string) {
     this.cx = bem(widgetName);
   }
 
   get parent() {
-    return this.instantSearchParent;
+    if (this.parentIndex) {
+      return this.parentIndex;
+    }
+    return this.instantSearchInstance;
   }
 
   public createWidget(connector: Connector, options: object = {}) {
@@ -38,7 +43,7 @@ export abstract class BaseWidget implements OnInit, OnDestroy {
   }
 
   public ngOnDestroy() {
-    if (isPlatformBrowser(this.instantSearchParent.platformId)) {
+    if (isPlatformBrowser(this.instantSearchInstance.platformId)) {
       this.parent.removeWidgets([this.widget]);
     }
   }
