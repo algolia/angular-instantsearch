@@ -1,10 +1,9 @@
-const range = require('lodash/range');
 import { Component, Input, Inject, forwardRef, Optional } from '@angular/core';
 import { connectPagination } from 'instantsearch.js/es/connectors';
 import { BaseWidget } from '../base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { NgAisIndex } from '../index-widget/index-widget';
-import { parseNumberInput, noop } from '../utils';
+import { parseNumberInput, noop, range } from '../utils';
 
 @Component({
   selector: 'ais-pagination',
@@ -146,20 +145,23 @@ export class NgAisPagination extends BaseWidget {
       const maxDelta = currentRefinement + pagesPadding + 1;
 
       if (minDelta < 0) {
-        return range(0, currentRefinement + pagesPadding + Math.abs(minDelta));
+        return range({
+          start: 0,
+          end: currentRefinement + pagesPadding + Math.abs(minDelta),
+        });
       }
 
       if (maxDelta > nbPages) {
-        return range(
-          currentRefinement - pagesPadding - (maxDelta - nbPages),
-          nbPages
-        );
+        return range({
+          start: currentRefinement - pagesPadding - (maxDelta - nbPages),
+          end: nbPages,
+        });
       }
 
-      return range(
-        currentRefinement - pagesPadding,
-        currentRefinement + pagesPadding + 1
-      );
+      return range({
+        start: currentRefinement - pagesPadding,
+        end: currentRefinement + pagesPadding + 1,
+      });
     }
 
     return pagesArray;

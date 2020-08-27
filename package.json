@@ -92,7 +92,6 @@
   },
   "dependencies": {
     "instantsearch.css": "^7.3.1",
-    "lodash": "^4.17.10",
     "nouislider": "^10.0.0",
     "querystring-es3": "^0.2.1"
   },
@@ -104,7 +103,6 @@
     "@angular/platform-browser": "7.2.5",
     "@angular/platform-browser-dynamic": "7.2.5",
     "@types/jest": "24.0.18",
-    "@types/lodash": "4.14.135",
     "@types/node": "9.6.53",
     "@types/nouislider": "9.0.5",
     "algoliasearch": "^4.4.0",
