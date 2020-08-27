@@ -1,7 +1,7 @@
 import { Component, Input, Inject, forwardRef } from '@angular/core';
 
 import { connectHierarchicalMenu } from 'instantsearch.js/es/connectors';
-import { BaseWidget } from '../base-widget';
+import { BaseWidget, Connector } from '../base-widget';
 import {
   NgAisInstantSearch,
   FacetSortByStringOptions,
@@ -69,7 +69,7 @@ export class NgAisHierarchicalMenu extends BaseWidget {
 
   constructor(
     @Inject(forwardRef(() => NgAisInstantSearch))
-    public instantSearchParent: any
+    public instantSearchParent: NgAisInstantSearch
   ) {
     super('HierarchicalMenu');
   }

@@ -82,7 +82,7 @@ export class NgAisInfiniteHits extends BaseWidget {
 
   constructor(
     @Inject(forwardRef(() => NgAisInstantSearch))
-    public instantSearchParent: any
+    public instantSearchParent: NgAisInstantSearch
   ) {
     super('InfiniteHits');
   }

@@ -90,7 +90,7 @@
   },
   "dependencies": {
     "algoliasearch": "^3.29.0",
-    "algoliasearch-helper": "^2.26.1",
+    "algoliasearch-helper": "^3.1.2",
     "instantsearch.css": "^7.3.1",
     "lodash": "^4.17.10",
     "nouislider": "^10.0.0",
@@ -123,11 +123,11 @@
     "eslint-config-prettier": "6.0.0",
     "eslint-plugin-import": "2.18.2",
     "eslint-plugin-prettier": "3.1.0",
-    "instantsearch.js": "3.5.4",
+    "instantsearch.js": "4.7.1-experimental-typescript.0",
     "jest": "23.6.0",
     "jest-preset-angular": "6.0.2",
     "ng-packagr": "4.7.0",
-    "node-sass": "4.12.0",
+    "node-sass": "4.14.1",
     "prettier": "1.13.7",
     "raw-loader": "3.0.0",
     "readline-sync": "1.4.9",
@@ -144,7 +144,7 @@
     "tslint-config-airbnb": "5.11.1",
     "tslint-config-prettier": "1.18.0",
     "tslint-plugin-prettier": "2.0.1",
-    "typescript": "3.2.4",
+    "typescript": "3.7.2",
     "zone.js": "0.9.1"
   },
   "peerDependencies": {
@@ -152,6 +152,6 @@
     "@angular/core": ">=5.0.0 <9.0.0",
     "@angular/platform-browser": ">=5.0.0 <9.0.0",
     "@angular/platform-browser-dynamic": ">=5.0.0 <9.0.0",
-    "instantsearch.js": "^3.5.4"
+    "instantsearch.js": "^4.0.1"
   }
 }

@@ -48,7 +48,7 @@ export class NgAisClearRefinements extends BaseWidget {
 
   constructor(
     @Inject(forwardRef(() => NgAisInstantSearch))
-    public instantSearchParent: any
+    public instantSearchParent: NgAisInstantSearch
   ) {
     super('ClearRefinements');
   }

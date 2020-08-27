@@ -2,15 +2,13 @@ import { Component, Injector, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformServer } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { TransferState, makeStateKey } from '@angular/platform-browser';
-
-import {
-  createSSRSearchClient,
-  parseServerRequest,
-} from 'angular-instantsearch';
+import { simple } from 'instantsearch.js/es/lib/stateMappings';
+import { createSSRSearchClient } from 'angular-instantsearch';
 import {
   InstantSearchConfig,
   SearchParameters,
 } from 'angular-instantsearch/instantsearch/instantsearch';
+import { ssrRouter } from './ssrRouter';
 
 @Component({
   selector: 'app-root',
@@ -75,16 +73,18 @@ export class AppComponent {
     private injector: Injector,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
-    const req = isPlatformServer(this.platformId)
-      ? this.injector.get('request')
-      : undefined;
-
-    const searchParameters = parseServerRequest(req);
-
     this.instantsearchConfig = {
-      searchParameters,
       indexName: 'instant_search',
-      routing: true,
+      routing: {
+        router: ssrRouter(() => {
+          if (isPlatformServer(this.platformId)) {
+            const req = this.injector.get('request');
+            return req.url;
+          }
+          return window.location.href;
+        }),
+        stateMapping: simple(),
+      },
       searchClient: createSSRSearchClient({
         makeStateKey,
         HttpHeaders,

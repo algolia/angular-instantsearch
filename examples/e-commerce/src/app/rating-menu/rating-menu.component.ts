@@ -81,8 +81,7 @@ export type RatingMenuState = {
 })
 export class RatingMenu extends BaseWidget {
   // rendering options
-  @ContentChild('starSvg', { static: true })
-  starSvg: TemplateRef<ElementRef>;
+  @ContentChild('starSvg') starSvg: TemplateRef<ElementRef>;
 
   // instance options
   @Input() public attribute: string;
@@ -101,7 +100,7 @@ export class RatingMenu extends BaseWidget {
 
   constructor(
     @Inject(forwardRef(() => NgAisInstantSearch))
-    public instantSearchParent: any
+    public instantSearchParent: NgAisInstantSearch
   ) {
     super('RatingMenu');
   }

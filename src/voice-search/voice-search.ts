@@ -144,7 +144,7 @@ export class NgAisVoiceSearch extends BaseWidget implements OnInit {
 
   constructor(
     @Inject(forwardRef(() => NgAisInstantSearch))
-    public instantSearchParent: any,
+    public instantSearchParent: NgAisInstantSearch,
     private zone: NgZone
   ) {
     super('VoiceSearch');
