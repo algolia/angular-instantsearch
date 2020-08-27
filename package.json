@@ -91,8 +91,6 @@
     }
   },
   "dependencies": {
-    "algoliasearch": "^3.29.0",
-    "algoliasearch-helper": "^3.1.2",
     "instantsearch.css": "^7.3.1",
     "nouislider": "^10.0.0",
     "querystring-es3": "^0.2.1"
@@ -107,6 +105,10 @@
     "@types/jest": "24.0.18",
     "@types/node": "9.6.53",
     "@types/nouislider": "9.0.5",
+    "algoliasearch": "^4.4.0",
+    "algoliasearch-v3": "npm:algoliasearch@3.35.1",
+    "@types/algoliasearch-v3": "npm:@types/algoliasearch@3.34.10",
+    "algoliasearch-helper": "^3.1.2",
     "babel-cli": "6.26.0",
     "babel-core": "6.26.3",
     "babel-eslint": "10.0.1",

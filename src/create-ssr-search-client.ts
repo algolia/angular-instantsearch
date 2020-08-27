@@ -1,4 +1,4 @@
-import * as algoliasearchProxy from 'algoliasearch';
+import * as algoliasearchProxy from 'algoliasearch/lite';
 import * as encodeProxy from 'querystring-es3/encode';
 import { VERSION as AngularVersion } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -23,7 +23,15 @@ type RequestOptions = {
   body: string;
 };
 
-const algoliasearch = algoliasearchProxy.default || algoliasearchProxy;
+// compatibility with different typescript settings:
+// - esModuleInterop
+// - allowSyntheticDefaultImports
+const algoliasearch = (typeof algoliasearchProxy.default === 'function'
+  ? algoliasearchProxy.default
+  : algoliasearchProxy) as typeof algoliasearchProxy.default extends Function
+  ? typeof algoliasearchProxy.default
+  : typeof algoliasearchProxy;
+
 const encode = encodeProxy.default || encodeProxy;
 
 export function createSSRSearchClient({
@@ -44,7 +52,51 @@ export function createSSRSearchClient({
   // v3: override "_request" on the prototype
   // since neither v3 uses the requester argument, and v4 use the _request, we
   // can safely do this without checking the version
-  const searchClient = algoliasearch(appId, apiKey, options);
+  const searchClient = algoliasearch(appId, apiKey, {
+    ...options,
+    requester: {
+      send({ headers, method, url, data }) {
+        const transferStateKey = makeStateKey(`ngais(${data})`);
+
+        if (transferState.hasKey(transferStateKey)) {
+          const response = JSON.parse(
+            transferState.get(transferStateKey, JSON.stringify({}))
+          );
+
+          return Promise.resolve({
+            status: response.status,
+            content: JSON.stringify(response.body),
+            isTimedOut: false,
+          });
+        }
+
+        return new Promise((resolve, reject) => {
+          httpClient
+            .request(method, url, {
+              headers,
+              body: data,
+              observe: 'response',
+            })
+            .subscribe(
+              response => {
+                transferState.set(transferStateKey, JSON.stringify(response));
+
+                resolve({
+                  status: response.status,
+                  content: JSON.stringify(response.body),
+                  isTimedOut: false,
+                });
+              },
+              response =>
+                reject({
+                  status: response.status,
+                  body: response.body,
+                })
+            );
+        });
+      },
+    },
+  });
 
   searchClient.addAlgoliaAgent(`angular (${AngularVersion.full})`);
   searchClient.addAlgoliaAgent(`angular-instantsearch (${VERSION})`);
