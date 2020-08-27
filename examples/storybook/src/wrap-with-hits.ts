@@ -65,6 +65,7 @@ export function wrapWithHits({
     styles,
     template: `
       <ais-instantsearch [config]="config">
+        <ais-configure [searchParameters]="searchParameters"></ais-configure>
         <div class="ais-container ais-container-preview">
           ${template}
         </div>
@@ -90,11 +91,12 @@ export function wrapWithHits({
       insightsClient,
       indexName,
       searchFunction,
-      searchParameters: {
-        hitsPerPage: 3,
-        ...searchParameters,
-      },
       routing,
+    };
+
+    searchParameters = {
+      hitsPerPage: 3,
+      ...searchParameters,
     };
 
     constructor() {
