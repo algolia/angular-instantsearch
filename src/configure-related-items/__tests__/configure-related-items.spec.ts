@@ -25,9 +25,13 @@ describe('ConfigureRelatedItems', () => {
 
     const render = createRenderer({
       TestedWidget: NgAisConfigureRelatedItems,
-      template:
-        '<ais-experimental-configure-related-items></ais-experimental-configure-related-items>',
-      defaultState: {
+      template: `
+      <ais-experimental-configure-related-items
+        [hit]="hit"
+        [matchingPatterns]="matchingPatterns"
+        [transformSearchParameters]="transformSearchParameters"
+      ></ais-experimental-configure-related-items>`,
+      methods: {
         hit,
         matchingPatterns,
         transformSearchParameters,
