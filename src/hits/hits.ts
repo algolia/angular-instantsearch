@@ -5,11 +5,13 @@ import {
   ContentChild,
   TemplateRef,
   forwardRef,
+  Optional,
 } from '@angular/core';
 
 import { connectHitsWithInsights } from 'instantsearch.js/es/connectors';
 import { BaseWidget } from '../base-widget';
 import { NgAisInstantSearch, Hit } from '../instantsearch/instantsearch';
+import { NgAisIndex } from '../index-widget/index-widget';
 
 export type HitsState = {
   hits: Hit[];
@@ -49,8 +51,11 @@ export class NgAisHits extends BaseWidget {
   };
 
   constructor(
+    @Inject(forwardRef(() => NgAisIndex))
+    @Optional()
+    public parentIndex: NgAisIndex,
     @Inject(forwardRef(() => NgAisInstantSearch))
-    public instantSearchParent: NgAisInstantSearch
+    public instantSearchInstance: NgAisInstantSearch
   ) {
     super('Hits');
   }

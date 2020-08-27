@@ -6,8 +6,13 @@ import {
   ContentChild,
   ElementRef,
   TemplateRef,
+  Optional,
 } from '@angular/core';
-import { BaseWidget, NgAisInstantSearch } from 'angular-instantsearch';
+import {
+  BaseWidget,
+  NgAisInstantSearch,
+  NgAisIndex,
+} from 'angular-instantsearch';
 import { connectRatingMenu } from 'instantsearch.js/es/connectors';
 
 const noop = (): void => {};
@@ -100,8 +105,11 @@ export class RatingMenu extends BaseWidget {
   }
 
   constructor(
+    @Inject(forwardRef(() => NgAisIndex))
+    @Optional()
+    public parentIndex: NgAisIndex,
     @Inject(forwardRef(() => NgAisInstantSearch))
-    public instantSearchParent: NgAisInstantSearch
+    public instantSearchInstance: NgAisInstantSearch
   ) {
     super('RatingMenu');
   }

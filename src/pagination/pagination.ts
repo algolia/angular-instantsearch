@@ -1,8 +1,9 @@
 const range = require('lodash/range');
-import { Component, Input, Inject, forwardRef } from '@angular/core';
+import { Component, Input, Inject, forwardRef, Optional } from '@angular/core';
 import { connectPagination } from 'instantsearch.js/es/connectors';
 import { BaseWidget } from '../base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
+import { NgAisIndex } from '../index-widget/index-widget';
 import { parseNumberInput, noop } from '../utils';
 
 @Component({
@@ -165,8 +166,11 @@ export class NgAisPagination extends BaseWidget {
   }
 
   constructor(
+    @Inject(forwardRef(() => NgAisIndex))
+    @Optional()
+    public parentIndex: NgAisIndex,
     @Inject(forwardRef(() => NgAisInstantSearch))
-    public instantSearchParent: NgAisInstantSearch
+    public instantSearchInstance: NgAisInstantSearch
   ) {
     super('Pagination');
   }
