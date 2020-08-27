@@ -17,9 +17,9 @@ export class NgAisConfigureRelatedItems extends BaseWidget {
   constructor(
     @Inject(forwardRef(() => NgAisIndex))
     @Optional()
-    public indexParent: NgAisIndex,
+    public parentIndex: NgAisIndex,
     @Inject(forwardRef(() => NgAisInstantSearch))
-    public instantSearchParent: NgAisInstantSearch
+    public instantSearchInstance: NgAisInstantSearch
   ) {
     super('ExperimentalConfigureRelatedItems');
   }
