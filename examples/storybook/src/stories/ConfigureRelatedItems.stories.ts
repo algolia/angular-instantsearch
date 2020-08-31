@@ -9,25 +9,23 @@ storiesOf('ConfigureRelatedItems', module)
       component: wrapWithHits({
         template: `
         <div>
-          <ais-index indexName="instant_search">
-            <ais-configure [searchParameters]="{ hitsPerPage: 1 }"></ais-configure>
-            <ais-hits>
-              <ng-template let-hits="hits">
-                <div *ngFor="let hit of hits">
-                  <div class="ais-RelatedHits-item-image">
-                    <img [src]="hit.image" [alt]="hit.name" />
-                  </div>
-
-                  <div class="ais-RelatedHits-item-title">
-                    <h4>{{hit.name}}</h4>
-                  </div>
+          <ais-configure [searchParameters]="{ hitsPerPage: 1 }"></ais-configure>
+          <ais-hits>
+            <ng-template let-hits="hits">
+              <div *ngFor="let hit of hits">
+                <p>objectID: <code>{{hit.objectID}}</code></p>
+                <div class="ais-RelatedHits-item-image">
+                  <img [src]="hit.image" [alt]="hit.name" />
                 </div>
-              </ng-template>
-            </ais-hits>
-          </ais-index>
+                <div class="ais-RelatedHits-item-title">
+                  <h4>{{hit.name}}</h4>
+                </div>
+              </div>
+            </ng-template>
+          </ais-hits>
 
-          <ais-index indexName="instant_search">
-            <h2>Related items</h2>
+          <ais-index indexName="instant_search" indexId="related">
+            <h2>Related items to <code>{{hit.objectID}}</code></h2>
 
             <ais-configure [searchParameters]="{ hitsPerPage: 4 }"></ais-configure>
             <ais-experimental-configure-related-items
