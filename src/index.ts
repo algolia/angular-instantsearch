@@ -47,6 +47,8 @@ import { NgAisPanelModule } from './panel/panel.module';
 export { NgAisPanelModule };
 import { NgAisConfigureModule } from './configure/configure.module';
 export { NgAisConfigureModule };
+import { NgAisConfigureRelatedItemsModule } from './configure-related-items/configure-related-items.module';
+export { NgAisConfigureRelatedItemsModule };
 import { NgAisQueryRuleCustomDataModule } from './query-rule-custom-data/query-rule-custom-data.module';
 export { NgAisQueryRuleCustomDataModule };
 import { NgAisQueryRuleContextModule } from './query-rule-context/query-rule-context.module';
@@ -87,6 +89,7 @@ const NGIS_MODULES = [
   NgAisRangeInputModule,
   NgAisPanelModule,
   NgAisConfigureModule,
+  NgAisConfigureRelatedItemsModule,
   NgAisQueryRuleCustomDataModule,
   NgAisQueryRuleContextModule,
   NgAisVoiceSearchModule,

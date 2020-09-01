@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfigureRelatedItems renders markup 1`] = `
+<ng-component
+  testedWidget={[Function NgAisConfigureRelatedItems]}
+>
+  <ais-instantsearch>
+    <ais-experimental-configure-related-items />
+  </ais-instantsearch>
+</ng-component>
+`;
