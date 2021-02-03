@@ -9,17 +9,17 @@ import {
 } from '@angular/core';
 
 import { connectConfigure } from 'instantsearch.js/es/connectors';
+import { ConfigureConnectorParams } from 'instantsearch.js/es/connectors/configure/connectConfigure';
 import { BaseWidget } from '../base-widget';
-import {
-  NgAisInstantSearch,
-  SearchParameters,
-} from '../instantsearch/instantsearch';
+import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { NgAisIndex } from '../index-widget/index-widget';
 import { noop } from '../utils';
 
 export type ConfigureState = {
   refine: Function;
 };
+
+type SearchParameters = ConfigureConnectorParams['searchParameters'];
 
 @Component({
   selector: 'ais-configure',
