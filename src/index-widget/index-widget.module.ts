@@ -10,7 +10,7 @@ import { NgAisIndex } from './index-widget';
   imports: [CommonModule],
 })
 export class NgAisIndexModule {
-  public static forRoot(): ModuleWithProviders {
+  public static forRoot(): ModuleWithProviders<NgAisIndexModule> {
     return {
       ngModule: NgAisIndexModule,
       providers: [],

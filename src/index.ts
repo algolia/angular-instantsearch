@@ -103,7 +103,7 @@ export class NgAisRootModule {}
 
 @NgModule({ imports: NGIS_MODULES, exports: NGIS_MODULES })
 export class NgAisModule {
-  public static forRoot(): ModuleWithProviders {
+  public static forRoot(): ModuleWithProviders<NgAisRootModule> {
     return { ngModule: NgAisRootModule };
   }
 }
