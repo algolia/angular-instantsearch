@@ -9,13 +9,23 @@ import { VERSION } from './version';
 const algoliasearch = algoliasearchProxy.default || algoliasearchProxy;
 const encode = encodeProxy.default || encodeProxy;
 
+interface SSRAlogliaClientParams {
+  appId: string;
+  apiKey: string;
+  httpClient: any;
+  HttpHeaders: any;
+  makeStateKey: any;
+  transferState: any;
+  options?: any;
+}
+
 export function createSSRAlgoliaClient({
   httpClient,
   HttpHeaders,
   transferState,
   makeStateKey,
   options = {},
-}) {
+}: SSRAlogliaClientParams) {
   console.warn(
     '`createSSRAlgoliaClient` is deprecated in favor of `createSSRSearchClient` to be plugged to `searchClient`.'
   );
@@ -39,9 +49,9 @@ export function createSSRSearchClient({
   HttpHeaders,
   transferState,
   makeStateKey,
-  options = {},
-}) {
-  const client = algoliasearch(appId, apiKey, options);
+  options,
+}: SSRAlogliaClientParams) {
+  const client = algoliasearch(appId, apiKey, options || {});
   client.addAlgoliaAgent(`angular (${AngularVersion.full})`);
   client.addAlgoliaAgent(`angular-instantsearch (${VERSION})`);
   client.addAlgoliaAgent(`angular-instantsearch-server (${VERSION})`);
@@ -57,6 +67,12 @@ export function createSSRSearchClient({
     );
 
     headers = headers.set('accept', 'application/json');
+
+    if (options && options.headers) {
+      Object.keys(options.headers).map(key => {
+        headers = headers.set(key, options.headers[key]);
+      });
+    }
 
     const url =
       rawUrl + (rawUrl.includes('?') ? '&' : '?') + encode(opts.headers);

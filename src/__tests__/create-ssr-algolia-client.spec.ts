@@ -78,4 +78,33 @@ describe('Create SSR', () => {
       queryParameters: {},
     });
   });
+
+  it('forwards the options headers to the search client', () => {
+    const addAlgoliaAgent = jest.fn();
+    algoliasearchProxy.mockImplementation(() => {
+      return {
+        addAlgoliaAgent,
+      };
+    });
+
+    createSSRSearchClient({
+      appId: 'appId',
+      apiKey: 'apiKey',
+      options: {
+        headers: {
+          key: 'value',
+        },
+      },
+      httpClient: null,
+      HttpHeaders: null,
+      makeStateKey: null,
+      transferState: null,
+    });
+
+    expect(algoliasearchProxy).toHaveBeenCalledWith('appId', 'apiKey', {
+      headers: {
+        key: 'value',
+      },
+    });
+  });
 });
