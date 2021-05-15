@@ -108,7 +108,7 @@
     "@types/jest": "24.0.18",
     "@types/lodash": "4.14.135",
     "@types/node": "9.6.53",
-    "@types/nouislider": "9.0.5",
+    "@types/nouislider": "9.0.10",
     "angular2-template-loader": "0.6.2",
     "babel-cli": "6.26.0",
     "babel-eslint": "10.0.2",
