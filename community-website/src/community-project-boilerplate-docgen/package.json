@@ -20,7 +20,7 @@
     "compression": "1.7.4",
     "css-loader": "3.2.0",
     "escape-html": "1.0.3",
-    "glob": "7.1.4",
+    "glob": "7.1.7",
     "hasha": "5.0.0",
     "jstransformer-markdown-it": "2.1.0",
     "jstransformer-pug": "0.3.0",
