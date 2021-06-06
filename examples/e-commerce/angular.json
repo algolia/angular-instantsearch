@@ -99,8 +99,6 @@
     }
   },
   "cli": {
-    "warnings": {
-      "typescriptMismatch": false
-    }
+    "warnings": {}
   }
 }
