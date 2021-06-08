@@ -14,7 +14,7 @@
       "instantsearch.js/es/widgets/index/index": "instantsearch.widgets.index"
     }
   },
-  "whitelistedNonPeerDependencies": [
+  "allowedNonPeerDependencies": [
     "algoliasearch",
     "algoliasearch-helper",
     "instantsearch.js",
