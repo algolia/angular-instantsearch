@@ -96,12 +96,12 @@
     "querystring-es3": "^0.2.1"
   },
   "devDependencies": {
-    "@angular/common": "9.1.13",
-    "@angular/compiler": "9.1.13",
-    "@angular/compiler-cli": "9.1.13",
-    "@angular/core": "9.1.13",
-    "@angular/platform-browser": "9.1.13",
-    "@angular/platform-browser-dynamic": "9.1.13",
+    "@angular/common": "10.2.5",
+    "@angular/compiler": "10.2.5",
+    "@angular/compiler-cli": "10.2.5",
+    "@angular/core": "10.2.5",
+    "@angular/platform-browser": "10.2.5",
+    "@angular/platform-browser-dynamic": "10.2.5",
     "@types/jest": "24.0.18",
     "@types/node": "9.6.53",
     "@types/nouislider": "9.0.5",
@@ -147,7 +147,7 @@
     "tslint-config-airbnb": "5.11.1",
     "tslint-config-prettier": "1.18.0",
     "tslint-plugin-prettier": "2.0.1",
-    "typescript": "3.9.7",
+    "typescript": "3.9.9",
     "zone.js": "0.9.1"
   },
   "peerDependencies": {
