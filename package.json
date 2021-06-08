@@ -128,7 +128,7 @@
     "instantsearch.js": "4.7.1-experimental-typescript.0",
     "jest": "26.3.0",
     "jest-preset-angular": "8.1.2",
-    "ng-packagr": "4.7.0",
+    "ng-packagr": "5.7.1",
     "node-sass": "4.14.1",
     "prettier": "1.13.7",
     "raw-loader": "3.0.0",
