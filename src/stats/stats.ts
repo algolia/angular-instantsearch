@@ -27,7 +27,8 @@ import { NgAisIndex } from '../index-widget/index-widget';
   `,
 })
 export class NgAisStats extends BaseWidget {
-  @ContentChild(TemplateRef) public template: any;
+  @ContentChild(TemplateRef, { static: false })
+  public template: any;
 
   public state = {
     hitPerPage: 0,
