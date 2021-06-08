@@ -56,7 +56,7 @@ export function createSSRSearchClient({
     ...options,
     requester: {
       send({ headers, method, url, data }) {
-        const transferStateKey = makeStateKey(`ngais(${data})`);
+        const transferStateKey = makeStateKey<string>(`ngais(${data})`);
 
         if (transferState.hasKey(transferStateKey)) {
           const response = JSON.parse(
@@ -120,7 +120,7 @@ export function createSSRSearchClient({
     const url =
       rawUrl + (rawUrl.includes('?') ? '&' : '?') + encode(options.headers);
 
-    const transferStateKey = makeStateKey(`ngais(${options.body})`);
+    const transferStateKey = makeStateKey<string>(`ngais(${options.body})`);
 
     if (transferState.hasKey(transferStateKey)) {
       const response = JSON.parse(
