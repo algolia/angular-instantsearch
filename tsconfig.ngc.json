@@ -4,6 +4,8 @@
     "esModuleInterop": true
   },
   "angularCompilerOptions": {
-    "disableTypeScriptVersionCheck": true
+    "disableTypeScriptVersionCheck": true,
+    "enableIvy": false
+
   }
 }
