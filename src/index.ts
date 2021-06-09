@@ -2,117 +2,112 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
 
 // Modules
 import { NgAisBreadcrumbModule } from './breadcrumb/breadcrumb.module';
-import { NgAisBreadcrumb } from './breadcrumb/breadcrumb';
-export { NgAisBreadcrumbModule, NgAisBreadcrumb };
+
+export { NgAisBreadcrumbModule };
 
 import { NgAisClearRefinementsModule } from './clear-refinements/clear-refinements.module';
-import { NgAisClearRefinements } from './clear-refinements/clear-refinements';
-export { NgAisClearRefinementsModule, NgAisClearRefinements };
+
+export { NgAisClearRefinementsModule };
 
 import { NgAisCurrentRefinementsModule } from './current-refinements/current-refinements.module';
-import { NgAisCurrentRefinements } from './current-refinements/current-refinements';
-export { NgAisCurrentRefinementsModule, NgAisCurrentRefinements };
+
+export { NgAisCurrentRefinementsModule };
 
 import { NgAisHierarchicalMenuModule } from './hierarchical-menu/hierarchical-menu.module';
-import { NgAisHierarchicalMenu } from './hierarchical-menu/hierarchical-menu';
-import { NgAisHierarchicalMenuItem } from './hierarchical-menu/hierarchical-menu-item';
-export {
-  NgAisHierarchicalMenuModule,
-  NgAisHierarchicalMenu,
-  NgAisHierarchicalMenuItem,
-};
+
+export { NgAisHierarchicalMenuModule };
 
 import { NgAisHitsPerPageModule } from './hits-per-page/hits-per-page.module';
-import { NgAisHitsPerPage } from './hits-per-page/hits-per-page';
-export { NgAisHitsPerPageModule, NgAisHitsPerPage };
+
+export { NgAisHitsPerPageModule };
 
 import { NgAisHitsModule } from './hits/hits.module';
-import { NgAisHits } from './hits/hits';
-export { NgAisHitsModule, NgAisHits };
+
+export { NgAisHitsModule };
 
 import { NgAisIndexModule } from './index-widget/index-widget.module';
-import { NgAisIndex } from './index-widget/index-widget';
-export { NgAisIndexModule, NgAisIndex };
+
+export { NgAisIndexModule };
 
 import { NgAisInfiniteHitsModule } from './infinite-hits/infinite-hits.module';
-import { NgAisInfiniteHits } from './infinite-hits/infinite-hits';
-export { NgAisInfiniteHitsModule, NgAisInfiniteHits };
+
+export { NgAisInfiniteHitsModule };
 
 import { NgAisInstantSearchModule } from './instantsearch/instantsearch.module';
-import { NgAisInstantSearch } from './instantsearch/instantsearch';
-export { NgAisInstantSearchModule, NgAisInstantSearch };
+
+export { NgAisInstantSearchModule };
 
 import { NgAisMenuModule } from './menu/menu.module';
-import { NgAisMenu } from './menu/menu';
-export { NgAisMenuModule, NgAisMenu };
+
+export { NgAisMenuModule };
 
 import { NgAisNumericMenuModule } from './numeric-menu/numeric-menu.module';
-import { NgAisNumericMenu } from './numeric-menu/numeric-menu';
-export { NgAisNumericMenuModule, NgAisNumericMenu };
+
+export { NgAisNumericMenuModule };
 
 import { NgAisPaginationModule } from './pagination/pagination.module';
-import { NgAisPagination } from './pagination/pagination';
-export { NgAisPaginationModule, NgAisPagination };
+
+export { NgAisPaginationModule };
 
 import { NgAisRangeSliderModule } from './range-slider/range-slider.module';
-import { NgAisRangeSlider } from './range-slider/range-slider';
-export { NgAisRangeSliderModule, NgAisRangeSlider };
+
+export { NgAisRangeSliderModule };
 
 import { NgAisRefinementListModule } from './refinement-list/refinement-list.module';
-import { NgAisRefinementList } from './refinement-list/refinement-list';
-export { NgAisRefinementListModule, NgAisRefinementList };
+
+export { NgAisRefinementListModule };
 
 import { NgAisSearchBoxModule } from './search-box/search-box.module';
-import { NgAisSearchBox } from './search-box/search-box';
-export { NgAisSearchBoxModule, NgAisSearchBox };
+
+export { NgAisSearchBoxModule };
 
 import { NgAisSortByModule } from './sort-by/sort-by.module';
-import { NgAisSortBy } from './sort-by/sort-by';
-export { NgAisSortByModule, NgAisSortBy };
+
+export { NgAisSortByModule };
 
 import { NgAisRatingMenuModule } from './rating-menu/rating-menu.module';
-import { NgAisRatingMenu } from './rating-menu/rating-menu';
-export { NgAisRatingMenuModule, NgAisRatingMenu };
+
+export { NgAisRatingMenuModule };
 
 import { NgAisStatsModule } from './stats/stats.module';
-import { NgAisStats } from './stats/stats';
-export { NgAisStatsModule, NgAisStats };
+
+export { NgAisStatsModule };
 
 import { NgAisToggleModule } from './toggle/toggle.module';
-import { NgAisToggle } from './toggle/toggle';
-export { NgAisToggleModule, NgAisToggle };
+
+export { NgAisToggleModule };
 
 import { NgAisHighlightModule } from './highlight/highlight.module';
-import { NgAisHighlight } from './highlight/highlight';
-export { NgAisHighlightModule, NgAisHighlight };
+
+export { NgAisHighlightModule };
 
 import { NgAisRangeInputModule } from './range-input/range-input.module';
-import { NgAisRangeInput } from './range-input/range-input';
-export { NgAisRangeInputModule, NgAisRangeInput };
+
+export { NgAisRangeInputModule };
 
 import { NgAisPanelModule } from './panel/panel.module';
-import { NgAisPanel } from './panel/panel';
-export { NgAisPanelModule, NgAisPanel };
+
+export { NgAisPanelModule };
 
 import { NgAisConfigureModule } from './configure/configure.module';
-import { NgAisConfigure } from './configure/configure';
-export { NgAisConfigureModule, NgAisConfigure };
+
+export { NgAisConfigureModule };
 
 import { NgAisConfigureRelatedItemsModule } from './configure-related-items/configure-related-items.module';
-import { NgAisConfigureRelatedItems } from './configure-related-items/configure-related-items';
-export { NgAisConfigureRelatedItemsModule, NgAisConfigureRelatedItems };
+
+export { NgAisConfigureRelatedItemsModule };
 
 import { NgAisQueryRuleCustomDataModule } from './query-rule-custom-data/query-rule-custom-data.module';
-import { NgAisQueryRuleCustomData } from './query-rule-custom-data/query-rule-custom-data';
-export { NgAisQueryRuleCustomDataModule, NgAisQueryRuleCustomData };
+
+export { NgAisQueryRuleCustomDataModule };
 
 import { NgAisQueryRuleContextModule } from './query-rule-context/query-rule-context.module';
-import { NgAisQueryRuleContext } from './query-rule-context/query-rule-context';
-export { NgAisQueryRuleContextModule, NgAisQueryRuleContext };
+
+export { NgAisQueryRuleContextModule };
 
 import { NgAisVoiceSearchModule } from './voice-search/voice-search.module';
-import { NgAisVoiceSearch } from './voice-search/voice-search';
-export { NgAisVoiceSearchModule, NgAisVoiceSearch };
+
+export { NgAisVoiceSearchModule };
 
 // Server-side rendering
 export { createSSRSearchClient } from './create-ssr-search-client';
