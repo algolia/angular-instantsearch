@@ -146,7 +146,6 @@ const NGIS_MODULES = [
   NgAisQueryRuleContextModule,
 ];
 
-
 @NgModule({
   exports: NGIS_MODULES,
   imports: [NgAisInstantSearchModule.forRoot()],
