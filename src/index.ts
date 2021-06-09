@@ -26,6 +26,7 @@ import { NgAisHitsModule } from './hits/hits.module';
 export { NgAisHitsModule };
 
 import { NgAisIndexModule } from './index-widget/index-widget.module';
+export { NgAisIndex } from './index-widget/index-widget';
 
 export { NgAisIndexModule };
 
@@ -34,6 +35,7 @@ import { NgAisInfiniteHitsModule } from './infinite-hits/infinite-hits.module';
 export { NgAisInfiniteHitsModule };
 
 import { NgAisInstantSearchModule } from './instantsearch/instantsearch.module';
+export { NgAisInstantSearch } from './instantsearch/instantsearch';
 
 export { NgAisInstantSearchModule };
 
@@ -142,8 +144,8 @@ const NGIS_MODULES = [
   NgAisConfigureRelatedItemsModule,
   NgAisQueryRuleCustomDataModule,
   NgAisQueryRuleContextModule,
-  NgAisVoiceSearchModule,
 ];
+
 
 @NgModule({
   exports: NGIS_MODULES,
