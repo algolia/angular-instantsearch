@@ -96,9 +96,7 @@ describe('tree-shaking 🎄', () => {
   });
 
   it('should include all components in heavy build', async () => {
-    const bundle = await readFileGlob(
-      join(__dirname, './test-app/dist_heavy/main-es2015.*.js')
-    );
+    const bundle = await readFileGlob(join(__dirname, './test-app/dist_heavy/main-es2015.*.js'));
     expect(bundle).toContain('NgAisHits');
     expect(bundle).toContain('NgAisInstantSearch');
     expect(bundle).toContain('NgAisSearchBox');
@@ -121,7 +119,6 @@ describe('tree-shaking 🎄', () => {
     expect(bundle).toContain('NgAisRefinementList');
     expect(bundle).toContain('NgAisSortBy');
     expect(bundle).toContain('NgAisToggle');
-
   });
 
   it('should include only imported components in light build', async () => {
