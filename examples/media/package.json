@@ -22,6 +22,7 @@
     "instantsearch.js": "4.7.1-experimental-typescript.0",
     "nouislider": "10.1.0",
     "rxjs": "6.6.7",
+    "tslib": "1.10.0",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
