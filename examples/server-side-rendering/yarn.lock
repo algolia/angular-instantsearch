@@ -1340,15 +1340,15 @@
     tree-kill "1.2.2"
     webpack-sources "1.4.3"
 
-"@nguniversal/express-engine@7.1.0":
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/@nguniversal/express-engine/-/express-engine-7.1.0.tgz#d48b1a821036382d62e4d4b122b5e44790c41c3f"
-  integrity sha512-otOA3WTjb+XnEDiyhwkvP0hE1gC7PiJrDoDFs5Q77SQ0ZAjuGzAIIgpQrPE8B+v0zmVj2oucDNCSZlmYWb1P/Q==
+"@nguniversal/express-engine@8.2.6":
+  version "8.2.6"
+  resolved "https://registry.yarnpkg.com/@nguniversal/express-engine/-/express-engine-8.2.6.tgz#3930551727b5be1256f0aefa1ffd3c37cb420f9f"
+  integrity sha512-IKUKTpesgjYyB0Xg+fFhSbwbGBJhG0Wfn8MkQAi9RgSi8QsrSMkI3oUXc86Z7fpQL55D/ZIH7PekoC0Fmh/kxA==
 
-"@nguniversal/module-map-ngfactory-loader@7.1.0":
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/@nguniversal/module-map-ngfactory-loader/-/module-map-ngfactory-loader-7.1.0.tgz#70ea905c1b32c2edc484cb77aa7a3f3208069966"
-  integrity sha512-GYfb24OLJKBY58CgUsIsGgci5ceZAt4+GrVKh7RZRIHtZ/bjdGsvpIbfE9udqsnSowxIxHA5KzYHbC1x6AAB0A==
+"@nguniversal/module-map-ngfactory-loader@8.2.6":
+  version "8.2.6"
+  resolved "https://registry.yarnpkg.com/@nguniversal/module-map-ngfactory-loader/-/module-map-ngfactory-loader-8.2.6.tgz#0edc07c4437566970392c9bca1d13b8964971cb0"
+  integrity sha512-YcxXSrDZt6iDR+YbesJvprNpHd1nRLeThJwAFlcwvK/GVGSyKeWV6eqk3bRkBkgkw8OwaG/4lOQ4aofxQw+13w==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
