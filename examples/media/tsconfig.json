@@ -22,5 +22,5 @@
   },
   "angularCompilerOptions": {
     "disableTypeScriptVersionCheck": true
-  },
+  }
 }
