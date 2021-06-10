@@ -11,8 +11,7 @@
     }
   },
   "files": [
-    "main_light.ts",
-    "main_heavy.ts",
+    "main.ts",
     "polyfills.ts"
   ],
   "include": [

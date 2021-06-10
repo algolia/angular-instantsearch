@@ -12,7 +12,7 @@
       "querystring-es3/encode": "qs.encode",
       "algoliasearch-helper": "algoliasearchHelper",
       "instantsearch.js/es/widgets/index/index": "instantsearch.widgets.index"
-    }
+    },
   },
   "allowedNonPeerDependencies": [
     "algoliasearch",
