@@ -95,7 +95,7 @@ describe('tree-shaking 🎄', () => {
     ).toThrowError(/'ais-search-box' is not a known element/);
   });
 
-  it('should include only imported components in light build', async () => {
+  it('should include only imported components in build', async () => {
     const bundle = await readFileGlob(
       join(__dirname, './test-app/dist/main-es2015.*.js')
     );
@@ -104,7 +104,7 @@ describe('tree-shaking 🎄', () => {
     expect(bundle).toContain('ais.breadcrumb');
     expect(bundle).toContain('ais.refinementList');
 
-    // FIXME: it seems theses hits, infiniteHits and index are never tree shaked
+    // FIXME: it seems hits, infiniteHits and index are never tree shaked
     // expect(bundle).not.toContain('ais.hits');
     // expect(bundle).not.toContain('ais.infiniteHits');
     // expect(bundle).not.toContain('ais.index');
