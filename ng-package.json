@@ -4,15 +4,17 @@
     "entryFile": "src/index.ts",
     "umdModuleIds": {
       "algoliasearch": "algoliasearch",
+      "algoliasearch/lite": "algoliasearch",
       "algoliasearch/index": "algoliasearch",
       "instantsearch.js/es": "instantsearch",
       "instantsearch.js/es/connectors": "instantsearch.connectors",
       "nouislider": "noUiSlider",
       "querystring-es3/encode": "qs.encode",
-      "algoliasearch-helper": "algoliasearchHelper"
-    }
+      "algoliasearch-helper": "algoliasearchHelper",
+      "instantsearch.js/es/widgets/index/index": "instantsearch.widgets.index"
+    },
   },
-  "whitelistedNonPeerDependencies": [
+  "allowedNonPeerDependencies": [
     "algoliasearch",
     "algoliasearch-helper",
     "instantsearch.js",

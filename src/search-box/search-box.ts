@@ -76,7 +76,8 @@ import { noop } from '../utils';
   `,
 })
 export class NgAisSearchBox extends BaseWidget implements AfterViewInit {
-  @ViewChild('searchBox') searchBox: ElementRef;
+  @ViewChild('searchBox', { static: false })
+  searchBox: ElementRef;
   @Input() public placeholder: string = 'Search';
   @Input() public submitTitle: string = 'Submit';
   @Input() public resetTitle: string = 'Reset';

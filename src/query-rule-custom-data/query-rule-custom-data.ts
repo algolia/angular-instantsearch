@@ -30,7 +30,8 @@ import { NgAisIndex } from '../index-widget/index-widget';
   `,
 })
 export class NgAisQueryRuleCustomData extends BaseWidget {
-  @ContentChild(TemplateRef) public template: any;
+  @ContentChild(TemplateRef, { static: false })
+  public template: any;
 
   @Input() public transformItems?: (items: any[]) => any[];
 

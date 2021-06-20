@@ -1,9 +1,12 @@
 {
   "compilerOptions": {
     "module": "es6",
-    "esModuleInterop": true
+    "baseUrl": "./node_modules",
+    "esModuleInterop": true,
+    "importHelpers": true,
   },
   "angularCompilerOptions": {
-    "disableTypeScriptVersionCheck": true
+    "disableTypeScriptVersionCheck": true,
+    "enableIvy": false
   }
 }

@@ -7,10 +7,7 @@ import {
   SkipSelf,
 } from '@angular/core';
 import { Widget, BaseWidget } from '../base-widget';
-import {
-  InstantSearchInstance,
-  NgAisInstantSearch,
-} from '../instantsearch/instantsearch';
+import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import indexWidget, { Index } from 'instantsearch.js/es/widgets/index/index';
 
 const connectIndex = () => indexWidget;

@@ -32,7 +32,8 @@ export type RangeSliderState = {
   `,
 })
 export class NgAisRangeSlider extends BaseWidget {
-  @ViewChild('sliderContainer') public sliderContainer: any;
+  @ViewChild('sliderContainer', { static: false })
+  public sliderContainer: any;
 
   // rendering options
   @Input() public pips: boolean = true;

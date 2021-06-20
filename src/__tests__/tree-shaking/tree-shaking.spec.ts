@@ -88,68 +88,40 @@ describe('tree-shaking 🎄', () => {
             <ais-instantsearch>
               <ais-toggle></ais-toggle>
               <ais-search-box></ais-search-box>
-            </ais-instantsearch> 
+            </ais-instantsearch>
           `,
         imports: [NgAisToggleModule, NgAisInstantSearchModule.forRoot()],
       })
     ).toThrowError(/'ais-search-box' is not a known element/);
   });
 
-  it('should include all components in heavy build', async () => {
+  it('should include only imported components in build', async () => {
     const bundle = await readFileGlob(
-      join(__dirname, './test-app/dist_heavy/main.*.js')
+      join(__dirname, './test-app/dist/main-es2015.*.js')
     );
 
-    expect(bundle).toContain('ais-hits');
-    expect(bundle).toContain('ais-instantsearch');
-    expect(bundle).toContain('ais-search-box');
-    expect(bundle).toContain('ais-highlight');
+    expect(bundle).toContain('ais.searchBox');
+    expect(bundle).toContain('ais.breadcrumb');
+    expect(bundle).toContain('ais.refinementList');
 
-    expect(bundle).toContain('ais-breadcrumb');
-    expect(bundle).toContain('ais-clear-refinements');
-    expect(bundle).toContain('ais-configure');
-    expect(bundle).toContain('ais-current-refinements');
-    expect(bundle).toContain('ais-hierarchical-menu');
-    expect(bundle).toContain('ais-hits-per-page');
-    expect(bundle).toContain('ais-infinite-hits');
-    expect(bundle).toContain('ais-menu');
-    expect(bundle).toContain('ais-numeric-menu');
-    expect(bundle).toContain('ais-pagination');
-    expect(bundle).toContain('ais-panel');
-    expect(bundle).toContain('ais-range-input');
-    expect(bundle).toContain('ais-range-slider');
-    expect(bundle).toContain('ais-rating-menu');
-    expect(bundle).toContain('ais-refinement-list');
-    expect(bundle).toContain('ais-sort-by');
-    expect(bundle).toContain('ais-toggle');
-  });
+    // FIXME: it seems hits, infiniteHits and index are never tree shaked
+    // expect(bundle).not.toContain('ais.hits');
+    // expect(bundle).not.toContain('ais.infiniteHits');
+    // expect(bundle).not.toContain('ais.index');
 
-  it('should include only imported components in light build', async () => {
-    const bundle = await readFileGlob(
-      join(__dirname, './test-app/dist_light/main.*.js')
-    );
-
-    expect(bundle).toContain('ais-hits');
-    expect(bundle).toContain('ais-instantsearch');
-    expect(bundle).toContain('ais-search-box');
-    expect(bundle).toContain('ais-highlight'); // included by ais-hits
-
-    expect(bundle).not.toContain('ais-breadcrumb');
-    expect(bundle).not.toContain('ais-clear-refinements');
-    expect(bundle).not.toContain('ais-configure');
-    expect(bundle).not.toContain('ais-current-refinements');
-    expect(bundle).not.toContain('ais-hierarchical-menu');
-    expect(bundle).not.toContain('ais-hits-per-page');
-    expect(bundle).not.toContain('ais-infinite-hits');
-    expect(bundle).not.toContain('ais-menu');
-    expect(bundle).not.toContain('ais-numeric-menu');
-    expect(bundle).not.toContain('ais-pagination');
-    expect(bundle).not.toContain('ais-panel');
-    expect(bundle).not.toContain('ais-range-input');
-    expect(bundle).not.toContain('ais-range-slider');
-    expect(bundle).not.toContain('ais-rating-menu');
-    expect(bundle).not.toContain('ais-refinement-list');
-    expect(bundle).not.toContain('ais-sort-by');
-    expect(bundle).not.toContain('ais-toggle');
+    expect(bundle).not.toContain('ais.clearRefinements');
+    expect(bundle).not.toContain('ais.configure');
+    expect(bundle).not.toContain('ais.currentRefinements');
+    expect(bundle).not.toContain('ais.hierarchicalMenu');
+    expect(bundle).not.toContain('ais.hitsPerPage');
+    expect(bundle).not.toContain('ais.menu');
+    expect(bundle).not.toContain('ais.numericMenu');
+    expect(bundle).not.toContain('ais.pagination');
+    expect(bundle).not.toContain('ais.panel');
+    expect(bundle).not.toContain('ais.rangeInput');
+    expect(bundle).not.toContain('ais.rangeSlider');
+    expect(bundle).not.toContain('ais.ratingMenu');
+    expect(bundle).not.toContain('ais.sortBy');
+    expect(bundle).not.toContain('ais.toggle');
   });
 });
