@@ -3,4 +3,4 @@
   publish="netlify-dist"
 
 [build.environment]
-  YARN_VERSION = "1.7.0"
+  YARN_VERSION = "1.22.10"

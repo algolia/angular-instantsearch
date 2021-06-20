@@ -18,7 +18,6 @@
   },
   "angularCompilerOptions": {
     "disableTypeScriptVersionCheck": true,
-    "enableIvy": false
   },
   "include": [
     "src/**/*.ts"

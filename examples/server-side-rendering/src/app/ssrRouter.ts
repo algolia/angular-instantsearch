@@ -1,3 +1,4 @@
+// @ts-nocheck
 import * as qs from 'qs';
 
 export function ssrRouter(readUrl: () => string) {
