@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule, BrowserTransferStateModule } from "@angular/platform-browser";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+import { NgAisModule } from "angular-instantsearch";
 
 @NgModule({
   declarations: [
@@ -10,7 +13,10 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
-    AppRoutingModule
+    BrowserTransferStateModule,
+    AppRoutingModule,
+    HttpClientModule,
+    NgAisModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
