@@ -1,6 +1,7 @@
 import { storiesOf } from '@storybook/angular';
 import { wrapWithHits } from '../wrap-with-hits';
 import meta from '../meta';
+import { RefinementListItem } from 'angular-instantsearch/refinement-list/refinement-list';
 
 storiesOf('RefinementList', module)
   .addDecorator(meta)
@@ -64,7 +65,9 @@ storiesOf('RefinementList', module)
         </ais-panel>
       `,
       methods: {
-        transformItems: items =>
+        transformItems: (
+          items: (RefinementListItem & { highlighted: string })[]
+        ) =>
           items.map(item => {
             item.highlighted = item.highlighted
               .replace(/(\d+) - (\d+)/, '$$$1 - $$$2')

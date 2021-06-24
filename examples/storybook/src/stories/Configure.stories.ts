@@ -22,10 +22,10 @@ storiesOf('Configure', module)
       <ais-configure [searchParameters]="searchParams"></ais-configure>
     `,
       methods: {
-        searchParams: { hitsPerPage: 1 },
+        searchParameters: { hitsPerPage: 1 },
         toggleSearchParams() {
-          this.searchParams.hitsPerPage =
-            this.searchParams.hitsPerPage === 1 ? 10 : 1;
+          (this as any).searchParameters.hitsPerPage =
+            (this as any).searchParameters.hitsPerPage === 1 ? 10 : 1;
         },
       },
     }),

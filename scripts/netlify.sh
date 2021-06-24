@@ -22,4 +22,4 @@ SKIP_PACKAGE_BUILD=true yarn examples:storybook:build
 
 mv ./examples/e-commerce/dist ./netlify-dist/examples/e-commerce
 mv ./examples/media/dist ./netlify-dist/examples/media
-mv ./examples/storybook/dist ./netlify-dist/examples/storybook
+mv ./examples/storybook/storybook-static ./netlify-dist/examples/storybook

@@ -12,7 +12,7 @@ export type BreadcrumbState = {
 };
 
 export type BreadcrumbItem = {
-  name: string;
+  label: string;
   value: string;
 };
 

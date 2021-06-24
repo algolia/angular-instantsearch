@@ -1,6 +1,7 @@
 import { storiesOf } from '@storybook/angular';
 import { wrapWithHits } from '../wrap-with-hits';
 import meta from '../meta';
+import { HierarchicalMenuItem } from 'angular-instantsearch/hierarchical-menu/hierarchical-menu';
 
 storiesOf('HierarchicalMenu', module)
   .addDecorator(meta)
@@ -55,7 +56,9 @@ storiesOf('HierarchicalMenu', module)
     }),
   }))
   .add('with transformItems', () => {
-    const transformItems = items =>
+    const transformItems = (
+      items: HierarchicalMenuItem[]
+    ): HierarchicalMenuItem[] =>
       items.map(item => ({
         ...item,
         label: `${item.label} (transformed)`,
