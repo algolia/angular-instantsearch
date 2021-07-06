@@ -2,9 +2,8 @@
   "name": "storybook",
   "version": "0.0.0",
   "scripts": {
-    "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
-    "start": "yarn docs:json && start-storybook -p 6006",
-    "build": "yarn docs:json && build-storybook"
+    "start": "start-storybook -p 6006",
+    "build": "build-storybook"
   },
   "private": true,
   "dependencies": {
@@ -29,7 +28,6 @@
     "@angular/compiler-cli": "~12.1.0",
     "@angular/elements": "^12.1.0",
     "@babel/core": "^7.14.6",
-    "@compodoc/compodoc": "^1.1.11",
     "@storybook/addon-actions": "^6.3.1",
     "@storybook/addon-essentials": "^6.3.1",
     "@storybook/addon-links": "^6.3.1",
