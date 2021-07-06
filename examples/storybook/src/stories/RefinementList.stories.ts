@@ -65,13 +65,13 @@ storiesOf('RefinementList', module)
         </ais-panel>
       `,
       methods: {
-        transformItems: (
-          items: (RefinementListItem & { highlighted: string })[]
-        ) =>
+        transformItems: (items: RefinementListItem[]) =>
           items.map(item => {
-            item.highlighted = item.highlighted
-              .replace(/(\d+) - (\d+)/, '$$$1 - $$$2')
-              .replace(/> (\d+)/, '> $$$1');
+            if (item.highlighted) {
+              item.highlighted = item.highlighted
+                .replace(/(\d+) - (\d+)/, '$$$1 - $$$2')
+                .replace(/> (\d+)/, '> $$$1');
+            }
             return item;
           }),
       },

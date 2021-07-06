@@ -13,6 +13,7 @@ export type RefinementListItem = {
   label: string;
   count: number;
   isRefined: boolean;
+  highlighted?: string;
 };
 
 export type RefinementListState = {
