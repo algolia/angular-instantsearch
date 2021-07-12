@@ -8,7 +8,9 @@ import {
 } from '@angular/core';
 import { Widget, BaseWidget } from '../base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
-import indexWidget, { Index } from 'instantsearch.js/es/widgets/index/index';
+import indexWidget, {
+  IndexWidget,
+} from 'instantsearch.js/es/widgets/index/index';
 
 const connectIndex = () => indexWidget;
 
@@ -20,7 +22,7 @@ export class NgAisIndex extends BaseWidget {
   @Input() public indexName: string;
   @Input() public indexId?: string;
 
-  public widget?: Index;
+  public widget?: IndexWidget;
 
   constructor(
     // public API does not include SkipSelf, but the index widget should accept parents, avoiding itself.

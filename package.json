@@ -95,7 +95,8 @@
   "dependencies": {
     "instantsearch.css": "^7.3.1",
     "nouislider": "^10.0.0",
-    "querystring-es3": "^0.2.1"
+    "querystring-es3": "^0.2.1",
+    "instantsearch.js": "4.25.0-experimental-typescript.0"
   },
   "devDependencies": {
     "@angular/common": "12.0.3",
@@ -107,10 +108,10 @@
     "@types/jest": "24.0.18",
     "@types/node": "9.6.53",
     "@types/nouislider": "9.0.5",
-    "algoliasearch": "^4.4.0",
+    "algoliasearch": "^4.10.3",
     "algoliasearch-v3": "npm:algoliasearch@3.35.1",
     "@types/algoliasearch-v3": "npm:@types/algoliasearch@3.34.10",
-    "algoliasearch-helper": "^3.1.2",
+    "algoliasearch-helper": "^3.5.4",
     "babel-cli": "6.26.0",
     "babel-core": "6.26.3",
     "babel-eslint": "10.0.1",
@@ -127,7 +128,6 @@
     "eslint-config-prettier": "6.0.0",
     "eslint-plugin-import": "2.18.2",
     "eslint-plugin-prettier": "3.1.0",
-    "instantsearch.js": "4.7.1-experimental-typescript.0",
     "jest": "26.3.0",
     "jest-preset-angular": "8.4.0",
     "ng-packagr": "^12.0.3",
@@ -156,7 +156,6 @@
     "@angular/common": ">=5.0.0 <13.0.0",
     "@angular/core": ">=5.0.0 <13.0.0",
     "@angular/platform-browser": ">=5.0.0 <13.0.0",
-    "@angular/platform-browser-dynamic": ">=5.0.0 <13.0.0",
-    "instantsearch.js": "^4.24.0"
+    "@angular/platform-browser-dynamic": ">=5.0.0 <13.0.0"
   }
 }
