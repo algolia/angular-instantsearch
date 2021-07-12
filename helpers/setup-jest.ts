@@ -1,4 +1,4 @@
-import 'jest-preset-angular';
+import 'jest-preset-angular/setup-jest';
 
 // stupid workaround for TS
 import * as helper from 'algoliasearch-helper';

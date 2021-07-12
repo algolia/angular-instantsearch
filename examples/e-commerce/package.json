@@ -4,36 +4,36 @@
   "license": "MIT",
   "scripts": {
     "start": "ng serve",
-    "build": "ng build --prod --base-href '.' --no-progress"
+    "build": "ng build --configuration production --base-href '.' --no-progress"
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "8.1.2",
-    "@angular/common": "8.1.2",
-    "@angular/compiler": "8.1.2",
-    "@angular/core": "8.1.2",
-    "@angular/forms": "8.1.2",
-    "@angular/http": "7.2.15",
-    "@angular/platform-browser": "8.1.2",
-    "@angular/platform-browser-dynamic": "8.1.2",
-    "@angular/router": "8.1.2",
+    "@angular/animations": "12.0.3",
+    "@angular/common": "12.0.3",
+    "@angular/compiler": "12.0.3",
+    "@angular/core": "12.0.3",
+    "@angular/forms": "12.0.3",
+    "@angular/platform-browser": "12.0.3",
+    "@angular/platform-browser-dynamic": "12.0.3",
+    "@angular/router": "12.0.3",
     "algoliasearch": "4.4.0",
     "angular-instantsearch": "3.0.0-beta.1",
     "core-js": "2.4.1",
     "instantsearch.js": "4.7.1-experimental-typescript.0",
     "nouislider": "10.1.0",
-    "rxjs": "6.5.2",
-    "zone.js": "0.9.1"
+    "rxjs": "6.6.7",
+    "tslib": "^2.0.0",
+    "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "0.13.9",
-    "@angular/cli": "7.3.10",
-    "@angular/compiler-cli": "7.2.16",
-    "@angular/language-service": "7.2.16",
-    "@types/node": "9.6.53",
-    "codelyzer": "5.1.0",
+    "@angular-devkit/build-angular": "~12.0.3",
+    "@angular/cli": "12.0.3",
+    "@angular/compiler-cli": "12.0.3",
+    "@angular/language-service": "12.0.3",
+    "@types/node": "^12.11.1",
+    "codelyzer": "^6.0.0",
     "ts-node": "3.2.2",
-    "tslint": "5.0.0",
-    "typescript": "3.7.2"
+    "tslint": "~6.1.0",
+    "typescript": "4.2.4"
   }
 }

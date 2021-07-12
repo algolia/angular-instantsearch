@@ -1,9 +1,12 @@
 {
   "compilerOptions": {
     "module": "es6",
-    "esModuleInterop": true
+    "baseUrl": "./node_modules",
+    "esModuleInterop": true,
   },
   "angularCompilerOptions": {
-    "disableTypeScriptVersionCheck": true
+    "disableTypeScriptVersionCheck": true,
+    // disabling Ivy is required for compatibility see https://angular.io/guide/ivy#maintaining-library-compatibility
+    "enableIvy": false
   }
 }

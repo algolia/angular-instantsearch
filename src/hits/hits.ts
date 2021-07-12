@@ -40,7 +40,8 @@ export type HitsState = {
   `,
 })
 export class NgAisHits extends BaseWidget {
-  @ContentChild(TemplateRef) public template?: TemplateRef<any>;
+  @ContentChild(TemplateRef, { static: false })
+  public template?: TemplateRef<any>;
 
   @Input() public escapeHTML?: boolean;
   @Input() public transformItems?: <U extends Hit>(items: Hit[]) => U[];

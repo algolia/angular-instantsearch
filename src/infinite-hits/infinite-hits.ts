@@ -63,7 +63,8 @@ export type InfiniteHitsState = {
   `,
 })
 export class NgAisInfiniteHits extends BaseWidget {
-  @ContentChild(TemplateRef) public template?: any;
+  @ContentChild(TemplateRef, { static: false })
+  public template?: any;
 
   // rendering options
   @Input() public escapeHTML: boolean;

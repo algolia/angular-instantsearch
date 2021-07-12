@@ -10,7 +10,7 @@ type WrapWithHitsParams = {
   template: string;
   styles?: string[];
   searchParameters?: {};
-  methods?: {};
+  methods?: { [key: string]: any };
   searchFunction?: (helper: Helper) => void;
   searchClient?: {};
   // TODO: update with InstantSearch.js types
@@ -101,7 +101,7 @@ export function wrapWithHits({
 
     constructor() {
       Object.keys(methods).forEach(methodName => {
-        this[methodName] = methods[methodName];
+        (this as any)[methodName] = methods[methodName];
       });
     }
   }

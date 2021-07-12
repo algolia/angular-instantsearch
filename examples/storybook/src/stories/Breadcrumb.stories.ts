@@ -1,6 +1,7 @@
 import { storiesOf } from '@storybook/angular';
 import { wrapWithHits } from '../wrap-with-hits';
 import meta from '../meta';
+import { BreadcrumbItem } from 'angular-instantsearch/breadcrumb/breadcrumb';
 
 storiesOf('Breadcrumb', module)
   .addDecorator(meta)
@@ -28,7 +29,7 @@ storiesOf('Breadcrumb', module)
         },
       },
       methods: {
-        transformItems: items =>
+        transformItems: (items: BreadcrumbItem[]) =>
           items.map(item => ({
             ...item,
             label: `${item.label} (transformed)`,
