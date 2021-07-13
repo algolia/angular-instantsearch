@@ -48,7 +48,7 @@ const connectNoop: Connector = function(
 ) {
   return function(widgetParams?: object): Widget {
     return {
-      $$type: 'noop',
+      $$type: 'demo.noop',
       init: ({ instantSearchInstance }) => {
         renderFn(
           {
