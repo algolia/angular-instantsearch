@@ -5,10 +5,11 @@ set -e # exit when error
 rm -rf ./netlify-dist
 mkdir -p ./netlify-dist/examples
 
-# build community website
-(cd community-website && yarn)
-(cd community-website && ROOT_PATH=$ROOT_PATH yarn docs:build)
-mv ./community-website/docs/* ./netlify-dist/
+# TODO: remove community website
+# # build community website
+# (cd community-website && yarn)
+# (cd community-website && ROOT_PATH=$ROOT_PATH yarn docs:build)
+# mv ./community-website/docs/* ./netlify-dist/
 
 # build package
 yarn
@@ -21,4 +22,4 @@ SKIP_PACKAGE_BUILD=true yarn examples:storybook:build
 
 mv ./examples/e-commerce/dist ./netlify-dist/examples/e-commerce
 mv ./examples/media/dist ./netlify-dist/examples/media
-mv ./examples/storybook/dist ./netlify-dist/examples/storybook
+mv ./examples/storybook/storybook-static ./netlify-dist/examples/storybook

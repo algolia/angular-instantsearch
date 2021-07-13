@@ -22,7 +22,7 @@ export function createRenderer({
   defaultState?: {};
   methods?: {};
 }) {
-  return function(state?: {}, firstRender = false) {
+  return function(state?: {}, isFirstRender = false) {
     return render(
       {
         template,
@@ -32,7 +32,7 @@ export function createRenderer({
         state: state ? { ...(defaultState || {}), ...state } : undefined,
         methods,
       },
-      firstRender
+      isFirstRender
     );
   };
 }
@@ -53,7 +53,7 @@ function render(
     state?: {};
     methods?: {};
   },
-  firstRender = false
+  isFirstRender = false
 ) {
   @Component({
     template: `
@@ -86,7 +86,7 @@ function render(
   fixture.detectChanges();
 
   if (state) {
-    fixture.componentInstance.testedWidget.updateState(state, firstRender);
+    fixture.componentInstance.testedWidget.updateState(state, isFirstRender);
     fixture.detectChanges();
   }
 

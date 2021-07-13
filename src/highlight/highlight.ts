@@ -1,6 +1,5 @@
-const get = require('lodash/get');
 import { Component, Input } from '@angular/core';
-import { bem } from '../utils';
+import { bem, getPropertyByPath } from '../utils';
 
 @Component({
   selector: 'ais-highlight',
@@ -21,7 +20,7 @@ export class NgAisHighlight {
     }
 
     if (this.hit.hasOwnProperty('_highlightResult')) {
-      const attributeHighlighted = get(
+      const attributeHighlighted = getPropertyByPath(
         this.hit._highlightResult,
         this.attribute
       );
@@ -35,7 +34,7 @@ export class NgAisHighlight {
       }
     }
 
-    const fallback = get(this.hit, this.attribute);
+    const fallback = getPropertyByPath(this.hit, this.attribute);
     if (!fallback) {
       console.warn(
         `Could not find attribute [${

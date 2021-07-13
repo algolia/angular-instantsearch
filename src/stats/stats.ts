@@ -4,12 +4,14 @@ import {
   TemplateRef,
   Inject,
   forwardRef,
+  Optional,
 } from '@angular/core';
 
 import { connectStats } from 'instantsearch.js/es/connectors';
 
 import { BaseWidget } from '../base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
+import { NgAisIndex } from '../index-widget/index-widget';
 
 @Component({
   selector: 'ais-stats',
@@ -25,7 +27,8 @@ import { NgAisInstantSearch } from '../instantsearch/instantsearch';
   `,
 })
 export class NgAisStats extends BaseWidget {
-  @ContentChild(TemplateRef) public template: any;
+  @ContentChild(TemplateRef, { static: false })
+  public template: any;
 
   public state = {
     hitPerPage: 0,
@@ -41,8 +44,11 @@ export class NgAisStats extends BaseWidget {
   }
 
   constructor(
+    @Inject(forwardRef(() => NgAisIndex))
+    @Optional()
+    public parentIndex: NgAisIndex,
     @Inject(forwardRef(() => NgAisInstantSearch))
-    public instantSearchParent: any
+    public instantSearchInstance: NgAisInstantSearch
   ) {
     super('Stats');
     this.createWidget(connectStats);

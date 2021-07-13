@@ -5,11 +5,13 @@ import {
   TemplateRef,
   Inject,
   forwardRef,
+  Optional,
 } from '@angular/core';
 
 import { connectInfiniteHitsWithInsights } from 'instantsearch.js/es/connectors';
 import { BaseWidget } from '../base-widget';
 import { NgAisInstantSearch, Hit } from '../instantsearch/instantsearch';
+import { NgAisIndex } from '../index-widget/index-widget';
 import { noop } from '../utils';
 
 export type InfiniteHitsState = {
@@ -61,7 +63,8 @@ export type InfiniteHitsState = {
   `,
 })
 export class NgAisInfiniteHits extends BaseWidget {
-  @ContentChild(TemplateRef) public template?: any;
+  @ContentChild(TemplateRef, { static: false })
+  public template?: any;
 
   // rendering options
   @Input() public escapeHTML: boolean;
@@ -81,8 +84,11 @@ export class NgAisInfiniteHits extends BaseWidget {
   };
 
   constructor(
+    @Inject(forwardRef(() => NgAisIndex))
+    @Optional()
+    public parentIndex: NgAisIndex,
     @Inject(forwardRef(() => NgAisInstantSearch))
-    public instantSearchParent: any
+    public instantSearchInstance: NgAisInstantSearch
   ) {
     super('InfiniteHits');
   }

@@ -6,7 +6,7 @@ set -e # exit when error
 rm -rf dist
 
 # compile through ng-packagr
-ng-packagr -p ng-package.json
+node scripts/ng-packagr.js
 
 # copy and rename css from instantsearch.css
 cp node_modules/instantsearch.css/themes/*.css dist/bundles

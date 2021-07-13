@@ -5,12 +5,14 @@ import {
   Inject,
   forwardRef,
   Input,
+  Optional,
 } from '@angular/core';
 
 import { connectQueryRules } from 'instantsearch.js/es/connectors';
 
 import { BaseWidget } from '../base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
+import { NgAisIndex } from '../index-widget/index-widget';
 
 @Component({
   selector: 'ais-query-rule-custom-data',
@@ -28,7 +30,8 @@ import { NgAisInstantSearch } from '../instantsearch/instantsearch';
   `,
 })
 export class NgAisQueryRuleCustomData extends BaseWidget {
-  @ContentChild(TemplateRef) public template: any;
+  @ContentChild(TemplateRef, { static: false })
+  public template: any;
 
   @Input() public transformItems?: (items: any[]) => any[];
 
@@ -43,8 +46,11 @@ export class NgAisQueryRuleCustomData extends BaseWidget {
   }
 
   constructor(
+    @Inject(forwardRef(() => NgAisIndex))
+    @Optional()
+    public parentIndex: NgAisIndex,
     @Inject(forwardRef(() => NgAisInstantSearch))
-    public instantSearchParent: any
+    public instantSearchInstance: NgAisInstantSearch
   ) {
     super('QueryRuleCustomData');
   }

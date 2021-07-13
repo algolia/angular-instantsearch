@@ -3,11 +3,15 @@
 # compiled output
 /dist
 /tmp
-/.cache
 /out-tsc
+# Only exists if Bazel was run
+/bazel-out
 
 # dependencies
 /node_modules
+
+# profiling files
+chrome-profiler-events*.json
 
 # IDEs and editors
 /.idea
@@ -24,6 +28,7 @@
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+.history/*
 
 # misc
 /.sass-cache
@@ -38,3 +43,5 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+storybook-static
+documentation.json

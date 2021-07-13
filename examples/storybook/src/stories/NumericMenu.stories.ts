@@ -1,6 +1,7 @@
 import { storiesOf } from '@storybook/angular';
 import { wrapWithHits } from '../wrap-with-hits';
 import meta from '../meta';
+import { NumericMenuItem } from 'angular-instantsearch/numeric-menu/numeric-menu';
 
 storiesOf('NumericMenu', module)
   .addDecorator(meta)
@@ -24,7 +25,7 @@ storiesOf('NumericMenu', module)
     }),
   }))
   .add('with transformItems', () => {
-    const transformItems = items => {
+    const transformItems = (items: NumericMenuItem[]) => {
       return items.map(item => ({
         ...item,
         label: `${item.label} (transformed)`,

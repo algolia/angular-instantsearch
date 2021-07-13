@@ -1,10 +1,18 @@
-import { Component, Input, ViewChild, Inject, forwardRef } from '@angular/core';
+import {
+  Component,
+  Input,
+  ViewChild,
+  Inject,
+  forwardRef,
+  Optional,
+} from '@angular/core';
 
 import { connectRange } from 'instantsearch.js/es/connectors';
 import * as noUiSlider from 'nouislider';
 
 import { BaseWidget } from '../base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
+import { NgAisIndex } from '../index-widget/index-widget';
 import { parseNumberInput, noop } from '../utils';
 
 export type RangeSliderState = {
@@ -24,7 +32,8 @@ export type RangeSliderState = {
   `,
 })
 export class NgAisRangeSlider extends BaseWidget {
-  @ViewChild('sliderContainer') public sliderContainer: any;
+  @ViewChild('sliderContainer', { static: false })
+  public sliderContainer: any;
 
   // rendering options
   @Input() public pips: boolean = true;
@@ -51,8 +60,11 @@ export class NgAisRangeSlider extends BaseWidget {
   }
 
   constructor(
+    @Inject(forwardRef(() => NgAisIndex))
+    @Optional()
+    public parentIndex: NgAisIndex,
     @Inject(forwardRef(() => NgAisInstantSearch))
-    public instantSearchParent: any
+    public instantSearchInstance: NgAisInstantSearch
   ) {
     super('RangeSlider');
   }
@@ -84,6 +96,7 @@ export class NgAisRangeSlider extends BaseWidget {
         ],
       };
 
+      // tslint:disable-next-line: no-boolean-literal-compare (pips is @Input, so could be not a boolean)
       if (this.pips === true || typeof this.pips === 'undefined') {
         Object.assign(config, {
           pips: {

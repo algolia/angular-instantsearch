@@ -10,7 +10,7 @@ import { NgAisInstantSearch } from './instantsearch';
   imports: [CommonModule],
 })
 export class NgAisInstantSearchModule {
-  public static forRoot(): ModuleWithProviders {
+  public static forRoot(): ModuleWithProviders<NgAisInstantSearchModule> {
     return {
       ngModule: NgAisInstantSearchModule,
       providers: [],

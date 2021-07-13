@@ -14,13 +14,7 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
           class="ais-HierarchicalMenu-list ais-HierarchicalMenu-list--lvl0"
         >
           
-          <ais-hierarchical-menu-item
-            ng-reflect-create-u-r-l="function() {
-          return fn"
-            ng-reflect-item="[object Object]"
-            ng-reflect-refine="function() {
-          return fn"
-          >
+          <ais-hierarchical-menu-item>
             <li
               class="ais-HierarchicalMenu-item"
             >
@@ -42,13 +36,7 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
               
             </li>
           </ais-hierarchical-menu-item>
-          <ais-hierarchical-menu-item
-            ng-reflect-create-u-r-l="function() {
-          return fn"
-            ng-reflect-item="[object Object]"
-            ng-reflect-refine="function() {
-          return fn"
-          >
+          <ais-hierarchical-menu-item>
             <li
               class="ais-HierarchicalMenu-item ais-HierarchicalMenu-item--selected ais-HierarchicalMenu-item--parent"
             >
@@ -72,14 +60,7 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
                 class="ais-HierarchicalMenu-list ais-HierarchicalMenu-list--child ais-HierarchicalMenu-list--lvl1"
               >
                 
-                <ais-hierarchical-menu-item
-                  ng-reflect-create-u-r-l="function() {
-          return fn"
-                  ng-reflect-item="[object Object]"
-                  ng-reflect-lvl="2"
-                  ng-reflect-refine="function() {
-          return fn"
-                >
+                <ais-hierarchical-menu-item>
                   <li
                     class="ais-HierarchicalMenu-item"
                   >
@@ -101,14 +82,7 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
                     
                   </li>
                 </ais-hierarchical-menu-item>
-                <ais-hierarchical-menu-item
-                  ng-reflect-create-u-r-l="function() {
-          return fn"
-                  ng-reflect-item="[object Object]"
-                  ng-reflect-lvl="2"
-                  ng-reflect-refine="function() {
-          return fn"
-                >
+                <ais-hierarchical-menu-item>
                   <li
                     class="ais-HierarchicalMenu-item"
                   >
@@ -130,14 +104,7 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
                     
                   </li>
                 </ais-hierarchical-menu-item>
-                <ais-hierarchical-menu-item
-                  ng-reflect-create-u-r-l="function() {
-          return fn"
-                  ng-reflect-item="[object Object]"
-                  ng-reflect-lvl="2"
-                  ng-reflect-refine="function() {
-          return fn"
-                >
+                <ais-hierarchical-menu-item>
                   <li
                     class="ais-HierarchicalMenu-item"
                   >
@@ -159,14 +126,7 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
                     
                   </li>
                 </ais-hierarchical-menu-item>
-                <ais-hierarchical-menu-item
-                  ng-reflect-create-u-r-l="function() {
-          return fn"
-                  ng-reflect-item="[object Object]"
-                  ng-reflect-lvl="2"
-                  ng-reflect-refine="function() {
-          return fn"
-                >
+                <ais-hierarchical-menu-item>
                   <li
                     class="ais-HierarchicalMenu-item"
                   >
@@ -191,13 +151,7 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
               </ul>
             </li>
           </ais-hierarchical-menu-item>
-          <ais-hierarchical-menu-item
-            ng-reflect-create-u-r-l="function() {
-          return fn"
-            ng-reflect-item="[object Object]"
-            ng-reflect-refine="function() {
-          return fn"
-          >
+          <ais-hierarchical-menu-item>
             <li
               class="ais-HierarchicalMenu-item"
             >
@@ -219,13 +173,7 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
               
             </li>
           </ais-hierarchical-menu-item>
-          <ais-hierarchical-menu-item
-            ng-reflect-create-u-r-l="function() {
-          return fn"
-            ng-reflect-item="[object Object]"
-            ng-reflect-refine="function() {
-          return fn"
-          >
+          <ais-hierarchical-menu-item>
             <li
               class="ais-HierarchicalMenu-item"
             >
@@ -247,13 +195,7 @@ exports[`HierarchicalMenu renders markup with state 1`] = `
               
             </li>
           </ais-hierarchical-menu-item>
-          <ais-hierarchical-menu-item
-            ng-reflect-create-u-r-l="function() {
-          return fn"
-            ng-reflect-item="[object Object]"
-            ng-reflect-refine="function() {
-          return fn"
-          >
+          <ais-hierarchical-menu-item>
             <li
               class="ais-HierarchicalMenu-item"
             >

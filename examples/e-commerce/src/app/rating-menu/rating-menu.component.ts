@@ -6,8 +6,13 @@ import {
   ContentChild,
   ElementRef,
   TemplateRef,
+  Optional,
 } from '@angular/core';
-import { BaseWidget, NgAisInstantSearch } from 'angular-instantsearch';
+import {
+  BaseWidget,
+  NgAisInstantSearch,
+  NgAisIndex,
+} from 'angular-instantsearch';
 import { connectRatingMenu } from 'instantsearch.js/es/connectors';
 
 const noop = (): void => {};
@@ -81,7 +86,7 @@ export type RatingMenuState = {
 })
 export class RatingMenu extends BaseWidget {
   // rendering options
-  @ContentChild('starSvg', { static: true })
+  @ContentChild('starSvg', { read: true, static: true })
   starSvg: TemplateRef<ElementRef>;
 
   // instance options
@@ -100,8 +105,11 @@ export class RatingMenu extends BaseWidget {
   }
 
   constructor(
+    @Inject(forwardRef(() => NgAisIndex))
+    @Optional()
+    public parentIndex: NgAisIndex,
     @Inject(forwardRef(() => NgAisInstantSearch))
-    public instantSearchParent: any
+    public instantSearchInstance: NgAisInstantSearch
   ) {
     super('RatingMenu');
   }

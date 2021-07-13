@@ -2,6 +2,7 @@ import { storiesOf } from '@storybook/angular';
 import { action } from '@storybook/addon-actions';
 import { wrapWithHits } from '../wrap-with-hits';
 import meta from '../meta';
+import { Hit } from 'instantsearch.js/es/types';
 
 storiesOf('Hits', module)
   .addDecorator(meta)
@@ -28,7 +29,7 @@ storiesOf('Hits', module)
   .add('with transformItems', () => ({
     component: wrapWithHits({
       template: `
-      <ais-hits [transformItems]="transformItems"> 
+      <ais-hits [transformItems]="transformItems">
         <ng-template let-hits="hits">
           <div *ngFor="let hit of hits">
             Hit {{hit.name}}
@@ -37,7 +38,7 @@ storiesOf('Hits', module)
       </ais-hits>
       `,
       methods: {
-        transformItems: items =>
+        transformItems: (items: Hit[]) =>
           items.map(item => ({ ...item, name: `${item.name} (transformed)` })),
       },
     }),
@@ -51,7 +52,7 @@ storiesOf('Hits', module)
             Hit {{hit.objectID}}:
             <ais-highlight attribute="name" [hit]="hit">
             </ais-highlight>
-            
+
             <button (click)="insights('clickedObjectIDsAfterSearch', { eventName: 'Add to cart', objectIDs: [hit.objectID] })">
               Add to favorite
             </button>

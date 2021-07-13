@@ -24,5 +24,14 @@ fi
   mkdir -p ./node_modules/instantsearch.js
   cp -R ../../node_modules/instantsearch.js/* ./node_modules/instantsearch.js
 
-  yarn build
+  # copy same helper version
+  rm -rf ./node_modules/algoliasearch-helper
+  mkdir -p ./node_modules/algoliasearch-helper
+  cp -R ../../node_modules/algoliasearch-helper/* ./node_modules/algoliasearch-helper
+
+  if [ $1 = "server-side-rendering" ]; then
+    yarn build:ssr
+  else
+    yarn build
+  fi
 )

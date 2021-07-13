@@ -1,23 +1,22 @@
+import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import {
   BrowserModule,
   BrowserTransferStateModule,
 } from '@angular/platform-browser';
 
-import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-import { PrebootModule } from 'preboot';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
 
 import { NgAisModule } from 'angular-instantsearch';
-
-import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'my-app' }),
-    PrebootModule.withConfig({ appRoot: 'app-root' }),
-    HttpClientModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserTransferStateModule,
+    AppRoutingModule,
+    HttpClientModule,
     NgAisModule.forRoot(),
   ],
   providers: [],

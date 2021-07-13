@@ -3,16 +3,14 @@ import { Component, VERSION as AngularVersion } from '@angular/core';
 import { VERSION } from '../../version';
 import { TestBed } from '@angular/core/testing';
 
-jest.mock('instantsearch.js/es', () => ({
-  default: () => {
-    return {
-      on: jest.fn(),
-      start: jest.fn(),
-      removeListener: jest.fn(),
-      dispose: jest.fn(),
-    };
-  },
-}));
+jest.mock('instantsearch.js/es', () => () => {
+  return {
+    on: jest.fn(),
+    start: jest.fn(),
+    removeListener: jest.fn(),
+    dispose: jest.fn(),
+  };
+});
 
 jest.mock('../../../src/base-widget');
 

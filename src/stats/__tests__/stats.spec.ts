@@ -1,10 +1,6 @@
 import { createRenderer } from '../../../helpers/test-renderer';
 import { NgAisStats } from '../stats';
 
-import { bem } from '../../utils';
-
-const cx = bem('Stats');
-
 const render = createRenderer({
   defaultState: {
     hitPerPage: 20,

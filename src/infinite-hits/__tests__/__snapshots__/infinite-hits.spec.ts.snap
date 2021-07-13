@@ -22,8 +22,6 @@ exports[`InfiniteHits renders markup with state 1`] = `
             >
               <ais-highlight
                 attribute="name"
-                ng-reflect-attribute="name"
-                ng-reflect-hit="[object Object]"
               >
                 <span
                   class="ais-Highlight"
@@ -37,8 +35,6 @@ exports[`InfiniteHits renders markup with state 1`] = `
             >
               <ais-highlight
                 attribute="name"
-                ng-reflect-attribute="name"
-                ng-reflect-hit="[object Object]"
               >
                 <span
                   class="ais-Highlight"
@@ -52,8 +48,6 @@ exports[`InfiniteHits renders markup with state 1`] = `
             >
               <ais-highlight
                 attribute="name"
-                ng-reflect-attribute="name"
-                ng-reflect-hit="[object Object]"
               >
                 <span
                   class="ais-Highlight"
@@ -67,8 +61,6 @@ exports[`InfiniteHits renders markup with state 1`] = `
             >
               <ais-highlight
                 attribute="name"
-                ng-reflect-attribute="name"
-                ng-reflect-hit="[object Object]"
               >
                 <span
                   class="ais-Highlight"
@@ -82,7 +74,6 @@ exports[`InfiniteHits renders markup with state 1`] = `
         
         <button
           class="ais-InfiniteHits-loadMore"
-          ng-reflect-ng-class="ais-InfiniteHits-loadMore,"
         >
            Show more results 
         </button>
@@ -114,7 +105,6 @@ exports[`InfiniteHits renders markup without state 1`] = `
         
         <button
           class="ais-InfiniteHits-loadMore"
-          ng-reflect-ng-class="ais-InfiniteHits-loadMore,"
         >
            Show more results 
         </button>
@@ -188,8 +178,6 @@ exports[`InfiniteHits should disable \`showMore\` button 1`] = `
             >
               <ais-highlight
                 attribute="name"
-                ng-reflect-attribute="name"
-                ng-reflect-hit="[object Object]"
               >
                 <span
                   class="ais-Highlight"
@@ -203,8 +191,6 @@ exports[`InfiniteHits should disable \`showMore\` button 1`] = `
             >
               <ais-highlight
                 attribute="name"
-                ng-reflect-attribute="name"
-                ng-reflect-hit="[object Object]"
               >
                 <span
                   class="ais-Highlight"
@@ -218,8 +204,6 @@ exports[`InfiniteHits should disable \`showMore\` button 1`] = `
             >
               <ais-highlight
                 attribute="name"
-                ng-reflect-attribute="name"
-                ng-reflect-hit="[object Object]"
               >
                 <span
                   class="ais-Highlight"
@@ -233,8 +217,6 @@ exports[`InfiniteHits should disable \`showMore\` button 1`] = `
             >
               <ais-highlight
                 attribute="name"
-                ng-reflect-attribute="name"
-                ng-reflect-hit="[object Object]"
               >
                 <span
                   class="ais-Highlight"
@@ -249,7 +231,6 @@ exports[`InfiniteHits should disable \`showMore\` button 1`] = `
         <button
           class="ais-InfiniteHits-loadMore ais-InfiniteHits-loadMore--disabled"
           disabled=""
-          ng-reflect-ng-class="ais-InfiniteHits-loadMore,ais-"
         >
            Show more results 
         </button>
@@ -264,9 +245,7 @@ exports[`InfiniteHits should disable \`showPrevious\` button on first page 2`] =
   testedWidget={[Function NgAisInfiniteHits]}
 >
   <ais-instantsearch>
-    <ais-infinite-hits
-      ng-reflect-show-previous="true"
-    >
+    <ais-infinite-hits>
       <div
         class="ais-InfiniteHits"
       >
@@ -275,7 +254,6 @@ exports[`InfiniteHits should disable \`showPrevious\` button on first page 2`] =
         <button
           class="ais-InfiniteHits-loadPrevious ais-InfiniteHits-loadPrevious--disabled"
           disabled=""
-          ng-reflect-ng-class="ais-InfiniteHits-loadPrevious,"
         >
            Show previous results 
         </button>
@@ -290,8 +268,6 @@ exports[`InfiniteHits should disable \`showPrevious\` button on first page 2`] =
             >
               <ais-highlight
                 attribute="name"
-                ng-reflect-attribute="name"
-                ng-reflect-hit="[object Object]"
               >
                 <span
                   class="ais-Highlight"
@@ -305,8 +281,6 @@ exports[`InfiniteHits should disable \`showPrevious\` button on first page 2`] =
             >
               <ais-highlight
                 attribute="name"
-                ng-reflect-attribute="name"
-                ng-reflect-hit="[object Object]"
               >
                 <span
                   class="ais-Highlight"
@@ -320,8 +294,6 @@ exports[`InfiniteHits should disable \`showPrevious\` button on first page 2`] =
             >
               <ais-highlight
                 attribute="name"
-                ng-reflect-attribute="name"
-                ng-reflect-hit="[object Object]"
               >
                 <span
                   class="ais-Highlight"
@@ -335,8 +307,6 @@ exports[`InfiniteHits should disable \`showPrevious\` button on first page 2`] =
             >
               <ais-highlight
                 attribute="name"
-                ng-reflect-attribute="name"
-                ng-reflect-hit="[object Object]"
               >
                 <span
                   class="ais-Highlight"
@@ -350,7 +320,6 @@ exports[`InfiniteHits should disable \`showPrevious\` button on first page 2`] =
         
         <button
           class="ais-InfiniteHits-loadMore"
-          ng-reflect-ng-class="ais-InfiniteHits-loadMore,"
         >
            Show more results 
         </button>

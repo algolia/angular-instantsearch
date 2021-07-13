@@ -1,4 +1,4 @@
-import * as algoliasearchProxy from 'algoliasearch';
+import * as algoliasearchProxy from 'algoliasearch/lite';
 import * as encodeProxy from 'querystring-es3/encode';
 import { VERSION as AngularVersion } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -23,7 +23,15 @@ type RequestOptions = {
   body: string;
 };
 
-const algoliasearch = algoliasearchProxy.default || algoliasearchProxy;
+// compatibility with different typescript settings:
+// - esModuleInterop
+// - allowSyntheticDefaultImports
+const algoliasearch = (typeof algoliasearchProxy.default === 'function'
+  ? algoliasearchProxy.default
+  : algoliasearchProxy) as typeof algoliasearchProxy.default extends Function
+  ? typeof algoliasearchProxy.default
+  : typeof algoliasearchProxy;
+
 const encode = encodeProxy.default || encodeProxy;
 
 export function createSSRSearchClient({
@@ -35,7 +43,60 @@ export function createSSRSearchClient({
   makeStateKey,
   options = {},
 }: SSRSearchClientOptions) {
-  const searchClient = algoliasearch(appId, apiKey, options);
+  // A custom network request needs to be done, using TransferState of Angular.
+  // This is done to make sure the request done backend for SSR doesn't get
+  // made again frontend during hydration.
+  // For compatibility with both v3 and v4 of algoliasearch, we are overriding the
+  // network request function in two places:
+  // v4: custom "requester"
+  // v3: override "_request" on the prototype
+  // since neither v3 uses the requester argument, and v4 use the _request, we
+  // can safely do this without checking the version
+  const searchClient = algoliasearch(appId, apiKey, {
+    ...options,
+    requester: {
+      send({ headers, method, url, data }) {
+        const transferStateKey = makeStateKey<string>(`ngais(${data})`);
+
+        if (transferState.hasKey(transferStateKey)) {
+          const response = JSON.parse(
+            transferState.get(transferStateKey, JSON.stringify({}))
+          );
+
+          return Promise.resolve({
+            status: response.status,
+            content: JSON.stringify(response.body),
+            isTimedOut: false,
+          });
+        }
+
+        return new Promise((resolve, reject) => {
+          httpClient
+            .request(method, url, {
+              headers,
+              body: data,
+              observe: 'response',
+            })
+            .subscribe(
+              response => {
+                transferState.set(transferStateKey, JSON.stringify(response));
+
+                resolve({
+                  status: response.status,
+                  content: JSON.stringify(response.body),
+                  isTimedOut: false,
+                });
+              },
+              response =>
+                reject({
+                  status: response.status,
+                  body: response.body,
+                })
+            );
+        });
+      },
+    },
+  });
 
   searchClient.addAlgoliaAgent(`angular (${AngularVersion.full})`);
   searchClient.addAlgoliaAgent(`angular-instantsearch (${VERSION})`);
@@ -59,7 +120,7 @@ export function createSSRSearchClient({
     const url =
       rawUrl + (rawUrl.includes('?') ? '&' : '?') + encode(options.headers);
 
-    const transferStateKey = makeStateKey(`ngais(${options.body})`);
+    const transferStateKey = makeStateKey<string>(`ngais(${options.body})`);
 
     if (transferState.hasKey(transferStateKey)) {
       const response = JSON.parse(

@@ -1,6 +1,7 @@
 import { storiesOf } from '@storybook/angular';
 import { wrapWithHits } from '../wrap-with-hits';
 import meta from '../meta';
+import { SortByItem } from 'angular-instantsearch/sort-by/sort-by';
 
 storiesOf('SortBy', module)
   .addDecorator(meta)
@@ -32,7 +33,7 @@ storiesOf('SortBy', module)
       </ais-sort-by>
     `,
       methods: {
-        transformItems: items => {
+        transformItems: (items: SortByItem[]) => {
           return items.map(item => ({
             ...item,
             label: `${item.label} (transformed)`,

@@ -10,7 +10,7 @@ type WrapWithHitsParams = {
   template: string;
   styles?: string[];
   searchParameters?: {};
-  methods?: {};
+  methods?: { [key: string]: any };
   searchFunction?: (helper: Helper) => void;
   searchClient?: {};
   // TODO: update with InstantSearch.js types
@@ -65,6 +65,7 @@ export function wrapWithHits({
     styles,
     template: `
       <ais-instantsearch [config]="config">
+        <ais-configure [searchParameters]="searchParameters"></ais-configure>
         <div class="ais-container ais-container-preview">
           ${template}
         </div>
@@ -90,16 +91,17 @@ export function wrapWithHits({
       insightsClient,
       indexName,
       searchFunction,
-      searchParameters: {
-        hitsPerPage: 3,
-        ...searchParameters,
-      },
       routing,
+    };
+
+    searchParameters = {
+      hitsPerPage: 3,
+      ...searchParameters,
     };
 
     constructor() {
       Object.keys(methods).forEach(methodName => {
-        this[methodName] = methods[methodName];
+        (this as any)[methodName] = methods[methodName];
       });
     }
   }

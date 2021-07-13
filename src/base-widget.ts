@@ -1,51 +1,37 @@
-import { Input, OnDestroy, OnInit } from '@angular/core';
+import { Input, OnDestroy, OnInit, forwardRef } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { bem, noop } from './utils';
+import { NgAisInstantSearch } from './instantsearch/instantsearch';
+import { NgAisIndex } from './index-widget/index-widget';
+import { Widget } from 'instantsearch.js/es/types';
+export { Widget };
 
-export class Widget {
-  public init: (
-    params: {
-      templatesConfig: object;
-      state: object;
-      results: object[];
-      createURL: (value: any) => string;
-      instantSearchInstance: object;
-    }
-  ) => void;
-  public getConfiguration?: () => object;
-  public render: (
-    params: {
-      templatesConfig: object;
-      state: object;
-      results: {}[];
-      createURL: (value: any) => string;
-      instantSearchInstance: object;
-    }
-  ) => void;
-  public dispose: (
-    params: {
-      helper: object;
-      state: object;
-    }
-  ) => object | void;
-}
-
+// TODO: use Connector type from InstantSearch. Not yet possible now,
+// since non-ts connectors can't have generics like Connector has,
+// as well as sometimes being not accurate enough / missing keys.
 export type Connector = (
   renderFn: (state: object, isFirstRendering: boolean) => void,
   unmountFn: () => void
 ) => (widgetOptions?: object) => Widget;
 
-export class BaseWidget implements OnInit, OnDestroy {
-  public instantSearchParent: any;
-
+export abstract class BaseWidget implements OnInit, OnDestroy {
   @Input() public autoHideContainer?: boolean;
 
   public widget?: Widget;
   public state?: object = {};
-  public cx: Function;
+  public cx: ReturnType<typeof bem>;
+  public abstract instantSearchInstance: NgAisInstantSearch;
+  public abstract parentIndex?: NgAisIndex;
 
   constructor(widgetName: string) {
     this.cx = bem(widgetName);
+  }
+
+  get parent() {
+    if (this.parentIndex) {
+      return this.parentIndex;
+    }
+    return this.instantSearchInstance;
   }
 
   public createWidget(connector: Connector, options: object = {}) {
@@ -53,13 +39,12 @@ export class BaseWidget implements OnInit, OnDestroy {
   }
 
   public ngOnInit() {
-    // add widget to the InstantSearch Instance
-    this.instantSearchParent.addWidget(this.widget);
+    this.parent.addWidgets([this.widget]);
   }
 
   public ngOnDestroy() {
-    if (isPlatformBrowser(this.instantSearchParent.platformId)) {
-      this.instantSearchParent.removeWidget(this.widget);
+    if (isPlatformBrowser(this.instantSearchInstance.platformId)) {
+      this.parent.removeWidgets([this.widget]);
     }
   }
 
@@ -76,12 +61,15 @@ export class BaseWidget implements OnInit, OnDestroy {
     this.state = state;
   };
 
-  // helper method for genering item list className
+  /**
+   * Helper to generate class names for an item
+   * @param item element to generate a class name for
+   */
   public getItemClass(item: { isRefined?: boolean }) {
-    let className = this.cx('item');
+    const className = this.cx('item');
 
     if (item.isRefined) {
-      className = `${className} ${this.cx('item', 'selected')}`;
+      return `${className} ${this.cx('item', 'selected')}`;
     }
 
     return className;

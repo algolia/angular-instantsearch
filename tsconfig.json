@@ -2,16 +2,22 @@
   "compilerOptions": {
     "target": "ES5",
     "lib": ["es2015", "dom"],
-    "module": "commonjs",
+    "module": "esnext",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "noEmitOnError": true,
     "outDir": "temp",
     "sourceMap": true,
     "baseUrl": "./node_modules",
+    "moduleResolution": "node",
     "paths": {
       "angular-instantsearch": ["../src/index"]
     }
+  },
+  "angularCompilerOptions": {
+    "disableTypeScriptVersionCheck": true,
   },
   "include": [
     "src/**/*.ts"

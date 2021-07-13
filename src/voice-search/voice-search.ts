@@ -8,11 +8,13 @@ import {
   ElementRef,
   TemplateRef,
   OnInit,
+  Optional,
 } from '@angular/core';
 
 import { connectVoiceSearch } from 'instantsearch.js/es/connectors';
 import { BaseWidget } from '../base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
+import { NgAisIndex } from '../index-widget/index-widget';
 import { noop } from '../utils';
 
 type Status =
@@ -113,8 +115,10 @@ type State = {
   `,
 })
 export class NgAisVoiceSearch extends BaseWidget implements OnInit {
-  @ContentChild('button') button: TemplateRef<ElementRef>;
-  @ContentChild('status') status: TemplateRef<ElementRef>;
+  @ContentChild('button', { static: false })
+  button: TemplateRef<ElementRef>;
+  @ContentChild('status', { static: false })
+  status: TemplateRef<ElementRef>;
 
   @Input() public searchAsYouSpeak?: boolean;
   @Input() public buttonTitle: string = 'Search by voice';
@@ -143,8 +147,11 @@ export class NgAisVoiceSearch extends BaseWidget implements OnInit {
   };
 
   constructor(
+    @Inject(forwardRef(() => NgAisIndex))
+    @Optional()
+    public parentIndex: NgAisIndex,
     @Inject(forwardRef(() => NgAisInstantSearch))
-    public instantSearchParent: any,
+    public instantSearchInstance: NgAisInstantSearch,
     private zone: NgZone
   ) {
     super('VoiceSearch');
