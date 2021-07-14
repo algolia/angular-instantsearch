@@ -5,11 +5,8 @@ set -e # exit when error
 rm -rf ./netlify-dist
 mkdir -p ./netlify-dist/examples
 
-# TODO: remove community website
-# # build community website
-# (cd community-website && yarn)
-# (cd community-website && ROOT_PATH=$ROOT_PATH yarn docs:build)
-# mv ./community-website/docs/* ./netlify-dist/
+# build community website
+mv ./community-website/* ./netlify-dist/
 
 # build package
 yarn
