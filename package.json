@@ -56,8 +56,6 @@
     "examples:storybook": "./scripts/run-example.sh storybook",
     "examples:storybook:build": "./scripts/build-example.sh storybook",
     "netlify": "./scripts/netlify.sh",
-    "doc:dev": "cd community-website && yarn && yarn start",
-    "doc:build": "cd community-website && yarn && yarn docs:build",
     "doc:publish": "./scripts/publish-docs.sh",
     "release:prepare": "shipjs prepare",
     "release:trigger": "shipjs trigger"
