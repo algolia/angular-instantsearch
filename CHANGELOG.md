@@ -1,3 +1,12 @@
+# [4.0.0-alpha.1](https://github.com/algolia/angular-instantsearch/compare/3.0.0-beta.5...4.0.0-alpha.1) (2021-07-20)
+
+### BREAKING CHANGES
+
+* enable support for Angular 12. Deprecating support for < 10.0.0. ([#818](https://github.com/algolia/angular-instantsearch/pull/818)) ([33d9350](https://github.com/algolia/angular-instantsearch/pull/799/commits/33d935031ddf829202fe423fd85302ec3ae4a460))
+* update InstantSearch.js version to `4.25.0-experimental-typescript.0` (formerly 4.7.0-experimental-typescript.0). Breaking changes will happen mostly on types ([#821](https://github.com/algolia/angular-instantsearch/pull/821)) ([39bec5e](https://github.com/algolia/angular-instantsearch/pull/799/commits/39bec5e391f872cd7a75641377af9dbd8e6e7606))
+* InstantSearch.js is no longer a peer dependency. ([#821](https://github.com/algolia/angular-instantsearch/pull/821)) ([39bec5e](https://github.com/algolia/angular-instantsearch/pull/799/commits/39bec5e391f872cd7a75641377af9dbd8e6e7606))
+
+
 # [3.0.0-beta.5](https://github.com/algolia/angular-instantsearch/compare/3.0.0-beta.4...3.0.0-beta.5) (2020-04-03)
 
 
