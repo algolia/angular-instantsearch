@@ -1,3 +1,12 @@
+# [4.0.0-alpha.2](https://github.com/algolia/angular-instantsearch/compare/4.0.0-alpha.1...4.0.0-alpha.2) (2021-07-29)
+
+
+### Bug Fixes
+
+* **BaseWidget:** allow declared state and index widgets ([#825](https://github.com/algolia/angular-instantsearch/issues/825)) ([e46fae7](https://github.com/algolia/angular-instantsearch/commit/e46fae718a559ad015dbab31e8f7345b4bd71036))
+
+
+
 # [4.0.0-alpha.1](https://github.com/algolia/angular-instantsearch/compare/3.0.0-beta.5...4.0.0-alpha.1) (2021-07-20)
 
 ### BREAKING CHANGES
