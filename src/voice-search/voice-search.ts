@@ -114,7 +114,7 @@ type State = {
     </ng-template>
   `,
 })
-export class NgAisVoiceSearch extends BaseWidget implements OnInit {
+export class NgAisVoiceSearch extends BaseWidget<State> implements OnInit {
   @ContentChild('button', { static: false })
   button: TemplateRef<ElementRef>;
   @ContentChild('status', { static: false })
