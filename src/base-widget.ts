@@ -3,8 +3,10 @@ import { isPlatformBrowser } from '@angular/common';
 import { bem, noop } from './utils';
 import { NgAisInstantSearch } from './instantsearch/instantsearch';
 import { NgAisIndex } from './index-widget/index-widget';
-import { Widget } from 'instantsearch.js/es/types';
-export { Widget };
+import { Widget as W } from 'instantsearch.js/es/types';
+import { IndexWidget } from 'instantsearch.js/es/widgets/index/index';
+
+export type Widget = W | IndexWidget;
 
 // TODO: use Connector type from InstantSearch. Not yet possible now,
 // since non-ts connectors can't have generics like Connector has,
@@ -14,11 +16,12 @@ export type Connector = (
   unmountFn: () => void
 ) => (widgetOptions?: object) => Widget;
 
-export abstract class BaseWidget implements OnInit, OnDestroy {
+export abstract class BaseWidget<TState extends Record<string, unknown> = {}>
+  implements OnInit, OnDestroy {
   @Input() public autoHideContainer?: boolean;
 
   public widget?: Widget;
-  public state?: object = {};
+  public state?: TState = {} as TState;
   public cx: ReturnType<typeof bem>;
   public abstract instantSearchInstance: NgAisInstantSearch;
   public abstract parentIndex?: NgAisIndex;
@@ -49,7 +52,7 @@ export abstract class BaseWidget implements OnInit, OnDestroy {
   }
 
   public updateState = (
-    state: {},
+    state: TState,
     isFirstRendering: boolean
   ): Promise<void> | void => {
     if (isFirstRendering) {
