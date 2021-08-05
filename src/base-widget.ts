@@ -3,27 +3,44 @@ import { isPlatformBrowser } from '@angular/common';
 import { bem, noop } from './utils';
 import { NgAisInstantSearch } from './instantsearch/instantsearch';
 import { NgAisIndex } from './index-widget/index-widget';
-import { Widget } from 'instantsearch.js/es/types';
-export { Widget };
+import {
+  Widget,
+  WidgetDescription,
+  Connector,
+} from 'instantsearch.js/es/types';
 
-// TODO: use Connector type from InstantSearch. Not yet possible now,
-// since non-ts connectors can't have generics like Connector has,
-// as well as sometimes being not accurate enough / missing keys.
-export type Connector = (
-  renderFn: (state: object, isFirstRendering: boolean) => void,
-  unmountFn: () => void
-) => (widgetOptions?: object) => Widget;
+export { Widget, Connector };
 
-export abstract class BaseWidget implements OnInit, OnDestroy {
+export type ExtractConnectorParams<
+  T extends Connector<unknown & WidgetDescription, unknown>
+> = T extends Connector<infer TWidgetDescription, infer TConnectorParams>
+  ? TConnectorParams
+  : never;
+
+export type ExtractRenderer<
+  T extends Connector<unknown & WidgetDescription, unknown>
+> = Parameters<T>[0];
+
+export type ExtractUnmounter<
+  T extends Connector<unknown & WidgetDescription, unknown>
+> = Parameters<T>[1];
+
+export type ExtractRenderState<
+  T extends Connector<unknown & WidgetDescription, unknown>
+> = Parameters<ExtractRenderer<T>>[0];
+
+export abstract class BaseWidget<
+  TConnector extends Connector<unknown & WidgetDescription, unknown>
+> implements OnInit, OnDestroy {
   @Input() public autoHideContainer?: boolean;
 
   public widget?: Widget;
-  public state?: object = {};
+  public state?: ExtractRenderState<TConnector>;
   public cx: ReturnType<typeof bem>;
   public abstract instantSearchInstance: NgAisInstantSearch;
   public abstract parentIndex?: NgAisIndex;
 
-  constructor(widgetName: string) {
+  protected constructor(widgetName: string) {
     this.cx = bem(widgetName);
   }
 
@@ -34,8 +51,13 @@ export abstract class BaseWidget implements OnInit, OnDestroy {
     return this.instantSearchInstance;
   }
 
-  public createWidget(connector: Connector, options: object = {}) {
-    this.widget = connector(this.updateState, noop)(options);
+  public createWidget(
+    connector: TConnector,
+    options: ExtractConnectorParams<TConnector>
+  ) {
+    this.widget = connector(this.updateState, noop as ExtractUnmounter<
+      TConnector
+    >)(options);
   }
 
   public ngOnInit() {
@@ -48,24 +70,24 @@ export abstract class BaseWidget implements OnInit, OnDestroy {
     }
   }
 
-  public updateState = (
-    state: {},
-    isFirstRendering: boolean
-  ): Promise<void> | void => {
+  public updateState: ExtractRenderer<TConnector> = (
+    state,
+    isFirstRendering
+  ) => {
     if (isFirstRendering) {
-      return Promise.resolve().then(() => {
+      Promise.resolve().then(() => {
         this.state = state;
       });
+    } else {
+      this.state = state;
     }
-
-    this.state = state;
   };
 
   /**
    * Helper to generate class names for an item
    * @param item element to generate a class name for
    */
-  public getItemClass(item: { isRefined?: boolean }) {
+  public getItemClass(item: { isRefined?: boolean }): string {
     const className = this.cx('item');
 
     if (item.isRefined) {
