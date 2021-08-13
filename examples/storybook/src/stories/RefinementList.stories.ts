@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/angular';
 import { wrapWithHits } from '../wrap-with-hits';
 import meta from '../meta';
-import { RefinementListItem } from 'angular-instantsearch/refinement-list/refinement-list';
+import { RefinementListItem } from 'instantsearch.js/es/connectors/refinement-list/connectRefinementList';
 
 storiesOf('RefinementList', module)
   .addDecorator(meta)

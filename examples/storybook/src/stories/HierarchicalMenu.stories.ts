@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/angular';
 import { wrapWithHits } from '../wrap-with-hits';
 import meta from '../meta';
-import { HierarchicalMenuItem } from 'angular-instantsearch/hierarchical-menu/hierarchical-menu';
+import { HierarchicalMenuItem } from 'instantsearch.js/es/connectors/hierarchical-menu/connectHierarchicalMenu';
 
 storiesOf('HierarchicalMenu', module)
   .addDecorator(meta)

@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/angular';
 import { wrapWithHits } from '../wrap-with-hits';
 import meta from '../meta';
-import { HitsPerPageInstanceItem } from 'angular-instantsearch/hits-per-page/hits-per-page';
+import { HitsPerPageConnectorParamsItem } from 'instantsearch.js/es/connectors/hits-per-page/connectHitsPerPage';
 
 storiesOf('HitsPerPage', module)
   .addDecorator(meta)
@@ -34,7 +34,7 @@ storiesOf('HitsPerPage', module)
     }),
   }))
   .add('with transformItems', () => {
-    const transformItems = (items: HitsPerPageInstanceItem[]) =>
+    const transformItems = (items: HitsPerPageConnectorParamsItem[]) =>
       items.map(item => ({ ...item, label: `${item.label} (transformed)` }));
     return {
       component: wrapWithHits({
