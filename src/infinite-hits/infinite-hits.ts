@@ -7,21 +7,16 @@ import {
   forwardRef,
   Optional,
 } from '@angular/core';
-
 import { connectInfiniteHitsWithInsights } from 'instantsearch.js/es/connectors';
-import { BaseWidget } from '../base-widget';
-import { NgAisInstantSearch, Hit } from '../instantsearch/instantsearch';
+import {
+  InfiniteHitsConnectorParams,
+  InfiniteHitsWidgetDescription,
+  InfiniteHitsRenderState,
+} from 'instantsearch.js/es/connectors/infinite-hits/connectInfiniteHits';
+import { TypedBaseWidget } from '../typed-base-widget';
+import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { NgAisIndex } from '../index-widget/index-widget';
 import { noop } from '../utils';
-
-export type InfiniteHitsState = {
-  hits: Hit[];
-  results: any;
-  isFirstPage: boolean;
-  isLastPage: boolean;
-  showMore: Function;
-  showPrevious: Function;
-};
 
 @Component({
   selector: 'ais-infinite-hits',
@@ -62,25 +57,34 @@ export type InfiniteHitsState = {
     </div>
   `,
 })
-export class NgAisInfiniteHits extends BaseWidget {
+export class NgAisInfiniteHits extends TypedBaseWidget<
+  InfiniteHitsWidgetDescription,
+  InfiniteHitsConnectorParams
+> {
   @ContentChild(TemplateRef, { static: false })
   public template?: any;
 
   // rendering options
-  @Input() public escapeHTML: boolean;
-  @Input() public showPrevious: boolean = false;
+  @Input() public escapeHTML: InfiniteHitsConnectorParams['escapeHTML'];
+  @Input()
+  public showPrevious: InfiniteHitsConnectorParams['showPrevious'] = false;
   @Input() public showPreviousLabel: string = 'Show previous results';
   @Input() public showMoreLabel: string = 'Show more results';
-  @Input() public transformItems?: <U extends Hit>(items: Hit[]) => U[];
+  @Input()
+  public transformItems?: InfiniteHitsConnectorParams['transformItems'];
 
-  // inner widget state returned from connector
-  public state: InfiniteHitsState = {
+  // @ts-ignore
+  public state: InfiniteHitsRenderState = {
     hits: [],
+    results: undefined,
+    currentPageHits: [],
     isFirstPage: false,
     isLastPage: false,
     showMore: noop,
     showPrevious: noop,
-    results: {},
+    insights: undefined,
+    sendEvent: noop,
+    bindEvent: () => '',
   };
 
   constructor(

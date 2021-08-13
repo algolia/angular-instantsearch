@@ -9,9 +9,14 @@ import {
 
 import { connectStats } from 'instantsearch.js/es/connectors';
 
-import { BaseWidget } from '../base-widget';
+import { TypedBaseWidget } from '../typed-base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { NgAisIndex } from '../index-widget/index-widget';
+import {
+  StatsConnectorParams,
+  StatsWidgetDescription,
+  StatsRenderState,
+} from 'instantsearch.js/es/connectors/stats/connectStats';
 
 @Component({
   selector: 'ais-stats',
@@ -26,17 +31,20 @@ import { NgAisIndex } from '../index-widget/index-widget';
     </div>
   `,
 })
-export class NgAisStats extends BaseWidget {
+export class NgAisStats extends TypedBaseWidget<
+  StatsWidgetDescription,
+  StatsConnectorParams
+> {
   @ContentChild(TemplateRef, { static: false })
   public template: any;
 
-  public state = {
-    hitPerPage: 0,
+  public state: StatsRenderState = {
     nbHits: 0,
     nbPages: 0,
     page: 0,
     processingTimeMS: 0,
     query: '',
+    areHitsSorted: false,
   };
 
   get templateContext() {
@@ -51,6 +59,6 @@ export class NgAisStats extends BaseWidget {
     public instantSearchInstance: NgAisInstantSearch
   ) {
     super('Stats');
-    this.createWidget(connectStats);
+    this.createWidget(connectStats, {});
   }
 }

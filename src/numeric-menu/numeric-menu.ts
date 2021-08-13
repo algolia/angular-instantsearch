@@ -1,23 +1,15 @@
 import { Component, Input, Inject, forwardRef, Optional } from '@angular/core';
 
 import { connectNumericMenu } from 'instantsearch.js/es/connectors';
-import { BaseWidget } from '../base-widget';
+import { TypedBaseWidget } from '../typed-base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { NgAisIndex } from '../index-widget/index-widget';
 import { noop } from '../utils';
-
-export type NumericMenuItem = {
-  label: string;
-  value: string;
-  isRefined: boolean;
-};
-
-export type NumericMenuState = {
-  createURL: Function;
-  items: NumericMenuItem[];
-  refine: Function;
-  hasNoResults?: boolean;
-};
+import {
+  NumericMenuConnectorParams,
+  NumericMenuWidgetDescription,
+  NumericMenuRenderState,
+} from 'instantsearch.js/es/connectors/numeric-menu/connectNumericMenu';
 
 @Component({
   selector: 'ais-numeric-menu',
@@ -46,18 +38,20 @@ export type NumericMenuState = {
     </div>
   `,
 })
-export class NgAisNumericMenu extends BaseWidget {
-  @Input() public attribute: string;
-  @Input() public items: { label: string; start?: number; end?: number }[];
-  @Input()
-  public transformItems?: <U extends NumericMenuItem>(
-    items: NumericMenuItem[]
-  ) => U[];
+export class NgAisNumericMenu extends TypedBaseWidget<
+  NumericMenuWidgetDescription,
+  NumericMenuConnectorParams
+> {
+  @Input() public attribute: NumericMenuConnectorParams['attribute'];
+  @Input() public items: NumericMenuConnectorParams['items'];
+  @Input() public transformItems?: NumericMenuConnectorParams['transformItems'];
 
-  public state: NumericMenuState = {
+  public state: NumericMenuRenderState = {
     items: [],
     refine: noop,
-    createURL: noop,
+    createURL: () => '#',
+    hasNoResults: true,
+    sendEvent: noop,
   };
 
   get isHidden() {
@@ -83,7 +77,7 @@ export class NgAisNumericMenu extends BaseWidget {
     super.ngOnInit();
   }
 
-  public refine(event: MouseEvent, item: { value: string }) {
+  public refine(event: Event, item: { value: string }) {
     event.preventDefault();
     event.stopPropagation();
     this.state.refine(item.value);

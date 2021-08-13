@@ -9,14 +9,14 @@ import {
 } from '@angular/core';
 
 import { connectHitsWithInsights } from 'instantsearch.js/es/connectors';
-import { BaseWidget } from '../base-widget';
-import { NgAisInstantSearch, Hit } from '../instantsearch/instantsearch';
+import {
+  HitsConnectorParams,
+  HitsWidgetDescription,
+  HitsRenderState,
+} from 'instantsearch.js/es/connectors/hits/connectHits';
+import { TypedBaseWidget } from '../typed-base-widget';
+import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { NgAisIndex } from '../index-widget/index-widget';
-
-export type HitsState = {
-  hits: Hit[];
-  results: {};
-};
 
 @Component({
   selector: 'ais-hits',
@@ -39,16 +39,21 @@ export type HitsState = {
     </div>
   `,
 })
-export class NgAisHits extends BaseWidget {
+export class NgAisHits extends TypedBaseWidget<
+  HitsWidgetDescription,
+  HitsConnectorParams
+> {
   @ContentChild(TemplateRef, { static: false })
   public template?: TemplateRef<any>;
 
-  @Input() public escapeHTML?: boolean;
-  @Input() public transformItems?: <U extends Hit>(items: Hit[]) => U[];
+  @Input() public escapeHTML?: HitsConnectorParams['escapeHTML'];
+  @Input() public transformItems?: HitsConnectorParams['transformItems'];
 
-  public state: HitsState = {
+  public state: HitsRenderState = {
     hits: [],
-    results: {},
+    results: undefined,
+    bindEvent: undefined,
+    sendEvent: undefined,
   };
 
   constructor(
@@ -69,7 +74,7 @@ export class NgAisHits extends BaseWidget {
     super.ngOnInit();
   }
 
-  updateState = (state, isFirstRendering: boolean) => {
+  public updateState = (state: HitsRenderState, isFirstRendering: boolean) => {
     if (isFirstRendering) return;
     this.state = state;
   };

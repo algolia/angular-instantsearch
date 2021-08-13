@@ -9,33 +9,41 @@ import {
 } from '@angular/core';
 
 import { connectQueryRules } from 'instantsearch.js/es/connectors';
+import {
+  QueryRulesConnectorParams,
+  QueryRulesWidgetDescription,
+  QueryRulesRenderState,
+} from 'instantsearch.js/es/connectors/query-rules/connectQueryRules';
 
-import { BaseWidget } from '../base-widget';
+import { TypedBaseWidget } from '../typed-base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { NgAisIndex } from '../index-widget/index-widget';
 
 @Component({
   selector: 'ais-query-rule-custom-data',
   template: `
-    <div [class]="cx()">
-      <ng-container *ngTemplateOutlet="template; context: templateContext">
+    <div [class]='cx()'>
+      <ng-container *ngTemplateOutlet='template; context: templateContext'>
       </ng-container>
 
-      <div *ngIf="!template">
-        <div *ngFor="let item of state.items">
+      <div *ngIf='!template'>
+        <div *ngFor='let item of state.items'>
           <pre>{{ item | json }}</pre>
         </div>
       </div>
     </div>
   `,
 })
-export class NgAisQueryRuleCustomData extends BaseWidget {
+export class NgAisQueryRuleCustomData extends TypedBaseWidget<
+  QueryRulesWidgetDescription,
+  QueryRulesConnectorParams
+> {
   @ContentChild(TemplateRef, { static: false })
   public template: any;
 
-  @Input() public transformItems?: (items: any[]) => any[];
+  @Input() public transformItems?: QueryRulesConnectorParams['transformItems'];
 
-  public state = {
+  public state: QueryRulesRenderState = {
     items: [],
   };
 

@@ -7,35 +7,20 @@ import {
   Widget,
   WidgetDescription,
   Connector,
+  Unmounter,
+  Renderer,
 } from 'instantsearch.js/es/types';
 
 export { Widget, Connector };
 
-export type ExtractConnectorParams<
-  T extends Connector<unknown & WidgetDescription, unknown>
-> = T extends Connector<infer TWidgetDescription, infer TConnectorParams>
-  ? TConnectorParams
-  : never;
-
-export type ExtractRenderer<
-  T extends Connector<unknown & WidgetDescription, unknown>
-> = Parameters<T>[0];
-
-export type ExtractUnmounter<
-  T extends Connector<unknown & WidgetDescription, unknown>
-> = Parameters<T>[1];
-
-export type ExtractRenderState<
-  T extends Connector<unknown & WidgetDescription, unknown>
-> = Parameters<ExtractRenderer<T>>[0];
-
 export abstract class TypedBaseWidget<
-  TConnector extends Connector<unknown & WidgetDescription, unknown>
+  TWidgetDescription extends WidgetDescription,
+  TConnectorParams
 > implements OnInit, OnDestroy {
   @Input() public autoHideContainer?: boolean;
 
   public widget?: Widget;
-  public state?: ExtractRenderState<TConnector>;
+  public state?: TWidgetDescription['renderState'];
   public cx: ReturnType<typeof bem>;
   public abstract instantSearchInstance: NgAisInstantSearch;
   public abstract parentIndex?: NgAisIndex;
@@ -52,12 +37,10 @@ export abstract class TypedBaseWidget<
   }
 
   public createWidget(
-    connector: TConnector,
-    options: ExtractConnectorParams<TConnector>
+    connector: Connector<TWidgetDescription, TConnectorParams>,
+    options: TConnectorParams
   ) {
-    this.widget = connector(this.updateState, noop as ExtractUnmounter<
-      TConnector
-    >)(options);
+    this.widget = connector(this.updateState, noop as Unmounter)(options);
   }
 
   public ngOnInit() {
@@ -70,10 +53,10 @@ export abstract class TypedBaseWidget<
     }
   }
 
-  public updateState: ExtractRenderer<TConnector> = (
-    state,
-    isFirstRendering
-  ) => {
+  public updateState: Renderer<
+    TWidgetDescription['renderState'],
+    TConnectorParams
+  > = (state, isFirstRendering) => {
     if (isFirstRendering) {
       Promise.resolve().then(() => {
         this.state = state;

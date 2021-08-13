@@ -5,22 +5,24 @@ import {
   forwardRef,
   Optional,
   SkipSelf,
+  OnInit,
+  OnDestroy,
 } from '@angular/core';
-import { Widget, BaseWidget } from '../base-widget';
+import { Widget } from 'instantsearch.js/es/types';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import indexWidget, {
   IndexWidget,
+  IndexWidgetParams,
 } from 'instantsearch.js/es/widgets/index/index';
-
-const connectIndex = () => indexWidget;
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'ais-index',
   template: `<ng-content></ng-content>`,
 })
-export class NgAisIndex extends BaseWidget {
-  @Input() public indexName: string;
-  @Input() public indexId?: string;
+export class NgAisIndex implements OnInit, OnDestroy {
+  @Input() public indexName: IndexWidgetParams['indexName'];
+  @Input() public indexId?: IndexWidgetParams['indexId'];
 
   public widget?: IndexWidget;
 
@@ -32,8 +34,20 @@ export class NgAisIndex extends BaseWidget {
     public parentIndex: NgAisIndex,
     @Inject(forwardRef(() => NgAisInstantSearch))
     public instantSearchInstance: NgAisInstantSearch
-  ) {
-    super('Index');
+  ) {}
+
+  get parent() {
+    if (this.parentIndex) {
+      return this.parentIndex;
+    }
+    return this.instantSearchInstance;
+  }
+
+  createWidget() {
+    this.widget = indexWidget({
+      indexName: this.indexName,
+      indexId: this.indexId,
+    });
   }
 
   public addWidgets(widgets: Widget[]) {
@@ -45,10 +59,12 @@ export class NgAisIndex extends BaseWidget {
   }
 
   ngOnInit() {
-    this.createWidget(connectIndex, {
-      indexName: this.indexName,
-      indexId: this.indexId,
-    });
-    super.ngOnInit();
+    this.createWidget();
+    this.parent.addWidgets([this.widget]);
+  }
+  public ngOnDestroy() {
+    if (isPlatformBrowser(this.instantSearchInstance.platformId)) {
+      this.parent.removeWidgets([this.widget]);
+    }
   }
 }

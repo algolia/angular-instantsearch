@@ -1,9 +1,16 @@
 import { Component, Input, Inject, forwardRef, Optional } from '@angular/core';
 import { connectPagination } from 'instantsearch.js/es/connectors';
-import { BaseWidget } from '../base-widget';
+import { TypedBaseWidget } from '../typed-base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { NgAisIndex } from '../index-widget/index-widget';
 import { parseNumberInput, noop, range } from '../utils';
+import {
+  PaginationConnectorParams,
+  PaginationWidgetDescription,
+  PaginationRenderState,
+} from 'instantsearch.js/es/connectors/pagination/connectPagination';
+
+export { PaginationConnectorParams, PaginationRenderState };
 
 @Component({
   selector: 'ais-pagination',
@@ -103,23 +110,31 @@ import { parseNumberInput, noop, range } from '../utils';
     </div>
   `,
 })
-export class NgAisPagination extends BaseWidget {
+export class NgAisPagination extends TypedBaseWidget<
+  PaginationWidgetDescription,
+  PaginationConnectorParams
+> {
   // rendering options
   @Input() public showFirst: boolean = true;
   @Input() public showLast: boolean = true;
   @Input() public showPrevious: boolean = true;
   @Input() public showNext: boolean = true;
-  @Input() public padding: number | string = 3;
 
   // instance options
-  @Input() public totalPages?: number | string;
+  @Input() public padding: PaginationConnectorParams['padding'] = 3;
+  @Input() public totalPages?: PaginationConnectorParams['totalPages'];
+  // TODO: check if this works, padding and totalPages are most likely strings when passed to the template
 
-  public state = {
-    createURL: noop,
+  public state: PaginationRenderState = {
+    createURL: () => '#',
     currentRefinement: 0,
     nbHits: 0,
     nbPages: 0,
     refine: noop,
+    pages: [],
+    canRefine: false,
+    isFirstPage: false,
+    isLastPage: false,
   };
 
   get pages() {
@@ -179,7 +194,7 @@ export class NgAisPagination extends BaseWidget {
 
   public ngOnInit() {
     this.createWidget(connectPagination, {
-      maxPages: parseNumberInput(this.totalPages),
+      totalPages: parseNumberInput(this.totalPages),
     });
     super.ngOnInit();
   }

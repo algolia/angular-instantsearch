@@ -1,16 +1,16 @@
 import { Inject, Component, Input, forwardRef, Optional } from '@angular/core';
 
 import { connectRange } from 'instantsearch.js/es/connectors';
-import { BaseWidget } from '../base-widget';
+import {
+  RangeConnectorParams,
+  RangeWidgetDescription,
+  RangeRenderState,
+} from 'instantsearch.js/es/connectors/range/connectRange';
+
+import { TypedBaseWidget } from '../typed-base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { NgAisIndex } from '../index-widget/index-widget';
 import { parseNumberInput, noop } from '../utils';
-
-export type NumericRangeState = {
-  start: number[];
-  range: { min?: number; max?: number };
-  refine: Function;
-};
 
 @Component({
   selector: 'ais-range-input',
@@ -70,21 +70,24 @@ export type NumericRangeState = {
     </div>
   `,
 })
-export class NgAisRangeInput extends BaseWidget {
+export class NgAisRangeInput extends TypedBaseWidget<
+  RangeWidgetDescription,
+  RangeConnectorParams
+> {
   // rendering options
   @Input() public currency: string = '$';
   @Input() public separator: string = 'to';
   @Input() public submitLabel: string = 'Go';
 
   // instance options
-  @Input() public attribute: string;
-  @Input() public min?: number;
-  @Input() public max?: number;
-  @Input() public precision?: number = 0;
+  @Input() public attribute: RangeConnectorParams['attribute'];
+  @Input() public min?: RangeConnectorParams['min'];
+  @Input() public max?: RangeConnectorParams['max'];
+  @Input() public precision?: RangeConnectorParams['precision'] = 0;
 
   // inner state
-  public minInputValue?: number | string = '';
-  public maxInputValue?: number | string = '';
+  public minInputValue?: number;
+  public maxInputValue?: number;
 
   get step() {
     const precision = parseNumberInput(this.precision);
@@ -95,10 +98,17 @@ export class NgAisRangeInput extends BaseWidget {
     return this.state.range.min !== this.state.range.max;
   }
 
-  public state: NumericRangeState = {
+  public state: RangeRenderState = {
     range: { min: undefined, max: undefined },
     refine: noop,
     start: [0, 0],
+    // TODO: use canRefine & format
+    canRefine: false,
+    format: {
+      from: () => '',
+      to: () => '',
+    },
+    sendEvent: undefined,
   };
 
   constructor(
@@ -132,7 +142,7 @@ export class NgAisRangeInput extends BaseWidget {
     }
   }
 
-  public handleSubmit(event: MouseEvent | KeyboardEvent) {
+  public handleSubmit(event: Event) {
     event.preventDefault();
     this.state.refine([this.minInputValue, this.maxInputValue]);
   }

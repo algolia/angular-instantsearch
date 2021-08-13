@@ -1,20 +1,15 @@
 import { Component, Input, Inject, forwardRef, Optional } from '@angular/core';
 import { connectBreadcrumb } from 'instantsearch.js/es/connectors';
-import { BaseWidget } from '../base-widget';
+import {
+  BreadcrumbConnectorParams,
+  BreadcrumbWidgetDescription,
+  BreadcrumbRenderState,
+  BreadcrumbConnectorParamsItem,
+} from 'instantsearch.js/es/connectors/breadcrumb/connectBreadcrumb';
+import { TypedBaseWidget } from '../typed-base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { NgAisIndex } from '../index-widget/index-widget';
 import { noop } from '../utils';
-
-export type BreadcrumbState = {
-  createURL: (value: string) => string;
-  items: BreadcrumbItem[];
-  refine: (value: string) => void;
-};
-
-export type BreadcrumbItem = {
-  label: string;
-  value: string;
-};
 
 @Component({
   selector: 'ais-breadcrumb',
@@ -53,15 +48,15 @@ export type BreadcrumbItem = {
     </div>
   `,
 })
-export class NgAisBreadcrumb extends BaseWidget {
+export class NgAisBreadcrumb extends TypedBaseWidget<
+  BreadcrumbWidgetDescription,
+  BreadcrumbConnectorParams
+> {
   // instance options
-  @Input() public attributes: string[];
-  @Input() public rootPath?: string;
-  @Input() public separator?: string;
-  @Input()
-  public transformItems?: <U extends BreadcrumbItem>(
-    items: BreadcrumbItem[]
-  ) => U[];
+  @Input() public attributes: BreadcrumbConnectorParams['attributes'];
+  @Input() public rootPath?: BreadcrumbConnectorParams['rootPath'];
+  @Input() public separator?: BreadcrumbConnectorParams['separator'];
+  @Input() public transformItems?: BreadcrumbConnectorParams['transformItems'];
 
   get isHidden() {
     return this.state.items.length === 0 && this.autoHideContainer;
@@ -77,10 +72,11 @@ export class NgAisBreadcrumb extends BaseWidget {
     }));
   }
 
-  public state: BreadcrumbState = {
+  public state: BreadcrumbRenderState = {
     createURL: () => '#',
     items: [],
     refine: noop,
+    canRefine: false,
   };
 
   constructor(
@@ -104,7 +100,10 @@ export class NgAisBreadcrumb extends BaseWidget {
     super.ngOnInit();
   }
 
-  public handleClick(event: MouseEvent, item: BreadcrumbItem): void {
+  public handleClick(
+    event: MouseEvent,
+    item: BreadcrumbConnectorParamsItem
+  ): void {
     event.preventDefault();
     event.stopPropagation();
 

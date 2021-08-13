@@ -1,27 +1,15 @@
 import { Component, Input, Inject, forwardRef, Optional } from '@angular/core';
 
 import { connectHitsPerPage } from 'instantsearch.js/es/connectors';
-import { BaseWidget } from '../base-widget';
+import {
+  HitsPerPageConnectorParams,
+  HitsPerPageWidgetDescription,
+  HitsPerPageRenderState,
+} from 'instantsearch.js/es/connectors/hits-per-page/connectHitsPerPage';
+import { TypedBaseWidget } from '../typed-base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { NgAisIndex } from '../index-widget/index-widget';
 import { noop } from '../utils';
-
-export type HitsPerPageState = {
-  items: HitsPerPageRenderingItem[];
-  refine: (value: number) => void;
-};
-
-export type HitsPerPageInstanceItem = {
-  value: number;
-  label: string;
-  default?: boolean;
-};
-
-export type HitsPerPageRenderingItem = {
-  value: number;
-  label: string;
-  isRefined: boolean;
-};
 
 @Component({
   selector: 'ais-hits-per-page',
@@ -46,17 +34,17 @@ export type HitsPerPageRenderingItem = {
     </div>
   `,
 })
-export class NgAisHitsPerPage extends BaseWidget {
-  @Input() public items: HitsPerPageInstanceItem[];
-  @Input()
-  public transformItems?: <U extends HitsPerPageRenderingItem>(
-    items: HitsPerPageRenderingItem[]
-  ) => U[];
+export class NgAisHitsPerPage extends TypedBaseWidget<
+  HitsPerPageWidgetDescription,
+  HitsPerPageConnectorParams
+> {
+  @Input() public items: HitsPerPageConnectorParams['items'];
+  @Input() public transformItems?: HitsPerPageConnectorParams['transformItems'];
 
-  public state: HitsPerPageState = {
+  public state: HitsPerPageRenderState = {
     items: [],
     refine: noop,
-    // TODO: add hasNoResults and disable <select> when true
+    hasNoResults: true, // TODO: disable <select> when true
   };
 
   get isHidden(): boolean {

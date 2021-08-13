@@ -12,10 +12,15 @@ import {
 } from '@angular/core';
 
 import { connectSearchBox } from 'instantsearch.js/es/connectors';
-import { BaseWidget } from '../base-widget';
+import { TypedBaseWidget } from '../typed-base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { NgAisIndex } from '../index-widget/index-widget';
 import { noop } from '../utils';
+import {
+  SearchBoxConnectorParams,
+  SearchBoxWidgetDescription,
+  SearchBoxRenderState,
+} from 'instantsearch.js/es/connectors/search-box/connectSearchBox';
 
 @Component({
   selector: 'ais-search-box',
@@ -75,7 +80,9 @@ import { noop } from '../utils';
     </div>
   `,
 })
-export class NgAisSearchBox extends BaseWidget implements AfterViewInit {
+export class NgAisSearchBox
+  extends TypedBaseWidget<SearchBoxWidgetDescription, SearchBoxConnectorParams>
+  implements AfterViewInit {
   @ViewChild('searchBox', { static: false })
   searchBox: ElementRef;
   @Input() public placeholder: string = 'Search';
@@ -94,9 +101,11 @@ export class NgAisSearchBox extends BaseWidget implements AfterViewInit {
   @Output() focus = new EventEmitter();
   @Output() blur = new EventEmitter();
 
-  public state = {
+  public state: SearchBoxRenderState = {
     query: '',
     refine: noop,
+    clear: noop,
+    isSearchStalled: false,
   };
 
   constructor(
@@ -107,7 +116,7 @@ export class NgAisSearchBox extends BaseWidget implements AfterViewInit {
     public instantSearchInstance: NgAisInstantSearch
   ) {
     super('SearchBox');
-    this.createWidget(connectSearchBox);
+    this.createWidget(connectSearchBox, {});
   }
 
   public ngAfterViewInit() {

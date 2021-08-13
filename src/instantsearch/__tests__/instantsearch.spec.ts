@@ -12,7 +12,7 @@ jest.mock('instantsearch.js/es', () => () => {
   };
 });
 
-jest.mock('../../../src/base-widget');
+jest.mock('../../../src/typed-base-widget');
 
 describe('InstantSearch', () => {
   it('should add user agent when the client is provided to the config', () => {

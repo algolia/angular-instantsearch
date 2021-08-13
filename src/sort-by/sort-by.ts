@@ -1,21 +1,24 @@
 import { Component, Input, Inject, forwardRef, Optional } from '@angular/core';
 
 import { connectSortBy } from 'instantsearch.js/es/connectors';
-import { BaseWidget } from '../base-widget';
+import { TypedBaseWidget } from '../typed-base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { NgAisIndex } from '../index-widget/index-widget';
 import { noop } from '../utils';
+import {
+  SortByConnector,
+  SortByConnectorParams,
+  SortByWidgetDescription,
+  SortByRenderState,
+  SortByItem,
+} from 'instantsearch.js/es/connectors/sort-by/connectSortBy';
 
-export type SortByItem = {
-  value: string;
-  label: string;
-};
-
-export type SortByState = {
-  currentRefinement: string | null;
-  options: SortByItem[];
-  refine: Function;
-  // TODO: add hasNoResults: boolean;
+export {
+  SortByConnector,
+  SortByConnectorParams,
+  SortByWidgetDescription,
+  SortByRenderState,
+  SortByItem,
 };
 
 @Component({
@@ -38,16 +41,19 @@ export type SortByState = {
     </div>
   `,
 })
-export class NgAisSortBy extends BaseWidget {
+export class NgAisSortBy extends TypedBaseWidget<
+  SortByWidgetDescription,
+  SortByConnectorParams
+> {
   @Input() public items: SortByItem[];
   @Input()
   public transformItems?: <U extends SortByItem>(items: SortByItem[]) => U[];
 
-  public state: SortByState = {
+  public state: SortByRenderState = {
     currentRefinement: null,
     options: [],
     refine: noop,
-    // TODO: Add hasNoResults: null,
+    hasNoResults: false,
   };
 
   constructor(
