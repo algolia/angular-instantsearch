@@ -1316,6 +1316,11 @@
   resolved "https://registry.yarnpkg.com/@types/prettier/-/prettier-2.0.2.tgz#5bb52ee68d0f8efa9cc0099920e56be6cc4e37f3"
   integrity sha512-IkVfat549ggtkZUthUzEX49562eGikhSYeVGX97SkMFn+sTZrgRewXjQ4tPKFPCykZHkX1Zfd9OoELGqKU2jJA==
 
+"@types/qs@^6.5.3":
+  version "6.9.7"
+  resolved "https://registry.yarnpkg.com/@types/qs/-/qs-6.9.7.tgz#63bb7d067db107cc1e457c303bc25d511febf6cb"
+  integrity sha512-FGa1F62FT09qcrueBA6qYTrJPVDzah9a+493+o2PCXsesWHIn27G98TsSMs3WPNbZIEj4+VJf6saSFpvD+3Zsw==
+
 "@types/resolve@1.17.1":
   version "1.17.1"
   resolved "https://registry.yarnpkg.com/@types/resolve/-/resolve-1.17.1.tgz#3afd6ad8967c77e4376c598a82ddd58f46ec45d6"
@@ -1490,6 +1495,13 @@ algoliasearch-helper@^3.5.4:
   version "3.5.4"
   resolved "https://registry.yarnpkg.com/algoliasearch-helper/-/algoliasearch-helper-3.5.4.tgz#21b20ab8a258daa9dde9aef2daa5e8994cd66077"
   integrity sha512-t+FLhXYnPZiwjYe5ExyN962HQY8mi3KwRju3Lyf6OBgtRdx30d6mqvtClXf5NeBihH45Xzj6t4Y5YyvAI432XA==
+  dependencies:
+    events "^1.1.1"
+
+algoliasearch-helper@^3.5.5:
+  version "3.5.5"
+  resolved "https://registry.yarnpkg.com/algoliasearch-helper/-/algoliasearch-helper-3.5.5.tgz#05263869d3c8a7292278d7e49630f52520f204d7"
+  integrity sha512-JDH14gMpSj8UzEaKwVkrqKOeAOyK0dDWsFlKvWhk0Xl5yw9FyafYf1xZPb4uSXaPBAFQtUouFlR1Zt68BCY0/w==
   dependencies:
     events "^1.1.1"
 
@@ -5494,19 +5506,20 @@ instantsearch.css@^7.3.1:
   resolved "https://registry.yarnpkg.com/instantsearch.css/-/instantsearch.css-7.3.1.tgz#7ab74a8f355091ae040947a9cf5438f379026622"
   integrity sha512-/kaMDna5D+Q9mImNBHEhb9HgHATDOFKYii7N1Iwvrj+lmD9gBJLqVhUw67gftq2O0QI330pFza+CRscIwB1wQQ==
 
-instantsearch.js@4.25.0-experimental-typescript.0:
-  version "4.25.0-experimental-typescript.0"
-  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-4.25.0-experimental-typescript.0.tgz#26ecd819a4fc2b8f15ebd02a6850331510b691f4"
-  integrity sha512-pi0LOaRQE80sq3JMA7MVEWcsbxFKLIqjsVaDEv6mF9z22VeV1yswFn1t7su30SnYjMzdWOtdS0kkJGZSyRGnCA==
+instantsearch.js@4.26.0-experimental-typescript.0:
+  version "4.26.0-experimental-typescript.0"
+  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-4.26.0-experimental-typescript.0.tgz#ad130ffc26e52bbc53c8c49e3aac5597799a0fcc"
+  integrity sha512-ZiUZT5PgSpvLGQwBukIQbVn48a932o5WMZ5dvveBUURukKXxRMBKrsFZaXJ30aMugfgkQD93kK3KHT0siYP3PQ==
   dependencies:
     "@types/google.maps" "^3.45.3"
     "@types/hogan.js" "^3.0.0"
-    algoliasearch-helper "^3.5.4"
+    "@types/qs" "^6.5.3"
+    algoliasearch-helper "^3.5.5"
     classnames "^2.2.5"
     events "^1.1.0"
     hogan.js "^3.0.2"
     preact "^10.0.0"
-    qs "^6.5.1"
+    qs "^6.5.1 < 6.10"
 
 interpret@^1.0.0:
   version "1.2.0"
@@ -8745,10 +8758,10 @@ q@^1.5.1:
   resolved "https://registry.yarnpkg.com/q/-/q-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
   integrity sha1-fjL3W0E4EpHQRhHxvxQQmsAGUdc=
 
-qs@^6.5.1:
-  version "6.6.0"
-  resolved "https://registry.yarnpkg.com/qs/-/qs-6.6.0.tgz#a99c0f69a8d26bf7ef012f871cdabb0aee4424c2"
-  integrity sha512-KIJqT9jQJDQx5h5uAVPimw6yVg2SekOKu959OCtktD3FjzbpvaPr8i4zzg07DOMz+igA4W/aNM7OV8H37pFYfA==
+"qs@^6.5.1 < 6.10":
+  version "6.9.6"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.9.6.tgz#26ed3c8243a431b2924aca84cc90471f35d5a0ee"
+  integrity sha512-TIRk4aqYLNoJUbd+g2lEdz5kLWIuTMRagAXxl78Q0RiVjAOugHmeKNGdd3cwo/ktpf9aL9epCfFqWDEKysUlLQ==
 
 qs@~6.5.2:
   version "6.5.2"

@@ -73,7 +73,6 @@ export class NgAisInfiniteHits extends TypedBaseWidget<
   @Input()
   public transformItems?: InfiniteHitsConnectorParams['transformItems'];
 
-  // @ts-ignore
   public state: InfiniteHitsRenderState = {
     hits: [],
     results: undefined,
@@ -82,7 +81,6 @@ export class NgAisInfiniteHits extends TypedBaseWidget<
     isLastPage: false,
     showMore: noop,
     showPrevious: noop,
-    insights: undefined,
     sendEvent: noop,
     bindEvent: () => '',
   };
