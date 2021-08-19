@@ -1,19 +1,22 @@
-import { Component, Input, Inject, forwardRef, Optional } from '@angular/core';
+import { Component, forwardRef, Inject, Input, Optional } from '@angular/core';
 
 import { EXPERIMENTAL_connectConfigureRelatedItems } from 'instantsearch.js/es/connectors';
-import { BaseWidget } from '../base-widget';
+import { TypedBaseWidget } from '../typed-base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { NgAisIndex } from '../index-widget/index-widget';
-import { AlgoliaHit } from 'instantsearch.js';
-import { ConfigureRelatedItemsConnectorParams } from 'instantsearch.js/es/connectors/configure-related-items/connectConfigureRelatedItems';
-
-type x = ConfigureRelatedItemsConnectorParams;
+import {
+  ConfigureRelatedItemsConnectorParams,
+  ConfigureRelatedItemsWidgetDescription,
+} from 'instantsearch.js/es/connectors/configure-related-items/connectConfigureRelatedItems';
 
 @Component({
   selector: 'ais-experimental-configure-related-items',
   template: '',
 })
-export class NgAisConfigureRelatedItems extends BaseWidget {
+export class NgAisConfigureRelatedItems extends TypedBaseWidget<
+  ConfigureRelatedItemsWidgetDescription,
+  ConfigureRelatedItemsConnectorParams
+> {
   @Input() hit: ConfigureRelatedItemsConnectorParams['hit'];
   @Input()
   public matchingPatterns: ConfigureRelatedItemsConnectorParams['matchingPatterns'];

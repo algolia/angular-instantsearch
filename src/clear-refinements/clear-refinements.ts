@@ -1,15 +1,14 @@
 import { Component, Input, Inject, forwardRef, Optional } from '@angular/core';
 import { connectClearRefinements } from 'instantsearch.js/es/connectors';
-import { BaseWidget } from '../base-widget';
+import {
+  ClearRefinementsConnectorParams,
+  ClearRefinementsWidgetDescription,
+  ClearRefinementsRenderState,
+} from 'instantsearch.js/es/connectors/clear-refinements/connectClearRefinements';
+import { TypedBaseWidget } from '../typed-base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { NgAisIndex } from '../index-widget/index-widget';
 import { noop } from '../utils';
-
-type ClearRefinementsState = {
-  hasRefinements: boolean;
-  refine: () => void;
-  createURL: () => string;
-};
 
 @Component({
   selector: 'ais-clear-refinements',
@@ -28,17 +27,24 @@ type ClearRefinementsState = {
     </div>
   `,
 })
-export class NgAisClearRefinements extends BaseWidget {
+export class NgAisClearRefinements extends TypedBaseWidget<
+  ClearRefinementsWidgetDescription,
+  ClearRefinementsConnectorParams
+> {
   // rendering options
   @Input() public resetLabel: string = 'Clear refinements';
 
   // instance options
-  @Input() public includedAttributes: string[];
-  @Input() public excludedAttributes: string[];
-  @Input() public transformItems?: (items: string[]) => string[];
+  @Input()
+  public includedAttributes: ClearRefinementsConnectorParams['includedAttributes'];
+  @Input()
+  public excludedAttributes: ClearRefinementsConnectorParams['excludedAttributes'];
+  @Input()
+  public transformItems?: ClearRefinementsConnectorParams['transformItems'];
 
-  public state: ClearRefinementsState = {
+  public state: ClearRefinementsRenderState = {
     hasRefinements: false,
+    canRefine: false,
     refine: noop,
     createURL: () => '#',
   };

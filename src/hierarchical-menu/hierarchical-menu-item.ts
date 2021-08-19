@@ -1,9 +1,9 @@
 import { Component, Input } from '@angular/core';
 import { bem } from '../utils';
 import {
+  HierarchicalMenuRenderState,
   HierarchicalMenuItem,
-  HierarchicalMenuState,
-} from './hierarchical-menu';
+} from 'instantsearch.js/es/connectors/hierarchical-menu/connectHierarchicalMenu';
 
 @Component({
   selector: 'ais-hierarchical-menu-item',
@@ -39,8 +39,8 @@ import {
 })
 export class NgAisHierarchicalMenuItem {
   @Input() public lvl: number = 1;
-  @Input() public refine: HierarchicalMenuState['refine'];
-  @Input() public createURL: HierarchicalMenuState['createURL'];
+  @Input() public refine: HierarchicalMenuRenderState['refine'];
+  @Input() public createURL: HierarchicalMenuRenderState['createURL'];
   @Input() public item: HierarchicalMenuItem;
 
   public cx = bem('HierarchicalMenu');

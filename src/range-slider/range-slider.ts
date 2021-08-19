@@ -10,16 +10,16 @@ import {
 import { connectRange } from 'instantsearch.js/es/connectors';
 import * as noUiSlider from 'nouislider';
 
-import { BaseWidget } from '../base-widget';
+import { TypedBaseWidget } from '../typed-base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { NgAisIndex } from '../index-widget/index-widget';
 import { parseNumberInput, noop } from '../utils';
-
-export type RangeSliderState = {
-  range: { min: number; max: number };
-  refine: Function;
-  start: number[];
-};
+import {
+  RangeBoundaries,
+  RangeConnectorParams,
+  RangeWidgetDescription,
+  RangeRenderState,
+} from 'instantsearch.js/es/connectors/range/connectRange';
 
 @Component({
   selector: 'ais-range-slider',
@@ -31,7 +31,10 @@ export type RangeSliderState = {
     </div>
   `,
 })
-export class NgAisRangeSlider extends BaseWidget {
+export class NgAisRangeSlider extends TypedBaseWidget<
+  RangeWidgetDescription,
+  RangeConnectorParams
+> {
   @ViewChild('sliderContainer', { static: false })
   public sliderContainer: any;
 
@@ -40,15 +43,21 @@ export class NgAisRangeSlider extends BaseWidget {
   @Input() public tooltips: boolean = true;
 
   // instance options
-  @Input() public attribute: string;
-  @Input() public min?: number;
-  @Input() public max?: number;
-  @Input() public precision?: number;
+  @Input() public attribute: RangeConnectorParams['attribute'];
+  @Input() public min?: RangeConnectorParams['min'];
+  @Input() public max?: RangeConnectorParams['max'];
+  @Input() public precision?: RangeConnectorParams['precision'];
 
-  public state: RangeSliderState = {
+  public state: RangeRenderState = {
+    canRefine: false,
+    format: {
+      from: () => '',
+      to: () => '',
+    },
     range: { min: 0, max: 1 },
     refine: noop,
     start: [0, 1],
+    sendEvent: noop,
   };
 
   private slider: any;
@@ -80,7 +89,7 @@ export class NgAisRangeSlider extends BaseWidget {
     super.ngOnInit();
   }
 
-  public updateState = (state, isFirstRendering: boolean) => {
+  public updateState = (state: RangeRenderState, isFirstRendering: boolean) => {
     if (isFirstRendering) {
       // create slider
       const config = {
@@ -134,10 +143,13 @@ export class NgAisRangeSlider extends BaseWidget {
     const disabled = min === max;
     const range = disabled ? { min, max: max + 0.0001 } : { min, max };
 
-    this.slider.updateOptions({ disabled, range, start });
+    // TODO: test this as we're nolonger passing disable
+    // it seems the API has changed: slider.setAttribute('disabled', true) / slider.removeAttribute('disabled');
+    // see: https://refreshless.com/nouislider/more/#section-disable
+    this.slider.updateOptions({ range, start });
   };
 
-  public handleChange = (values: string[] | number[]) => {
+  public handleChange = (values: RangeBoundaries) => {
     this.state.refine(values);
   };
 

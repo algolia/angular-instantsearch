@@ -1,22 +1,25 @@
 import { Component, Input, Inject, forwardRef, Optional } from '@angular/core';
 
 import { connectQueryRules } from 'instantsearch.js/es/connectors';
-import { BaseWidget } from '../base-widget';
+import { TypedBaseWidget } from '../typed-base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { NgAisIndex } from '../index-widget/index-widget';
-
-type FacetValue = string | number | boolean;
+import {
+  QueryRulesConnectorParams,
+  QueryRulesWidgetDescription,
+} from 'instantsearch.js/es/connectors/query-rules/connectQueryRules';
 
 @Component({
   selector: 'ais-query-rule-context',
   template: '',
 })
-export class NgAisQueryRuleContext extends BaseWidget {
+export class NgAisQueryRuleContext extends TypedBaseWidget<
+  QueryRulesWidgetDescription,
+  QueryRulesConnectorParams
+> {
+  @Input() public trackedFilters: QueryRulesConnectorParams['trackedFilters'];
   @Input()
-  public trackedFilters: {
-    [facetName: string]: (facetValues: FacetValue[]) => FacetValue[];
-  };
-  @Input() public transformRuleContexts?: (items: string[]) => string[];
+  public transformRuleContexts?: QueryRulesConnectorParams['transformRuleContexts'];
 
   constructor(
     @Inject(forwardRef(() => NgAisIndex))

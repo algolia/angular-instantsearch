@@ -1,25 +1,15 @@
 import { Component, Input, Inject, forwardRef, Optional } from '@angular/core';
 
 import { connectRatingMenu } from 'instantsearch.js/es/connectors';
-import { BaseWidget } from '../base-widget';
+import { TypedBaseWidget } from '../typed-base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { NgAisIndex } from '../index-widget/index-widget';
 import { noop, parseNumberInput } from '../utils';
-
-export type RatingMenuItem = {
-  count: number;
-  isRefined: boolean;
-  name: string;
-  value: string;
-  stars: boolean[];
-};
-
-export type RatingMenuState = {
-  createURL: Function;
-  hasNoResults: boolean;
-  items: RatingMenuItem[];
-  refine: Function;
-};
+import {
+  RatingMenuConnectorParams,
+  RatingMenuWidgetDescription,
+  RatingMenuRenderState,
+} from 'instantsearch.js/es/connectors/rating-menu/connectRatingMenu';
 
 @Component({
   selector: 'ais-rating-menu',
@@ -85,7 +75,10 @@ export type RatingMenuState = {
     </div>
   `,
 })
-export class NgAisRatingMenu extends BaseWidget {
+export class NgAisRatingMenu extends TypedBaseWidget<
+  RatingMenuWidgetDescription,
+  RatingMenuConnectorParams
+> {
   // rendering options
   @Input() public andUpLabel: string = '& Up';
 
@@ -93,11 +86,13 @@ export class NgAisRatingMenu extends BaseWidget {
   @Input() public attribute: string;
   @Input() public max?: number;
 
-  public state: RatingMenuState = {
-    createURL: noop,
+  public state: RatingMenuRenderState = {
+    createURL: () => '#',
     hasNoResults: false,
     items: [],
     refine: noop,
+    canRefine: false,
+    sendEvent: noop,
   };
 
   get isHidden() {

@@ -87,6 +87,7 @@ export { createSSRSearchClient } from './create-ssr-search-client';
 
 // Custom widget with BaseWidget class
 export { BaseWidget, Widget, Connector } from './base-widget';
+export { TypedBaseWidget } from './typed-base-widget';
 
 export { NgAisInstantSearch } from './instantsearch/instantsearch';
 export { NgAisIndex } from './index-widget/index-widget';

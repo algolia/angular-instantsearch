@@ -12,52 +12,15 @@ import {
 } from '@angular/core';
 
 import { connectVoiceSearch } from 'instantsearch.js/es/connectors';
-import { BaseWidget } from '../base-widget';
+import { TypedBaseWidget } from '../typed-base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { NgAisIndex } from '../index-widget/index-widget';
 import { noop } from '../utils';
-
-type Status =
-  | 'initial'
-  | 'askingPermission'
-  | 'waiting'
-  | 'recognizing'
-  | 'finished'
-  | 'error';
-
-type ErrorCode =
-  | 'no-speech'
-  | 'aborted'
-  | 'audio-capture'
-  | 'network'
-  | 'not-allowed'
-  | 'service-not-allowed'
-  | 'bad-grammar'
-  | 'language-not-supported';
-
-type TemplateContext = {
-  status: Status;
-  transcript: string;
-  isSpeechFinal: boolean;
-  errorCode?: ErrorCode;
-  isBrowserSupported: boolean;
-  isListening: boolean;
-};
-
-type VoiceListeningState = {
-  status: Status;
-  transcript: string;
-  isSpeechFinal: boolean;
-  errorCode?: ErrorCode;
-};
-
-type State = {
-  isBrowserSupported: boolean;
-  isListening: boolean;
-  toggleListening: () => void;
-  voiceListeningState: VoiceListeningState;
-  templateContext: TemplateContext;
-};
+import {
+  VoiceSearchConnectorParams,
+  VoiceSearchWidgetDescription,
+  VoiceSearchRenderState,
+} from 'instantsearch.js/es/connectors/voice-search/connectVoiceSearch';
 
 @Component({
   selector: 'ais-voice-search',
@@ -70,10 +33,10 @@ type State = {
         [disabled]="!state.isBrowserSupported"
         (click)="handleClick($event)"
       >
-        <ng-container *ngTemplateOutlet="button ? button : defaultButton; context: state.templateContext"></ng-container>
+        <ng-container *ngTemplateOutlet="button ? button : defaultButton; context: templateContext"></ng-container>
       </button>
       <div [class]="cx('status')">
-        <ng-container *ngTemplateOutlet="status ? status : defaultStatus; context: state.templateContext"></ng-container>
+        <ng-container *ngTemplateOutlet="status ? status : defaultStatus; context: templateContext"></ng-container>
       </div>
     </div>
 
@@ -114,19 +77,28 @@ type State = {
     </ng-template>
   `,
 })
-export class NgAisVoiceSearch extends BaseWidget<State> implements OnInit {
+export class NgAisVoiceSearch
+  extends TypedBaseWidget<
+    VoiceSearchWidgetDescription,
+    VoiceSearchConnectorParams
+  >
+  implements OnInit {
   @ContentChild('button', { static: false })
   button: TemplateRef<ElementRef>;
   @ContentChild('status', { static: false })
   status: TemplateRef<ElementRef>;
 
-  @Input() public searchAsYouSpeak?: boolean;
+  // rendering options
   @Input() public buttonTitle: string = 'Search by voice';
   @Input()
   public disabledButtonTitle: string =
     'Search by voice (not supported on this browser)';
 
-  public state: State = {
+  // instance option
+  @Input()
+  public searchAsYouSpeak?: VoiceSearchConnectorParams['searchAsYouSpeak'];
+
+  public state: VoiceSearchRenderState = {
     isBrowserSupported: undefined,
     isListening: undefined,
     toggleListening: noop,
@@ -136,14 +108,18 @@ export class NgAisVoiceSearch extends BaseWidget<State> implements OnInit {
       isSpeechFinal: false,
       errorCode: undefined,
     },
-    templateContext: {
-      status: 'initial',
-      errorCode: undefined,
-      transcript: '',
-      isSpeechFinal: false,
-      isListening: false,
-      isBrowserSupported: false,
-    },
+  };
+
+  public templateContext: VoiceSearchRenderState['voiceListeningState'] & {
+    isListening: boolean;
+    isBrowserSupported: boolean;
+  } = {
+    status: 'initial',
+    errorCode: undefined,
+    transcript: '',
+    isSpeechFinal: false,
+    isListening: false,
+    isBrowserSupported: false,
   };
 
   constructor(
@@ -173,19 +149,17 @@ export class NgAisVoiceSearch extends BaseWidget<State> implements OnInit {
     this.state.voiceListeningState.status === 'error' &&
     this.state.voiceListeningState.errorCode === 'not-allowed';
 
-  public updateState = (state: State): void => {
+  public updateState = (state: VoiceSearchRenderState): void => {
     this.zone.run(() => {
-      this.state = {
-        ...state,
-        templateContext: {
-          status: state.voiceListeningState.status,
-          errorCode: state.voiceListeningState.errorCode,
-          transcript: state.voiceListeningState.transcript,
-          isSpeechFinal: state.voiceListeningState.isSpeechFinal,
-          isListening: state.isListening,
-          isBrowserSupported: state.isBrowserSupported,
-        },
+      this.templateContext = {
+        status: state.voiceListeningState.status,
+        errorCode: state.voiceListeningState.errorCode,
+        transcript: state.voiceListeningState.transcript,
+        isSpeechFinal: state.voiceListeningState.isSpeechFinal,
+        isListening: state.isListening,
+        isBrowserSupported: state.isBrowserSupported,
       };
+      this.state = state;
     });
   };
 }

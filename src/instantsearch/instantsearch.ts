@@ -14,7 +14,7 @@ import {
 import * as algoliasearchProxy from 'algoliasearch/lite';
 import instantsearch from 'instantsearch.js/es';
 
-import { Widget } from '../base-widget';
+import { Widget } from '../typed-base-widget';
 import { VERSION } from '../version';
 import { InstantSearchOptions, InstantSearch } from 'instantsearch.js/es/types';
 export { SearchClient, Hit } from 'instantsearch.js/es/types';

@@ -5,6 +5,7 @@ import { NgAisInstantSearchModule } from '../src/instantsearch/instantsearch.mod
 
 // mock component, don't create a real instantsearch instance
 jest.mock('../src/base-widget');
+jest.mock('../src/typed-base-widget');
 jest.mock('../src/instantsearch/instantsearch');
 
 export function createRenderer({

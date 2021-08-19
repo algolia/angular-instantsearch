@@ -9,29 +9,30 @@ import {
 } from '@angular/core';
 
 import { connectConfigure } from 'instantsearch.js/es/connectors';
-import { ConfigureConnectorParams } from 'instantsearch.js/es/connectors/configure/connectConfigure';
-import { BaseWidget } from '../base-widget';
+import {
+  ConfigureWidgetDescription,
+  ConfigureRenderState,
+  ConfigureConnectorParams,
+} from 'instantsearch.js/es/connectors/configure/connectConfigure';
+import { TypedBaseWidget } from '../typed-base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { NgAisIndex } from '../index-widget/index-widget';
 import { noop } from '../utils';
-
-export type ConfigureState = {
-  refine: Function;
-};
-
-type SearchParameters = ConfigureConnectorParams['searchParameters'];
 
 @Component({
   selector: 'ais-configure',
   template: '',
 })
-export class NgAisConfigure extends BaseWidget {
+export class NgAisConfigure extends TypedBaseWidget<
+  ConfigureWidgetDescription,
+  ConfigureConnectorParams
+> {
   // instance options
-  private internalSearchParameters: SearchParameters;
+  private internalSearchParameters: ConfigureConnectorParams['searchParameters'];
 
-  private differ: KeyValueDiffer<string, any>; // SearchParameters (I don't know how to get the values of the type)
+  private differ: KeyValueDiffer<string, any>;
 
-  public state: ConfigureState = {
+  public state: ConfigureRenderState = {
     refine: noop,
   };
 
@@ -47,7 +48,7 @@ export class NgAisConfigure extends BaseWidget {
   }
 
   @Input()
-  set searchParameters(values: SearchParameters) {
+  set searchParameters(values: ConfigureConnectorParams['searchParameters']) {
     this.internalSearchParameters = values;
     if (!this.differ && values) {
       this.differ = this.differs.find(values).create();

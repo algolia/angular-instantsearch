@@ -1,32 +1,15 @@
 import { Component, Input, Inject, forwardRef, Optional } from '@angular/core';
 import { connectRefinementList } from 'instantsearch.js/es/connectors';
-import { BaseWidget } from '../base-widget';
-import {
-  NgAisInstantSearch,
-  FacetSortByStringOptions,
-} from '../instantsearch/instantsearch';
+import { TypedBaseWidget } from '../typed-base-widget';
+import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { NgAisIndex } from '../index-widget/index-widget';
 import { noop, parseNumberInput } from '../utils';
-
-export type RefinementListItem = {
-  value: string;
-  label: string;
-  count: number;
-  isRefined: boolean;
-  highlighted?: string;
-};
-
-export type RefinementListState = {
-  canRefine: boolean;
-  canToggleShowMore: boolean;
-  createURL: Function;
-  isShowingMore: boolean;
-  items: RefinementListItem[];
-  refine: Function;
-  toggleShowMore: Function;
-  searchForItems: Function;
-  isFormSearch: boolean;
-};
+import {
+  RefinementListConnectorParams,
+  RefinementListWidgetDescription,
+  RefinementListRenderState,
+  RefinementListItem,
+} from 'instantsearch.js/es/connectors/refinement-list/connectRefinementList';
 
 @Component({
   selector: 'ais-refinement-list',
@@ -78,7 +61,10 @@ export type RefinementListState = {
     </div>
   `,
 })
-export class NgAisRefinementList extends BaseWidget {
+export class NgAisRefinementList extends TypedBaseWidget<
+  RefinementListWidgetDescription,
+  RefinementListConnectorParams
+> {
   // rendering options
   @Input() public showMoreLabel: string = 'Show more';
   @Input() public showLessLabel: string = 'Show less';
@@ -86,30 +72,27 @@ export class NgAisRefinementList extends BaseWidget {
   @Input() public searchPlaceholder: string = 'Search here...';
 
   // instance options
-  @Input() public attribute: string;
-  @Input() public operator: 'or' | 'and';
-  @Input() public limit: number;
-  @Input() public showMore: boolean;
-  @Input() public showMoreLimit: number;
+  @Input() public attribute: RefinementListConnectorParams['attribute'];
+  @Input() public operator: RefinementListConnectorParams['operator'];
+  @Input() public limit: RefinementListConnectorParams['limit'];
+  @Input() public showMore: RefinementListConnectorParams['showMore'];
+  @Input() public showMoreLimit: RefinementListConnectorParams['showMoreLimit'];
+  @Input() public sortBy: RefinementListConnectorParams['sortBy'];
   @Input()
-  public sortBy:
-    | FacetSortByStringOptions[]
-    | ((a: RefinementListItem, b: RefinementListItem) => number);
-  @Input()
-  public transformItems?: <U extends RefinementListItem>(
-    items: RefinementListItem[]
-  ) => U[];
+  public transformItems?: RefinementListConnectorParams['transformItems'];
 
-  public state: RefinementListState = {
+  public state: RefinementListRenderState = {
     canRefine: false,
     canToggleShowMore: false,
-    createURL: noop,
+    createURL: () => '',
     isShowingMore: false,
     items: [],
     refine: noop,
     toggleShowMore: noop,
     searchForItems: noop,
-    isFormSearch: false,
+    isFromSearch: false,
+    hasExhaustiveItems: false,
+    sendEvent: noop,
   };
 
   get isHidden() {
@@ -141,10 +124,7 @@ export class NgAisRefinementList extends BaseWidget {
     super.ngOnInit();
   }
 
-  public refine(
-    event: MouseEvent,
-    item: { isRefined: boolean; value: string }
-  ) {
+  public refine(event: MouseEvent, item: RefinementListItem) {
     event.preventDefault();
     event.stopPropagation();
 

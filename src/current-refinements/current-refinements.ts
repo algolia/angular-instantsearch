@@ -1,33 +1,16 @@
 import { Component, Input, Inject, forwardRef, Optional } from '@angular/core';
 
 import { connectCurrentRefinements } from 'instantsearch.js/es/connectors';
-import { BaseWidget } from '../base-widget';
+import {
+  CurrentRefinementsConnectorParams,
+  CurrentRefinementsConnectorParamsRefinement,
+  CurrentRefinementsWidgetDescription,
+  CurrentRefinementsRenderState,
+} from 'instantsearch.js/es/connectors/current-refinements/connectCurrentRefinements';
+import { TypedBaseWidget } from '../typed-base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { NgAisIndex } from '../index-widget/index-widget';
 import { noop } from '../utils';
-
-export type CurrentRefinementsItem = {
-  attribute: string;
-  label: string;
-  refine: Function;
-  refinements: {
-    type: string;
-    // TODO: create multiple types for each of the available refinement
-    // https://github.com/algolia/angular-instantsearch/pull/463#discussion_r255911232
-    attribute: string;
-    label: string;
-    value: string;
-    operator?: string;
-    exhaustive?: boolean;
-    count?: number;
-  }[];
-};
-
-export type CurrentRefinementsState = {
-  createURL: Function;
-  refine: Function;
-  items: CurrentRefinementsItem[];
-};
 
 @Component({
   selector: 'ais-current-refinements',
@@ -55,19 +38,23 @@ export type CurrentRefinementsState = {
     </div>
   `,
 })
-export class NgAisCurrentRefinements extends BaseWidget {
+export class NgAisCurrentRefinements extends TypedBaseWidget<
+  CurrentRefinementsWidgetDescription,
+  CurrentRefinementsConnectorParams
+> {
   // instance options
-  @Input() public includedAttributes?: string[];
-  @Input() public excludedAttributes?: string[];
   @Input()
-  public transformItems?: <U extends CurrentRefinementsItem>(
-    items: CurrentRefinementsItem[]
-  ) => U[];
+  public includedAttributes?: CurrentRefinementsConnectorParams['includedAttributes'];
+  @Input()
+  public excludedAttributes?: CurrentRefinementsConnectorParams['excludedAttributes'];
+  @Input()
+  public transformItems?: CurrentRefinementsConnectorParams['transformItems'];
 
-  public state: CurrentRefinementsState = {
-    createURL: noop,
+  public state: CurrentRefinementsRenderState = {
+    createURL: () => '#',
     refine: noop,
     items: [],
+    canRefine: false,
   };
 
   get isHidden() {
@@ -93,7 +80,10 @@ export class NgAisCurrentRefinements extends BaseWidget {
     super.ngOnInit();
   }
 
-  public handleClick(event: MouseEvent, refinement: {}) {
+  public handleClick(
+    event: MouseEvent,
+    refinement: CurrentRefinementsConnectorParamsRefinement
+  ) {
     event.preventDefault();
     this.state.refine(refinement);
   }

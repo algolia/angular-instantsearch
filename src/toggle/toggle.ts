@@ -1,40 +1,27 @@
 import { Component, Input, Inject, forwardRef, Optional } from '@angular/core';
 
 import { connectToggleRefinement } from 'instantsearch.js/es/connectors';
-import { BaseWidget } from '../base-widget';
+import { TypedBaseWidget } from '../typed-base-widget';
 import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { NgAisIndex } from '../index-widget/index-widget';
 import { noop } from '../utils';
-
-export type ToggleState = {
-  createURL: Function;
-  refine: Function;
-  value: {
-    name?: string;
-    count?: number;
-    isRefined?: boolean;
-    onFacetValue?: {
-      isRefined: boolean;
-      count: number;
-    };
-    offFacetValue?: {
-      isRefined: boolean;
-      count: number;
-    };
-  };
-};
+import {
+  ToggleRefinementConnectorParams,
+  ToggleRefinementWidgetDescription,
+  ToggleRefinementRenderState,
+} from 'instantsearch.js/es/connectors/toggle-refinement/connectToggleRefinement';
 
 @Component({
   selector: 'ais-toggle',
   template: `
-    <div [class]="cx()">
+    <div [class]='cx()'>
       <label [class]="cx('label')">
         <input
           [class]="cx('checkbox')"
-          type="checkbox"
-          value="{{state.value.name}}"
-          [checked]="state.value.isRefined"
-          (change)="handleChange($event)"
+          type='checkbox'
+          value='{{state.value.name}}'
+          [checked]='state.value.isRefined'
+          (change)='handleChange($event)'
         />
 
         <span [class]="cx('labelText')">
@@ -46,19 +33,30 @@ export type ToggleState = {
     </div>
   `,
 })
-export class NgAisToggle extends BaseWidget {
+export class NgAisToggle extends TypedBaseWidget<
+  ToggleRefinementWidgetDescription,
+  ToggleRefinementConnectorParams
+> {
   // rendering options
   @Input() public label: string;
 
   // instance options
-  @Input() public attribute: string;
-  @Input() public on?: boolean | number | string;
-  @Input() public off?: boolean | number | string;
+  @Input() public attribute: ToggleRefinementConnectorParams['attribute'];
+  @Input() public on?: ToggleRefinementConnectorParams['on'];
+  @Input() public off?: ToggleRefinementConnectorParams['off'];
 
-  public state: ToggleState = {
-    createURL: noop,
+  public state: ToggleRefinementRenderState = {
+    canRefine: false,
+    sendEvent: undefined,
+    value: {
+      count: undefined,
+      isRefined: false,
+      name: '',
+      offFacetValue: undefined,
+      onFacetValue: undefined,
+    },
+    createURL: () => '#',
     refine: noop,
-    value: {},
   };
 
   constructor(
@@ -80,7 +78,7 @@ export class NgAisToggle extends BaseWidget {
     super.ngOnInit();
   }
 
-  public handleChange(event: MouseEvent) {
+  public handleChange(event: Event) {
     event.preventDefault();
     event.stopPropagation();
     this.state.refine(this.state.value);

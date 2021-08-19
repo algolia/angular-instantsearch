@@ -1,29 +1,16 @@
 import { Component, Input, Inject, forwardRef, Optional } from '@angular/core';
 
 import { connectMenu } from 'instantsearch.js/es/connectors';
-import { BaseWidget } from '../base-widget';
-import {
-  NgAisInstantSearch,
-  FacetSortByStringOptions,
-} from '../instantsearch/instantsearch';
+import { TypedBaseWidget } from '../typed-base-widget';
+import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { NgAisIndex } from '../index-widget/index-widget';
 import { noop } from '../utils';
-
-export type MenuItem = {
-  value: string;
-  label: string;
-  count: number;
-  isRefined: boolean;
-};
-
-export type MenuState = {
-  items: MenuItem[];
-  refine: Function;
-  createURL: Function;
-  isShowingMore: boolean;
-  canToggleShowMore: boolean;
-  toggleShowMore: Function;
-};
+import {
+  MenuConnectorParams,
+  MenuWidgetDescription,
+  MenuRenderState,
+  MenuItem,
+} from 'instantsearch.js/es/connectors/menu/connectMenu';
 
 @Component({
   selector: 'ais-menu',
@@ -60,30 +47,31 @@ export type MenuState = {
     </div>
   `,
 })
-export class NgAisMenu extends BaseWidget {
+export class NgAisMenu extends TypedBaseWidget<
+  MenuWidgetDescription,
+  MenuConnectorParams
+> {
   // rendering options
   @Input() public showMoreLabel: string = 'Show more';
   @Input() public showLessLabel: string = 'Show less';
 
   // instance options
-  @Input() public attribute: string;
-  @Input() public showMore?: boolean;
-  @Input() public limit?: number;
-  @Input() public showMoreLimit?: number;
-  @Input()
-  public sortBy?:
-    | FacetSortByStringOptions[]
-    | ((a: MenuItem, b: MenuItem) => number);
-  @Input()
-  public transformItems?: <U extends MenuItem>(items: MenuItem[]) => U[];
+  @Input() public attribute: MenuConnectorParams['attribute'];
+  @Input() public showMore?: MenuConnectorParams['showMore'];
+  @Input() public limit?: MenuConnectorParams['limit'];
+  @Input() public showMoreLimit?: MenuConnectorParams['showMoreLimit'];
+  @Input() public sortBy?: MenuConnectorParams['sortBy'];
+  @Input() public transformItems?: MenuConnectorParams['transformItems'];
 
-  public state: MenuState = {
+  public state: MenuRenderState = {
     items: [],
     refine: noop,
-    createURL: noop,
+    createURL: () => '#',
+    canRefine: false,
     isShowingMore: false,
     canToggleShowMore: false,
     toggleShowMore: noop,
+    sendEvent: noop,
   };
 
   get isHidden() {
@@ -123,7 +111,7 @@ export class NgAisMenu extends BaseWidget {
     super.ngOnInit();
   }
 
-  handleClick(event: MouseEvent, value: string) {
+  handleClick(event: MouseEvent, value: MenuItem['value']) {
     event.preventDefault();
     event.stopPropagation();
 

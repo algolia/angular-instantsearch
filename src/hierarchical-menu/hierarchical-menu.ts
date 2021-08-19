@@ -1,27 +1,15 @@
 import { Component, Input, Inject, forwardRef, Optional } from '@angular/core';
 
 import { connectHierarchicalMenu } from 'instantsearch.js/es/connectors';
-import { BaseWidget } from '../base-widget';
 import {
-  NgAisInstantSearch,
-  FacetSortByStringOptions,
-} from '../instantsearch/instantsearch';
+  HierarchicalMenuConnectorParams,
+  HierarchicalMenuWidgetDescription,
+  HierarchicalMenuRenderState,
+} from 'instantsearch.js/es/connectors/hierarchical-menu/connectHierarchicalMenu';
+import { TypedBaseWidget } from '../typed-base-widget';
+import { NgAisInstantSearch } from '../instantsearch/instantsearch';
 import { NgAisIndex } from '../index-widget/index-widget';
 import { parseNumberInput, noop } from '../utils';
-
-export type HierarchicalMenuState = {
-  createURL: (value: string) => string;
-  items: HierarchicalMenuItem[];
-  refine: (value: string) => void;
-};
-
-export type HierarchicalMenuItem = {
-  value: string;
-  label: string;
-  count: number;
-  isRefined: boolean;
-  data: HierarchicalMenuItem[] | null;
-};
 
 @Component({
   selector: 'ais-hierarchical-menu',
@@ -42,26 +30,30 @@ export type HierarchicalMenuItem = {
     </div>
   `,
 })
-export class NgAisHierarchicalMenu extends BaseWidget {
-  @Input() public attributes: string[];
-  @Input() public separator?: string;
-  @Input() public rootPath?: string;
-  @Input() public showParentLevel?: boolean;
-  @Input() public limit?: number | string;
+export class NgAisHierarchicalMenu extends TypedBaseWidget<
+  HierarchicalMenuWidgetDescription,
+  HierarchicalMenuConnectorParams
+> {
+  @Input() public attributes: HierarchicalMenuConnectorParams['attributes'];
+  @Input() public separator?: HierarchicalMenuConnectorParams['separator'];
+  @Input() public rootPath?: HierarchicalMenuConnectorParams['rootPath'];
   @Input()
-  public sortBy?:
-    | FacetSortByStringOptions[]
-    | ((a: HierarchicalMenuItem, b: HierarchicalMenuItem) => number);
+  public showParentLevel?: HierarchicalMenuConnectorParams['showParentLevel'];
+  @Input() public limit?: HierarchicalMenuConnectorParams['limit'];
+  @Input() public sortBy?: HierarchicalMenuConnectorParams['sortBy'];
 
   @Input()
-  public transformItems?: <U extends HierarchicalMenuItem>(
-    items: HierarchicalMenuItem[]
-  ) => U[];
+  public transformItems?: HierarchicalMenuConnectorParams['transformItems'];
 
-  public state: HierarchicalMenuState = {
+  public state: HierarchicalMenuRenderState = {
     createURL: () => '#',
     items: [],
     refine: noop,
+    canRefine: false,
+    isShowingMore: false,
+    toggleShowMore: noop,
+    canToggleShowMore: false,
+    sendEvent: noop,
   };
 
   get isHidden(): boolean {

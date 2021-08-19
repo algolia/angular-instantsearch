@@ -10,6 +10,7 @@ import { join } from 'path';
 import glob from 'glob';
 
 jest.mock('../../../src/base-widget');
+jest.mock('../../../src/typed-base-widget');
 jest.mock('../../../src/instantsearch/instantsearch');
 
 function readFileGlob(globPath: string): Promise<string> {
