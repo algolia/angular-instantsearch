@@ -1,3 +1,12 @@
+# [4.0.0-alpha.3](https://github.com/algolia/angular-instantsearch/compare/4.0.0-alpha.2...4.0.0-alpha.3) (2021-08-23)
+
+
+### Bug Fixes
+
+* **types:** use InstantSearch.js types  ([#828](https://github.com/algolia/angular-instantsearch/issues/828)) ([7c9a1ed](https://github.com/algolia/angular-instantsearch/commit/7c9a1ed15c0f212dcfdaac3ad94522538ea548ad))
+
+
+
 # [4.0.0-alpha.2](https://github.com/algolia/angular-instantsearch/compare/4.0.0-alpha.1...4.0.0-alpha.2) (2021-07-29)
 
 
