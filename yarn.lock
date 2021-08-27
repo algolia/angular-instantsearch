@@ -5506,10 +5506,10 @@ instantsearch.css@^7.3.1:
   resolved "https://registry.yarnpkg.com/instantsearch.css/-/instantsearch.css-7.3.1.tgz#7ab74a8f355091ae040947a9cf5438f379026622"
   integrity sha512-/kaMDna5D+Q9mImNBHEhb9HgHATDOFKYii7N1Iwvrj+lmD9gBJLqVhUw67gftq2O0QI330pFza+CRscIwB1wQQ==
 
-instantsearch.js@4.26.0-experimental-typescript.0:
-  version "4.26.0-experimental-typescript.0"
-  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-4.26.0-experimental-typescript.0.tgz#ad130ffc26e52bbc53c8c49e3aac5597799a0fcc"
-  integrity sha512-ZiUZT5PgSpvLGQwBukIQbVn48a932o5WMZ5dvveBUURukKXxRMBKrsFZaXJ30aMugfgkQD93kK3KHT0siYP3PQ==
+instantsearch.js@^4.28.0:
+  version "4.28.0"
+  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-4.28.0.tgz#66e3515b45c13e37b9ea30b792eb5fc31626a8ad"
+  integrity sha512-eJwIyPuMDagniMdNS8bNK5ZX4v/dlYmRdjM449FfWEiAem0cvYe1psWv3fYAmSYw8Llyb4jPFUcsHI7oRrCuwQ==
   dependencies:
     "@types/google.maps" "^3.45.3"
     "@types/hogan.js" "^3.0.0"
