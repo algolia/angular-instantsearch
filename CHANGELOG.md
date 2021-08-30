@@ -1,3 +1,7 @@
+# [4.0.0-alpha.4](https://github.com/algolia/angular-instantsearch/compare/4.0.0-alpha.3...4.0.0-alpha.4) (2021-08-27)
+
+
+
 # [4.0.0-alpha.3](https://github.com/algolia/angular-instantsearch/compare/4.0.0-alpha.2...4.0.0-alpha.3) (2021-08-23)
 
 
