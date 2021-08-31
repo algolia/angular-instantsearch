@@ -1,6 +1,6 @@
 # [4.0.0](https://github.com/algolia/angular-instantsearch/compare/3.0.0-beta.5...4.0.0) (2021-08-31)
 
-If migrating from v3, refer to [Upgrade guide](https://www.algolia.com/doc/guides/building-search-ui/upgrade-guides/angular/#migration-from-v3-to-v4).
+If migrating from v3, refer to the [upgrade guide](https://www.algolia.com/doc/guides/building-search-ui/upgrade-guides/angular/#migration-from-v3-to-v4).
 
 ### Bug Fixes
 
