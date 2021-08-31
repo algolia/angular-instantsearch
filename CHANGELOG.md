@@ -1,30 +1,11 @@
 # [4.0.0](https://github.com/algolia/angular-instantsearch/compare/4.0.0-alpha.4...4.0.0) (2021-08-31)
 
-
-
-# [4.0.0-alpha.4](https://github.com/algolia/angular-instantsearch/compare/4.0.0-alpha.3...4.0.0-alpha.4) (2021-08-27)
-
-
-
-# [4.0.0-alpha.3](https://github.com/algolia/angular-instantsearch/compare/4.0.0-alpha.2...4.0.0-alpha.3) (2021-08-23)
-
+If migrating from v3, refer to [Upgrade guide](https://www.algolia.com/doc/guides/building-search-ui/upgrade-guides/angular/#migration-from-v3-to-v4).
 
 ### Bug Fixes
 
 * **types:** use InstantSearch.js types  ([#828](https://github.com/algolia/angular-instantsearch/issues/828)) ([7c9a1ed](https://github.com/algolia/angular-instantsearch/commit/7c9a1ed15c0f212dcfdaac3ad94522538ea548ad))
-
-
-
-# [4.0.0-alpha.2](https://github.com/algolia/angular-instantsearch/compare/4.0.0-alpha.1...4.0.0-alpha.2) (2021-07-29)
-
-
-### Bug Fixes
-
 * **BaseWidget:** allow declared state and index widgets ([#825](https://github.com/algolia/angular-instantsearch/issues/825)) ([e46fae7](https://github.com/algolia/angular-instantsearch/commit/e46fae718a559ad015dbab31e8f7345b4bd71036))
-
-
-
-# [4.0.0-alpha.1](https://github.com/algolia/angular-instantsearch/compare/3.0.0-beta.5...4.0.0-alpha.1) (2021-07-20)
 
 ### BREAKING CHANGES
 
