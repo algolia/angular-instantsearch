@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 module.exports = {
-  mergeStrategy: { toSameBranch: ['v3', 'v4'] },
+  mergeStrategy: { toSameBranch: ['develop'] },
   shouldPrepare: ({ releaseType, commitNumbersPerType }) => {
     const { fix = 0 } = commitNumbersPerType;
     if (releaseType === 'patch' && fix === 0) {
@@ -41,11 +41,6 @@ module.exports = {
         `Make sure to run \`yarn run release-templates\` in \`create-instantsearch-app\`.`,
       ].join('\n'),
       fields: [
-        {
-          title: 'Branch',
-          value: 'v3',
-          short: true,
-        },
         {
           title: 'Commit',
           value: `*<${latestCommitUrl}|${latestCommitHash}>*`,
