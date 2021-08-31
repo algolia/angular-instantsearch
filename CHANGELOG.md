@@ -1,4 +1,4 @@
-# [4.0.0](https://github.com/algolia/angular-instantsearch/compare/4.0.0-alpha.4...4.0.0) (2021-08-31)
+# [4.0.0](https://github.com/algolia/angular-instantsearch/compare/3.0.0-beta.5...4.0.0) (2021-08-31)
 
 If migrating from v3, refer to [Upgrade guide](https://www.algolia.com/doc/guides/building-search-ui/upgrade-guides/angular/#migration-from-v3-to-v4).
 
