@@ -12,7 +12,7 @@ storiesOf('Custom widgets', module)
   )
   .add('MenuSelect', () => ({
     component: wrapWithHits({
-      template: `<ais-menu-select [attribute]="brand"></ais-menu-select>`,
+      template: `<ais-menu-select></ais-menu-select>`,
     }),
   }))
   .add('Refresh', () => ({
