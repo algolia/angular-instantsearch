@@ -39,7 +39,6 @@ import {
 export class MenuSelect
   extends TypedBaseWidget<MenuWidgetDescription, MenuConnectorParams>
   implements OnInit {
-
   public state: MenuRenderState = {
     items: [],
     refine: () => {},
