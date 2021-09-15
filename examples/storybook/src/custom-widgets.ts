@@ -39,10 +39,6 @@ import {
 export class MenuSelect
   extends TypedBaseWidget<MenuWidgetDescription, MenuConnectorParams>
   implements OnInit {
-  @Input() public attribute: MenuConnectorParams['attribute'];
-  @Input() public limit?: MenuConnectorParams['limit'];
-  @Input() public sortBy?: MenuConnectorParams['sortBy'];
-  @Input() public transformItems?: MenuConnectorParams['transformItems'];
 
   public state: MenuRenderState = {
     items: [],
@@ -67,10 +63,7 @@ export class MenuSelect
 
   public ngOnInit() {
     this.createWidget(connectMenu, {
-      attribute: this.attribute,
-      limit: this.limit,
-      sortBy: this.sortBy,
-      transformItems: this.transformItems,
+      attribute: 'brand',
     });
 
     super.ngOnInit();
@@ -84,7 +77,7 @@ type NoopWidgetDescription = {
 const connectNoop: Connector<
   NoopWidgetDescription,
   Record<string, unknown>
-> = function(renderFn, unmountFn) {
+> = function(renderFn, unmountFn = () => {}) {
   return function(widgetParams) {
     return {
       $$type: 'demo.noop',
