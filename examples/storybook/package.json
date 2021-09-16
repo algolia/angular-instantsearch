@@ -16,7 +16,7 @@
     "@angular/platform-browser-dynamic": "~12.1.0",
     "@angular/router": "~12.1.0",
     "angular-instantsearch": "file:../../dist",
-    "instantsearch.js": "4.25.0-experimental-typescript.0",
+    "instantsearch.js": "^4.28.0",
     "algoliasearch": "^4.10.3",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",

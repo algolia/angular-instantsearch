@@ -1,12 +1,23 @@
-import { Component, OnInit, forwardRef, Inject, Optional } from '@angular/core';
 import {
-  BaseWidget,
-  Widget,
-  Connector,
+  Component,
+  OnInit,
+  forwardRef,
+  Inject,
+  Optional,
+  Input,
+} from '@angular/core';
+import {
+  TypedBaseWidget,
   NgAisInstantSearch,
   NgAisIndex,
 } from 'angular-instantsearch';
+import { Connector } from 'instantsearch.js/es/types';
 import { connectMenu } from 'instantsearch.js/es/connectors';
+import {
+  MenuConnectorParams,
+  MenuWidgetDescription,
+  MenuRenderState,
+} from 'instantsearch.js/es/connectors/menu/connectMenu';
 
 @Component({
   selector: 'ais-menu-select',
@@ -25,7 +36,20 @@ import { connectMenu } from 'instantsearch.js/es/connectors';
     </select>
   `,
 })
-export class MenuSelect extends BaseWidget implements OnInit {
+export class MenuSelect
+  extends TypedBaseWidget<MenuWidgetDescription, MenuConnectorParams>
+  implements OnInit {
+  public state: MenuRenderState = {
+    items: [],
+    refine: () => {},
+    createURL: () => '#',
+    canRefine: false,
+    isShowingMore: false,
+    canToggleShowMore: false,
+    toggleShowMore: () => {},
+    sendEvent: () => {},
+  };
+
   constructor(
     @Inject(forwardRef(() => NgAisIndex))
     @Optional()
@@ -37,16 +61,23 @@ export class MenuSelect extends BaseWidget implements OnInit {
   }
 
   public ngOnInit() {
-    this.createWidget(connectMenu as Connector, { attribute: 'categories' });
+    this.createWidget(connectMenu, {
+      attribute: 'brand',
+    });
+
     super.ngOnInit();
   }
 }
 
-const connectNoop: Connector = function(
-  renderFn: (state: object, isFirstRendering: boolean) => void,
-  unmountFn: () => void
-) {
-  return function(widgetParams?: object): Widget {
+type NoopWidgetDescription = {
+  $$type: 'demo.noop';
+};
+
+const connectNoop: Connector<
+  NoopWidgetDescription,
+  Record<string, unknown>
+> = function(renderFn, unmountFn = () => {}) {
+  return function(widgetParams) {
     return {
       $$type: 'demo.noop',
       init: ({ instantSearchInstance }) => {
@@ -83,7 +114,9 @@ const connectNoop: Connector = function(
     </button>
   `,
 })
-export class Refresh extends BaseWidget implements OnInit {
+export class Refresh
+  extends TypedBaseWidget<NoopWidgetDescription, Record<string, unknown>>
+  implements OnInit {
   constructor(
     @Inject(forwardRef(() => NgAisIndex))
     @Optional()
@@ -94,7 +127,7 @@ export class Refresh extends BaseWidget implements OnInit {
     super('Refresh');
   }
   public ngOnInit() {
-    this.createWidget(connectNoop);
+    this.createWidget(connectNoop, {});
     super.ngOnInit();
   }
   refresh() {
