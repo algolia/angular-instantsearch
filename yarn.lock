@@ -5506,10 +5506,10 @@ instantsearch.css@^7.3.1:
   resolved "https://registry.yarnpkg.com/instantsearch.css/-/instantsearch.css-7.3.1.tgz#7ab74a8f355091ae040947a9cf5438f379026622"
   integrity sha512-/kaMDna5D+Q9mImNBHEhb9HgHATDOFKYii7N1Iwvrj+lmD9gBJLqVhUw67gftq2O0QI330pFza+CRscIwB1wQQ==
 
-instantsearch.js@^4.28.0:
-  version "4.28.0"
-  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-4.28.0.tgz#66e3515b45c13e37b9ea30b792eb5fc31626a8ad"
-  integrity sha512-eJwIyPuMDagniMdNS8bNK5ZX4v/dlYmRdjM449FfWEiAem0cvYe1psWv3fYAmSYw8Llyb4jPFUcsHI7oRrCuwQ==
+instantsearch.js@^4.31.1:
+  version "4.31.1"
+  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-4.31.1.tgz#da9c2368ee29dc94ca5d0cab37e081f5ae402d07"
+  integrity sha512-3hywDIQEyC4auRnSneCiB00DpzXJr+kp72iIYirj+yq5VCBZk1hTBOe+DeWcyJ8ZB4UrzwjasFPgpeGGMeJ3VA==
   dependencies:
     "@types/google.maps" "^3.45.3"
     "@types/hogan.js" "^3.0.0"
@@ -5520,6 +5520,7 @@ instantsearch.js@^4.28.0:
     hogan.js "^3.0.2"
     preact "^10.0.0"
     qs "^6.5.1 < 6.10"
+    search-insights "^2.0.5"
 
 interpret@^1.0.0:
   version "1.2.0"
@@ -9421,6 +9422,11 @@ scss-tokenizer@^0.2.3:
   dependencies:
     js-base64 "^2.1.8"
     source-map "^0.4.2"
+
+search-insights@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/search-insights/-/search-insights-2.0.5.tgz#42fbe4d42d9f68f58bfc7c6e4519e8961b07dd2b"
+  integrity sha512-Mx3PmspHRhiW8eMFrT0coYCtoK6QqUjyNGqtlCpZcKTYflQEzYngx4obIRahc0arXBDzOR2tE/t8k8VgzfJe/g==
 
 "semver@2 || 3 || 4 || 5", semver@^5.1.0, semver@^5.3.0, semver@^5.5.0:
   version "5.5.0"
