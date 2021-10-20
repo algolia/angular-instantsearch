@@ -1,3 +1,12 @@
+## [4.0.1](https://github.com/algolia/angular-instantsearch/compare/4.0.0...4.0.1) (2021-10-20)
+
+
+### Bug Fixes
+
+* **stories:** usage of TypedBaseWidget in custom widgets ([#833](https://github.com/algolia/angular-instantsearch/issues/833)) ([7ef79b2](https://github.com/algolia/angular-instantsearch/commit/7ef79b2d3e873c3d77196b545766a8077baf7b2d))
+
+
+
 # [4.0.0](https://github.com/algolia/angular-instantsearch/compare/3.0.0-beta.5...4.0.0) (2021-08-31)
 
 If migrating from v3, refer to the [upgrade guide](https://www.algolia.com/doc/guides/building-search-ui/upgrade-guides/angular/#migration-from-v3-to-v4).
