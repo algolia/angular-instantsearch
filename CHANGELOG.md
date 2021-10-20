@@ -1,3 +1,12 @@
+## [4.0.1](https://github.com/algolia/angular-instantsearch/compare/4.0.0...4.0.1) (2021-10-20)
+
+
+### Bug Fixes
+
+* **dependencies:** update instantsearch.js to ^4.31.1 ([#839](https://github.com/algolia/angular-instantsearch/pull/839)) ([8d96277](https://github.com/algolia/angular-instantsearch/commit/8d96277))
+
+
+
 # [4.0.0](https://github.com/algolia/angular-instantsearch/compare/3.0.0-beta.5...4.0.0) (2021-08-31)
 
 If migrating from v3, refer to the [upgrade guide](https://www.algolia.com/doc/guides/building-search-ui/upgrade-guides/angular/#migration-from-v3-to-v4).
