@@ -5,11 +5,12 @@ import {
   Connector,
   Renderer,
   WidgetDescription,
+  UnknownWidgetParams,
 } from 'instantsearch.js/es/types';
 
 export class TypedBaseWidget<
   TWidgetDescription extends WidgetDescription,
-  TConnectorParams
+  TConnectorParams extends UnknownWidgetParams
 > implements OnInit, OnDestroy {
   public widget?: Widget;
   public state?: object;

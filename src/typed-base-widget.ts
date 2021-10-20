@@ -9,13 +9,14 @@ import {
   Connector,
   Unmounter,
   Renderer,
+  UnknownWidgetParams,
 } from 'instantsearch.js/es/types';
 
 export { Widget, Connector };
 
 export abstract class TypedBaseWidget<
   TWidgetDescription extends WidgetDescription,
-  TConnectorParams
+  TConnectorParams extends UnknownWidgetParams
 > implements OnInit, OnDestroy {
   @Input() public autoHideContainer?: boolean;
 
