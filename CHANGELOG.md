@@ -3,7 +3,7 @@
 
 ### Bug Fixes
 
-* **stories:** usage of TypedBaseWidget in custom widgets ([#833](https://github.com/algolia/angular-instantsearch/issues/833)) ([7ef79b2](https://github.com/algolia/angular-instantsearch/commit/7ef79b2d3e873c3d77196b545766a8077baf7b2d))
+* **dependencies:** update instantsearch.js to ^4.31.1 ([#839](https://github.com/algolia/angular-instantsearch/pull/839)) ([8d96277](https://github.com/algolia/angular-instantsearch/commit/8d96277))
 
 
 
