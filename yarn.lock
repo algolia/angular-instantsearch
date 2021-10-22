@@ -1149,10 +1149,10 @@
   resolved "https://registry.yarnpkg.com/@trysound/sax/-/sax-0.1.1.tgz#3348564048e7a2d7398c935d466c0414ebb6a669"
   integrity sha512-Z6DoceYb/1xSg5+e+ZlPZ9v0N16ZvZ+wYMraFue4HYrE4ttONKtsvruIRf6t9TBR0YvSOfi1hUU0fJfBLCDYow==
 
-"@types/algoliasearch-v3@npm:@types/algoliasearch@3.34.10":
-  version "3.34.10"
-  resolved "https://registry.yarnpkg.com/@types/algoliasearch/-/algoliasearch-3.34.10.tgz#08cd8f7018451197d7a51c21e1305794aca187b9"
-  integrity sha512-P6OKrRClvlVIF645zmRdGt3pK/IlBeFMAqB/OqM5Z/iYVFp8mSYMFR+uAdADsv0X/8AC6bIPAfj2x+mjslBuFg==
+"@types/algoliasearch-v3@npm:@types/algoliasearch@3.34.11":
+  version "3.34.11"
+  resolved "https://registry.yarnpkg.com/@types/algoliasearch/-/algoliasearch-3.34.11.tgz#a7f3b89a95578be3acd972167bdbadb5dcf71660"
+  integrity sha512-FFMbpmXCHcgbypnOUY98SDEoiLc2bXO51gxgX02ypb8srZZnZCPV/8VKknuEtgr1VkgYLrqLi5BoYzZRVni6Fw==
 
 "@types/babel__core@^7.0.0", "@types/babel__core@^7.1.7":
   version "7.1.9"
