@@ -107,7 +107,7 @@
     "@types/jest": "24.0.18",
     "@types/node": "9.6.53",
     "@types/nouislider": "9.0.5",
-    "algoliasearch": "^4.10.3",
+    "algoliasearch": "4.11.0",
     "algoliasearch-helper": "^3.5.4",
     "algoliasearch-v3": "npm:algoliasearch@3.35.1",
     "babel-cli": "6.26.0",
