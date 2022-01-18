@@ -1,3 +1,12 @@
+# [4.1.0](https://github.com/algolia/angular-instantsearch/compare/4.0.1...4.1.0) (2022-01-18)
+
+
+### Features
+
+* **dependencies:** allow Angular 13 ([#886](https://github.com/algolia/angular-instantsearch/issues/886)) ([6826172](https://github.com/algolia/angular-instantsearch/commit/68261725cfb9bf67750e6bb2910313fac1a24e94)), closes [#885](https://github.com/algolia/angular-instantsearch/issues/885)
+
+
+
 ## [4.0.1](https://github.com/algolia/angular-instantsearch/compare/4.0.0...4.0.1) (2021-10-20)
 
 
