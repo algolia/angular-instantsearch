@@ -66,6 +66,11 @@
     "@algolia/requester-common" "4.10.3"
     "@algolia/transporter" "4.10.3"
 
+"@algolia/events@^4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@algolia/events/-/events-4.0.1.tgz#fd39e7477e7bc703d7f893b556f676c032af3950"
+  integrity sha512-FQzvOCgoFXAbf5Y6mYozw2aj5KCJoA3m4heImceldzPSMbdyS4atVjJzXKMsfX3wnZTFYwkkt8/z8UesLHlSBQ==
+
 "@algolia/logger-common@4.10.3":
   version "4.10.3"
   resolved "https://registry.yarnpkg.com/@algolia/logger-common/-/logger-common-4.10.3.tgz#6773d2e38581bf9ac57e2dda02f0c4f1bc72ce94"
@@ -1498,12 +1503,12 @@ algoliasearch-helper@3.6.2:
   dependencies:
     events "^1.1.1"
 
-algoliasearch-helper@^3.5.5:
-  version "3.5.5"
-  resolved "https://registry.yarnpkg.com/algoliasearch-helper/-/algoliasearch-helper-3.5.5.tgz#05263869d3c8a7292278d7e49630f52520f204d7"
-  integrity sha512-JDH14gMpSj8UzEaKwVkrqKOeAOyK0dDWsFlKvWhk0Xl5yw9FyafYf1xZPb4uSXaPBAFQtUouFlR1Zt68BCY0/w==
+algoliasearch-helper@^3.7.0:
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/algoliasearch-helper/-/algoliasearch-helper-3.7.0.tgz#c0a0493df84d850360f664ad7a9d4fc78a94fd78"
+  integrity sha512-XJ3QfERBLfeVCyTVx80gon7r3/rgm/CE8Ha1H7cbablRe/X7SfYQ14g/eO+MhjVKIQp+gy9oC6G5ilmLwS1k6w==
   dependencies:
-    events "^1.1.1"
+    "@algolia/events" "^4.0.1"
 
 "algoliasearch-v3@npm:algoliasearch@3.35.1":
   version "3.35.1"
@@ -5506,21 +5511,21 @@ instantsearch.css@^7.3.1:
   resolved "https://registry.yarnpkg.com/instantsearch.css/-/instantsearch.css-7.3.1.tgz#7ab74a8f355091ae040947a9cf5438f379026622"
   integrity sha512-/kaMDna5D+Q9mImNBHEhb9HgHATDOFKYii7N1Iwvrj+lmD9gBJLqVhUw67gftq2O0QI330pFza+CRscIwB1wQQ==
 
-instantsearch.js@^4.31.1:
-  version "4.31.1"
-  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-4.31.1.tgz#da9c2368ee29dc94ca5d0cab37e081f5ae402d07"
-  integrity sha512-3hywDIQEyC4auRnSneCiB00DpzXJr+kp72iIYirj+yq5VCBZk1hTBOe+DeWcyJ8ZB4UrzwjasFPgpeGGMeJ3VA==
+instantsearch.js@^4.37.3:
+  version "4.37.3"
+  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-4.37.3.tgz#8677be049f179aa7bffa190c060b6b4bdaeeeab3"
+  integrity sha512-osRvwHvESOMNGQMsqIC+DEmqr9FSpNerZCy48iEj5/UhBkejwyv9Y7G0w6+eI+ypuQdgMTF8rtkWQWrdwxkevA==
   dependencies:
+    "@algolia/events" "^4.0.1"
     "@types/google.maps" "^3.45.3"
     "@types/hogan.js" "^3.0.0"
     "@types/qs" "^6.5.3"
-    algoliasearch-helper "^3.5.5"
+    algoliasearch-helper "^3.7.0"
     classnames "^2.2.5"
-    events "^1.1.0"
     hogan.js "^3.0.2"
-    preact "^10.0.0"
+    preact "^10.6.0"
     qs "^6.5.1 < 6.10"
-    search-insights "^2.0.5"
+    search-insights "^2.1.0"
 
 interpret@^1.0.0:
   version "1.2.0"
@@ -8626,10 +8631,10 @@ postcss@^8.2.4:
     nanoid "^3.1.23"
     source-map-js "^0.6.2"
 
-preact@^10.0.0:
-  version "10.0.5"
-  resolved "https://registry.yarnpkg.com/preact/-/preact-10.0.5.tgz#16f0bcd77241693e710778069e703217dd497867"
-  integrity sha512-62+J+GTrv3Uhp6DefqZTel6VYcdUA1zqHO7gjQSKdOwkU2sNOp/Vl6Zf2A3hIWV5EBgjeDA8gsOn6dmB3I1Dvg==
+preact@^10.6.0:
+  version "10.6.4"
+  resolved "https://registry.yarnpkg.com/preact/-/preact-10.6.4.tgz#ad12c409ff1b4316158486e0a7b8d43636f7ced8"
+  integrity sha512-WyosM7pxGcndU8hY0OQlLd54tOU+qmG45QXj2dAYrL11HoyU/EzOSTlpJsirbBr1QW7lICxSsVJJmcmUglovHQ==
 
 prelude-ls@~1.1.2:
   version "1.1.2"
@@ -9423,10 +9428,10 @@ scss-tokenizer@^0.2.3:
     js-base64 "^2.1.8"
     source-map "^0.4.2"
 
-search-insights@^2.0.5:
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/search-insights/-/search-insights-2.0.5.tgz#42fbe4d42d9f68f58bfc7c6e4519e8961b07dd2b"
-  integrity sha512-Mx3PmspHRhiW8eMFrT0coYCtoK6QqUjyNGqtlCpZcKTYflQEzYngx4obIRahc0arXBDzOR2tE/t8k8VgzfJe/g==
+search-insights@^2.1.0:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/search-insights/-/search-insights-2.2.1.tgz#9c93344fbae5fbf2f88c1a81b46b4b5d888c11f7"
+  integrity sha512-JDfVGZbKqTtiKVZjAVbkNw9C9f0ib80yx6Ea17M3z4RvPmuD0GYWXuFwA9++dpbreBEMH4TC3lQ29Zq7O4b5oA==
 
 "semver@2 || 3 || 4 || 5", semver@^5.1.0, semver@^5.3.0, semver@^5.5.0:
   version "5.5.0"
