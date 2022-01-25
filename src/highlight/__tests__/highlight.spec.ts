@@ -3,11 +3,11 @@ import { TestBed } from '@angular/core/testing';
 
 import { NgAisHighlightModule } from '../highlight.module';
 
-const render = ({ hit, attribute, tagName = 'em' }) => {
+const render = ({ hit, attribute, tagName = 'mark' }) => {
   @Component({
     selector: 'test-component',
     template: `
-      <ais-highlight [attribute]="attribute" [hit]="hit">
+      <ais-highlight [attribute]="attribute" [hit]="hit" [tagName]="tagName">
       </ais-highlight>
     `,
   })
@@ -34,7 +34,7 @@ describe('highlight', () => {
       attribute: 'name',
       hit: {
         _highlightResult: {
-          name: { value: '<em>foo</em> bar' },
+          name: { value: '<mark>foo</mark> bar' },
         },
       },
     });
@@ -47,7 +47,7 @@ describe('highlight', () => {
       hit: {
         _highlightResult: {
           parent: {
-            name: { value: '<em>foo</em> bar' },
+            name: { value: '<mark>foo</mark> bar' },
           },
         },
       },
@@ -55,18 +55,15 @@ describe('highlight', () => {
     expect(fixture).toMatchSnapshot();
   });
 
-  it('should highlight values in array', () => {
+  it('should highlight with a custom tagName', () => {
     const fixture = render({
-      attribute: 'children[0].name',
+      attribute: 'name',
       hit: {
         _highlightResult: {
-          children: [
-            {
-              name: { value: '<em>foo</em> bar' },
-            },
-          ],
+          name: { value: '<mark>foo</mark> bar' },
         },
       },
+      tagName: 'em',
     });
     expect(fixture).toMatchSnapshot();
   });
@@ -79,7 +76,7 @@ describe('highlight', () => {
       attribute: 'invalid',
       hit: {
         _highlightResult: {
-          name: { value: '<em>foo</em> bar' },
+          name: { value: '<mark>foo</mark> bar' },
         },
       },
     });
@@ -94,14 +91,6 @@ describe('highlight', () => {
     const fixture = render({
       attribute: 'name',
       hit: { name: 'foo bar' },
-    });
-    expect(fixture).toMatchSnapshot();
-  });
-
-  it('should use `hit.highlighted` if it exists', () => {
-    const fixture = render({
-      attribute: 'highlighted',
-      hit: { highlighted: '<em>foo</em> bar' },
     });
     expect(fixture).toMatchSnapshot();
   });
