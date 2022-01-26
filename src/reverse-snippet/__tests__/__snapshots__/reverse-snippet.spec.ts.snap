@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`reverse snippet should snippet strings 1`] = `
+<test-component
+  attribute={[Function String]}
+  highlightedTagName={[Function String]}
+  hit={[Function Object]}
+>
+  <ais-reverse-snippet>
+    <span
+      class="ais-ReverseSnippet"
+    >
+      … foo
+      <mark
+        class="ais-ReverseSnippet-highlighted"
+      >
+         bar …
+      </mark>
+    </span>
+  </ais-reverse-snippet>
+</test-component>
+`;
+
+exports[`reverse snippet should snippet with a custom highlightedTagName 1`] = `
+<test-component
+  attribute={[Function String]}
+  highlightedTagName={[Function String]}
+  hit={[Function Object]}
+>
+  <ais-reverse-snippet>
+    <span
+      class="ais-ReverseSnippet"
+    >
+      … foo
+      <em
+        class="ais-ReverseSnippet-highlighted"
+      >
+         bar …
+      </em>
+    </span>
+  </ais-reverse-snippet>
+</test-component>
+`;
