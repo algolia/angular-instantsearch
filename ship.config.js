@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 module.exports = {
-  mergeStrategy: { toSameBranch: ['develop'] },
+  mergeStrategy: { toSameBranch: ['master'] },
   shouldPrepare: ({ releaseType, commitNumbersPerType }) => {
     const { fix = 0 } = commitNumbersPerType;
     if (releaseType === 'patch' && fix === 0) {
