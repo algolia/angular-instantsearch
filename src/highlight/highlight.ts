@@ -22,6 +22,7 @@ export class NgAisHighlight {
     );
     const fallback = getPropertyByPath(this.hit, this.attribute);
 
+    // @MAJOR drop this custom fallback once it is implemented directly in instantsearch.js v5
     if (!highlightAttributeResult && fallback) {
       return fallback;
     }
