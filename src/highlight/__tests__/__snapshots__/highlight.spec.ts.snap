@@ -78,17 +78,3 @@ exports[`highlight should highlight with a custom tagName 1`] = `
   </ais-highlight>
 </test-component>
 `;
-
-exports[`highlight should warn when attribute is not found 1`] = `
-<test-component
-  attribute={[Function String]}
-  hit={[Function Object]}
-  tagName={[Function String]}
->
-  <ais-highlight>
-    <span
-      class="ais-Highlight"
-    />
-  </ais-highlight>
-</test-component>
-`;

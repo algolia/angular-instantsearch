@@ -68,25 +68,6 @@ describe('highlight', () => {
     expect(fixture).toMatchSnapshot();
   });
 
-  it('should warn when attribute is not found', () => {
-    const spy = jest.spyOn(global.console, 'warn');
-    spy.mockImplementation(() => {});
-
-    const fixture = render({
-      attribute: 'invalid',
-      hit: {
-        _highlightResult: {
-          name: { value: '<mark>foo</mark> bar' },
-        },
-      },
-    });
-    expect(spy).toHaveBeenCalled();
-    expect(fixture).toMatchSnapshot();
-
-    spy.mockReset();
-    spy.mockRestore();
-  });
-
   it('should fallback to non highlighted when no match', () => {
     const fixture = render({
       attribute: 'name',
