@@ -9,7 +9,8 @@
       "algoliasearch/lite": "algoliasearch",
       "instantsearch.js/es": "instantsearch",
       "instantsearch.js/es/connectors": "instantsearch.connectors",
-      "instantsearch.js/es/widgets/index/index": "instantsearch.widgets.index"
+      "instantsearch.js/es/helpers": "instantsearch.helpers",
+      "instantsearch.js/es/widgets/index/index": "instantsearch.widgets.index",
       "nouislider": "noUiSlider",
       "querystring-es3/encode": "qs.encode"
     }

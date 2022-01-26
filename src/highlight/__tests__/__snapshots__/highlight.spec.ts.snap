@@ -26,11 +26,11 @@ exports[`highlight should highlight nested objects 1`] = `
     <span
       class="ais-Highlight"
     >
-      <em
+      <mark
         class="ais-Highlight-highlighted"
       >
         foo
-      </em>
+      </mark>
        bar
     </span>
   </ais-highlight>
@@ -47,18 +47,18 @@ exports[`highlight should highlight strings 1`] = `
     <span
       class="ais-Highlight"
     >
-      <em
+      <mark
         class="ais-Highlight-highlighted"
       >
         foo
-      </em>
+      </mark>
        bar
     </span>
   </ais-highlight>
 </test-component>
 `;
 
-exports[`highlight should highlight values in array 1`] = `
+exports[`highlight should highlight with a custom tagName 1`] = `
 <test-component
   attribute={[Function String]}
   hit={[Function Object]}
@@ -75,41 +75,6 @@ exports[`highlight should highlight values in array 1`] = `
       </em>
        bar
     </span>
-  </ais-highlight>
-</test-component>
-`;
-
-exports[`highlight should use \`hit.highlighted\` if it exists 1`] = `
-<test-component
-  attribute={[Function String]}
-  hit={[Function Object]}
-  tagName={[Function String]}
->
-  <ais-highlight>
-    <span
-      class="ais-Highlight"
-    >
-      <em
-        class="ais-Highlight-highlighted"
-      >
-        foo
-      </em>
-       bar
-    </span>
-  </ais-highlight>
-</test-component>
-`;
-
-exports[`highlight should warn when attribute is not found 1`] = `
-<test-component
-  attribute={[Function String]}
-  hit={[Function Object]}
-  tagName={[Function String]}
->
-  <ais-highlight>
-    <span
-      class="ais-Highlight"
-    />
   </ais-highlight>
 </test-component>
 `;

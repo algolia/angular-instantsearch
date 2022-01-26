@@ -1,59 +1,36 @@
-import { Component, Input } from '@angular/core';
-import { bem, getPropertyByPath } from '../utils';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+
+import { Hit } from 'instantsearch.js';
+
+import { highlight } from 'instantsearch.js/es/helpers';
+import { getPropertyByPath } from 'instantsearch.js/es/lib/utils';
 
 @Component({
   selector: 'ais-highlight',
-  template: `<span [class]="cx()" [innerHtml]="content"></span>`,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: `<span class="ais-Highlight" [innerHtml]="content"></span>`,
 })
 export class NgAisHighlight {
   @Input() attribute: string;
-  @Input() hit: { _highlightResult?: {}; label?: string; highlighted?: string };
-  @Input() tagName: string = 'em';
-
-  cx = bem('Highlight');
+  @Input() hit: Partial<Hit>;
+  @Input() tagName: string = 'mark';
 
   get content() {
-    if (this.attribute === 'highlighted') {
-      return this.hit.highlighted
-        ? this.replaceWithTagName(this.hit.highlighted)
-        : this.hit.label;
-    }
-
-    if (this.hit.hasOwnProperty('_highlightResult')) {
-      const attributeHighlighted = getPropertyByPath(
-        this.hit._highlightResult,
-        this.attribute
-      );
-
-      // check that the attributeHighlighted is a string
-      if (
-        attributeHighlighted !== undefined &&
-        typeof attributeHighlighted.value === 'string'
-      ) {
-        return this.replaceWithTagName(attributeHighlighted.value);
-      }
-    }
-
+    const highlightAttributeResult = getPropertyByPath(
+      this.hit._highlightResult,
+      this.attribute
+    );
     const fallback = getPropertyByPath(this.hit, this.attribute);
-    if (!fallback) {
-      console.warn(
-        `Could not find attribute [${
-          this.attribute
-        }] into hit object, will display an empty string.`
-      );
 
-      return '';
+    // @MAJOR drop this custom fallback once it is implemented directly in instantsearch.js v5
+    if (!highlightAttributeResult && fallback) {
+      return fallback;
     }
 
-    return fallback;
-  }
-
-  replaceWithTagName(value: string) {
-    return value
-      .replace(
-        new RegExp('<em>', 'g'),
-        `<${this.tagName} class="${this.cx('highlighted')}">`
-      )
-      .replace(new RegExp('</em>', 'g'), `</${this.tagName}>`);
+    return highlight({
+      attribute: this.attribute,
+      highlightedTagName: this.tagName,
+      hit: this.hit,
+    });
   }
 }

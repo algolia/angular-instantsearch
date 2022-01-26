@@ -4,7 +4,7 @@
     "allowJs": true,
     "outDir": "../out-tsc/spec",
     "module": "CommonJS",
-    "types": ["jest"],
+    "types": ["node", "jest"],
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
   },
