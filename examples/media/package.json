@@ -19,7 +19,7 @@
     "algoliasearch": "4.10.3",
     "angular-instantsearch": "file:../../dist",
     "core-js": "2.4.1",
-    "instantsearch.js": "4.25.0-experimental-typescript.0",
+    "instantsearch.js": "4.37.3",
     "nouislider": "10.1.0",
     "rxjs": "6.6.7",
     "tslib": "^2.0.0",
