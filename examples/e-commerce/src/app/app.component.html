@@ -154,16 +154,10 @@
                     {{ item.categories && item.categories[0] }}
                   </p>
                   <h1>
-                    <ais-highlight
-                      attribute="name"
-                      [hit]="item"
-                    ></ais-highlight>
+                    <ais-highlight attribute="name" [hit]="item"></ais-highlight>
                   </h1>
                   <p class="hit-description">
-                    <app-snippet
-                      attribute="description"
-                      [hit]="item"
-                    ></app-snippet>
+                    <ais-snippet attribute="description" [hit]="item"></ais-snippet> •
                   </p>
 
                   <footer>

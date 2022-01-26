@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`highlight should snippet strings 1`] = `
+<test-component
+  attribute={[Function String]}
+  highlightedTagName={[Function String]}
+  hit={[Function Object]}
+>
+  <ais-snippet>
+    <span
+      class="ais-Snippet"
+    >
+      … 
+      <mark
+        class="ais-Snippet-highlighted"
+      >
+        foo
+      </mark>
+       bar …
+    </span>
+  </ais-snippet>
+</test-component>
+`;
+
+exports[`highlight should snippet with a custom highlightedTagName 1`] = `
+<test-component
+  attribute={[Function String]}
+  highlightedTagName={[Function String]}
+  hit={[Function Object]}
+>
+  <ais-snippet>
+    <span
+      class="ais-Snippet"
+    >
+      … 
+      <em
+        class="ais-Snippet-highlighted"
+      >
+        foo
+      </em>
+       bar …
+    </span>
+  </ais-snippet>
+</test-component>
+`;
