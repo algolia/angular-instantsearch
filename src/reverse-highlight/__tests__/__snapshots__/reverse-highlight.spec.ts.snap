@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`reverse highlight should highlight strings 1`] = `
+<test-component
+  attribute={[Function String]}
+  highlightedTagName={[Function String]}
+  hit={[Function Object]}
+>
+  <ais-reverse-highlight>
+    <span
+      class="ais-ReverseHighlight"
+    >
+      foo
+      <mark
+        class="ais-ReverseHighlight-highlighted"
+      >
+         bar
+      </mark>
+    </span>
+  </ais-reverse-highlight>
+</test-component>
+`;
+
+exports[`reverse highlight should highlight with a custom highlightedTagName 1`] = `
+<test-component
+  attribute={[Function String]}
+  highlightedTagName={[Function String]}
+  hit={[Function Object]}
+>
+  <ais-reverse-highlight>
+    <span
+      class="ais-ReverseHighlight"
+    >
+      foo
+      <em
+        class="ais-ReverseHighlight-highlighted"
+      >
+         bar
+      </em>
+    </span>
+  </ais-reverse-highlight>
+</test-component>
+`;

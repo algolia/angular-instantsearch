@@ -61,6 +61,15 @@ export { NgAisToggleModule };
 import { NgAisHighlightModule } from './highlight/highlight.module';
 export { NgAisHighlightModule };
 
+import { NgAisReverseHighlightModule } from './reverse-highlight/reverse-highlight.module';
+export { NgAisReverseHighlightModule };
+
+import { NgAisSnippetModule } from './snippet/snippet.module';
+export { NgAisSnippetModule };
+
+import { NgAisReverseSnippetModule } from './reverse-snippet/reverse-snippet.module';
+export { NgAisReverseSnippetModule };
+
 import { NgAisRangeInputModule } from './range-input/range-input.module';
 export { NgAisRangeInputModule };
 
@@ -113,6 +122,9 @@ const NGIS_MODULES = [
   NgAisRangeSliderModule,
   NgAisBreadcrumbModule,
   NgAisHighlightModule,
+  NgAisReverseHighlightModule,
+  NgAisSnippetModule,
+  NgAisReverseSnippetModule,
   NgAisRangeInputModule,
   NgAisPanelModule,
   NgAisConfigureModule,
