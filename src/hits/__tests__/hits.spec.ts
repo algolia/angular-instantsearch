@@ -51,10 +51,16 @@ describe('Hits', () => {
 
     render({});
 
-    expect(createWidget).toHaveBeenCalledWith(connectHitsWithInsights, {
-      escapeHTML: false,
-      transformItems,
-    });
+    expect(createWidget).toHaveBeenCalledWith(
+      connectHitsWithInsights,
+      {
+        escapeHTML: false,
+        transformItems,
+      },
+      {
+        $$widgetType: 'ais.hits',
+      }
+    );
     createWidget.mockRestore();
   });
 
@@ -103,10 +109,10 @@ describe('Hits', () => {
             <ng-template let-hits="hits" let-insights="insights">
               <ul>
                 <li *ngFor="let hit of hits">
-                  <button 
-                    id="add-to-cart-{{hit.objectID}}" 
+                  <button
+                    id="add-to-cart-{{hit.objectID}}"
                     (click)="insights('clickedObjectIDsAfterSearch', { eventName: 'Add to cart', objectIDs: [hit.objectID] })">
-                    
+
                   </button>
                 </li>
               </ul>
@@ -129,5 +135,26 @@ describe('Hits', () => {
       eventName: 'Add to cart',
       objectIDs: ['2'],
     });
+  });
+
+  it('should create a widget that sets the $$widgetType metadata', () => {
+    const createWidget = jest.spyOn(NgAisHits.prototype, 'createWidget');
+
+    const render = createRenderer({
+      TestedWidget: NgAisHits,
+      template: '<ais-hits></ais-hits>',
+      additionalDeclarations: [NgAisHighlight],
+    });
+    render();
+
+    expect(createWidget).toHaveBeenCalledWith(
+      expect.any(Function),
+      expect.anything(),
+      expect.objectContaining({
+        $$widgetType: 'ais.hits',
+      })
+    );
+
+    createWidget.mockRestore();
   });
 });

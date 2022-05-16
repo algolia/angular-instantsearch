@@ -33,4 +33,24 @@ describe('Configure', () => {
     expect(refineSpy).toHaveBeenCalledWith({ hi: 'there' });
     expect(refineSpy).toHaveBeenCalledWith({ hi: 'where?' });
   });
+
+  it('should create a widget that sets the $$widgetType metadata', () => {
+    const createWidget = jest.spyOn(NgAisConfigure.prototype, 'createWidget');
+
+    const render = createRenderer({
+      TestedWidget: NgAisConfigure,
+      template: '<ais-configure></ais-configure>',
+    });
+    render();
+
+    expect(createWidget).toHaveBeenCalledWith(
+      expect.any(Function),
+      expect.anything(),
+      expect.objectContaining({
+        $$widgetType: 'ais.configure',
+      })
+    );
+
+    createWidget.mockRestore();
+  });
 });

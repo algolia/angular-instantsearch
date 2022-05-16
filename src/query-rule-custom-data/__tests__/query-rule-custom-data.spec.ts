@@ -84,4 +84,27 @@ describe('QueryRuleCustomData', () => {
       transformItems
     );
   });
+
+  it('should create a widget that sets the $$widgetType metadata', () => {
+    const createWidget = jest.spyOn(
+      NgAisQueryRuleCustomData.prototype,
+      'createWidget'
+    );
+
+    const render = createRenderer({
+      TestedWidget: NgAisQueryRuleCustomData,
+      template: '<ais-query-rule-custom-data></ais-query-rule-custom-data>',
+    });
+    render();
+
+    expect(createWidget).toHaveBeenCalledWith(
+      expect.any(Function),
+      expect.anything(),
+      expect.objectContaining({
+        $$widgetType: 'ais.queryRuleCustomData',
+      })
+    );
+
+    createWidget.mockRestore();
+  });
 });

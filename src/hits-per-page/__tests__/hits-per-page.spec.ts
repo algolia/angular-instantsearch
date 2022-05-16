@@ -100,10 +100,36 @@ describe('HitsPerPage', () => {
 
     render();
 
-    expect(createWidget).toHaveBeenCalledWith(connectHitsPerPage, {
-      items,
-      transformItems,
+    expect(createWidget).toHaveBeenCalledWith(
+      connectHitsPerPage,
+      {
+        items,
+        transformItems,
+      },
+      {
+        $$widgetType: 'ais.hitsPerPage',
+      }
+    );
+
+    createWidget.mockRestore();
+  });
+
+  it('should create a widget that sets the $$widgetType metadata', () => {
+    const createWidget = jest.spyOn(NgAisHitsPerPage.prototype, 'createWidget');
+
+    const render = createRenderer({
+      TestedWidget: NgAisHitsPerPage,
+      template: '<ais-hits-per-page></ais-hits-per-page>',
     });
+    render();
+
+    expect(createWidget).toHaveBeenCalledWith(
+      expect.any(Function),
+      expect.anything(),
+      expect.objectContaining({
+        $$widgetType: 'ais.hitsPerPage',
+      })
+    );
 
     createWidget.mockRestore();
   });

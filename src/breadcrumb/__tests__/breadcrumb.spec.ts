@@ -70,10 +70,10 @@ describe('Breadcrumb', () => {
     const render = createRenderer({
       defaultState,
       template: `
-        <ais-breadcrumb 
+        <ais-breadcrumb
           [attributes]="attributes"
-          rootPath="Audio" 
-          separator=" / " 
+          rootPath="Audio"
+          separator=" / "
           [transformItems]="transformItems">
         </ais-breadcrumb>`,
       TestedWidget: NgAisBreadcrumb,
@@ -82,12 +82,38 @@ describe('Breadcrumb', () => {
 
     render({});
 
-    expect(createWidget).toHaveBeenCalledWith(connectBreadcrumb, {
-      attributes: ['attr.lvl1', 'attr.lvl2'],
-      rootPath: 'Audio',
-      separator: ' / ',
-      transformItems,
+    expect(createWidget).toHaveBeenCalledWith(
+      connectBreadcrumb,
+      {
+        attributes: ['attr.lvl1', 'attr.lvl2'],
+        rootPath: 'Audio',
+        separator: ' / ',
+        transformItems,
+      },
+      {
+        $$widgetType: 'ais.breadcrumb',
+      }
+    );
+
+    createWidget.mockRestore();
+  });
+
+  it('should create a widget that sets the $$widgetType metadata', () => {
+    const createWidget = jest.spyOn(NgAisBreadcrumb.prototype, 'createWidget');
+
+    const render = createRenderer({
+      TestedWidget: NgAisBreadcrumb,
+      template: '<ais-breadcrumb></ais-breadcrumb>',
     });
+    render();
+
+    expect(createWidget).toHaveBeenCalledWith(
+      expect.any(Function),
+      expect.anything(),
+      expect.objectContaining({
+        $$widgetType: 'ais.breadcrumb',
+      })
+    );
 
     createWidget.mockRestore();
   });

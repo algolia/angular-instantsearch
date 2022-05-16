@@ -127,4 +127,18 @@ describe('Index', () => {
       ]
     `);
   });
+
+  it('should create a widget that sets the $$widgetType metadata', () => {
+    const render = createRenderer({
+      TestedWidget: NgAisIndex,
+      template: '<ais-index indexName="test-index"></ais-index>',
+    });
+    const fixture = render();
+
+    expect(fixture.componentInstance.testedWidget.widget).toEqual(
+      expect.objectContaining({
+        $$widgetType: 'ais.index',
+      })
+    );
+  });
 });

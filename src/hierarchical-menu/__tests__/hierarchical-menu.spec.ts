@@ -77,11 +77,11 @@ describe('HierarchicalMenu', () => {
     const transformItems = jest.fn(x => x);
     const render = createRenderer({
       defaultState,
-      template: `<ais-hierarchical-menu 
-          [transformItems]="transformItems" 
-          [attributes]="['attr1', 'attr2']" 
-          [limit]="3" 
-          rootPath="attr1" 
+      template: `<ais-hierarchical-menu
+          [transformItems]="transformItems"
+          [attributes]="['attr1', 'attr2']"
+          [limit]="3"
+          rootPath="attr1"
           [showParentLevel]="false"
           [sortBy]="['count:asc']"
           separator="/"
@@ -93,15 +93,21 @@ describe('HierarchicalMenu', () => {
 
     render({});
 
-    expect(createWidget).toHaveBeenCalledWith(connectHierarchicalMenu, {
-      transformItems,
-      attributes: ['attr1', 'attr2'],
-      limit: 3,
-      rootPath: 'attr1',
-      separator: '/',
-      showParentLevel: false,
-      sortBy: ['count:asc'],
-    });
+    expect(createWidget).toHaveBeenCalledWith(
+      connectHierarchicalMenu,
+      {
+        transformItems,
+        attributes: ['attr1', 'attr2'],
+        limit: 3,
+        rootPath: 'attr1',
+        separator: '/',
+        showParentLevel: false,
+        sortBy: ['count:asc'],
+      },
+      {
+        $$widgetType: 'ais.hierarchicalMenu',
+      }
+    );
     createWidget.mockRestore();
   });
 
@@ -117,5 +123,29 @@ describe('HierarchicalMenu', () => {
     fixture.detectChanges();
 
     expect(fixture).toMatchSnapshot();
+  });
+
+  it('should create a widget that sets the $$widgetType metadata', () => {
+    const createWidget = jest.spyOn(
+      NgAisHierarchicalMenu.prototype,
+      'createWidget'
+    );
+
+    const render = createRenderer({
+      TestedWidget: NgAisHierarchicalMenu,
+      template: '<ais-hierarchical-menu></ais-hierarchical-menu>',
+      additionalDeclarations: [NgAisHierarchicalMenuItem],
+    });
+    render();
+
+    expect(createWidget).toHaveBeenCalledWith(
+      expect.any(Function),
+      expect.anything(),
+      expect.objectContaining({
+        $$widgetType: 'ais.hierarchicalMenu',
+      })
+    );
+
+    createWidget.mockRestore();
   });
 });

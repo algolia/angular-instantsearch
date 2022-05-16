@@ -160,4 +160,24 @@ describe('RangeInput', () => {
       )
     ).toBeFalsy();
   });
+
+  it('should create a widget that sets the $$widgetType metadata', () => {
+    const createWidget = jest.spyOn(NgAisRangeInput.prototype, 'createWidget');
+
+    const render = createRenderer({
+      TestedWidget: NgAisRangeInput,
+      template: '<ais-range-input></ais-range-input>',
+    });
+    render();
+
+    expect(createWidget).toHaveBeenCalledWith(
+      expect.any(Function),
+      expect.anything(),
+      expect.objectContaining({
+        $$widgetType: 'ais.rangeInput',
+      })
+    );
+
+    createWidget.mockRestore();
+  });
 });

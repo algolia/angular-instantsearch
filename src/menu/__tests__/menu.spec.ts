@@ -84,4 +84,20 @@ describe('Menu', () => {
 
     expect(fixture).toMatchSnapshot();
   });
+
+  it('should create a widget that sets the $$widgetType metadata', () => {
+    const createWidget = jest.spyOn(NgAisMenu.prototype, 'createWidget');
+
+    render();
+
+    expect(createWidget).toHaveBeenCalledWith(
+      expect.any(Function),
+      expect.anything(),
+      expect.objectContaining({
+        $$widgetType: 'ais.menu',
+      })
+    );
+
+    createWidget.mockRestore();
+  });
 });

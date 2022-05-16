@@ -67,4 +67,27 @@ describe('QueryRuleContext', () => {
       transformRuleContexts
     );
   });
+
+  it('should create a widget that sets the $$widgetType metadata', () => {
+    const createWidget = jest.spyOn(
+      NgAisQueryRuleContext.prototype,
+      'createWidget'
+    );
+
+    const render = createRenderer({
+      TestedWidget: NgAisQueryRuleContext,
+      template: '<ais-query-rule-context></ais-query-rule-context>',
+    });
+    render();
+
+    expect(createWidget).toHaveBeenCalledWith(
+      expect.any(Function),
+      expect.anything(),
+      expect.objectContaining({
+        $$widgetType: 'ais.queryRuleContext',
+      })
+    );
+
+    createWidget.mockRestore();
+  });
 });
