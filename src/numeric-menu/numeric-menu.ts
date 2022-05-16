@@ -69,11 +69,17 @@ export class NgAisNumericMenu extends TypedBaseWidget<
   }
 
   public ngOnInit() {
-    this.createWidget(connectNumericMenu, {
-      attribute: this.attribute,
-      items: this.items,
-      transformItems: this.transformItems,
-    });
+    this.createWidget(
+      connectNumericMenu,
+      {
+        attribute: this.attribute,
+        items: this.items,
+        transformItems: this.transformItems,
+      },
+      {
+        $$widgetType: 'ais.numericMenu',
+      }
+    );
     super.ngOnInit();
   }
 

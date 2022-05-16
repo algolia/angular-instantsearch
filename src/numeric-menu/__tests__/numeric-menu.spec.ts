@@ -125,9 +125,9 @@ describe('NumericRefinementList', () => {
     const render = createRenderer({
       defaultState,
       template: `
-      <ais-numeric-menu 
-        attribute="price" 
-        [items]="items" 
+      <ais-numeric-menu
+        attribute="price"
+        [items]="items"
         [transformItems]="transformItems"></ais-numeric-menu>`,
       TestedWidget: NgAisNumericMenu,
       methods: { items, transformItems },
@@ -136,11 +136,37 @@ describe('NumericRefinementList', () => {
     render({});
 
     expect(createWidget).toHaveBeenCalledTimes(1);
-    expect(createWidget).toHaveBeenCalledWith(connectNumericMenu, {
-      attribute: 'price',
-      items,
-      transformItems,
+    expect(createWidget).toHaveBeenCalledWith(
+      connectNumericMenu,
+      {
+        attribute: 'price',
+        items,
+        transformItems,
+      },
+      {
+        $$widgetType: 'ais.numericMenu',
+      }
+    );
+
+    createWidget.mockRestore();
+  });
+
+  it('should create a widget that sets the $$widgetType metadata', () => {
+    const createWidget = jest.spyOn(NgAisNumericMenu.prototype, 'createWidget');
+
+    const render = createRenderer({
+      TestedWidget: NgAisNumericMenu,
+      template: '<ais-numeric-menu></ais-numeric-menu>',
     });
+    render();
+
+    expect(createWidget).toHaveBeenCalledWith(
+      expect.any(Function),
+      expect.anything(),
+      expect.objectContaining({
+        $$widgetType: 'ais.numericMenu',
+      })
+    );
 
     createWidget.mockRestore();
   });

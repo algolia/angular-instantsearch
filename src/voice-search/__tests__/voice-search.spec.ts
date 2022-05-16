@@ -115,4 +115,24 @@ describe('VoiceSearch', () => {
       ).toMatchSnapshot();
     });
   });
+
+  it('should create a widget that sets the $$widgetType metadata', () => {
+    const createWidget = jest.spyOn(NgAisVoiceSearch.prototype, 'createWidget');
+
+    const render = createRenderer({
+      TestedWidget: NgAisVoiceSearch,
+      template: '<ais-voice-search></ais-voice-search>',
+    });
+    render();
+
+    expect(createWidget).toHaveBeenCalledWith(
+      expect.any(Function),
+      expect.anything(),
+      expect.objectContaining({
+        $$widgetType: 'ais.voiceSearch',
+      })
+    );
+
+    createWidget.mockRestore();
+  });
 });

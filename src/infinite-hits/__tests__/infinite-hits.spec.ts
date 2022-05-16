@@ -55,10 +55,16 @@ describe('InfiniteHits', () => {
 
     render({});
 
-    expect(createWidget).toHaveBeenCalledWith(connectInfiniteHitsWithInsights, {
-      escapeHTML: false,
-      transformItems,
-    });
+    expect(createWidget).toHaveBeenCalledWith(
+      connectInfiniteHitsWithInsights,
+      {
+        escapeHTML: false,
+        transformItems,
+      },
+      {
+        $$widgetType: 'ais.infiniteHits',
+      }
+    );
     createWidget.mockRestore();
   });
 
@@ -217,10 +223,10 @@ describe('InfiniteHits', () => {
           >
             <ul>
               <li *ngFor="let hit of hits">
-                <button 
-                  id="add-to-cart-{{hit.objectID}}" 
+                <button
+                  id="add-to-cart-{{hit.objectID}}"
                   (click)="insights('clickedObjectIDsAfterSearch', { eventName: 'Add to cart', objectIDs: [hit.objectID] })">
-                  
+
                 </button>
               </li>
             </ul>
@@ -243,5 +249,29 @@ describe('InfiniteHits', () => {
       eventName: 'Add to cart',
       objectIDs: ['2'],
     });
+  });
+
+  it('should create a widget that sets the $$widgetType metadata', () => {
+    const createWidget = jest.spyOn(
+      NgAisInfiniteHits.prototype,
+      'createWidget'
+    );
+
+    const render = createRenderer({
+      TestedWidget: NgAisInfiniteHits,
+      template: '<ais-infinite-hits></ais-infinite-hits>',
+      additionalDeclarations: [NgAisHighlight],
+    });
+    render();
+
+    expect(createWidget).toHaveBeenCalledWith(
+      expect.any(Function),
+      expect.anything(),
+      expect.objectContaining({
+        $$widgetType: 'ais.infiniteHits',
+      })
+    );
+
+    createWidget.mockRestore();
   });
 });

@@ -99,14 +99,20 @@ export class NgAisMenu extends TypedBaseWidget<
   }
 
   public ngOnInit() {
-    this.createWidget(connectMenu, {
-      attribute: this.attribute,
-      showMore: this.showMore,
-      limit: this.limit,
-      showMoreLimit: this.showMoreLimit,
-      sortBy: this.sortBy,
-      transformItems: this.transformItems,
-    });
+    this.createWidget(
+      connectMenu,
+      {
+        attribute: this.attribute,
+        showMore: this.showMore,
+        limit: this.limit,
+        showMoreLimit: this.showMoreLimit,
+        sortBy: this.sortBy,
+        transformItems: this.transformItems,
+      },
+      {
+        $$widgetType: 'ais.menu',
+      }
+    );
 
     super.ngOnInit();
   }

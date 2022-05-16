@@ -72,11 +72,17 @@ export class NgAisCurrentRefinements extends TypedBaseWidget<
   }
 
   public ngOnInit() {
-    this.createWidget(connectCurrentRefinements, {
-      includedAttributes: this.includedAttributes,
-      excludedAttributes: this.excludedAttributes,
-      transformItems: this.transformItems,
-    });
+    this.createWidget(
+      connectCurrentRefinements,
+      {
+        includedAttributes: this.includedAttributes,
+        excludedAttributes: this.excludedAttributes,
+        transformItems: this.transformItems,
+      },
+      {
+        $$widgetType: 'ais.currentRefinements',
+      }
+    );
     super.ngOnInit();
   }
 

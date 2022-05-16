@@ -110,16 +110,22 @@ export class NgAisRefinementList extends TypedBaseWidget<
   }
 
   public ngOnInit() {
-    this.createWidget(connectRefinementList, {
-      showMore: this.showMore,
-      limit: parseNumberInput(this.limit),
-      showMoreLimit: parseNumberInput(this.showMoreLimit),
-      attribute: this.attribute,
-      operator: this.operator,
-      sortBy: this.sortBy,
-      escapeFacetValues: true,
-      transformItems: this.transformItems,
-    });
+    this.createWidget(
+      connectRefinementList,
+      {
+        showMore: this.showMore,
+        limit: parseNumberInput(this.limit),
+        showMoreLimit: parseNumberInput(this.showMoreLimit),
+        attribute: this.attribute,
+        operator: this.operator,
+        sortBy: this.sortBy,
+        escapeFacetValues: true,
+        transformItems: this.transformItems,
+      },
+      {
+        $$widgetType: 'ais.refinementList',
+      }
+    );
 
     super.ngOnInit();
   }

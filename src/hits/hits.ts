@@ -67,10 +67,16 @@ export class NgAisHits extends TypedBaseWidget<
   }
 
   ngOnInit() {
-    this.createWidget(connectHitsWithInsights, {
-      escapeHTML: this.escapeHTML,
-      transformItems: this.transformItems,
-    });
+    this.createWidget(
+      connectHitsWithInsights,
+      {
+        escapeHTML: this.escapeHTML,
+        transformItems: this.transformItems,
+      },
+      {
+        $$widgetType: 'ais.hits',
+      }
+    );
     super.ngOnInit();
   }
 

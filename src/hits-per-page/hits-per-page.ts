@@ -62,10 +62,16 @@ export class NgAisHitsPerPage extends TypedBaseWidget<
   }
 
   public ngOnInit() {
-    this.createWidget(connectHitsPerPage, {
-      items: this.items,
-      transformItems: this.transformItems,
-    });
+    this.createWidget(
+      connectHitsPerPage,
+      {
+        items: this.items,
+        transformItems: this.transformItems,
+      },
+      {
+        $$widgetType: 'ais.hitsPerPage',
+      }
+    );
     super.ngOnInit();
   }
 }

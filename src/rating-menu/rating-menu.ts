@@ -110,10 +110,16 @@ export class NgAisRatingMenu extends TypedBaseWidget<
   }
 
   public ngOnInit() {
-    this.createWidget(connectRatingMenu, {
-      attribute: this.attribute,
-      max: parseNumberInput(this.max),
-    });
+    this.createWidget(
+      connectRatingMenu,
+      {
+        attribute: this.attribute,
+        max: parseNumberInput(this.max),
+      },
+      {
+        $$widgetType: 'ais.ratingMenu',
+      }
+    );
     super.ngOnInit();
   }
 

@@ -70,11 +70,17 @@ export class NgAisToggle extends TypedBaseWidget<
   }
 
   public ngOnInit() {
-    this.createWidget(connectToggleRefinement, {
-      attribute: this.attribute,
-      on: this.on,
-      off: this.off,
-    });
+    this.createWidget(
+      connectToggleRefinement,
+      {
+        attribute: this.attribute,
+        on: this.on,
+        off: this.off,
+      },
+      {
+        $$widgetType: 'ais.toggleRefinement',
+      }
+    );
     super.ngOnInit();
   }
 

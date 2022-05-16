@@ -46,4 +46,28 @@ describe('ConfigureRelatedItems', () => {
       transformSearchParameters,
     });
   });
+
+  it('should create a widget that sets the $$widgetType metadata', () => {
+    const createWidget = jest.spyOn(
+      NgAisConfigureRelatedItems.prototype,
+      'createWidget'
+    );
+
+    const render = createRenderer({
+      TestedWidget: NgAisConfigureRelatedItems,
+      template:
+        '<ais-experimental-configure-related-items></ais-experimental-configure-related-items>',
+    });
+    render();
+
+    expect(createWidget).toHaveBeenCalledWith(
+      expect.any(Function),
+      expect.anything(),
+      expect.objectContaining({
+        $$widgetType: 'ais.configureRelatedItems',
+      })
+    );
+
+    createWidget.mockRestore();
+  });
 });

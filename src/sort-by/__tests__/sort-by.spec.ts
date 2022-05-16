@@ -64,10 +64,36 @@ describe('SortBy', () => {
     render();
 
     expect(createWidget).toHaveBeenCalledTimes(1);
-    expect(createWidget).toHaveBeenCalledWith(connectSortBy, {
-      items,
-      transformItems,
+    expect(createWidget).toHaveBeenCalledWith(
+      connectSortBy,
+      {
+        items,
+        transformItems,
+      },
+      {
+        $$widgetType: 'ais.sortBy',
+      }
+    );
+    createWidget.mockRestore();
+  });
+
+  it('should create a widget that sets the $$widgetType metadata', () => {
+    const createWidget = jest.spyOn(NgAisSortBy.prototype, 'createWidget');
+
+    const render = createRenderer({
+      TestedWidget: NgAisSortBy,
+      template: '<ais-sort-by></ais-sort-by>',
     });
+    render();
+
+    expect(createWidget).toHaveBeenCalledWith(
+      expect.any(Function),
+      expect.anything(),
+      expect.objectContaining({
+        $$widgetType: 'ais.sortBy',
+      })
+    );
+
     createWidget.mockRestore();
   });
 });

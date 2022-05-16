@@ -56,9 +56,15 @@ export class NgAisConfigure extends TypedBaseWidget<
   }
 
   public ngOnInit() {
-    this.createWidget(connectConfigure, {
-      searchParameters: this.internalSearchParameters,
-    });
+    this.createWidget(
+      connectConfigure,
+      {
+        searchParameters: this.internalSearchParameters,
+      },
+      {
+        $$widgetType: 'ais.configure',
+      }
+    );
     super.ngOnInit();
   }
 

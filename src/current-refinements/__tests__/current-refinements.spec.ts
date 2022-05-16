@@ -105,7 +105,8 @@ describe('CurrentRefinedValues', () => {
     expect(createWidget).toHaveBeenCalledTimes(1);
     expect(createWidget).toHaveBeenLastCalledWith(
       connectCurrentRefinements,
-      expect.objectContaining({ includedAttributes: ['query'] })
+      expect.objectContaining({ includedAttributes: ['query'] }),
+      expect.anything()
     );
     createWidget.mockRestore();
   });
@@ -123,7 +124,8 @@ describe('CurrentRefinedValues', () => {
     expect(createWidget).toHaveBeenCalledTimes(1);
     expect(createWidget).toHaveBeenLastCalledWith(
       connectCurrentRefinements,
-      expect.objectContaining({ excludedAttributes: ['brands'] })
+      expect.objectContaining({ excludedAttributes: ['brands'] }),
+      expect.anything()
     );
     createWidget.mockRestore();
   });
@@ -141,7 +143,8 @@ describe('CurrentRefinedValues', () => {
     expect(createWidget).toHaveBeenCalledTimes(1);
     expect(createWidget).toHaveBeenLastCalledWith(
       connectCurrentRefinements,
-      expect.objectContaining({ transformItems: 'func' })
+      expect.objectContaining({ transformItems: 'func' }),
+      expect.anything()
     );
     createWidget.mockRestore();
   });
@@ -154,5 +157,28 @@ describe('CurrentRefinedValues', () => {
     fixture.detectChanges();
 
     expect(fixture).toMatchSnapshot();
+  });
+
+  it('should create a widget that sets the $$widgetType metadata', () => {
+    const createWidget = jest.spyOn(
+      NgAisCurrentRefinements.prototype,
+      'createWidget'
+    );
+
+    const render = createRenderer({
+      TestedWidget: NgAisCurrentRefinements,
+      template: '<ais-current-refinements></ais-current-refinements>',
+    });
+    render();
+
+    expect(createWidget).toHaveBeenCalledWith(
+      expect.any(Function),
+      expect.anything(),
+      expect.objectContaining({
+        $$widgetType: 'ais.currentRefinements',
+      })
+    );
+
+    createWidget.mockRestore();
   });
 });

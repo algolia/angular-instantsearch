@@ -71,15 +71,21 @@ export class NgAisHierarchicalMenu extends TypedBaseWidget<
   }
 
   public ngOnInit() {
-    this.createWidget(connectHierarchicalMenu, {
-      limit: parseNumberInput(this.limit),
-      attributes: this.attributes,
-      rootPath: this.rootPath,
-      separator: this.separator,
-      showParentLevel: this.showParentLevel,
-      sortBy: this.sortBy,
-      transformItems: this.transformItems,
-    });
+    this.createWidget(
+      connectHierarchicalMenu,
+      {
+        limit: parseNumberInput(this.limit),
+        attributes: this.attributes,
+        rootPath: this.rootPath,
+        separator: this.separator,
+        showParentLevel: this.showParentLevel,
+        sortBy: this.sortBy,
+        transformItems: this.transformItems,
+      },
+      {
+        $$widgetType: 'ais.hierarchicalMenu',
+      }
+    );
 
     super.ngOnInit();
   }

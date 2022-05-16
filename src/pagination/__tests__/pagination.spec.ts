@@ -136,4 +136,20 @@ describe('Pagination', () => {
     ).toBeTruthy();
     expect(fixture).toMatchSnapshot();
   });
+
+  it('should create a widget that sets the $$widgetType metadata', () => {
+    const createWidget = jest.spyOn(NgAisPagination.prototype, 'createWidget');
+
+    render();
+
+    expect(createWidget).toHaveBeenCalledWith(
+      expect.any(Function),
+      expect.anything(),
+      expect.objectContaining({
+        $$widgetType: 'ais.pagination',
+      })
+    );
+
+    createWidget.mockRestore();
+  });
 });

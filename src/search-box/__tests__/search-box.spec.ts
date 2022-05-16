@@ -97,4 +97,24 @@ describe('SearchBox', () => {
       });
     });
   });
+
+  it('should create a widget that sets the $$widgetType metadata', () => {
+    const createWidget = jest.spyOn(NgAisSearchBox.prototype, 'createWidget');
+
+    const render = createRenderer({
+      TestedWidget: NgAisSearchBox,
+      template: '<ais-search-box></ais-search-box>',
+    });
+    render();
+
+    expect(createWidget).toHaveBeenCalledWith(
+      expect.any(Function),
+      expect.anything(),
+      expect.objectContaining({
+        $$widgetType: 'ais.searchBox',
+      })
+    );
+
+    createWidget.mockRestore();
+  });
 });

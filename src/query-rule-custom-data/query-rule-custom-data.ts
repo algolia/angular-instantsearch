@@ -64,9 +64,15 @@ export class NgAisQueryRuleCustomData extends TypedBaseWidget<
   }
 
   public ngOnInit() {
-    this.createWidget(connectQueryRules, {
-      transformItems: this.transformItems,
-    });
+    this.createWidget(
+      connectQueryRules,
+      {
+        transformItems: this.transformItems,
+      },
+      {
+        $$widgetType: 'ais.queryRuleCustomData',
+      }
+    );
 
     super.ngOnInit();
   }

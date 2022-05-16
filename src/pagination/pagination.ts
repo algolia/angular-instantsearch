@@ -193,9 +193,15 @@ export class NgAisPagination extends TypedBaseWidget<
   }
 
   public ngOnInit() {
-    this.createWidget(connectPagination, {
-      totalPages: parseNumberInput(this.totalPages),
-    });
+    this.createWidget(
+      connectPagination,
+      {
+        totalPages: parseNumberInput(this.totalPages),
+      },
+      {
+        $$widgetType: 'ais.pagination',
+      }
+    );
     super.ngOnInit();
   }
 

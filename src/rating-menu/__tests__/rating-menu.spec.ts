@@ -70,4 +70,20 @@ describe('StarRating', () => {
     ).toBeFalsy();
     expect(fixture).toMatchSnapshot();
   });
+
+  it('should create a widget that sets the $$widgetType metadata', () => {
+    const createWidget = jest.spyOn(NgAisRatingMenu.prototype, 'createWidget');
+
+    render();
+
+    expect(createWidget).toHaveBeenCalledWith(
+      expect.any(Function),
+      expect.anything(),
+      expect.objectContaining({
+        $$widgetType: 'ais.ratingMenu',
+      })
+    );
+
+    createWidget.mockRestore();
+  });
 });

@@ -33,4 +33,20 @@ describe('RangeSlider', () => {
     expect(refine).toHaveBeenCalled();
     expect(refine).toHaveBeenCalledWith([10, 50]);
   });
+
+  it('should create a widget that sets the $$widgetType metadata', () => {
+    const createWidget = jest.spyOn(NgAisRangeSlider.prototype, 'createWidget');
+
+    render();
+
+    expect(createWidget).toHaveBeenCalledWith(
+      expect.any(Function),
+      expect.anything(),
+      expect.objectContaining({
+        $$widgetType: 'ais.rangeSlider',
+      })
+    );
+
+    createWidget.mockRestore();
+  });
 });

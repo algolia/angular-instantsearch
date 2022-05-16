@@ -116,7 +116,13 @@ export class NgAisSearchBox
     public instantSearchInstance: NgAisInstantSearch
   ) {
     super('SearchBox');
-    this.createWidget(connectSearchBox, {});
+    this.createWidget(
+      connectSearchBox,
+      {},
+      {
+        $$widgetType: 'ais.searchBox',
+      }
+    );
   }
 
   public ngAfterViewInit() {

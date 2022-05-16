@@ -72,8 +72,8 @@ describe('ClearRefinements', () => {
 
     const render = createRenderer({
       defaultState: {},
-      template: `<ais-clear-refinements 
-        [includedAttributes]="includedAttributes" 
+      template: `<ais-clear-refinements
+        [includedAttributes]="includedAttributes"
         [excludedAttributes]="excludedAttributes"
         [transformItems]="transformItems">
        </ais-clear-refinements>`,
@@ -88,11 +88,40 @@ describe('ClearRefinements', () => {
     render();
 
     expect(createWidget).toHaveBeenCalledTimes(1);
-    expect(createWidget).toHaveBeenCalledWith(connectClearRefinements, {
-      includedAttributes,
-      excludedAttributes,
-      transformItems,
+    expect(createWidget).toHaveBeenCalledWith(
+      connectClearRefinements,
+      {
+        includedAttributes,
+        excludedAttributes,
+        transformItems,
+      },
+      {
+        $$widgetType: 'ais.clearRefinements',
+      }
+    );
+
+    createWidget.mockRestore();
+  });
+
+  it('should create a widget that sets the $$widgetType metadata', () => {
+    const createWidget = jest.spyOn(
+      NgAisClearRefinements.prototype,
+      'createWidget'
+    );
+
+    const render = createRenderer({
+      TestedWidget: NgAisClearRefinements,
+      template: '<ais-clear-refinements></ais-clear-refinements>',
     });
+    render();
+
+    expect(createWidget).toHaveBeenCalledWith(
+      expect.any(Function),
+      expect.anything(),
+      expect.objectContaining({
+        $$widgetType: 'ais.clearRefinements',
+      })
+    );
 
     createWidget.mockRestore();
   });

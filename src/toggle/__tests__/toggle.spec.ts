@@ -45,4 +45,20 @@ describe('Toggle', () => {
     expect(refine).toHaveBeenCalledTimes(1);
     expect(refine).toHaveBeenCalledWith(defaultState.value);
   });
+
+  it('should create a widget that sets the $$widgetType metadata', () => {
+    const createWidget = jest.spyOn(NgAisToggle.prototype, 'createWidget');
+
+    render();
+
+    expect(createWidget).toHaveBeenCalledWith(
+      expect.any(Function),
+      expect.anything(),
+      expect.objectContaining({
+        $$widgetType: 'ais.toggleRefinement',
+      })
+    );
+
+    createWidget.mockRestore();
+  });
 });
