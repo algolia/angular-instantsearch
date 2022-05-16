@@ -1,4 +1,4 @@
-import { Input, OnDestroy, OnInit, forwardRef } from '@angular/core';
+import { Input, OnDestroy, OnInit } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { bem, noop } from './utils';
 import { NgAisInstantSearch } from './instantsearch/instantsearch';
@@ -37,8 +37,15 @@ export abstract class BaseWidget<TState extends Record<string, unknown> = {}>
     return this.instantSearchInstance;
   }
 
-  public createWidget(connector: Connector, options: object = {}) {
-    this.widget = connector(this.updateState, noop)(options);
+  public createWidget(
+    connector: Connector,
+    options: object = {},
+    additionalWidgetProperties: object = {}
+  ) {
+    this.widget = {
+      ...connector(this.updateState, noop)(options),
+      ...additionalWidgetProperties,
+    };
   }
 
   public ngOnInit() {

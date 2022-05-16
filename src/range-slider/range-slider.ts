@@ -79,12 +79,18 @@ export class NgAisRangeSlider extends TypedBaseWidget<
   }
 
   public ngOnInit() {
-    this.createWidget(connectRange, {
-      attribute: this.attribute,
-      max: parseNumberInput(this.max),
-      min: parseNumberInput(this.min),
-      precision: parseNumberInput(this.precision),
-    });
+    this.createWidget(
+      connectRange,
+      {
+        attribute: this.attribute,
+        max: parseNumberInput(this.max),
+        min: parseNumberInput(this.min),
+        precision: parseNumberInput(this.precision),
+      },
+      {
+        $$widgetType: 'ais.rangeSlider',
+      }
+    );
 
     super.ngOnInit();
   }

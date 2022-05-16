@@ -44,10 +44,13 @@ export class NgAisIndex implements OnInit, OnDestroy {
   }
 
   createWidget() {
-    this.widget = indexWidget({
-      indexName: this.indexName,
-      indexId: this.indexId,
-    });
+    this.widget = {
+      ...indexWidget({
+        indexName: this.indexName,
+        indexId: this.indexId,
+      }),
+      $$widgetType: 'ais.index',
+    };
   }
 
   public addWidgets(widgets: Widget[]) {

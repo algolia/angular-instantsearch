@@ -59,6 +59,12 @@ export class NgAisStats extends TypedBaseWidget<
     public instantSearchInstance: NgAisInstantSearch
   ) {
     super('Stats');
-    this.createWidget(connectStats, {});
+    this.createWidget(
+      connectStats,
+      {},
+      {
+        $$widgetType: 'ais.stats',
+      }
+    );
   }
 }

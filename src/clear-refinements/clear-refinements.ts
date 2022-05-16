@@ -64,11 +64,17 @@ export class NgAisClearRefinements extends TypedBaseWidget<
   }
 
   public ngOnInit() {
-    this.createWidget(connectClearRefinements, {
-      includedAttributes: this.includedAttributes,
-      excludedAttributes: this.excludedAttributes,
-      transformItems: this.transformItems,
-    });
+    this.createWidget(
+      connectClearRefinements,
+      {
+        includedAttributes: this.includedAttributes,
+        excludedAttributes: this.excludedAttributes,
+        transformItems: this.transformItems,
+      },
+      {
+        $$widgetType: 'ais.clearRefinements',
+      }
+    );
 
     super.ngOnInit();
   }

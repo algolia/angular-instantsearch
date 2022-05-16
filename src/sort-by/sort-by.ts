@@ -67,10 +67,16 @@ export class NgAisSortBy extends TypedBaseWidget<
   }
 
   public ngOnInit() {
-    this.createWidget(connectSortBy, {
-      items: this.items,
-      transformItems: this.transformItems,
-    });
+    this.createWidget(
+      connectSortBy,
+      {
+        items: this.items,
+        transformItems: this.transformItems,
+      },
+      {
+        $$widgetType: 'ais.sortBy',
+      }
+    );
     super.ngOnInit();
   }
 }

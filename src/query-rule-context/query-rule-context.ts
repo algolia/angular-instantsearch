@@ -32,10 +32,16 @@ export class NgAisQueryRuleContext extends TypedBaseWidget<
   }
 
   public ngOnInit() {
-    this.createWidget(connectQueryRules, {
-      trackedFilters: this.trackedFilters,
-      transformRuleContexts: this.transformRuleContexts,
-    });
+    this.createWidget(
+      connectQueryRules,
+      {
+        trackedFilters: this.trackedFilters,
+        transformRuleContexts: this.transformRuleContexts,
+      },
+      {
+        $$widgetType: 'ais.queryRuleContext',
+      }
+    );
 
     super.ngOnInit();
   }

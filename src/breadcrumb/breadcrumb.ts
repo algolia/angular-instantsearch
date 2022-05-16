@@ -90,12 +90,18 @@ export class NgAisBreadcrumb extends TypedBaseWidget<
   }
 
   public ngOnInit() {
-    this.createWidget(connectBreadcrumb, {
-      attributes: this.attributes,
-      rootPath: this.rootPath,
-      separator: this.separator,
-      transformItems: this.transformItems,
-    });
+    this.createWidget(
+      connectBreadcrumb,
+      {
+        attributes: this.attributes,
+        rootPath: this.rootPath,
+        separator: this.separator,
+        transformItems: this.transformItems,
+      },
+      {
+        $$widgetType: 'ais.breadcrumb',
+      }
+    );
 
     super.ngOnInit();
   }

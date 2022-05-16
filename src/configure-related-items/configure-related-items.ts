@@ -34,11 +34,17 @@ export class NgAisConfigureRelatedItems extends TypedBaseWidget<
   }
 
   public ngOnInit() {
-    this.createWidget(EXPERIMENTAL_connectConfigureRelatedItems, {
-      hit: this.hit,
-      matchingPatterns: this.matchingPatterns,
-      transformSearchParameters: this.transformSearchParameters,
-    });
+    this.createWidget(
+      EXPERIMENTAL_connectConfigureRelatedItems,
+      {
+        hit: this.hit,
+        matchingPatterns: this.matchingPatterns,
+        transformSearchParameters: this.transformSearchParameters,
+      },
+      {
+        $$widgetType: 'ais.configureRelatedItems',
+      }
+    );
 
     super.ngOnInit();
   }

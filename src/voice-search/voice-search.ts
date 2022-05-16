@@ -134,9 +134,15 @@ export class NgAisVoiceSearch
   }
 
   ngOnInit() {
-    this.createWidget(connectVoiceSearch, {
-      searchAsYouSpeak: this.searchAsYouSpeak,
-    });
+    this.createWidget(
+      connectVoiceSearch,
+      {
+        searchAsYouSpeak: this.searchAsYouSpeak,
+      },
+      {
+        $$widgetType: 'ais.voiceSearch',
+      }
+    );
     super.ngOnInit();
   }
 

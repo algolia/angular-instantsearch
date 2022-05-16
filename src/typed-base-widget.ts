@@ -1,4 +1,4 @@
-import { Input, OnDestroy, OnInit, forwardRef } from '@angular/core';
+import { Input, OnDestroy, OnInit } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { bem, noop } from './utils';
 import { NgAisInstantSearch } from './instantsearch/instantsearch';
@@ -13,6 +13,8 @@ import {
 } from 'instantsearch.js/es/types';
 
 export { Widget, Connector };
+
+type AdditionalWidgetProperties = Partial<Widget<WidgetDescription>>;
 
 export abstract class TypedBaseWidget<
   TWidgetDescription extends WidgetDescription,
@@ -39,9 +41,13 @@ export abstract class TypedBaseWidget<
 
   public createWidget(
     connector: Connector<TWidgetDescription, TConnectorParams>,
-    options: TConnectorParams
+    options: TConnectorParams,
+    additionalWidgetProperties: AdditionalWidgetProperties = {}
   ) {
-    this.widget = connector(this.updateState, noop as Unmounter)(options);
+    this.widget = {
+      ...connector(this.updateState, noop as Unmounter)(options),
+      ...additionalWidgetProperties,
+    };
   }
 
   public ngOnInit() {
