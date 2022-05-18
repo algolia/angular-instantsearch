@@ -3,9 +3,9 @@
 
 ### Features
 
-* **widgets:** support $$widgetType metadata ([#950](https://github.com/algolia/angular-instantsearch/issues/950)) ([4565c06](https://github.com/algolia/angular-instantsearch/commit/4565c068e3c42cc4c95505d8728d3ddcdd88b6c7))
+* **widgets:** support `$$widgetType` metadata ([#950](https://github.com/algolia/angular-instantsearch/issues/950)) ([4565c06](https://github.com/algolia/angular-instantsearch/commit/4565c068e3c42cc4c95505d8728d3ddcdd88b6c7))
 * add `<ais-reverse-highlight>`, `<ais-snippet>` and `<ais-reverse-snippet>` components ([#891](https://github.com/algolia/angular-instantsearch/issues/891)) ([fbe9f59](https://github.com/algolia/angular-instantsearch/commit/fbe9f59b43eadf282051bf29bd979ff602a039a4))
-* **highlight:** use helper from is.js instead of custom implementation ([#888](https://github.com/algolia/angular-instantsearch/issues/888)) ([33b7be3](https://github.com/algolia/angular-instantsearch/commit/33b7be3cd68382828aaf37dfe24edfa513fd4a9d))
+* **highlight:** use helper from InstantSearch.js instead of custom implementation ([#888](https://github.com/algolia/angular-instantsearch/issues/888)) ([33b7be3](https://github.com/algolia/angular-instantsearch/commit/33b7be3cd68382828aaf37dfe24edfa513fd4a9d))
 
 
 
