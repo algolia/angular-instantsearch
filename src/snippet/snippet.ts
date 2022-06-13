@@ -9,9 +9,9 @@ import { snippet } from 'instantsearch.js/es/helpers';
   template: `<span class="ais-Snippet" [innerHtml]="content"></span>`,
 })
 export class NgAisSnippet {
-  @Input() private readonly attribute: string;
-  @Input() private readonly hit: Partial<Hit>;
-  @Input() private readonly highlightedTagName: string = 'mark';
+  @Input() attribute: string;
+  @Input() hit: Partial<Hit>;
+  @Input() highlightedTagName: string = 'mark';
 
   get content() {
     return snippet({
