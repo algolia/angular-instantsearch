@@ -9,9 +9,9 @@ import { reverseSnippet } from 'instantsearch.js/es/helpers';
   template: `<span class="ais-ReverseSnippet" [innerHtml]="content"></span>`,
 })
 export class NgAisReverseSnippet {
-  @Input() private readonly attribute: string;
-  @Input() private readonly hit: Partial<Hit>;
-  @Input() private readonly highlightedTagName: string = 'mark';
+  @Input() attribute: string;
+  @Input() hit: Partial<Hit>;
+  @Input() highlightedTagName: string = 'mark';
 
   get content() {
     return reverseSnippet({
