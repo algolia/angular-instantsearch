@@ -1,3 +1,13 @@
+## [4.2.1](https://github.com/algolia/angular-instantsearch/compare/4.2.0...4.2.1) (2022-06-13)
+
+
+### Bug Fixes
+
+* **widgets:** remove private access modifier on widgets inputs ([#955](https://github.com/algolia/angular-instantsearch/issues/955)) ([ac79fa0](https://github.com/algolia/angular-instantsearch/commit/ac79fa07a383492a6cdecdbb209767bd922a5a83))
+* update peer dependencies range to allow angular 14 ([#956](https://github.com/algolia/angular-instantsearch/issues/956)) ([6d499cd](https://github.com/algolia/angular-instantsearch/commit/6d499cda1001e700f5c8af3c0dcc5d7f8ba3d0de))
+
+
+
 # [4.2.0](https://github.com/algolia/angular-instantsearch/compare/4.1.0...4.2.0) (2022-05-17)
 
 
