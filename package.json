@@ -108,7 +108,7 @@
     "@types/node": "9.6.53",
     "@types/nouislider": "9.0.5",
     "algoliasearch": "4.10.3",
-    "algoliasearch-helper": "3.6.2",
+    "algoliasearch-helper": "3.8.3",
     "algoliasearch-v3": "npm:algoliasearch@3.35.1",
     "babel-cli": "6.26.0",
     "babel-core": "6.26.3",
