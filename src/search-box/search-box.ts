@@ -9,6 +9,7 @@ import {
   AfterViewInit,
   ElementRef,
   Optional,
+  DoCheck,
 } from '@angular/core';
 
 import { connectSearchBox } from 'instantsearch.js/es/connectors';
@@ -39,7 +40,7 @@ import {
           role="textbox"
           spellcheck="false"
           type="text"
-          [value]="state.query"
+          [value]="query"
           (input)="handleChange($event.target.value)"
           (focus)="focus.emit($event)"
           (blur)="blur.emit($event)"
@@ -82,7 +83,7 @@ import {
 })
 export class NgAisSearchBox
   extends TypedBaseWidget<SearchBoxWidgetDescription, SearchBoxConnectorParams>
-  implements AfterViewInit {
+  implements AfterViewInit, DoCheck {
   @ViewChild('searchBox', { static: false })
   searchBox: ElementRef;
   @Input() public placeholder: string = 'Search';
@@ -100,6 +101,8 @@ export class NgAisSearchBox
   @Output() change = new EventEmitter();
   @Output() focus = new EventEmitter();
   @Output() blur = new EventEmitter();
+
+  public query = '';
 
   public state: SearchBoxRenderState = {
     query: '',
@@ -128,6 +131,19 @@ export class NgAisSearchBox
   public ngAfterViewInit() {
     if (this.autofocus) {
       this.searchBox.nativeElement.focus();
+    }
+  }
+
+  public ngDoCheck() {
+    // We bypass the state update if the input is focused to avoid concurrent
+    // updates when typing.
+    if (
+      this.query !== this.state.query &&
+      this.searchBox &&
+      this.searchBox.nativeElement &&
+      document.activeElement !== this.searchBox.nativeElement
+    ) {
+      this.query = this.state.query;
     }
   }
 
