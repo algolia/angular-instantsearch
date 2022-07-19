@@ -138,7 +138,9 @@ export class NgAisSearchBox
     // We bypass the state update if the input is focused to avoid concurrent
     // updates when typing.
     if (
-      document.activeElement !== this.searchBox?.nativeElement &&
+      this.searchBox &&
+      this.searchBox.nativeElement &&
+      document.activeElement !== this.searchBox.nativeElement &&
       this.query !== this.state.query
     ) {
       this.query = this.state.query;
