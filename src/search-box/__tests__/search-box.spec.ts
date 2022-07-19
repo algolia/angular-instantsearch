@@ -82,6 +82,11 @@ describe('SearchBox', () => {
         widget.state.query = 'hel';
         fixture.detectChanges();
         expect(searchBox.value).toEqual('hello');
+
+        searchBox.blur();
+        widget.state.query = 'world';
+        fixture.detectChanges();
+        expect(searchBox.value).toEqual('world');
       });
     });
 
