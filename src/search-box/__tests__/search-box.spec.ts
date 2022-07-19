@@ -63,6 +63,26 @@ describe('SearchBox', () => {
         expect(refine).toHaveBeenCalledTimes(1);
         expect(refine).toHaveBeenCalledWith('the query');
       });
+
+      it('should not update query when out of sync and input is focused', () => {
+        const fixture = createRenderer({
+          defaultState,
+          template: '<ais-search-box></ais-search-box>',
+          TestedWidget: NgAisSearchBox,
+        })();
+        const widget = fixture.componentInstance.testedWidget;
+
+        const searchBox = widget.searchBox.nativeElement;
+        searchBox.focus();
+        searchBox.value = 'hello';
+        searchBox.dispatchEvent(new Event('input'));
+        fixture.detectChanges();
+        expect(searchBox.value).toEqual('hello');
+
+        widget.state.query = 'hel';
+        fixture.detectChanges();
+        expect(searchBox.value).toEqual('hello');
+      });
     });
 
     describe('[searchAsYouType]="false"', () => {
