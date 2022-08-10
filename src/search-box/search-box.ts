@@ -67,7 +67,7 @@ import {
           type="reset"
           title="{{resetTitle}}"
           (click)="handleReset($event)"
-          [hidden]="!state.query || (state.query && !state.query.trim()) || state.isSearchStalled">
+          [hidden]="!state.query || (state.query && !state.query.trim()) || (state.isSearchStalled && showLoadingIndicator)">
           <svg
             [ngClass]="cx('resetIcon')"
             viewBox="0 0 20 20"

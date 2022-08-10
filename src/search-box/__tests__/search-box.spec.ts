@@ -131,6 +131,7 @@ describe('SearchBox', () => {
         TestedWidget: NgAisSearchBox,
       })();
       const widget = fixture.componentInstance.testedWidget;
+      widget.state.query = 'iphone';
       widget.state.isSearchStalled = true;
       fixture.detectChanges();
 
@@ -138,6 +139,23 @@ describe('SearchBox', () => {
         By.css('.ais-SearchBox-loadingIndicator')
       );
       expect(loadingIndicator.nativeElement.hidden).toBe(false);
+    });
+
+    it('should hide reset button by default when search is stalled', () => {
+      const fixture = createRenderer({
+        defaultState,
+        template: '<ais-search-box></ais-search-box>',
+        TestedWidget: NgAisSearchBox,
+      })();
+      const widget = fixture.componentInstance.testedWidget;
+      widget.state.query = 'iphone';
+      widget.state.isSearchStalled = true;
+      fixture.detectChanges();
+
+      const resetButton = fixture.debugElement.query(
+        By.css('.ais-SearchBox-reset')
+      );
+      expect(resetButton.nativeElement.hidden).toBe(true);
     });
 
     it('should not show a loading indicator when property is false', () => {
@@ -148,6 +166,7 @@ describe('SearchBox', () => {
         TestedWidget: NgAisSearchBox,
       })();
       const widget = fixture.componentInstance.testedWidget;
+      widget.state.query = 'iphone';
       widget.state.isSearchStalled = true;
       fixture.detectChanges();
 
@@ -155,6 +174,24 @@ describe('SearchBox', () => {
         By.css('.ais-SearchBox-loadingIndicator')
       );
       expect(loadingIndicator.nativeElement.hidden).toBe(true);
+    });
+
+    it('should not hide reset button when property is false and search is stalled', () => {
+      const fixture = createRenderer({
+        defaultState,
+        template:
+          '<ais-search-box [showLoadingIndicator]="false"></ais-search-box>',
+        TestedWidget: NgAisSearchBox,
+      })();
+      const widget = fixture.componentInstance.testedWidget;
+      widget.state.query = 'iphone';
+      widget.state.isSearchStalled = true;
+      fixture.detectChanges();
+
+      const resetButton = fixture.debugElement.query(
+        By.css('.ais-SearchBox-reset')
+      );
+      expect(resetButton.nativeElement.hidden).toBe(false);
     });
   });
 
