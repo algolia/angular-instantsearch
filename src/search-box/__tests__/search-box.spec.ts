@@ -123,6 +123,41 @@ describe('SearchBox', () => {
     });
   });
 
+  describe('[showLoadingIndicator]', () => {
+    it('should show a loading indicator by default when search is stalled', () => {
+      const fixture = createRenderer({
+        defaultState,
+        template: '<ais-search-box></ais-search-box>',
+        TestedWidget: NgAisSearchBox,
+      })();
+      const widget = fixture.componentInstance.testedWidget;
+      widget.state.isSearchStalled = true;
+      fixture.detectChanges();
+
+      const loadingIndicator = fixture.debugElement.query(
+        By.css('.ais-SearchBox-loadingIndicator')
+      );
+      expect(loadingIndicator.nativeElement.hidden).toBe(false);
+    });
+
+    it('should not show a loading indicator when property is false', () => {
+      const fixture = createRenderer({
+        defaultState,
+        template:
+          '<ais-search-box [showLoadingIndicator]="false"></ais-search-box>',
+        TestedWidget: NgAisSearchBox,
+      })();
+      const widget = fixture.componentInstance.testedWidget;
+      widget.state.isSearchStalled = true;
+      fixture.detectChanges();
+
+      const loadingIndicator = fixture.debugElement.query(
+        By.css('.ais-SearchBox-loadingIndicator')
+      );
+      expect(loadingIndicator.nativeElement.hidden).toBe(true);
+    });
+  });
+
   it('should create a widget that sets the $$widgetType metadata', () => {
     const createWidget = jest.spyOn(NgAisSearchBox.prototype, 'createWidget');
 
