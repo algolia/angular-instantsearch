@@ -67,7 +67,7 @@ import {
           type="reset"
           title="{{resetTitle}}"
           (click)="handleReset($event)"
-          [hidden]="!state.query || (state.query && !state.query.trim())">
+          [hidden]="!state.query || (state.query && !state.query.trim()) || (state.isSearchStalled && showLoadingIndicator)">
           <svg
             [ngClass]="cx('resetIcon')"
             viewBox="0 0 20 20"
@@ -77,6 +77,35 @@ import {
             <path d="M8.114 10L.944 2.83 0 1.885 1.886 0l.943.943L10 8.113l7.17-7.17.944-.943L20 1.886l-.943.943-7.17 7.17 7.17 7.17.943.944L18.114 20l-.943-.943-7.17-7.17-7.17 7.17-.944.943L0 18.114l.943-.943L8.113 10z"></path>
           </svg>
         </button>
+
+        <span
+          [class]="cx('loadingIndicator')"
+          [hidden]="!showLoadingIndicator || !state.isSearchStalled"
+        >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 38 38"
+            stroke="#444"
+            [ngClass]="cx('loadingIcon')"
+          >
+            <g fill="none" fillRule="evenodd">
+              <g transform="translate(1 1)" strokeWidth="2">
+                <circle strokeOpacity=".5" cx="18" cy="18" r="18" />
+                <path d="M36 18c0-9.94-8.06-18-18-18">
+                  <animateTransform
+                    attributeName="transform"
+                    type="rotate"
+                    from="0 18 18"
+                    to="360 18 18"
+                    dur="1s"
+                    repeatCount="indefinite"
+                  />
+                </path>
+              </g>
+            </g>
+          </svg>
+        </span>
       </form>
     </div>
   `,
@@ -91,6 +120,7 @@ export class NgAisSearchBox
   @Input() public resetTitle: string = 'Reset';
   @Input() public searchAsYouType: boolean = true;
   @Input() public autofocus: boolean = false;
+  @Input() public showLoadingIndicator: boolean = true;
 
   // Output events
   // form
