@@ -1,3 +1,18 @@
+# [4.3.0](https://github.com/algolia/angular-instantsearch/compare/4.2.1...4.3.0) (2022-08-16)
+
+
+### Bug Fixes
+
+* **ais-hierarchical-menu:** show full hierarchical parent values ([#958](https://github.com/algolia/angular-instantsearch/issues/958)) ([bf835b7](https://github.com/algolia/angular-instantsearch/commit/bf835b76f70650b308bd432371ea7134fbf60c06))
+* **searchbox:** prevent concurrent query updates from state while input is focused ([#960](https://github.com/algolia/angular-instantsearch/issues/960)) ([8440a41](https://github.com/algolia/angular-instantsearch/commit/8440a414d3b93c931ca1ae65cacc3a7dc8d1ebc0))
+
+
+### Features
+
+* **search-box:** add loading indicator + `showLoadingIndicator` prop ([#962](https://github.com/algolia/angular-instantsearch/issues/962)) ([cef0b75](https://github.com/algolia/angular-instantsearch/commit/cef0b75e04df728c8593cff2f32930e48ef86d4f))
+
+
+
 ## [4.2.1](https://github.com/algolia/angular-instantsearch/compare/4.2.0...4.2.1) (2022-06-13)
 
 
