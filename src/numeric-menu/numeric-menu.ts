@@ -52,6 +52,7 @@ export class NgAisNumericMenu extends TypedBaseWidget<
     createURL: () => '#',
     hasNoResults: true,
     sendEvent: noop,
+    canRefine: false,
   };
 
   get isHidden() {

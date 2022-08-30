@@ -54,6 +54,7 @@ export class NgAisSortBy extends TypedBaseWidget<
     options: [],
     refine: noop,
     hasNoResults: false,
+    canRefine: false,
   };
 
   constructor(
