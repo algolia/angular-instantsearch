@@ -1,3 +1,12 @@
+## [4.3.1](https://github.com/algolia/angular-instantsearch/compare/4.3.0...4.3.1) (2022-10-18)
+
+
+### Bug Fixes
+
+* **dependencies:** update instantsearch.js ([77f7f37](https://github.com/algolia/angular-instantsearch/commit/77f7f375063d4b34e27bfacf8372f64808ab4066))
+
+
+
 # [4.3.0](https://github.com/algolia/angular-instantsearch/compare/4.2.1...4.3.0) (2022-08-16)
 
 
