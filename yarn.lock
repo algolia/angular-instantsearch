@@ -111,18 +111,18 @@
     "@algolia/logger-common" "4.10.3"
     "@algolia/requester-common" "4.10.3"
 
-"@algolia/ui-components-highlight-vdom@^1.1.2":
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/@algolia/ui-components-highlight-vdom/-/ui-components-highlight-vdom-1.1.5.tgz#a2ab4acd9831c895959568b311caf4507d2a011d"
-  integrity sha512-SHQiwtHlTCk3qY7KuqRDd8ObWbQF/ZpGD3Nwx4AeCkdmf39Hv82vaSfk1aVhKfELT9qfMZj6QaidAHafj6r9LQ==
+"@algolia/ui-components-highlight-vdom@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@algolia/ui-components-highlight-vdom/-/ui-components-highlight-vdom-1.2.1.tgz#c430c9f090ef8c68477ef4b685324ed231ce0c13"
+  integrity sha512-IlYgIaCUEkz9ezNbwugwKv991oOHhveyq6nzL0F1jDzg1p3q5Yj/vO4KpNG910r2dwGCG3nEm5GtChcLnarhFA==
   dependencies:
-    "@algolia/ui-components-shared" "1.1.5"
+    "@algolia/ui-components-shared" "1.2.1"
     "@babel/runtime" "^7.0.0"
 
-"@algolia/ui-components-shared@1.1.5", "@algolia/ui-components-shared@^1.1.2":
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/@algolia/ui-components-shared/-/ui-components-shared-1.1.5.tgz#5c90587fc4f3e82eda8d62739d881b97605a3ce6"
-  integrity sha512-oGmRiQE4n9tK8oRxFvmJYctUjt8FoBPEC6WoVfJAmBaJuPqHoCBdk4Uan3I3lMd8imT9njeaFSSEleZLX2YQZw==
+"@algolia/ui-components-shared@1.2.1", "@algolia/ui-components-shared@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@algolia/ui-components-shared/-/ui-components-shared-1.2.1.tgz#62e3a04fc11623f149312942cd764d4528dd994c"
+  integrity sha512-a7mYHf/GVQfhAx/HRiMveKkFvHspQv/REdG+C/FIOosiSmNZxX7QebDwJkrGSmDWdXO12D0Qv1xn3AytFcEDlQ==
 
 "@angular/common@12.0.3":
   version "12.0.3"
@@ -3104,11 +3104,6 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-classnames@^2.2.5:
-  version "2.2.6"
-  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
-  integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
-
 clean-stack@^2.0.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/clean-stack/-/clean-stack-2.2.0.tgz#ee8472dbb129e727b31e8a10a427dee9dfe4008b"
@@ -5536,19 +5531,18 @@ instantsearch.css@^7.3.1:
   resolved "https://registry.yarnpkg.com/instantsearch.css/-/instantsearch.css-7.3.1.tgz#7ab74a8f355091ae040947a9cf5438f379026622"
   integrity sha512-/kaMDna5D+Q9mImNBHEhb9HgHATDOFKYii7N1Iwvrj+lmD9gBJLqVhUw67gftq2O0QI330pFza+CRscIwB1wQQ==
 
-instantsearch.js@^4.48.0:
-  version "4.48.0"
-  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-4.48.0.tgz#5017aa641678ace338e04c5721846f28a71fbad0"
-  integrity sha512-q9Yz9K32fw30oxjsil85fqTxOEtXIp50xpmq3OndOVb8ReXe8ei0E7kh8Me/zawRBBTxmqX+At8tBvC/q8h5bQ==
+instantsearch.js@^4.48.1:
+  version "4.48.1"
+  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-4.48.1.tgz#2db3424e430c5cfc5bdc2beb979b7a2c4fd402b5"
+  integrity sha512-lFo+LfouMlRb/4so1BgwsXyN+a+hBFl4933HEbfj4vSxoC6qp2oYcF8BMd0vt+OlxuyOCfNObNR4WH8p5oTMMg==
   dependencies:
     "@algolia/events" "^4.0.1"
-    "@algolia/ui-components-highlight-vdom" "^1.1.2"
-    "@algolia/ui-components-shared" "^1.1.2"
+    "@algolia/ui-components-highlight-vdom" "^1.2.1"
+    "@algolia/ui-components-shared" "^1.2.1"
     "@types/google.maps" "^3.45.3"
     "@types/hogan.js" "^3.0.0"
     "@types/qs" "^6.5.3"
     algoliasearch-helper "^3.11.1"
-    classnames "^2.2.5"
     hogan.js "^3.0.2"
     htm "^3.0.0"
     preact "^10.10.0"
