@@ -60,7 +60,7 @@ export { PaginationConnectorParams, PaginationRenderState };
             cx('item', 'page') +
             (state.currentRefinement === page ? ' ' + cx('item', 'selected') : '')
           "
-          *ngFor="let page of pages"
+          *ngFor="let page of state.pages"
           (click)="refine($event, page)"
         >
           <a
@@ -136,51 +136,6 @@ export class NgAisPagination extends TypedBaseWidget<
     isFirstPage: false,
     isLastPage: false,
   };
-
-  get pages() {
-    const { nbPages, currentRefinement } = this.state;
-
-    const pagesArray = Array.apply(null, { length: nbPages }).map(
-      Number.call,
-      Number
-    );
-
-    const pagesPadding =
-      typeof this.padding === 'string'
-        ? parseInt(this.padding, 10)
-        : this.padding;
-
-    if (pagesPadding && pagesPadding > 0) {
-      // should not display pages that does not exists
-      if (nbPages < pagesPadding * 2 + 1) {
-        return pagesArray;
-      }
-
-      const minDelta = currentRefinement - pagesPadding - 1;
-      const maxDelta = currentRefinement + pagesPadding + 1;
-
-      if (minDelta < 0) {
-        return range({
-          start: 0,
-          end: currentRefinement + pagesPadding + Math.abs(minDelta),
-        });
-      }
-
-      if (maxDelta > nbPages) {
-        return range({
-          start: currentRefinement - pagesPadding - (maxDelta - nbPages),
-          end: nbPages,
-        });
-      }
-
-      return range({
-        start: currentRefinement - pagesPadding,
-        end: currentRefinement + pagesPadding + 1,
-      });
-    }
-
-    return pagesArray;
-  }
 
   constructor(
     @Inject(forwardRef(() => NgAisIndex))
