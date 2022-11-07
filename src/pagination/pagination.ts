@@ -121,7 +121,7 @@ export class NgAisPagination extends TypedBaseWidget<
   @Input() public showNext: boolean = true;
 
   // instance options
-  @Input() public padding: PaginationConnectorParams['padding'] = 3;
+  @Input() public padding?: PaginationConnectorParams['padding'];
   @Input() public totalPages?: PaginationConnectorParams['totalPages'];
   // TODO: check if this works, padding and totalPages are most likely strings when passed to the template
 
