@@ -151,6 +151,7 @@ export class NgAisPagination extends TypedBaseWidget<
     this.createWidget(
       connectPagination,
       {
+        padding: parseNumberInput(this.padding),
         totalPages: parseNumberInput(this.totalPages),
       },
       {
