@@ -1,7 +1,7 @@
 import { createRenderer } from '../../../helpers/test-renderer';
 import { NgAisPagination } from '../pagination';
 
-import { bem } from '../../utils';
+import { bem, range } from '../../utils';
 
 const cx = bem('Pagination');
 
@@ -10,6 +10,7 @@ const defaultState = {
   currentRefinement: 0,
   nbHits: 100,
   nbPages: 20,
+  pages: range({ end: 7 }),
   refine: jest.fn(),
 };
 
@@ -31,7 +32,7 @@ describe('Pagination', () => {
   });
 
   it('renders does not uses pagesPadding when nbPages < pagesPadding * 2 + 1', () => {
-    const fixture = render({ nbPages: 5 });
+    const fixture = render({ nbPages: 5, pages: range({ end: 5 }) });
     const pages = fixture.debugElement.nativeElement.querySelectorAll(
       `.${cx('item', 'page')}`
     );
@@ -42,7 +43,7 @@ describe('Pagination', () => {
 
   it('should refine when clicking a page', () => {
     const refine = jest.fn();
-    const fixture = render({ refine });
+    const fixture = render({ refine, pages: range({ end: 2 }) });
 
     const el = fixture.debugElement.nativeElement;
     const [, secondPage] = el.querySelectorAll(`.${cx('item', 'page')}`);
@@ -84,7 +85,7 @@ describe('Pagination', () => {
 
   it("should not refine when there's no other pages", () => {
     const refine = jest.fn();
-    const fixture = render({ refine, nbPages: 1 });
+    const fixture = render({ refine, nbPages: 1, pages: range({ end: 1 }) });
 
     fixture.componentInstance.testedWidget.showLast = true;
     fixture.detectChanges();
@@ -110,7 +111,7 @@ describe('Pagination', () => {
     expect(refine).not.toHaveBeenCalled();
   });
   it('should not add ais-Pagination--noRefinement CSS class on root when nbPages > 1', () => {
-    const fixture = render({ nbPages: 2 });
+    const fixture = render({ nbPages: 2, pages: range({ end: 2 }) });
     expect(
       fixture.debugElement.nativeElement.querySelector(
         'ais-pagination > .ais-Pagination--noRefinement'
@@ -119,7 +120,7 @@ describe('Pagination', () => {
     expect(fixture).toMatchSnapshot();
   });
   it('should add ais-Pagination--noRefinement CSS class on root when nbPages === 1', () => {
-    const fixture = render({ nbPages: 1 });
+    const fixture = render({ nbPages: 1, pages: range({ end: 1 }) });
     expect(
       fixture.debugElement.nativeElement.querySelector(
         'ais-pagination > .ais-Pagination--noRefinement'
@@ -128,7 +129,7 @@ describe('Pagination', () => {
     expect(fixture).toMatchSnapshot();
   });
   it('should add ais-Pagination--noRefinement CSS class on root when nbPages === 0', () => {
-    const fixture = render({ nbPages: 0 });
+    const fixture = render({ nbPages: 0, pages: [] });
     expect(
       fixture.debugElement.nativeElement.querySelector(
         'ais-pagination > .ais-Pagination--noRefinement'
