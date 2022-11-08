@@ -1,3 +1,12 @@
+## [4.3.2](https://github.com/algolia/angular-instantsearch/compare/4.3.1...4.3.2) (2022-11-08)
+
+
+### Bug Fixes
+
+* **pagination:** use pages computed in connector ([#978](https://github.com/algolia/angular-instantsearch/issues/978)) ([f31a01f](https://github.com/algolia/angular-instantsearch/commit/f31a01fe479c281e4fcaa0d6420a333dac1cf5e8))
+
+
+
 ## [4.3.1](https://github.com/algolia/angular-instantsearch/compare/4.3.0...4.3.1) (2022-10-18)
 
 
