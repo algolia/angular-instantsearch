@@ -1,3 +1,12 @@
+# [4.4.0](https://github.com/algolia/angular-instantsearch/compare/4.3.2...4.4.0) (2022-12-05)
+
+
+### Features
+
+* support angular 15 through peerDependencies ([#980](https://github.com/algolia/angular-instantsearch/issues/980)) ([d59bf21](https://github.com/algolia/angular-instantsearch/commit/d59bf21397c0d48f96fd634fca71abc4f6f7fd5a))
+
+
+
 ## [4.3.2](https://github.com/algolia/angular-instantsearch/compare/4.3.1...4.3.2) (2022-11-08)
 
 
