@@ -7519,10 +7519,10 @@ normalize-url@^4.5.0:
   resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-4.5.1.tgz#0dd90cf1288ee1d1313b87081c9a5932ee48518a"
   integrity sha512-9UZCFRHQdNrfTpGg8+1INIg93B6zE0aXMVFkw1WFwvO4SlZywU6aLg5Of0Ap/PgcbSw4LNxvMWXMeugwMCX0AA==
 
-nouislider@^10.0.0:
-  version "10.1.0"
-  resolved "https://registry.yarnpkg.com/nouislider/-/nouislider-10.1.0.tgz#7bdd0411fd62d4584bfe88cb92bb8d06e64c6b47"
-  integrity sha512-lENwxlpoYg4/5gjdaY/PMNHeVL+CMJyrO+7RzXi1MqhSSGwuJsQSJteXCQV5bE2UKEdSLARWrqIF8XSWAq7h+A==
+nouislider@^11.0.0:
+  version "11.1.0"
+  resolved "https://registry.yarnpkg.com/nouislider/-/nouislider-11.1.0.tgz#1768eb5b854917325d41b96f2dc4eb3757d73381"
+  integrity sha512-nD+Fgc8A8j6hnGvR5AaV+OBuLF446z4H2fmcEJ/6U6CJr6rAnFnionMXu7dmdghZ+bhgePvL3wrDRbu+0ux7Jg==
 
 npm-bundled@^1.0.1:
   version "1.0.6"
