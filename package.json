@@ -128,7 +128,7 @@
     "eslint-plugin-prettier": "3.1.0",
     "jest": "26.3.0",
     "jest-preset-angular": "8.4.0",
-    "ng-packagr": "12.0.3",
+    "ng-packagr": "12.2.7",
     "node-sass": "4.14.1",
     "prettier": "1.13.7",
     "raw-loader": "3.0.0",
