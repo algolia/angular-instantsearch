@@ -22,21 +22,7 @@
     "url": "https://github.com/algolia/angular-instantsearch/issues"
   },
   "renovate": {
-    "extends": [
-      "config:js-lib",
-      "algolia"
-    ],
-    "packageRules": [
-      {
-        "paths": [
-          "community-website"
-        ],
-        "extends": [
-          "config:js-app",
-          "algolia"
-        ]
-      }
-    ]
+    "enabled": false
   },
   "scripts": {
     "build": "./scripts/build.sh",
