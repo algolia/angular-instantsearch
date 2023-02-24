@@ -11,6 +11,7 @@ import {
   Optional,
   DoCheck,
 } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 
 import { connectSearchBox } from 'instantsearch.js/es/connectors';
 import { TypedBaseWidget } from '../typed-base-widget';
@@ -141,12 +142,15 @@ export class NgAisSearchBox
     isSearchStalled: false,
   };
 
+  private document: Document;
+
   constructor(
     @Inject(forwardRef(() => NgAisIndex))
     @Optional()
     public parentIndex: NgAisIndex,
     @Inject(forwardRef(() => NgAisInstantSearch))
-    public instantSearchInstance: NgAisInstantSearch
+    public instantSearchInstance: NgAisInstantSearch,
+    @Inject(DOCUMENT) private injectedDocument: Document
   ) {
     super('SearchBox');
     this.createWidget(
@@ -156,6 +160,7 @@ export class NgAisSearchBox
         $$widgetType: 'ais.searchBox',
       }
     );
+    this.document = injectedDocument;
   }
 
   public ngAfterViewInit() {
@@ -171,7 +176,7 @@ export class NgAisSearchBox
       this.query !== this.state.query &&
       this.searchBox &&
       this.searchBox.nativeElement &&
-      document.activeElement !== this.searchBox.nativeElement
+      this.document.activeElement !== this.searchBox.nativeElement
     ) {
       this.query = this.state.query;
     }

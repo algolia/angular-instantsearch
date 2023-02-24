@@ -3,8 +3,9 @@ import { TransferState, makeStateKey } from '@angular/platform-browser';
 import { createSSRSearchClient } from 'angular-instantsearch';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { simple } from 'instantsearch.js/es/lib/stateMappings';
-import { ssrRouter } from './ssrRouter';
+import { history } from 'instantsearch.js/es/lib/routers';
 import { REQUEST } from '@nguniversal/express-engine/tokens';
+import { Request } from 'express';
 
 @Component({
   selector: 'app-root',
@@ -32,12 +33,18 @@ export class AppComponent {
       }),
       indexName: 'instant_search',
       routing: {
-        router: ssrRouter(() => {
-          if (this.request) {
-            // request is only defined on the server side
-            return this.request.url;
-          }
-          return window.location.pathname + window.location.search;
+        router: history({
+          getLocation: () => {
+            if (this.request) {
+              const req = this.request;
+              const protocol =
+                (req.headers.referer && req.headers.referer.split('://')[0]) ||
+                'https';
+              const url = `${protocol}://${req.headers.host}${req.url}`;
+              return (new URL(url) as unknown) as Location;
+            }
+            return window.location;
+          },
         }),
         stateMapping: simple(),
       },
