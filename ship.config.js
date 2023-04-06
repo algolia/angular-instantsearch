@@ -18,7 +18,7 @@ module.exports = {
       `export const VERSION = '${version}';\n`
     );
   },
-  pullRequestTeamReviewers: ['instantsearch-for-websites'],
+  pullRequestTeamReviewers: ['frontend-experiences-web'],
   buildCommand: ({ version }) => `VERSION=${version} yarn build`,
   beforePublish: ({ exec }) => {
     exec('cp CHANGELOG.md dist');
