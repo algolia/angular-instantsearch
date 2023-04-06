@@ -3,7 +3,7 @@
 
 ### Bug Fixes
 
-* **SSR:** extend history router and inject document into searchBox ([#986](https://github.com/algolia/angular-instantsearch/issues/986)) ([e19ecf2](https://github.com/algolia/angular-instantsearch/commit/e19ecf26e2672608479263972b49f6e8fe003250))
+* **SSR:** inject `document` into searchBox rather than using global in Node environments ([#986](https://github.com/algolia/angular-instantsearch/issues/986)) ([e19ecf2](https://github.com/algolia/angular-instantsearch/commit/e19ecf26e2672608479263972b49f6e8fe003250))
 
 
 
