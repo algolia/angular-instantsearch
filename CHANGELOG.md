@@ -1,3 +1,12 @@
+## [4.4.1](https://github.com/algolia/angular-instantsearch/compare/4.4.0...4.4.1) (2023-04-06)
+
+
+### Bug Fixes
+
+* **SSR:** inject `document` into searchBox rather than using global in Node environments ([#986](https://github.com/algolia/angular-instantsearch/issues/986)) ([e19ecf2](https://github.com/algolia/angular-instantsearch/commit/e19ecf26e2672608479263972b49f6e8fe003250))
+
+
+
 # [4.4.0](https://github.com/algolia/angular-instantsearch/compare/4.3.2...4.4.0) (2022-12-05)
 
 
