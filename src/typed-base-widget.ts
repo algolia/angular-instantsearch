@@ -1,4 +1,4 @@
-import { Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, Directive, Injectable, Input, OnDestroy, OnInit } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { bem, noop } from './utils';
 import { NgAisInstantSearch } from './instantsearch/instantsearch';
@@ -15,6 +15,8 @@ import {
 export { Widget, Connector };
 
 type AdditionalWidgetProperties = Partial<Widget<WidgetDescription>>;
+
+@Directive()
 
 export abstract class TypedBaseWidget<
   TWidgetDescription extends WidgetDescription,

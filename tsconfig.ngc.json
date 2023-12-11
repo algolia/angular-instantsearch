@@ -7,6 +7,7 @@
   "angularCompilerOptions": {
     "disableTypeScriptVersionCheck": true,
     // disabling Ivy is required for compatibility see https://angular.io/guide/ivy#maintaining-library-compatibility
-    "enableIvy": false
+    "enableIvy": false,
+    "compilationMode": "partial"
   }
 }
