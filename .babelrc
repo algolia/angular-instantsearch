@@ -1,7 +1,13 @@
 {
+  "env": {
+    "development" : {
+      "compact": false
+    }
+  },
+
   "presets": [
     "env",
-    "stage-0",
+    "stage-0"
   ],
   "plugins": [
     "transform-decorators-legacy"
