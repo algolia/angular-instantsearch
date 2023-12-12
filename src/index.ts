@@ -48,6 +48,7 @@ export { NgAisNumericMenu } from './numeric-menu/numeric-menu';
 // import { NgAisPaginationModule } from './pagination/pagination.module';
 // export { NgAisPaginationModule };
 export { NgAisPagination } from './pagination/pagination';
+export { NgAisPaginationModule } from './pagination/pagination.module';
 
 // import { NgAisRangeSliderModule } from './range-slider/range-slider.module';
 // export { NgAisRangeSliderModule };
@@ -60,6 +61,7 @@ export { NgAisRefinementList } from './refinement-list/refinement-list';
 // import { NgAisSearchBoxModule } from './search-box/search-box.module';
 // export { NgAisSearchBoxModule };
 export { NgAisSearchBox } from './search-box/search-box';
+export { NgAisSearchBoxModule } from './search-box/search-box.module';
 
 // import { NgAisSortByModule } from './sort-by/sort-by.module';
 // export { NgAisSortByModule };
@@ -96,6 +98,7 @@ export { NgAisReverseSnippet } from './reverse-snippet/reverse-snippet';
 // import { NgAisRangeInputModule } from './range-input/range-input.module';
 // export { NgAisRangeInputModule };
 export { NgAisRangeInput } from './range-input/range-input';
+export { NgAisRangeInputModule } from './range-input/range-input.module';
 
 // import { NgAisPanelModule } from './panel/panel.module';
 // export { NgAisPanelModule };
