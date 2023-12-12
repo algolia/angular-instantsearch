@@ -110,6 +110,7 @@
     }
   },
   "cli": {
+    "analytics": false,
     "warnings": {}
   }
 }
