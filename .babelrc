@@ -5,6 +5,8 @@
     }
   },
 
+  "compact" : false,
+
   "presets": [
     "env",
     "stage-0"
