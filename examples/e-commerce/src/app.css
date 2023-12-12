@@ -339,3 +339,9 @@ mark {
     display: none;
   }
 }
+
+
+.footer{
+  font-size: 0.75rem;
+  padding-top: 2rem;
+}
