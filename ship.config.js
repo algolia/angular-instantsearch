@@ -5,10 +5,10 @@ const path = require('path');
 module.exports = {
   mergeStrategy: { toSameBranch: ['master'] },
   shouldPrepare: ({ releaseType, commitNumbersPerType }) => {
-    const { fix = 0 } = commitNumbersPerType;
-    if (releaseType === 'patch' && fix === 0) {
-      return false;
-    }
+    // const { fix = 0 } = commitNumbersPerType;
+    // if (releaseType === 'patch' && fix === 0) {
+    //   return false;
+    // }
     return true;
   },
   getTagName: ({ version }) => version,
