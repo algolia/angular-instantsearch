@@ -9,6 +9,7 @@ import {
   Inject,
   PLATFORM_ID,
   VERSION as AngularVersion,
+  isDevMode,
 } from '@angular/core';
 
 import * as algoliasearchProxy from 'algoliasearch/lite';
@@ -56,6 +57,11 @@ export class NgAisInstantSearch implements AfterViewInit, OnInit, OnDestroy {
   constructor(@Inject(PLATFORM_ID) public platformId: Object) {}
 
   public ngOnInit() {
+    if (isDevMode()) {
+      console.warn(`We are deprecating Angular InstantSearch.
+For more information and alternative solutions, go to https://alg.li/angular-deprecation.`);
+    }
+
     if (typeof this.config.searchClient.addAlgoliaAgent === 'function') {
       this.config.searchClient.addAlgoliaAgent(
         `angular (${AngularVersion.full})`

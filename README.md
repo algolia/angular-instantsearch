@@ -1,14 +1,17 @@
+> [!IMPORTANT]
+> We are deprecating the Angular InstantSearch package. For more information and alternative solutions, see [Migrating from Angular InstantSearch](https://alg.li/angular-deprecation).
+
 # Angular InstantSearch
 
 > ⚡ Lightning-fast search for Angular apps, by [Algolia][algolia-website].
 
 [![Version][version-svg]][package-url] [![Build Status][ci-badge]][ci-url] [![License][license-image]][license-url] [![Downloads][downloads-image]][downloads-url]
 
-InstantSearch projects: **Angular InstantSearch** | [React InstantSearch][react-instantsearch-github] | [InstantSearch.js][instantsearch.js-github] | [InstantSearch Android][instantsearch-android-github] | [InstantSearch iOS][instantsearch-ios-github].
+InstantSearch projects: **Angular InstantSearch** | [InstantSearch][instantsearch-github] (JS / React / Vue) | [InstantSearch Android][instantsearch-android-github] | [InstantSearch iOS][instantsearch-ios-github].
 
 ## Angular compatibility
 
-Angular InstantSearch is **compatible with Angular 5 and above**. If you need a different version of Angular, please [open an issue](https://github.com/algolia/angular-instantsearch/issues/new?template=feature_request.md).
+Angular InstantSearch is **compatible with Angular 5 up until Angular 16**.
 
 ## Documentation
 
@@ -24,9 +27,7 @@ To contribute to the library (code and documentation), [read our contribution gu
 
 [website]: https://www.algolia.com/doc/guides/building-search-ui/what-is-instantsearch/angular/
 [algolia-website]: https://www.algolia.com/
-[instantsearch.js-github]: https://github.com/algolia/instantsearch.js
-[react-instantsearch-github]: https://github.com/algolia/react-instantsearch
-[vue-instantsearch-github]: https://github.com/algolia/vue-instantsearch
+[instantsearch-github]: https://github.com/algolia/instantsearch
 [instantsearch-android-github]: https://github.com/algolia/instantsearch-android
 [instantsearch-ios-github]: https://github.com/algolia/instantsearch-ios
 [ci-badge]: https://circleci.com/gh/algolia/angular-instantsearch.svg?style=svg
