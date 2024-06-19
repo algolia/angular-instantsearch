@@ -1,3 +1,12 @@
+## [4.4.2](https://github.com/algolia/angular-instantsearch/compare/4.4.1...4.4.2) (2024-06-19)
+
+
+### Chores
+
+* show deprecation warning in dev mode ([#1010](https://github.com/algolia/angular-instantsearch/issues/1010)) ([b987140](https://github.com/algolia/angular-instantsearch/commit/b987140e0c00a704b4a986b9d2d3798041a143e3))
+
+
+
 ## [4.4.1](https://github.com/algolia/angular-instantsearch/compare/4.4.0...4.4.1) (2023-04-06)
 
 
