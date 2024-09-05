@@ -1,3 +1,9 @@
+## [4.4.3](https://github.com/algolia/angular-instantsearch/compare/4.4.2...4.4.3) (2024-09-05)
+
+### Releases
+
+From this version onwards, Angular InstantSearch is no longer supported and will not have any new versions released
+
 ## [4.4.2](https://github.com/algolia/angular-instantsearch/compare/4.4.1...4.4.2) (2024-06-19)
 
 
